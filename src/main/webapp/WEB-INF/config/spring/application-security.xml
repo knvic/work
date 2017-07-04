@@ -24,7 +24,7 @@
         <custom-filter position="FORM_LOGIN_FILTER" ref="usernamePasswordFilter" />
         <access-denied-handler error-page="/app/accessDenied" />
         <intercept-url pattern="/app/login.xhtm*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>
-        <intercept-url pattern="/app/main" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/app/main" access="hasRole('ROLE_USER')"/>
         <session-management session-authentication-strategy-ref="sas"/>
         <logout delete-cookies="JSESSIONID" />
         <csrf disabled="true"/>
@@ -66,6 +66,7 @@
         <authentication-provider>
             <user-service>
                 <user name="user" password="user" authorities="ROLE_USER" />
+                <user name="user1" password="user" authorities="ROLE_USER" />
                 <user name="admin" password="admin" authorities="ROLE_ADMIN, ROLE_USER" />
             </user-service>
         </authentication-provider>
