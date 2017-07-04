@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="hibernate">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="hibernate_1704"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="javabegin"/>
+    <schema id="6" parent="1" name="library"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="nikolay"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sakila"/>
+    <schema id="11" parent="1" name="springlibrary"/>
+    <schema id="12" parent="1" name="sys"/>
+    <schema id="13" parent="1" name="world"/>
+    <table id="14" parent="2" name="contact"/>
+    <table id="15" parent="2" name="contact_hobby_detail"/>
+    <table id="16" parent="2" name="contact_tel_detail"/>
+    <table id="17" parent="2" name="content"/>
+    <table id="18" parent="2" name="hobby"/>
+    <column id="19" parent="14" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="14" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="14" name="LAST_NAME">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="14" name="BIRTH_DATE">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="23" parent="14" name="VERSION">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="24" parent="14" name="IMAGE">
+      <Position>6</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <index id="25" parent="14" name="UQ_CONTACT_1">
+      <ColNames>FIRST_NAME
+LAST_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="14" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="27" parent="14" name="UQ_CONTACT_1">
+      <ColNames>FIRST_NAME
+LAST_NAME</ColNames>
+      <UnderlyingIndexName>UQ_CONTACT_1</UnderlyingIndexName>
+    </key>
+    <column id="28" parent="15" name="CONTACT_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="15" name="HOBBY_ID">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="15" name="FK_CONTACT_HOBBY_DETAIL_2">
+      <ColNames>HOBBY_ID</ColNames>
+    </index>
+    <key id="31" parent="15" name="PRIMARY">
+      <ColNames>CONTACT_ID
+HOBBY_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="15" name="FK_CONTACT_HOBBY_DETAIL_1">
+      <ColNames>CONTACT_ID</ColNames>
+      <RefSchemaName>hibernate</RefSchemaName>
+      <RefTableName>contact</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <foreign-key id="33" parent="15" name="FK_CONTACT_HOBBY_DETAIL_2">
+      <ColNames>HOBBY_ID</ColNames>
+      <RefSchemaName>hibernate</RefSchemaName>
+      <RefTableName>hobby</RefTableName>
+      <RefColNames>HOBBY_ID</RefColNames>
+    </foreign-key>
+    <column id="34" parent="16" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="16" name="CONTACT_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="16" name="TEL_TYPE">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="16" name="TEL_NUMBER">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="16" name="VERSION">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="39" parent="16" name="UQ_CONTACT_TEL_DETAIL_1">
+      <ColNames>CONTACT_ID
+TEL_TYPE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="16" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="41" parent="16" name="UQ_CONTACT_TEL_DETAIL_1">
+      <ColNames>CONTACT_ID
+TEL_TYPE</ColNames>
+      <UnderlyingIndexName>UQ_CONTACT_TEL_DETAIL_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="42" parent="16" name="FK_CONTACT_TEL_DETAIL_1">
+      <ColNames>CONTACT_ID</ColNames>
+      <RefSchemaName>hibernate</RefSchemaName>
+      <RefTableName>contact</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="43" parent="17" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="17" name="CONTACT_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="45" parent="17" name="CONTENT">
+      <Position>3</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <index id="46" parent="17" name="FK_CONTENT_idx">
+      <ColNames>CONTACT_ID</ColNames>
+    </index>
+    <key id="47" parent="17" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="17" name="FK_CONTENT">
+      <ColNames>CONTACT_ID</ColNames>
+      <RefSchemaName>hibernate</RefSchemaName>
+      <RefTableName>contact</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="49" parent="18" name="HOBBY_ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="18" name="PRIMARY">
+      <ColNames>HOBBY_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

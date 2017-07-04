@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+    <input name="uname" />
+
+   <view-state id="main">
+
+ <!--     <on-render>
+         <evaluate expression="testBean10.test()"/>
+      </on-render>
+-->
+
+
+
+      <transition on="searchByLetter">
+         <evaluate expression="facade.searchContactByLetter()" />
+          <evaluate expression="testBean11.test()"/>
+      </transition>
+
+      <transition on="searchByHobby">
+         <evaluate expression="loginController.printUserDetails()" />
+         <evaluate expression="facade.searchContactByHobby()" />
+      </transition>
+
+      <transition on="searchByText">
+         <evaluate expression="facade.searchContactByText()" />
+      </transition>
+
+
+   </view-state>
+
+
+
+
+
+
+
+</flow>
