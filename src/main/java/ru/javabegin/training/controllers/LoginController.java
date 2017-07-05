@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
+import ru.javabegin.training.db.test.TestBean11;
 import ru.javabegin.training.objects.User;
 
 import javax.servlet.http.HttpSession;
@@ -116,9 +117,22 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 		List<Contact> contact = contactService.findByCriteriaQuery("John", "Smith");
 
+
 		model.addObject("contact", contact );
 		model.setViewName("secondPage");
 
+
+		//System.out.println(TestBean11.test());
+		 String uname;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			uname = ((UserDetails)principal).getUsername();
+		} else {
+			uname = principal.toString();
+		}
+
+		System.out.println("");
+		System.out.println("Username :"+uname);
 
 		return model;
 	}
