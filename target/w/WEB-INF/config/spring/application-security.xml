@@ -21,19 +21,17 @@
 -->
 
     <http auto-config="false"  entry-point-ref="authenticationEntryPoint" use-expressions="true">
-        <custom-filter position="FORM_LOGIN_FILTER" ref="usernamePasswordFilter" />
+
 
         <custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter" />
+        <custom-filter position="FORM_LOGIN_FILTER" ref="usernamePasswordFilter" />
 
-        <access-denied-handler error-page="/app/accessDenied" />
-        <intercept-url pattern="/app/login.xhtm*" access="hasRole('IS_AUTHENTICATED_ANONYMOUSLY')"/>
+
         <intercept-url pattern="/app/main" access="hasRole('ROLE_USER')"/>
-        <intercept-url pattern="/app/p" access="hasRole('ROLE_ADMIN')"/>
+
         <session-management session-authentication-strategy-ref="sas"/>
-        <logout delete-cookies="JSESSIONID"  invalidate-session="true" logout-url="/app/logout" logout-success-url="/app/login"/>
+
         <csrf disabled="true"/>
-
-
 
         </http>
 
@@ -44,22 +42,40 @@
     </beans:bean>
 
 
-
     <beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
-
         <beans:constructor-arg name="expiredUrl" value="/session-expired.htm" />
-
         <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
     </beans:bean>
 
 
+
+
     <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
 
-    <beans:bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+    <!--<beans:bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
         <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry" />
         <beans:property name="maximumSessions" value="-1" />
-        <!--<beans:property name="maximumSessions" value="-1" />-->
+        &lt;!&ndash;<beans:property name="maximumSessions" value="-1" />&ndash;&gt;
+    </beans:bean>-->
+
+
+    <beans:bean id="sas" class="org.springframework.security.web.authentication.session.CompositeSessionAuthenticationStrategy">
+        <beans:constructor-arg>
+            <beans:list>
+                <beans:bean class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+                    <beans:constructor-arg ref="sessionRegistry"/>
+                    <beans:property name="maximumSessions" value="1" />
+                    <beans:property name="exceptionIfMaximumExceeded" value="true" />
+                </beans:bean>
+                <beans:bean class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy">
+                </beans:bean>
+                <beans:bean class="org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy">
+                    <beans:constructor-arg ref="sessionRegistry"/>
+                </beans:bean>
+            </beans:list>
+        </beans:constructor-arg>
     </beans:bean>
+
 
     <beans:bean id="usernamePasswordFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
         <beans:property name="sessionAuthenticationStrategy" ref="sas" />
