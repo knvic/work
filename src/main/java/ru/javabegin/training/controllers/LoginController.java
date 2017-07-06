@@ -8,7 +8,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.session.SessionInformation;
 import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +25,13 @@ import ru.javabegin.training.db.ContactService;
 import ru.javabegin.training.db.test.TestBean11;
 import ru.javabegin.training.objects.User;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,10 +44,12 @@ public class LoginController {
 	@Autowired
 	private AccessDecisionManager accessDecisionManager;
 
+
+	/*@Resource(name="sessionRegistry")
+	private SessionRegistryImpl sessionRegistry;*/
+
 	@Autowired
 	private SessionRegistry sessionRegistry;
-
-
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 /*
 
@@ -152,6 +159,7 @@ public class LoginController {
 
 
 
+
 	@RequestMapping(value = "/p", method = RequestMethod.GET)
 	public String allPrincipals(HttpServletRequest request, HttpServletResponse response) {
 
@@ -166,13 +174,52 @@ public class LoginController {
 		//List<String> a = AllPrinc.getUsersFromSessionRegistry();*/
 
 		//List<Object> principals =sessionRegistry.getAllPrincipals();
-		List<String> a= sessionRegistry.getAllPrincipals().stream()
+	/*	List<String> a= sessionRegistry.getAllPrincipals().stream()
 				.filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
 				.map(Object::toString)
 				.collect(Collectors.toList());
 
-		System.out.println("a="+a);
+		System.out.println("a="+a);*/
+
+
+		System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
+
+
+		getActiveSessions(sessionRegistry);
+
+
+
+
 		return "main";
+	}
+
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public String allPrincipals1() {
+
+
+	//	System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
+
+
+		getActiveSessions(sessionRegistry);
+
+
+
+
+		return "/app/main";
+	}
+
+
+	private List<SessionInformation> getActiveSessions(SessionRegistry sessionRegistry) {
+		final List<Object> principals = sessionRegistry.getAllPrincipals();
+		if (principals != null) {
+			System.out.println("Principals не равен нулю");
+			List<SessionInformation> sessions = new ArrayList<>();
+			for (Object principal : principals) {
+				sessions.addAll(sessionRegistry.getAllSessions(principal,     false));
+			}
+			return sessions;
+		}
+		return Collections.emptyList();
 	}
 
 
