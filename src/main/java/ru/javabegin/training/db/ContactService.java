@@ -28,6 +28,7 @@ public interface ContactService {
     List<Contact> findByCriteriaQuery12(String text);
     List<Content> findByfirstname(String name);
 
+
     Object getContent(Long id);
 
 }

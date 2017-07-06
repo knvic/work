@@ -3,9 +3,12 @@ package ru.javabegin.training.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,15 +16,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
 import ru.javabegin.training.db.test.TestBean11;
 import ru.javabegin.training.objects.User;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class LoginController {
@@ -31,6 +38,10 @@ public class LoginController {
 
 	@Autowired
 	private AccessDecisionManager accessDecisionManager;
+
+	@Autowired
+	private SessionRegistry sessionRegistry;
+
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 /*
@@ -134,8 +145,37 @@ public class LoginController {
 		System.out.println("");
 		System.out.println("Username :"+uname);
 
+
 		return model;
 	}
+
+
+
+
+	@RequestMapping(value = "/p", method = RequestMethod.GET)
+	public String allPrincipals(HttpServletRequest request, HttpServletResponse response) {
+
+	/*	ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());
+		SessionRegistry sReg = (SessionRegistry) appContext.getBean("sessionRegistry");
+
+		List<Object> pr =sReg.getAllPrincipals();
+		System.out.println("pr="+pr);
+		for(Object principal1: sReg.getAllPrincipals())
+			System.out.println("Principal: "+principal1.toString());
+
+		//List<String> a = AllPrinc.getUsersFromSessionRegistry();*/
+
+		//List<Object> principals =sessionRegistry.getAllPrincipals();
+		List<String> a= sessionRegistry.getAllPrincipals().stream()
+				.filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
+				.map(Object::toString)
+				.collect(Collectors.toList());
+
+		System.out.println("a="+a);
+		return "main";
+	}
+
+
 
 
 	public ModelAndView exampleClick() {
