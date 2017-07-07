@@ -12,6 +12,7 @@ import org.springframework.security.core.session.SessionInformation;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -217,6 +218,9 @@ public class LoginController {
 				.collect(Collectors.toList());
 
 		System.out.println("a="+a);
+		logger.info("getDetails " +a);
+
+		printUserDetails();
 
 
 
@@ -261,11 +265,18 @@ public class LoginController {
 			logger.info(auth.getAuthority());
 		}
 
-		Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
+		/*Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
 		System.out.println("getDetails"+details);
 
 
+		wad = (WebAuthenticationDetails) authentication.getDetails();
+		userIPAddress = wad.getRemoteAddress();
+*/
 
+
+		WebAuthenticationDetails details = (WebAuthenticationDetails)SecurityContextHolder.getContext().getAuthentication().getDetails();
+		String userIPAddress = details.getRemoteAddress();
+		System.out.println("userIPAddress=="+userIPAddress);
 	}
 
 
