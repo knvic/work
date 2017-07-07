@@ -15,7 +15,7 @@
 
       <transition on="searchByLetter">
          <evaluate expression="facade.searchContactByLetter()" />
-          <evaluate expression="testBean11.test()"/>
+          <evaluate expression="testBean12.test()"/>
       </transition>
 
       <transition on="searchByHobby">
