@@ -211,6 +211,15 @@ public class LoginController {
 
 		}
 
+		List<String> a= sessionRegistry.getAllPrincipals().stream()
+				.filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
+				.map(Object::toString)
+				.collect(Collectors.toList());
+
+		System.out.println("a="+a);
+
+
+
 
 
 		return "/";
@@ -251,6 +260,11 @@ public class LoginController {
 		for (GrantedAuthority auth : userDetails.getAuthorities()) {
 			logger.info(auth.getAuthority());
 		}
+
+		Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
+		System.out.println("getDetails"+details);
+
+
 
 	}
 
