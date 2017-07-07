@@ -200,12 +200,20 @@ public class LoginController {
 	//	System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
 
 
-		getActiveSessions(sessionRegistry);
+		List<SessionInformation> si= getActiveSessions(sessionRegistry);
+		for (Object principal : si) {
+			System.out.println("SessionInformation = "+principal);
+		}
+
+		List<Object> principals= getAllPrincipals(sessionRegistry);
+		for (Object principal : principals) {
+			System.out.println("Principal: "+principal.toString());
+
+		}
 
 
 
-
-		return "/app/main";
+		return "/";
 	}
 
 
@@ -221,7 +229,10 @@ public class LoginController {
 		}
 		return Collections.emptyList();
 	}
-
+	private List<Object> getAllPrincipals(SessionRegistry sessionRegistry) {
+		final List<Object> principals = sessionRegistry.getAllPrincipals();
+		return principals;
+	}
 
 
 
