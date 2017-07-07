@@ -222,12 +222,36 @@ public class LoginController {
 
 		printUserDetails();
 
-
-
+		killUser(sessionRegistry,"user");
 
 
 		return "/";
 	}
+
+	private void killUser(SessionRegistry sessionRegistry,String username) {
+
+
+		final List<Object> principals = sessionRegistry.getAllPrincipals();
+
+
+		for(Object principal: principals)
+		{
+			UserDetails authentication = (UserDetails)principal;
+			System.out.println("Candidate User: "+authentication.getUsername()+". User for dropped "+ username);
+			if(authentication.getUsername().equals(username))
+			{
+				List<SessionInformation> userSessions = sessionRegistry.getAllSessions(principal, false);// получаем все сессии пользователя, кроме истекших
+				for(SessionInformation sessInfo: userSessions)
+					sessInfo.expireNow();
+			}
+		}
+
+		System.out.println("User: "+username+" dropped");
+
+
+		return;
+	}
+
 
 
 	private List<SessionInformation> getActiveSessions(SessionRegistry sessionRegistry) {
