@@ -19,10 +19,18 @@
         <intercept-url pattern="/app/security" access="hasRole('ROLE_ADMIN')"/>
 
         <session-management session-authentication-strategy-ref="sas"/>
+        <!--<access-denied-handler ref="accessDeniedHandler"/>-->
+        <access-denied-handler error-page="/accessDenied.xhtml"/>
+        <logout delete-cookies="JSESSIONID"  invalidate-session="true" logout-url="/app/logout" logout-success-url="/app/login"/>
 
         <csrf disabled="true"/>
 
         </http>
+
+
+    <beans:bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+        <beans:property name="errorPage" value="/accessDenied.xhtml"/>
+    </beans:bean>
 
 
     <beans:bean id="authenticationEntryPoint"  class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
@@ -32,7 +40,7 @@
 
 
     <beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
-        <beans:constructor-arg name="expiredUrl" value="/login.jsp?invalidSessionError=1"  />
+        <beans:constructor-arg name="expiredUrl" value="/login.xhtml?invalidSessionError=1"  />
         <!--<beans:constructor-arg name="expiredUrl" value="/session-expired.htm" />-->
         <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
     </beans:bean>
