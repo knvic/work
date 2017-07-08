@@ -34,7 +34,7 @@
         <h:outputText value="Total:"/>
         <h:outputText id="sum" value="#{controller.total}"/>
         <!--<h:commandButton actionListener="#{controller.calculateTotal}"-->
-        <h:commandButton action="#{request.contextPath}/ss"
+        <h:commandButton actionListener="#{controller.calculateTotal}"
                          value="Calculate Sum">
           <f:ajax execute="first second" render="sum"/>
         </h:commandButton>
