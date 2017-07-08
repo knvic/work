@@ -26,16 +26,7 @@ private String uname;
     public void test(){
         System.out.println("Spring Security ContextHolder");
         Object principal = securityService.getAllPrincipals();
-      /*  if (principal instanceof UserDetails) {
-            uname = ((UserDetails)principal).getUsername();
-        } else {
-             uname = principal.toString();
-        }
 
-        System.out.println("");
-        System.out.println("Username :" );
-        return uname;
-*/
       return;
     }
 

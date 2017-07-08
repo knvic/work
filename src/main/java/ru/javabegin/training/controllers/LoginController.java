@@ -25,6 +25,7 @@ import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
 import ru.javabegin.training.db.test.TestBean11;
 import ru.javabegin.training.objects.User;
+import ru.javabegin.training.security.SecurityService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +42,9 @@ public class LoginController {
 
 	@Autowired
 	ContactService contactService;
+	@Autowired
+	SecurityService securityService;
+
 
 	@Autowired
 	private AccessDecisionManager accessDecisionManager;
@@ -64,7 +68,12 @@ public class LoginController {
 
 
 
-
+	@RequestMapping(value = "/ss", method = RequestMethod.GET)
+	public String getPrincipals() {
+		System.out.println("Spring Security ContextHolder");
+		Object principal = securityService.getAllPrincipals();
+		return "calc";
+	}
 
 
 @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
