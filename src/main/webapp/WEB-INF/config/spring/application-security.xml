@@ -20,7 +20,7 @@
 
         <session-management session-authentication-strategy-ref="sas"/>
         <!--<access-denied-handler ref="accessDeniedHandler"/>-->
-        <access-denied-handler error-page="/accessDenied.xhtml"/>
+        <access-denied-handler error-page="/app/accessDenied"/>
         <logout delete-cookies="JSESSIONID"  invalidate-session="true" logout-url="/app/logout" logout-success-url="/app/login"/>
 
         <csrf disabled="true"/>
@@ -29,7 +29,7 @@
 
 
     <beans:bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
-        <beans:property name="errorPage" value="/accessDenied.xhtml"/>
+        <beans:property name="errorPage" value="/accessDenied"/>
     </beans:bean>
 
 

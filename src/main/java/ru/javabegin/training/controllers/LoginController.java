@@ -68,6 +68,7 @@ public class LoginController {
 
 
 
+
 	@RequestMapping(value = "/ss", method = RequestMethod.GET)
 	public String getPrincipals() {
 		System.out.println("Spring Security ContextHolder");
