@@ -1,9 +1,11 @@
 package ru.javabegin.training.security;
 
+import java.io.Serializable;
+
 /**
  * Created by Николай on 10.07.2017.
  */
-public class MyUsDet {
+public class MyUsDet implements Serializable {
     String name;
     String aut;
     String ip;

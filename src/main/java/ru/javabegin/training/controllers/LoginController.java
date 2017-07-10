@@ -57,13 +57,9 @@ public class LoginController {
 	@Autowired
 	private SessionRegistry sessionRegistry;
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-/*
 
-	@RequestMapping(value = "/1", method = RequestMethod.GET)
-	public ModelAndView main(HttpSession session) {
-		return new ModelAndView("login", "user", new User());
-	}
-*/
+
+
 
 
 

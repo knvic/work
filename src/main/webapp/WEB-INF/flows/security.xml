@@ -7,15 +7,14 @@
 
       <view-state id="security">
       <on-render>
-            <evaluate expression="securityService.getmydetails()"
-                      result="viewScope.bookings" result-type="dataModel" />
+            <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
       </on-render>
 
 </view-state>
 
 </flow>
         <!--
-
+result-type="dataModel"
                  <on-render>
                     <evaluate expression="testBean10.test()"/>
                  </on-render>
