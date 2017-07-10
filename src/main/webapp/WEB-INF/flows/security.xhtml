@@ -7,5 +7,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <h:outputLabel value="Hello new WebFlow Security!!!!!!!!!!!"/>
+    <h:dataTable id="bookings" styleClass="summary" value="#{bookings}" var="booking"
+                 rendered="#{bookings.rowCount > 0}">
+        <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{booking.name}
+    </h:column>
+        <h:column>
+            <f:facet name="header">IP</f:facet>
+            #{booking.ip}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Auth</f:facet>
+            #{booking.aut}
+        </h:column>
+
+
+    </h:dataTable>
+
+
+
 </f:view>
 </html>

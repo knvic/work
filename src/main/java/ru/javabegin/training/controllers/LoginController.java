@@ -25,6 +25,7 @@ import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
 import ru.javabegin.training.db.test.TestBean11;
 import ru.javabegin.training.objects.User;
+import ru.javabegin.training.security.MyUsDet;
 import ru.javabegin.training.security.SecurityService;
 
 import javax.annotation.Resource;
@@ -73,6 +74,13 @@ public class LoginController {
 	public String getPrincipals() {
 		System.out.println("Spring Security ContextHolder");
 		Object principal = securityService.getAllPrincipals();
+		return "calc";
+	}
+
+	@RequestMapping(value = "/s1", method = RequestMethod.GET)
+	public String MyUserDetails() {
+		System.out.println("Получение деталей пользователя");
+		List<MyUsDet> ud = securityService.getmydetails();
 		return "calc";
 	}
 

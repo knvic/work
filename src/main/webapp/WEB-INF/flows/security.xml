@@ -5,16 +5,19 @@
 
 
 
-      <view-state id="security"/>
+      <view-state id="security">
+      <on-render>
+            <evaluate expression="securityService.getmydetails()"
+                      result="viewScope.bookings" result-type="dataModel" />
+      </on-render>
 
-<!--
-
-         <on-render>
-            <evaluate expression="testBean10.test()"/>
-         </on-render>
-      </view-state>
--->
-
-
+</view-state>
 
 </flow>
+        <!--
+
+                 <on-render>
+                    <evaluate expression="testBean10.test()"/>
+                 </on-render>
+              </view-state>
+        -->
