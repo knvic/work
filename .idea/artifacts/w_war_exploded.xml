@@ -9,7 +9,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.2.14" />
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-impl:2.2.14" />
-          <element id="library" level="project" name="Maven: org.primefaces:primefaces:5.0" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:6.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />

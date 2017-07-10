@@ -46,10 +46,10 @@ public class SecurityServiceImpl implements SecurityService {
 
 
             for (GrantedAuthority auth :authentication.getAuthorities()) {
-                a=a+(String)auth.getAuthority();
+                a=a+(String)auth.getAuthority()+" ";
             }
 
-            WebAuthenticationDetails details1 = (WebAuthenticationDetails) authentication.getAuthentication().getDetails();
+            //WebAuthenticationDetails details1 = (WebAuthenticationDetails) authentication.getAuthentication().getDetails();
             WebAuthenticationDetails details = (WebAuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails();
             String userIPAddress = details.getRemoteAddress();
             System.out.println("userIPAddress=="+userIPAddress);
