@@ -10,7 +10,9 @@
          <evaluate expression="testBean10.test()"/>
       </on-render>
 -->
-
+       <on-render>
+           <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
+       </on-render>
 
 
       <transition on="searchByLetter">

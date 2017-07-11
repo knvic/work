@@ -6,27 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
 <f:view>
-   <!-- <h:outputLabel value="Hello new WebFlow Security!!!!!!!!!!!"/>
-    <h:dataTable id="bookings" styleClass="summary" value="#{bookings}" var="booking"
-                 rendered="#{bookings.rowCount > 0}">
-        <h:column>
-        <f:facet name="header">Name</f:facet>
-        #{booking.name}
-    </h:column>
-        <h:column>
-            <f:facet name="header">IP</f:facet>
-            #{booking.ip}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Auth</f:facet>
-            #{booking.aut}
-        </h:column>
-
-
-    </h:dataTable>-->
-
     <h:form id="form">
     <p:growl id="msgs" showDetail="true" />
+<!--
 
     <p:dataTable id="basicDT" var="u" value="#{list_ud}">
         <f:facet name="header">
@@ -48,7 +30,30 @@
             </p:commandButton>
         </p:column>
     </p:dataTable>
+-->
 
+
+
+
+        <p:dataTable id="radioDT" var="u" value="#{list_ud}" selection="#{selectionView.ud}" rowKey="#{u.name}">
+            <f:facet name="header">
+                RadioButton
+            </f:facet>
+            <p:column selectionMode="single" style="width:16px;text-align:center"/>
+            <p:column headerText="name">
+                <h:outputText value="#{u.name}" />
+            </p:column>
+            <p:column headerText="Year">
+                <h:outputText value="#{u.aut}" />
+            </p:column>
+            <p:column headerText="Brand">
+                <h:outputText value="#{u.ip}" />
+            </p:column>
+
+            <f:facet name="footer">
+                <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
+            </f:facet>
+        </p:dataTable>
 
         <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
             <p:outputPanel id="carDetail" style="text-align:center;">
