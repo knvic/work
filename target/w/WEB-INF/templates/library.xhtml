@@ -34,7 +34,7 @@
                 <ui:include src="/WEB-INF/templates/letters.xhtml"/>
                 <!--<ui:include src="/WEB-INF/templates/ajax_proba.xhtml"/>-->
                 <ui:include src="/WEB-INF/templates/ajax_p.xhtml"/>
-                <ui:include src="/WEB-INF/templates/sec.xhtml"/>
+                <!--ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
 
 
                 <div class="content">
@@ -43,9 +43,10 @@
 
 
                     <div class="right-content">
-
+                        <ui:include src="/WEB-INF/templates/sec.xhtml"/>
                         <!--<ui:insert name="ajax_p"/>-->
                         <ui:insert name="books_count"/>
+                        <ui:insert name="sec"/>
 
 
                         <ui:insert name="content"/>

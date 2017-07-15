@@ -8,66 +8,47 @@
 <f:view>
     <h:outputLabel value="Hello, world"/>
 <ui:composition>
+    <div class="box-sh">
+
     <h:form id="form">
         <p:growl id="msgs" showDetail="true" />
-        <!--
-
-            <p:dataTable id="basicDT" var="u" value="#{list_ud}">
-                <f:facet name="header">
-                    Basic
-                </f:facet>
-                <p:column headerText="Id">
-                    <h:outputText value="#{u.name}" />
-                </p:column>
-                <p:column headerText="Year">
-                    <h:outputText value="#{u.aut}" />
-                </p:column>
-                <p:column headerText="Brand">
-                    <h:outputText value="#{u.ip}" />
-                </p:column>
-
-                <p:column style="width:32px;text-align: center">
-                    <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
-                        <f:setPropertyActionListener value="#{u}" target="#{selectionView.ud}" />
-                    </p:commandButton>
-                </p:column>
-            </p:dataTable>
-        -->
 
 
 
 
-        <p:dataTable id="radioDT" var="u" value="#{list_ud}" selection="#{selectionView.ud}" rowKey="#{u.name}">
+        <p:dataTable id="radioDT" var="u" value="${facade.contacts}" selection="#{selectionContact.ud}" rowKey="#{u.firstName}">
             <f:facet name="header">
                 RadioButton
             </f:facet>
             <p:column selectionMode="single" style="width:16px;text-align:center"/>
             <p:column headerText="name">
-                <h:outputText value="#{u.name}" />
+            <h:outputText value="#{u.firstName}" />
+        </p:column>
+            <p:column headerText="fam">
+                <h:outputText value="#{u.lastName}" />
             </p:column>
-            <p:column headerText="Year">
-                <h:outputText value="#{u.aut}" />
+            <p:column headerText="data">
+                <h:outputText value="#{u.birthDate}" />
             </p:column>
-            <p:column headerText="Brand">
-                <h:outputText value="#{u.ip}" />
-            </p:column>
+
 
             <f:facet name="footer">
                 <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
             </f:facet>
+
         </p:dataTable>
 
         <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
             <p:outputPanel id="carDetail" style="text-align:center;">
-                <p:panelGrid  columns="2" rendered="#{not empty selectionView.ud}" columnClasses="label,value">
+                <p:panelGrid  columns="2" rendered="#{not empty selectionContact.ud}" columnClasses="label,value">
 
 
                     <h:outputText value="Name:" />
-                    <h:outputText value="#{selectionView.ud.name}" />
+                    <h:outputText value="#{selectionContact.ud.firstName}" />
                     <h:outputText value="Authorites:" />
-                    <h:outputText value="#{selectionView.ud.aut}" />
+                    <h:outputText value="#{selectionContact.ud.lastName}" />
                     <h:outputText value="RemoteIP:" />
-                    <h:outputText value="#{selectionView.ud.ip}" />
+                    <h:outputText value="#{selectionContact.ud.birthDate}" />
 
 
                 </p:panelGrid>
@@ -75,7 +56,10 @@
         </p:dialog>
 
 
+
+
     </h:form>
+    </div>
 </ui:composition>
 
 </f:view>
