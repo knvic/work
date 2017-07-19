@@ -9,6 +9,7 @@
   <param-value>
     /WEB-INF/config/spring/applicationContext.xml
     /WEB-INF/config/spring/application-security.xml
+    /WEB-INF/config/spring/mysql-datasource.xml
   </param-value>
 </context-param>
 
