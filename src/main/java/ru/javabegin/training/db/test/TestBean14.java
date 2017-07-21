@@ -24,6 +24,14 @@ public class TestBean14 implements Serializable {
 */
 
     public void test() {
+        /*GrantedAuthority auth = new GrantedAuthority() {
+            private static final long serialVersionUID = 1L;
+
+            public String getAuthority() {
+                return "ROLE_USER,ROLE_ADMIN";
+            }
+        };*/
+
         GrantedAuthority auth = new GrantedAuthority() {
             private static final long serialVersionUID = 1L;
 
@@ -31,8 +39,22 @@ public class TestBean14 implements Serializable {
                 return "ROLE_USER";
             }
         };
+        GrantedAuthority auth1 = new GrantedAuthority() {
+            private static final long serialVersionUID = 1L;
+
+            public String getAuthority() {
+                return "ROLE_ADMIN";
+            }
+        };
+
+
+
+
         Set<GrantedAuthority> set = new HashSet<GrantedAuthority>();
         set.add(auth);
+        set.add(auth1);
+
+
 
 //        UserDetails details = new User("root",  passwordEncoder.encodePassword("root", new Object()), true, true, true, true, set);
         UserDetails details = new User("root",  "root", true, true, true, true, set);
@@ -43,13 +65,6 @@ public class TestBean14 implements Serializable {
 
 
 
-
-
-   /* public void test(){
-        System.out.println("Spring Security ContextHolder");
-        Object principal = securityService.getAllPrincipals();
-
-      return;*/
 
 
 

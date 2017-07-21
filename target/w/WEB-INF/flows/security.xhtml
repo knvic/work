@@ -4,76 +4,136 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
-<f:view>
-    <h:form id="form">
-    <p:growl id="msgs" showDetail="true" />
-<!--
-
-    <p:dataTable id="basicDT" var="u" value="#{list_ud}">
-        <f:facet name="header">
-            Basic
-        </f:facet>
-        <p:column headerText="Id">
-            <h:outputText value="#{u.name}" />
-        </p:column>
-        <p:column headerText="Year">
-            <h:outputText value="#{u.aut}" />
-        </p:column>
-        <p:column headerText="Brand">
-            <h:outputText value="#{u.ip}" />
-        </p:column>
-
-        <p:column style="width:32px;text-align: center">
-            <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
-                <f:setPropertyActionListener value="#{u}" target="#{selectionView.ud}" />
-            </p:commandButton>
-        </p:column>
-    </p:dataTable>
--->
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags">
 
 
+<ui:composition template="/WEB-INF/templates/library.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <ui:include src="/WEB-INF/templates/sec.xhtml"/>
+    <ui:define name="content">
 
 
-        <p:dataTable id="radioDT" var="u" value="#{list_ud}" selection="#{selectionView.ud}" rowKey="#{u.name}">
-            <f:facet name="header">
-                RadioButton
-            </f:facet>
-            <p:column selectionMode="single" style="width:16px;text-align:center"/>
-            <p:column headerText="name">
-                <h:outputText value="#{u.name}" />
-            </p:column>
-            <p:column headerText="Year">
-                <h:outputText value="#{u.aut}" />
-            </p:column>
-            <p:column headerText="Brand">
-                <h:outputText value="#{u.ip}" />
-            </p:column>
-
-            <f:facet name="footer">
-                <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
-            </f:facet>
-        </p:dataTable>
-
-        <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-            <p:outputPanel id="carDetail" style="text-align:center;">
-                <p:panelGrid  columns="2" rendered="#{not empty selectionView.ud}" columnClasses="label,value">
+        <h:form id="booksForm">
 
 
-                    <h:outputText value="Name:" />
-                    <h:outputText value="#{selectionView.ud.name}" />
-                    <h:outputText value="Authorites:" />
-                    <h:outputText value="#{selectionView.ud.aut}" />
-                    <h:outputText value="RemoteIP:" />
-                    <h:outputText value="#{selectionView.ud.ip}" />
+            <p:dataGrid rowIndexVar="rowIndex" columns="2" lazy="true" var="b" value="${facade.contacts}"
+                        id="booksList" styleClass="books_list" paginator="true" rows="4" paginatorPosition="bottom"
+                        rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"
+                        paginatorAlwaysVisible="true" emptyMessage="">
 
 
-                </p:panelGrid>
-            </p:outputPanel>
-        </p:dialog>
+                <div class="item">
+
+                    <div class="image-info">
+
+                        <h:outputLink id="image" styleClass="content_link" value="#{request.contextPath}/PdfContent"  target="_blank">
+                            <p:graphicImage value="/ShowImage?index=#{rowIndex}" width="110" height="150"/>
+                            <f:param name="id" value="#{b.id}"/>
+                        </h:outputLink>
 
 
-    </h:form>
 
-</f:view>
+                    </div>
+
+
+                    <div class="info">
+                        <div class="book_name">
+                            <h:outputLink id="bookName" styleClass="title" value="#{request.contextPath}/PdfContent" target="_blank">
+                                #{b.firstName}
+                                <f:param name="id" value="#{b.id}"/>
+                                <f:param name="save" value="false"/>
+
+                            </h:outputLink>
+
+                        </div>
+                        <p>${msg.user} ${uname}</p>
+                        <span>#{b.lastName}</span>
+
+
+
+
+                        <p><strong>#{msg.page_count}:</strong> #{b.id}</p>
+
+                        <p><strong>#{msg.publisher}</strong> #{b.version}</p>
+
+                        <p><strong>#{msg.publish_year}</strong> #{b.birthDate} г.</p>
+
+
+
+                    </div>
+
+
+                    <h:outputLink styleClass="mr" value="#{request.contextPath}/PdfContent" target="_blank">
+                        <p class="read">#{msg.read}</p>
+                        <f:param name="id" value="#{b.id}"/>
+                        <f:param name="save" value="false"/>
+                    </h:outputLink>
+
+                    <h:outputLink styleClass="mr" value="#{request.contextPath}/PdfContent" target="_blank">
+                        <p class="download">#{msg.download}</p>
+                        <f:param name="id" value="#{b.id}"/>
+                        <f:param name="filename" value="#{b.lastName}"/>
+                        <f:param name="save" value="true"/>
+                    </h:outputLink>
+
+                    <p:commandLink styleClass="mr" title="#{msg.edit_book}" rendered="#{sec:areAllGranted('ROLE_ADMIN')}">
+                        <p class="edit">#{msg.edit}</p>
+                    </p:commandLink>
+
+                    <p:commandLink styleClass="delete-button" title="#{msg.delete_book}" type="button">
+                        <p class="delete">#{msg.delete}</p>
+                    </p:commandLink>
+
+
+                </div>
+
+
+            </p:dataGrid>
+
+
+        </h:form>
+
+
+
+    </ui:define>
+    <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+
+
+    <ui:define name="books_count">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="booksCount" value="#{msg.book_count}:  #{facade.contacts.size()}" /></h1>
+
+            <h:form id="add-action">
+                <p:commandLink >
+                    <h:outputText value="#{msg.add_book}" title="#{msg.add_book}"/>
+                </p:commandLink>
+            </h:form>
+
+
+        </div>
+
+    </ui:define>
+
+
+
+
+
+</ui:composition>
+
 </html>

@@ -4,13 +4,38 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 
-
       <view-state id="security">
+
       <on-render>
             <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
       </on-render>
 
-</view-state>
+
+      <transition on="searchByLetter">
+            <evaluate expression="facade.searchContactByLetter()" />
+            <evaluate expression="testBean14.test()"/>
+      </transition>
+
+      <transition on="searchByHobby">
+            <evaluate expression="loginController.printUserDetails()" />
+            <evaluate expression="facade.searchContactByHobby()" />
+      </transition>
+
+      <transition on="searchByText">
+            <evaluate expression="facade.searchContactByText()" />
+      </transition>
+
+
+
+      <!--
+
+            <view-state id="security_old_2">
+            <on-render>
+                  <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
+            </on-render>
+       -->
+      </view-state>
+
 
 </flow>
         <!--

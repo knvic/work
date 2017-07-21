@@ -28,7 +28,7 @@
         <div class="authorization">
 
             <h:panelGroup layout="block" styleClass="lg" id="divLogo">
-                <h:graphicImage library="images" name="en/logo.png"/>
+                <h:graphicImage library="images" name="en/logo1_m.png"/>
             </h:panelGroup>
 
 
@@ -39,7 +39,7 @@
 
             <form class="login_form" id="formLogin" action="#{request.contextPath}/j_spring_security_check" method='POST'>
                 <p:commandLink styleClass="mr" title="#{msg.user}" />
-                <p><strong>#{msg.user}:</strong> hjkjhkjhkjhjkh</p>
+                <p><strong>#{msg.user}:</strong> Name</p>
                 <p:inputText id="username" value="#{user.username}" required="true" styleClass="aut-text"/>
                 <p:outputLabel for="password" value="Pass"/>
                 <p:password id="password" value="#{user.password}" redisplay="true" required="true"

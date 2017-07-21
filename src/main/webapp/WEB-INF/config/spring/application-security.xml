@@ -82,7 +82,8 @@
     </beans:bean>
 
     <beans:bean id="loginSuccessHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler" >
-        <beans:property name="defaultTargetUrl" value="/app/main"/>
+
+        <beans:property name="defaultTargetUrl" value="/app/security"/>
     </beans:bean>
 
     <beans:bean id="loginFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" >
