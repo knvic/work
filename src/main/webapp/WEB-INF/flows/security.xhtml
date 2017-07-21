@@ -9,7 +9,7 @@
       xmlns:sec="http://www.springframework.org/security/tags">
 
 
-<ui:composition template="/WEB-INF/templates/library.xhtml">
+<ui:composition template="/WEB-INF/templates/security.xhtml">
 
     <ui:define name="title">
         #{msg.book_list}
@@ -18,7 +18,7 @@
     <ui:define name="content">
 
 
-        <h:form id="booksForm">
+      <!--  <h:form id="booksForm">
 
 
             <p:dataGrid rowIndexVar="rowIndex" columns="2" lazy="true" var="b" value="${facade.contacts}"
@@ -97,7 +97,7 @@
 
 
         </h:form>
-
+-->
 
 
     </ui:define>
