@@ -5,13 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_add_user.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_menu.xhtml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/main_old.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security_old.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security_old_2.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/security.xhtml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main_old.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/old/main_old.xhtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_old.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/old/security_old.xhtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_old_2.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/old/security_old_2.xhtml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_template.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w.war" afterPath="$PROJECT_DIR$/target/w.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_ru.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/application-security.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/application-security.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/security.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/login.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/views/login.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_en.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_ru.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/locales.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/templates/locales.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/sec.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/templates/sec.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -119,21 +140,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="application-security.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml">
+      <file leaf-file-name="security.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-283">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="350">
+              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -142,38 +153,18 @@
       <file leaf-file-name="logo.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/logo.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="600">
+              <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml">
+      <file leaf-file-name="sec.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="63" column="77" lean-forward="false" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="security.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+            <state relative-caret-position="1550">
+              <caret line="62" column="13" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="62" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -182,8 +173,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+            <state relative-caret-position="250">
+              <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -192,28 +183,61 @@
       <file leaf-file-name="security.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="1750">
+              <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sec.xhtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml">
+      <file leaf-file-name="messages.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="3750">
+              <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security_menu.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_menu.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="825">
-              <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="security.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security.xhtml">
+      <file leaf-file-name="security_template.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_template.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="1225">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sec_old.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec_old.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security_add_user.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_add_user.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -238,8 +262,6 @@
       <find>name</find>
       <find>rati</find>
       <find>booksList</find>
-      <find>user</find>
-      <find>u</find>
       <find>debug</find>
       <find>usernamePasswordFilter</find>
       <find>checkuser</find>
@@ -249,6 +271,9 @@
       <find>login</find>
       <find>em</find>
       <find>security</find>
+      <find>user</find>
+      <find>u</find>
+      <find>all</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,15 +287,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/secondPage1.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/glassfish-web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/controllers/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error_duble_user.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/secondPage.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pr1.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-orm/4.3.9.RELEASE/spring-orm-4.3.9.RELEASE.jar!/org/springframework/orm/hibernate4/SpringFlushSynchronization.class" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login1.xhtml" />
@@ -299,20 +320,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/library.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/objects/SelectionContact.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/mysql-datasource.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean14.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/jdbc/JdbcUserDetailsImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/logo.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_add_user.xhtml" />
       </list>
     </option>
   </component>
@@ -534,6 +559,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="locales" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource Bundle 'messages'" />
+              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_0407_34_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_0407_34_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="flows" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -708,8 +767,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,13 +792,14 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\WEB-INF\flows" />
       <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\WEB-INF\templates" />
       <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\resources\images\ru" />
       <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\resources\images\en" />
-      <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\WEB-INF\flows" />
       <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\WEB-INF\config\spring" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Java\_WF\w_0407_34_Git\src\main\webapp\WEB-INF\flows\old" />
       <recent name="C:\Java\_WF\w_2106_SWF_JSF_24\src\main\webapp" />
       <recent name="C:\Java\_WF\w_1906_SWF_JSF_21\src\main\webapp\WEB-INF\flows" />
       <recent name="C:\Java\_WF\w\src\main\webapp" />
@@ -1277,7 +1337,7 @@
       </method>
     </configuration>
     <configuration default="false" name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M17" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/security" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app/main" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="w:war">
@@ -1440,12 +1500,14 @@
       <workItem from="1500450655778" duration="4451000" />
       <workItem from="1500486634338" duration="3000" />
       <workItem from="1500531472607" duration="6814000" />
-      <workItem from="1500620582886" duration="11714000" />
+      <workItem from="1500620582886" duration="12136000" />
+      <workItem from="1500704039571" duration="14189000" />
+      <workItem from="1500797832718" duration="566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="444992000" />
+    <option name="totallyTimeSpent" value="460169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1458,7 +1520,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2411" y="0" width="2418" height="1311" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1473,7 +1535,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3440572" sideWeight="0.49833333" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3440572" sideWeight="0.49833333" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24511546" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1485,7 +1547,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2334764" sideWeight="0.50949365" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21459228" sideWeight="0.48918918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22060086" sideWeight="0.48918918" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1592,11 +1654,29 @@
           <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean12.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean12.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean12.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="161" />
+      <option name="time" value="164" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
@@ -1611,48 +1691,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec_old.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/objects/SelectionView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/objects/SelectionContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/library.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_old_2.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1723,13 +1761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec_old.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec_old1.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
@@ -1755,7 +1786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1779,7 +1809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1802,41 +1831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1151#1169#0" expanded="false" />
-            <element signature="e#1217#1224#0" expanded="false" />
-            <element signature="e#1355#1356#0" expanded="false" />
-            <element signature="e#1385#1386#0" expanded="false" />
-            <element signature="e#1419#1420#0" expanded="false" />
-            <element signature="e#1447#1448#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1556#1557#0" expanded="false" />
-            <element signature="e#1599#1600#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1706#1707#0" expanded="false" />
-            <element signature="e#1743#1744#0" expanded="false" />
-            <element signature="e#1793#1794#0" expanded="false" />
-            <element signature="e#1835#1836#0" expanded="false" />
-            <element signature="e#1902#1903#0" expanded="false" />
-            <element signature="e#1938#1939#0" expanded="false" />
-            <element signature="e#1986#1987#0" expanded="false" />
-            <element signature="e#2026#2027#0" expanded="false" />
-            <element signature="e#2269#2270#0" expanded="false" />
-            <element signature="e#2306#2307#0" expanded="false" />
-            <element signature="e#2354#2355#0" expanded="false" />
-            <element signature="e#2396#2397#0" expanded="false" />
-            <element signature="e#2546#2547#0" expanded="false" />
-            <element signature="e#2591#2592#0" expanded="false" />
-            <element signature="e#3262#3263#0" expanded="false" />
-            <element signature="e#3297#3298#0" expanded="false" />
-            <element signature="e#3347#3348#0" expanded="false" />
-            <element signature="e#3385#3386#0" expanded="false" />
-            <element signature="e#3503#3504#0" expanded="false" />
-            <element signature="e#3538#3539#0" expanded="false" />
-            <element signature="e#3585#3586#0" expanded="false" />
-            <element signature="e#3623#3624#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1844,10 +1838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1497982127427" expanded="true" signature="858:924" ph="select id, f... contact" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1855,7 +1845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1863,7 +1852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1871,7 +1859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1879,28 +1866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2175">
           <caret line="36" column="55" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="55" />
-          <folding>
-            <marker date="1498303796398" expanded="true" signature="4290:4352" ph="insert into users... " />
-            <marker date="1498303796398" expanded="true" signature="4391:4427" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="4466:4527" ph="update users... " />
-            <marker date="1498303796398" expanded="true" signature="4571:4629" ph="insert into authorities... " />
-            <marker date="1498303796398" expanded="true" signature="4679:4721" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="4760:4805" ph="select usern... users" />
-            <marker date="1498303796398" expanded="true" signature="4848:4896" ph="update users... " />
-            <marker date="1498303796398" expanded="true" signature="4938:4967" ph="select group... groups" />
-            <marker date="1498303796398" expanded="true" signature="5012:5105" ph="select usern... group_members" />
-            <marker date="1498303796398" expanded="true" signature="5145:5187" ph="insert into groups... " />
-            <marker date="1498303796398" expanded="true" signature="5227:5269" ph="select id fr... groups" />
-            <marker date="1498303796398" expanded="true" signature="5318:5382" ph="insert into group_authorities... " />
-            <marker date="1498303796398" expanded="true" signature="5422:5453" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="5504:5552" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="5599:5643" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="5683:5736" ph="update group... " />
-            <marker date="1498303796398" expanded="true" signature="5782:5841" ph="insert into group_members... " />
-            <marker date="1498303796398" expanded="true" signature="5887:5948" ph="delete from " />
-            <marker date="1498303796398" expanded="true" signature="5993:6114" ph="select g.id,... groups" />
-            <marker date="1498303796398" expanded="true" signature="6164:6230" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1916,7 +1881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1924,24 +1888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean14.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1434#1435#0" expanded="true" />
-            <element signature="e#1498#1516#0" expanded="true" />
-            <marker date="1500622828263" expanded="false" signature="921:940" ph=" { " />
-            <marker date="1500622828263" expanded="false" signature="970:984" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1949,22 +1895,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1383#1401#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_old_2.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/old/security_old_2.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1976,98 +1913,157 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="27" column="116" lean-forward="false" selection-start-line="27" selection-start-column="116" selection-end-line="27" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/genres.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean14.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="250">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="63" column="77" lean-forward="false" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/application-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-283">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/logo.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="63" column="77" lean-forward="false" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="77" />
+        <state relative-caret-position="250">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="350">
+          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec.xhtml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1550">
+          <caret line="62" column="13" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="62" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1750">
+          <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_template.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/sec_old.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/logo.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="3750">
+          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/security_menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
-          <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security_add_user.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding />
         </state>
       </provider>

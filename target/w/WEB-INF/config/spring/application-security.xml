@@ -16,7 +16,7 @@
 
 
         <intercept-url pattern="/app/main" access="hasRole('ROLE_USER')"/>
-        <intercept-url pattern="/app/security" access="hasRole('ROLE_ADMIN')"/>
+        <!--<intercept-url pattern="/app/security" access="hasRole('ROLE_ADMIN')"/>-->
 
         <session-management session-authentication-strategy-ref="sas"/>
         <!--<access-denied-handler ref="accessDeniedHandler"/>-->

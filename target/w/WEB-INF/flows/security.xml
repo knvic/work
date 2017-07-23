@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="security">
+
+
+
+
+
+      <view-state id="security" view="security.xhtml">
+            <transition on="adduser" to="security_add_user"/>
+      </view-state>
+
+      <view-state id="security_add_user" view="security_add_user.xhtml">
+            <transition on="end" to="end"/>
+            <transition on="back" to="security"/>
+      </view-state>
+
+      <end-state id="end"/>
+
+
+<!--
 
 
       <view-state id="security">
+            <transition on="adduser" to="security_add_user"/>
+      </view-state>
+      <view-state id="security_add_user" view="security_add_user.xhtml"/>
+-->
+
+      <!--
+      <view-state  id="security">
+
 
       <on-render>
             <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
       </on-render>
 
+            <transition on="adduser">
+                  <evaluate expression="testBean12.test()"/>
+            </transition>
+            <transition to="security_add_user"/>
+
+
+      </view-state>
+      <view-state id="security_add_user"/>
+
+-->
+
+            <!--
 
       <transition on="searchByLetter">
             <evaluate expression="facade.searchContactByLetter()" />
@@ -25,6 +64,7 @@
             <evaluate expression="facade.searchContactByText()" />
       </transition>
 
+-->
 
 
       <!--
@@ -34,7 +74,7 @@
                   <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
             </on-render>
        -->
-      </view-state>
+
 
 
 </flow>
