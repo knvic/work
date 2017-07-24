@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.security.AddUserSec;
 import ru.javabegin.training.security.SecurityService;
 
 import java.io.Serializable;
@@ -23,7 +24,7 @@ public class TestBean14 implements Serializable {
     private PasswordEncoder passwordEncoder;
 */
 
-    public void test() {
+    public String test(AddUserSec addUserSec) {
         /*GrantedAuthority auth = new GrantedAuthority() {
             private static final long serialVersionUID = 1L;
 
@@ -36,6 +37,7 @@ public class TestBean14 implements Serializable {
             private static final long serialVersionUID = 1L;
 
             public String getAuthority() {
+
                 return "ROLE_USER";
             }
         };
@@ -57,8 +59,9 @@ public class TestBean14 implements Serializable {
 
 
 //        UserDetails details = new User("root",  passwordEncoder.encodePassword("root", new Object()), true, true, true, true, set);
-        UserDetails details = new User("root",  "root", true, true, true, true, set);
+        UserDetails details = new User(addUserSec.getName(), addUserSec.getPass(), true, true, true, true, set);
         userDetailsService.createUser(details);
+        return "succes";
     }
 }
 

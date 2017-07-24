@@ -17,8 +17,23 @@
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
 
+        ddUserSec
+        <h:form styleClass="search_form" id="add_user">
 
-      
+
+            <input type="submit" class="button-text"></input>
+            <ul>
+
+
+            <li><h:inputText  id="add_name" styleClass="search-text" value="#{addUserSec.name}"/></li>
+            <li><h:inputText  id="add_pass" styleClass="search-text" value="#{addUserSec.pass}"/></li>
+
+            <li><p:commandButton id="btnAdd" value="#{msg.search}" update=":booksForm:booksList" styleClass="button" action="add" ajax="false"/></li>
+                <li><p:commandButton id="btnCancel" value="Назад" update=":booksForm:booksList" styleClass="button" action="back" ajax="false"/></li>
+            </ul>
+
+
+        </h:form>
 
 
     </ui:define>

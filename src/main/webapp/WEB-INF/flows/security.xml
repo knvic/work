@@ -7,15 +7,23 @@
 
 
 
-
+<var name="addUserSec" class="ru.javabegin.training.security.AddUserSec"/>
       <view-state id="security" view="security.xhtml">
             <transition on="adduser" to="security_add_user"/>
       </view-state>
 
-      <view-state id="security_add_user" view="security_add_user.xhtml">
-            <transition on="end" to="end"/>
+      <view-state id="security_add_user" view="security_add_user.xhtml" model="addUserSec">
+            <transition on="add" to="create_user"/>
             <transition on="back" to="security"/>
       </view-state>
+      
+      <action-state id="create_user">
+      <evaluate expression="testBean14.test(addUserSec)"  />
+      <!--<evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />-->
+      <transition on="succes" to="ok"/>
+      </action-state>
+
+      <view-state id="ok" view="security_ok.xhtml"/>
 
       <end-state id="end"/>
 
