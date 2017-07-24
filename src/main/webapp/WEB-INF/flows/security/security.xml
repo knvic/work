@@ -7,7 +7,7 @@
 
 
 
-<var name="addUserSec" class="ru.javabegin.training.security.AddUserSec"/>
+      <var name="addUserSec" class="ru.javabegin.training.security.AddUserSec"/>
       <view-state id="security" view="security.xhtml">
             <transition on="adduser" to="security_add_user"/>
       </view-state>
@@ -18,16 +18,19 @@
       </view-state>
       
       <action-state id="create_user">
-      <evaluate expression="testBean14.test(addUserSec)"  />
-      <!--<evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />-->
+      <evaluate expression="testBean14.test(addUserSec)"/>
       <transition on="succes" to="ok"/>
       </action-state>
 
-      <view-state id="ok" view="security_ok.xhtml"/>
+      <!--<view-state id="ok" view="security_ok.xhtml"/>-->
+      <view-state id="ok" view="security_ok.xhtml">
+            <transition on="end" to="security_end"/>
+            <transition on="repeat" to="security"/>
+      </view-state>
 
-      <end-state id="end"/>
+      <end-state id="security_end"  view="flowRedirect:main"/>
 
-
+</flow>
 <!--
 
 
@@ -85,7 +88,7 @@
 
 
 
-</flow>
+
         <!--
 result-type="dataModel"
                  <on-render>

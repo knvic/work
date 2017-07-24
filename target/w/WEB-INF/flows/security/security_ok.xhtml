@@ -16,15 +16,15 @@
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
-
-            <ul>
-
-
-            <li>Пользователь создан</li>
-            </ul>
+    <h:form>
+        <ul>
 
 
+            <li><p:commandButton id="btnEnd" value="Закончить" styleClass="button" action="end" ajax="false"/></li>
+            <li><p:commandButton id="btnStart" value="Назад"  styleClass="button" action="repeat" ajax="false"/></li>
+        </ul>
 
+</h:form>
 
 
     </ui:define>
