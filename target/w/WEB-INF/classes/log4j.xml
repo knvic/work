@@ -32,6 +32,9 @@
 	<logger name="org.springframework.security.access">
 		<level value="debug" />
 	</logger>
+	<logger name="org.springframework.webflow">
+		<level value="debug" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>
