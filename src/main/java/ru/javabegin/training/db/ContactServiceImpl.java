@@ -20,8 +20,7 @@ import java.util.List;
 @Repository
 @Transactional
 public class ContactServiceImpl implements ContactService {
-    final static String ALL_CONTACT_NATIVE_QUERY =
-        "select id, first_name, last_name, birth_date, version from contact";
+    final static String ALL_CONTACT_NATIVE_QUERY = "select id, first_name, last_name, birth_date, version from contact";
 
     private Log log = LogFactory.getLog(ContactServiceImpl.class);
 
