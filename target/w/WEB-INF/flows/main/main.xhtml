@@ -125,6 +125,23 @@
                 </p:commandLink>
             </h:form>
 
+            <h:form>
+                <p:growl id="growl" life="5000" />
+
+                <!--<p:commandButton value="Connect" id="ajax" update="growl" event="onclick"  action="Connect" styleClass="noborder-button"  />
+                <p:commandButton value="Close" event="onclick" action="Close" styleClass="noborder-button"  />-->
+
+                <p:commandButton value="Connect" id="ajax" update="growl" event="onclick"  action="Connect" styleClass="ui-priority-primary" />
+                <p:commandButton value="Close" id="ajax1" update="growl" event="onclick" action="Close" styleClass="noborder-button"  />
+
+               <!-- <p:commandLink id="Connect" update="booksForm" actionListener="#{modemService.connect()}">
+                    </p:commandLink>
+styleClass="ui-priority-primary"
+                <p:commandLink id="Close Connect" actionListener="#{modemService.close_connect()}" ajax="false">
+
+                </p:commandLink>-->
+            </h:form>
+
 
         </div>
 

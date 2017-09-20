@@ -96,6 +96,20 @@
                 </p:commandLink>
             </h:form>
 
+            <h:form>
+                <p:growl id="growl" life="2000" />
+
+                <p:commandButton value="Connect" event="onclick"  action="Connect" styleClass="noborder-button"  />
+                <p:commandButton value="Close" event="onclick" action="Close" styleClass="noborder-button"  />
+
+                <!-- <p:commandLink id="Connect" update="booksForm" actionListener="#{modemService.connect()}">
+                     </p:commandLink>
+
+                 <p:commandLink id="Close Connect" actionListener="#{modemService.close_connect()}" ajax="false">
+
+                 </p:commandLink>-->
+            </h:form>
+
 
         </div>
 

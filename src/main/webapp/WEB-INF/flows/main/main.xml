@@ -6,10 +6,12 @@
 
    <view-state id="main">
 
- <!--     <on-render>
-         <evaluate expression="testBean10.test()"/>
-      </on-render>
--->
+
+
+       <!--     <on-render>
+               <evaluate expression="testBean10.test()"/>
+            </on-render>
+      -->
        <on-render>
            <evaluate expression="securityService.getmydetails()" result="viewScope.list_ud"  />
        </on-render>
@@ -26,8 +28,20 @@
       </transition>
 
       <transition on="searchByText">
-         <evaluate expression="facade.searchContactByText()" />
-      </transition>
+       <evaluate expression="facade.searchContactByText()" />
+   </transition>
+
+       <transition on="Connect">
+       <evaluate expression="modemServiceImpl.connect()" />
+   </transition>
+
+       <transition on="Close">
+
+           <evaluate expression="modemServiceImpl.close_connect()" />
+
+       </transition>
+
+
 
 
    </view-state>

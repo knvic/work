@@ -4,6 +4,7 @@ import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
+import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.recieve.Recieve03ServiceImpl;
 import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
 
@@ -11,7 +12,7 @@ import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
  * Created by Николай on 03.09.2017.
  */
 
-
+@Component
 public class EventListener   implements SerialPortEventListener   { /*Слушатель срабатывающий по появлению данных на COM-порте*/
     public int size_byte;
     int count_data = 1;

@@ -136,7 +136,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/check-user", method = RequestMethod.POST)
 	public ModelAndView checkUser(@ModelAttribute("user") User user) {
-		return new ModelAndView("main", "user", user);
+		return new ModelAndView("modem_run", "user", user);
 	}
 
 	@RequestMapping(value = "/failed", method = RequestMethod.GET)
@@ -205,7 +205,7 @@ public class LoginController {
 
 
 
-		return "main";
+		return "modem_run";
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)

@@ -1,4 +1,5 @@
-package ru.javabegin.training.vkt7.main;
+/*
+package ru.javabegin.training.vkt7.modem_run;
 
 import jssc.SerialPort;
 import jssc.SerialPortException;
@@ -11,14 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
+*/
 /**
  * Created by Николай on 18.08.2017.
- */
+ *//*
+
 public class Main {
     public static volatile List<Object> connec;
     public static SerialPort serialPort;
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException, SerialPortException {
+    public static void main_rezerv (String[] args) throws InterruptedException, ExecutionException, TimeoutException, SerialPortException {
         Connect c =new Connect();
         List<Object> connect=new ArrayList<>();
 
@@ -171,3 +174,4 @@ public class Main {
 
     }
 }
+*/

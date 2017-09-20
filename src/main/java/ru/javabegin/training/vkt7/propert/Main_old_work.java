@@ -36,7 +36,7 @@ public class Main_old_work {
         return object;
     }
 
-    public static void main(String[] args) throws JAXBException {
+    public static void modem_run(String[] args) throws JAXBException {
         LinkedList<Properts> list = new LinkedList();
         Parser parser = new JaxbParser();
         File file = new File("1.xml");
