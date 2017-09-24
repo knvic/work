@@ -3,8 +3,8 @@ package ru.javabegin.training.vkt7.modem_run;
 import jssc.SerialPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.javabegin.training.vkt7.modem.Close_connect;
-import ru.javabegin.training.vkt7.modem.Connect;
+import ru.javabegin.training.vkt7.modem.Close_connect_test;
+import ru.javabegin.training.vkt7.modem.Connect_test;
 import ru.javabegin.training.vkt7.modem.EventListener;
 
 import java.util.ArrayList;
@@ -20,13 +20,14 @@ public class ModemServiceImpl_wait implements ModemService {
     public static volatile List<Object> connec;
   public SerialPort serialPort;
 
+
   public static volatile int m=50;
 
     @Autowired EventListener eventListener;
     @Override
     public void connect() throws ExecutionException, InterruptedException {
 
-        Connect c =new Connect();
+        Connect_test c =new Connect_test();
         List<Object> connect=new ArrayList<>();
 
         Callable task = () -> {
@@ -52,7 +53,7 @@ public class ModemServiceImpl_wait implements ModemService {
     public void close_connect(){
         System.out.println("Закрываем подключение !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
 
-        Close_connect cl = new Close_connect();
+        Close_connect_test cl = new Close_connect_test();
 
 
         Callable task3 = () -> {

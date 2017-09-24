@@ -25,7 +25,7 @@ public class EventListener   implements SerialPortEventListener   { /*Слуша
     public volatile static int step;
     public volatile static int recieve_all_byte;
     public static volatile int t;
-    SerialPort serialPort;
+    static SerialPort serialPort;
 
     String data;
 

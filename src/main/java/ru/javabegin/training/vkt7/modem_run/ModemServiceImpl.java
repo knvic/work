@@ -3,12 +3,9 @@ package ru.javabegin.training.vkt7.modem_run;
 import jssc.SerialPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import ru.javabegin.training.vkt7.modem.Close_connect;
-import ru.javabegin.training.vkt7.modem.Connect;
-import ru.javabegin.training.vkt7.modem.EventListener;
-import ru.javabegin.training.vkt7.propert.entities.Properts;
+import ru.javabegin.training.vkt7.modem.*;
 
+import javax.faces.view.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -18,14 +15,27 @@ import java.util.concurrent.*;
  */
 
     @Component
+    @ViewScoped
 public class ModemServiceImpl implements ModemService {
     public static volatile List<Object> connec;
-  public SerialPort serialPort;
-  @Autowired Connect connect;
-  @Autowired Close_connect close_connect;
+  public static volatile SerialPort serialPort;
+    public static volatile boolean stop=true;
 
 
-  public static volatile int m=50;
+  @Autowired
+  Connect_test connect;
+  @Autowired
+  Close_connect_test close_connect;
+
+
+    public static int getM() {
+        return m;
+    }
+    public void increment() {
+        m++;
+    }
+
+    public static volatile int m=50;
 
     @Autowired EventListener eventListener;
     @Override
@@ -57,7 +67,8 @@ public class ModemServiceImpl implements ModemService {
     public void close_connect(){
         System.out.println("Закрываем подключение !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
 
-        Close_connect cl = new Close_connect();
+        //Close_connect cl = new Close_connect();
+        Close_connect_test cl = new Close_connect_test();
 
 
         Callable task3 = () -> {
