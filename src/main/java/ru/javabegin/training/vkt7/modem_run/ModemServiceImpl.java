@@ -15,7 +15,7 @@ import java.util.concurrent.*;
  */
 
     @Component
-    @ViewScoped
+
 public class ModemServiceImpl implements ModemService {
     public static volatile List<Object> connec;
   public static volatile SerialPort serialPort;

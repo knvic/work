@@ -111,7 +111,7 @@ public class Contact implements Serializable {
     }
 
     @ManyToMany
-    @JoinTable(name = "contact_hobby_detail", 
+    @JoinTable(name = "contact_hobby_detail",
         joinColumns = @JoinColumn(name = "CONTACT_ID"),
         inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
     public Set<Hobby> getHobbies() {

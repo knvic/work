@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="ru.javabegin.training.vkt7.entities.Customer">
+        <table name="customer" schema="lukoil" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="11"/>
+            </id>
+            <basic name="firstName">
+                <column name="FIRST_NAME" nullable="false" length="45"/>
+            </basic>
+            <basic name="lastName">
+                <column name="LAST_NAME" nullable="false" length="45"/>
+            </basic>
+            <basic name="telNumber">
+                <column name="TEL_NUMBER" nullable="false" length="12"/>
+            </basic>
+            <basic name="telModem">
+                <column name="TEL_MODEM" nullable="false" length="12"/>
+            </basic>
+            <basic name="unitNumber">
+                <column name="UNIT_NUMBER" nullable="false" length="4"/>
+            </basic>
+            <basic name="eMail">
+                <column name="E_MAIL" nullable="false" length="45"/>
+            </basic>
+            <basic name="version">
+                <column name="VERSION" nullable="false" precision="11"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

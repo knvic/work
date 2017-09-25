@@ -3,6 +3,7 @@ package ru.javabegin.training.db;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.criterion.ProjectionList;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +25,8 @@ public class ContactServiceImpl implements ContactService {
 
     private Log log = LogFactory.getLog(ContactServiceImpl.class);
 
-    @PersistenceContext
+    @PersistenceContext(unitName="emf_contact")
+    @Qualifier(value = "emf")
     private EntityManager em;
 
     private ProjectionList contactProjection;
