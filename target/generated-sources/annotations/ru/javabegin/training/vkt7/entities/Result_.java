@@ -23,17 +23,17 @@ public abstract class Result_ {
 	public static volatile SingularAttribute<Result, String> t5Tv1;
 	public static volatile SingularAttribute<Result, String> t5Tv2;
 	public static volatile SingularAttribute<Result, Timestamp> beginDayDate;
+	public static volatile SingularAttribute<Result, Integer> customerId;
 	public static volatile SingularAttribute<Result, String> model;
 	public static volatile SingularAttribute<Result, Integer> id;
 	public static volatile SingularAttribute<Result, String> typeResult;
 	public static volatile SingularAttribute<Result, String> resultDate3Ff9;
-	public static volatile SingularAttribute<Result, Integer> veêsion;
 	public static volatile SingularAttribute<Result, Timestamp> dateResultServer;
 	public static volatile SingularAttribute<Result, String> numberBase;
+	public static volatile SingularAttribute<Result, Integer> version;
 	public static volatile SingularAttribute<Result, String> identificator;
 	public static volatile SingularAttribute<Result, String> shemaTv23Ff9;
 	public static volatile SingularAttribute<Result, String> status;
-	public static volatile SingularAttribute<Result, Customer> customer;
 
 }
 

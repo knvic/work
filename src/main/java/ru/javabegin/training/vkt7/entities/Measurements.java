@@ -18,11 +18,21 @@ public class Measurements {
     private Integer size;
     private String type;
     private Integer measurInt;
-    private Double measurFloat;
+    private Float measurFloat;
     private String measurText;
     private String quality;
     private String qualityText;
     private String ns;
+
+
+    public Measurements(int id, String name, String text, String ed, Integer znak, Integer size) {
+        this.id = id;
+        this.name = name;
+        this.text = text;
+        this.ed = ed;
+        this.znak = znak;
+        this.size = size;
+            }
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -106,11 +116,11 @@ public class Measurements {
 
     @Basic
     @Column(name = "MEASUR_FLOAT", nullable = true, precision = 0)
-    public Double getMeasurFloat() {
+    public Float getMeasurFloat() {
         return measurFloat;
     }
 
-    public void setMeasurFloat(Double measurFloat) {
+    public void setMeasurFloat(Float measurFloat) {
         this.measurFloat = measurFloat;
     }
 

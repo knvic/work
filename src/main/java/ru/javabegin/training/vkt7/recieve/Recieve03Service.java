@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.recieve;
 
-import ru.javabegin.training.vkt7.measurements.Measurements;
+
+import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 
 import java.text.ParseException;

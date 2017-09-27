@@ -2,10 +2,17 @@ package ru.javabegin.training.vkt7.modem_run;
 
 import jssc.SerialPort;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.db.Contact;
+import ru.javabegin.training.db.ContactService;
+import ru.javabegin.training.vkt7.db.CustomerService;
+import ru.javabegin.training.vkt7.db.ResultService;
+import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.entities.Test;
+import ru.javabegin.training.vkt7.entities.TestService;
 import ru.javabegin.training.vkt7.modem.*;
 
-import javax.faces.view.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -22,10 +29,29 @@ public class ModemServiceImpl implements ModemService {
     public static volatile boolean stop=true;
 
 
+
   @Autowired
   Connect_test connect;
   @Autowired
   Close_connect_test close_connect;
+
+    @Autowired
+    @Qualifier("jpaContactService")
+    ContactService contactService;
+
+
+
+    @Autowired
+    @Qualifier("jpaResultService")
+ResultService resultService;
+
+    @Autowired
+    @Qualifier("jpaCustomerService")
+    private CustomerService customerService;
+    @Autowired
+    @Qualifier("jpaTestService")
+    private TestService testService;
+
 
 
     public static int getM() {
@@ -47,7 +73,7 @@ public class ModemServiceImpl implements ModemService {
         Callable task = () -> {
             try {
                 //TimeUnit.SECONDS.sleep(1);
-                connec =c.connect();
+                connec =c.connect(customerService);
                 //return Thread.currentThread().getName();
                 return connec;
 
@@ -56,6 +82,35 @@ public class ModemServiceImpl implements ModemService {
                 throw new IllegalStateException("task interrupted", e);
             }
         };
+
+
+
+      /*  Customer custom=new Customer();
+
+        custom.setFirstName("qwewq");
+        custom.setLastName("rryyeeuuwweje");
+        customerService.save(custom);
+        List<Customer>l_cust=customerService.findAll();
+        l_cust.forEach(p->System.out.println(p.getFirstName()+" "+p.getTelModem()));
+*/
+
+
+      /*  Customer cu=new Customer();
+        cu.setFirstName("Новый");
+        cu.setTelModem("45645");
+        customerService.save(cu);
+        List<Customer> l_cu=customerService.findAll();
+        l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));
+
+        Test test= new Test();
+        test.setText("rere");
+        testService.save(test);
+        List<Test> l_te=testService.findAll();
+        l_te.forEach(p->System.out.println(p.getId()+" "+p.getText()));*/
+
+
+
+
 
         ExecutorService executor1 = Executors.newFixedThreadPool(2);
         Future<Object> future = executor1.submit(task);
@@ -115,6 +170,48 @@ public class ModemServiceImpl implements ModemService {
         executor3.shutdown();
 
     }
+
+@Override
+   public void get_current_data(){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+    CurrentData currentData=new CurrentData();
+
+    Callable task = () -> {
+        try {
+            //TimeUnit.SECONDS.sleep(1);
+           currentData.current_all_cycle(customerService);
+            //return Thread.currentThread().getName();
+            return "123";
+
+        }
+        catch (InterruptedException e) {
+            throw new IllegalStateException("task interrupted", e);
+        }
+    };
+
+
+
+
+    ExecutorService executor1 = Executors.newFixedThreadPool(2);
+    Future<String> future = executor1.submit(task);
+    executor1.shutdown();
+
+
+    System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+    System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+
+
+
+
+
+
+
+    }
+
+
+
 
 
 }

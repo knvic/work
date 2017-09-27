@@ -8,6 +8,9 @@
             <id name="id">
                 <column name="ID" precision="11"/>
             </id>
+            <basic name="customerId">
+                <column name="CUSTOMER_ID" nullable="false" precision="11"/>
+            </basic>
             <basic name="typeResult">
                 <column name="TYPE_RESULT" nullable="false" length="45"/>
             </basic>
@@ -71,11 +74,11 @@
             <basic name="error">
                 <column name="ERROR" nullable="false" length="45"/>
             </basic>
-            <basic name="veкsion">
-                <column name="VEКSION" nullable="false" precision="11"/>
-            </basic>
             <basic name="dateResultServer">
                 <column name="DATE_RESULT_SERVER" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="version">
+                <column name="VERSION" precision="11"/>
             </basic>
         </attributes>
     </entity>

@@ -4,8 +4,18 @@ import jssc.SerialPort;
 import jssc.SerialPortException;
 import jssc.SerialPortList;
 import org.primefaces.push.annotation.Singleton;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.db.ContactService;
+import ru.javabegin.training.db.ContactServiceImpl;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
+import ru.javabegin.training.vkt7.db.CustomerService;
+import ru.javabegin.training.vkt7.db.CustomerServiceImpl;
+import ru.javabegin.training.vkt7.db.ResultService;
+import ru.javabegin.training.vkt7.db.ResultServiceImpl;
+import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.entities.Result;
 import ru.javabegin.training.vkt7.modem_run.ModemServiceImpl;
 import ru.javabegin.training.vkt7.propert.Properts_ready_Impl;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
@@ -14,6 +24,7 @@ import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send03ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send10ServiceImpl;
 
+import javax.persistence.EntityManager;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +42,13 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 public class Connect extends EventListener{
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
     public static String data;
+
+
+
+   /* @Autowired
+    @Qualifier("jpaCustomerService")
+    private CustomerService customerService;
+*/
 
 
 /* public volatile static String data2;
@@ -51,20 +69,27 @@ public class Connect extends EventListener{
 
 
 
-    public  static List<Object> connect () throws InterruptedException, TimeoutException, ExecutionException {
+    public List<Object> connect(CustomerService customerService) throws InterruptedException, TimeoutException, ExecutionException {
+
+
         List<Object> connect =new ArrayList<>();
 
         stop=true;
-
-
-        serialPort = new SerialPort ("COM3"); /*Передаем в конструктор суперкласса имя порта с которым будем работать*/
-            System.out.println("\n m======= "+m);
-        System.out.println("\n STOP = =  "+stop);
         String[] portNames = SerialPortList.getPortNames();
+        String port="";
         for(int i = 0; i < portNames.length; i++){
-            System.out.println(portNames[i]);
+            port=portNames[i];
+            System.out.println(port);
+
         }
 
+
+
+        serialPort = new SerialPort (port); /*Передаем в конструктор суперкласса имя порта с которым будем работать*/
+            System.out.println("\n m======= "+m);
+        System.out.println("\n STOP = =  "+stop);
+
+        stop=false;
         while (stop!=false){
         try {
             System.out.println("\n  Открытие порта STOP = =  "+stop);
@@ -158,7 +183,7 @@ public class Connect extends EventListener{
            // Thread.sleep(30000);
             System.out.println("\nпосылаем +++");
             serialPort.writeBytes("+++".getBytes());
-            System.out.println("\n m======= "+m);
+
             Thread.sleep(500);
 
 
@@ -198,12 +223,12 @@ public class Connect extends EventListener{
 
                 if (data2.contains("OK")){
                     System.out.println("\n Команда AT&FL1E0V1&D2X4S7=120S10=90 прошла"+data2);
-                    Thread.sleep(000);
+
                     step=4;
                 }
                 else{
                     System.out.println("\n Ошибка команды AT&FL1E0V1&D2X4S7=120S10=90 = "+data2);
-                    Thread.sleep(2000);
+                    Thread.sleep(000);
                 }
 
             }
@@ -214,7 +239,7 @@ public class Connect extends EventListener{
 
             executor.shutdownNow();
             System.out.println("\n m======= "+m);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             System.out.println("\nНабираем номер");
 
 ///////////// Набор номера!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -389,6 +414,7 @@ public class Connect extends EventListener{
                 if (r_3fff) {
                     System.out.println("\n Команда 3F FF_n прошла. Принятые данные ::  " + data2);
                     Thread.sleep(1000);
+                    data2="";
                     step=6;
                     System.out.println();
                 }
@@ -450,6 +476,7 @@ public class Connect extends EventListener{
             System.out.println("\n m======= "+m);
             Thread.sleep(5000);
             System.out.println("\nЖдем получения всех данных после команды 3FF FE (Версия сервера 65 байт) ");
+            temp="";
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -536,7 +563,7 @@ public class Connect extends EventListener{
  * 3F F9  (S8) Запрос на чтение служебной информации ////
  */  //////////////////////////////////////////////////
 
-            System.out.println("\n m======= "+m);
+
             Thread.sleep(5000);
             System.out.println("\n Фoрмируем запрос 3F F9 Запрос на чтение служебной информации");
             List<String> service_information =new ArrayList<>();
@@ -718,6 +745,8 @@ t=1;
                 if (r_3fff) {
                     System.out.println("\n Команда 3F FF (Запрос на запись перечня для чтение) прошла. Принятые данные ::  " + data2);
                     Thread.sleep(1000);
+                    data2="";
+                    temp="";
                     step=11;
                     System.out.println();
                 }
@@ -737,6 +766,7 @@ t=1;
                     }
 
                    System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                    temp="";
                     serialPort.writeIntArray(request);
                     t=0;
                     executor.submit(callable(4));
@@ -806,6 +836,7 @@ t=1;
                     }
                     System.out.println("\n Ответ на 3F FE не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp="";
+                    z=0;
                     serialPort.writeIntArray(request);
                     t=0;
                     executor.submit(callable(4));
@@ -1006,6 +1037,7 @@ t=1;
             connect.add(serialPortList);
             connect.add(eventListeners);
 
+
         }
         catch (SerialPortException ex) {
             System.out.println (ex);
@@ -1018,6 +1050,17 @@ t=1;
         if (stop==true){
             System.out.println ("Программа закончила работу. Команды STOP не поступало");
         }
+
+        System.out.println ("Начинаем запись в базу");
+        Thread.sleep(2000);
+        Customer cu=new Customer();
+        cu.setFirstName("Очень новый");
+        cu.setTelModem("345345");
+        customerService.save(cu);
+        List<Customer> l_cu=customerService.findAll();
+        l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));
+
+
 
 
         return connect;

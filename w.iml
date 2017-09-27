@@ -20,10 +20,9 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="appPU" value="dataSource" />
-          <factory-entry name="appPU2" value="dataSource2" />
-          <factory-entry name="emf_contact" value="dataSource" />
-          <factory-entry name="emf_customer" value="dataSource2" />
+          <factory-entry name="emf_contact" value="9622d951-dd5d-4721-be70-2fc026050951" />
+          <factory-entry name="emf_customer" value="e14f5a6a-d2cf-41f5-a15d-c53c40b8db56" />
+          <factory-entry name="emf_test" value="dataSource3" />
         </datasource-mapping>
       </configuration>
     </facet>

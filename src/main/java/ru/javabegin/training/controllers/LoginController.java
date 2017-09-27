@@ -1,62 +1,62 @@
 package ru.javabegin.training.controllers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.security.access.AccessDecisionManager;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.session.SessionInformation;
-import org.springframework.security.core.session.SessionRegistry;
-import org.springframework.security.core.session.SessionRegistryImpl;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.springframework.web.servlet.ModelAndView;
-import ru.javabegin.training.db.Contact;
-import ru.javabegin.training.db.ContactService;
-import ru.javabegin.training.db.test.TestBean11;
-import ru.javabegin.training.objects.User;
-import ru.javabegin.training.security.MyUsDet;
-import ru.javabegin.training.security.SecurityService;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.beans.factory.annotation.Qualifier;
+        import org.springframework.context.ApplicationContext;
+        import org.springframework.security.access.AccessDecisionManager;
+        import org.springframework.security.core.GrantedAuthority;
+        import org.springframework.security.core.context.SecurityContextHolder;
+        import org.springframework.security.core.session.SessionInformation;
+        import org.springframework.security.core.session.SessionRegistry;
+        import org.springframework.security.core.session.SessionRegistryImpl;
+        import org.springframework.security.core.userdetails.UserDetails;
+        import org.springframework.security.web.authentication.WebAuthenticationDetails;
+        import org.springframework.stereotype.Controller;
+        import org.springframework.ui.Model;
+        import org.springframework.validation.BindingResult;
+        import org.springframework.web.bind.annotation.ModelAttribute;
+        import org.springframework.web.bind.annotation.RequestMapping;
+        import org.springframework.web.bind.annotation.RequestMethod;
+        import org.springframework.web.context.support.WebApplicationContextUtils;
+        import org.springframework.web.servlet.ModelAndView;
+        import ru.javabegin.training.db.Contact;
+        import ru.javabegin.training.db.ContactService;
+        import ru.javabegin.training.db.test.TestBean11;
+        import ru.javabegin.training.objects.User;
+        import ru.javabegin.training.security.MyUsDet;
+        import ru.javabegin.training.security.SecurityService;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+        import javax.annotation.Resource;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
+        import javax.servlet.http.HttpSession;
+        import java.security.Principal;
+        import java.util.ArrayList;
+        import java.util.Collections;
+        import java.util.List;
+        import java.util.stream.Collectors;
 
 @Controller
 public class LoginController {
 
-	@Autowired
-	ContactService contactService;
-	@Autowired
-	SecurityService securityService;
+    @Autowired
+    ContactService contactService;
+    @Autowired
+    SecurityService securityService;
 
 
-	@Autowired
-	private AccessDecisionManager accessDecisionManager;
+    @Autowired
+    private AccessDecisionManager accessDecisionManager;
 
 
 	/*@Resource(name="sessionRegistry")
 	private SessionRegistryImpl sessionRegistry;*/
 
-	@Autowired
-	private SessionRegistry sessionRegistry;
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+    @Autowired
+    private SessionRegistry sessionRegistry;
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 
 
@@ -66,117 +66,117 @@ public class LoginController {
 
 
 
-	@RequestMapping(value = "/ss", method = RequestMethod.GET)
-	public String getPrincipals() {
-		System.out.println("Spring Security ContextHolder");
-		Object principal = securityService.getAllPrincipals();
-		return "calc";
-	}
+    @RequestMapping(value = "/ss", method = RequestMethod.GET)
+    public String getPrincipals() {
+        System.out.println("Spring Security ContextHolder");
+        Object principal = securityService.getAllPrincipals();
+        return "calc";
+    }
 
-	@RequestMapping(value = "/s1", method = RequestMethod.GET)
-	public String MyUserDetails() {
-		System.out.println("Получение деталей пользователя");
-		List<MyUsDet> ud = securityService.getmydetails();
-		return "calc";
-	}
-
-
-@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
-	public ModelAndView accesssDenied(Principal user) {
-
-		ModelAndView model = new ModelAndView();
-
-		// пока русский текст без локализации, хотя так не рекомендуется!
-		if (user != null) {
-			model.addObject("errorMsg", user.getName() + " у вас нет доступа к этой странице!");
-		} else {
-			model.addObject("errorMsg", "У вас нет доступа к этой странице!");
-		}
-
-		model.setViewName("/accessDenied");
-		return model;
-
-	}
-
-	@RequestMapping(value = "/calc", method = RequestMethod.GET)
-	public String calc(HttpSession session) {
-		return "calc";
-	}
-	@RequestMapping(value = "/error", method = RequestMethod.GET)
-	public String error(HttpSession session) {
-		return "error";
-	}
-
-	@RequestMapping(value = "/1", method = RequestMethod.GET)
-	public ModelAndView main(HttpSession session) {
-		return new ModelAndView("login");
-	}
+    @RequestMapping(value = "/s1", method = RequestMethod.GET)
+    public String MyUserDetails() {
+        System.out.println("Получение деталей пользователя");
+        List<MyUsDet> ud = securityService.getmydetails();
+        return "calc";
+    }
 
 
-	@RequestMapping(value = "/2", method = RequestMethod.GET)
-	public ModelAndView log1(HttpSession session) {
-		System.out.println(accessDecisionManager);
-		return new ModelAndView("login1","user", new User());
-	}
-	/*@RequestMapping(value = "/3", method = RequestMethod.POST)
-	public ModelAndView secondPage(@ModelAttribute("user") User user, HttpSession session) {
-		ModelAndView model = new ModelAndView();
-		model.addObject("user", user );
-		model.setViewName("secondPage");
+    @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
+    public ModelAndView accesssDenied(Principal user) {
 
-		return model;
-	}*/
-	@RequestMapping(value = "/3", method = RequestMethod.GET)
-	public String secondPage() {
+        ModelAndView model = new ModelAndView();
 
+        // пока русский текст без локализации, хотя так не рекомендуется!
+        if (user != null) {
+            model.addObject("errorMsg", user.getName() + " у вас нет доступа к этой странице!");
+        } else {
+            model.addObject("errorMsg", "У вас нет доступа к этой странице!");
+        }
 
-		return "redirect:secondPage";
-	}
+        model.setViewName("/accessDenied");
+        return model;
 
+    }
 
-	@RequestMapping(value = "/check-user", method = RequestMethod.POST)
-	public ModelAndView checkUser(@ModelAttribute("user") User user) {
-		return new ModelAndView("modem_run", "user", user);
-	}
+    @RequestMapping(value = "/calc", method = RequestMethod.GET)
+    public String calc(HttpSession session) {
+        return "calc";
+    }
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    public String error(HttpSession session) {
+        return "error";
+    }
 
-	@RequestMapping(value = "/failed", method = RequestMethod.GET)
-	public ModelAndView failed() {
-		return new ModelAndView("login-failed", "message", "Login failed!");
-	}
-
-
-	@RequestMapping(value = "/db", method = RequestMethod.GET)
-	public ModelAndView ById() {
-		ModelAndView model = new ModelAndView();
-		List<Contact> contact = contactService.findByCriteriaQuery("John", "Smith");
+    @RequestMapping(value = "/1", method = RequestMethod.GET)
+    public ModelAndView main(HttpSession session) {
+        return new ModelAndView("login");
+    }
 
 
-		model.addObject("contact", contact );
-		model.setViewName("secondPage");
+    @RequestMapping(value = "/2", method = RequestMethod.GET)
+    public ModelAndView log1(HttpSession session) {
+        System.out.println(accessDecisionManager);
+        return new ModelAndView("login1","user", new User());
+    }
+    /*@RequestMapping(value = "/3", method = RequestMethod.POST)
+    public ModelAndView secondPage(@ModelAttribute("user") User user, HttpSession session) {
+        ModelAndView model = new ModelAndView();
+        model.addObject("user", user );
+        model.setViewName("secondPage");
+
+        return model;
+    }*/
+    @RequestMapping(value = "/3", method = RequestMethod.GET)
+    public String secondPage() {
 
 
-		//System.out.println(TestBean11.test());
-		 String uname;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			uname = ((UserDetails)principal).getUsername();
-		} else {
-			uname = principal.toString();
-		}
-
-		System.out.println("");
-		System.out.println("Username :"+uname);
+        return "redirect:secondPage";
+    }
 
 
-		return model;
-	}
+    @RequestMapping(value = "/check-user", method = RequestMethod.POST)
+    public ModelAndView checkUser(@ModelAttribute("user") User user) {
+        return new ModelAndView("modem_run", "user", user);
+    }
+
+    @RequestMapping(value = "/failed", method = RequestMethod.GET)
+    public ModelAndView failed() {
+        return new ModelAndView("login-failed", "message", "Login failed!");
+    }
 
 
+    @RequestMapping(value = "/db", method = RequestMethod.GET)
+    public ModelAndView ById() {
+        ModelAndView model = new ModelAndView();
+        List<Contact> contact = contactService.findByCriteriaQuery("John", "Smith");
+
+
+        model.addObject("contact", contact );
+        model.setViewName("secondPage");
+
+
+        //System.out.println(TestBean11.test());
+        String uname;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            uname = ((UserDetails)principal).getUsername();
+        } else {
+            uname = principal.toString();
+        }
+
+        System.out.println("");
+        System.out.println("Username :"+uname);
+
+
+        return model;
+    }
 
 
 
-	@RequestMapping(value = "/p", method = RequestMethod.GET)
-	public String allPrincipals(HttpServletRequest request, HttpServletResponse response) {
+
+
+    @RequestMapping(value = "/p", method = RequestMethod.GET)
+    public String allPrincipals(HttpServletRequest request, HttpServletResponse response) {
 
 	/*	ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());
 		SessionRegistry sReg = (SessionRegistry) appContext.getBean("sessionRegistry");
@@ -188,7 +188,7 @@ public class LoginController {
 
 		//List<String> a = AllPrinc.getUsersFromSessionRegistry();*/
 
-		//List<Object> principals =sessionRegistry.getAllPrincipals();
+        //List<Object> principals =sessionRegistry.getAllPrincipals();
 	/*	List<String> a= sessionRegistry.getAllPrincipals().stream()
 				.filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
 				.map(Object::toString)
@@ -197,111 +197,111 @@ public class LoginController {
 		System.out.println("a="+a);*/
 
 
-		System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
+        System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
 
 
-		getActiveSessions(sessionRegistry);
-
-
-
-
-		return "modem_run";
-	}
-
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public String allPrincipals1() {
-
-
-	//	System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
-
-
-		List<SessionInformation> si= getActiveSessions(sessionRegistry);
-		for (Object principal : si) {
-			System.out.println("SessionInformation = "+principal);
-		}
-
-		List<Object> principals= getAllPrincipals(sessionRegistry);
-		for (Object principal : principals) {
-			System.out.println("Principal: "+principal.toString());
-
-		}
-
-		List<String> a= sessionRegistry.getAllPrincipals().stream()
-				.filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
-				.map(Object::toString)
-				.collect(Collectors.toList());
-
-		System.out.println("a="+a);
-		logger.info("getDetails " +a);
-
-		printUserDetails();
-
-		killUser(sessionRegistry,"user");
-
-
-		return "/";
-	}
-
-	private void killUser(SessionRegistry sessionRegistry,String username) {
-
-
-		final List<Object> principals = sessionRegistry.getAllPrincipals();
-
-
-		for(Object principal: principals)
-		{
-			UserDetails authentication = (UserDetails)principal;
-			System.out.println("Candidate User: "+authentication.getUsername()+". User for dropped "+ username);
-			if(authentication.getUsername().equals(username))
-			{
-				List<SessionInformation> userSessions = sessionRegistry.getAllSessions(principal, false);// получаем все сессии пользователя, кроме истекших
-				for(SessionInformation sessInfo: userSessions)
-					sessInfo.expireNow();
-			}
-		}
-
-		System.out.println("User: "+username+" dropped");
-
-
-		return;
-	}
+        getActiveSessions(sessionRegistry);
 
 
 
-	private List<SessionInformation> getActiveSessions(SessionRegistry sessionRegistry) {
-		final List<Object> principals = sessionRegistry.getAllPrincipals();
-		if (principals != null) {
-			System.out.println("Principals не равен нулю");
-			List<SessionInformation> sessions = new ArrayList<>();
-			for (Object principal : principals) {
-				sessions.addAll(sessionRegistry.getAllSessions(principal,     false));
-			}
-			return sessions;
-		}
-		return Collections.emptyList();
-	}
-	private List<Object> getAllPrincipals(SessionRegistry sessionRegistry) {
-		final List<Object> principals = sessionRegistry.getAllPrincipals();
-		return principals;
-	}
+
+        return "modem_run";
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public String allPrincipals1() {
+
+
+        //	System.out.println("Principals: "+sessionRegistry.getAllPrincipals().size());
+
+
+        List<SessionInformation> si= getActiveSessions(sessionRegistry);
+        for (Object principal : si) {
+            System.out.println("SessionInformation = "+principal);
+        }
+
+        List<Object> principals= getAllPrincipals(sessionRegistry);
+        for (Object principal : principals) {
+            System.out.println("Principal: "+principal.toString());
+
+        }
+
+        List<String> a= sessionRegistry.getAllPrincipals().stream()
+                .filter(u -> !sessionRegistry.getAllSessions(u, false).isEmpty())
+                .map(Object::toString)
+                .collect(Collectors.toList());
+
+        System.out.println("a="+a);
+        logger.info("getDetails " +a);
+
+        printUserDetails();
+
+        killUser(sessionRegistry,"user");
+
+
+        return "/";
+    }
+
+    private void killUser(SessionRegistry sessionRegistry,String username) {
+
+
+        final List<Object> principals = sessionRegistry.getAllPrincipals();
+
+
+        for(Object principal: principals)
+        {
+            UserDetails authentication = (UserDetails)principal;
+            System.out.println("Candidate User: "+authentication.getUsername()+". User for dropped "+ username);
+            if(authentication.getUsername().equals(username))
+            {
+                List<SessionInformation> userSessions = sessionRegistry.getAllSessions(principal, false);// получаем все сессии пользователя, кроме истекших
+                for(SessionInformation sessInfo: userSessions)
+                    sessInfo.expireNow();
+            }
+        }
+
+        System.out.println("User: "+username+" dropped");
+
+
+        return;
+    }
 
 
 
-	public ModelAndView exampleClick() {
+    private List<SessionInformation> getActiveSessions(SessionRegistry sessionRegistry) {
+        final List<Object> principals = sessionRegistry.getAllPrincipals();
+        if (principals != null) {
+            System.out.println("Principals не равен нулю");
+            List<SessionInformation> sessions = new ArrayList<>();
+            for (Object principal : principals) {
+                sessions.addAll(sessionRegistry.getAllSessions(principal,     false));
+            }
+            return sessions;
+        }
+        return Collections.emptyList();
+    }
+    private List<Object> getAllPrincipals(SessionRegistry sessionRegistry) {
+        final List<Object> principals = sessionRegistry.getAllPrincipals();
+        return principals;
+    }
 
-		return new ModelAndView("secondPage");
-	}
 
-	public void printUserDetails() {
 
-		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    public ModelAndView exampleClick() {
 
-		logger.info("password = " + userDetails.getPassword());
-		logger.info("username = " + userDetails.getUsername());
+        return new ModelAndView("secondPage");
+    }
 
-		for (GrantedAuthority auth : userDetails.getAuthorities()) {
-			logger.info(auth.getAuthority());
-		}
+    public void printUserDetails() {
+
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        logger.info("password = " + userDetails.getPassword());
+        logger.info("username = " + userDetails.getUsername());
+
+        for (GrantedAuthority auth : userDetails.getAuthorities()) {
+            logger.info(auth.getAuthority());
+        }
 
 		/*Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
 		System.out.println("getDetails"+details);
@@ -312,10 +312,10 @@ public class LoginController {
 */
 
 
-		WebAuthenticationDetails details = (WebAuthenticationDetails)SecurityContextHolder.getContext().getAuthentication().getDetails();
-		String userIPAddress = details.getRemoteAddress();
-		System.out.println("userIPAddress=="+userIPAddress);
-	}
+        WebAuthenticationDetails details = (WebAuthenticationDetails)SecurityContextHolder.getContext().getAuthentication().getDetails();
+        String userIPAddress = details.getRemoteAddress();
+        System.out.println("userIPAddress=="+userIPAddress);
+    }
 
 
 /*

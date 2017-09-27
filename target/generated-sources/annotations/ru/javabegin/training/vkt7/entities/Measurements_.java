@@ -10,7 +10,7 @@ public abstract class Measurements_ {
 
 	public static volatile SingularAttribute<Measurements, String> ns;
 	public static volatile SingularAttribute<Measurements, Integer> znak;
-	public static volatile SingularAttribute<Measurements, Double> measurFloat;
+	public static volatile SingularAttribute<Measurements, Float> measurFloat;
 	public static volatile SingularAttribute<Measurements, String> type;
 	public static volatile SingularAttribute<Measurements, String> measurText;
 	public static volatile SingularAttribute<Measurements, String> qualityText;

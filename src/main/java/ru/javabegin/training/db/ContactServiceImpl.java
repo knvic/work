@@ -25,9 +25,16 @@ public class ContactServiceImpl implements ContactService {
 
     private Log log = LogFactory.getLog(ContactServiceImpl.class);
 
-    @PersistenceContext(unitName="emf_contact")
+    /*@PersistenceContext(unitName="emf_contact")
     @Qualifier(value = "emf")
+*/
+    @Qualifier(value = "emf_1")
+    @PersistenceContext(unitName="emf_customer")
+
     private EntityManager em;
+
+
+
 
     private ProjectionList contactProjection;
 

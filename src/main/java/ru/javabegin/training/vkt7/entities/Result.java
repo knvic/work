@@ -5,12 +5,31 @@ import ru.javabegin.training.db.Contact;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 /**
- * Created by Николай on 24.09.2017.
+ * Created by Николай on 25.09.2017.
  */
 @Entity
+
+@Table(name = "result")
+@NamedQueries({
+        @NamedQuery(name="Result.findAll", query="select c from Result c"),
+        /*@NamedQuery(name="Result.findById",
+                query="select distinct c from Result c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
+        @NamedQuery(name="Contact.findAllWithDetail",
+                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")*/
+})
+@SqlResultSetMapping(
+        name="resultResult",
+        entities=@EntityResult(entityClass=Result.class)
+)
+
+
+
 public class Result {
     private int id;
+    private Integer customerId;
     private String typeResult;
     private String serverVersion;
     private String programmVersion;
@@ -32,12 +51,11 @@ public class Result {
     private String numberBase;
     private String status;
     private String error;
-    private Integer veкsion;
     private Timestamp dateResultServer;
-
-    private Customer customer;
+    private int version;
 
     @Id
+    @GeneratedValue(strategy = IDENTITY)
     @Column(name = "ID", nullable = false)
     public int getId() {
         return id;
@@ -45,6 +63,16 @@ public class Result {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "CUSTOMER_ID", nullable = true)
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     @Basic
@@ -258,16 +286,6 @@ public class Result {
     }
 
     @Basic
-    @Column(name = "VEКSION", nullable = true)
-    public Integer getVeкsion() {
-        return veкsion;
-    }
-
-    public void setVeкsion(Integer veкsion) {
-        this.veкsion = veкsion;
-    }
-
-    @Basic
     @Column(name = "DATE_RESULT_SERVER", nullable = true)
     public Timestamp getDateResultServer() {
         return dateResultServer;
@@ -277,19 +295,15 @@ public class Result {
         this.dateResultServer = dateResultServer;
     }
 
-
-
-
-    @ManyToOne
-    @JoinColumn(name = "CUSTOMER_ID")
-    public Customer getCustomer() {
-        return this.customer;
+    @Basic
+    @Column(name = "VERSION", nullable = false)
+    public int getVersion() {
+        return version;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setVersion(int version) {
+        this.version = version;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -299,6 +313,8 @@ public class Result {
         Result result = (Result) o;
 
         if (id != result.id) return false;
+        if (version != result.version) return false;
+        if (customerId != null ? !customerId.equals(result.customerId) : result.customerId != null) return false;
         if (typeResult != null ? !typeResult.equals(result.typeResult) : result.typeResult != null) return false;
         if (serverVersion != null ? !serverVersion.equals(result.serverVersion) : result.serverVersion != null)
             return false;
@@ -330,7 +346,6 @@ public class Result {
         if (numberBase != null ? !numberBase.equals(result.numberBase) : result.numberBase != null) return false;
         if (status != null ? !status.equals(result.status) : result.status != null) return false;
         if (error != null ? !error.equals(result.error) : result.error != null) return false;
-        if (veкsion != null ? !veкsion.equals(result.veкsion) : result.veкsion != null) return false;
         if (dateResultServer != null ? !dateResultServer.equals(result.dateResultServer) : result.dateResultServer != null)
             return false;
 
@@ -340,6 +355,7 @@ public class Result {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + (customerId != null ? customerId.hashCode() : 0);
         result = 31 * result + (typeResult != null ? typeResult.hashCode() : 0);
         result = 31 * result + (serverVersion != null ? serverVersion.hashCode() : 0);
         result = 31 * result + (programmVersion != null ? programmVersion.hashCode() : 0);
@@ -361,8 +377,8 @@ public class Result {
         result = 31 * result + (numberBase != null ? numberBase.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (error != null ? error.hashCode() : 0);
-        result = 31 * result + (veкsion != null ? veкsion.hashCode() : 0);
         result = 31 * result + (dateResultServer != null ? dateResultServer.hashCode() : 0);
+        result = 31 * result + version;
         return result;
     }
 }

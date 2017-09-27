@@ -9,7 +9,7 @@
       xmlns:sec="http://www.springframework.org/security/tags">
 
 
-<ui:composition template="/WEB-INF/templates/library.xhtml">
+<ui:composition template="/WEB-INF/templates/security_template.xhtml">
 
     <ui:define name="title">
         #{msg.book_list}
@@ -18,86 +18,72 @@
     <ui:define name="content">
 
 
-        <h:form id="booksForm">
-
-
-            <p:dataGrid rowIndexVar="rowIndex" columns="2" lazy="true" var="b" value="${facade.contacts}"
-                        id="booksList" styleClass="books_list" paginator="true" rows="4" paginatorPosition="bottom"
-                        rowsPerPageTemplate="4,10,20" paginatorTemplate="{RowsPerPageDropdown} {PageLinks}"
-                        paginatorAlwaysVisible="true" emptyMessage="">
-
-
-                <div class="item">
-
-                    <div class="image-info">
-
-                        <h:outputLink id="image" styleClass="content_link" value="#{request.contextPath}/PdfContent"  target="_blank">
-                            <p:graphicImage value="/ShowImage?index=#{rowIndex}" width="110" height="150"/>
-                            <f:param name="id" value="#{b.id}"/>
-                        </h:outputLink>
-
-
-
-                    </div>
-
-
-                    <div class="info">
-                        <div class="book_name">
-                            <h:outputLink id="bookName" styleClass="title" value="#{request.contextPath}/PdfContent" target="_blank">
-                                #{b.firstName}
-                                <f:param name="id" value="#{b.id}"/>
-                                <f:param name="save" value="false"/>
-
-                            </h:outputLink>
-
-                        </div>
-                        <p>${msg.user} ${uname}</p>
-                        <span>#{b.lastName}</span>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
 
 
 
 
-                        <p><strong>#{msg.page_count}:</strong> #{b.id}</p>
-
-                        <p><strong>#{msg.publisher}</strong> #{b.version}</p>
-
-                        <p><strong>#{msg.publish_year}</strong> #{b.birthDate} г.</p>
-
-
-
-                    </div>
-
-
-                    <h:outputLink styleClass="mr" value="#{request.contextPath}/PdfContent" target="_blank">
-                        <p class="read">#{msg.read}</p>
-                        <f:param name="id" value="#{b.id}"/>
-                        <f:param name="save" value="false"/>
-                    </h:outputLink>
-
-                    <h:outputLink styleClass="mr" value="#{request.contextPath}/PdfContent" target="_blank">
-                        <p class="download">#{msg.download}</p>
-                        <f:param name="id" value="#{b.id}"/>
-                        <f:param name="filename" value="#{b.lastName}"/>
-                        <f:param name="save" value="true"/>
-                    </h:outputLink>
-
-                    <p:commandLink styleClass="mr" title="#{msg.edit_book}" rendered="#{sec:areAllGranted('ROLE_ADMIN')}">
-                        <p class="edit">#{msg.edit}</p>
-                    </p:commandLink>
-
-                    <p:commandLink styleClass="delete-button" title="#{msg.delete_book}" type="button">
-                        <p class="delete">#{msg.delete}</p>
-                    </p:commandLink>
+            <p:dataTable id="radioDT" var="u" value="${facade_t.customers}" selection="#{selectionCustomer.cust}" rowKey="#{u.firstName}">
+                <f:facet name="header">
+                    RadioButton
+                </f:facet>
+                <p:column selectionMode="single" style="width:16px;text-align:center"/>
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.lastName}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
 
 
-                </div>
+                <f:facet name="footer">
+                    <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
+                </f:facet>
+
+            </p:dataTable>
+
+            <p:dialog header="Информация о потребителе" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                <p:outputPanel id="carDetail" style="text-align:center;">
+                    <p:panelGrid  columns="2" rendered="#{not empty selectionCustomer.cust}" columnClasses="label,value">
 
 
-            </p:dataGrid>
+                        <h:outputText value="Организация :" />
+                        <h:outputText value="#{selectionCustomer.cust.firstName}" />
+                        <h:outputText value="Номер модема:" />
+                        <h:outputText value="#{selectionCustomer.cust.telModem}" />
+                        <h:outputText value="Номер устройства:" />
+                        <h:outputText value="#{selectionCustomer.cust.unitNumber}" />
+
+
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+            <p:commandButton value="adduser" action="adduser" title="transition on=adduser"/>
+
+            <p:growl id="grow2" life="5000" />
+
+            <!--<p:commandButton value="Connect" id="ajax" update="growl" event="onclick"  action="Connect" styleClass="noborder-button"  />
+            <p:commandButton value="Close" event="onclick" action="Close" styleClass="noborder-button"  />-->
+
+            <p:commandButton value="Connect" id="ajax" update="grow2" event="onclick"  action="Connect" styleClass="ui-priority-primary" />
+            <p:commandButton value="Close" id="ajax1" update="grow2" event="onclick" action="Close" styleClass="noborder-button"  />
+            <p:commandButton value="Current" id="ajax2" update="grow2" event="onclick" action="Current" styleClass="noborder-button"  />
+
+            <p:commandButton value="ReScan" event="onclick" process="@form" update=":form:radioDT" action="reScan" styleClass="noborder-button" actionListener="#{searchCriteria.setLetter(letter)}" />
+
+         <!--   <h:outputText id="txt_count" value="#{modemServiceImpl.getM()}" />
+            <p:poll interval="3" listener="#{modemServiceImpl.increment()}" update="txt_count" />
+-->
+
+
+
 
 
         </h:form>
-
 
 
     </ui:define>
@@ -126,20 +112,17 @@
             </h:form>
 
             <h:form>
-                <p:growl id="growl" life="5000" />
+                <p:growl id="growl" life="2000" />
 
-                <!--<p:commandButton value="Connect" id="ajax" update="growl" event="onclick"  action="Connect" styleClass="noborder-button"  />
-                <p:commandButton value="Close" event="onclick" action="Close" styleClass="noborder-button"  />-->
+                <p:commandButton value="Connect" event="onclick"  action="Connect" styleClass="noborder-button"  />
+                <p:commandButton value="Close" event="onclick" action="Close" styleClass="noborder-button"  />
 
-                <p:commandButton value="Connect" id="ajax" update="growl" event="onclick"  action="Connect" styleClass="ui-priority-primary" />
-                <p:commandButton value="Close" id="ajax1" update="growl" event="onclick" action="Close" styleClass="noborder-button"  />
+                <!-- <p:commandLink id="Connect" update="booksForm" actionListener="#{modemService.connect()}">
+                     </p:commandLink>
 
-               <!-- <p:commandLink id="Connect" update="booksForm" actionListener="#{modemService.connect()}">
-                    </p:commandLink>
-styleClass="ui-priority-primary"
-                <p:commandLink id="Close Connect" actionListener="#{modemService.close_connect()}" ajax="false">
+                 <p:commandLink id="Close Connect" actionListener="#{modemService.close_connect()}" ajax="false">
 
-                </p:commandLink>-->
+                 </p:commandLink>-->
             </h:form>
 
 

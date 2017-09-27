@@ -4,7 +4,8 @@ import jssc.SerialPort;
 import jssc.SerialPortException;
 import jssc.SerialPortList;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
-import ru.javabegin.training.vkt7.measurements.Measurements;
+
+import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.measurements.MeasurementsServiceImpl;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 import ru.javabegin.training.vkt7.recieve.Recieve03ServiceImpl;

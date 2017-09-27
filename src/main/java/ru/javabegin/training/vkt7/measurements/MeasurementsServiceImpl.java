@@ -1,5 +1,6 @@
 package ru.javabegin.training.vkt7.measurements;
 
+import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 
 import java.util.ArrayList;

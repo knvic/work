@@ -14,7 +14,6 @@
 
     <context:component-scan base-package="ru.javabegin.training" />
 
-
     <bean id="userDetailsService" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
         <property name="dataSource" ref="dataSource1" />
         <property name="authenticationManager" ref="authenticationManager" />
@@ -68,8 +67,14 @@
         <property name="password" value="Kelly200" />
     </bean>
     <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/lukoil"/>
+    <property name="username" value="root" />
+    <property name="password" value="Kelly200" />
+</bean>
+    <bean id="dataSource3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/lukoil"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test_persist_26_09"/>
         <property name="username" value="root" />
         <property name="password" value="Kelly200" />
     </bean>
@@ -86,7 +91,7 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
 
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource2" />
         <property name="persistenceUnitName" value="emf_contact" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
@@ -107,12 +112,12 @@
 
 
     <bean id="transactionManager1" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="emf_1"/>
-    </bean>
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <property name="entityManagerFactory" ref="emf_1"/>
+</bean>
+    <tx:annotation-driven transaction-manager="transactionManager1" />
 
     <bean id="emf_1" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource2" />
+        <property name="dataSource" ref="dataSource" />
         <property name="persistenceUnitName" value="emf_customer" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
@@ -128,6 +133,32 @@
             </props>
         </property>
     </bean>
+
+
+    <bean id="transactionManager2" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="emf_2"/>
+
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager2" />
+
+    <bean id="emf_2" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource3" />
+        <property name="persistenceUnitName" value="emf_test" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="packagesToScan" value="ru.javabegin.training"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <prop key="hibernate.jdbc.fetch_size">50</prop>
+                <prop key="hibernate.jdbc.batch_size">10</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
 
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">

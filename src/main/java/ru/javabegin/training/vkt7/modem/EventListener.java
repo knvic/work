@@ -19,7 +19,7 @@ public class EventListener   implements SerialPortEventListener   { /*Слуша
     public static String temp = "";
     long data_res;
     int count = 0;
-    int z = 0;
+    static int z = 0;
 
     public volatile static String data2;
     public volatile static int step;

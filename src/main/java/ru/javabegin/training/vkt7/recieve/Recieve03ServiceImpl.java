@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.recieve;
 
-import ru.javabegin.training.vkt7.measurements.Measurements;
+
+import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.propert.Properties_xml;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 
@@ -272,11 +273,11 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                 if(quality.equals("C0")){
 
                     temp_measur.setType("int");
-                    temp_measur.setMeasur_int(Integer.parseInt(l2b(measur),16));
+                    temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
                         if (temp_measur.getEd()!=null){
-                            temp_measur.setMeasur_text(String.valueOf( temp_measur.getMeasur_int()*0.01)+temp_measur.getEd());}
+                            temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt()*0.01)+temp_measur.getEd());}
                         else{
-                            temp_measur.setMeasur_text(String.valueOf(temp_measur.getMeasur_int()*0.01));
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01));
                         }
                                     }
                 else{System.out.println(temp_measur.getText()+"  - не верный байт качества");}
@@ -285,11 +286,11 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                 if(quality.equals("C0")){
 
                     temp_measur.setType("float");
-                    temp_measur.setMeasur_float(Float.intBitsToFloat(Integer.valueOf(l2b(measur),16).intValue()));
+                    temp_measur.setMeasurFloat(Float.intBitsToFloat(Integer.valueOf(l2b(measur),16).intValue()));
                         if (temp_measur.getEd()!=null){
-                        temp_measur.setMeasur_text(String.valueOf(temp_measur.getMeasur_float())+temp_measur.getEd());}
+                        temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat())+temp_measur.getEd());}
                         else{
-                            temp_measur.setMeasur_text(String.valueOf(temp_measur.getMeasur_float()));
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()));
                         }
                     //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
 
@@ -299,12 +300,12 @@ public class Recieve03ServiceImpl implements Recieve03Service{
             }
 
             temp_measur.setQuality(quality);
-            temp_measur.setQuality_text(OPC_QUALITY(quality));
+            temp_measur.setQualityText(OPC_QUALITY(quality));
             temp_measur.setNs(ns);
             //System.out.println("Байт качества = "+OPC_QUALITY(quality));
             //System.out.println("Байт нештатной ситуации = "+ns);
 
-            System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_text()+" байт качества -"+temp_measur.getQuality_text()+"NS -"+temp_measur.getNs());
+            System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasurText()+" байт качества -"+temp_measur.getQualityText()+"NS -"+temp_measur.getNs());
 
 
 
