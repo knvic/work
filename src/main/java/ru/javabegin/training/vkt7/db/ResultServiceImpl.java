@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.vkt7.entities.Result;
-import ru.javabegin.training.vkt7.entities.Result_old;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,13 +23,13 @@ import java.util.List;
 @Repository
 @Transactional
 public class ResultServiceImpl implements ResultService {
-    final static String ALL_RESULT_NATIVE_QUERY = "select id, first_name, last_name, tel_number, tel_modem, unit_number, e_mail, version from customer";
+    //final static String ALL_RESULT_NATIVE_QUERY = "select id, first_name, last_name, tel_number, tel_modem, unit_number, e_mail, version from customer";
 
-    private Log log = LogFactory.getLog(CustomerServiceImpl.class);
+    private Log log = LogFactory.getLog(ResultServiceImpl.class);
 
-    @PersistenceContext(unitName="emf_customer")
-    @Qualifier(value = "emf_1")
-    private EntityManager em_1;
+    @PersistenceContext(unitName="emf_contact")
+    @Qualifier(value = "emf")
+    private EntityManager em_2;
 
     //private ProjectionList contactProjection;
 
@@ -39,7 +39,7 @@ public class ResultServiceImpl implements ResultService {
     @Transactional(readOnly=true)
     @Override
     public List<Result> findAll(){
-        List<Result> results = em_1.createNamedQuery("Result.findAll",
+        List<Result> results = em_2.createNamedQuery("Result.findAll",
                 Result.class).getResultList();
         return results;
 
@@ -48,17 +48,28 @@ public class ResultServiceImpl implements ResultService {
 
     @Override
     public Result save(Result result) {
-        if (result.getId() == 0) {
+
+
+        if (result.getId() == null) {
             log.info("Inserting new contact");
-            em_1.persist(result);
+            em_2.persist(result);
         } else {
-            em_1.merge(result);
+            em_2.merge(result);
             log.info("Updating existing contact");
         }
 
         log.info("Contact saved with id: " + result.getId());
 
         return result;
+    }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Result> findAllWithDetail() {
+        List<Result> results = em_2.createNamedQuery(
+                "Contact.findAllWithDetail", Result.class).getResultList();
+        return results;
     }
 
 

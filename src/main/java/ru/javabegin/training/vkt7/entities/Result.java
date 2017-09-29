@@ -1,9 +1,9 @@
 package ru.javabegin.training.vkt7.entities;
 
-import ru.javabegin.training.db.Contact;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -14,10 +14,10 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Table(name = "result")
 @NamedQueries({
-        @NamedQuery(name="Result.findAll", query="select c from Result c"),
-        /*@NamedQuery(name="Result.findById",
-                query="select distinct c from Result c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
-        @NamedQuery(name="Contact.findAllWithDetail",
+        @NamedQuery(name="Result.findAll", query="select c from Result c")
+      /* @NamedQuery(name="Result.findById",
+                query="select distinct c from Result c left join fetch c.measurementsSet t where c.id = :id"),*/
+        /* @NamedQuery(name="Contact.findAllWithDetail",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")*/
 })
 @SqlResultSetMapping(
@@ -28,7 +28,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 
 public class Result {
-    private int id;
+    private Long id;
     private Integer customerId;
     private String typeResult;
     private String serverVersion;
@@ -54,14 +54,26 @@ public class Result {
     private Timestamp dateResultServer;
     private int version;
 
+   /* private Set<Measurements> measurementsSet = new HashSet<Measurements>();
+
+   */ //private int resultId;/
+
+
+    public Result() {
+    }
+
+    public Result(String identificator) {
+        this.identificator = identificator;
+    }
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "ID", nullable = false)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -285,7 +297,7 @@ public class Result {
         this.error = error;
     }
 
-    @Basic
+
     @Column(name = "DATE_RESULT_SERVER", nullable = true)
     public Timestamp getDateResultServer() {
         return dateResultServer;
@@ -295,7 +307,7 @@ public class Result {
         this.dateResultServer = dateResultServer;
     }
 
-    @Basic
+@Version
     @Column(name = "VERSION", nullable = false)
     public int getVersion() {
         return version;
@@ -305,80 +317,28 @@ public class Result {
         this.version = version;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        Result result = (Result) o;
 
-        if (id != result.id) return false;
-        if (version != result.version) return false;
-        if (customerId != null ? !customerId.equals(result.customerId) : result.customerId != null) return false;
-        if (typeResult != null ? !typeResult.equals(result.typeResult) : result.typeResult != null) return false;
-        if (serverVersion != null ? !serverVersion.equals(result.serverVersion) : result.serverVersion != null)
-            return false;
-        if (programmVersion != null ? !programmVersion.equals(result.programmVersion) : result.programmVersion != null)
-            return false;
-        if (shemaTv13Ff9 != null ? !shemaTv13Ff9.equals(result.shemaTv13Ff9) : result.shemaTv13Ff9 != null)
-            return false;
-        if (tp3Tv1 != null ? !tp3Tv1.equals(result.tp3Tv1) : result.tp3Tv1 != null) return false;
-        if (t5Tv1 != null ? !t5Tv1.equals(result.t5Tv1) : result.t5Tv1 != null) return false;
-        if (shemaTv23Ff9 != null ? !shemaTv23Ff9.equals(result.shemaTv23Ff9) : result.shemaTv23Ff9 != null)
-            return false;
-        if (tp3Tv2 != null ? !tp3Tv2.equals(result.tp3Tv2) : result.tp3Tv2 != null) return false;
-        if (t5Tv2 != null ? !t5Tv2.equals(result.t5Tv2) : result.t5Tv2 != null) return false;
-        if (identificator != null ? !identificator.equals(result.identificator) : result.identificator != null)
-            return false;
-        if (netNumber != null ? !netNumber.equals(result.netNumber) : result.netNumber != null) return false;
-        if (resultDate3Ff9 != null ? !resultDate3Ff9.equals(result.resultDate3Ff9) : result.resultDate3Ff9 != null)
-            return false;
-        if (model != null ? !model.equals(result.model) : result.model != null) return false;
-        if (beginHourDate != null ? !beginHourDate.equals(result.beginHourDate) : result.beginHourDate != null)
-            return false;
-        if (currentDate != null ? !currentDate.equals(result.currentDate) : result.currentDate != null) return false;
-        if (beginDayDate != null ? !beginDayDate.equals(result.beginDayDate) : result.beginDayDate != null)
-            return false;
-        if (shemaTv13Ecd != null ? !shemaTv13Ecd.equals(result.shemaTv13Ecd) : result.shemaTv13Ecd != null)
-            return false;
-        if (shemaTv23F5B != null ? !shemaTv23F5B.equals(result.shemaTv23F5B) : result.shemaTv23F5B != null)
-            return false;
-        if (numberBase != null ? !numberBase.equals(result.numberBase) : result.numberBase != null) return false;
-        if (status != null ? !status.equals(result.status) : result.status != null) return false;
-        if (error != null ? !error.equals(result.error) : result.error != null) return false;
-        if (dateResultServer != null ? !dateResultServer.equals(result.dateResultServer) : result.dateResultServer != null)
-            return false;
+   /* @OneToMany(mappedBy = "result", cascade=CascadeType.ALL,
+            orphanRemoval=true)
 
-        return true;
+
+    public Set<Measurements> getMeasurementsSet() {
+        return measurementsSet;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (customerId != null ? customerId.hashCode() : 0);
-        result = 31 * result + (typeResult != null ? typeResult.hashCode() : 0);
-        result = 31 * result + (serverVersion != null ? serverVersion.hashCode() : 0);
-        result = 31 * result + (programmVersion != null ? programmVersion.hashCode() : 0);
-        result = 31 * result + (shemaTv13Ff9 != null ? shemaTv13Ff9.hashCode() : 0);
-        result = 31 * result + (tp3Tv1 != null ? tp3Tv1.hashCode() : 0);
-        result = 31 * result + (t5Tv1 != null ? t5Tv1.hashCode() : 0);
-        result = 31 * result + (shemaTv23Ff9 != null ? shemaTv23Ff9.hashCode() : 0);
-        result = 31 * result + (tp3Tv2 != null ? tp3Tv2.hashCode() : 0);
-        result = 31 * result + (t5Tv2 != null ? t5Tv2.hashCode() : 0);
-        result = 31 * result + (identificator != null ? identificator.hashCode() : 0);
-        result = 31 * result + (netNumber != null ? netNumber.hashCode() : 0);
-        result = 31 * result + (resultDate3Ff9 != null ? resultDate3Ff9.hashCode() : 0);
-        result = 31 * result + (model != null ? model.hashCode() : 0);
-        result = 31 * result + (beginHourDate != null ? beginHourDate.hashCode() : 0);
-        result = 31 * result + (currentDate != null ? currentDate.hashCode() : 0);
-        result = 31 * result + (beginDayDate != null ? beginDayDate.hashCode() : 0);
-        result = 31 * result + (shemaTv13Ecd != null ? shemaTv13Ecd.hashCode() : 0);
-        result = 31 * result + (shemaTv23F5B != null ? shemaTv23F5B.hashCode() : 0);
-        result = 31 * result + (numberBase != null ? numberBase.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (error != null ? error.hashCode() : 0);
-        result = 31 * result + (dateResultServer != null ? dateResultServer.hashCode() : 0);
-        result = 31 * result + version;
-        return result;
+    public void setMeasurementsSet(Set<Measurements> measurementsSet) {
+        this.measurementsSet = measurementsSet;
     }
+
+    public void addMeasurements(Measurements measurements) {
+        measurements.setResult(this);
+        getMeasurementsSet().add(measurements);
+    }
+
+    public void removeMeasurements(Measurements measurements) {
+        getMeasurementsSet().remove(measurements);
+    }*/
+
+
 }

@@ -11,5 +11,7 @@ public interface ModemService {
     void close_connect();
     void get_current_data();
 
+    void get_test_save_data();
+
 
 }

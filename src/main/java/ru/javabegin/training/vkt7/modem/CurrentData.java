@@ -5,10 +5,14 @@ import jssc.SerialPortException;
 import jssc.SerialPortList;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
+import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
+import ru.javabegin.training.vkt7.db.ResultService;
 import ru.javabegin.training.vkt7.entities.Customer;
 
 import ru.javabegin.training.vkt7.entities.Measurements;
+import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.entities.Result;
 import ru.javabegin.training.vkt7.measurements.MeasurementsServiceImpl;
 import ru.javabegin.training.vkt7.propert.Properts_ready_Impl;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
@@ -17,7 +21,9 @@ import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send03ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send10ServiceImpl;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -61,10 +67,18 @@ public class CurrentData extends EventListener{
 
 
 
-    public List<Object> current_all_cycle(CustomerService customerService) throws InterruptedException, TimeoutException, ExecutionException {
+    public String current_all_cycle(CustomerService customerService, ResultService resultService, OperationService operationService) throws InterruptedException, TimeoutException, ExecutionException {
 
 
-        List<Object> connect =new ArrayList<>();
+
+        List<String> service_information =new ArrayList<>();
+        List<Timestamp> date_3ff6= new ArrayList<>();
+        int shema_Tb1=0;
+        int shema_Tb2=0;
+        int number_active_base=0;
+        String status="";
+        String error="";
+
 
         stop=true;
         String[] portNames = SerialPortList.getPortNames();
@@ -371,6 +385,9 @@ public class CurrentData extends EventListener{
            /* IntStream.range(0,crc.size())
                     .map(p->Integer.parseInt(crc.get(p) ,16)=requests[p]);*/
             System.out.println();
+
+            request=null;
+            int[] request=new int[crc.size()];
             for(int i=0;i<crc.size();i++ ){
                 System.out.print(crc.get(i)+" ");
             }
@@ -458,7 +475,7 @@ public class CurrentData extends EventListener{
             //System.out.println();
             crc=crc16Service.crc16_t(ff_n);
             request=null;
-            int[] request=new int[100];
+            request=new int[crc.size()];
             //System.out.println("\n crc size = "+ crc.size());
             for(int i=0;i<crc.size();i++ ){
                 request[i]=Integer.parseInt(crc.get(i) ,16);
@@ -558,7 +575,7 @@ public class CurrentData extends EventListener{
 
             Thread.sleep(5000);
             System.out.println("\n Фoрмируем запрос 3F F9 Запрос на чтение служебной информации");
-            List<String> service_information =new ArrayList<>();
+
             ff_n=null;
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -904,7 +921,7 @@ t=1;
 /**       //////////////////////////////////////////////////////////////////////
  * 3F F6  (03)  s13 -> s14 -> 15 Запрос «Чтение интервала дат»  //////////////////////
  */       //////////////////////////////////////////////////////////////////////
-            List<Date> date= new ArrayList<>();
+
             System.out.println("\n Формируем запрос 3F F6 Запрос «Чтение интервала дат»");
             ff_2=null;
             List<String> f6= send03Service.s_3FF6("01");
@@ -983,9 +1000,9 @@ t=1;
 
                 System.out.println("Контрольная сумма верна ");
 
-                 date=recieve03Service.r_3FF6(data2);
+                date_3ff6=recieve03Service.r_3FF6(data2);
                 System.out.println("Выводим данные даты и времени счетчика");
-                date
+                date_3ff6
                         .stream()
                         .forEach(p->System.out.println(p+" "));
                 System.out.println("Выводим данные даты и времени сервера");
@@ -1020,9 +1037,7 @@ t=1;
 
 
          //////////////////////////////////////////////////////////////////////////////
-            int shema_Tb1;
-            int shema_Tb2;
-            int number_active_base;
+
 
 
 
@@ -1738,8 +1753,8 @@ t=1;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
- * Фаза подключения закончена /////////////////////////////////////////////////////////////////////////////////////////////
- * Получаем текущие зачения ///////////////////////////////////////////////////////////////////////////////////////////////
+ * Фаза получения данных ТЕКУЩИЕ закончена /////////////////////////////////////////////////////////////////////////////////////////////
+ * Закрываем соединение  ///////////////////////////////////////////////////////////////////////////////////////////////
  */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1783,21 +1798,72 @@ t=1;
 
         if (stop==true){
             System.out.println ("Программа закончила работу. Команды STOP не поступало");
+            status="OK";
         }
+        else
+        {status="ERROR";}
+
 
         System.out.println ("Начинаем запись в базу");
         Thread.sleep(2000);
-        Customer cu=new Customer();
+
+        /*Result result=new Result();
+        result.setTypeResult("current");
+        result.setServerVersion(String.valueOf(server_version));
+        result.setProgrammVersion(service_information.get(0));
+        result.setShemaTv13Ff9(service_information.get(1));
+        result.setTp3Tv1(service_information.get(2));
+        result.setT5Tv1(service_information.get(3));
+        result.setShemaTv23Ff9(service_information.get(4));
+        result.setTp3Tv2(service_information.get(5));
+        result.setT5Tv2(service_information.get(6));
+        result.setIdentificator(service_information.get(7));
+        result.setNetNumber(service_information.get(8));
+        result.setResultDate3Ff9(service_information.get(9));
+        result.setModel(service_information.get(10));*/
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Timestamp timestamp = Timestamp.valueOf(localDateTime);
+
+        Operation operation=new Operation();
+        operation.setTypeOperation("current");
+        operation.setServerVersion(String.valueOf(server_version));
+        operation.setProgrammVersion(service_information.get(0));
+        operation.setShemaTv13Ff9(service_information.get(1));
+        operation.setTp3Tv1(service_information.get(2));
+        operation.setT5Tv1(service_information.get(3));
+        operation.setShemaTv23Ff9(service_information.get(4));
+        operation.setTp3Tv2(service_information.get(5));
+        operation.setT5Tv2(service_information.get(6));
+        operation.setIdentificator(service_information.get(7));
+        operation.setNetNumber(service_information.get(8));
+        operation.setModel(service_information.get(10));
+        operation.setBeginHourDate(date_3ff6.get(0));
+        operation.setCurrentDate3Ff6(date_3ff6.get(1));
+        operation.setBeginDayDate(date_3ff6.get(2));
+        //operation.setDateVkt3Ffb();
+        operation.setDateServer(timestamp);
+        operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
+        operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
+        operation.setBaseNumber(String.valueOf(number_active_base));
+        operation.setStatus(status);
+        operationService.save(operation);
+        List<Operation> operationList=operationService.findAll();
+        operationList.forEach(p->System.out.println(p.getId()+" "+p.getTypeOperation()+" "+p.getBeginHourDate()+" "+p.getCurrentDate3Ff6()+" "+p.getBeginDayDate()+" "+p.getBaseNumber()+" "+p.getStatus()));
+
+
+
+
+
+
+       /* Customer cu=new Customer();
         cu.setFirstName("Текущие значение_2");
         cu.setTelModem("45765");
         customerService.save(cu);
         List<Customer> l_cu=customerService.findAll();
-        l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));
+        l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));*/
 
-
-
-
-        return connect;
+        return "OK";
     }
 
 

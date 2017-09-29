@@ -30,6 +30,10 @@
             </transition>
 
 
+            <transition on="Test_Save">
+                  <evaluate expression="modemServiceImpl.get_test_save_data()" />
+            </transition>
+
             <!--<transition on="adduser" to="security_add_user"/>-->
 
       </view-state>

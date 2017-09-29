@@ -4,6 +4,8 @@ import ru.javabegin.training.db.Contact;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
+
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -15,7 +17,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "test")
 @NamedQueries({
-        @NamedQuery(name="Test.findAll", query="select c from Test c")
+        @NamedQuery(name="Test.findAll", query="select c from Test c"),
+        @NamedQuery(name="Test.findById",
+                query="select distinct c from Test c where c.id = :id")
 
 })
 @SqlResultSetMapping(
@@ -26,6 +30,12 @@ public class Test implements Serializable{
 
     private Long id;
     private String text;
+    private Timestamp servetDate;
+
+
+
+    private Integer version;
+
 
 
     @Id
@@ -45,6 +55,25 @@ public class Test implements Serializable{
 
     public void setText(String text) {
         this.text = text;
+    }
+
+
+    @Column(name = "SERVER_DATE")
+    public Timestamp getServetDate() {
+        return servetDate;
+    }
+
+    public void setServetDate(Timestamp servetDate) {
+        this.servetDate = servetDate;
+    }
+    @Version
+    @Column(name = "VERSION")
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     @Override

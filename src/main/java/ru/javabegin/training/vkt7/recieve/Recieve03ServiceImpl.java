@@ -11,8 +11,11 @@ import java.nio.CharBuffer;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -109,7 +112,7 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 
     list_out.forEach(p->System.out.print(p+" "));
 
-        return list;
+        return list_out;
     }
 
     @Override
@@ -155,7 +158,7 @@ public class Recieve03ServiceImpl implements Recieve03Service{
     }
 
     @Override
-    public ArrayList<Date> r_3FF6 (String str) throws ParseException {
+    public ArrayList<Timestamp> r_3FF6 (String str) throws ParseException {
         int version;
         /*str= "01 03 0C " +
                 "03 07 11 11 " +
@@ -170,16 +173,32 @@ public class Recieve03ServiceImpl implements Recieve03Service{
         int linght = 0;
         String str1="";
         int count=1;
-        ArrayList<Date> data = new ArrayList<>();
+        ArrayList<Timestamp> data = new ArrayList<>();
         for (int i=3;i<=Integer.parseInt(list.get(2),16);) {
-             str1 =  String.valueOf(Integer.parseInt(list.get(i),16))+":"+String.valueOf(Integer.parseInt(list.get(i+1),16)+":"+String.valueOf(Integer.parseInt(list.get(i+2),16)))+":"+String.valueOf(Integer.parseInt(list.get(i+3),16));
+             str1 =  String.valueOf(Integer.parseInt(list.get(i),16))+":"+String.valueOf(Integer.parseInt(list.get(i+1),16))+":"+String.valueOf(Integer.parseInt(list.get(i+2),16))+":"+String.valueOf(Integer.parseInt(list.get(i+3),16));
              System.out.println("Str=" + str1);
 
-            //SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
+
+
+
+
+           /* //SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
             SimpleDateFormat format = new SimpleDateFormat("dd:MM:yy:HH");
             Date date = format.parse(str1);
             System.out.println("Date : " + date);
-            data.add(date);
+            data.add(date);*/
+
+
+            //LocalDateTime randDate = LocalDateTime.of(17, 8, 11, 14, 0, 0);
+            //LocalDateTime randDate = LocalDateTime.of(YYY, MM, DD, HH, SS, 0);
+
+            LocalDateTime randDate = LocalDateTime.of((2000+Integer.parseInt(list.get(i+2),16)), Integer.parseInt(list.get(i+1),16), Integer.parseInt(list.get(i),16), Integer.parseInt(list.get(i+3),16), 0, 0);
+            System.out.println("localDateTime Str = "+randDate);
+            System.out.println(randDate.format(DateTimeFormatter.ofPattern("d::MMM::uuuu")));
+            Timestamp timestamp = Timestamp.valueOf(randDate);
+            data.add(timestamp);
+
+
             i=i+4;
         }
         //

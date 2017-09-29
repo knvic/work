@@ -11,6 +11,7 @@ import ru.javabegin.training.db.ContactServiceImpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -24,14 +25,15 @@ public class TestServiceImpl implements TestService {
 
     private Log log = LogFactory.getLog(TestServiceImpl.class);
 
-    @PersistenceContext(unitName="emf_test")
-    @Qualifier(value = "emf_2")
-    private EntityManager em;
+    @PersistenceContext(unitName="emf_contact")
+    @Qualifier(value = "emf")
+
+    private EntityManager em_1;
 
     @Transactional(readOnly=true)
     @Override
     public List<Test> findAll() {
-        List<Test> test = em.createNamedQuery("Test.findAll",
+        List<Test> test = em_1.createNamedQuery("Test.findAll",
                 Test.class).getResultList();
         return test;
     }
@@ -41,9 +43,9 @@ public class TestServiceImpl implements TestService {
     public Test save(Test test) {
         if (test.getId() == null) {
             log.info("Inserting new contact");
-            em.persist(test);
+            em_1.persist(test);
         } else {
-            em.merge(test);
+            em_1.merge(test);
             log.info("Updating existing contact");
         }
 
@@ -51,4 +53,17 @@ public class TestServiceImpl implements TestService {
 
         return test;
     }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public Test findById(Long id) {
+        TypedQuery<Test> query = em_1.createNamedQuery(
+                "Test.findById",Test.class);
+        query.setParameter("id", id);
+
+        return query.getSingleResult();
+    }
+
+
 }

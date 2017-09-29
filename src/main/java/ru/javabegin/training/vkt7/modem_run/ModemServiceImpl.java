@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
+import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.db.ResultService;
 import ru.javabegin.training.vkt7.entities.Customer;
@@ -48,10 +49,14 @@ ResultService resultService;
     @Autowired
     @Qualifier("jpaCustomerService")
     private CustomerService customerService;
+
     @Autowired
     @Qualifier("jpaTestService")
     private TestService testService;
 
+    @Autowired
+    @Qualifier("jpaOperationService")
+    private OperationService operationService;
 
 
     public static int getM() {
@@ -180,7 +185,7 @@ List<Object> connect=new ArrayList<>();*/
     Callable task = () -> {
         try {
             //TimeUnit.SECONDS.sleep(1);
-           currentData.current_all_cycle(customerService);
+           currentData.current_all_cycle(customerService, resultService,operationService);
             //return Thread.currentThread().getName();
             return "123";
 
@@ -201,16 +206,42 @@ List<Object> connect=new ArrayList<>();*/
     System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
     System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
 
-
-
-
-
-
-
-
     }
 
 
+
+    @Override
+    public void get_test_save_data(){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+
+        Test_save_datatime testSaveDatatime=new Test_save_datatime();
+
+        Callable task = () -> {
+            try {
+                //TimeUnit.SECONDS.sleep(1);
+                testSaveDatatime.connect(customerService,testService,resultService, operationService);
+                //return Thread.currentThread().getName();
+                return "123";
+
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(2);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
 
 
 

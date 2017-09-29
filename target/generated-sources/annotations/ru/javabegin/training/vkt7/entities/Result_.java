@@ -25,7 +25,7 @@ public abstract class Result_ {
 	public static volatile SingularAttribute<Result, Timestamp> beginDayDate;
 	public static volatile SingularAttribute<Result, Integer> customerId;
 	public static volatile SingularAttribute<Result, String> model;
-	public static volatile SingularAttribute<Result, Integer> id;
+	public static volatile SingularAttribute<Result, Long> id;
 	public static volatile SingularAttribute<Result, String> typeResult;
 	public static volatile SingularAttribute<Result, String> resultDate3Ff9;
 	public static volatile SingularAttribute<Result, Timestamp> dateResultServer;

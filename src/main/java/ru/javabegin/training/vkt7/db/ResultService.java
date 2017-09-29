@@ -1,7 +1,8 @@
 package ru.javabegin.training.vkt7.db;
 
+import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.vkt7.entities.Result;
-import ru.javabegin.training.vkt7.entities.Result_old;
+
 
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface ResultService {
     //Result findById(Long id);
     Result save(Result result);
    // void delete(Result result);
+   List<Result> findAllWithDetail();
 }

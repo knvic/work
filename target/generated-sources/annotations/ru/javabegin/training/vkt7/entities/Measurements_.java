@@ -15,6 +15,7 @@ public abstract class Measurements_ {
 	public static volatile SingularAttribute<Measurements, String> measurText;
 	public static volatile SingularAttribute<Measurements, String> qualityText;
 	public static volatile SingularAttribute<Measurements, String> quality;
+	public static volatile SingularAttribute<Measurements, Result> result;
 	public static volatile SingularAttribute<Measurements, Integer> measurInt;
 	public static volatile SingularAttribute<Measurements, Integer> size;
 	public static volatile SingularAttribute<Measurements, String> name;

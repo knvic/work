@@ -25,13 +25,17 @@ import ru.javabegin.training.vkt7.send.Send03ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send10ServiceImpl;
 
 import javax.persistence.EntityManager;
+import java.sql.Timestamp;
 import java.text.ParseException;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
 
+import static java.sql.Timestamp.valueOf;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.m;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
@@ -73,6 +77,7 @@ public class Connect extends EventListener{
 
 
         List<Object> connect =new ArrayList<>();
+        List<Timestamp> date= new ArrayList<>();
 
         stop=true;
         String[] portNames = SerialPortList.getPortNames();
@@ -912,7 +917,7 @@ t=1;
 /**       //////////////////////////////////////////////////////////////////////
  * 3F F6  (03)  s13 -> s14 -> 15 Запрос «Чтение интервала дат»  //////////////////////
  */       //////////////////////////////////////////////////////////////////////
-            List<Date> date= new ArrayList<>();
+
             System.out.println("\n Формируем запрос 3F F6 Запрос «Чтение интервала дат»");
             ff_2=null;
             List<String> f6= send03Service.s_3FF6("01");
@@ -1053,14 +1058,25 @@ t=1;
 
         System.out.println ("Начинаем запись в базу");
         Thread.sleep(2000);
-        Customer cu=new Customer();
+     /*   Customer cu=new Customer();
         cu.setFirstName("Очень новый");
         cu.setTelModem("345345");
         customerService.save(cu);
         List<Customer> l_cu=customerService.findAll();
         l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));
+*/
+
+     Result result=new Result();
 
 
+
+
+
+
+        LocalDateTime today = LocalDateTime.now();
+        java.sql.Timestamp ts = valueOf(today);
+        System.out.println("ts : " + ts);
+        result.setDateResultServer(ts);
 
 
         return connect;

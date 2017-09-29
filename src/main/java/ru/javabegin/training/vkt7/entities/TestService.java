@@ -10,4 +10,5 @@ import java.util.List;
 public interface TestService {
     List<Test> findAll();
        Test save(Test test);
+    Test findById(Long id);
 }

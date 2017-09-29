@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.entities.Result;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -64,5 +65,35 @@ public class CustomerServiceImpl implements CustomerService {
 
         return customer;
     }
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Result> r_findAll(){
+        List<Result> results = em.createNamedQuery("Result.findAll",
+                Result.class).getResultList();
+        return results;
+
+    }
+
+
+    @Override
+    public Result save(Result result) {
+
+
+        if (result.getId() == null) {
+            log.info("Inserting new contact");
+            em.persist(result);
+        } else {
+            em.merge(result);
+            log.info("Updating existing contact");
+        }
+
+        log.info("Contact saved with id: " + result.getId());
+
+        return result;
+    }
+
 
 }

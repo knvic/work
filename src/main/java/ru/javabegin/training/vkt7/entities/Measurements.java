@@ -1,15 +1,18 @@
 package ru.javabegin.training.vkt7.entities;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import ru.javabegin.training.db.Contact;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * Created by Николай on 24.09.2017.
  */
 @Entity
-public class Measurements {
+@Table(name = "measurements")
+public class Measurements implements Serializable{
     private int id;
     private String name;
     private String text;
@@ -24,6 +27,10 @@ public class Measurements {
     private String qualityText;
     private String ns;
 
+    private Result result;
+
+    public Measurements() {
+    }
 
     public Measurements(int id, String name, String text, String ed, Integer znak, Integer size) {
         this.id = id;
@@ -163,6 +170,30 @@ public class Measurements {
     public void setNs(String ns) {
         this.ns = ns;
     }
+
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "RESULT_ID")
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }
+
+   /* public Result getResult() {
+        return this.result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }*/
+
+
 
     @Override
     public boolean equals(Object o) {
