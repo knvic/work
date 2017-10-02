@@ -56,7 +56,7 @@ public class CurrentData extends EventListener{
 
 
     public static boolean r_3fff;
-    public static int server_version=0;
+    public int server_version=0;
 
    private static int requestNum = 0;
    /*private static int[][] requests = {
@@ -67,18 +67,20 @@ public class CurrentData extends EventListener{
 
 
 
-    public String current_all_cycle(CustomerService customerService, ResultService resultService, OperationService operationService) throws InterruptedException, TimeoutException, ExecutionException {
+    public String current_all_cycle(CustomerService customerService, ResultService resultService, OperationService operationService, String tel, Long id) throws InterruptedException, TimeoutException, ExecutionException {
 
 
 
         List<String> service_information =new ArrayList<>();
         List<Timestamp> date_3ff6= new ArrayList<>();
+        List<Measurements> measurementsList=new ArrayList<>();
         int shema_Tb1=0;
         int shema_Tb2=0;
         int number_active_base=0;
         String status="";
         String error="";
 
+        ExecutorService executor = Executors.newFixedThreadPool(2);
 
         stop=true;
         String[] portNames = SerialPortList.getPortNames();
@@ -139,7 +141,7 @@ public class CurrentData extends EventListener{
             }
             serialPort.writeBytes("AT+CREG?\r".getBytes());
             System.out.println("\n Ждем данных от модема ");
-            ExecutorService executor = Executors.newFixedThreadPool(2);
+
             t=0;
             executor.submit(callable(10));
             step=0;
@@ -155,9 +157,9 @@ public class CurrentData extends EventListener{
             t=1;
             System.out.println("\n Ответ от можема получен");
             System.out.println("\n Проверка регистрации модема");
-            executor.shutdownNow();
+          //  executor.shutdownNow();
 
-            executor = Executors.newFixedThreadPool(1);
+          //  executor = Executors.newFixedThreadPool(1);
             t=0;
             executor.submit(callable(10));
             System.out.println("\n перед while(step==0&stop!=false) STOP = =  "+stop);
@@ -243,7 +245,7 @@ public class CurrentData extends EventListener{
 
             //Thread.sleep(3000);
 
-            executor.shutdownNow();
+           // executor.shutdownNow();
             System.out.println("\n m======= "+m);
             Thread.sleep(1000);
             System.out.println("\nНабираем номер");
@@ -255,7 +257,20 @@ public class CurrentData extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-           serialPort.writeBytes("ATDP+79064426645\r".getBytes());
+
+            if (tel.equals("")){
+                tel="ATDP+79064426645\r"; //Весна
+                //tel="ATDP+79064427287\r";
+                //tel="ATDP+79064427319\r";
+
+            }
+            else {
+                tel="ATDP"+tel+"\r";
+            }
+
+
+            //serialPort.writeBytes("ATDP+79064426645\r".getBytes());
+            serialPort.writeBytes(tel.getBytes());
             //serialPort.writeBytes("ATDP+79064427319\r".getBytes());
 
 ///////////// Набор номера!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -264,7 +279,7 @@ public class CurrentData extends EventListener{
             int c=0;
             System.out.print("\n Ждем установки связи :");
 
-            executor = Executors.newFixedThreadPool(2);
+          //  executor = Executors.newFixedThreadPool(2);
             t=0;
             executor.submit(callable(60));
 
@@ -280,7 +295,7 @@ public class CurrentData extends EventListener{
 
                 else if (data2.contains("NO CARRIER")){
                     System.out.println("Ответ  NO CARRIER ответ пришел t= "+t);
-                    executor.shutdown();
+               //     executor.shutdown();
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
@@ -295,7 +310,7 @@ public class CurrentData extends EventListener{
                 }
                 else if (data2.contains("NO DIALTONE")){
                     System.out.println("Ответ NO DIALTHONE ответ пришел t= "+t);
-                    executor.shutdown();
+                //    executor.shutdown();
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
@@ -310,7 +325,7 @@ public class CurrentData extends EventListener{
                 }
                 else if (data2.contains("BUSY")||data2.contains("NO ANSWER")){
                     System.out.println("Ответ BUSY или NO ANSWER   ответ пришел t= "+t);
-                    executor.shutdown();
+               //     executor.shutdown();
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
@@ -340,7 +355,7 @@ public class CurrentData extends EventListener{
 
             }
 
-            executor.shutdown();
+        //    executor.shutdown();
             System.out.println("\n  после набора номера Stop== "+stop);
             Thread.sleep(1000);
             serialPort.setParams (SerialPort.BAUDRATE_9600,
@@ -408,7 +423,7 @@ public class CurrentData extends EventListener{
             serialPort.writeIntArray(request);
 
             //Thread.sleep(3000);
-            executor = Executors.newFixedThreadPool(2);
+          //  executor = Executors.newFixedThreadPool(2);
             t=0;
             int repeat=0;
             executor.submit(callable(3));
@@ -432,7 +447,7 @@ public class CurrentData extends EventListener{
                       repeat++;
                     if (repeat==6){
                         step=0;
-                        executor.shutdown();
+                  //      executor.shutdown();
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
                     Thread.sleep(2000);
                     serialPort.writeBytes("+++".getBytes());
@@ -458,7 +473,7 @@ public class CurrentData extends EventListener{
                 }*/
 
             }
-            executor.shutdown();
+      //      executor.shutdown();
             Thread.sleep(2000);
 
 
@@ -491,7 +506,7 @@ public class CurrentData extends EventListener{
                 break;
             }
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+      //      executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(15));
@@ -505,7 +520,7 @@ public class CurrentData extends EventListener{
                     repeat++;
                     if (repeat==3){
                         step=0;
-                        executor.shutdown();
+                 //       executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F FE (Версия сервера 65 байт). Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -529,14 +544,14 @@ public class CurrentData extends EventListener{
 
             System.out.println("\nДанные 3F FE (Версия сервера) поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE (Версия сервера 65 байт)");
-            executor.shutdown();
+  //          executor.shutdown();
 
               while(step==7&stop!=false){
 
                  System.out.println("Принятая строка 3F FE (Версия сервера) :: " + data2);
                  if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                      step = 0;
-                     executor.shutdown();
+         //            executor.shutdown();
                      System.out.println("\n Ошибочная контрольная сумма CRC16 ");
                      Thread.sleep(2000);
                      serialPort.writeBytes("+++".getBytes());
@@ -604,7 +619,7 @@ public class CurrentData extends EventListener{
 
 
             System.out.println("\nЖдем получения всех данных после команды 3F F9 Запрос на чтение служебной информации");
-            executor = Executors.newFixedThreadPool(2);
+    //        executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(6));
@@ -613,7 +628,7 @@ public class CurrentData extends EventListener{
                     repeat++;
                     if (repeat == 2) {
                         step = 0;
-                        executor.shutdown();
+                 //       executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F F9. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -637,7 +652,7 @@ t=1;
 
             System.out.println("\nДанные 3FF F9 поступили.Запрос на чтение служебной информации");
             System.out.println("Ожидаем обработку принятых данных 3FF F9");
-            executor.shutdown();
+     //       executor.shutdown();
 
             while(step==9&stop!=false){
 
@@ -740,7 +755,7 @@ t=1;
             serialPort.writeIntArray(request);
 
             //Thread.sleep(3000);
-            executor = Executors.newFixedThreadPool(1);
+      //      executor = Executors.newFixedThreadPool(1);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -764,7 +779,7 @@ t=1;
                     repeat++;
                     if (repeat==6){
                         step=0;
-                        executor.shutdown();
+    //                    executor.shutdown();
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -786,7 +801,7 @@ t=1;
 
 
             }
-            executor.shutdown();
+       //     executor.shutdown();
             Thread.sleep(2000);
 
 
@@ -818,7 +833,7 @@ t=1;
                 break;
             }
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+    //        executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(10));
@@ -832,7 +847,7 @@ t=1;
                     repeat++;
                     if (repeat==4){
                         step=0;
-                        executor.shutdown();
+   //                     executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F FE. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -857,7 +872,7 @@ t=1;
 
             System.out.println("\nДанные 3F FE поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE ");
-            executor.shutdown();
+   //         executor.shutdown();
             List<Properts> prop_specification=new ArrayList<>();
             while(step==12&stop!=false){
 
@@ -940,7 +955,7 @@ t=1;
                 break;
             }
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+   //         executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(10));
@@ -954,7 +969,7 @@ t=1;
                     repeat++;
                     if (repeat==2){
                         step=0;
-                        executor.shutdown();
+    //                    executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F F6. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -977,7 +992,7 @@ t=1;
 
             System.out.println("\nДанные 3F F6 поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F F6 ");
-            executor.shutdown();
+    //        executor.shutdown();
 
             while(step==14&stop!=false){
 
@@ -1067,7 +1082,7 @@ t=1;
 
 
             System.out.println("\nЖдем получения всех данных после команды 3F FC");
-            executor = Executors.newFixedThreadPool(2);
+    //        executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(6));
@@ -1077,7 +1092,7 @@ t=1;
                     repeat++;
                     if (repeat == 2) {
                         step = 0;
-                        executor.shutdown();
+    //                    executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F FC. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1098,7 +1113,7 @@ t=1;
 
             t=1;
 
-            executor.shutdown();
+   //         executor.shutdown();
             System.out.println("\nДанные 3F FC поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FC");
             System.out.println("Step= "+step);
@@ -1202,7 +1217,7 @@ t=1;
             serialPort.writeIntArray(request);
 
             //Thread.sleep(3000);
-            executor = Executors.newFixedThreadPool(1);
+   //         executor = Executors.newFixedThreadPool(1);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -1224,7 +1239,7 @@ t=1;
                     repeat++;
                     if (repeat==6){
                         step=0;
-                        executor.shutdown();
+     //                   executor.shutdown();
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1245,7 +1260,7 @@ t=1;
 
 
             }
-            executor.shutdown();
+   //         executor.shutdown();
             Thread.sleep(2000);
 
 
@@ -1300,7 +1315,7 @@ t=1;
             serialPort.writeIntArray(request);
 
             //Thread.sleep(3000);
-            executor = Executors.newFixedThreadPool(1);
+    //        executor = Executors.newFixedThreadPool(1);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -1323,7 +1338,7 @@ t=1;
                     repeat++;
                     if (repeat==6){
                         step=0;
-                        executor.shutdown();
+   //                     executor.shutdown();
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1340,7 +1355,7 @@ t=1;
                 }
 
             }
-            executor.shutdown();
+     //       executor.shutdown();
             Thread.sleep(2000);
 
 
@@ -1374,10 +1389,10 @@ t=1;
             Thread.sleep(5000);
             System.out.println("\nЖдем получения всех данных после команды 3F FE (ТЕКУЩИЕ)  ");
             serialPort.writeIntArray(request);
-            ExecutorService executor_cur = Executors.newFixedThreadPool(1);
+    //        ExecutorService executor_cur = Executors.newFixedThreadPool(1);
             t=0;
             repeat=0;
-            executor_cur.submit(callable(5));
+            executor.submit(callable(5));
 
 
 /**
@@ -1390,7 +1405,7 @@ t=1;
                     repeat++;
                     if (repeat==6){
                         step=0;
-                        executor_cur.shutdownNow();
+      //                  executor_cur.shutdownNow();
                         System.out.println("\n Ответ не поступил 3F FE(ТЕКУЩИЕ). Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1407,7 +1422,7 @@ t=1;
                     t=0;
                     serialPort.writeIntArray(request);
 
-                    executor_cur.submit(callable(4));
+                    executor.submit(callable(4));
                 }
 
             }
@@ -1416,8 +1431,8 @@ t=1;
 
             System.out.println("\nДанные 3F FE (ТЕКУЩИЕ) поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE ");
-            executor_cur.shutdownNow();
-            List<Measurements> measurementsList=new ArrayList<>();
+    //        executor_cur.shutdownNow();
+
             while(step==22){
 
 
@@ -1474,7 +1489,7 @@ t=1;
             recieve_all_byte=0;
             step=21;
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+     //       executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -1489,7 +1504,7 @@ t=1;
                     repeat++;
                     if (repeat==4){
                         step=0;
-                        executor.shutdown();
+      //                  executor.shutdown();
                         System.out.println("\n Ответ не поступил 3E CD Чтение номера схемы измерений Тв1. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1513,7 +1528,7 @@ t=1;
 
             System.out.println("\nДанные 3E CD(Тв1) Чтение номера схемы измерений Тв1. поступили.");
             System.out.println("Ожидаем обработку принятых данных 3E CD(Тв1) ");
-            executor.shutdown();
+    //        executor.shutdown();
             while(step==22){
 
 
@@ -1573,7 +1588,7 @@ t=1;
             recieve_all_byte=0;
             step=21;
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+     //       executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -1588,7 +1603,7 @@ t=1;
                     repeat++;
                     if (repeat==4){
                         step=0;
-                        executor.shutdown();
+        //                executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F 5B Чтение номера схемы измерений Тв2. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1612,7 +1627,7 @@ t=1;
 
             System.out.println("\nДанные 3F 5B(Тв2) Чтение номера схемы измерений Тв2. поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F 5B(Тв2)  ");
-            executor.shutdown();
+    //        executor.shutdown();
             while(step==22){
 
 
@@ -1672,7 +1687,7 @@ t=1;
             recieve_all_byte=0;
             step=21;
             serialPort.writeIntArray(request);
-            executor = Executors.newFixedThreadPool(2);
+    //        executor = Executors.newFixedThreadPool(2);
             t=0;
             repeat=0;
             executor.submit(callable(3));
@@ -1687,7 +1702,7 @@ t=1;
                     repeat++;
                     if (repeat==4){
                         step=0;
-                        executor.shutdown();
+     //                   executor.shutdown();
                         System.out.println("\n Ответ не поступил 3F E9  Чтение номера активной базы данных. Ошибка по таймауту.");
                         Thread.sleep(2000);
                         serialPort.writeBytes("+++".getBytes());
@@ -1711,7 +1726,7 @@ t=1;
 
             System.out.println("\nДанные 3F E9  Чтение номера активной базы данных поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F E9 .");
-            executor.shutdown();
+       //     executor.shutdown();
             while(step==22){
 
 
@@ -1803,7 +1818,7 @@ t=1;
         else
         {status="ERROR";}
 
-
+        executor.shutdownNow();
         System.out.println ("Начинаем запись в базу");
         Thread.sleep(2000);
 
@@ -1847,9 +1862,35 @@ t=1;
         operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
         operation.setBaseNumber(String.valueOf(number_active_base));
         operation.setStatus(status);
-        operationService.save(operation);
-        List<Operation> operationList=operationService.findAll();
-        operationList.forEach(p->System.out.println(p.getId()+" "+p.getTypeOperation()+" "+p.getBeginHourDate()+" "+p.getCurrentDate3Ff6()+" "+p.getBeginDayDate()+" "+p.getBaseNumber()+" "+p.getStatus()));
+
+
+        measurementsList.forEach(p->operation.addMeasurements(p));
+
+/*
+        Customer customer = new Customer();
+        customer.setFirstName("Весна 1 главный");
+        customer.setTelModem("+79064426645");
+        customer.setUnitNumber("1");*/
+
+        Customer customer=customerService.findById(id);
+        operation.setIdCustomer(customer.getId());
+        operation.setCustomerName(customer.getFirstName());
+
+
+
+
+        customer.addOperation(operation);
+        customerService.save(customer);
+
+
+        //operationService.save(operation);
+        System.out.println ("Запись произведена. завершаем поток");
+
+      //  operationService.listOperationWithDetail(operationService.findAllWithDetail());
+
+
+        //List<Operation> operationList=operationService.findAll();
+        //operationList.forEach(p->System.out.println(p.getId()+" "+p.getTypeOperation()+" "+p.getBeginHourDate()+" "+p.getCurrentDate3Ff6()+" "+p.getBeginDayDate()+" "+p.getBaseNumber()+" "+p.getStatus()));
 
 
 
@@ -1891,6 +1932,25 @@ t=1;
 
         };
     }
+
+
+    public void listOperationWithDetail(List<Operation> operationList) {
+        System.out.println("");
+        System.out.println("Listing operation with details:");
+
+        for (Operation oper: operationList) {
+            System.out.println(oper);
+            if (oper.getMeasurementsSet() != null) {
+                for (Measurements measurements:
+                        oper.getMeasurementsSet()) {
+                    System.out.println(measurements);
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 

@@ -8,6 +8,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Measurements.class)
 public abstract class Measurements_ {
 
+	public static volatile SingularAttribute<Measurements, Long> idCount;
 	public static volatile SingularAttribute<Measurements, String> ns;
 	public static volatile SingularAttribute<Measurements, Integer> znak;
 	public static volatile SingularAttribute<Measurements, Float> measurFloat;
@@ -15,12 +16,12 @@ public abstract class Measurements_ {
 	public static volatile SingularAttribute<Measurements, String> measurText;
 	public static volatile SingularAttribute<Measurements, String> qualityText;
 	public static volatile SingularAttribute<Measurements, String> quality;
-	public static volatile SingularAttribute<Measurements, Result> result;
 	public static volatile SingularAttribute<Measurements, Integer> measurInt;
 	public static volatile SingularAttribute<Measurements, Integer> size;
 	public static volatile SingularAttribute<Measurements, String> name;
 	public static volatile SingularAttribute<Measurements, Integer> id;
 	public static volatile SingularAttribute<Measurements, String> text;
+	public static volatile SingularAttribute<Measurements, Operation> operation;
 	public static volatile SingularAttribute<Measurements, String> ed;
 
 }

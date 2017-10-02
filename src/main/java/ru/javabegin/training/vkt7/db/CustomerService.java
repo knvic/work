@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.db;
 
 import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.entities.Result;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public interface CustomerService {
 
     List<Customer> findAll();
     Customer save(Customer customer);
-    List<Result> r_findAll();
-     Result save(Result result);
+    Customer findById(Long id);
+    List<Operation> findOperationByIdCustomer(Long id);
+    List<Operation> getOperationsByCustomerId(Long id);
 }

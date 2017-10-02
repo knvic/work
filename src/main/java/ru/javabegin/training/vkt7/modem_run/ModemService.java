@@ -1,5 +1,7 @@
 package ru.javabegin.training.vkt7.modem_run;
 
+import ru.javabegin.training.vkt7.entities.Customer;
+
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -9,7 +11,7 @@ public interface ModemService {
 
     void connect() throws ExecutionException, InterruptedException;
     void close_connect();
-    void get_current_data();
+    void get_current_data(Customer customer);
 
     void get_test_save_data();
 

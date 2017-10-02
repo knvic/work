@@ -1,7 +1,13 @@
 package ru.javabegin.training.vkt7.entities;
 
+import ru.javabegin.training.db.ContactTelDetail;
+import ru.javabegin.training.db.Hobby;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -11,19 +17,23 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "operation")
 @NamedQueries({
-        @NamedQuery(name="Operation.findAll", query="select c from Operation c")
-      /*  @NamedQuery(name="Contact.findById",
-                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
-        @NamedQuery(name="Contact.findAllWithDetail",
-                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")*/
+        @NamedQuery(name="Operation.findAll", query="select c from Operation c"),
+        /*@NamedQuery(name="Contact.findById",
+                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
+        @NamedQuery(name="Operation.findAllWithDetail",
+                query="select distinct c from Operation c left join fetch c.measurementsSet t")
 })
 @SqlResultSetMapping(
         name="operationResult",
         entities=@EntityResult(entityClass=Operation.class)
 )
-public class Operation {
+public class Operation implements Serializable{
     private Long id;
-    private Integer customerId;
+  //private Long customerId;
+
+    private Long idCustomer;
+    private String customerName;
+
     private String typeOperation;
     private String serverVersion;
     private String programmVersion;
@@ -48,7 +58,17 @@ public class Operation {
     private String status;
     private String error;
     private int version;
-    private String operationcol;
+
+    private Customer customer;
+
+    private Set<Measurements> measurementsSet = new HashSet<Measurements>();
+
+
+    private int operationId;
+
+
+
+
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -61,15 +81,30 @@ public class Operation {
         this.id = id;
     }
 
+
     @Basic
-    @Column(name = "CUSTOMER_ID", nullable = true)
-    public Integer getCustomerId() {
-        return customerId;
+    @Column(name = "ID_CUSTOMER", nullable = true)
+    public Long getIdCustomer() {
+        return idCustomer;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setIdCustomer(Long idCustomer) {
+        this.idCustomer = idCustomer;
     }
+
+
+
+    @Basic
+    @Column(name = "CUSTOMER_NAME", nullable = true)
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+
 
     @Basic
     @Column(name = "TYPE_OPERATION", nullable = true, length = 45)
@@ -311,14 +346,81 @@ public class Operation {
         this.version = version;
     }
 
-    @Basic
-    @Column(name = "operationcol", nullable = true, length = 45)
-    public String getOperationcol() {
-        return operationcol;
+
+
+
+
+
+    ///////////////////////////////
+    @OneToMany(mappedBy = "operation", cascade=CascadeType.ALL,
+            orphanRemoval=true)
+
+    public Set<Measurements> getMeasurementsSet() {
+        return measurementsSet;
     }
 
-    public void setOperationcol(String operationcol) {
-        this.operationcol = operationcol;
+    public void setMeasurementsSet(Set<Measurements> measurementsSet) {
+        this.measurementsSet = measurementsSet;
     }
 
-  }
+
+
+    public void addMeasurements(Measurements measurements) {
+        measurements.setOperation(this);
+        getMeasurementsSet().add(measurements);
+    }
+
+    public void removeMeasurements(Measurements measurements) {
+        getMeasurementsSet().remove(measurements);
+    }
+
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "CUSTOMER_ID")
+//    @JoinColumn(name = "CUSTOMER_ID",insertable = false, updatable = false)
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "id=" + id +
+                ", idCustomer=" + idCustomer +
+                ", customerName='" + customerName + '\'' +
+                ", typeOperation='" + typeOperation + '\'' +
+                ", serverVersion='" + serverVersion + '\'' +
+                ", programmVersion='" + programmVersion + '\'' +
+                ", shemaTv13Ff9='" + shemaTv13Ff9 + '\'' +
+                ", tp3Tv1='" + tp3Tv1 + '\'' +
+                ", t5Tv1='" + t5Tv1 + '\'' +
+                ", shemaTv23Ff9='" + shemaTv23Ff9 + '\'' +
+                ", tp3Tv2='" + tp3Tv2 + '\'' +
+                ", t5Tv2='" + t5Tv2 + '\'' +
+                ", identificator='" + identificator + '\'' +
+                ", netNumber='" + netNumber + '\'' +
+                ", resultDate3Ff9='" + resultDate3Ff9 + '\'' +
+                ", model='" + model + '\'' +
+                ", beginHourDate=" + beginHourDate +
+                ", currentDate3Ff6=" + currentDate3Ff6 +
+                ", beginDayDate=" + beginDayDate +
+                ", dateVkt3Ffb=" + dateVkt3Ffb +
+                ", dateServer=" + dateServer +
+                ", shemaTv13Ecd='" + shemaTv13Ecd + '\'' +
+                ", shemaTv23F5B='" + shemaTv23F5B + '\'' +
+                ", baseNumber='" + baseNumber + '\'' +
+                ", status='" + status + '\'' +
+                ", error='" + error + '\'' +
+                ", version=" + version +
+                ", customer=" + customer +
+                ", measurementsSet=" + measurementsSet +
+                ", operationId=" + operationId +
+                '}';
+    }
+}

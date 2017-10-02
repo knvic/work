@@ -8,6 +8,7 @@
 
 
       <var name="addUserSec" class="ru.javabegin.training.security.AddUserSec"/>
+      <var name="selectionContact" class="ru.javabegin.training.objects.SelectionContact"/>
       <view-state id="security" view="security.xhtml">
 
 

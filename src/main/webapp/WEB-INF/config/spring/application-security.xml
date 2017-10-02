@@ -84,7 +84,7 @@
     <beans:bean id="loginSuccessHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler" >
 
         <!--<beans:property name="defaultTargetUrl" value="/app/security"/>-->
-        <beans:property name="defaultTargetUrl" value="/app/teplo"/>
+        <beans:property name="defaultTargetUrl" value="/app/main"/>
         <!--<beans:property name="defaultTargetUrl" value="/"/>-->
     </beans:bean>
 

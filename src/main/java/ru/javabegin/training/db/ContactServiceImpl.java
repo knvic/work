@@ -233,8 +233,6 @@ public class ContactServiceImpl implements ContactService {
         List<Contact> result = q.setParameter(parametr, firstName).getResultList();
 
 
-
-
         return result;
     }
 

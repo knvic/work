@@ -177,15 +177,18 @@ ResultService resultService;
     }
 
 @Override
-   public void get_current_data(){
+   public void get_current_data(Customer customer){
    /* Connect c =new Connect();
 List<Object> connect=new ArrayList<>();*/
+   String tel =customer.getTelModem();
+   Long id=customer.getId();
+   System.out.println("tel= "+tel);
     CurrentData currentData=new CurrentData();
 
     Callable task = () -> {
         try {
             //TimeUnit.SECONDS.sleep(1);
-           currentData.current_all_cycle(customerService, resultService,operationService);
+           currentData.current_all_cycle(customerService, resultService,operationService, tel, id);
             //return Thread.currentThread().getName();
             return "123";
 
@@ -233,7 +236,7 @@ List<Object> connect=new ArrayList<>();*/
 
 
 
-        ExecutorService executor1 = Executors.newFixedThreadPool(2);
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
         Future<String> future = executor1.submit(task);
         executor1.shutdown();
 

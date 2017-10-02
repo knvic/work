@@ -5,6 +5,8 @@ import ru.javabegin.training.db.Contact;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -16,7 +18,10 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "customer")
 @NamedQueries({
-        @NamedQuery(name="Customer.findAll", query="select c from Customer c")
+        @NamedQuery(name="Customer.findAll", query="select c from Customer c"),
+        @NamedQuery(name="Customer.findById",
+                query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id")
+
       /*  @NamedQuery(name="Contact.findById",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
         @NamedQuery(name="Contact.findAllWithDetail",
@@ -35,6 +40,12 @@ public class Customer implements Serializable {
     private String unitNumber;
     private String eMail;
     private int version;
+
+
+    private Set<Operation> operationSet = new HashSet<Operation>();
+
+
+    private Long customerId;
 
 
     @Id
@@ -117,6 +128,34 @@ public class Customer implements Serializable {
     public void setVersion(int version) {
         this.version = version;
     }
+
+
+
+
+    @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
+            orphanRemoval=true)
+
+    public Set<Operation> getOperationSet() {
+        return operationSet;
+    }
+
+    public void setOperationSet(Set<Operation> operationSet) {
+        this.operationSet = operationSet;
+    }
+
+
+
+    public void addOperation(Operation operation) {
+        operation.setCustomer(this);
+        getOperationSet().add(operation);
+    }
+
+    public void removeOperation(Operation operation) {
+        getOperationSet().remove(operation);
+    }
+
+
+
 
 
 }

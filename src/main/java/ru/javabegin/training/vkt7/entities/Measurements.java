@@ -26,8 +26,9 @@ public class Measurements implements Serializable{
     private String quality;
     private String qualityText;
     private String ns;
+    private Long idCount;
 
-    private Result result;
+    private Operation operation;
 
     public Measurements() {
     }
@@ -39,9 +40,23 @@ public class Measurements implements Serializable{
         this.ed = ed;
         this.znak = znak;
         this.size = size;
+
             }
 
+
+
     @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID_COUNT", nullable = false)
+    public Long getIdCount() {
+        return idCount;
+    }
+
+    public void setIdCount(Long idCount) {
+        this.idCount = idCount;
+    }
+
+    @Basic
     @Column(name = "ID", nullable = false)
     public int getId() {
         return id;
@@ -175,14 +190,14 @@ public class Measurements implements Serializable{
 
 
     @ManyToOne
-    @JoinColumn(name = "RESULT_ID")
+    @JoinColumn(name = "OPERATION_ID")
 
-    public Result getResult() {
-        return result;
+    public Operation getOperation() {
+        return operation;
     }
 
-    public void setResult(Result result) {
-        this.result = result;
+    public void setOperation(Operation operation) {
+        this.operation = operation;
     }
 
    /* public Result getResult() {
@@ -193,47 +208,24 @@ public class Measurements implements Serializable{
         this.result = result;
     }*/
 
-
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Measurements that = (Measurements) o;
-
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (text != null ? !text.equals(that.text) : that.text != null) return false;
-        if (ed != null ? !ed.equals(that.ed) : that.ed != null) return false;
-        if (znak != null ? !znak.equals(that.znak) : that.znak != null) return false;
-        if (size != null ? !size.equals(that.size) : that.size != null) return false;
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
-        if (measurInt != null ? !measurInt.equals(that.measurInt) : that.measurInt != null) return false;
-        if (measurFloat != null ? !measurFloat.equals(that.measurFloat) : that.measurFloat != null) return false;
-        if (measurText != null ? !measurText.equals(that.measurText) : that.measurText != null) return false;
-        if (quality != null ? !quality.equals(that.quality) : that.quality != null) return false;
-        if (qualityText != null ? !qualityText.equals(that.qualityText) : that.qualityText != null) return false;
-        if (ns != null ? !ns.equals(that.ns) : that.ns != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (text != null ? text.hashCode() : 0);
-        result = 31 * result + (ed != null ? ed.hashCode() : 0);
-        result = 31 * result + (znak != null ? znak.hashCode() : 0);
-        result = 31 * result + (size != null ? size.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (measurInt != null ? measurInt.hashCode() : 0);
-        result = 31 * result + (measurFloat != null ? measurFloat.hashCode() : 0);
-        result = 31 * result + (measurText != null ? measurText.hashCode() : 0);
-        result = 31 * result + (quality != null ? quality.hashCode() : 0);
-        result = 31 * result + (qualityText != null ? qualityText.hashCode() : 0);
-        result = 31 * result + (ns != null ? ns.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "Measurements{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", text='" + text + '\'' +
+                ", ed='" + ed + '\'' +
+                ", znak=" + znak +
+                ", size=" + size +
+                ", type='" + type + '\'' +
+                ", measurInt=" + measurInt +
+                ", measurFloat=" + measurFloat +
+                ", measurText='" + measurText + '\'' +
+                ", quality='" + quality + '\'' +
+                ", qualityText='" + qualityText + '\'' +
+                ", ns='" + ns + '\'' +
+                ", idCount=" + idCount +
+                ", operation=" + operation +
+                '}';
     }
 }

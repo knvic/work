@@ -66,15 +66,13 @@ public class Test_save_datatime extends EventListener{
         System.out.println("После записи Выводим массив");
         res.forEach(p->System.out.println(p.getIdentificator()));
 */
-        Customer cu=new Customer();
+       /* Customer cu=new Customer();
         cu.setFirstName("Очень новый");
         cu.setTelModem("345345");
         customerService.save(cu);
         List<Customer> l_cu=customerService.findAll();
         l_cu.forEach(p->System.out.println(p.getFirstName()+" "+p.getLastName()));
 
-      /*  Result r=new Result("qwerty");
-        customerService.save(r);*/
 
         LocalDateTime today1 = LocalDateTime.now();
         System.out.println("Получаем текущее время : " + today1);
@@ -117,7 +115,8 @@ public class Test_save_datatime extends EventListener{
         List<Operation> list_o =operationService.findAll();
         list_o.forEach(p->System.out.println(p.getTypeOperation()+" "+p.getDateServer()));
 
-
+*/
+        customerService. getOperationsByCustomerId(36L);
 
 
 
