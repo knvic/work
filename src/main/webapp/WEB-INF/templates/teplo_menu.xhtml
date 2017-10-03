@@ -6,7 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title></title>
     </h:head>
 
     <h:body>
@@ -14,15 +14,23 @@
             <div class="left-menu">
                 <h:form styleClass="genres" id="genresForm">
                     <h1>#{msg.teplo_menu}</h1>
+                                            <!--<ui:repeat value="${testBean8.test()}" var="g">-->
                     <ul>
-                        <!--<ui:repeat value="${testBean8.test()}" var="g">-->
+                        <li><p:commandButton value="#{msg.customers}"    action="customers_process" styleClass="ui-priority-primary" /> </li>
+                    </ul>
+                    <ul>
+                        <li><p:commandButton value="#{msg.reports}"    action="reports_process" styleClass="ui-priority-primary" /> </li>
+                    </ul>
 
-
+                    <ul>
                         <li><p:commandButton value="#{msg.teplo_work_data}"    action="Data" styleClass="ui-priority-primary" /> </li>
+                    </ul>
+                    <ul>
                         <li><p:commandButton value="#{msg.teplo_work_modem}"    action="Modem" styleClass="ui-priority-primary" /> </li>
-                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel" styleClass="ui-priority-primary" /> </li>
-
-
+                    </ul>
+                    <ul>
+                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
+                    </ul>
 <!--
                                 <p:commandLink value="#{msg.add_user}"   action="adduser" />
                                 <p:commandButton value="adduser" action="adduser" title="transition on=adduser"/>
@@ -35,7 +43,7 @@
                                 <!--</p:commandLink>-->
 
                         <!--</ui:repeat>-->
-                    </ul>
+
                 </h:form>
             </div>
         </ui:composition>
