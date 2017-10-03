@@ -43,7 +43,8 @@
 
            </p:dataTable>
 -->
-             <p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
                 <f:facet name="header">
                     Select Events
                 </f:facet>
@@ -79,7 +80,7 @@
                     </p:panelGrid>
                 </p:outputPanel>
             </p:dialog>
-            <p:commandButton value="adduser" action="adduser" title="transition on=adduser"/>
+            <p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />
 
             <p:growl id="grow2" life="5000" />
 

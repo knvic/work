@@ -88,9 +88,11 @@ public class Facade_customer {
 
         return customers;
     }
-    public void saveCustomer(Customer customer){
-
-        customerService.save(customer);
+    public void saveCustomer(){
+        Customer c= searchCriteria_cust.getCustomer();
+        if (!(c.getFirstName()).equals("")) {
+            customerService.save(c);
+        }
 
 
     }
