@@ -15,37 +15,20 @@
             </on-render>
 
 
-            <transition on="addCustomer" to="addCustomer">
-                  <evaluate expression="modemServiceImpl.close_connect()" />
-            </transition>
+            <transition on="customer_process" to="addCustomer">
 
-
-
-            <transition on="Connect">
-                  <evaluate expression="modemServiceImpl.connect()" />
-            </transition>
-
-            <transition on="Close">
-                  <evaluate expression="modemServiceImpl.close_connect()" />
             </transition>
 
       </view-state>
 
+      <subflow-state id="addCustomer" subflow="teplo/customer_process">
+            <transition on="customer_ready" to="endState" />
+      </subflow-state>
 
-      <view-state id="addCustomer" view="teplo_add_customer.xhtml" >
-            <var name="add_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>
 
-            <transition on="save_customer" to="save_customer">
 
-                  <evaluate expression="modemServiceImpl.close_connect()" />
-            </transition>
 
-      </view-state>
 
-      <action-state id="save_customer">
-            <evaluate expression="facade_customer.saveCustomer()"/>
-            <transition to="endState"/>
-      </action-state>
 
 
       <end-state id="endState"  view="flowRedirect:teplo"/>

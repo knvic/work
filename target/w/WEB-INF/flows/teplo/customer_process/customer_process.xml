@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="customer_process">
+
+
+
+      <view-state id="customer_process" view="customer_process.xhtml" >
+            <var name="add_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>
+
+            <transition on="save_customer" to="save_customer"/>
+            <transition on="edit_customer" to="customer_edit"/>
+
+      </view-state>
+
+      <view-state id="customer_edit" view="customer_edit.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
+            </on-render>
+
+
+      </view-state>
+
+
+      <action-state id="save_customer">
+            <evaluate expression="facade_customer.saveCustomer()"/>
+            <transition to="customer_ready"/>
+      </action-state>
+
+
+      <end-state id="customer_ready"  />
+
+
+      <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
+            <transition on="cancel" to="customer_ready" />
+      </global-transitions>
+
+
+
+</flow>

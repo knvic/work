@@ -14,9 +14,9 @@
             <div class="left-menu">
                 <h:form styleClass="genres" id="genresForm">
                     <h1>#{msg.teplo_menu}</h1>
-                                            <!--<ui:repeat value="${testBean8.test()}" var="g">-->
+
                     <ul>
-                        <li><p:commandButton value="#{msg.customers}"    action="customers_process" styleClass="ui-priority-primary" /> </li>
+                        <li><p:commandButton value="#{msg.customers}"    action="customer_process" styleClass="ui-priority-primary" /> </li>
                     </ul>
                     <ul>
                         <li><p:commandButton value="#{msg.reports}"    action="reports_process" styleClass="ui-priority-primary" /> </li>
@@ -31,18 +31,8 @@
                     <ul>
                         <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
                     </ul>
-<!--
-                                <p:commandLink value="#{msg.add_user}"   action="adduser" />
-                                <p:commandButton value="adduser" action="adduser" title="transition on=adduser"/>
-                                <li><p:commandLink value="#{msg.news}"/></li>
-                        -->
 
-                                <!--<p:commandLink value="Add User" update=":booksForm:booksList"  action="searchByHobby" actionListener="#{searchCriteria.setHobby(g)}" ajax="false"/>-->
-                                <!--<f:ajax execute="@form" render=":booksForm:booksList"/>-->
 
-                                <!--</p:commandLink>-->
-
-                        <!--</ui:repeat>-->
 
                 </h:form>
             </div>
