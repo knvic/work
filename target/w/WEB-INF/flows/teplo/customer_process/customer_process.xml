@@ -10,19 +10,38 @@
             <var name="add_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>
 
             <transition on="save_customer" to="save_customer"/>
-            <transition on="edit_customer" to="customer_edit"/>
+            <transition on="edit_customer" to="customer_select"/>
 
       </view-state>
 
-      <view-state id="customer_edit" view="customer_edit.xhtml" >
+      <view-state id="customer_select" view="customer_select.xhtml" >
 
             <on-render>
                   <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
             </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="edit_del"/>
 
 
       </view-state>
 
+
+
+      <view-state id="edit_del" view="customer_edit_del.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_customer.searchCustomerById()" result="viewScope.cu"  />
+            </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="edit_del"/>
+
+
+      </view-state>
+
+      <action-state id="back">
+            <evaluate expression="selection.setCust(null)"/>
+            <transition to="customer_process"/>
+      </action-state>
 
       <action-state id="save_customer">
             <evaluate expression="facade_customer.saveCustomer()"/>

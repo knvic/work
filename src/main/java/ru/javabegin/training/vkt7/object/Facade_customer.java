@@ -113,11 +113,11 @@ public class Facade_customer {
 
 
     public List<Customer> searchCustomerById() {
-        //customer = searchCriteria_cust.getCustomer();
+        customer= searchCriteria_cust.getCustomer();
 
-        Long id = searchCriteria_cust.getId();
+      //  Long id = c.getId();
         //customer = customerService.findById(id);
-        customer = customerService.findById(1L);
+      //  customer = customerService.findById(id);
         customers=null;
         customers=new ArrayList<>();
         customers.add(customer);
