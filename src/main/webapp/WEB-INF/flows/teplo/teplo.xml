@@ -7,8 +7,8 @@
 
 
 
-      <var name="addUserSec" class="ru.javabegin.training.security.AddUserSec"/>
-      <var name="selectionContact" class="ru.javabegin.training.objects.SelectionContact"/>
+
+      <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
       <view-state id="teplo" view="teplo.xhtml">
 
 
@@ -21,7 +21,7 @@
             </transition>
 
 
-        
+
 
       </view-state>
 

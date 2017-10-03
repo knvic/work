@@ -21,10 +21,7 @@
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
 
-
-
-
-            <p:dataTable id="radioDT" var="u" value="${facade.contacts}" selection="#{selectionContact.ud}" rowKey="#{u.firstName}">
+          <!--  <p:dataTable id="radioDT" var="u" value="${facade.contacts}" selection="#{selectionContact.ud}" rowKey="#{u.firstName}">
                 <f:facet name="header">
                     RadioButton
                 </f:facet>
@@ -44,7 +41,27 @@
                     <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
                 </f:facet>
 
+           </p:dataTable>
+-->
+             <p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    Select Events
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selection.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selection.onRowUnselect}" update=":form:msgs" />
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.unitNumber}" />
+                </p:column>
+
             </p:dataTable>
+
+
 
             <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
                 <p:outputPanel id="carDetail" style="text-align:center;">
