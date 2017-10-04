@@ -71,6 +71,16 @@ public class CustomerServiceImpl implements CustomerService {
         return customer;
     }
 
+
+    @Override
+    public void delete(Customer customer) {
+        Customer mergedContact = em.merge(customer);
+        em.remove(mergedContact);
+
+        log.info("Customer with id: " + customer.getId()  + " deleted successfully");
+    }
+
+
     @Transactional(readOnly=true)
     @Override
     public Customer findById(Long id) {

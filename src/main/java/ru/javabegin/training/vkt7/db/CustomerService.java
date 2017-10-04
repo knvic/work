@@ -13,6 +13,7 @@ public interface CustomerService {
 
     List<Customer> findAll();
     Customer save(Customer customer);
+    void delete (Customer customer);
     Customer findById(Long id);
     List<Operation> findOperationByIdCustomer(Long id);
     List<Operation> getOperationsByCustomerId(Long id);

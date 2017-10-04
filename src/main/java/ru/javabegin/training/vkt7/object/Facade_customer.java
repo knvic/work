@@ -90,10 +90,20 @@ public class Facade_customer {
     }
     public void saveCustomer(){
         Customer c= searchCriteria_cust.getCustomer();
-        if (!(c.getFirstName()).equals("")) {
-            customerService.save(c);
-        }
 
+            if (!(c.getFirstName()).equals("")) {
+                customerService.save(c);
+            }
+
+    }
+
+    public void deleteCustomer(){
+        Customer c= searchCriteria_cust.getCustomer();
+
+            if (!(c.getFirstName()).equals("")) {
+                customerService.delete(c);
+                searchCriteria_cust.setCustomer(null);
+            }
 
     }
     public List<Customer> findAllCustomers1(Customer customer){
@@ -123,6 +133,19 @@ public class Facade_customer {
         customers.add(customer);
         return customers;
     }
+
+
+    public Customer searchCustomer_1_ById() {
+        customer= searchCriteria_cust.getCustomer();
+
+        //  Long id = c.getId();
+        //customer = customerService.findById(id);
+        //  customer = customerService.findById(id);
+
+        return customer;
+    }
+
+
 
     public List<Operation> findOperationById(){
 

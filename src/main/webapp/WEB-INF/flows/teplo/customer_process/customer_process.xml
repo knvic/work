@@ -14,6 +14,9 @@
 
       </view-state>
 
+
+
+
       <view-state id="customer_select" view="customer_select.xhtml" >
 
             <on-render>
@@ -34,9 +37,44 @@
             </on-render>
             <transition on="back" to="back"/>
             <transition on="next" to="edit_del"/>
+            <transition on="delete" to="confirm"/>
+
 
 
       </view-state>
+
+
+<!--
+
+      <view-state id="confirm_delete" view="customer_confirm_delete.xhtml" >
+
+
+
+
+            <on-render>
+
+                  <evaluate expression="facade_customer.searchCustomerById()" result="flashScope.custom"  />
+            </on-render>
+            <transition on="back" to="back"/>
+
+            <transition on="confirm" to="confirm"/>
+
+      </view-state>
+-->
+
+      <action-state id="confirm">
+
+            <evaluate expression="facade_customer.deleteCustomer()"  />
+            <evaluate expression="selection.setCust(null)"/>
+            <transition to="customer_deleted"/>
+      </action-state>
+
+      <view-state id="customer_deleted" view="customer_deleted.xhtml" >
+            <transition on="back" to="customer_ready"/>
+
+      </view-state>
+
+
 
       <action-state id="back">
             <evaluate expression="selection.setCust(null)"/>
@@ -53,6 +91,7 @@
 
 
       <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
+
             <transition on="cancel" to="customer_ready" />
       </global-transitions>
 

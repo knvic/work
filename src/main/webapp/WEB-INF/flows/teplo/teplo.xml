@@ -9,6 +9,7 @@
 
 
       <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
+
       <view-state id="teplo" view="teplo.xhtml">
             <on-render>
                   <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
