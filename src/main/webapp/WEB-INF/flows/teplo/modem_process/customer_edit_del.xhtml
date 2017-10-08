@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags">
+
+
+<ui:composition template="/WEB-INF/templates/customer_edit_delete_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    Select Events
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selection.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selection.onRowUnselect}" update=":form:msgs" />
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.unitNumber}" />
+                </p:column>
+
+            </p:dataTable>
+
+
+
+            <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                <p:outputPanel id="carDetail" style="text-align:center;">
+                    <p:panelGrid  columns="2" rendered="#{not empty selection.cust}" columnClasses="label,value">
+
+
+                        <h:outputText value="Name:" />
+                        <h:outputText value="#{selection.cust.firstName}" />
+                        <h:outputText value="Authorites:" />
+                        <h:outputText value="#{selection.cust.telModem}" />
+                        <h:outputText value="RemoteIP:" />
+                        <h:outputText value="#{selection.cust.unitNumber}" />
+
+
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+            <!--<p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />-->
+
+            <p:growl id="grow2" life="5000" />
+
+
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+            <p:dataTable id="radioDT" var="u" value="${cu}" selection="#{selection.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    RadioButton
+                </f:facet>
+                <p:column selectionMode="single" style="width:16px;text-align:center"/>
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.lastName}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+
+
+                <f:facet name="footer">
+                    <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
+
+                    <ul>
+                    <li><p:commandButton value="#{msg.delete}" event="onclick"  action="delete"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
+                </ul>
+                    <ul>
+                        <li><p:commandButton value="#{msg.edit}" event="onclick"  action="edit"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
+                    </ul>
+                </f:facet>
+
+            </p:dataTable>
+
+
+
+
+        </h:form>
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

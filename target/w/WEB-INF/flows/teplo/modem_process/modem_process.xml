@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="modem_process">
+
+      <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
+
+
+   <!--   <view-state id="modem_process" view="c_process.xhtml" >
+            <var name="add_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>
+
+            <transition on="save_customer" to="save_customer"/>
+            <transition on="edit_customer" to="customer_select"/>
+
+      </view-state>-->
+
+
+
+
+      <view-state id="modem_process" view="customer_m_select.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
+            </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="case"/>
+
+
+
+      </view-state>
+
+
+
+      <view-state id="case" view="customer_m_case.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_customer.searchCustomerById()" result="viewScope.cu"  />
+            </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="edit_del"/>
+            <transition on="delete" to="confirm"/>
+            <transition on="edit" to="edit"/>
+
+
+      </view-state>
+
+
+
+      <view-state id="edit" view="customer_edit.xhtml" model="selection.cust">
+
+            <transition on="save_customer" to="save_customer"/>
+            <transition on="edit_customer" to="modem_process"/>
+
+      </view-state>
+
+
+
+
+
+      <action-state id="confirm">
+
+            <evaluate expression="facade_customer.deleteCustomer()"  />
+            <evaluate expression="selection.setCust(null)"/>
+            <transition to="customer_deleted"/>
+      </action-state>
+
+      <view-state id="customer_deleted" view="customer_deleted.xhtml" >
+            <transition on="back" to="modem_ready"/>
+
+      </view-state>
+
+
+
+      <action-state id="back">
+            <evaluate expression="selection.setCust(null)"/>
+            <transition to="modem_process"/>
+      </action-state>
+
+      <action-state id="save_customer">
+            <evaluate expression="facade_customer.saveCustomer()"/>
+            <transition to="modem_ready"/>
+      </action-state>
+
+
+      <end-state id="modem_ready"  />
+
+
+      <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
+
+            <transition on="cancel" to="modem_ready" />
+      </global-transitions>
+
+
+
+</flow>

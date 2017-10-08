@@ -30,7 +30,7 @@ public class MeasurementsServiceImpl implements MeasurementsService {
                 if (active_items.get(i).getId()==curr[j]){
                     temp=active_items.get(i);
                     Measurements item=new Measurements(active_items.get(i).getId(),active_items.get(i).getName(),active_items.get(i).getText(),
-                            active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize());
+                            active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize(),active_items.get(i).getType());
                     list_current.add(item);
 
                     break;
@@ -67,7 +67,7 @@ List<Object> current = new ArrayList<>();
             if (active_items.get(i).getId()==curr[j]){
                 temp=active_items.get(i);
                 Measurements item=new Measurements(active_items.get(i).getId(),active_items.get(i).getName(),active_items.get(i).getText(),
-                        active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize());
+                        active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize(),active_items.get(i).getType());
                         list_current.add(item);
 
                 break;

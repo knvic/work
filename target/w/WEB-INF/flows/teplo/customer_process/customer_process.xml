@@ -4,6 +4,7 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
       start-state="customer_process">
 
+      <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
 
 
       <view-state id="customer_process" view="customer_process.xhtml" >
@@ -26,6 +27,7 @@
             <transition on="next" to="edit_del"/>
 
 
+
       </view-state>
 
 
@@ -38,29 +40,23 @@
             <transition on="back" to="back"/>
             <transition on="next" to="edit_del"/>
             <transition on="delete" to="confirm"/>
-
+            <transition on="edit" to="edit"/>
 
 
       </view-state>
 
 
-<!--
 
-      <view-state id="confirm_delete" view="customer_confirm_delete.xhtml" >
+      <view-state id="edit" view="customer_edit.xhtml" model="selection.cust">
 
-
-
-
-            <on-render>
-
-                  <evaluate expression="facade_customer.searchCustomerById()" result="flashScope.custom"  />
-            </on-render>
-            <transition on="back" to="back"/>
-
-            <transition on="confirm" to="confirm"/>
+            <transition on="save_customer" to="save_customer"/>
+            <transition on="edit_customer" to="customer_select"/>
 
       </view-state>
--->
+
+
+
+
 
       <action-state id="confirm">
 
@@ -71,7 +67,7 @@
 
       <view-state id="customer_deleted" view="customer_deleted.xhtml" >
             <transition on="back" to="customer_ready"/>
-           
+
       </view-state>
 
 

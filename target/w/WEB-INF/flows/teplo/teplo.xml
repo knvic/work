@@ -9,6 +9,9 @@
 
 
       <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
+      <var name="searchCriteria_cust" class="ru.javabegin.training.vkt7.object.SearchCriteria_cust"/>
+
+
 
       <view-state id="teplo" view="teplo.xhtml">
             <on-render>
@@ -17,7 +20,9 @@
 
 
             <transition on="customer_process" to="addCustomer">
+            </transition>
 
+            <transition on="modem_process" to="modem">
             </transition>
 
       </view-state>
@@ -26,7 +31,9 @@
             <transition on="customer_ready" to="endState" />
       </subflow-state>
 
-
+      <subflow-state id="modem" subflow="teplo/modem_process">
+            <transition on="modem_ready" to="endState" />
+      </subflow-state>
 
 
 

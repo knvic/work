@@ -33,14 +33,14 @@ public class Measurements implements Serializable{
     public Measurements() {
     }
 
-    public Measurements(int id, String name, String text, String ed, Integer znak, Integer size) {
+    public Measurements(int id, String name, String text, String ed, Integer znak, Integer size,String type) {
         this.id = id;
         this.name = name;
         this.text = text;
         this.ed = ed;
         this.znak = znak;
         this.size = size;
-
+        this.type = type;
             }
 
 

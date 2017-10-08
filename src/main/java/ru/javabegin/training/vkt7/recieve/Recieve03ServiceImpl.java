@@ -288,15 +288,31 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 
             quality=data1.get(marker+razmer);
             ns=data1.get(marker+razmer+1);
+
+
+            if (razmer==1){
+                if(quality.equals("C0")){
+
+
+                    temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
+                    if (temp_measur.getEd()!=null){
+                        temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt())+temp_measur.getEd());}
+                    else{
+                        temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
+                    }
+                }
+                else{System.out.println(temp_measur.getText()+"  - не верный байт качества");}
+            }
+
             if (razmer==2){
                 if(quality.equals("C0")){
 
-                    temp_measur.setType("int");
+
                     temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
                         if (temp_measur.getEd()!=null){
-                            temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt()*0.01)+temp_measur.getEd());}
+                            temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt()*znak(temp_measur.getZnak())+temp_measur.getEd()));}
                         else{
-                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01));
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
                         }
                                     }
                 else{System.out.println(temp_measur.getText()+"  - не верный байт качества");}
@@ -304,14 +320,42 @@ public class Recieve03ServiceImpl implements Recieve03Service{
             if (razmer==4){
                 if(quality.equals("C0")){
 
-                    temp_measur.setType("float");
-                    temp_measur.setMeasurFloat(Float.intBitsToFloat(Integer.valueOf(l2b(measur),16).intValue()));
-                        if (temp_measur.getEd()!=null){
-                        temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat())+temp_measur.getEd());}
-                        else{
+
+
+                    if(temp_measur.getType().equals("float")) {
+                        temp_measur.setMeasurFloat(Float.intBitsToFloat(Integer.valueOf(l2b(measur), 16).intValue()));
+                        if (temp_measur.getEd() != null) {
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()) + temp_measur.getEd());
+                        } else {
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()));
                         }
-                    //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
+                        //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
+                    }
+
+
+                    if(temp_measur.getType().equals("int")) {
+
+
+                        temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
+                        if (temp_measur.getEd() != null) {
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())) + temp_measur.getEd());
+                        } else {
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
+                        }
+                        //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
+                    }
+
+
+                    if(temp_measur.getType().equals("uns_int")) {
+
+                        temp_measur.setMeasurInt((int) Long.parseLong(l2b(measur), 16));
+                        if (temp_measur.getEd() != null) {
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01) + temp_measur.getEd());
+                        } else {
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01));
+                        }
+                        //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
+                    }
 
                 }
                 else{System.out.println(temp_measur.getText()+"  - не верный байт качества");}
@@ -560,7 +604,22 @@ int number_active_base=10000;
         return str_out;
     }
 
-
+    public double znak (int number_of_signs){
+        double a=1;
+        if (number_of_signs==1){
+            a = 0.1;
+        }
+        if (number_of_signs==2){
+            a = 0.01;
+        }
+        if (number_of_signs==3){
+            a = 0.001;
+        }
+        if (number_of_signs==4){
+            a = 0.0001;
+        }
+        return a;
+    }
 
 
 

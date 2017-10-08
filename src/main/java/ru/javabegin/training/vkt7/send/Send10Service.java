@@ -4,6 +4,7 @@ package ru.javabegin.training.vkt7.send;
  * Created by Николай on 20.08.2017.
  */
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +45,16 @@ public interface Send10Service {
      * @return массив строка команды
      */
     List<String> s_3FFD(int number, int type);
+
+
+    /**
+     * 4.4 Запрос на запись даты
+     * @param number номер узла
+     * @param date относительно ка-
+    кой хронологической метки следует передавать архивные данные.
+     * @return
+     */
+
+    List<String> s_3FFB(int number, Timestamp date);
 
 }

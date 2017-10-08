@@ -17,6 +17,10 @@ public class Properts {
     int znak;
     int size;
 
+
+
+    String type;
+
     public Properts(){
 
     }
@@ -26,14 +30,17 @@ public class Properts {
         this.name = name;
         this.text = text;
     }
-    public Properts(int id, String name, String text, int id_ed,int id_znak) {
+
+
+    public Properts(int id, String name, String text, int id_ed,int id_znak, String type) {
         this.id = id;
         this.name = name;
         this.text = text;
         this.id_ed = id_ed;
         this.id_znak = id_znak;
-
+        this.type = type;
     }
+
 
     public int getId() {
         return id;
@@ -98,6 +105,13 @@ public class Properts {
     public void setSize(int size) {
         this.size = size;
     }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public String toString() {
@@ -110,6 +124,7 @@ public class Properts {
                 ", id_znak=" + id_znak +
                 ", znak=" + znak +
                 ", size=" + size +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

@@ -4,6 +4,9 @@ import ru.javabegin.training.vkt7.propert.Properties_xml;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 
 import javax.xml.bind.JAXBException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -153,6 +156,35 @@ public class Send10ServiceImpl implements Send10Service{
         // list.forEach(System.out::print);
         list.add(2,format("%02X", number));
         list.add(9,format("%02X", type));
+        list.forEach(p->System.out.print(p+" "));
+        return list;
+    }
+
+
+
+    @Override
+    public List<String> s_3FFB(int number, Timestamp date_ts){
+
+        System.out.println("Переводим Timestamp в localDateTime");
+        LocalDateTime date = date_ts.toLocalDateTime();
+        String date_str=date.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
+        System.out.println("ddd = "+date_str);
+        List<String> date_dd_MM_UU_HH = new ArrayList<String>(Arrays.asList(date_str.split(":")));
+
+
+        String command= "FF FF 10 3F FB 00 00 04";
+        /**
+         * Преобразовываем строку в массив <String>
+         * Добавляем номер узла тритьим параметром "FF FF number 10 3F FD 00 00 02 00"
+         */
+        List<String> list = new ArrayList<String>(Arrays.asList(command.split(" ")));
+        // list.forEach(System.out::print);
+        list.add(2,format("%02X", number));
+        list.add(9,format("%02X", Integer.parseInt(date_dd_MM_UU_HH.get(0))));
+        list.add(10,format("%02X", Integer.parseInt(date_dd_MM_UU_HH.get(1))));
+        list.add(11,format("%02X", Integer.parseInt(date_dd_MM_UU_HH.get(2))));
+        list.add(12,format("%02X", Integer.parseInt(date_dd_MM_UU_HH.get(3))));
+
         list.forEach(p->System.out.print(p+" "));
         return list;
     }
