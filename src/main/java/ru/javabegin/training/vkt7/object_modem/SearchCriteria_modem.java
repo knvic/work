@@ -97,10 +97,12 @@ public class SearchCriteria_modem implements Serializable{
     }
 
 
-    public void set_all_modem(String modem_operation, Date day_of) {
+    public void set_all_modem(String modem_operation, Date day_of, Customer customer) {
 
         this.modem_operation = modem_operation;
         this.day_of = day_of;
+        this.customer = customer;
+
     }
 
 

@@ -4,7 +4,7 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
       start-state="modem_process">
 
-      <var name="selection" class="ru.javabegin.training.vkt7.object.Selection"/>
+      <var name="selectionModem" class="ru.javabegin.training.vkt7.object_modem.SelectionModem"/>
 
 
    <!--   <view-state id="modem_process" view="c_process.xhtml" >
@@ -35,17 +35,46 @@
       <view-state id="case" view="customer_m_case.xhtml" >
 
             <on-render>
-                  <evaluate expression="facade_customer.searchCustomerById()" result="viewScope.cu"  />
+                  <evaluate expression="facade_modem.searchCustomerById()" result="viewScope.cu"  />
             </on-render>
             <transition on="back" to="back"/>
             <transition on="next" to="edit_del"/>
             <transition on="delete" to="confirm"/>
             <transition on="edit" to="edit"/>
 
+            <transition on="action" to="action"/>
+
 
       </view-state>
+      
+   <!--   <decision-state id="action">
+
+      <if test="searchCriteria.modem_operation"
+          then="addCustomer"
+          else="deliveryWarning" />
+</decision-state>-->
+
+      <action-state id="action">
+            <evaluate expression="searchCriteria_modem.modem_operation" />
+            <transition on="hour" to="modem_process" />
+            <!--<transition on="no" to="resultIsFalseState" />-->
+            <transition on="daily" to="daily" />
+      </action-state>
+
+      <view-state id="daily" view="customer_m_daily.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_modem.searchCustomerById()" result="viewScope.cu"  />
+            </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="edit_del"/>
+            <transition on="delete" to="confirm"/>
+            <transition on="edit" to="edit"/>
+
+            <transition on="action" to="action"/>
 
 
+      </view-state>
 
       <view-state id="edit" view="customer_edit.xhtml" model="selection.cust">
 
