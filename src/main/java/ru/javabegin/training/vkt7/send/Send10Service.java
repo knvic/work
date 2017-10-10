@@ -6,6 +6,7 @@ package ru.javabegin.training.vkt7.send;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -55,6 +56,6 @@ public interface Send10Service {
      * @return
      */
 
-    List<String> s_3FFB(int number, Timestamp date);
+    List<String> s_3FFB(int number, Date date);
 
 }

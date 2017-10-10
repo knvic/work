@@ -54,6 +54,89 @@ List<Object> current = new ArrayList<>();
     }
 
     @Override
+    public List<Object>  total_current_command  (List<Properts> active_items){
+
+        Properts temp;
+        Measurements temp1;
+
+        //List<Integer> list = new ArrayList<>(0,1,2,9,10,14,15,16,19,20,21,22,23,24,31,32,36,41,42,43,77,78);
+        int[] curr_total = new int[]{3,4,5,6,7,8,11,12,13,17,18,25,26,27,28,29,30,33,34,35,39,40,81};
+        List<Measurements> list_current= new ArrayList<>();
+        for (int i=0;i<active_items.size();i++){
+            for(int j=0;j<curr_total.length;j++)
+                if (active_items.get(i).getId()==curr_total[j]){
+                    temp=active_items.get(i);
+                    Measurements item=new Measurements(active_items.get(i).getId(),active_items.get(i).getName(),active_items.get(i).getText(),
+                            active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize(),active_items.get(i).getType());
+                    list_current.add(item);
+
+                    break;
+                }
+
+        }
+
+        String temp_command="";
+        for (int i=0;i<list_current.size();i++){
+            temp1= list_current.get(i);
+            temp_command=temp_command+format("%02X", temp1.getId())+"000040"+format("%02X", temp1.getSize())+"00";
+        }
+        List<String> command = new ArrayList<>(Arrays.asList(temp_command.replace(" ", "").split("(?<=\\G.{2})")));
+
+        List<Object> current = new ArrayList<>();
+        current.add(command);
+        current.add(list_current);
+
+
+        return current;
+    }
+
+
+
+
+
+    @Override
+    public List<Object> archive_command  (List<Properts> active_items){
+
+        Properts temp;
+        Measurements temp1;
+
+        //List<Integer> list = new ArrayList<>(0,1,2,9,10,14,15,16,19,20,21,22,23,24,31,32,36,41,42,43,77,78);
+        //int[] curr = new int[]{0,1,2,9,10,14,15,16,19,20,21,22,23,24,31,32,36,41,42,43,77,78};
+        int[] curr_archive = new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,39,40,77,78,79,80,81,82};
+        List<Measurements> list_current= new ArrayList<>();
+        for (int i=0;i<active_items.size();i++){
+            for(int j=0;j<curr_archive.length;j++)
+                if (active_items.get(i).getId()==curr_archive[j]){
+                    temp=active_items.get(i);
+                    Measurements item=new Measurements(active_items.get(i).getId(),active_items.get(i).getName(),active_items.get(i).getText(),
+                            active_items.get(i).getEd(),active_items.get(i).getZnak(),active_items.get(i).getSize(),active_items.get(i).getType());
+                    list_current.add(item);
+
+                    break;
+                }
+
+        }
+
+        String temp_command="";
+        for (int i=0;i<list_current.size();i++){
+            temp1= list_current.get(i);
+            temp_command=temp_command+format("%02X", temp1.getId())+"000040"+format("%02X", temp1.getSize())+"00";
+        }
+        List<String> command = new ArrayList<>(Arrays.asList(temp_command.replace(" ", "").split("(?<=\\G.{2})")));
+
+        List<Object> current = new ArrayList<>();
+        current.add(command);
+        current.add(list_current);
+
+
+        return current;
+    }
+
+
+
+
+
+    @Override
     public List<Measurements> current (List<Properts> active_items){
 
         Properts temp;

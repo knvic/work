@@ -10,7 +10,13 @@ import java.util.List;
  */
 public interface MeasurementsService {
     List<Object> current_command(List<Properts> active_items);
+    List<Object> archive_command (List<Properts> active_items);
+    List<Object> total_current_command (List<Properts> active_items);
+
+
     List<Measurements> current(List<Properts> active_items);
+
+
     List<Measurements> current_total();
     List<Measurements> archive();
     List<Measurements> archive_total();

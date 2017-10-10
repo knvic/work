@@ -15,6 +15,7 @@ import ru.javabegin.training.vkt7.entities.TestService;
 import ru.javabegin.training.vkt7.modem.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -211,6 +212,42 @@ List<Object> connect=new ArrayList<>();*/
 
     }
 
+
+
+    @Override
+    public void get_daily_data(Customer customer, Date data){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+        String tel =customer.getTelModem();
+        Long id=customer.getId();
+        System.out.println("tel= "+tel);
+        DailyData dailyData=new DailyData();
+
+        Callable task = () -> {
+            try {
+                //TimeUnit.SECONDS.sleep(1);
+                dailyData.daily_all_cycle(customerService, resultService,operationService, tel, id, data);
+                //return Thread.currentThread().getName();
+                return "123";
+
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(2);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
 
 
     @Override

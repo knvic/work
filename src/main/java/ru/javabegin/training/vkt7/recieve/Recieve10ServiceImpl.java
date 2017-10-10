@@ -77,6 +77,31 @@ public class Recieve10ServiceImpl implements Recieve10Service {
         return a;
     }
 
+
+
+    @Override
+    public boolean r_3FFB(String recieve){
+        //String command= "01 10 3F FF 00 00 FC 2D ";
+        /**
+         * Преобразовываем строку в массив <String>
+         *
+         */
+        boolean a =false;
+        List<String> list = new LinkedList<String>(Arrays.asList(recieve));
+        List<String> filtered =
+                list
+                        .stream()
+                        .filter(p -> p.contains("3F FB"))
+                        .collect(Collectors.toList());
+        list.forEach(System.out::print);
+        System.out.println();
+        filtered.forEach(System.out::print);
+        if (!filtered.isEmpty())a=true;
+        return a;
+    }
+
+
+
 }
 
 

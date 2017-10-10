@@ -13,5 +13,6 @@ public interface Recieve10Service {
 
     boolean r_3FFF(String recieve);
     boolean r_3FFD(String recieve);
+    boolean r_3FFB(String recieve);
 
 }

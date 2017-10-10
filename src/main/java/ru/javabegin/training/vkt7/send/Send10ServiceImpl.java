@@ -5,12 +5,11 @@ import ru.javabegin.training.vkt7.propert.entities.Properts;
 
 import javax.xml.bind.JAXBException;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.IntStream;
 
 import static java.lang.String.format;
@@ -163,11 +162,17 @@ public class Send10ServiceImpl implements Send10Service{
 
 
     @Override
-    public List<String> s_3FFB(int number, Timestamp date_ts){
+    public List<String> s_3FFB(int number, Date date){
 
-        System.out.println("Переводим Timestamp в localDateTime");
-        LocalDateTime date = date_ts.toLocalDateTime();
-        String date_str=date.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
+        Instant date_time = date.toInstant();
+        LocalDateTime ldt = LocalDateTime.ofInstant(date_time, ZoneId.systemDefault());
+        System.out.println("value of Date: " + date_time);
+        System.out.println("value of LocalDateTime: " + ldt);
+
+      /*  System.out.println("Переводим Timestamp в localDateTime");
+        LocalDateTime date = date_ts.toLocalDateTime();*/
+
+      String date_str=ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
         System.out.println("ddd = "+date_str);
         List<String> date_dd_MM_UU_HH = new ArrayList<String>(Arrays.asList(date_str.split(":")));
 

@@ -344,20 +344,26 @@ public class EventListener   implements SerialPortEventListener   { /*Слуша
                         count = Integer.parseInt(temp.substring(4, 6), 16);
                         count = count * 2 + 10;
                         System.out.println("count == " + count);
-                        z = 1;
 
+                        z = 1;
                     }
                     temp = temp.replace(" ", "");
+                    System.out.println("temp промежуточный = "+temp);
+                    System.out.println("temp length() = "+temp.length());
+                    System.out.println("count = "+count);
                     if (temp.length() == count) {
-
+                        System.out.println("вошли в выход  step= "+step);
                         data2 = temp;
+                        System.out.println("вошли в цикл выхода. Data2= "+data2);
                         recieve_all_byte = 2;
                         count = 0;
                         z = 0;
                         step = 22;
                         temp = "";
-                    }
 
+                        System.out.println("вошли в цикл выхода. Data2= "+data2);
+                    }
+                    System.out.println("при проверке(пора выходить step= "+step);
                 }
 
 ////////////////////////////////////////////////////////////
