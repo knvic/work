@@ -36,6 +36,7 @@ public abstract class Operation_ {
 	public static volatile SingularAttribute<Operation, Timestamp> dateServer;
 	public static volatile SingularAttribute<Operation, String> shemaTv23Ff9;
 	public static volatile SetAttribute<Operation, Measurements> measurementsSet;
+	public static volatile SingularAttribute<Operation, Timestamp> chronological;
 	public static volatile SingularAttribute<Operation, String> baseNumber;
 	public static volatile SingularAttribute<Operation, String> status;
 	public static volatile SingularAttribute<Operation, Customer> customer;

@@ -63,7 +63,10 @@
                 <column name="DATE_VKT_3FFB" nullable="false" precision="-1"/>
             </basic>
             <basic name="dateServer">
-                <column name="DATE_SERVER" nullable="false" precision="-1"/>
+            <column name="DATE_SERVER" nullable="false" precision="-1"/>
+        </basic>
+            <basic name="chronological">
+                <column name="CHRONOLOGICAL" nullable="false" precision="-1"/>
             </basic>
             <basic name="shemaTv13Ecd">
                 <column name="SHEMA_TV1_3ECD" nullable="false" length="2"/>

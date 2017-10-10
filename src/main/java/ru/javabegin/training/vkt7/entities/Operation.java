@@ -52,6 +52,7 @@ public class Operation implements Serializable{
     private Timestamp beginDayDate;
     private Timestamp dateVkt3Ffb;
     private Timestamp dateServer;
+    private Timestamp chronological;
     private String shemaTv13Ecd;
     private String shemaTv23F5B;
     private String baseNumber;
@@ -284,6 +285,16 @@ public class Operation implements Serializable{
 
     public void setDateServer(Timestamp dateServer) {
         this.dateServer = dateServer;
+    }
+
+    @Basic
+    @Column(name = "CHRONOLOGICAL", nullable = true)
+    public Timestamp getChronological() {
+        return chronological;
+    }
+
+    public void setChronological(Timestamp chronological) {
+        this.chronological = chronological;
     }
 
     @Basic

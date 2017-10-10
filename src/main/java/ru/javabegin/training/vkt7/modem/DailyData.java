@@ -21,7 +21,9 @@ import ru.javabegin.training.vkt7.send.Send10ServiceImpl;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -65,7 +67,7 @@ public class DailyData extends EventListener{
 
 
 
-    public String daily_all_cycle(CustomerService customerService, ResultService resultService, OperationService operationService, String tel, Long id, Date date) throws InterruptedException, TimeoutException, ExecutionException {
+    public String daily_all_cycle(CustomerService customerService, OperationService operationService, String tel, Long id, Date date) throws InterruptedException, TimeoutException, ExecutionException {
 
 
 
@@ -1942,6 +1944,14 @@ t=1;
         LocalDateTime localDateTime = LocalDateTime.now();
         Timestamp timestamp = Timestamp.valueOf(localDateTime);
 
+
+
+        Instant date_input = date.toInstant();
+        System.out.println ("Смотрим пришедшую дату для действий (тип Date) "+date);
+        LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
+        System.out.println ("перевели пришедшую дату (тип LocalDataTime ) "+date_input_ldt);
+        Timestamp timestamp_date_input = Timestamp.valueOf(date_input_ldt);
+
         Operation operation=new Operation();
         operation.setTypeOperation("daily");
         operation.setServerVersion(String.valueOf(server_version));
@@ -1960,6 +1970,7 @@ t=1;
         operation.setBeginDayDate(date_3ff6.get(2));
         //operation.setDateVkt3Ffb();
         operation.setDateServer(timestamp);
+        operation.setChronological(timestamp_date_input);
         operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
         operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
         operation.setBaseNumber(String.valueOf(number_active_base));

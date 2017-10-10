@@ -226,7 +226,7 @@ List<Object> connect=new ArrayList<>();*/
         Callable task = () -> {
             try {
                 //TimeUnit.SECONDS.sleep(1);
-                dailyData.daily_all_cycle(customerService, resultService,operationService, tel, id, data);
+                dailyData.daily_all_cycle(customerService, operationService, tel, id, data);
                 //return Thread.currentThread().getName();
                 return "123";
 
