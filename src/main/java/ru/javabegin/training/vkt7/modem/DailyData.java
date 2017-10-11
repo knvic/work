@@ -1592,6 +1592,8 @@ t=1;
 
             recieve_all_byte=0;
             step=21;
+            data2="";
+            temp = "";
             serialPort.writeIntArray(request);
 
             t=0;

@@ -336,7 +336,8 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                     if(temp_measur.getType().equals("int")) {
 
 
-                        temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
+//                        temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
+                        temp_measur.setMeasurInt((int) Long.parseLong(l2b(measur), 16));
                         if (temp_measur.getEd() != null) {
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())) + temp_measur.getEd());
                         } else {

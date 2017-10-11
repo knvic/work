@@ -122,6 +122,26 @@ public class OperationServiceImpl implements OperationService {
         }
     }
 
+    @Transactional(readOnly=true)
+    @Override
+    public  List<Operation> findOperationByIdCustomer(Long id){
+        log.info("Finding operation by id: " );
+        // id=10L;
+
+        CriteriaBuilder cb = em_2.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        Join cont = contactRoot.join(Operation_.customer);
+
+        ParameterExpression<Long> parametr = cb.parameter(Long.class);
+        Predicate condition = cb.equal(cont.get(Customer_.id), parametr) ;
+        criteriaQuery.where(condition);
+        TypedQuery<Operation> q = em_2.createQuery(criteriaQuery);
+        List<Operation> result = q.setParameter(parametr, id).getResultList();
+        return result;
+    }
+
 
 
 

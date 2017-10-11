@@ -57,6 +57,7 @@
             <!--<p:commandButton value="Submit" update="msgs_1" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />-->
             <p:commandButton value="Submit" action="begin" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:commandButton value="Daily" action="go_daily" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+            <p:commandButton value="Daily_hour_All" action="go_hour_all" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                 <p:panelGrid id="display" columns="2" columnClasses="label,value">
 

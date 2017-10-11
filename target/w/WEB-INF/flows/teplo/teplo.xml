@@ -24,6 +24,8 @@
 
             <transition on="modem_process" to="modem">
             </transition>
+            <transition on="data_process" to="data">
+            </transition>
 
       </view-state>
 
@@ -33,6 +35,9 @@
 
       <subflow-state id="modem" subflow="teplo/modem_process">
             <transition on="modem_ready" to="endState" />
+      </subflow-state>
+      <subflow-state id="data" subflow="teplo/data_process">
+            <transition on="data_ready" to="endState" />
       </subflow-state>
 
 

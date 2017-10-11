@@ -18,4 +18,5 @@ public interface OperationService  {
     List<Operation> findAllWithDetail();
     void listOperationWithDetail(List<Operation> operationList);
     List<Measurements> getMeasurementsByOperatoinId(Long id);
+    List<Operation> findOperationByIdCustomer(Long id);
 }

@@ -57,5 +57,6 @@ public interface Send10Service {
      */
 
     List<String> s_3FFB(int number, Date date);
+    List<String> s_3FFB(int number,String date_str);
 
 }

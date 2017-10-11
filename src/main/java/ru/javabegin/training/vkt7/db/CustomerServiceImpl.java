@@ -96,7 +96,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public  List<Operation> findOperationByIdCustomer(Long id){
         log.info("Finding operation by id: " );
-        id=10L;
+       // id=10L;
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
