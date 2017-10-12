@@ -19,35 +19,13 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  */
 @Component
 public class Close_connect extends EventListener{
-        public static String data;
-    //SerialPort serialPort;
-
-
-    @Autowired Connect connect;
-
-
-    @Autowired EventListener eventListener;
 
 
 
-       //public void setStop(boolean stop) {this.stop = stop; }
-   /* public void setSerialPort(SerialPort serialPort) {
-        this.serialPort = serialPort;
-    }*/
-   /* public void setEventListener(EventListener eventListener) {
-        this.eventListener = eventListener;
-    }*/
 
 
-    public void close_port() throws InterruptedException, TimeoutException, ExecutionException, SerialPortException {
+    public void close_port()  {
 
-
-        System.out.println("\n m======= "+m);
-        System.out.println("\n m======= "+stop);
-        System.out.println("\n m======= "+serialPort);
-
-
-        System.out.println("\n Начинает работать задача закрытия COM пора");
 
 
 
@@ -56,35 +34,11 @@ public class Close_connect extends EventListener{
             System.out.println(portNames[i]);
         }
 
-        System.out.println("\n Переназначаем M");
-        stop=true;
+        System.out.println("\n Посылаем команду STOP ");
+        stop=false;
 
-        m=m+1;
+        step=1000;
 
-        try {
-
-
-
-
-            Thread.sleep(5000);
-            System.out.println("\n Переходим в (+++) из программы закрытия соединения (+++)");
-            step=0;
-            serialPort.writeBytes("+++".getBytes());
-            Thread.sleep(2000);
-            System.out.println("\n Закрываем порт "+data);
-            serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                    SerialPort.FLOWCONTROL_RTSCTS_OUT);
-            Thread.sleep(500);
-            System.out.println("\n Разрываем связь из программы закрытия соединения");
-            serialPort.writeBytes("ATH\r".getBytes());
-            Thread.sleep(5000);
-            System.out.println("\n После разрыва связи "+data);
-            System.out.println("\n Закрываем порт из программы закрытия соединения");
-            serialPort.closePort();
-        }
-        catch (SerialPortException ex) {
-            System.out.println (ex);
-        }
 
     }
 

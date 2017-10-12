@@ -128,8 +128,8 @@ ResultService resultService;
     public void close_connect(){
         System.out.println("Закрываем подключение !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
 
-        //Close_connect cl = new Close_connect();
-        Close_connect_test cl = new Close_connect_test();
+        Close_connect cl = new Close_connect();
+        //Close_connect_test cl = new Close_connect_test();
 
 
         Callable task3 = () -> {
@@ -278,7 +278,7 @@ List<Object> connect=new ArrayList<>();*/
 
 
 
-        ExecutorService executor1 = Executors.newFixedThreadPool(2);
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
         Future<String> future = executor1.submit(task);
         executor1.shutdown();
 

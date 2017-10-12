@@ -27,6 +27,15 @@ public class SelectionModem implements Serializable {
     private Date day_of;
     private Date day_to;
     private Date hour;
+    private String modem=null;
+
+    public String getModem() {
+        return modem;
+    }
+
+    public void setModem(String modem) {
+        this.modem = modem;
+    }
 
     public Customer getCust() {
         return cust;

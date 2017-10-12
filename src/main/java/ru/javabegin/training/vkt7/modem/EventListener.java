@@ -54,6 +54,19 @@ public class EventListener   implements SerialPortEventListener   { /*Слуша
                        r.run();*/
 
                 }
+                if (step == 1000) {
+                    data = serialPort.readHexString(event.getEventValue());
+                    System.out.println("SOPPPP!!");
+                    System.out.println("Data :: " + data);
+                    String data1 = data.replace(" ", "");
+                    data2 = recieve03Service.hextostr(data1);
+                    System.out.println("Data hextostr:: " + data2);
+                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
+                       r.run();*/
+
+                }
+
+
 
                 if (step == 0) {
 
@@ -378,6 +391,7 @@ public class EventListener   implements SerialPortEventListener   { /*Слуша
                     data2 = data;
 
                 }
+
 
 
 

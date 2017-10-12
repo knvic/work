@@ -47,6 +47,7 @@
 
             <on-render>
                   <evaluate expression="facade_modem.searchCustomerById()" result="viewScope.cu"  />
+
             </on-render>
 
 
@@ -56,14 +57,21 @@
 
             <transition on="go_hour_all">
                   <evaluate expression="modemServiceImpl.get_daily__hour_data(selectionModem.cust,selectionModem.day_of)" />
+                  <!--<evaluate expression="selectionModem.modem" />-->
+            </transition>
+
+            <transition on="stop">
+                  <evaluate expression="modemServiceImpl.close_connect()" />
             </transition>
 
 
 
-            <transition on="back" to="back"/>
+            <transition on="back" to="case"/>
 
 
             <transition on="begin" to="begin_daily"/>
+
+
 
 
       </view-state>

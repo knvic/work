@@ -3,6 +3,7 @@ package ru.javabegin.training.vkt7.modem;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 import jssc.SerialPortList;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
 import ru.javabegin.training.vkt7.dao.OperationService;
@@ -11,6 +12,7 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.measurements.MeasurementsServiceImpl;
+import ru.javabegin.training.vkt7.object_modem.SelectionModem;
 import ru.javabegin.training.vkt7.propert.Properts_ready_Impl;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 import ru.javabegin.training.vkt7.recieve.Recieve03ServiceImpl;
@@ -37,8 +39,12 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 @Component
 public class Daily_hour_Data extends EventListener{
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
+
+
     public static String data;
 
+    public int error= 0;
+    public int in_work= 0;
 
 
    /* @Autowired
@@ -68,7 +74,6 @@ public class Daily_hour_Data extends EventListener{
     public String daily_all_cycle(CustomerService customerService, OperationService operationService, String tel, Long id, Date date) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException {
 
 
-
         List<String> service_information =new ArrayList<>();
         List<Timestamp> date_3ff6= new ArrayList<>();
         List<Measurements> measurementsList=new ArrayList<>();
@@ -77,7 +82,7 @@ public class Daily_hour_Data extends EventListener{
         int shema_Tb2=0;
         int number_active_base=0;
         String status="";
-        String error="";
+
 
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
@@ -93,13 +98,12 @@ public class Daily_hour_Data extends EventListener{
 
 
         serialPort = new SerialPort (port); /*Передаем в конструктор суперкласса имя порта с которым будем работать*/
-            System.out.println("\n m======= "+m);
-        System.out.println("\n STOP = =  "+stop);
+
 
 
         while (stop!=false){
         try {
-            System.out.println("\n  Открытие порта STOP = =  "+stop);
+
             serialPort.openPort (); //Метод открытия порта
             serialPort.setParams (SerialPort.BAUDRATE_9600,
                                   SerialPort.DATABITS_8,
@@ -121,19 +125,70 @@ public class Daily_hour_Data extends EventListener{
             eL.setRecieve_all_byte(recieve_all_byte);*/
 
 
+
+
             step=100;
+            data2="";
             System.out.println("\nпосылаем +++");
-            System.out.println("\n посылаем +++ STOP = =  "+stop);
             if(!stop){
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
+
+
+
+
+
+            t=0;
+            int repeat=0;
+            executor.submit(callable(8));
             serialPort.writeBytes("+++".getBytes());
             System.out.println("\nпосылаем ATH");
             serialPort.writeBytes("ATH\r".getBytes());
             serialPort.writeBytes("+++".getBytes());
 
-            Thread.sleep(500);
+            while(step==100&stop!=false){
+
+                if (data2.contains("OK")){
+                    t=1;
+                    //System.out.println("После запроса 3F FF_n ");
+                    System.out.println("\n Инициализация модема выполнена. Принятые данные ::  " + data2);
+                    step=0;
+                   }
+               if (t==2){
+                    repeat++;
+                    if (repeat==6){
+                        step=0;
+
+                        System.out.println("\n Ответ нициализация модема не поступил. Ошибка по таймауту.");
+                        System.out.println("\n error=1.");
+                        error=1;
+                        stop=false;
+
+                    }
+                    System.out.println("\n Ответот модема не поступил Ошибка по таймауту. Повторяем запрос");
+
+                    t=0;
+                    executor.submit(callable(5));
+                    data2="";
+                   serialPort.writeBytes("+++".getBytes());
+                   System.out.println("\nпосылаем ATH");
+                   serialPort.writeBytes("ATH\r".getBytes());
+                   serialPort.writeBytes("+++".getBytes());
+                }
+
+
+            }
+
+
+
+
+
+
+
+
+
+            Thread.sleep(1000);
             if(!stop){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -148,9 +203,10 @@ public class Daily_hour_Data extends EventListener{
 
                 if (t==2){
                     System.out.println("\n Ответ от модема не поступил. Ошибка по таймауту.");
-                    System.out.println("\n Закрываем порт"+data2);
-                    System.exit(0);
-                    serialPort.closePort();
+                    System.out.println("\n error=2. Ошибка AT+CREG");
+                    error=2;
+                    stop=false;
+                    break;
                 }
             }
             t=1;
@@ -161,9 +217,9 @@ public class Daily_hour_Data extends EventListener{
 
             t=0;
             executor.submit(callable(10));
-            System.out.println("\n перед while(step==0&stop!=false) STOP = =  "+stop);
+
             while(step==0&stop==true){
-              //  System.out.println("\n зашли в  while(step==0&stop!=false) STOP = =  "+stop);
+
                 if (data2.contains("+CREG: 1,")||data2.contains("+CREG: 0,1")||data2.contains("+CREG: 2,1")){
                     t=1;
                     System.out.println("\n Регистрация в сети произведена = "+data2);
@@ -181,8 +237,9 @@ public class Daily_hour_Data extends EventListener{
 
                 if (t==2){
                     System.out.println("\n Регистрация модема не произведена. Ошибка по таймауту.");
-                    System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=3. Ошибка регистрации");
+                    error=2;
+                    stop=false;
                 }
             }
 
@@ -296,28 +353,26 @@ public class Daily_hour_Data extends EventListener{
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
-                    Thread.sleep(2000);
+                    /*Thread.sleep(2000);
                     serialPort.writeBytes("+++".getBytes());
                     serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
                             SerialPort.FLOWCONTROL_RTSCTS_OUT);
                     Thread.sleep(1000);
                     serialPort.writeBytes("ATH\r".getBytes());
                     System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                    serialPort.closePort();*/
+                    System.out.println("\n error=5.NO CARRIER");
+                    error=5;
+                    stop=false;
                 }
                 else if (data2.contains("NO DIALTONE")){
                     System.out.println("Ответ NO DIALTHONE ответ пришел t= "+t);
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=6.NO DIALTONE");
+                    error=6;
+                    stop=false;
                 }
                 else if (data2.contains("BUSY")||data2.contains("NO ANSWER")){
                     System.out.println("Ответ BUSY или NO ANSWER   ответ пришел t= "+t);
@@ -325,34 +380,24 @@ public class Daily_hour_Data extends EventListener{
 
                     step=0;
                     System.out.println("\n Нет Связи!! Закрываем связь"+data2);
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=7.Ответ BUSY или NO ANSWER");
+                    error=7;
+                    stop=false;
                 }
                 if (t==2){
 
                     step=0;
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                    //Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=8.Связь. Ошибка по TimeOut");
+                    error=8;
+                    stop=false;
 
                 }
 
             }
 
 
-            System.out.println("\n  после набора номера Stop== "+stop);
+
             Thread.sleep(1000);
             serialPort.setParams (SerialPort.BAUDRATE_9600,
                     SerialPort.DATABITS_8,
@@ -397,6 +442,11 @@ public class Daily_hour_Data extends EventListener{
                     .map(p->Integer.parseInt(crc.get(p) ,16)=requests[p]);*/
             System.out.println();
 
+            if(stop==false){
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
             request=null;
             int[] request=new int[crc.size()];
             for(int i=0;i<crc.size();i++ ){
@@ -420,7 +470,7 @@ public class Daily_hour_Data extends EventListener{
 
 
             t=0;
-            int repeat=0;
+            repeat=0;
             executor.submit(callable(3));
             r_3fff=false;
             while(step==5&stop!=false){
@@ -444,14 +494,9 @@ public class Daily_hour_Data extends EventListener{
                         step=0;
 
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                        Thread.sleep(1000);
-                    System.out.println("\n Закрываем порт"+data2);
-                    serialPort.closePort();
+                        System.out.println("\n error=10.3F FF_n TimeOut");
+                        error=10;
+                        stop=false;
                     }
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
                     serialPort.writeIntArray(request);
@@ -471,7 +516,7 @@ public class Daily_hour_Data extends EventListener{
 /**
  * 3F FE 1-й проход определение версии
   */
-            System.out.println("\n m======= "+m);
+
             System.out.println("\n Формируем запрос 3F FE (Версия сервера 65 байт)");
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -513,14 +558,9 @@ public class Daily_hour_Data extends EventListener{
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3F FE (Версия сервера 65 байт). Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=11.3F FE 65 байт. Ошибка по TimeOut");
+                        error=11;
+                        stop=false;
                     }
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp = "";
@@ -544,14 +584,9 @@ public class Daily_hour_Data extends EventListener{
                      step = 0;
 
                      System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                     Thread.sleep(2000);
-                     serialPort.writeBytes("+++".getBytes());
-                     serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                             SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                     Thread.sleep(1000);
-                     serialPort.writeBytes("ATH\r".getBytes());
-                     System.out.println("\n Закрываем порт" + data2);
-                     serialPort.closePort();
+                     System.out.println("\n error=12.3F FE CRC16 Error");
+                     error=12;
+                     stop=false;
 
                   }
                   System.out.println("\n Контрольная сумма верна ");
@@ -621,14 +656,9 @@ public class Daily_hour_Data extends EventListener{
                         step = 0;
 
                         System.out.println("\n Ответ не поступил 3F F9. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт" + data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=13.3F F9 TimeOut");
+                        error=13;
+                        stop=false;
                     }
                     System.out.println("\n Ответ не поступил 3F F9. Ошибка по таймауту. Повторяем запрос");
                     serialPort.writeIntArray(request);
@@ -770,12 +800,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=14.3F FF TimeOut");
+                        error=14;
+                        stop=false;
                     }
 
                    System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
@@ -838,14 +865,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3F FE. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=15.3F FE TimeOut");
+                        error=15;
+                        stop=false;
                     }
                     System.out.println("\n Ответ на 3F FE не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp="";
@@ -872,14 +894,9 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт" + data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=16.3F FE CRC16");
+                    error=16;
+                    stop=false;
                 }
 
                 System.out.println("Контрольная сумма верна ");
@@ -960,14 +977,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3F F6. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=17.3F F6 TimeOut");
+                        error=17;
+                        stop=false;
                     }
                     System.out.println("\n Ответ на 3F F6 не поступил. Ошибка по таймауту. Повторяем запрос");
                     serialPort.writeIntArray(request);
@@ -992,14 +1004,9 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт" + data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=18.3F F6 CRC");
+                    error=18;
+                    stop=false;
                 }
 
                 System.out.println("Контрольная сумма верна ");
@@ -1083,14 +1090,9 @@ t=1;
                         step = 0;
 
                         System.out.println("\n Ответ не поступил 3F FC. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт" + data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=19.3F FC TimeOut");
+                        error=19;
+                        stop=false;
                     }
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
                     serialPort.writeIntArray(request);
@@ -1230,12 +1232,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=20.3F FF TimeOut");
+                        error=20;
+                        stop=false;
                     }
 
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
@@ -1328,12 +1327,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=21.3F FD TimeOut");
+                        error=21;
+                        stop=false;
                     }
 
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
@@ -1476,12 +1472,9 @@ t=1;
                             step = 0;
 
                             System.out.println("\n Ответ не поступил." + str_date + " Ошибка по таймауту.");
-                            Thread.sleep(2000);
-                            serialPort.writeBytes("+++".getBytes());
-                            Thread.sleep(2000);
-                            serialPort.writeBytes("ATH\r".getBytes());
-                            System.out.println("\n Закрываем порт" + data2);
-                            serialPort.closePort();
+                            System.out.println("\n error=22.3F FB TimeOut");
+                            error=22;
+                            stop=false;
                         }
 
                         System.out.println("\n Ответ не поступил." + str_date + " Ошибка по таймауту. Повторяем запрос");
@@ -1538,14 +1531,9 @@ t=1;
                             step = 0;
 
                             System.out.println("\n Ответ не поступил 3F FE(ТЕКУЩИЕ). Ошибка по таймауту.");
-                            Thread.sleep(2000);
-                            serialPort.writeBytes("+++".getBytes());
-                            serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                    SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                            Thread.sleep(1000);
-                            serialPort.writeBytes("ATH\r".getBytes());
-                            System.out.println("\n Закрываем порт" + data2);
-                            serialPort.closePort();
+                            System.out.println("\n error=23.3F FE TimeOut");
+                            error=23;
+                            stop=false;
                         }
                         System.out.println("\n Ответ на 3F FE  " + str_date+ " не поступил. Ошибка по таймауту. Повторяем запрос");
                         temp = "";
@@ -1653,14 +1641,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3E CD Чтение номера схемы измерений Тв1. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=24.3F CD TimeOut");
+                        error=24;
+                        stop=false;
                     }
                     System.out.println("\n Ответ на 3E CD не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp = "";
@@ -1685,14 +1668,9 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт" + data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=25.3F CD CRC");
+                    error=25;
+                    stop=false;
                 }
 
                 System.out.println("Контрольная сумма верна ");
@@ -1752,14 +1730,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3F 5B Чтение номера схемы измерений Тв2. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=26.3F 5B TimeOut");
+                        error=26;
+                        stop=false;
                     }
                     System.out.println("\n Ответ на 3F 5B не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp = "";
@@ -1784,14 +1757,9 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт" + data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=27.3F 5B TimeOut");
+                    error=27;
+                    stop=false;
                 }
 
                 System.out.println("Контрольная сумма верна ");
@@ -1851,14 +1819,9 @@ t=1;
                         step=0;
 
                         System.out.println("\n Ответ не поступил 3F E9  Чтение номера активной базы данных. Ошибка по таймауту.");
-                        Thread.sleep(2000);
-                        serialPort.writeBytes("+++".getBytes());
-                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                        Thread.sleep(1000);
-                        serialPort.writeBytes("ATH\r".getBytes());
-                        System.out.println("\n Закрываем порт"+data2);
-                        serialPort.closePort();
+                        System.out.println("\n error=27.3F E9 TimeOut");
+                        error=27;
+                        stop=false;
                     }
                     System.out.println("\n Ответ на 3F E9  Чтение номера активной базы данных не поступил. Ошибка по таймауту. Повторяем запрос");
                     temp = "";
@@ -1883,14 +1846,9 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    Thread.sleep(2000);
-                    serialPort.writeBytes("+++".getBytes());
-                    serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
-                            SerialPort.FLOWCONTROL_RTSCTS_OUT);
-                    Thread.sleep(1000);
-                    serialPort.writeBytes("ATH\r".getBytes());
-                    System.out.println("\n Закрываем порт" + data2);
-                    serialPort.closePort();
+                    System.out.println("\n error=28.3F E9 CRC");
+                    error=28;
+                    stop=false;
                 }
 
                 System.out.println("Контрольная сумма верна ");
@@ -1926,6 +1884,7 @@ t=1;
 
 
 
+/*
 
             Thread.sleep(5000);
             System.out.println("\n Переходим в сервисный режим (+++)");
@@ -1943,6 +1902,7 @@ t=1;
 
             serialPort.closePort();
 
+*/
 
 
 
@@ -1958,6 +1918,23 @@ t=1;
         break;
         }
 
+
+        Thread.sleep(2000);
+        System.out.println("\n Переходим в сервисный режим (+++)");
+        step=0;
+        serialPort.writeBytes("+++".getBytes());
+        Thread.sleep(2000);
+        System.out.println("\n Закрываем порт "+data);
+        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
+                SerialPort.FLOWCONTROL_RTSCTS_OUT);
+        Thread.sleep(500);
+        System.out.println("\n Разрываем связь");
+        serialPort.writeBytes("ATH\r".getBytes());
+        Thread.sleep(5000);
+        System.out.println("\n После разрыва связи "+data);
+
+        serialPort.closePort();
+
         if (stop==true){
             System.out.println ("Программа закончила работу. Команды STOP не поступало");
             status="OK";
@@ -1966,75 +1943,119 @@ t=1;
         {status="ERROR";}
 
         executor.shutdownNow();
-        System.out.println ("Начинаем запись в базу");
-        Thread.sleep(2000);
+
+        Timestamp timestamp_date_input;
+
+if(error==0&status.equals("OK")) {
+    System.out.println("Начинаем запись в базу");
+    Thread.sleep(2000);
+    // Получили времы сервера для записиси в базу
+    LocalDateTime localDateTime = LocalDateTime.now();
+    Timestamp timestamp = Timestamp.valueOf(localDateTime);
 
 
-        // Получили времы сервера для записиси в базу
-        LocalDateTime localDateTime = LocalDateTime.now();
-        Timestamp timestamp = Timestamp.valueOf(localDateTime);
-
-
-
-        Instant date_input = date.toInstant();
-        System.out.println ("Смотрим пришедшую дату для действий (тип Date) "+date);
-        LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
-        System.out.println ("перевели пришедшую дату (тип LocalDataTime ) "+date_input_ldt);
-        Timestamp timestamp_date_input = Timestamp.valueOf(date_input_ldt);
+    Instant date_input = date.toInstant();
+    System.out.println("Смотрим пришедшую дату для действий (тип Date) " + date);
+    LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
+    System.out.println("перевели пришедшую дату (тип LocalDataTime ) " + date_input_ldt);
+    timestamp_date_input = Timestamp.valueOf(date_input_ldt);
 
 /*
         for (Map.Entry entry : hashMap.entrySet()) {
             System.out.println("Key: " + entry.getKey() + " Value: "
                     + entry.getValue());*/
 
-        for(Timestamp ts : hashMap.keySet()){
-            System.out.println(ts + " имеет");
+    for (Timestamp ts : hashMap.keySet()) {
+        System.out.println(ts + " имеет");
            /* for (String pet : personMap.get(person)){
                 System.out.println("  " + pet);
             }*/
 
 
-
-            Operation operation = new Operation();
-            operation.setTypeOperation("hour");
-            operation.setServerVersion(String.valueOf(server_version));
-            operation.setProgrammVersion(service_information.get(0));
-            operation.setShemaTv13Ff9(service_information.get(1));
-            operation.setTp3Tv1(service_information.get(2));
-            operation.setT5Tv1(service_information.get(3));
-            operation.setShemaTv23Ff9(service_information.get(4));
-            operation.setTp3Tv2(service_information.get(5));
-            operation.setT5Tv2(service_information.get(6));
-            operation.setIdentificator(service_information.get(7));
-            operation.setNetNumber(service_information.get(8));
-            operation.setModel(service_information.get(10));
-            operation.setBeginHourDate(date_3ff6.get(0));
-            operation.setCurrentDate3Ff6(date_3ff6.get(1));
-            operation.setBeginDayDate(date_3ff6.get(2));
-            //operation.setDateVkt3Ffb();
-            operation.setDateServer(timestamp);
-            operation.setChronological(ts);
-            operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
-            operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
-            operation.setBaseNumber(String.valueOf(number_active_base));
-            operation.setStatus(status);
-
-
-            //measurementsList.forEach(p -> operation.addMeasurements(p));
-            hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
+        Operation operation = new Operation();
+        operation.setTypeOperation("hour");
+        operation.setServerVersion(String.valueOf(server_version));
+        operation.setProgrammVersion(service_information.get(0));
+        operation.setShemaTv13Ff9(service_information.get(1));
+        operation.setTp3Tv1(service_information.get(2));
+        operation.setT5Tv1(service_information.get(3));
+        operation.setShemaTv23Ff9(service_information.get(4));
+        operation.setTp3Tv2(service_information.get(5));
+        operation.setT5Tv2(service_information.get(6));
+        operation.setIdentificator(service_information.get(7));
+        operation.setNetNumber(service_information.get(8));
+        operation.setModel(service_information.get(10));
+        operation.setBeginHourDate(date_3ff6.get(0));
+        operation.setCurrentDate3Ff6(date_3ff6.get(1));
+        operation.setBeginDayDate(date_3ff6.get(2));
+        //operation.setDateVkt3Ffb();
+        operation.setDateServer(timestamp);
+        operation.setChronological(ts);
+        operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
+        operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
+        operation.setBaseNumber(String.valueOf(number_active_base));
+        operation.setStatus(status);
+        operation.setError(String.valueOf(error));
 
 
-
-            Customer customer = customerService.findById(id);
-            operation.setIdCustomer(customer.getId());
-            operation.setCustomerName(customer.getFirstName());
-
-            customer.addOperation(operation);
-            customerService.save(customer);
-        }
-        System.out.println ("Запись произведена. завершаем поток");
+        //measurementsList.forEach(p -> operation.addMeasurements(p));
+        hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
 
 
+        Customer customer = customerService.findById(id);
+        operation.setIdCustomer(customer.getId());
+        operation.setCustomerName(customer.getFirstName());
+
+        customer.addOperation(operation);
+        customerService.save(customer);
+    }
+    System.out.println("Запись произведена. завершаем поток");
+
+
+}
+else {
+
+
+    /**
+     * При возникновении ошибки делвем запись в базу
+     * дата операции
+     * дата требуемого дня
+     * код ошибки
+     * статус
+     */
+    System.out.println("Работа прервана либо выполнена с ошибкой. Ошибка =" + error);
+    Operation operation = new Operation();
+    operation.setTypeOperation("daily_all_hour");
+
+    Instant date_input = date.toInstant();
+    System.out.println("Смотрим пришедшую дату для действий (тип Date) " + date);
+    LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
+    System.out.println("перевели пришедшую дату (тип LocalDataTime ) " + date_input_ldt);
+    timestamp_date_input = Timestamp.valueOf(date_input_ldt);
+
+    LocalDateTime localDateTime = LocalDateTime.now();
+    Timestamp timestamp = Timestamp.valueOf(localDateTime);
+
+    operation.setDateServer(timestamp);
+    operation.setChronological(timestamp_date_input);
+
+    if(error==0&status.equals("ERROR")){
+        error=5555;
+    }
+
+    operation.setError(String.valueOf(error));
+
+    operation.setStatus(status);
+    Customer customer = customerService.findById(id);
+    operation.setIdCustomer(customer.getId());
+    operation.setCustomerName(customer.getFirstName());
+
+    customer.addOperation(operation);
+    customerService.save(customer);
+
+
+
+}
 
 
 
@@ -2052,9 +2073,9 @@ t=1;
         return () ->
         {
             for (int i = 1; i < Seconds + 1; i++) {
-                 /*  if(stop==false){
+                   if(stop==false){
                        System.out.println("Ответ из вспомогательного потока. Поступила команда STOP "+ stop);
-                       return 1;}*/
+                       return 1;}
                     TimeUnit.SECONDS.sleep(1);
                     if (t == 1) {
                         System.out.println("Ответ получен. Таймер остановлен");

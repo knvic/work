@@ -6,7 +6,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:sec="http://www.springframework.org/security/tags">
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 
 <ui:composition template="/WEB-INF/templates/customer_edit_delete_template.xhtml">
@@ -58,6 +58,13 @@
             <p:commandButton value="Submit" action="begin" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:commandButton value="Daily" action="go_daily" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:commandButton value="Daily_hour_All" action="go_hour_all" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+            <p:commandButton value="Stop" action="stop"  />
+
+
+            <c:if test="#{not empty modem}" >
+                <p:commandButton value="вапвапвап" action="stop"  />
+            </c:if>
+
             <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                 <p:panelGrid id="display" columns="2" columnClasses="label,value">
 
@@ -70,7 +77,7 @@
                 </p:panelGrid>
             </p:dialog>
 
-
+            <!--<p:poll interval="2"  update=":form" />-->
         </h:form>
 
 
