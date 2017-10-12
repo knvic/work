@@ -59,6 +59,8 @@
             <p:commandButton value="Daily" action="go_daily" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:commandButton value="Daily_hour_All" action="go_hour_all" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
             <p:commandButton value="Stop" action="stop"  />
+            <p:commandButton value="Daily_All_Customer" action="go_daily_all_customer" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+
 
 
             <c:if test="#{not empty modem}" >

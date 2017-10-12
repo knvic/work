@@ -20,7 +20,7 @@ import static java.lang.String.format;
 public class Send10ServiceImpl implements Send10Service{
 
     @Override
-    public List<String> s_3FFF_n (String number){
+    public List<String> s_3FFF_n (int number){
         String command= "FF FF 10 3F FF 00 00 CC 80 00 00 00";
         /**
          * Преобразовываем строку в массив <String>
@@ -28,14 +28,14 @@ public class Send10ServiceImpl implements Send10Service{
          */
         List<String> list = new LinkedList<String>(Arrays.asList(command.split(" ")));
        // list.forEach(System.out::print);
-        list.add(2,number);
+        list.add(2,format("%02X", number));
         //list.forEach(System.out::print);
         return list;
 
     }
 
     @Override
-    public ArrayList<Object> s_3FFF (String number){
+    public ArrayList<Object> s_3FFF (int number){
         /**
          * Получаем список свойств
           */
@@ -60,7 +60,7 @@ public class Send10ServiceImpl implements Send10Service{
 
         //добавляем номер устройства к ПРИМЕРУ 01
 
-        command.add(2,number);
+        command.add(2,format("%02X", number));
 
            /*Получаем "FF FF 01 10 3F FF 00 00 60 2C 00 00 40 07 00" +
                         " 2D 00 00 40 07 00 2E 00 00 40 07 00" +

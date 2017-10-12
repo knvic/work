@@ -14,7 +14,7 @@ public abstract class Customer_ {
 	public static volatile SetAttribute<Customer, Operation> operationSet;
 	public static volatile SingularAttribute<Customer, String> telNumber;
 	public static volatile SingularAttribute<Customer, String> telModem;
-	public static volatile SingularAttribute<Customer, String> unitNumber;
+	public static volatile SingularAttribute<Customer, Integer> unitNumber;
 	public static volatile SingularAttribute<Customer, Long> id;
 	public static volatile SingularAttribute<Customer, Integer> version;
 	public static volatile SingularAttribute<Customer, String> eMail;

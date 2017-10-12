@@ -107,7 +107,7 @@ public class Facade_data {
 
         Long id = searchCriteria_oper.getId();
 
-        measurementsList= operationService.getMeasurementsByOperatoinId(id);
+        measurementsList= operationService.getMeasurementsByOperationId(id);
         return measurementsList;
     }
 

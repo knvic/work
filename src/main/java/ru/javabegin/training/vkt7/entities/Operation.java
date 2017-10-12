@@ -389,8 +389,8 @@ public class Operation implements Serializable{
 
 
     @ManyToOne
-    @JoinColumn(name = "CUSTOMER_ID")
-//    @JoinColumn(name = "CUSTOMER_ID",insertable = false, updatable = false)
+    @JoinColumn(name = "CUSTOMER_ID" )
+  //  @JoinColumn(name = "CUSTOMER_ID",insertable = false, updatable = false)
     public Customer getCustomer() {
         return customer;
     }
@@ -430,8 +430,8 @@ public class Operation implements Serializable{
                 ", error='" + error + '\'' +
                 ", version=" + version +
                 ", customer=" + customer +
-                ", measurementsSet=" + measurementsSet +
-                ", operationId=" + operationId +
+
+
                 '}';
     }
 }

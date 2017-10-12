@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.modem_run;
 
 import jssc.SerialPort;
+import jssc.SerialPortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,9 @@ import ru.javabegin.training.vkt7.entities.Test;
 import ru.javabegin.training.vkt7.entities.TestService;
 import ru.javabegin.training.vkt7.modem.*;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -259,13 +263,14 @@ List<Object> connect=new ArrayList<>();*/
 List<Object> connect=new ArrayList<>();*/
         String tel =customer.getTelModem();
         Long id=customer.getId();
+        int number=customer.getUnitNumber();
         System.out.println("tel= "+tel);
         Daily_hour_Data daily_hour_data =new Daily_hour_Data();
 
         Callable task = () -> {
             try {
                 //TimeUnit.SECONDS.sleep(1);
-                daily_hour_data.daily_all_cycle(customerService, operationService, tel, id, data);
+                daily_hour_data.daily_all_cycle(customerService, operationService, tel, id, data, number);
                 //return Thread.currentThread().getName();
                 return "123";
 
@@ -289,6 +294,193 @@ List<Object> connect=new ArrayList<>();*/
     }
 
 
+
+    @Override
+    public void get_daily_customer_data(Customer customer, Date data){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+
+
+   List<Customer> customerList=customerService.findAllWithDetail();
+
+        Daily_all_Customer daily_all_customer =new Daily_all_Customer();
+
+        int type =1;
+
+        Callable task = () -> {
+            try {
+                //TimeUnit.SECONDS.sleep(1);
+                daily_all_customer.daily_all_cycle(customerList, customerService, operationService, data, type);
+                //return Thread.currentThread().getName();
+                return "123";
+
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
+
+
+
+
+    @Override
+    public void get_daily_customer_data_cron(){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+
+
+        //LocalDateTime ldt_d1 = LocalDateTime.of(2017, 10, day, 0, 0, 0);
+        LocalDateTime ldt = LocalDateTime.now();
+
+
+        System.out.println("Сегодня LocalDateTime = " + ldt);
+        ldt= ldt.minusDays(1);
+        System.out.println("Вчера LocalDateTime = " + ldt);
+
+        ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
+        Date data = Date.from(zdt.toInstant());
+
+        System.out.println("Перевели в  Date: " + data);
+
+
+
+        List<Customer> customerList=customerService.findAllWithDetail();
+
+        Daily_all_Customer daily_all_customer =new Daily_all_Customer();
+
+        int type =1;
+
+        Callable task = () -> {
+            try {
+                //TimeUnit.SECONDS.sleep(1);
+                daily_all_customer.daily_all_cycle(customerList, customerService, operationService, data, type);
+                //return Thread.currentThread().getName();
+                return "123";
+
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
+
+
+
+
+    @Override
+    public void  get_mothly_customer_data_cron(){
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+
+
+        LocalDateTime ldt = LocalDateTime.of(2017, 10, 3, 0, 0, 0);
+       // LocalDateTime ldt = LocalDateTime.now();
+
+
+        System.out.println("Сегодня LocalDateTime = " + ldt);
+        ldt= ldt.minusDays(1);
+        System.out.println("Вчера LocalDateTime = " + ldt);
+
+        ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
+        Date data = Date.from(zdt.toInstant());
+
+        System.out.println("Перевели в  Date: " + data);
+
+
+
+        List<Customer> customerList=customerService.findAllWithDetail();
+
+       // Daily_all_Customer daily_all_customer =new Daily_all_Customer();
+        Moth_all_Customer moth_all_customer=new Moth_all_Customer();
+
+        int type =1;
+
+        Callable task = () -> {
+            try {
+                //TimeUnit.SECONDS.sleep(1);
+                moth_all_customer.mothly_all_cycle(customerList, customerService, operationService, data, type);
+                //return Thread.currentThread().getName();
+                return "123";
+
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
+
+    @Override
+    public void  get_mothly_customer_data_cron_new() throws InterruptedException, ExecutionException, TimeoutException, SerialPortException {
+   /* Connect c =new Connect();
+List<Object> connect=new ArrayList<>();*/
+
+
+        LocalDateTime ldt = LocalDateTime.of(2017, 10, 3, 0, 0, 0);
+        // LocalDateTime ldt = LocalDateTime.now();
+
+
+        System.out.println("Сегодня LocalDateTime = " + ldt);
+        ldt= ldt.minusDays(1);
+        System.out.println("Вчера LocalDateTime = " + ldt);
+
+        ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
+        Date data = Date.from(zdt.toInstant());
+
+        System.out.println("Перевели в  Date: " + data);
+
+
+
+        List<Customer> customerList=customerService.findAllWithDetail();
+
+        // Daily_all_Customer daily_all_customer =new Daily_all_Customer();
+        Moth_all_Customer moth_all_customer=new Moth_all_Customer();
+
+        int type =1;
+
+        moth_all_customer.mothly_all_cycle(customerList, customerService, operationService, data, type);
+
+
+        System.out.println("Программа закончила работу полностью!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+        System.out.println("Данные ТЕКУЩИЕ должны быть получены!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+
+    }
 
 
     @Override

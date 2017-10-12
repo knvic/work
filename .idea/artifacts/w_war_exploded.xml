@@ -15,8 +15,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.9.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.9.RELEASE" />
@@ -52,6 +52,9 @@
           <element id="library" level="project" name="Maven: org.scream3r:jssc:2.8.0" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.6" />
           <element id="library" level="project" name="Maven: backport-util-concurrent:backport-util-concurrent:3.1" />
+          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.1" />
+          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.1.6.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

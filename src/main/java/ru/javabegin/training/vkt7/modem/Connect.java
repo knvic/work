@@ -78,6 +78,8 @@ public class Connect extends EventListener{
 
         List<Object> connect =new ArrayList<>();
         List<Timestamp> date= new ArrayList<>();
+        int number=1;
+
 
         stop=true;
         String[] portNames = SerialPortList.getPortNames();
@@ -371,7 +373,7 @@ public class Connect extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n=send10Service.s_3FFF_n("01");
+            ff_n=send10Service.s_3FFF_n(number);
             ff_n.forEach(System.out::print);
             System.out.println("\nПолучили массив команды");
             //System.out.println();
@@ -467,7 +469,7 @@ public class Connect extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n=send03Service.s_3FFE("01");
+            ff_n=send03Service.s_3FFE(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_n);
             request=null;
@@ -577,7 +579,7 @@ public class Connect extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n= send03Service.s_3FF9("01");
+            ff_n= send03Service.s_3FF9(number);
 
            //Получаем массив с контрольной суммой
             crc=crc16Service.crc16_t(ff_n);
@@ -680,7 +682,7 @@ t=1;
              * @return Массив из двух объектов {LinkedList<Properts> prop_specification, List<String> command,LinkedList<Properts> prop_common}
              * 1 объект
              */
-            List<Object> ff = send10Service.s_3FFF("01");
+            List<Object> ff = send10Service.s_3FFF(number);
 
 
             //ff_n.forEach(System.out::print);
@@ -796,7 +798,7 @@ t=1;
             }
             System.out.println("\n Формируем запрос 3F FE Запрос на чтение данных");
             ff=null;
-            List<String> ff_2=send03Service.s_3FFE("01");
+            List<String> ff_2=send03Service.s_3FFE(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;
@@ -920,7 +922,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3F F6 Запрос «Чтение интервала дат»");
             ff_2=null;
-            List<String> f6= send03Service.s_3FF6("01");
+            List<String> f6= send03Service.s_3FF6(number);
             //System.out.println();
             crc=crc16Service.crc16_t(f6);
             request=null;

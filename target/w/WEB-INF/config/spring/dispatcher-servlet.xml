@@ -3,8 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
     <import resource="webflow.xml"/>
     <import resource="controllers.xml"/>
@@ -155,6 +156,7 @@
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
                 <prop key="hibernate.jdbc.batch_size">10</prop>
                 <prop key="hibernate.show_sql">true</prop>
+
             </props>
         </property>
     </bean>
@@ -174,6 +176,77 @@
             </map>
         </property>
     </bean>
+
+
+
+
+
+    <!--Scheduler-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+           <property name="jobDetails">
+            <list>
+                <ref bean="test_schJob" />
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="test_schCronTrigger" />
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="test_sch" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10" />
+
+    <bean id="test_schJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="test_sch" />
+        <property name="targetMethod" value="test" />
+    </bean>
+
+    <bean id="test_schCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="test_schJob" />
+        <property name="cronExpression" value="5 10 * * * ?" />
+    </bean>
+
+
+
+    <bean id="executorService" class="java.util.concurrent.Executors" factory-method="newFixedThreadPool">
+        <constructor-arg value="5" />
+    </bean>
+
+    <task:executor id="threadPoolTaskExecutor" pool-size="5" />
+    <task:annotation-driven executor="executorService" />
+
+  <!--  <bean id="jobDetail1" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10_1"/>
+    <bean id="jobDetail2" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10_2"/>-->
+    <bean id="modem" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+  <!--  <bean id="sch_comtrol" class="ru.javabegin.training.vkt7.scheduler.Test_sch_control"/>
+    <bean id="test_critoria1" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_1"/>
+    <bean id="test_critoria2" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_2"/>
+    <bean id="test_critoria3" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_3"/>
+    <bean id="modem_moth" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>-->
+    <bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="testdb" class=" ru.javabegin.training.vkt7.test_db.Test_db_16_10_1"/>
+
+
+    <task:scheduler id="serverScheduler" pool-size="5"/>
+    <task:scheduled-tasks scheduler="serverScheduler">
+        <!--<task:scheduled ref="jobDetail1" method="test" cron="25 10 * * * ?"/> &lt;!&ndash; every thirty minute &ndash;&gt;-->
+        <!--<task:scheduled ref="jobDetail2" method="test" cron="30 10 * * * ?"/> &lt;!&ndash; every thirty minute &ndash;&gt;-->
+
+       <!-- <task:scheduled ref="sch_comtrol" method="someMethod" cron="40 10 * * * ?"/>
+        <task:scheduled ref="test_critoria1" method="test" cron="10 * * * * ?"/>
+        <task:scheduled ref="test_critoria2" method="test" cron="*/20 * * * * ?"/>-->
+       <!--<task:scheduled ref="test_critoria3" method="test" cron="*/20 * * * * ?"/>-->
+
+        <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
+       <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 46 9 * * ?"/> -->
+        <task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>
+        <task:scheduled ref="testdb" method="test_db" cron="0 26 15 * * ?"/>
+
+
+    </task:scheduled-tasks>
+
 
 
 

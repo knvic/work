@@ -45,7 +45,7 @@ public class test_datatie_daily_List_10_10 {
             date_dd_MM_UU_HH_temp.add(date_str + ":" + String.valueOf(i));
         }
         date_dd_MM_UU_HH_temp.forEach(p -> System.out.println("date= " + p));
-
+        System.out.println("строка для 23 часов" + date_dd_MM_UU_HH_temp.get(23));
 
 /*for (String str_date: date_dd_MM_UU_HH_temp){
     System.out.println("str_date= "+str_date);

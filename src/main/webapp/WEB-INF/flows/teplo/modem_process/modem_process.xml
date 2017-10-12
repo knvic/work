@@ -56,7 +56,11 @@
             </transition>
 
             <transition on="go_hour_all">
-                  <evaluate expression="modemServiceImpl.get_daily__hour_data(selectionModem.cust,selectionModem.day_of)" />
+            <evaluate expression="modemServiceImpl.get_daily__hour_data(selectionModem.cust,selectionModem.day_of)" />
+            <!--<evaluate expression="selectionModem.modem" />-->
+      </transition>
+            <transition on="go_daily_all_customer">
+                  <evaluate expression="modemServiceImpl.get_daily_customer_data(selectionModem.cust,selectionModem.day_of)" />
                   <!--<evaluate expression="selectionModem.modem" />-->
             </transition>
 

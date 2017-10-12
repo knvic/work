@@ -1,5 +1,8 @@
 package ru.javabegin.training.vkt7.measurements;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 

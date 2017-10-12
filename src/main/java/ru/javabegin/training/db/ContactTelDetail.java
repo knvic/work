@@ -62,7 +62,7 @@ public class ContactTelDetail implements Serializable {
     }
 
     @ManyToOne
-    @JoinColumn(name = "CONTACT_ID")
+    @JoinColumn(name = "CONTACT_ID" )
     public Contact getContact() {
         return this.contact;
     }

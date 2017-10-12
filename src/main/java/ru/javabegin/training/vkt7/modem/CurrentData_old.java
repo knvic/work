@@ -74,6 +74,8 @@ public class CurrentData_old extends EventListener{
         int shema_Tb1=0;
         int shema_Tb2=0;
         int number_active_base=0;
+        int number=1;
+
         String status="";
         String error="";
 
@@ -370,7 +372,7 @@ public class CurrentData_old extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n=send10Service.s_3FFF_n("01");
+            ff_n=send10Service.s_3FFF_n(number);
             ff_n.forEach(System.out::print);
             System.out.println("\nПолучили массив команды");
             //System.out.println();
@@ -469,7 +471,7 @@ public class CurrentData_old extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n=send03Service.s_3FFE("01");
+            ff_n=send03Service.s_3FFE(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_n);
             request=null;
@@ -579,7 +581,7 @@ public class CurrentData_old extends EventListener{
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            ff_n= send03Service.s_3FF9("01");
+            ff_n= send03Service.s_3FF9(number);
 
            //Получаем массив с контрольной суммой
             crc=crc16Service.crc16_t(ff_n);
@@ -682,7 +684,7 @@ t=1;
              * @return Массив из двух объектов {LinkedList<Properts> prop_specification, List<String> command,LinkedList<Properts> prop_common}
              * 1 объект
              */
-            List<Object> ff = send10Service.s_3FFF("01");
+            List<Object> ff = send10Service.s_3FFF(number);
 
 
             //ff_n.forEach(System.out::print);
@@ -798,7 +800,7 @@ t=1;
             }
             System.out.println("\n Формируем запрос 3F FE Запрос на чтение данных");
             ff=null;
-            List<String> ff_2=send03Service.s_3FFE("01");
+            List<String> ff_2=send03Service.s_3FFE(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;
@@ -922,7 +924,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3F F6 Запрос «Чтение интервала дат»");
             ff_2=null;
-            List<String> f6= send03Service.s_3FF6("01");
+            List<String> f6= send03Service.s_3FF6(number);
             //System.out.println();
             crc=crc16Service.crc16_t(f6);
             request=null;
@@ -1046,7 +1048,7 @@ t=1;
             Thread.sleep(3000);
             System.out.println("\n Фoрмируем запрос 3F FC перечнь активных элементов данных");
             ff_n=null;
-            ff_n= send03Service.s_3FFC("01");
+            ff_n= send03Service.s_3FFC(number);
 
             //Получаем массив с контрольной суммой
             crc=crc16Service.crc16_t(ff_n);
@@ -1358,7 +1360,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3F FE Запрос на чтение данных ТЕКУЩИЕ");
             ff_2=null;
-            ff_2=send03Service.s_3FFE("01");
+            ff_2=send03Service.s_3FFE(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;
@@ -1455,7 +1457,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3E CD Чтение номера схемы измерений Тв1");
             ff_2=null;
-            ff_2=send03Service.s_3ECD("01");
+            ff_2=send03Service.s_3ECD(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;
@@ -1554,7 +1556,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3F 5B Чтение номера схемы измерений Тв2");
             ff_2=null;
-            ff_2=send03Service.s_3F5B("01");
+            ff_2=send03Service.s_3F5B(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;
@@ -1653,7 +1655,7 @@ t=1;
 
             System.out.println("\n Формируем запрос 3F E9  Чтение номера активной базы данных");
             ff_2=null;
-            ff_2=send03Service.s_3FE9("01");
+            ff_2=send03Service.s_3FE9(number);
             //System.out.println();
             crc=crc16Service.crc16_t(ff_2);
             request=null;

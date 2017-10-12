@@ -20,12 +20,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NamedQueries({
         @NamedQuery(name="Customer.findAll", query="select c from Customer c"),
         @NamedQuery(name="Customer.findById",
-                query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id")
+                query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id"),
 
       /*  @NamedQuery(name="Contact.findById",
-                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
-        @NamedQuery(name="Contact.findAllWithDetail",
-                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")*/
+                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
+        @NamedQuery(name="Customer.findAllWithDetail",
+                query="select distinct c from Customer c left join fetch c.operationSet t ")
 })
 @SqlResultSetMapping(
         name="customerResult",
@@ -37,7 +37,7 @@ public class Customer implements Serializable {
     private String lastName;
     private String telNumber;
     private String telModem;
-    private String unitNumber;
+    private Integer unitNumber;
     private String eMail;
     private int version;
 
@@ -101,11 +101,11 @@ public class Customer implements Serializable {
 
 
     @Column(name = "UNIT_NUMBER")
-    public String getUnitNumber() {
+    public Integer getUnitNumber() {
         return unitNumber;
     }
 
-    public void setUnitNumber(String unitNumber) {
+    public void setUnitNumber(Integer unitNumber) {
         this.unitNumber = unitNumber;
     }
 
@@ -155,7 +155,18 @@ public class Customer implements Serializable {
     }
 
 
-
-
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", telNumber='" + telNumber + '\'' +
+                ", telModem='" + telModem + '\'' +
+                ", unitNumber=" + unitNumber +
+                ", eMail='" + eMail + '\'' +
+                ", version=" + version +
+                ", customerId=" + customerId +
+                '}';
+    }
 }

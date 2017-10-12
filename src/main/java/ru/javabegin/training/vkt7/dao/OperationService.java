@@ -4,6 +4,9 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
+
+import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -17,6 +20,11 @@ public interface OperationService  {
 
     List<Operation> findAllWithDetail();
     void listOperationWithDetail(List<Operation> operationList);
-    List<Measurements> getMeasurementsByOperatoinId(Long id);
+
+
+    Operation getOperatioByOperationId(Long id);
+    List<Measurements> getMeasurementsByOperationId(Long id);
+    HashMap<Timestamp,List<Measurements>> getMeasurementsByOperationId_testDb(Long id);
+
     List<Operation> findOperationByIdCustomer(Long id);
 }

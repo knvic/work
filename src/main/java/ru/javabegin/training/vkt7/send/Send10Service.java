@@ -18,7 +18,7 @@ public interface Send10Service {
      * 4.7 Запрос «Начало сеанса связи»
      * @param number номер узла
      */
-    List<String> s_3FFF_n(String number);
+    List<String> s_3FFF_n(int number);
 
     /**
      *
@@ -26,7 +26,7 @@ public interface Send10Service {
      * @return Массив из двух объектов {LinkedList<Properts> data2, List<String> command}
      * 1 объект
      */
-    ArrayList<Object> s_3FFF(String number);
+    ArrayList<Object> s_3FFF(int number);
 
 
     /**

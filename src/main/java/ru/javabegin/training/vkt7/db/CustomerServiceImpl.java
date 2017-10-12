@@ -17,6 +17,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -55,7 +56,15 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer> findAllWithDetail() {
+        List<Customer> customerList = em.createNamedQuery(
+                "Customer.findAllWithDetail", Customer.class).getResultList();
+        return customerList;
+    }
 
+    @Transactional
     @Override
     public Customer save(Customer customer) {
         if (customer.getId() == null) {
@@ -67,6 +76,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         log.info("Contact saved with id: " + customer.getId());
+       /* em.flush();
+        em.clear();*/
+
 
         return customer;
     }
@@ -91,6 +103,52 @@ public class CustomerServiceImpl implements CustomerService {
         return query.getSingleResult();
     }
 
+    //////////////////API Criteria//////////////////////////////////////////
+
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer> findCustomerLikeFirstName(String name) {
+        log.info("Finding contact for version LIKE: " );
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Customer> criteriaQuery = cb.createQuery(Customer.class);
+        Root<Customer> contactRoot = criteriaQuery.from(Customer.class);
+        contactRoot.fetch(Customer_.operationSet, JoinType.LEFT);
+        Join oper = contactRoot.join(Customer_.operationSet, JoinType.LEFT).join(Operation_.measurementsSet, JoinType.LEFT);
+
+
+        /*Join meas = oper.join(Operation_.measurementsSet,JoinType.LEFT);
+        oper.fetch(Operation_.measurementsSet,JoinType.LEFT);
+*/
+
+
+
+
+
+        criteriaQuery.select(contactRoot).distinct(true);
+        ParameterExpression<String> parametr = cb.parameter(String.class);
+
+        criteriaQuery.select(contactRoot);
+      criteriaQuery.where(cb.like(contactRoot.get(Customer_.firstName),parametr ));
+
+
+        TypedQuery<Customer> typedQuery = em.createQuery(criteriaQuery);
+
+        List<Customer> result = typedQuery.setParameter(parametr, name+"%").getResultList();
+
+
+
+
+        return result;
+    }
+
+
+
+
+
 
     @Transactional(readOnly=true)
     @Override
@@ -102,7 +160,9 @@ public class CustomerServiceImpl implements CustomerService {
         CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
 
         Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
-        Join cont = contactRoot.join(Operation_.customer);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
 
         ParameterExpression<Long> parametr = cb.parameter(Long.class);
         Predicate condition = cb.gt(cont.get(Customer_.id), parametr) ;
@@ -111,6 +171,63 @@ public class CustomerServiceImpl implements CustomerService {
         List<Operation> result = q.setParameter(parametr, id).getResultList();
       return result;
     }
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public  List<Operation> findOperationByModemCustomer(String modem){
+        log.info("Finding operation by id: " );
+        // id=10L;
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        ParameterExpression<String> parametr = cb.parameter(String.class);
+        Predicate condition = cb.equal(cont.get(Customer_.telModem), parametr) ;
+        criteriaQuery.where(condition);
+        TypedQuery<Operation> q = em.createQuery(criteriaQuery);
+        List<Operation> result = q.setParameter(parametr, modem).getResultList();
+        return result;
+    }
+
+    @Transactional(readOnly=true)
+    @Override
+    public  List<Operation> findOperationByModemTimeCustomer(String modem, Timestamp date){
+        log.info("Finding по номеру модема и времени операции: " );
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        //contactRoot.fetch(Operation_.customer, JoinType.RIGHT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+        if (modem != null) {
+            Predicate p =cb.equal(cont.get(Customer_.telModem), modem);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.chronological),date);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        return em.createQuery(criteriaQuery).getResultList();
+
+    }
+
 
 
     @Transactional(readOnly=true)
