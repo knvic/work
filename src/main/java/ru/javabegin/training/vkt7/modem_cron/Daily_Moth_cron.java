@@ -86,6 +86,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
         String status="";
         int moth=0;
         Timestamp tstamp = null;
+        int date_before = 0;
 
 
 
@@ -1049,7 +1050,7 @@ t=1;
                         .stream()
                         .forEach(p->System.out.println(p+" "));
                 System.out.println("Выводим данные даты и времени сервера");
-                System.out.println(new Date(System.currentTimeMillis()));
+                //System.out.println(new Date(System.currentTimeMillis()));
                 step=15;
 
 
@@ -2067,15 +2068,34 @@ t=1;
 // Если ни одного измерения итоговых за месяц нет, то выполняем итоговые за месяц type=3
 
 
+            //// Выполняем проверку на наличие записи итогового арзива в теплосчетчике. Проверяем дату начала суточного архтва и сравниваем с нашей датой
+            Timestamp begin_work = date_3ff6.get(2);
+            System.out.println("Дата начала записи суточных архивов (TimeStamp) --- "+begin_work);
 
-            if (totalMoth.size()==0){
+            LocalDateTime begin_arhive =  begin_work.toLocalDateTime();
+            System.out.println("Переводим в LocalData Time --- "+begin_arhive);
+
+
+
+
+            date_before = 0;
+            if (begin_arhive.isBefore(data_type3.with(TemporalAdjusters.firstDayOfMonth()))){
+
+                System.out.println("Дата начала работы до запрашиваемой даты. Запрос ИТОГОВОГО АРХИВА возможен");
+                date_before = 1;
+            }
+            else{
+                System.out.println("ИИТОГОВЫЙЙ АРХИВ за "+ data_type3 +" отсутствует, но запрос не возможен. Начало записи " + begin_arhive );
+            }
+
+
+
+            if (totalMoth.size()==0&date_before==1){
 
                 moth=1;
 
 
-
-
-                ////(!)(!)(!)(!)/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////(!)(!)(!)(!)/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////Меняем тип запрашиваемго архива на ИТОГОВЫЙ АРХИВ////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////type=3 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2794,7 +2814,7 @@ t=1;
 
         Timestamp timestamp_date_input;
 
-    if(error==0&status.equals("OK")&moth==1) {
+    if(error==0&status.equals("OK")&moth==1&date_before==1) {
         System.out.println("В базе отсутствовал Итоговый за мессяц. Начинаем запись");
         Thread.sleep(2000);
         // Получили времы сервера для записиси в базу

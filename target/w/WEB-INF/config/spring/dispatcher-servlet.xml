@@ -246,7 +246,7 @@
         <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
        <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
         <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 18 10 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 21 17 * * ?"/>
         <!--<task:scheduled ref="temp_datatime" method="find" cron="0 32 15 * * ?"/>-->
 
 

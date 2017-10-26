@@ -131,7 +131,7 @@ for (int countCustomer=0;countCustomer<customerList.size();countCustomer++){
 
 
     System.out.println("countCustomer = "+ countCustomer);
-
+    Long id_c=customerList.get(countCustomer).getId();
 
     customer=customerList.get(countCustomer);
     System.out.println("FirstName()= = "+ customer.getFirstName());
@@ -2072,323 +2072,6 @@ t=1;
 
                 moth=1;
 
-                /**       //////////////////////////////////////////////////////////////////////
-                 * 3F F6  (03)  s13 -> s14 -> 15 Запрос «Чтение интервала дат»  //////////////////////
-                 */       //////////////////////////////////////////////////////////////////////
-
-                System.out.println("\n Формируем запрос 3F F6 Запрос «Чтение интервала дат»");
-                f6=null;
-                f6= send03Service.s_3FF6(number);
-                //System.out.println();
-                crc=crc16Service.crc16_t(f6);
-                request=null;
-                request=new int[crc.size()];
-                //System.out.println("\n crc size = "+ crc.size());
-                for(int i=0;i<crc.size();i++ ){
-                    request[i]=Integer.parseInt(crc.get(i) ,16);
-                }
-                Thread.sleep(5000);
-                System.out.println("\nЖдем получения всех данных после команды 3F F6 Запрос «Чтение интервала дат»");
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-
-                step=13;
-                data2="";
-
-                serialPort.writeIntArray(request);
-
-                t=0;
-                repeat=0;
-                executor.submit(callable(10));
-
-/**
- * Ждем начала приема длинных данных.
- */
-                recieve_all_byte=0;
-                while (recieve_all_byte==0&stop!=false){
-                    if (t==2){
-                        repeat++;
-                        if (repeat==2){
-                            step=0;
-
-                            System.out.println("\n Ответ не поступил 3F F6. Ошибка по таймауту.");
-                            System.out.println("\n error=17.3F F6 TimeOut");
-                            error=17;
-                            stop=false;
-                        }
-                        System.out.println("\n Ответ на 3F F6 не поступил. Ошибка по таймауту. Повторяем запрос");
-                        serialPort.writeIntArray(request);
-                        t=0;
-                        executor.submit(callable(8));
-                    }
-
-                }
-                t=1;
-
-
-                System.out.println("\nДанные 3F F6 поступили.");
-                System.out.println("Ожидаем обработку принятых данных 3F F6 ");
-
-
-                while(step==14&stop!=false){
-
-
-                    System.out.println("Принятая строка 3F F6 :: " + data2);
-                    //System.out.println("\n Проверяем контрольную сумму :: " +crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})")))));
-                    //Проверяем контрольную сумму. Если !=true то закрываем порт
-                    if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
-                        step = 0;
-                        System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                        System.out.println("\n error=18.3F F6 CRC");
-                        error=18;
-                        stop=false;
-                    }
-
-                    System.out.println("Контрольная сумма верна ");
-
-                    date_3ff6=recieve03Service.r_3FF6(data2);
-                    System.out.println("Выводим данные даты и времени счетчика");
-                    date_3ff6
-                            .stream()
-                            .forEach(p->System.out.println(p+" "));
-                    System.out.println("Выводим данные даты и времени сервера");
-                    System.out.println(new Date(System.currentTimeMillis()));
-                    step=15;
-
-
-                }
-
-
-
-
-
-/**  //////////////////////////////////////////////////
- * 3F FC (S17->18->19) Запрос на чтение перечня активных элементов данных ////
- */  //////////////////////////////////////////////////
-                step=17;
-                Thread.sleep(3000);
-                System.out.println("\n Фoрмируем запрос 3F FC перечнь активных элементов данных");
-                ff_n=null;
-
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-                ff_n= send03Service.s_3FFC(number);
-
-                //Получаем массив с контрольной суммой
-                crc=crc16Service.crc16_t(ff_n);
-                request=null;
-                request=new int[crc.size()];
-                //System.out.println("\n crc size = "+ crc.size());
-
-//Формируем массив int для отправки в порт
-                for(int i=0;i<crc.size();i++ ){
-                    request[i]=Integer.parseInt(crc.get(i) ,16);
-                    // System.out.print(+i+":"+request[i]+" ");
-                }
-                //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(2000);
-                serialPort.writeIntArray(request);
-
-
-                System.out.println("\nЖдем получения всех данных после команды 3F FC");
-
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-
-                t=0;
-                repeat=0;
-
-                executor.submit(callable(6));
-                recieve_all_byte=1;
-                while (recieve_all_byte==1) {
-                    if (t == 2) {
-                        repeat++;
-                        if (repeat == 2) {
-                            step = 0;
-
-                            System.out.println("\n Ответ не поступил 3F FC. Ошибка по таймауту.");
-                            System.out.println("\n error=19.3F FC TimeOut");
-                            error=19;
-                            stop=false;
-                        }
-                        System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
-                        serialPort.writeIntArray(request);
-                        t = 0;
-                        executor.submit(callable(8));
-
-                    }
-                }
-
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-                t=1;
-
-                System.out.println("\nДанные 3F FC поступили.");
-                System.out.println("Ожидаем обработку принятых данных 3F FC");
-                System.out.println("Step= "+step);
-                System.out.println("data2 = "+data2);
-
-
-
-                while(step==18){
-
-                    System.out.println("Принятая строка 3F FC " + data2);
-                    System.out.println("\n Проверяем контрольную сумму :: " +crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})")))));
-
-
-                    active_items=recieve03Service.r_3FFC(data2,prop_completed);
-               /* System.out.println("\n Принятый массив 3F FC :: ");
-                list.forEach(p->System.out.print(p+" "));*/
-                    step=19;
-                    System.out.println("");
-                }
-
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-
-/**  ////////////////////Класс  MeasurementsServiceImpl///////////////////////////////////
- *                      MeasurementsServiceImpl
- * Формируем массивы для измерений
- *
- *          active_items - ассив с активными элементами тепловычислителя с ед. изм., количеством знаков и размером
- *
- *          current - массив OBJECT!!
- *          [0] - массив List<String> команды "текущие", полученный извыбора из массива активный элементов, элемнтов, онтосящихся к измерениям "текущие".
- *          [1] - массив List<Measurements> элементов и свойств относящийся к измерению "текущие"
- *
- */  ////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-                current= measurementsService.total_current_command(active_items);
-                command_send = (List<String>)current.get(0);
-                current_measur =(List<Measurements>) current.get(1);
-                System.out.println("\n Полученная команда для отправки");
-                command_send.forEach(p->System.out.print(p+" "));
-                System.out.println("\n Полученный массив элементов");
-                current_measur.forEach(p->System.out.println(p.getId()+ " "+p.getName()+ " "+p.getText()+ " "+p.getEd()+ " "+p.getZnak()+ " "+p.getSize()));
-
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-
-
-
-                /**  ////////////////////////////////////////////////////////////////////////////
-                 * 3F FF  10  (s19 - >) Запрос на запись перечня для чтение. Требует подтверждения.//////
-                 */  ////////////////////////////////////////////////////////////////////////////
-
-                //List<String> ff_n=new ArrayList<>();
-                System.out.println("\nФормируем 3F FF  Запрос на запись перечня для чтение");
-
-
-                /**
-                 *
-                 * @param number номер узла ДОЛЖЕН БЫТЬ INTEGER
-                 * Получаем массив объектов со стокой команды и массивом (prop_common) общих свойств с названиями
-                 * @return Массив из двух объектов {LinkedList<Properts> prop_specification, List<String> command,LinkedList<Properts> prop_common}
-                 * 1 объект
-                 */
-                command_3FFF = send10Service.s_3FFF_end(number, command_send);
-
-                System.out.println("\n Полученная команда после добавления всего");
-
-                command_3FFF.forEach(p->System.out.print(p+" "));
-                /**
-                 * Получили строку для получения данных по измерению "текущие"
-                 * добавляем контрольную сумму CRC
-                 */
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-                crc=crc16Service.crc16_t(command_3FFF);
-                System.out.println("\n Добавили контрольную сумму");
-                crc.forEach(p->System.out.print(p+" "));
-
-
-
-                System.out.println("\n command +CRC = ");
-                for(int i=0;i<crc.size();i++ ){
-                    System.out.print(crc.get(i)+" ");
-                }
-                System.out.println();
-
-
-                request=null;
-                request= new int[crc.size()];
-                //System.out.println("\n Проверяем значение масива request :: "+request.length);
-                for(int i=0;i<crc.size();i++ ){
-                    request[i]=Integer.parseInt(crc.get(i) ,16);
-                    // System.out.print(request[i]+" ");
-                }
-                //System.out.println();
-                // System.out.println("\n request после наполнения :: "+request.length);
-                // System.out.println(request);
-
-
-                System.out.println("\n посылаем запрос 3F FF (Запрос  на запись перечня для чтение");
-                Thread.sleep(5000);
-                if(stop==false){
-                    System.out.println("\n Получена команда STOP ");
-                    break;
-                }
-                data2="";
-                serialPort.writeIntArray(request);
-
-
-                t=0;
-                repeat=0;
-                executor.submit(callable(3));
-                r_3fff=false;
-                while(step==19){
-                    if (data2.contains("3F FF ")){
-                        t=1;
-                        //System.out.println("После запроса 3F FF_n ");
-                        System.out.println("Запрс 3F FF; data2 = "+data2);
-                        r_3fff = recieve10Service.r_3FFF(data2);}
-                    if (r_3fff) {
-                        System.out.println("\n Команда 3F FF (Запрос на запись) прошла. Принятые данные ::  " + data2);
-                        Thread.sleep(1000);
-                        step=60;
-                        data2="";
-                        System.out.println();
-                    }
-
-                    if (t==2){
-                        repeat++;
-                        if (repeat==6){
-                            step=0;
-
-                            System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
-                            System.out.println("\n error=20.3F FF TimeOut");
-                            error=20;
-                            stop=false;
-                        }
-
-                        System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
-                        serialPort.writeIntArray(request);
-                        t=0;
-                        executor.submit(callable(4));
-                    }
-
-
-
-
-
-                }
 
 
 
@@ -3166,7 +2849,7 @@ t=1;
             //measurementsList.forEach(p -> operation.addMeasurements(p));
             total_moth_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
 
-
+            customer=customerService.findById(id_c);
             //Customer customer = customerService.findById(id);
             operation.setIdCustomer(customer.getId());
             operation.setCustomerName(customer.getFirstName());
@@ -3176,13 +2859,13 @@ t=1;
         }
 
 
-        System.out.println("Запись значений суточного архива произведена. завершаем поток");
+        System.out.println("Запись значений ИТОГОВОГО архива произведена. ");
 
     }
 
 
 if(error==0&status.equals("OK")&type==0) {
-    System.out.println("Начинаем запись в базу");
+    System.out.println("Начинаем запись в базу ЧАСОВОГО");
     Thread.sleep(2000);
     // Получили времы сервера для записиси в базу
     LocalDateTime localDateTime = LocalDateTime.now();
@@ -3237,63 +2920,14 @@ if(error==0&status.equals("OK")&type==0) {
         hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
 
 
-        //Customer customer = customerService.findById(id);
+        customer = customerService.findById(id_c);
         operation.setIdCustomer(customer.getId());
         operation.setCustomerName(customer.getFirstName());
 
         customer.addOperation(operation);
         customerService.save(customer);
     }
-    System.out.println("Запись значений часовыз архивов произведена. Записываем суточные показания");
-
-
-    for (Timestamp ts : daily_hashMap.keySet()) {
-        System.out.println(ts + " имеет");
-           /* for (String pet : personMap.get(person)){
-                System.out.println("  " + pet);
-            }*/
-
-
-        Operation operation = new Operation();
-        operation.setTypeOperation("daily");
-        operation.setServerVersion(String.valueOf(server_version));
-        operation.setProgrammVersion(service_information.get(0));
-        operation.setShemaTv13Ff9(service_information.get(1));
-        operation.setTp3Tv1(service_information.get(2));
-        operation.setT5Tv1(service_information.get(3));
-        operation.setShemaTv23Ff9(service_information.get(4));
-        operation.setTp3Tv2(service_information.get(5));
-        operation.setT5Tv2(service_information.get(6));
-        operation.setIdentificator(service_information.get(7));
-        operation.setNetNumber(service_information.get(8));
-        operation.setModel(service_information.get(10));
-        operation.setBeginHourDate(date_3ff6.get(0));
-        operation.setCurrentDate3Ff6(date_3ff6.get(1));
-        operation.setBeginDayDate(date_3ff6.get(2));
-        //operation.setDateVkt3Ffb();
-        operation.setDateServer(timestamp);
-        operation.setChronological(ts);
-        operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
-        operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
-        operation.setBaseNumber(String.valueOf(number_active_base));
-        operation.setStatus(status);
-        operation.setError(String.valueOf(error));
-
-
-        //measurementsList.forEach(p -> operation.addMeasurements(p));
-        daily_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
-
-
-        //Customer customer = customerService.findById(id);
-        operation.setIdCustomer(customer.getId());
-        operation.setCustomerName(customer.getFirstName());
-
-        customer.addOperation(operation);
-        customerService.save(customer);
-    }
-
-
-    System.out.println("Запись значений суточного архива произведена. завершаем поток");
+    System.out.println("Запись значений ЧАСОВОГО АРХИВА произведена. ");
 
 }
 
@@ -3352,7 +2986,7 @@ else if(error==0&status.equals("OK")&type==1) {
             //measurementsList.forEach(p -> operation.addMeasurements(p));
             daily_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
 
-
+            customer = customerService.findById(id_c);
             //Customer customer = customerService.findById(id);
             operation.setIdCustomer(customer.getId());
             operation.setCustomerName(customer.getFirstName());
@@ -3362,7 +2996,7 @@ else if(error==0&status.equals("OK")&type==1) {
         }
 
 
-        System.out.println("Запись значений суточного архива произведена. завершаем поток");
+        System.out.println("Запись значений СУТОЧНОГО архива произведена. ");
 
     }
 
