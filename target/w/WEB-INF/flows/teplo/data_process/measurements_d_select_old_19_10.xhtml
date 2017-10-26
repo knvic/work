@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/operation_d_select_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+   <!--         <c:forEach items="${facade_data.measurementsList}" var="item">
+                &lt;!&ndash;<h:outputText value="${item.name}"/><br/>&ndash;&gt;
+                <p:column headerText="q324352345">
+                    <h:outputText value="${item.name}" />
+                </p:column>
+            </c:forEach>-->
+        <!--    <c:forEach items="${facade_data.measurementsList}" var="item">
+                &lt;!&ndash;<h:outputText value="${item.name}"/><br/>&ndash;&gt;
+                <p:column headerText="q324352345">
+                    <h:outputText value="${item.text}" />
+                </p:column>
+            </c:forEach>-->
+
+<!--
+            <h3>Responsive</h3>
+            <p:panelGrid columns="${facade_data.measurementsList.size()}" layout="grid"  >
+                <c:forEach items="${facade_data.measurementsList}" var="item">
+                    &lt;!&ndash;<h:outputText value="${item.name}"/><br/>&ndash;&gt;
+                    <h:outputText value="${item.text}" />
+                  </c:forEach>
+
+            </p:panelGrid>-->
+
+        <!--    <p:dataTable var="v" value="#${facade_data.measurementsList}" colums="${facade_data.measurementsList.size()}">
+                <c:forEach items="#{$v}" var="item">
+                    &lt;!&ndash;<h:outputText value="${item.name}"/><br/>&ndash;&gt;
+                    <p:column headerText="q324352345">
+                        <h:outputText value="${item.text}" />
+                    </p:column>
+                </c:forEach>
+
+
+            </p:dataTable>
+
+
+            <p:dataGrid columns="#{facade_data.measurementsList.size()}" value="#{facade_data.measurementsList}" var="item" scrollable="true" scrollWidth="400">
+                <p:column>
+                    <h:outputText value="#{item.text}" />
+
+                </p:column>
+            </p:dataGrid>
+-->
+
+
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{facade_data.measurementsList}" scrollable="true"  selectionMode="single" selection="#{selectionData.measurements}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    #{u.customerName}
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect}" update=":form:msgs" />
+
+                <p:column headerText="дата ">
+                    <h:outputText value="#{selectionData.operation.chronological}" />
+                </p:column>
+                <p:column headerText="Type">
+                    <h:outputText value="#{selectionData.operation.typeOperation}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.measurInt}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.measurText}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.qualityText}" />
+                </p:column>
+
+
+            </p:dataTable>
+            <p:dataTable id="eventsDT1" var="u" value="#{facade_data.measurementsList}" scrollable="true"  selectionMode="single" selection="#{selectionData.measurements}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    #{u.customerName}
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect}" update=":form:msgs" />
+
+
+                <c:if test="${not empty selectionData.operation.chronological}">
+                    <p:column headerText="дата ">
+                        <h:outputText value="#{selectionData.operation.chronological}" />
+                    </p:column>
+                </c:if>
+
+
+                <p:column headerText="дата ">
+                    <h:outputText value="#{selectionData.operation.chronological}" />
+                </p:column>
+                <p:column headerText="Type">
+                    <h:outputText value="#{selectionData.operation.typeOperation}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.measurInt}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.measurText}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.qualityText}" />
+                </p:column>
+
+
+            </p:dataTable>
+
+            <!--
+
+                            <c:if test="${not empty param.login_failed}">
+                                <div class="error">
+                                    Login failed
+                                </div>
+                            </c:if>
+            -->
+
+
+            <!--<p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />-->
+
+
+
+
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+
+
+
+
+
+        </h:form>
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

@@ -361,6 +361,8 @@ public class ContactServiceImpl implements ContactService {
 
 
 
+
+
     @Transactional(readOnly=true)
     @Override
     public List<Projection1> findByCriteriaQuery7(String firstName, String lastName) {

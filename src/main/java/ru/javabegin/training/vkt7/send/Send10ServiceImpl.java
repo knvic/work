@@ -197,16 +197,7 @@ public class Send10ServiceImpl implements Send10Service{
     @Override
     public List<String> s_3FFB(int number, String date_str){
 
-        /*Instant date_time = date.toInstant();
-        LocalDateTime ldt = LocalDateTime.ofInstant(date_time, ZoneId.systemDefault());
-        System.out.println("value of Date: " + date_time);
-        System.out.println("value of LocalDateTime: " + ldt);
 
-      *//*  System.out.println("Переводим Timestamp в localDateTime");
-        LocalDateTime date = date_ts.toLocalDateTime();*//*
-
-        String date_str=ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
-        System.out.println("ddd = "+date_str);*/
         List<String> date_dd_MM_UU_HH = new ArrayList<String>(Arrays.asList(date_str.split(":")));
 
 

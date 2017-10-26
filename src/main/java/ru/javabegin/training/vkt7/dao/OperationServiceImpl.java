@@ -108,7 +108,7 @@ public class OperationServiceImpl implements OperationService {
     @Transactional(readOnly=true)
     @Override
     public List<Measurements> getMeasurementsByOperationId(Long id) {
-        log.info("Finding content by first_name: " );
+        log.info("Finding measurements by Operation Id: " );
 
 
         CriteriaBuilder cb = em_2.getCriteriaBuilder();

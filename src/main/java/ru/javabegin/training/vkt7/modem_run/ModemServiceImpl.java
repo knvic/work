@@ -14,6 +14,7 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Test;
 import ru.javabegin.training.vkt7.entities.TestService;
 import ru.javabegin.training.vkt7.modem.*;
+import ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -391,6 +392,39 @@ List<Object> connect=new ArrayList<>();*/
 
 
 
+    @Override
+    public void get_daily_moth_cron(){
+        //LocalDateTime ldt_d1 = LocalDateTime.of(2017, 10, day, 0, 0, 0);
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println("Сегодня LocalDateTime = " + ldt);
+        ldt= ldt.minusDays(1);
+        System.out.println("Вчера LocalDateTime = " + ldt);
+        ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
+        Date data = Date.from(zdt.toInstant());
+        System.out.println("Перевели в  Date: " + data);
+        List<Customer> customerList=customerService.findAllWithDetail();
+        Daily_Moth_cron daily_moth_cron =new Daily_Moth_cron();
+        int type =1;
+
+        Callable task = () -> {
+            try {
+                daily_moth_cron.daily_all_cycle(customerList, customerService, operationService, data, type);
+                return "123";
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        };
+
+
+
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
+        Future<String> future = executor1.submit(task);
+        executor1.shutdown();
+
+    }
+
 
     @Override
     public void  get_mothly_customer_data_cron(){
@@ -452,7 +486,7 @@ List<Object> connect=new ArrayList<>();*/
 List<Object> connect=new ArrayList<>();*/
 
 
-        LocalDateTime ldt = LocalDateTime.of(2017, 10, 3, 0, 0, 0);
+        LocalDateTime ldt = LocalDateTime.of(2017, 10, 4, 0, 0, 0);
         // LocalDateTime ldt = LocalDateTime.now();
 
 
@@ -470,7 +504,7 @@ List<Object> connect=new ArrayList<>();*/
         List<Customer> customerList=customerService.findAllWithDetail();
 
         // Daily_all_Customer daily_all_customer =new Daily_all_Customer();
-        Moth_all_Customer moth_all_customer=new Moth_all_Customer();
+        Moth_all_Customer_new moth_all_customer=new Moth_all_Customer_new();
 
         int type =1;
 

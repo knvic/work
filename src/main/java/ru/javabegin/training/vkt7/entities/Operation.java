@@ -298,7 +298,7 @@ public class Operation implements Serializable{
     }
 
     @Basic
-    @Column(name = "SHEMA_TV1_3ECD", nullable = true, length = 2)
+    @Column(name = "SHEMA_TV1_3ECD", nullable = true, length = 4)
     public String getShemaTv13Ecd() {
         return shemaTv13Ecd;
     }
@@ -308,7 +308,7 @@ public class Operation implements Serializable{
     }
 
     @Basic
-    @Column(name = "SHEMA_TV2_3F5B", nullable = true, length = 2)
+    @Column(name = "SHEMA_TV2_3F5B", nullable = true, length = 4)
     public String getShemaTv23F5B() {
         return shemaTv23F5B;
     }
@@ -318,7 +318,7 @@ public class Operation implements Serializable{
     }
 
     @Basic
-    @Column(name = "BASE_NUMBER", nullable = true, length = 2)
+    @Column(name = "BASE_NUMBER", nullable = true, length = 4)
     public String getBaseNumber() {
         return baseNumber;
     }
@@ -423,6 +423,7 @@ public class Operation implements Serializable{
                 ", beginDayDate=" + beginDayDate +
                 ", dateVkt3Ffb=" + dateVkt3Ffb +
                 ", dateServer=" + dateServer +
+                ", chronological=" + chronological +
                 ", shemaTv13Ecd='" + shemaTv13Ecd + '\'' +
                 ", shemaTv23F5B='" + shemaTv23F5B + '\'' +
                 ", baseNumber='" + baseNumber + '\'' +
@@ -430,8 +431,6 @@ public class Operation implements Serializable{
                 ", error='" + error + '\'' +
                 ", version=" + version +
                 ", customer=" + customer +
-
-
                 '}';
     }
 }

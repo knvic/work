@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process" />
+      </map>
+    </option>
+  </component>
+</project>

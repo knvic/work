@@ -19,6 +19,9 @@ public interface ModemService {
     void get_daily__hour_data(Customer customer, Date data);
     void get_daily_customer_data(Customer customer, Date data);
     void get_daily_customer_data_cron();
+   //25_10_2017//
+   void get_daily_moth_cron();
+   ///////////
     void get_mothly_customer_data_cron();
     void get_mothly_customer_data_cron_new() throws InterruptedException, ExecutionException, TimeoutException, SerialPortException;
 

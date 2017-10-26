@@ -4,6 +4,7 @@ import org.primefaces.event.SelectEvent;
 import org.primefaces.event.UnselectEvent;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
 import javax.faces.application.FacesMessage;
@@ -25,7 +26,16 @@ public class SelectionData implements Serializable {
     private Date day_of;
     private Date day_to;
     private Date hour;
-    Operation operation;
+    private Operation operation;
+    private Measurements measurements;
+
+    public Measurements getMeasurements() {
+        return measurements;
+    }
+
+    public void setMeasurements(Measurements measurements) {
+        this.measurements = measurements;
+    }
 
     public Operation getOperation() {
         return operation;
@@ -76,14 +86,28 @@ public class SelectionData implements Serializable {
     }
 
     public void onRowSelect(SelectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Selected", ((Customer) event.getObject()).getFirstName());
+        FacesMessage msg = new FacesMessage("Customer Selected", ((Customer) event.getObject()).getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
     public void onRowUnselect(UnselectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Unselected", ((Customer) event.getObject()).getFirstName());
+        FacesMessage msg = new FacesMessage("Customer Unselected", ((Customer) event.getObject()).getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
+
+    public void onRowSelect_operation(SelectEvent event) {
+        FacesMessage msg = new FacesMessage("Operation Selected", ((Operation) event.getObject()).getCustomerName());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
+    public void onRowUnselect_operation(UnselectEvent event) {
+        FacesMessage msg = new FacesMessage("Operationr Unselected", ((Operation) event.getObject()).getCustomerName());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
+
+
+
     public Customer onRowSelect_model(SelectEvent event) {
          Customer select=((Customer) event.getObject());
         return select;

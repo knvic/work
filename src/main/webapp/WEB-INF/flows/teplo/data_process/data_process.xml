@@ -12,7 +12,7 @@
             <on-render>
                   <evaluate expression="facade_data.findAllCustomers()" result="viewScope.cu"  />
             </on-render>
-            <transition on="back" to="back"/>
+            <transition on="back" to="data_ready"/>
             <transition on="next" to="operation"/>
 
 
@@ -26,11 +26,23 @@
             <on-render>
                   <evaluate expression="facade_data.getAllOperationsByCustomer()" result="viewScope.cu"  />
             </on-render>
-            <transition on="back" to="back"/>
-            <transition on="action" to="action"/>
-
+            <transition on="back" to="data_process"/>
+            <transition on="next" to="measurements"/>
 
       </view-state>
+
+      <view-state id="measurements" view="measurements_d_select.xhtml" >
+
+           <!-- <on-render>
+                  <evaluate expression="facade_data.measurementsList" result="flashScope.cu"  />
+            </on-render>-->
+            <transition on="back" to="operation"/>
+            <transition on="next" to="measurements"/>
+
+      </view-state>
+
+
+
 
 
       <view-state id="case" view="customer_m_case.xhtml" >
@@ -114,12 +126,12 @@
       </action-state>
 
 
-      <end-state id="modem_ready"  />
+      <end-state id="data_ready"  />
 
 
       <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
 
-            <transition on="cancel" to="modem_ready" />
+            <transition on="cancel" to="data_ready" />
       </global-transitions>
 
 

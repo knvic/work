@@ -20,6 +20,8 @@ public interface ContactService {
     List<Contact> findByCriteriaQuery4(String str);
     List<Projection> findByCriteriaQuery5();
     List<Contact> findByCriteriaQuery6(String firstName, String lastName);
+
+
     List<Projection1> findByCriteriaQuery7(String firstName, String lastName);
     List<Hobby> findByCriteriaQuery8();
     List<Contact> findByCriteriaQuery9();

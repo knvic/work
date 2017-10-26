@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.javabegin.training.db.Contact;
-import ru.javabegin.training.db.Contact_;
-import ru.javabegin.training.db.Content;
-import ru.javabegin.training.db.Content_;
+import ru.javabegin.training.db.*;
 import ru.javabegin.training.vkt7.entities.*;
 
 import javax.persistence.EntityManager;
@@ -106,6 +103,76 @@ public class CustomerServiceImpl implements CustomerService {
     //////////////////API Criteria//////////////////////////////////////////
 
 
+/*
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer>  findByCriteriaQuery_total_moth(Long id){
+        log.info("Finding contact for firstName: " + firstName
+                + " and lastName: " + lastName);
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Contact> criteriaQuery = cb.createQuery(Contact.class);
+        Root<Contact> contactRoot = criteriaQuery.from(Contact.class);
+        //Join tel = contactRoot.join(Contact_.contactTelDetails);
+        //criteriaQuery.where(cb.equal(tel.get(ContactTelDetail_.telNumber), "89193452346"));
+
+        contactRoot.fetch(Contact_.contactTelDetails, JoinType.LEFT);
+        Join tel = contactRoot.join(Contact_.contactTelDetails);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        //criteriaQuery.where(cb.equal(tel.get(ContactTelDetail_.telNumber), "89193452346"));
+
+        criteriaQuery.where(cb.like(tel.get(ContactTelDetail_.telNumber), "89%"));
+
+        */
+/*     Root<ContactTelDetail> tRoot = criteriaQuery.from(ContactTelDetail.class);
+        contactRoot.fetch(Contact_.contactTelDetails, JoinType.LEFT);
+        contactRoot.fetch(Contact_.hobbies, JoinType.LEFT);
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (firstName != null) {
+            Predicate p = cb.equal(contactRoot.get(Contact_.firstName),
+                    firstName);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (lastName != null) {
+            Predicate p = cb.equal(contactRoot.get(Contact_.lastName),
+                    lastName);
+            criteria = cb.and(criteria, p);
+        }
+
+*//*
+*/
+/*
+
+        Predicate p = cb.equal(tRoot.get(ContactTelDetail_.telType),
+                "hom");
+        criteria = cb.and(criteria, p);
+
+*//*
+*/
+/*
+
+
+        criteriaQuery.where(criteria);
+        *//*
+
+
+
+        List<Contact> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+    }
+
+*/
+
+
+
+
 
 
     @Transactional(readOnly=true)
@@ -195,6 +262,59 @@ public class CustomerServiceImpl implements CustomerService {
         List<Operation> result = q.setParameter(parametr, modem).getResultList();
         return result;
     }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public  List<Operation> findOperation_total_moth(Long id, Timestamp ts, String type, String status){
+        log.info("Finding operation by id: " );
+        // id=10L;
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+       // contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (ts != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.chronological),
+                    ts);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (status != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.status),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        List<Operation> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+
+    }
+
+
+
 
     @Transactional(readOnly=true)
     @Override

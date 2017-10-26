@@ -49,6 +49,9 @@ public class Facade_data {
 
     private List<Customer> customers;
     private List<Operation> operations;
+
+
+
     private List<Measurements> measurementsList;
 
 
@@ -76,6 +79,8 @@ public class Facade_data {
 
 
 
+
+
     public List<Operation> getAllOperationsByCustomer(){
 
        /* if (operations==null){
@@ -94,6 +99,29 @@ public class Facade_data {
 
 
 
+    /////////////Measurements ////////////////
+    public List<Measurements> getMeasurementsList() {
+
+
+       /* if (measurementsList==null){
+            Long id=searchCriteria_data.getOperation().getId();
+            System.out.println("id="+id);
+            measurementsList = operationService.getMeasurementsByOperationId(id);
+        }*/
+        Long id=searchCriteria_data.getOperation().getId();
+        System.out.println("id="+id);
+        measurementsList = operationService.getMeasurementsByOperationId(id);
+
+
+
+        return measurementsList;
+    }
+
+    public void setMeasurementsList(List<Measurements> measurementsList) {
+        this.measurementsList = measurementsList;
+    }
+
+
 
 
     ////////////////////////////////////////
@@ -105,7 +133,7 @@ public class Facade_data {
             operations = customerService.findAll();
         }*/
 
-        Long id = searchCriteria_oper.getId();
+        Long id = searchCriteria_data.getId();
 
         measurementsList= operationService.getMeasurementsByOperationId(id);
         return measurementsList;

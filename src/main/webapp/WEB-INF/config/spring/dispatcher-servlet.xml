@@ -223,10 +223,14 @@
   <!--  <bean id="sch_comtrol" class="ru.javabegin.training.vkt7.scheduler.Test_sch_control"/>
     <bean id="test_critoria1" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_1"/>
     <bean id="test_critoria2" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_2"/>
-    <bean id="test_critoria3" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_3"/>
-    <bean id="modem_moth" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>-->
+    <bean id="test_critoria3" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_3"/>-->
+
+    <!--<bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="testdb" class=" ru.javabegin.training.vkt7.test_db.Test_db_16_10_1"/>-->
     <bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
-    <bean id="testdb" class=" ru.javabegin.training.vkt7.test_db.Test_db_16_10_1"/>
+    <bean id="modem_daily_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="temp_datatime" class="ru.javabegin.training.temp_datatime.test_datatime_Daily_Moth_cron_25_10"/>
+
 
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
@@ -240,9 +244,10 @@
        <!--<task:scheduled ref="test_critoria3" method="test" cron="*/20 * * * * ?"/>-->
 
         <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
-       <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 46 9 * * ?"/> -->
-        <task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>
-        <task:scheduled ref="testdb" method="test_db" cron="0 26 15 * * ?"/>
+       <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
+        <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 18 10 * * ?"/>
+        <!--<task:scheduled ref="temp_datatime" method="find" cron="0 32 15 * * ?"/>-->
 
 
     </task:scheduled-tasks>
