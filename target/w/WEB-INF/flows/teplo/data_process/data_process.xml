@@ -46,7 +46,8 @@
 
             <on-entry>
                   <!--<evaluate expression="searchCriteria_data.archive" result="viewScope.a"  />-->
-                  <evaluate expression="facade_data.testMeasur()" />
+                  <!--<evaluate expression="facade_data.testMeasur()" />-->
+                  <evaluate expression="facade_data. getArchiveByCustomer()"  />
             </on-entry>
 
            <!-- <on-render>
