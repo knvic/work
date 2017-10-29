@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.reports.Archive;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ViewScoped;
@@ -28,6 +29,15 @@ public class SelectionData implements Serializable {
     private Date hour;
     private Operation operation;
     private Measurements measurements;
+    private Archive archive;
+
+    public Archive getArchive() {
+        return archive;
+    }
+
+    public void setArchive(Archive archive) {
+        this.archive = archive;
+    }
 
     public Measurements getMeasurements() {
         return measurements;

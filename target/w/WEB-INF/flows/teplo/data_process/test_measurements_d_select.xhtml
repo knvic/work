@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/operation_d_select_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+
+
+   <!--      <p:dataTable var="v" value="#{facade_data.measurementsList}" colums="${facade_data.measurementsList.size()}" scrollable="true" scrollWidth="400">
+                <c:forEach items="#{v}" var="item">
+
+                    <p:column headerText="q324352345">
+                        <h:outputText value="${item.text}" />
+                    </p:column>
+                </c:forEach>
+
+
+            </p:dataTable>-->
+
+<!--
+
+            <p:dataGrid columns="#{facade_data.measurementsList.size()}" style="flex:auto" value="#{facade_data.measurementsList}" var="item1" scrollable="true" scrollWidth="400">
+
+
+                    <h:outputText value="#{item1.text}" />
+
+                    <h:outputText value="#{item1.size}" />
+
+                    <h:outputText value="#{item1.ed}" />
+
+            </p:dataGrid>
+
+-->
+
+
+
+        <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
+        <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.data}" scrollable="true"  >
+
+            <p:columns value="#{searchCriteria_data.id_item}" var="id" headerText="#{id}">
+                #{u.optionalValues[id].value}
+            </p:columns>
+
+        </p:dataTable>
+
+
+
+        </h:form>
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

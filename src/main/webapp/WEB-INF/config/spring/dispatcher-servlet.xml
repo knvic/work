@@ -230,6 +230,8 @@
     <bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
     <bean id="modem_daily_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
     <bean id="temp_datatime" class="ru.javabegin.training.temp_datatime.test_datatime_Daily_Moth_cron_25_10"/>
+    <bean id="test_db" class="ru.javabegin.training.vkt7.test_db.Test_db_28_10"/>
+
 
 
 
@@ -246,8 +248,8 @@
         <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
        <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
         <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 21 17 * * ?"/>
-        <!--<task:scheduled ref="temp_datatime" method="find" cron="0 32 15 * * ?"/>-->
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 3 17 * * ?"/>
+        <task:scheduled ref="test_db" method="test_db" cron="0 14 11 * * ?"/>
 
 
     </task:scheduled-tasks>

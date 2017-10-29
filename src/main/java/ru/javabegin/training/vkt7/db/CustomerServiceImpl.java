@@ -268,13 +268,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public  List<Operation> findOperation_total_moth(Long id, Timestamp ts, String type, String status){
         log.info("Finding operation by id: " );
+
         // id=10L;
+
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
 
         Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
-       // contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
         Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
         criteriaQuery.select(contactRoot).distinct(true);
 
@@ -300,8 +302,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 
         if (status != null) {
-            Predicate p = cb.equal(contactRoot.get(Operation_.status),
-                    type);
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                   status);
             criteria = cb.and(criteria, p);
         }
 

@@ -296,7 +296,10 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 
                     temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
                     if (temp_measur.getEd()!=null){
-                        temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt())+temp_measur.getEd());}
+                    //    temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt())+temp_measur.getEd());
+                        temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
+
+                    }
                     else{
                         temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
                     }
@@ -310,7 +313,9 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 
                     temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
                         if (temp_measur.getEd()!=null){
-                            temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt()*znak(temp_measur.getZnak())+temp_measur.getEd()));}
+                            //temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt()*znak(temp_measur.getZnak())+temp_measur.getEd()));
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
+                        }
                         else{
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
                         }
@@ -325,8 +330,10 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                     if(temp_measur.getType().equals("float")) {
                         temp_measur.setMeasurFloat(Float.intBitsToFloat(Integer.valueOf(l2b(measur), 16).intValue()));
                         if (temp_measur.getEd() != null) {
-                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()) + temp_measur.getEd());
-                        } else {
+                            //temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()) + temp_measur.getEd());
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()));
+                        }
+                        else {
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurFloat()));
                         }
                         //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
@@ -339,8 +346,10 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 //                        temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
                         temp_measur.setMeasurInt((int) Long.parseLong(l2b(measur), 16));
                         if (temp_measur.getEd() != null) {
-                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())) + temp_measur.getEd());
-                        } else {
+                            //temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())) + temp_measur.getEd());
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
+                        }
+                        else {
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*znak(temp_measur.getZnak())));
                         }
                         //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());
@@ -351,8 +360,10 @@ public class Recieve03ServiceImpl implements Recieve03Service{
 
                         temp_measur.setMeasurInt((int) Long.parseLong(l2b(measur), 16));
                         if (temp_measur.getEd() != null) {
-                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01) + temp_measur.getEd());
-                        } else {
+                            //temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01) + temp_measur.getEd());
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01));
+                        }
+                        else {
                             temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()*0.01));
                         }
                         //System.out.println(temp_measur.getText()+" = " +temp_measur.getMeasur_float());

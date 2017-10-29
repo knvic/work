@@ -137,6 +137,37 @@ public class OperationServiceImpl implements OperationService {
     }
 
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Measurements> getMeasurementsByOperationId(Long id, String type,Timestamp data){
+        log.info("Finding measurements by Operation Id: " );
+
+
+        CriteriaBuilder cb = em_2.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+        //Join meas = contactRoot.join(Operation_.measurementsSet);
+
+
+        //ParameterExpression<Long> parametr = cb.parameter(Long.class);
+        ParameterExpression<Long> parametr = cb.parameter(Long.class);
+        Predicate condition = cb.equal(contactRoot.get(Operation_.id), parametr);
+        //Predicate condition = cb.like(cont.get(Customer_.firstName), parametr) ;
+        criteriaQuery.where(condition);
+        TypedQuery<Operation> q = em_2.createQuery(criteriaQuery);
+        //List<Operation> result = q.setParameter(parametr,id ).getResultList();
+        List<Operation> result = q.setParameter(parametr,id ).getResultList();
+        List<Measurements> result_measur=new ArrayList<>();
+        // result_measur=result_measur.addAll(result.get(0).getMeasurementsSet());
+
+        result_measur = result.get(0).getMeasurementsSet().stream().collect(Collectors.toList());
+
+
+        return result_measur;
+    }
+
 
     @Transactional(readOnly=true)
     @Override

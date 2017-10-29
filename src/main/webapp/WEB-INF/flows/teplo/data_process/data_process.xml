@@ -31,10 +31,26 @@
 
       </view-state>
 
-      <view-state id="measurements" view="measurements_d_select.xhtml" >
+    <!--  <action-state id="measurements_action">
+            <evaluate expression="facade_data.getArchiveByCustomer()"  />
+            <evaluate expression="searchCriteria_data.setArchive(selectionData.getArchive)"  />
+
+
+            &lt;!&ndash;<transition on="no" to="resultIsFalseState" />&ndash;&gt;
+            <transition  to="measurements" />
+      </action-state>-->
+
+
+
+      <view-state id="measurements" view="test_measurements_d_select.xhtml" >
+
+            <on-entry>
+                  <!--<evaluate expression="searchCriteria_data.archive" result="viewScope.a"  />-->
+                  <evaluate expression="facade_data.testMeasur()" />
+            </on-entry>
 
            <!-- <on-render>
-                  <evaluate expression="facade_data.measurementsList" result="flashScope.cu"  />
+                  <evaluate expression="facade_data. getArchiveByCustomer()"  />
             </on-render>-->
             <transition on="back" to="operation"/>
             <transition on="next" to="measurements"/>

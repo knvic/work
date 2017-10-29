@@ -24,6 +24,9 @@ public interface OperationService  {
 
     Operation getOperatioByOperationId(Long id);
     List<Measurements> getMeasurementsByOperationId(Long id);
+
+    List<Measurements> getMeasurementsByOperationId(Long id, String type,Timestamp data);
+
     HashMap<Timestamp,List<Measurements>> getMeasurementsByOperationId_testDb(Long id);
 
     List<Operation> findOperationByIdCustomer(Long id);

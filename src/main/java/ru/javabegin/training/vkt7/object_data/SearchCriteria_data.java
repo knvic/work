@@ -7,9 +7,12 @@ import ru.javabegin.training.db.Hobby;
 import ru.javabegin.training.enums.SearchType;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.reports.Archive;
+import ru.javabegin.training.vkt7.reports.DataObject;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Component
 @Scope("singleton")
@@ -27,6 +30,36 @@ public class SearchCriteria_data implements Serializable{
     private Hobby hobby;
     private Customer customer;
     private Operation operation;
+    private Archive archive;
+
+    private List<DataObject> data;
+    private List<String> id_item;
+
+    public List<String> getId_item() {
+        return id_item;
+    }
+
+    public void setId_item(List<String> id_item) {
+        this.id_item = id_item;
+    }
+
+    public List<DataObject> getData() {
+
+        return data;
+    }
+
+
+    public void setData(List<DataObject> data) {
+        this.data = data;
+    }
+
+    public Archive getArchive() {
+        return archive;
+    }
+
+    public void setArchive(Archive archive) {
+        this.archive = archive;
+    }
 
     public Date getDay_of() {
         return day_of;

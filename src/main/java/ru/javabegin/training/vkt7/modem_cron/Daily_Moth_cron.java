@@ -2065,6 +2065,8 @@ t=1;
 
             List<Operation> totalMoth=customerService.findOperation_total_moth( customer.getId(),tstamp,"total_moth", "OK");
 
+
+
 // Если ни одного измерения итоговых за месяц нет, то выполняем итоговые за месяц type=3
 
 
@@ -2087,6 +2089,14 @@ t=1;
             else{
                 System.out.println("ИИТОГОВЫЙЙ АРХИВ за "+ data_type3 +" отсутствует, но запрос не возможен. Начало записи " + begin_arhive );
             }
+
+
+            System.out.println("Проверяем наличие измерения total_moth "+  tstamp);
+            System.out.println("customer.getId()"+ customer.getId());
+            System.out.println("tstamp "+  tstamp);
+            System.out.println("date_before "+  date_before);
+
+            System.out.println("Результат размер массива ===== "+  totalMoth.size());
 
 
 
