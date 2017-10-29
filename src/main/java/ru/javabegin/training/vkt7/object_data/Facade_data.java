@@ -138,7 +138,43 @@ public class Facade_data {
 
 
 
+
     public List<Object> getArchiveByCustomer(){
+
+
+        Long id_Customer = searchCriteria_data.getCustomer().getId();
+        Timestamp tstamp1=searchCriteria_data.getOperation().getChronological();
+        String type=searchCriteria_data.getOperation().getTypeOperation();
+
+
+        List<Operation> operationList= customerService.findOperation_total_moth(id_Customer, tstamp1, type, "OK");
+        List<Object> res= reportService.getObject(operationList);
+        List<DataObject> dataObjectList=(List<DataObject>)res.get(0);
+        List<String> list1=(List<String>)res.get(1);
+        //List<String> list2=(List<String>)res.get(2);
+
+
+     /*   if (list1.size()==list2.size()){
+            System.out.println("размеры листов совпадают");
+        }*/
+
+       searchCriteria_data.setData(dataObjectList);
+       searchCriteria_data.setId_item(list1);
+
+        List<Object> dop=new ArrayList<>();
+        dop.add(searchCriteria_data.getOperation().getCustomerName());
+        dop.add(searchCriteria_data.getOperation().getChronological());
+
+        return dop;
+    }
+
+
+
+
+
+
+   /* ... OLD_29_10_2017
+  public List<Object> getArchiveByCustomer(){
 
 
         Map<String,Tupel> map=new HashMap<String,Tupel>();
@@ -458,7 +494,7 @@ public class Facade_data {
         return dop;
     }
 
-
+*/
 
 
 

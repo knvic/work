@@ -11,4 +11,9 @@ public interface ReportService {
 
 
     List<DataObject> getDataObject (List<Operation> operationList);
+    List<Object> getObject (List<Operation> operationList);
+
+    /// Вспомогательные сортировка списка ...
+    List<String> sort (List<String> list);
+
 }
