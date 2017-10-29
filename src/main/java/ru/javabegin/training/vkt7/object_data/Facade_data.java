@@ -15,6 +15,7 @@ import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 import ru.javabegin.training.vkt7.reports.Archive;
 import ru.javabegin.training.vkt7.reports.DataObject;
+import ru.javabegin.training.vkt7.reports.ReportService;
 import ru.javabegin.training.vkt7.reports.Tupel;
 
 import java.math.BigDecimal;
@@ -39,6 +40,10 @@ public class Facade_data {
     @Qualifier("jpaOperationService")
     @Autowired
     OperationService operationService;
+
+    @Autowired
+    ReportService reportService;
+
 
    /* @Autowired
   */  private SearchCriteria_cust searchCriteria_cust;
@@ -139,12 +144,13 @@ public class Facade_data {
         Map<String,Tupel> map=new HashMap<String,Tupel>();
         Tupel tupel=new Tupel();
 
-              Long id_Customer = searchCriteria_data.getCustomer().getId();
+        Long id_Customer = searchCriteria_data.getCustomer().getId();
         Timestamp tstamp1=searchCriteria_data.getOperation().getChronological();
         String type=searchCriteria_data.getOperation().getTypeOperation();
 
 
         List<Operation> operationList= customerService.findOperation_total_moth(id_Customer, tstamp1, type, "OK");
+        reportService.getDataObject(operationList);
 
         System.out.println(operationList.size());
         List<Measurements> measurementsList=new ArrayList<>();
