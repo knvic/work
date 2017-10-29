@@ -23,36 +23,14 @@
 
 
 
-   <!--      <p:dataTable var="v" value="#{facade_data.measurementsList}" colums="${facade_data.measurementsList.size()}" scrollable="true" scrollWidth="400">
-                <c:forEach items="#{v}" var="item">
-
-                    <p:column headerText="q324352345">
-                        <h:outputText value="${item.text}" />
-                    </p:column>
-                </c:forEach>
-
-
-            </p:dataTable>-->
-
-<!--
-
-            <p:dataGrid columns="#{facade_data.measurementsList.size()}" style="flex:auto" value="#{facade_data.measurementsList}" var="item1" scrollable="true" scrollWidth="400">
-
-
-                    <h:outputText value="#{item1.text}" />
-
-                    <h:outputText value="#{item1.size}" />
-
-                    <h:outputText value="#{item1.ed}" />
-
-            </p:dataGrid>
-
--->
 
 
 
         <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
         <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.data}" scrollable="true"  >
+            <p:column headerText="Дата ">
+                <h:outputText value="#{u.data}" />
+            </p:column>
 
             <p:columns value="#{searchCriteria_data.id_item}" var="id" headerText="#{id}">
                 #{u.optionalValues[id].value}

@@ -3,6 +3,7 @@ package ru.javabegin.training.vkt7.reports;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 
@@ -12,19 +13,18 @@ import java.util.Map;
 @Component
 public class DataObject implements Serializable{
 
-    private String staticval1;
+    private Timestamp data;
     private String staticval2;
 
     private Map<String, Tupel> optionalValues;
 
 
-
-    public String getStaticval1() {
-        return staticval1;
+    public Timestamp getData() {
+        return data;
     }
 
-    public void setStaticval1(String staticval1) {
-        this.staticval1 = staticval1;
+    public void setData(Timestamp data) {
+        this.data = data;
     }
 
     public String getStaticval2() {

@@ -133,25 +133,18 @@ public class Facade_data {
 
 
 
-    public List<Archive>  getArchiveByCustomer(){
+    public List<Object> getArchiveByCustomer(){
 
 
         Map<String,Tupel> map=new HashMap<String,Tupel>();
         Tupel tupel=new Tupel();
 
-       /* if (operations==null){
-            operations = customerService.findAll();
-        }*/
-
-        Long id_Customer = searchCriteria_data.getCustomer().getId();
+              Long id_Customer = searchCriteria_data.getCustomer().getId();
+        Timestamp tstamp1=searchCriteria_data.getOperation().getChronological();
+        String type=searchCriteria_data.getOperation().getTypeOperation();
 
 
-        LocalDate d=LocalDate.of(2017,10,26);
-        LocalTime t=LocalTime.of(23,00);
-
-        Timestamp tstamp1 = Timestamp.valueOf(LocalDateTime.of(d,t));
-
-        List<Operation> operationList= customerService.findOperation_total_moth(id_Customer, tstamp1, "daily", "OK");
+        List<Operation> operationList= customerService.findOperation_total_moth(id_Customer, tstamp1, type, "OK");
 
         System.out.println(operationList.size());
         List<Measurements> measurementsList=new ArrayList<>();
@@ -161,8 +154,7 @@ public class Facade_data {
         List<String> id_col = new ArrayList<>();
         List<DataObject> data=new ArrayList<>();
         DataObject data_item=new DataObject();
-        int countr1=0;
-        int countr2=0;
+
 
 
         for (Measurements m:measurementsList){
@@ -170,291 +162,229 @@ public class Facade_data {
 
             if(m.getText().equals("t1 Тв1")){
 
-                System.out.println(m.getText());
-                archive.setT1(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-                System.out.println(archive.getT1());
-                //tupel.setId(m.getText());
-                //tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("t2 Тв1")){
-                archive.setT2(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));*/
 
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("t3 Тв1")){
-                archive.setT3(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-//                tupel.setId(m.getText());
-//                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("V1 Тв1")){
-                archive.setV1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("V2 Тв1")){
-                archive.setV2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("V3 Тв1")){
-                archive.setV3(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M1 Тв1")){
-                archive.setM1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M2 Тв1")){
-                archive.setM2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M3 Тв1")){
-                archive.setM3(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("P1 Тв1")){
-                archive.setP1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("P2 Тв1")){
-                archive.setP2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Mг Тв1")){
-                archive.setMg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Qо Тв1")){
-                archive.setQo(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Qг Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
 
             if(m.getText().equals("dt Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
 
             if(m.getText().equals("tх")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("ta")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
 
             if(m.getText().equals("BНP Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("BOC Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G1 Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G2 Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G3 Тв1")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
 
 
             if(m.getText().equals("t1 Тв2")){
 
-                System.out.println(m.getText());
-                archive.setT1(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-                System.out.println(archive.getT1());
-                //tupel.setId(m.getText());
-                //tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("t2 Тв2")){
-                archive.setT2(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));*/
 
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("t3 Тв2")){
-                archive.setT3(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
-//                tupel.setId(m.getText());
-//                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
+
+//
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
             }
             if(m.getText().equals("V1 Тв2")){
-                archive.setV1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("V2 Тв2")){
-                archive.setV2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("V3 Тв2")){
-                archive.setV3(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M1 Тв2")){
-                archive.setM1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M2 Тв2")){
-                archive.setM2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("M3 Тв2")){
-                archive.setM3(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("P1 Тв2")){
-                archive.setP1(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("P2 Тв2")){
-                archive.setP2(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-               /* tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Mг Тв2")){
-                archive.setMg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Qо Тв2")){
-                archive.setQo(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
+
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("Qг Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
-                /*tupel.setId(m.getText());
-                tupel.setValue(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));*/
+
                 id_col.add(m.getText());
                 map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
             }
 
             if(m.getText().equals("dt Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
             }
 
 
             if(m.getText().equals("BНP Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("BOC Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G1 Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G2 Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
             if(m.getText().equals("G3 Тв2")){
-                archive.setQg(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN));
+
                 id_col.add(m.getText());
-                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
             }
 
 
@@ -472,6 +402,7 @@ public class Facade_data {
 
 
         data_item.setOptionalValues(map);
+        data_item.setData(searchCriteria_data.getOperation().getChronological());
         data.add(data_item);
 
         searchCriteria_data.setData(data);
@@ -513,8 +444,15 @@ public class Facade_data {
         setArchiveList(temp);
         System.out.println(archiveList.size());
 
-        return archiveList;
+        List<Object> dop=new ArrayList<>();
+
+        dop.add(searchCriteria_data.getOperation().getCustomerName());
+        dop.add(searchCriteria_data.getOperation().getChronological());
+
+        return dop;
     }
+
+
 
 
 

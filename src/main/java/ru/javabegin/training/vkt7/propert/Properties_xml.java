@@ -56,7 +56,7 @@ public class Properties_xml {
         list.add(new Properts(11,"Mg_1TypeP", "Mг Тв1",52,65,"uns_int"));
         list.add(new Properts(12,"Qo_1TypeP", "Qо Тв1",53,66,"int"));
         list.add(new Properts(13,"Qg_1TypeP", "Qг Тв1",54,66,"int"));
-        list.add(new Properts(14,"dt_1TypeP", "dt Тв1",49,62,"int"));
+        list.add(new Properts(14,"dt_1TypeP", "dt Тв1",49,57,"int"));
         list.add(new Properts(15,"tswTypeP", "tх",50,63,"int"));
         list.add(new Properts(16,"taTypeP", "ta",51,64,"int"));
         list.add(new Properts(17,"QntType_1HIP", "BНP Тв1",55,0,"int"));

@@ -348,7 +348,7 @@ List<Object> connect=new ArrayList<>();*/
 
 
         System.out.println("Сегодня LocalDateTime = " + ldt);
-        ldt= ldt.minusDays(1);
+        ldt= ldt.minusDays(3);
         System.out.println("Вчера LocalDateTime = " + ldt);
 
         ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
