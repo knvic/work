@@ -17,6 +17,7 @@ public interface OperationService  {
 
     List<Operation> findAll();
     Operation save(Operation operation);
+    void delete(Operation operation);
 
     List<Operation> findAllWithDetail();
     void listOperationWithDetail(List<Operation> operationList);

@@ -27,6 +27,8 @@
             </transition>
             <transition on="data_process" to="data">
             </transition>
+            <transition on="reports_process" to="reports">
+            </transition>
 
       </view-state>
 
@@ -39,6 +41,9 @@
       </subflow-state>
       <subflow-state id="data" subflow="teplo/data_process">
             <transition on="data_ready" to="endState" />
+      </subflow-state>
+      <subflow-state id="reports" subflow="teplo/reports_process">
+            <transition on="reports_ready" to="endState" />
       </subflow-state>
 
 

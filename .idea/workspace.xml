@@ -5,10 +5,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w.war" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_1_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_1_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_icu_icu4j_57_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_lowagie_itext_2_1_7_js6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_regexp_jakarta_regexp_1_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_jasperreports_jasperreports_6_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_8_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_8_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_common_4_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_4_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_queries_4_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_queryparser_4_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_sandbox_4_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_excelant_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_52.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_castor_castor_core_1_3_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_castor_castor_xml_1_3_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_3_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jfree_jcommon_1_0_23.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jfree_jfreechart_1_0_19.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_olap4j_olap4j_0_9_7_309_JS_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_1_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/Facade_reports.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SearchCriteria_reports.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SelectionReports.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/testFill.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/reports/reports_menu.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/reports/reports_template.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationService.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerService.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl_old_07_10_17.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl_old_07_10_17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportService.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w.war" afterPath="$PROJECT_DIR$/target/w.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationService.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerService.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl_old_07_10_17.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl_old_07_10_17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportService.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_ru.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/data_process.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/data_process.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/teplo.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/teplo.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_en.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_ru.properties" afterPath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/w.iml" afterPath="$PROJECT_DIR$/w.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,91 +188,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Facade_data.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Facade_data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2583#2597#0" expanded="true" />
-                <element signature="e#3330#3344#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+            <state relative-caret-position="211">
+              <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java">
+      <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReportServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="282" column="0" lean-forward="false" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#934#948#0" expanded="true" />
-                <element signature="e#12596#12610#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="259">
+              <caret line="52" column="142" lean-forward="true" selection-start-line="52" selection-start-column="142" selection-end-line="52" selection-end-column="142" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OperationServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java">
+      <file leaf-file-name="data_process.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="266">
+              <caret line="79" column="26" lean-forward="true" selection-start-line="75" selection-start-column="10" selection-end-line="79" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModemService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemService.java">
+      <file leaf-file-name="test1_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="1325">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModemServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
+      <file leaf-file-name="test_measurements_d_select.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="350" column="28" lean-forward="false" selection-start-line="350" selection-start-column="28" selection-end-line="350" selection-end-column="28" />
+            <state relative-caret-position="409">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Contact.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/Contact.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -156,18 +261,28 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="388">
+              <caret line="690" column="1" lean-forward="false" selection-start-line="352" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Properties_xml.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properties_xml.java">
+      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="44" column="67" lean-forward="true" selection-start-line="44" selection-start-column="67" selection-end-line="44" selection-end-column="67" />
+            <state relative-caret-position="325">
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3314">
+              <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -187,7 +302,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modi</find>
       <find>back</find>
       <find>del</find>
       <find>msgs</find>
@@ -217,6 +331,7 @@
       <find>3FF6</find>
       <find>date_dd_MM_UU_HH</find>
       <find>date</find>
+      <find>sel</find>
     </findStrings>
     <replaceStrings>
       <replace>int number</replace>
@@ -237,19 +352,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/measurements/MeasurementsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object/Facade_customer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_modem/Facade_modem.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/SpringJPASample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Measurements.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_16_10_1.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_template.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_menu.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Projection_mesurements.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/test_3FFE_meas_11_10.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/Daily_all_Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/queue/TestQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/EventListener.java" />
@@ -258,7 +360,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/ContactServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/ContactService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Operation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_25_10.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/send/Send10ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.java" />
@@ -266,28 +367,42 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_26_10.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Test_round.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Archive.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Tupel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/TestSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properties_xml.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/reports/reports_template.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/reports/reports_menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SearchCriteria_reports.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SelectionReports.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/Facade_reports.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/testFill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_case.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
       </list>
     </option>
   </component>
@@ -391,6 +506,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -507,6 +623,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="locales" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource Bundle 'messages'" />
+              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="flows" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -542,6 +726,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="teplo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teplo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports_process" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -618,40 +840,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data_process" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w_02_10__2017_Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w_02_10__2017_Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flows" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -771,6 +959,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -857,40 +1075,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test_db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w_02_10__2017_Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w_02_10__2017_Git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -925,7 +1109,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="propert" />
+              <option name="myItemId" value="object_reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vkt7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="object_modem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1061,6 +1279,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="modem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vkt7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vkt7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1124,10 +1410,69 @@
               <option name="myItemId" value="training" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="temp_datatime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_02_10__2017_Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -1155,10 +1500,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\flows\teplo\data_process" />
+      <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\templates\reports" />
+      <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\flows\teplo\reports_process" />
       <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\templates" />
       <recent name="C:\Java\_WF\w_02_10__2017_Git\lib" />
-      <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\resources\META-INF\spring" />
-      <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\flows\teplo\modem_process" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Java\_WF\w_02_10__2017_Git\src\main\webapp\WEB-INF\flows\teplo\customer_process" />
@@ -1173,11 +1518,11 @@
       <recent name="ru.javabegin.training.db" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.javabegin.training.vkt7.object_reports" />
       <recent name="ru.javabegin.training.vkt7.test_db" />
       <recent name="ru.javabegin.training.temp_datatime" />
       <recent name="ru.javabegin.training.vkt7.modem_cron" />
       <recent name="ru.javabegin.training.vkt7.modem" />
-      <recent name="ru.javabegin.training.vkt7.criteria" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.javabegin.training.db" />
@@ -1187,26 +1532,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.TomCat">
-    <configuration default="false" name="TestQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.queue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.queue.TestQueue" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="w" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="test_datatime_Daily_Moth_cron_25_10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1275,6 +1600,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.reports.TestSort" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="w" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="testFill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.vkt7.reports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.reports.testFill" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1876,19 +2221,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="GlassFish Server.GlassFish" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.TomCat" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TestQueue" />
-      <item index="3" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_25_10" />
-      <item index="4" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_26_10" />
-      <item index="5" class="java.lang.String" itemvalue="Application.Test_round" />
-      <item index="6" class="java.lang.String" itemvalue="Application.TestSort" />
+      <item index="2" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_25_10" />
+      <item index="3" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_26_10" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Test_round" />
+      <item index="5" class="java.lang.String" itemvalue="Application.TestSort" />
+      <item index="6" class="java.lang.String" itemvalue="Application.testFill" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.TestSort" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Test_round" />
-        <item index="2" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_26_10" />
-        <item index="3" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_25_10" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TestQueue" />
+        <item index="0" class="java.lang.String" itemvalue="Application.testFill" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TestSort" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Test_round" />
+        <item index="3" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_26_10" />
+        <item index="4" class="java.lang.String" itemvalue="Application.test_datatime_Daily_Moth_cron_25_10" />
       </list>
     </recent_temporary>
   </component>
@@ -2047,11 +2392,12 @@
       <workItem from="1509086695324" duration="19067000" />
       <workItem from="1509168617313" duration="41982000" />
       <workItem from="1509252242734" duration="11565000" />
+      <workItem from="1509341416390" duration="43281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1324915000" />
+    <option name="totallyTimeSpent" value="1368196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2064,7 +2410,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2409" y="-9" width="2418" height="1318" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2079,19 +2425,19 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30461812" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43783304" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.348135" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37211367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26309013" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2334764" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -2180,130 +2526,52 @@
           <option name="timeStamp" value="455" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>41</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>67</line>
           <properties />
-          <option name="timeStamp" value="540" />
+          <option name="timeStamp" value="662" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>70</line>
           <properties />
-          <option name="timeStamp" value="541" />
+          <option name="timeStamp" value="663" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>46</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>72</line>
           <properties />
-          <option name="timeStamp" value="542" />
+          <option name="timeStamp" value="664" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>48</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>91</line>
           <properties />
-          <option name="timeStamp" value="543" />
+          <option name="timeStamp" value="670" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>93</line>
           <properties />
-          <option name="timeStamp" value="544" />
+          <option name="timeStamp" value="671" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>111</line>
           <properties />
-          <option name="timeStamp" value="545" />
+          <option name="timeStamp" value="672" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java</url>
+          <line>114</line>
           <properties />
-          <option name="timeStamp" value="548" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="549" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java</url>
-          <line>157</line>
-          <properties />
-          <option name="timeStamp" value="626" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java</url>
-          <line>151</line>
-          <properties />
-          <option name="timeStamp" value="627" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java</url>
-          <line>152</line>
-          <properties />
-          <option name="timeStamp" value="628" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java</url>
-          <line>153</line>
-          <properties />
-          <option name="timeStamp" value="629" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="630" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="631" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>267</line>
-          <properties />
-          <option name="timeStamp" value="633" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="634" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>269</line>
-          <properties />
-          <option name="timeStamp" value="635" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>274</line>
-          <properties />
-          <option name="timeStamp" value="636" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>278</line>
-          <properties />
-          <option name="timeStamp" value="637" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>282</line>
-          <properties />
-          <option name="timeStamp" value="638" />
+          <option name="timeStamp" value="673" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="639" />
+      <option name="time" value="688" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
@@ -2318,122 +2586,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_16_10_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="113" column="27" lean-forward="true" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6275">
-          <caret line="402" column="18" lean-forward="false" selection-start-line="402" selection-start-column="18" selection-end-line="402" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Archive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1250">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-475">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#966#967#0" expanded="false" />
-            <element signature="e#996#997#0" expanded="false" />
-            <element signature="e#1081#1082#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/security/security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="22" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/objects/SearchCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/objects/Facade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_28_10.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1625">
-          <caret line="65" column="19" lean-forward="false" selection-start-line="61" selection-start-column="11" selection-end-line="65" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_confirm_delete_old.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SearchCriteria_reports.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2441,31 +2602,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/customer_process/customer_process.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/SelectionReports.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2473,101 +2610,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="12" column="106" lean-forward="false" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
+        <state relative-caret-position="300">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Tupel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/test_db/Test_db_28_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Test_round.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="45" />
+        <state relative-caret-position="521">
+          <caret line="269" column="0" lean-forward="false" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_reports/Facade_reports.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="216" column="102" lean-forward="true" selection-start-line="216" selection-start-column="7" selection-end-line="216" selection-end-column="102" />
+        <state relative-caret-position="129">
+          <caret line="87" column="23" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/TestSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        <state relative-caret-position="225">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateAPITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="85" column="6" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="85" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4415#4429#0" expanded="true" />
+            <element signature="e#16077#16091#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_menu.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/testFill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="191" lean-forward="false" selection-start-line="25" selection-start-column="191" selection-end-line="25" selection-end-column="191" />
+        <state relative-caret-position="289">
+          <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_case.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="314">
+          <caret line="399" column="28" lean-forward="false" selection-start-line="399" selection-start-column="28" selection-end-line="399" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/process_m_daily.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="365">
+          <caret line="250" column="91" lean-forward="false" selection-start-line="250" selection-start-column="91" selection-end-line="250" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_process.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1600">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="518">
+          <caret line="469" column="37" lean-forward="true" selection-start-line="469" selection-start-column="37" selection-end-line="469" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -2580,186 +2710,307 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_m_select_menu.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_edit_del.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-2000">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_select_menu.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="91" column="17" lean-forward="false" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_daily.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1300">
+        <state relative-caret-position="-1500">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/modem_process.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5419">
+        <state relative-caret-position="150">
+          <caret line="6" column="97" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1525">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/modem_process/customer_m_case.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="130" column="190" lean-forward="false" selection-start-line="130" selection-start-column="60" selection-end-line="130" selection-end-column="190" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="157" column="3" lean-forward="false" selection-start-line="157" selection-start-column="3" selection-end-line="157" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" column="95" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateParseFormaеTes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="22" column="53" lean-forward="true" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_06_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1743">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_06_10_v1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_09_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_28_09.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="258" column="0" lean-forward="true" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        <state relative-caret-position="-1293">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_28_09_v1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="28" />
+        <state relative-caret-position="-943">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_25_10.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="49" column="98" lean-forward="false" selection-start-line="49" selection-start-column="98" selection-end-line="49" selection-end-column="98" />
+        <state relative-caret-position="-2364">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_26_10.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="26" column="37" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="-168">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_template.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properties_xml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="44" column="67" lean-forward="true" selection-start-line="44" selection-start-column="67" selection-end-line="44" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_DayOfWeek_12_10.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_Date_to_LocalDateTime_09_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="17" column="85" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_14_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-318">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="64" column="54" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2005">
+          <caret line="145" column="29" lean-forward="true" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
+          <folding>
+            <element signature="e#1621#1622#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="200">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="e#1799#1800#0" expanded="true" />
+            <element signature="e#1828#1829#0" expanded="true" />
+            <element signature="e#1870#1871#0" expanded="true" />
+            <element signature="e#1906#1907#0" expanded="true" />
+            <element signature="e#1966#1967#0" expanded="true" />
+            <element signature="e#2008#2009#0" expanded="true" />
+            <element signature="e#2044#2045#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="-14">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/ContactService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="350" column="28" lean-forward="false" selection-start-line="350" selection-start-column="28" selection-end-line="350" selection-end-column="28" />
+        <state relative-caret-position="100">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/ContactServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <marker date="1509042006986" expanded="true" signature="913:979" ph="select id, f... contact" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+        <state relative-caret-position="-3314">
+          <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="259">
+          <caret line="52" column="142" lean-forward="true" selection-start-line="52" selection-start-column="142" selection-end-line="52" selection-end-column="142" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="282" column="0" lean-forward="false" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#934#948#0" expanded="true" />
-            <element signature="e#12596#12610#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="79" column="26" lean-forward="true" selection-start-line="75" selection-start-column="10" selection-end-line="79" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2583#2597#0" expanded="true" />
-            <element signature="e#3330#3344#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="211">
+          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="690" column="1" lean-forward="false" selection-start-line="352" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

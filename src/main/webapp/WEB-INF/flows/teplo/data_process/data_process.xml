@@ -28,8 +28,20 @@
             </on-render>
             <transition on="back" to="data_process"/>
             <transition on="next" to="measurements"/>
+            <transition on="action_select" to="action_select"/>
+
+
 
       </view-state>
+
+
+
+        <action-state id="action_select">
+            <evaluate expression="facade_data.getSelectedByData()" />
+
+            <transition  to="measurements_new" />
+      </action-state>
+
 
     <!--  <action-state id="measurements_action">
             <evaluate expression="facade_data.getArchiveByCustomer()"  />
@@ -44,20 +56,36 @@
 
       <view-state id="measurements" view="test_measurements_d_select.xhtml" >
 
-            <on-entry>
-                  <!--<evaluate expression="searchCriteria_data.archive" result="viewScope.a"  />-->
-                  <!--<evaluate expression="facade_data.testMeasur()" />-->
-                  <evaluate expression="facade_data. getArchiveByCustomer()" result="viewScope.dop"  />
-            </on-entry>
+      <on-entry>
+            <!--<evaluate expression="searchCriteria_data.archive" result="viewScope.a"  />-->
+            <!--<evaluate expression="facade_data.testMeasur()" />-->
+            <evaluate expression="facade_data.getArchiveByCustomer()" result="viewScope.dop"  />
+      </on-entry>
 
-           <!-- <on-render>
-                  <evaluate expression="facade_data. getArchiveByCustomer()"  />
-            </on-render>-->
+      <!-- <on-render>
+             <evaluate expression="facade_data. getArchiveByCustomer()"  />
+       </on-render>-->
+      <transition on="back" to="operation"/>
+      <transition on="next" to="measurements"/>
+
+</view-state>
+
+
+      <view-state id="measurements_new" view="test1_measurements_d_select.xhtml" >
+
+          <!--  <on-entry>
+                  &lt;!&ndash;<evaluate expression="searchCriteria_data.archive" result="viewScope.a"  />&ndash;&gt;
+                  &lt;!&ndash;<evaluate expression="facade_data.testMeasur()" />&ndash;&gt;
+                  <evaluate expression="facade_data.getArchiveByCustomer1()" result="viewScope.dop"  />
+            </on-entry>-->
+
+            <!-- <on-render>
+                   <evaluate expression="facade_data. getArchiveByCustomer()"  />
+             </on-render>-->
             <transition on="back" to="operation"/>
             <transition on="next" to="measurements"/>
 
       </view-state>
-
 
 
 

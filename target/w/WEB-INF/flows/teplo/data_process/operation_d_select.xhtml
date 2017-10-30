@@ -19,10 +19,44 @@
 
 
         <h:form id="form">
+
+
+
             <p:growl id="msgs" showDetail="true" />
 
+            <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel for="button" value="Button:" />
+            <p:calendar id="button" value="#{selectionData.day_of}" showOn="button" />
+        </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="Button1:" />
+                <p:calendar id="button2" value="#{selectionData.day_to}" showOn="button" />
+            </h:panelGrid>
 
-             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionData.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionData.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+            <p:commandButton value="#{msg.select}" event="onclick"  action="action_select"  actionListener="#{searchCriteria_data.set_all_data(selectionData.day_of, selectionData.day_to)}" icon="ui-icon-check" />
+
+
+
+
+
+            <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
           <!-- <h1>sdfsdfsdfs</h1>
             <h2>#{dop.get(0)}</h2>-->
             <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selectionData.operation}" rowKey="#{u.id}">

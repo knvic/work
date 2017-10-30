@@ -71,6 +71,16 @@ public class SearchCriteria_data implements Serializable{
 
     private Date day_of;
 
+    public Date getDay_to() {
+        return day_to;
+    }
+
+    public void setDay_to(Date day_to) {
+        this.day_to = day_to;
+    }
+
+    private Date day_to;
+
     public String getModem_operation() {
         return modem_operation;
     }
@@ -130,11 +140,12 @@ public class SearchCriteria_data implements Serializable{
     }
 
 
-    public void set_all_modem(String modem_operation, Date day_of, Customer customer) {
+    public void set_all_data(Date day_of, Date day_to) {
 
-        this.modem_operation = modem_operation;
+
         this.day_of = day_of;
-        this.customer = customer;
+        this.day_to = day_to;
+
 
     }
 

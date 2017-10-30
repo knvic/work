@@ -25,6 +25,7 @@ public class SelectionData implements Serializable {
     private Customer cust;
     private String modem_operation;
     private Date day_of;
+
     private Date day_to;
     private Date hour;
     private Operation operation;

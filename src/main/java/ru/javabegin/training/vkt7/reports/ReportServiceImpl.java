@@ -1,11 +1,23 @@
 package ru.javabegin.training.vkt7.reports;
 
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRTableModelDataSource;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleXlsReportConfiguration;
+import net.sf.jasperreports.view.JasperViewer;
 import org.springframework.stereotype.Service;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
+import javax.swing.table.DefaultTableModel;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -14,6 +26,70 @@ import java.util.*;
 @Service("reportService")
 public class ReportServiceImpl implements ReportService{
 
+
+
+    @Override
+   public void createReport(){
+
+        DefaultTableModel tableModel= prepare_data();
+
+      //  report.fillData();
+
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport("c:\\test\\template\\report2.jrxml");
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), new JRTableModelDataSource(tableModel));
+//            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), new JRTableModelDataSource(report.getTableModel()));
+
+              //JasperViewer jasperViewer = new JasperViewer(jasperPrint);
+             // jasperViewer.setVisible(true);
+
+            LocalDateTime dateTime = LocalDateTime.now();
+            System.out.println(dateTime.format(DateTimeFormatter.ofPattern("d-MMM-uuuu:HH:mm")));
+
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "c:\\test\\report2_"+ dateTime.format(DateTimeFormatter.ofPattern("d_MMM_uuuu_HH_mm_ss"))+".pdf");
+            JasperExportManager.exportReportToXmlFile(jasperPrint, "c:\\test\\report2_"+ dateTime.format(DateTimeFormatter.ofPattern("d_MMM_uuuu_HH_mm_ss"))+".xml", false);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, "c:\\test\\report2_"+ dateTime.format(DateTimeFormatter.ofPattern("d_MMM_uuuu_HH_mm_ss"))+".html");
+
+            JRXlsExporter exporter = new JRXlsExporter();
+
+            exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            exporter.setExporterOutput(new SimpleOutputStreamExporterOutput("c:\\test\\report2_"+ dateTime.format(DateTimeFormatter.ofPattern("d_MMM_uuuu_HH_mm_ss"))+".xls"));
+
+            SimpleXlsReportConfiguration configuration = new SimpleXlsReportConfiguration();
+            configuration.setOnePagePerSheet(true);
+            exporter.setConfiguration(configuration);
+
+            exporter.exportReport();
+
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public DefaultTableModel prepare_data(){
+
+    String[] columnNames = {"Id", "Name", "Department", "Email"};
+    String[][] data = {
+            {"111", "G Conger", " Orthopaedic", "jim@wheremail.com"},
+            {"222", "A Date", "ENT", "adate@somemail.com"},
+            {"333", "R Linz", "Paedriatics", "rlinz@heremail.com"},
+            {"444", "V Sethi", "Nephrology", "vsethi@whomail.com"},
+            {"555", "K Rao", "Orthopaedics", "krao@whatmail.com"},
+            {"666", "V Santana", "Nephrology", "vsan@whenmail.com"},
+            {"777", "J Pollock", "Nephrology", "jpol@domail.com"},
+            {"888", "H David", "Nephrology", "hdavid@donemail.com"},
+            {"999", "P Patel", "Nephrology", "ppatel@gomail.com"},
+            {"101", "C Comer", "Nephrology", "ccomer@whymail.com"}
+    };
+    DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
+
+
+    return tableModel;
+
+}
 
     @Override
     public List<Object> getObject (List<Operation> operationList){

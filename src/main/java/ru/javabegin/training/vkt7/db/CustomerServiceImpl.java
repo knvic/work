@@ -169,9 +169,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 */
+    @Override
+    public void update_del_clone(Long id_customer, Long id_opertion){
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Customer> criteriaQuery = cb.createQuery(Customer.class);
+        Root<Customer> contactRoot = criteriaQuery.from(Customer.class);
+        contactRoot.fetch(Customer_.operationSet, JoinType.LEFT);
+        Join oper = contactRoot.join(Customer_.operationSet, JoinType.LEFT).join(Operation_.measurementsSet, JoinType.LEFT);
 
 
-
+    }
 
 
 
@@ -312,6 +320,134 @@ public class CustomerServiceImpl implements CustomerService {
 
         List<Operation> result=em.createQuery(criteriaQuery).getResultList();
         return result;
+
+    }
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operation> findOperation_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status){
+
+        log.info("Finding operation by id: " );
+
+        // id=10L;
+
+
+
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id_customer != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id_customer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_of != null) {
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operation_.chronological),
+                    day_of);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_to != null) {
+            Predicate p = cb.lessThan(contactRoot.get(Operation_.chronological),
+                    day_to);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (status != null) {
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                    status);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        List<Operation> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+
+
+    }
+
+
+
+    @Transactional()
+    @Override
+    public void delete_clone_Operation(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status){
+
+        log.info("Finding operation by id: " );
+
+        // id=10L;
+
+
+
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id_customer != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id_customer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_of != null) {
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operation_.chronological),
+                    day_of);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_to != null) {
+            Predicate p = cb.lessThan(contactRoot.get(Operation_.chronological),
+                    day_to);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (status != null) {
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                    status);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        List<Operation> result=em.createQuery(criteriaQuery).getResultList();
+
+
 
     }
 

@@ -21,9 +21,7 @@ import ru.javabegin.training.vkt7.reports.Tupel;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.util.*;
 
 /**
@@ -60,6 +58,9 @@ public class Facade_data {
     private Customer customer;
 
     private Archive archive;
+
+    private Operation oper_temp;
+    private Operation oper_temp1;
 
 
 
@@ -137,6 +138,72 @@ public class Facade_data {
     }
 
 
+   public void getSelectedByData(){
+
+       Customer customer = searchCriteria_data.getCustomer();
+       Date day_of =searchCriteria_data.getDay_of();
+       System.out.println(" Date day_of = "+ day_of);
+       Date day_to = searchCriteria_data.getDay_to();
+       System.out.println(" Date day_to = "+ day_to);
+
+
+
+       Timestamp ts_day_of = Timestamp.valueOf(LocalDateTime.ofInstant( day_of.toInstant(), ZoneId.systemDefault()));
+       System.out.println(" Timestamp day_of = "+ ts_day_of);
+
+       Timestamp ts_day_to = Timestamp.valueOf(LocalDateTime.ofInstant( day_to.toInstant(), ZoneId.systemDefault()));
+       System.out.println(" Timestamp day_to = "+ ts_day_to);
+
+
+       List<Operation> operationList= customerService.findOperation_betwen_data(customer.getId(),ts_day_of,ts_day_to, "daily","OK");
+
+       System.out.println(operationList.size());
+
+       //// удаляем клоны
+
+       for (int i=0; i<operationList.size(); i++){
+           System.out.println("operationList.size()= " +operationList.size());
+           oper_temp=operationList.get(i);
+           for (int j=0; j<operationList.size(); j++){
+               oper_temp1=operationList.get(j);
+               System.out.println("oper_temp = "+ oper_temp.getId());
+               System.out.println("oper_temp1 = "+ oper_temp1.getId());
+               if(oper_temp.getId().compareTo(oper_temp1.getId())!=0){System.out.println("Равно!!");}
+               if (oper_temp.getChronological().equals(oper_temp1.getChronological())& oper_temp.getId().compareTo(oper_temp1.getId())!=0){
+                   System.out.println("Найден клон!!"+ oper_temp1.getId());
+
+                    Customer cust=customerService.findById(customer.getId());
+                    Set<Operation> operationSet=cust.getOperationSet();
+                    Operation toDelOperation=null;
+                    for( Operation operation:operationSet){
+                        if (operation.getId().equals(oper_temp1.getId())){
+                            toDelOperation=operation;
+                        }
+                    }
+                   operationSet.remove(toDelOperation);
+                   customerService.save(cust);
+                   operationList= customerService.findOperation_betwen_data(customer.getId(),ts_day_of,ts_day_to, "daily","OK");
+                   System.out.println("operationList.size()= " +operationList.size());
+               }
+           }
+
+       }
+///// клон удален
+
+       List<Object> res= reportService.getObject(operationList);
+       List<DataObject> dataObjectList=(List<DataObject>)res.get(0);
+       List<String> list1=(List<String>)res.get(1);
+
+       searchCriteria_data.setData(dataObjectList);
+       searchCriteria_data.setId_item(list1);
+
+
+
+
+
+
+    }
+
 
 
     public List<Object> getArchiveByCustomer(){
@@ -151,12 +218,6 @@ public class Facade_data {
         List<Object> res= reportService.getObject(operationList);
         List<DataObject> dataObjectList=(List<DataObject>)res.get(0);
         List<String> list1=(List<String>)res.get(1);
-        //List<String> list2=(List<String>)res.get(2);
-
-
-     /*   if (list1.size()==list2.size()){
-            System.out.println("размеры листов совпадают");
-        }*/
 
        searchCriteria_data.setData(dataObjectList);
        searchCriteria_data.setId_item(list1);

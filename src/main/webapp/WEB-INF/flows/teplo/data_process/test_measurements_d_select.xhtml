@@ -19,47 +19,43 @@
 
 
         <h:form id="form">
-            <p:growl id="msgs" showDetail="true" />
+            <p:growl id="msgs" showDetail="true"/>
+            <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
+            <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.data}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u.data}"/>
+                </p:column>
 
+                <p:columns value="#{searchCriteria_data.id_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u.optionalValues[id].value}"/>
+                </p:columns>
 
-
-
-
-
-        <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
-        <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.data}" scrollable="true"  >
-            <p:column headerText="Дата ">
-                <h:outputText value="#{u.data}" />
-            </p:column>
-
-            <p:columns value="#{searchCriteria_data.id_item}" var="id" headerText="#{id}">
-                #{u.optionalValues[id].value}
-            </p:columns>
-
-        </p:dataTable>
-
+            </p:dataTable>
 
 
         </h:form>
 
 
     </ui:define>
-   <!-- <ui:define name="ajax_p">
+    <!-- <ui:define name="ajax_p">
 
-        <div class="box-sh">
+    <div class="box-sh">
 
-            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+        <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
 
 
-        </div>
+    </div>
 
     </ui:define>
--->
-
-
-
-
-
+    -->
 
 
 </ui:composition>

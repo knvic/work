@@ -62,6 +62,18 @@ public class OperationServiceImpl implements OperationService {
     }
 
 
+    @Override
+    public void delete(Operation operation) {
+
+        Operation mergedContact = em_2.merge(operation);
+        System.out.println(operation.getId());
+
+        em_2.remove(mergedContact);
+
+        log.info("Contact with id: " + operation.getId()  + " deleted successfully");
+    }
+
+
     @Transactional(readOnly=true)
     @Override
     public List<Operation> findAllWithDetail() {
@@ -81,7 +93,7 @@ public class OperationServiceImpl implements OperationService {
         CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
         Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
         criteriaQuery.select(contactRoot).distinct(true);
-        //contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
 
         //Join meas = contactRoot.join(Operation_.measurementsSet);
 

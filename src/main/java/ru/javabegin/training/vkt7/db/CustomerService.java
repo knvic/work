@@ -21,13 +21,24 @@ public interface CustomerService {
     ///////////// API Criteria ///////////////
    // List<Customer> findByCriteriaQuery_total_moth(Long id); /// Временный для разработки
 
+
     List<Customer> findCustomerLikeFirstName(String name);
+
+
     List<Operation> findOperationByModemCustomer(String modem);
     List<Operation> findOperation_total_moth(Long id, Timestamp ts, String type, String status);
+    List<Operation> findOperation_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status);
+    void delete_clone_Operation(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status);
+    void update_del_clone(Long id_customer, Long id_opertion);
+
 
     List<Operation> findOperationByModemTimeCustomer(String modem, Timestamp date);
     List<Operation> findOperationByIdCustomer(Long id);
 
 
     List<Operation> getOperationsByCustomerId(Long id);
+
+
+
+
 }
