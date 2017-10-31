@@ -20,6 +20,35 @@
 
         <h:form id="form">
 
+            <p:growl id="msgs" showDetail="true" />
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="Button:" />
+                <p:calendar id="button" value="#{selectionReports.day_of}" showOn="button" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="Button1:" />
+                <p:calendar id="button2" value="#{selectionReports.day_to}" showOn="button" />
+            </h:panelGrid>
+
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionReports.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionReports.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+            <p:commandButton value="#{msg.select}" event="onclick"  action="action_select"  actionListener="#{searchCriteria_reports.set_all_data(selectionReports.day_of, selectionReports.day_to)}" icon="ui-icon-check" />
 
 
 
@@ -59,32 +88,6 @@
             <!--<p:poll interval="15"  update=":form" />-->
 
 
-            <p:growl id="msgs" showDetail="true" />
-
-            <h:panelGrid columns="2" cellpadding="5">
-
-                <p:outputLabel for="button" value="Button:" />
-                <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
-
-
-            </h:panelGrid>
-
-            <p:commandButton value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" />
-
-            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-                <p:panelGrid id="display" columns="2" columnClasses="label,value">
-
-
-
-
-                    <h:outputText value="Button:" />
-                    <h:outputText value="#{calendarView.date3}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-
-
-                </p:panelGrid>
-            </p:dialog>
 
 
 

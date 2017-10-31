@@ -14,10 +14,17 @@ public interface ReportService {
 
 
     //void createReport(DefaultTableModel tableModel, String file);
+    void createReport1(List<ReportCustomers>  list);
     void createReport();
+
+
     DefaultTableModel prepare_data();
-    List<DataObject> getDataObject (List<Operation> operationList);
+    List<Object> getObject_fullround (List<Operation> operationList);
+
     List<Object> getObject (List<Operation> operationList);
+
+    List<DataObject> getDataObject (List<Operation> operationList);
+
 
 
     /// Вспомогательные сортировка списка ...

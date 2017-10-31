@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.reports;
 
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.data.JRTableModelDataSource;
 import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
@@ -26,6 +27,61 @@ import java.util.*;
 @Service("reportService")
 public class ReportServiceImpl implements ReportService{
 
+
+
+
+    @Override
+    public void createReport1(List<ReportCustomers> list){
+
+
+        final String PATH = "c:\\test_j\\";
+
+
+
+
+
+
+
+
+
+            try {
+                JasperReport jasperReport = JasperCompileManager.compileReport(PATH+"report_new.jrxml");
+
+                JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(list);
+
+                Map<String, Object> map = new HashMap<>();
+                map.put("title", "Тестовый отчет");
+
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, dataSource);
+
+//            JasperViewer jasperViewer = new JasperViewer(jasperPrint);
+//            jasperViewer.setVisible(true);
+
+                JasperExportManager.exportReportToPdfFile(jasperPrint, PATH+"report.pdf");
+                JasperExportManager.exportReportToXmlFile(jasperPrint, PATH+"report.xml", false);
+                JasperExportManager.exportReportToHtmlFile(jasperPrint, PATH+"report.html");
+
+                JRXlsExporter exporter = new JRXlsExporter();
+
+                exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+                exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(PATH+"report.xls"));
+
+                SimpleXlsReportConfiguration configuration = new SimpleXlsReportConfiguration();
+                configuration.setOnePagePerSheet(true);
+                exporter.setConfiguration(configuration);
+
+                exporter.exportReport();
+
+            } catch (JRException ex) {
+                ex.printStackTrace();
+            }
+
+
+
+
+
+
+    }
 
 
     @Override
@@ -68,6 +124,9 @@ public class ReportServiceImpl implements ReportService{
 
     }
 
+
+
+
     @Override
     public DefaultTableModel prepare_data(){
 
@@ -90,6 +149,276 @@ public class ReportServiceImpl implements ReportService{
     return tableModel;
 
 }
+
+
+    @Override
+    public List<Object> getObject_fullround (List<Operation> operationList){
+        List<DataObject> dataList=new ArrayList<>();
+        List<Object> objectList=new ArrayList<>();
+
+        for(Operation operation:operationList){
+
+            List<Measurements> measurementsList=new ArrayList<>();
+            measurementsList.addAll(operation.getMeasurementsSet());
+            List<String> id_col = new ArrayList<>();
+            DataObject dataItem=new DataObject();
+            Map<String,Tupel> map=new HashMap<String,Tupel>();
+            Tupel tupel=new Tupel();
+
+            for (Measurements m:measurementsList){
+
+
+                if(m.getText().equals("t1 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("t2 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("t3 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("V1 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("V2 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("V3 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M1 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M2 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M3 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("P1 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("P2 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Mг Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Qо Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(5, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Qг Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(5, RoundingMode.HALF_EVEN))) );
+                }
+
+                if(m.getText().equals("dt Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+
+                if(m.getText().equals("tх")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("ta")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+
+                if(m.getText().equals("BНP Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("BOC Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G1 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G2 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G3 Тв1")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
+                }
+
+
+                if(m.getText().equals("t1 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("t2 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("t3 Тв2")){
+
+//
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+
+                }
+                if(m.getText().equals("V1 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("V2 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("V3 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M1 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M2 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("M3 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("P1 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("P2 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Mг Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Qо Тв2")){
+
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(5, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("Qг Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(5, RoundingMode.HALF_EVEN))) );
+                }
+
+                if(m.getText().equals("dt Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
+                }
+
+
+                if(m.getText().equals("BНP Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("BOC Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G1 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G2 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
+                }
+                if(m.getText().equals("G3 Тв2")){
+
+                    id_col.add(m.getText());
+                    map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))) );
+                }
+
+
+                System.out.println("map.size= "+map.size());
+                System.out.println("id_col.size= "+id_col.size());
+
+            }
+
+            dataItem.setOptionalValues(map);
+            dataItem.setData(operation.getChronological());
+            dataList.add(dataItem);
+            objectList.add(sort(id_col));
+
+        }
+
+        System.out.println("dataList.size= "+dataList.size());
+
+
+
+        objectList.add(0,dataList);
+
+
+
+        return objectList;
+    }
+
 
     @Override
     public List<Object> getObject (List<Operation> operationList){

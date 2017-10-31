@@ -13,10 +13,7 @@ import ru.javabegin.training.vkt7.object.SearchCriteria_cust;
 import ru.javabegin.training.vkt7.object_data.SearchCriteria_data;
 import ru.javabegin.training.vkt7.object_data.SelectionData;
 import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
-import ru.javabegin.training.vkt7.reports.Archive;
-import ru.javabegin.training.vkt7.reports.DataObject;
-import ru.javabegin.training.vkt7.reports.ReportService;
-import ru.javabegin.training.vkt7.reports.Tupel;
+import ru.javabegin.training.vkt7.reports.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -24,10 +21,8 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.ZoneId;
+import java.util.*;
 
 /**
  * Created by Николай on 14.06.2017.
@@ -56,7 +51,12 @@ public class Facade_reports {
     @Autowired
     private SearchCriteria_data searchCriteria_data;
     @Autowired
+    private SearchCriteria_reports searchCriteria_reports;
+
+    @Autowired
     private SelectionData selectionData;
+    @Autowired
+    private SelectionReports selectionReports;
 
     private Customer selcustomer;
 
@@ -145,6 +145,119 @@ public class Facade_reports {
 
     }
 
+
+
+    public List<ReportCustomers> getCustomerReportsByData(){
+List<ReportCustomers> reportCustomersList = new ArrayList<>();
+
+        Date day_of =searchCriteria_reports.getDay_of();
+        System.out.println(" Date day_of = "+ day_of);
+        Date day_to = searchCriteria_reports.getDay_to();
+        System.out.println(" Date day_to = "+ day_to);
+
+
+
+        Timestamp ts_day_of = Timestamp.valueOf(LocalDateTime.ofInstant( day_of.toInstant(), ZoneId.systemDefault()));
+        System.out.println(" Timestamp day_of = "+ ts_day_of);
+
+        Timestamp ts_day_to = Timestamp.valueOf(LocalDateTime.ofInstant( day_to.toInstant(), ZoneId.systemDefault()));
+        System.out.println(" Timestamp day_to = "+ ts_day_to);
+
+
+        List<Customer> customerList=customerService.findAllWithDetail();
+
+        for (Customer customer:customerList){
+
+            List<Operation> operationList= customerService.findOperation_betwen_data(customer.getId(),ts_day_of,ts_day_to, "daily","OK");
+
+            System.out.println("operationList.sise()= "+operationList.size());
+
+            operationList= delCloneOperation(operationList,ts_day_of, ts_day_to);
+
+            List<Object> res= reportService.getObject_fullround(operationList);
+            List<DataObject> dataObjectList=(List<DataObject>)res.get(0);
+//            List<String> list1=(List<String>)res.get(1);
+
+
+            BigDecimal sum = new BigDecimal("0").setScale(4, BigDecimal.ROUND_CEILING);
+            BigDecimal tarif=new BigDecimal("2535.00").setScale(2, BigDecimal.ROUND_CEILING);
+            BigDecimal sum_total = new BigDecimal("0").setScale(4, BigDecimal.ROUND_CEILING);
+            for (DataObject dataObject:dataObjectList){
+                Map<String, Tupel> optionalValues= dataObject.getOptionalValues();
+
+                //u.optionalValues[id].value
+                BigDecimal val_1=optionalValues.get("Qо Тв1").getValue();
+                System.out.println(val_1);
+                if(optionalValues.containsKey("Qо Тв2")){
+                BigDecimal val_2=optionalValues.get("Qо Тв2").getValue();
+                System.out.println(val_2);
+                sum=sum.add(val_1).add(val_2);
+                }
+                else
+                {
+                sum=sum.add(val_1);
+                }
+
+
+                System.out.println(sum);
+
+                sum_total=sum.multiply(tarif);
+
+
+
+
+            }
+
+            reportCustomersList.add(new ReportCustomers(customer.getId(), customer.getFirstName(),customer.getTelModem(), sum, tarif,sum_total));
+
+            System.out.println("reportCustomersList = "+ reportCustomersList.size());
+            sum = new BigDecimal("0").setScale(4, BigDecimal.ROUND_CEILING);
+            sum_total = new BigDecimal("0").setScale(4, BigDecimal.ROUND_CEILING);
+        }
+
+        reportService.createReport1(reportCustomersList);
+
+return reportCustomersList;
+
+    }
+
+
+
+    public List<Operation> delCloneOperation(List<Operation> operationList, Timestamp ts_day_of, Timestamp ts_day_to){
+        //// удаляем клоны
+        Operation oper_temp=null;
+        Operation oper_temp1=null;
+        for (int i=0; i<operationList.size(); i++){
+            System.out.println("operationList.size()= " +operationList.size());
+            oper_temp=operationList.get(i);
+            for (int j=0; j<operationList.size(); j++){
+                oper_temp1=operationList.get(j);
+                System.out.println("oper_temp = "+ oper_temp.getId());
+                System.out.println("oper_temp1 = "+ oper_temp1.getId());
+                if(oper_temp.getId().compareTo(oper_temp1.getId())!=0){System.out.println("Равно!!");}
+                if (oper_temp.getChronological().equals(oper_temp1.getChronological())& oper_temp.getId().compareTo(oper_temp1.getId())!=0){
+                    System.out.println("Найден клон!!"+ oper_temp1.getId());
+
+                    Customer cust=customerService.findById(customer.getId());
+                    Set<Operation> operationSet=cust.getOperationSet();
+                    Operation toDelOperation=null;
+                    for( Operation operation:operationSet){
+                        if (operation.getId().equals(oper_temp1.getId())){
+                            toDelOperation=operation;
+                        }
+                    }
+                    operationSet.remove(toDelOperation);
+                    customerService.save(cust);
+                    operationList= customerService.findOperation_betwen_data(customer.getId(),ts_day_of,ts_day_to, "daily","OK");
+                    System.out.println("operationList.size()= " +operationList.size());
+                }
+            }
+
+        }
+///// клон удален
+
+        return operationList;
+    }
 
 
 

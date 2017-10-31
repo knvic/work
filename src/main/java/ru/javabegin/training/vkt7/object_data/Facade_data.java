@@ -198,10 +198,6 @@ public class Facade_data {
        searchCriteria_data.setId_item(list1);
 
 
-
-
-
-
     }
 
 

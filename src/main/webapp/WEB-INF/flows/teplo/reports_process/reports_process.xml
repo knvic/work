@@ -19,7 +19,27 @@
                   <!--<evaluate expression="testBean14.test()"/>-->
             </transition>
 
+            <transition on="action_select" to="reports"/>
 
+
+      </view-state>
+
+
+      <action-state id="action_select">
+            <evaluate expression="facade_reports.getCustomerReportsByData()" result="flowScope.report"/>
+
+            <transition  to="reports" />
+      </action-state>
+
+
+
+      <view-state id="reports" view="test1_reports.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_reports.getCustomerReportsByData()" result="flowScope.report"/>
+            </on-render>
+            <transition on="back" to="reports_ready"/>
+            <transition on="next" to="measurements"/>
 
       </view-state>
 
