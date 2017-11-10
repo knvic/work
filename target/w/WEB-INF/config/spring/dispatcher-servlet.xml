@@ -65,19 +65,19 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/hibernate"/>
         <property name="username" value="root" />
-        <property name="password" value="Kelly200" />
+        <property name="password" value="root" />
     </bean>
     <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     <property name="driverClassName" value="com.mysql.jdbc.Driver" />
     <property name="url" value="jdbc:mysql://localhost:3306/lukoil"/>
     <property name="username" value="root" />
-    <property name="password" value="Kelly200" />
+    <property name="password" value="root" />
 </bean>
     <bean id="dataSource3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/test_persist_26_09"/>
         <property name="username" value="root" />
-        <property name="password" value="Kelly200" />
+        <property name="password" value="root" />
     </bean>
 
 
@@ -248,7 +248,7 @@
         <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
        <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
         <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="0 56 16 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 10 0 * * ?"/>
        <!--<task:scheduled ref="test_db" method="test_db" cron="0  10 * * ?"/>-->
 
 

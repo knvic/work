@@ -123,7 +123,7 @@ public class Properties_xml {
         list.add(new Properts(78,"NSPrintTypeM_2", "Наличие нештатной ситуации по ТВ2"));
         list.add(new Properts(79,"QntNS_1", "Длительность НС по параметрам Тв1"));
         list.add(new Properts(80,"QntNS_2", "Длительность НС по параметрам Тв2"));
-        list.add(new Properts(81,"DopInpImpP_Type", "DI"));
+        list.add(new Properts(81,"DopInpImpP_Type", "DI",67,0,"float"));
         list.add(new Properts(82,"P3P_Type", "P3"));
 
 

@@ -29,7 +29,7 @@ public class Recieve03ServiceImpl implements Recieve03Service{
         int version;
         //str= "01 03 AE 3F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 54 37 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1B 08";
         List<String> list = new ArrayList<>(Arrays.asList(str.replace(" ","").split("(?<=\\G.{2})")));
-        version = Integer.parseInt(list.get(64));
+        version = Integer.parseInt(list.get(64),16);
         return version;
     }
 @Override
@@ -116,7 +116,7 @@ public class Recieve03ServiceImpl implements Recieve03Service{
     }
 
     @Override
-    public List<Properts> r_3FFE (String str, List<Properts> prop_session) {
+    public List<Properts> r_3FFE (String str, List<Properts> prop_session,int server_ver) {
 
         Properts temp_prop;
 
@@ -130,7 +130,7 @@ public class Recieve03ServiceImpl implements Recieve03Service{
         for (int i=3;i<=Integer.parseInt(list.get(2),16);) {
             temp_prop=prop_session.get(count);
 
-            if (list.get(i+1).equals("00")) {
+            if (list.get(i+1).equals("00")&server_ver==1&server_ver>0) {
                 for (int j = i + 2; j < i + 2 + Integer.parseInt(list.get(i), 16); j++) {
                     str1 = str1 + list.get(j);
                 }
@@ -142,6 +142,20 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                 continue;
 
             }
+
+            if (!list.get(i+1).equals("C0")&server_ver==0) {
+                for (int j = i ; j < i + 7 ; j++) {
+                    str1 = str1 + list.get(j);
+                }
+                System.out.println(temp_prop.getText()+" " + temp_prop.getName() + " " + hextostr(str1));
+                i = i + 7;
+                temp_prop.setEd(hextostr(str1));
+                str1 = "";
+                count++;
+                continue;
+
+            }
+
             if (list.get(i+1).equals("C0")){
                 System.out.println("Кол-во зн. "+temp_prop.getText()+ " " +temp_prop.getName()+ " " + Integer.parseInt(list.get(i), 16) );
                 temp_prop.setZnak(Integer.parseInt(list.get(i), 16));
@@ -442,8 +456,99 @@ int number_active_base=10000;
     }
 
 
+@Override
+   public String error(int error){
+        String error_str="";
+        if (error == 1){
+            error_str="1. Ошибка ATH ";
+        }
+       if (error == 2){
+           error_str="2. Ошибка AT+CREG. Нет данных";
+       }
+       if (error == 3){
+           error_str="3. Ошибка регистрации";
+       }
+       if (error == 4){
+           error_str="";
+       }
+       if (error == 5){
+           error_str="5.NO CARRIER";
+       }
+       if (error == 6){
+           error_str="6.NO DIALTONE";
+       }
+       if (error == 7){
+           error_str="7.Ответ BUSY или NO ANSWER";
+       }
+       if (error == 8){
+           error_str="8.Связь. Ошибка по TimeOut";
+       }
+       if (error == 9){
+           error_str="";
+       }
+       if (error == 10){
+           error_str="10.3F FF_n TimeOut";
+       }
+       if (error == 11){
+           error_str="11.3F FE 65 байт.";
+       }
+       if (error == 12){
+           error_str="12.3F FE CRC16 Error";
+       }
+       if (error == 13){
+           error_str="13.3F F9 TimeOut";
+       }
+       if (error == 14){
+           error_str="14.3F FF TimeOut";
+       }
+       if (error == 15){
+           error_str="15.3F FE TimeOut";
+       }
+       if (error == 16){
+           error_str="16.3F FE CRC16";
+       }
+       if (error == 17){
+           error_str="17.3F F6 TimeOut";
+       }
+       if (error == 18){
+           error_str="18.3F F6 CRC";
+       }
+       if (error == 19){
+           error_str="19.3F FC TimeOut";
+       }
+       if (error == 20){
+           error_str="20.3F FF TimeOut";
+       }
+       if (error == 21){
+           error_str="21.3F FD TimeOut";
+       }
+       if (error == 22){
+           error_str="22.3F FB TimeOut";
+       }
+       if (error == 23){
+           error_str="23.3F FE TimeOut";
+       }
+       if (error == 24){
+           error_str=" 24.3F CD TimeOut";
+       }
+       if (error == 25){
+           error_str="25.3F CD CRC";
+       }
+       if (error == 26){
+           error_str="26.3F 5B TimeOut";
+       }
+       if (error == 27){
+           error_str="27.3F 5B TimeOut";
+       }
+       if (error == 28){
+           error_str="28.3F E9 TimeOut";
+       }
+       if (error == 5555){
+           error_str="Прервано пользователем";
+       }
 
-
+        return error_str;
+   }
 
 
 

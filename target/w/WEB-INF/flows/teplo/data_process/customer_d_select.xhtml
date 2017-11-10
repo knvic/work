@@ -12,7 +12,7 @@
 <ui:composition template="/WEB-INF/templates/customer_d_select_template.xhtml">
 
     <ui:define name="title">
-        #{msg.book_list}
+        #{msg.customers}
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
@@ -23,7 +23,7 @@
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
-            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selectionData.cust}" rowKey="#{u.id}">
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionData.cust}" rowKey="#{u.id}">
                 <f:facet name="header">
                     Select Events
                 </f:facet>

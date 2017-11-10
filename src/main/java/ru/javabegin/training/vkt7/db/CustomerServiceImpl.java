@@ -324,6 +324,57 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
+    @Transactional(readOnly=true)
+    @Override
+    public  List<Operation> findOperation_daily(Long id, Timestamp ts, String type, String status){
+        log.info("Finding operation by id: " );
+
+        // id=10L;
+
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operation> criteriaQuery = cb.createQuery(Operation.class);
+
+        Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
+        contactRoot.fetch(Operation_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operation_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (ts != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.chronological),
+                    ts);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operation_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (status != null) {
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                    status);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        List<Operation> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+
+    }
+
 
     @Transactional(readOnly=true)
     @Override

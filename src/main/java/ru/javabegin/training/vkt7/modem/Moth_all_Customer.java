@@ -942,7 +942,7 @@ t=1;
              // Получаем массив типа <Properts> с единицами измерения и количеством знаков ранее в ранее посланном запросе
              //свойств на переменных для чтения
 
-                prop_specification = recieve03Service.r_3FFE(data2,prop_session);
+                prop_specification = recieve03Service.r_3FFE(data2,prop_session,server_version);
                 step=13;
 
             }

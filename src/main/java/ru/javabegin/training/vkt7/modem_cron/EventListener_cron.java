@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.recieve.Recieve03ServiceImpl;
 import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by Николай on 03.09.2017.
  */
@@ -45,24 +48,50 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                 Recieve10ServiceImpl recieve10Service = new Recieve10ServiceImpl();
 
                 if (step == 100) {
-                    data = serialPort.readHexString(event.getEventValue());
+                    /*data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Data :: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("Data hextostr:: " + data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                    System.out.println("Data hextostr:: " + data2);*/
+
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                       // System.out.println("конеуц овета перевод строки");
+                       // System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                        System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                      //  System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
+
 
                 }
                 if (step == 1000) {
-                    data = serialPort.readHexString(event.getEventValue());
+                   /* data = serialPort.readHexString(event.getEventValue());
                     System.out.println("SOPPPP!!");
                     System.out.println("Data :: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
                     System.out.println("Data hextostr:: " + data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                      */
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    //System.out.println("Пришедшая строка "+temp);
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                       // System.out.println("конеуц овета перевод строки");
+                       // System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                      //  System.out.println("data1="+data1);
+                       // data1=data1.substring(0,data1.length()-12);
+                      //  System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
 
                 }
 
@@ -70,62 +99,158 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
                 if (step == 0) {
 
-                    data = serialPort.readHexString(event.getEventValue());
+                   /* data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Data dddddd:->: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("data2 dddddd:->: " + data2);
+                    System.out.println("data2 dddddd:->: " + data2);*/
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                      //  System.out.println("конеуц овета перевод строки");
+                      //  System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                        System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                      //  System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
 
                 }
 
                 if (step == 1) {
                     t = 1;
-                    data = serialPort.readHexString(event.getEventValue());
+                  /*  data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Data s1:->: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("Data s1 ->:->: " + data2);
-                    // System.out.println("Data hextostr:: "+data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                    System.out.println("Data s1 ->:->: " + data2);*/
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                      //  System.out.println("конеуц овета перевод строки");
+                      //  System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                    //    System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                        System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
+
 
                 }
                 if (step == 2) {
                     t = 1;
-                    data = serialPort.readHexString(event.getEventValue());
+                   /* data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Data s2:->: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("Data s2 ->:->: " + data2);
-                    // System.out.println("Data hextostr:: "+data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                    System.out.println("Data s2 ->:->: " + data2);*/
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                 //       System.out.println("конеуц овета перевод строки");
+                   //     System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                  //      System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                        System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
 
                 }
                 if (step == 3) {
                     t = 1;
-                    data = serialPort.readHexString(event.getEventValue());
+                  /*  data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Datas3 :->: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("Data s3:->: " + data2);
-                    // System.out.println("Data hextostr:: "+data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                    System.out.println("Data s3:->: " + data2);*/
+                    temp = temp + serialPort.readHexString(event.getEventValue());
+                    if (temp.replace(" ", "").contains("0D0A4F4B0D0A")){
+                  //      System.out.println("конеуц овета перевод строки");
+                  //      System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                   //     System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                        System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }
+
+
 
                 }
-                if (step == 4) {
+                if (step == 777) {
                     t = 1;
-                    data = serialPort.readHexString(event.getEventValue());
+                   /* data = serialPort.readHexString(event.getEventValue());
                     System.out.println("Datas4 :->: " + data);
                     String data1 = data.replace(" ", "");
                     data2 = recieve03Service.hextostr(data1);
-                    System.out.println("Data :->: " + data2);
-                    // System.out.println("Data hextostr:: "+data2);
-                       /*Runnable r = () -> System.out.print(recieve03Service.hextostr(data1));
-                       r.run();*/
+                    System.out.println("Data :->: " + data2);*/
 
-                }
+                    data = serialPort.readHexString(event.getEventValue());
+                    //System.out.println("Datas4 :->: " + data);
+                    temp = temp + data;
+                   // System.out.println("temp s4 :->: " + temp);
+                    /*if (temp.replace(" ", "").contains("0D0A")){
+                        System.out.println("конеуц овета перевод строки");
+                        System.out.println("temp= "+temp);
+                        String data1 = temp.replace(" ", "");
+                        System.out.println("data1="+data1);
+                        //data1=data1.substring(0,data1.length()-12);
+                        System.out.println("data1="+data1);
+                        temp="";
+                        data2 = recieve03Service.hextostr(data1);
+                        System.out.println("Data hextostr:: " + data2);
+                    }*/
+
+                        //String regularExpression="\f\n";
+                        String regularExpression="0D0A$";
+                    String str_temp=temp.replace(" ", "");
+                    //System.out.println("temp_split =  " + str_temp);
+                        Pattern pattern = Pattern.compile(regularExpression);
+                        Matcher match = pattern.matcher(str_temp);
+                        int matchCounter = 0;
+                        while (match.find()){
+                            matchCounter++;
+                            //System.out.println("start(): "  + match.start());
+                            //System.out.println("end(): " + match.end());
+                           // System.out.println("Number of match: " + matchCounter);
+                        }
+                        if (matchCounter==1) {
+                           // System.out.println("конец овета перевод строки step 4");
+                           // System.out.println("temp= "+temp);
+                            String data1 = temp.replace(" ", "");
+                           // System.out.println("data1="+data1);
+                            //data1=data1.substring(0,data1.length()-12);
+                            System.out.println("data1="+data1);
+                            temp="";
+                            data2 = recieve03Service.hextostr(data1);
+                            temp="";
+                            data="";
+                            data1="";
+                            System.out.println("Data hextostr step 4:: " + data2);
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
 
 
                 if (step == 5) {
@@ -135,7 +260,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                     data2 = data;
 
                 }
-                System.out.println();
+            //    System.out.println();
                 //temp="";
 
 
@@ -144,10 +269,12 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                     data = serialPort.readHexString(event.getEventValue());
                     temp = temp + data;//System.out.print ("Data :: "+data);
                     System.out.println("Дата при step 6 == " + temp);
+                    System.out.println("z= " + z);
                     //List<String> list = new ArrayList<>(Arrays.asList( temp.replace(" ","").split("(?<=\\G.{2})")));
                     if (temp.length() > 11 & z == 0) {
+                        System.out.println("z= " + z);
                         temp = temp.replace(" ", "");
-                        System.out.println("temp при меньше 11  и без пробелов" + temp);
+                        System.out.println("temp при ,больше 11  и без пробелов" + temp);
                         //String temp_substr = temp.substring(4,6);
                         count = Integer.parseInt(temp.substring(4, 6), 16);
                         count = count * 2 + 10;
@@ -155,15 +282,30 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                         z = 1;
                     }
                     temp = temp.replace(" ", "");
+                    ///Проверка данных Если попали старые данны и обработка их не возможна//////////////
+                    if(temp.length()>count&z==1){
+                        System.out.println("count == " +count+" count_read == " +temp.length() );
+                        System.out.println("z= " + z);
+                        System.out.println("temp.length()>count= "+step);
+
+
+                        count = 0;
+
+                        System.out.println("Ждем окончание тамера и новой отправки запроса");
+                    }
+                    /////////////////////////////////////////////
+
+
                     System.out.println("count == " +count+" count_read == " +temp.length() );
                     if (temp.length() == count) {
 
-                        data2 = temp;
                         count = 0;
                         z = 0;
                         recieve_all_byte = 1;
-                        step = 7;
-                        temp = "";
+
+                        step = 300;
+                        data2 = temp;
+                        System.out.println(" На выходе step=6 temp= "+ data2);
                     }
 
                 }
@@ -339,7 +481,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                 if (step == 20) {
 
                     data = serialPort.readHexString(event.getEventValue());
-                    System.out.print("Data (step " + step + "):->: " + data);
+                    System.out.print("Data (step " + step + "):->: " + data+"\n");
                     data2 = data;
 
                 }
@@ -347,6 +489,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
                 if (step == 21) {    //// 3F FE  ТЕКУЩИЕ Запрос на чтение данных
                     data = serialPort.readHexString(event.getEventValue());
+                    System.out.println("data step21 пришедшая =="+data);
                     temp = temp + data;//System.out.print ("Data :: "+data);
                     System.out.println("Дата при step 21 == " + temp);
                     //List<String> list = new ArrayList<>(Arrays.asList( temp.replace(" ","").split("(?<=\\G.{2})")));
@@ -364,6 +507,18 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                     System.out.println("temp промежуточный = "+temp);
                     System.out.println("temp length() = "+temp.length());
                     System.out.println("count = "+count);
+///Проверка данных Если попали старые данны и обработка их не возможна//////////////
+                    if(temp.length()>count&z==1){
+
+                        System.out.println("temp.length()>count= "+step);
+
+                        count = 0;
+
+                        System.out.println("Ждем окончание тамера и новой отправки запроса");
+                    }
+     /////////////////////////////////////////////
+
+
                     if (temp.length() == count) {
                         System.out.println("вошли в выход  step= "+step);
                         data2 = temp;
@@ -391,13 +546,6 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                     data2 = data;
 
                 }
-
-
-
-
-
-
-
 
 
 
