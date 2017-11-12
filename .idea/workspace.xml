@@ -5,72 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="коммит веткитестирования pulll request">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/DailyData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w.war" afterPath="$PROJECT_DIR$/target/w.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,13 +76,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
               <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-              <folding>
-                <marker date="1510466850872" expanded="true" signature="1290:1476" ph="..." />
-                <marker date="1510466850872" expanded="true" signature="1334:1394" ph="..." />
-                <marker date="1510466850872" expanded="true" signature="1553:1786" ph="..." />
-                <marker date="1510466850872" expanded="true" signature="1598:1683" ph="..." />
-                <marker date="1510466850872" expanded="true" signature="1863:2045" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,8 +84,8 @@
       <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
+            <state relative-caret-position="1675">
+              <caret line="67" column="53" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -205,9 +134,11 @@
       <file leaf-file-name="ReportServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6410">
+            <state relative-caret-position="15150">
               <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -435,6 +366,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -618,7 +550,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -1526,6 +1457,7 @@
       <workItem from="1509442960777" duration="101688000" />
       <workItem from="1509960529173" duration="34320000" />
       <workItem from="1510466903597" duration="1817000" />
+      <workItem from="1510481424990" duration="549000" />
     </task>
     <task id="LOCAL-00001" summary="коммит веткитестирования pulll request">
       <created>1510470543539</created>
@@ -1538,7 +1470,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1521777000" />
+    <option name="totallyTimeSpent" value="1522326000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1551,7 +1483,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2409" y="-9" width="2418" height="1318" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1568,17 +1500,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36944938" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3463588" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37207285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38632327" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2334764" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23690987" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1586,6 +1517,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3463588" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2020,13 +1952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-          <folding>
-            <marker date="1510466850872" expanded="true" signature="1290:1476" ph="..." />
-            <marker date="1510466850872" expanded="true" signature="1334:1394" ph="..." />
-            <marker date="1510466850872" expanded="true" signature="1553:1786" ph="..." />
-            <marker date="1510466850872" expanded="true" signature="1598:1683" ph="..." />
-            <marker date="1510466850872" expanded="true" signature="1863:2045" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2056,17 +1982,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
+        <state relative-caret-position="1675">
+          <caret line="67" column="53" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6410">
+        <state relative-caret-position="15150">
           <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
