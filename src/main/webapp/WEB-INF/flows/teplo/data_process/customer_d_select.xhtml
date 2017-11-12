@@ -25,17 +25,17 @@
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
             <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionData.cust}" rowKey="#{u.id}">
                 <f:facet name="header">
-                    Select Events
+                    #{msg.customers}
                 </f:facet>
                 <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect}" update=":form:msgs" />
                 <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect}" update=":form:msgs" />
-                <p:column headerText="name">
+                <p:column headerText="#{msg.customer}">
                     <h:outputText value="#{u.firstName}" />
                 </p:column>
-                <p:column headerText="fam">
+                <p:column headerText="#{msg.tel_modem}">
                     <h:outputText value="#{u.telModem}" />
                 </p:column>
-                <p:column headerText="data">
+                <p:column headerText="#{msg.tel_modem}">
                     <h:outputText value="#{u.unitNumber}" />
                 </p:column>
 
