@@ -4,13 +4,77 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/db/test/TestBean3.java" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
+    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="коммит веткитестирования pulll request">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/DailyData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w.war" afterPath="$PROJECT_DIR$/target/w.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +129,8 @@
       <file leaf-file-name="measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
-              <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+            <state relative-caret-position="525">
+              <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -75,18 +139,24 @@
       <file leaf-file-name="test1_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="600">
               <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-              <folding />
+              <folding>
+                <marker date="1510466850872" expanded="true" signature="1290:1476" ph="..." />
+                <marker date="1510466850872" expanded="true" signature="1334:1394" ph="..." />
+                <marker date="1510466850872" expanded="true" signature="1553:1786" ph="..." />
+                <marker date="1510466850872" expanded="true" signature="1598:1683" ph="..." />
+                <marker date="1510466850872" expanded="true" signature="1863:2045" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="61" column="116" lean-forward="false" selection-start-line="61" selection-start-column="116" selection-end-line="61" selection-end-column="116" />
+            <state relative-caret-position="468">
+              <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -95,7 +165,7 @@
       <file leaf-file-name="test_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="600">
               <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
               <folding />
             </state>
@@ -105,7 +175,7 @@
       <file leaf-file-name="measurements_d_select_old_19_10.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1188">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -115,18 +185,18 @@
       <file leaf-file-name="customer_d_select_menu.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer_d_select.xhtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="customer_d_select.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
+            <state relative-caret-position="220">
+              <caret line="25" column="56" lean-forward="false" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -135,8 +205,8 @@
       <file leaf-file-name="ReportServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
+            <state relative-caret-position="-6410">
+              <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -194,6 +264,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test_pull_request" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -250,13 +325,13 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/footer.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
       </list>
     </option>
   </component>
@@ -309,7 +384,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
+    <option name="x" value="-2409" />
     <option name="y" value="-9" />
     <option name="width" value="2418" />
     <option name="height" value="1318" />
@@ -446,70 +521,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locales" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resource Bundle 'messages'" />
-              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="flows" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -604,496 +615,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="send" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reports" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recieve" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="queue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="object_reports" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="object_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modem_run" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modem_cron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vkt7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_modem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enums" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -1108,8 +629,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14965986" />
     <property name="project.structure.side.proportion" value="0.34712642" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="JPA.DatabaseSchemaImportDialog" value="e14f5a6a-d2cf-41f5-a15d-c53c40b8db56" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities" />
@@ -1754,7 +1275,7 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M17" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="w:war">
@@ -2004,11 +1525,20 @@
       <workItem from="1509423791775" duration="15622000" />
       <workItem from="1509442960777" duration="101688000" />
       <workItem from="1509960529173" duration="34320000" />
+      <workItem from="1510466903597" duration="1817000" />
     </task>
+    <task id="LOCAL-00001" summary="коммит веткитестирования pulll request">
+      <created>1510470543539</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510470543539</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1519960000" />
+    <option name="totallyTimeSpent" value="1521777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2020,7 +1550,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2418" height="1318" extended-state="6" />
+    <frame x="-2409" y="-9" width="2418" height="1318" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2034,10 +1564,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16995709" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36947095" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36944938" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3469211" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3463588" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2047,18 +1578,17 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19940221" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2334764" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2085,6 +1615,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="коммит веткитестирования pulll request" />
+    <option name="LAST_COMMIT_MESSAGE" value="коммит веткитестирования pulll request" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2148,83 +1682,11 @@
           <properties />
           <option name="timeStamp" value="673" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>625</line>
-          <properties />
-          <option name="timeStamp" value="729" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>624</line>
-          <properties />
-          <option name="timeStamp" value="730" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>532</line>
-          <properties />
-          <option name="timeStamp" value="753" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>533</line>
-          <properties />
-          <option name="timeStamp" value="754" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>537</line>
-          <properties />
-          <option name="timeStamp" value="755" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>538</line>
-          <properties />
-          <option name="timeStamp" value="756" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>542</line>
-          <properties />
-          <option name="timeStamp" value="757" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>543</line>
-          <properties />
-          <option name="timeStamp" value="758" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>547</line>
-          <properties />
-          <option name="timeStamp" value="759" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>548</line>
-          <properties />
-          <option name="timeStamp" value="760" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>552</line>
-          <properties />
-          <option name="timeStamp" value="761" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>553</line>
-          <properties />
-          <option name="timeStamp" value="762" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="767" />
+      <option name="time" value="768" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
@@ -2250,7 +1712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2279,7 +1740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="181" column="5" lean-forward="true" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2294,7 +1754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2316,7 +1775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
           <caret line="249" column="47" lean-forward="true" selection-start-line="240" selection-start-column="20" selection-end-line="249" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2331,11 +1789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5522">
           <caret line="262" column="14" lean-forward="false" selection-start-line="262" selection-start-column="14" selection-end-line="262" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1062#1063#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2343,7 +1796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2351,16 +1803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#568#576#0" expanded="false" />
-            <element signature="e#1077#1085#0" expanded="false" />
-            <element signature="e#1584#1592#0" expanded="false" />
-            <element signature="e#2089#2097#0" expanded="false" />
-            <element signature="e#2594#2602#0" expanded="false" />
-            <element signature="e#3181#3189#0" expanded="false" />
-            <element signature="e#3768#3776#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2368,19 +1810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#889#897#0" expanded="false" />
-            <element signature="e#3648#3656#0" expanded="false" />
-            <element signature="e#4568#4577#0" expanded="false" />
-            <element signature="e#4638#4648#0" expanded="false" />
-            <element signature="e#5610#5618#0" expanded="false" />
-            <element signature="e#7108#7116#0" expanded="false" />
-            <element signature="e#7995#8003#0" expanded="false" />
-            <element signature="e#8298#8306#0" expanded="false" />
-            <element signature="e#8959#8967#0" expanded="false" />
-            <element signature="e#9262#9270#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2388,7 +1817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2396,9 +1824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2530">
           <caret line="125" column="57" lean-forward="false" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2406,7 +1831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="81" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2414,7 +1838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2422,7 +1845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="149" column="53" lean-forward="false" selection-start-line="149" selection-start-column="53" selection-end-line="149" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2430,7 +1852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="887" column="0" lean-forward="true" selection-start-line="887" selection-start-column="0" selection-end-line="887" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2438,7 +1859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="894" column="13" lean-forward="true" selection-start-line="894" selection-start-column="13" selection-end-line="894" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2446,7 +1866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="943" column="94" lean-forward="false" selection-start-line="943" selection-start-column="94" selection-end-line="943" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2454,7 +1873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="981" column="94" lean-forward="false" selection-start-line="981" selection-start-column="94" selection-end-line="981" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2462,7 +1880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="885" column="94" lean-forward="false" selection-start-line="885" selection-start-column="94" selection-end-line="885" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2470,7 +1887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="938" column="94" lean-forward="false" selection-start-line="938" selection-start-column="94" selection-end-line="938" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2478,7 +1894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="944" column="53" lean-forward="false" selection-start-line="944" selection-start-column="53" selection-end-line="944" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2486,7 +1901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="909" column="94" lean-forward="false" selection-start-line="909" selection-start-column="94" selection-end-line="909" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2494,7 +1908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="935" column="94" lean-forward="false" selection-start-line="935" selection-start-column="94" selection-end-line="935" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2502,7 +1915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="901" column="94" lean-forward="false" selection-start-line="901" selection-start-column="94" selection-end-line="901" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2510,7 +1922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="935" column="94" lean-forward="false" selection-start-line="935" selection-start-column="94" selection-end-line="935" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2518,7 +1929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2542,7 +1952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-99">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2550,7 +1959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2558,7 +1966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="399" column="28" lean-forward="false" selection-start-line="399" selection-start-column="28" selection-end-line="399" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2574,7 +1981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1054">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2582,7 +1988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2590,48 +1995,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties">
+      <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="818">
           <caret line="182" column="3" lean-forward="false" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="3" />
-          <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="ResourceBundle">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="600">
           <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-          <folding />
+          <folding>
+            <marker date="1510466850872" expanded="true" signature="1290:1476" ph="..." />
+            <marker date="1510466850872" expanded="true" signature="1334:1394" ph="..." />
+            <marker date="1510466850872" expanded="true" signature="1553:1786" ph="..." />
+            <marker date="1510466850872" expanded="true" signature="1598:1683" ph="..." />
+            <marker date="1510466850872" expanded="true" signature="1863:2045" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="600">
           <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding />
         </state>
@@ -2639,7 +2040,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2647,24 +2048,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
+        <state relative-caret-position="525">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="61" column="116" lean-forward="false" selection-start-line="61" selection-start-column="116" selection-end-line="61" selection-end-column="116" />
+        <state relative-caret-position="468">
+          <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6410">
+          <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="25" column="56" lean-forward="false" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
           <folding />
         </state>
       </provider>
