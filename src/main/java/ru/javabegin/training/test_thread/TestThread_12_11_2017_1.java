@@ -32,7 +32,7 @@ TestThread_kill t_kill=new TestThread_kill();
        future = service.submit(task1);
         //Thread.sleep(3000);
         //future.cancel(true);
-        t_kill.t_kill();
+        //t_kill.t_kill();
         service.shutdown();
 
 

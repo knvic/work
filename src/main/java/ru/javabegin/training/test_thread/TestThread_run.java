@@ -17,7 +17,11 @@ public static volatile  ExecutorService service2;
         Callable task1 = () -> {
             try {
                 for (int i=1; i<200; i++){
-                    System.out.println("работает поток "+ i);
+                    System.out.println("работает поток "+ Thread.currentThread().getName()+" "+ i);
+                    if (i==5){
+                        System.out.println("переназываем поток ");
+                        Thread.currentThread().setName("alibaba");
+                    }
                     Thread.sleep(1000);
                 }
 

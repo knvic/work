@@ -410,6 +410,10 @@ List<Object> connect=new ArrayList<>();*/
 
         Callable task = () -> {
             try {
+                System.out.println("работает поток "+ Thread.currentThread().getName());
+                System.out.println("переназываем поток  на modemRequiest");
+                Thread.currentThread().setName("modemRequiest");
+
                 daily_moth_cron.daily_all_cycle(customerList, customerService, operationService, data, type);
                 return "123";
             }
@@ -424,6 +428,9 @@ List<Object> connect=new ArrayList<>();*/
         //Future<String> future2 = service.submit(task);
 
         service.shutdown();
+
+        System.out.println("Основная программа работу закончила");
+
 /*
 
         ExecutorService executor1 = Executors.newFixedThreadPool(1);

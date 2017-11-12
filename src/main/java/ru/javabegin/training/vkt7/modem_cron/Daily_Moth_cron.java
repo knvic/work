@@ -64,6 +64,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
     private Map<Timestamp, List<Measurements> > total_moth_hashMap=new HashMap<>();
     private  Timestamp tstamp;
     private Timestamp timestamp_daily;
+    ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL;
 
    private static int requestNum = 0;
    /*private static int[][] requests = {
@@ -108,6 +109,12 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
 
 
+
+
+
+        if(serialPort!=null){
+            serialPort=null;
+        }
         serialPort = new SerialPort (port); /*Передаем в конструктор суперкласса имя порта с которым будем работать*/
 
 
@@ -121,7 +128,11 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
                 SerialPort.FLOWCONTROL_RTSCTS_OUT);
         serialPort.setEventsMask (SerialPort.MASK_RXCHAR); //Устанавливаем маску или список события на которые будет происходить реакция. В данном случае это приход данных в буффер порта
 
-        ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL= new ru.javabegin.training.vkt7.modem_cron.EventListener_cron();
+        if (eL!=null){
+            eL=null;
+        }
+
+         eL= new ru.javabegin.training.vkt7.modem_cron.EventListener_cron();
 
 
         serialPort.addEventListener (eL); //Передаем экземпляр класса EventListener порту, где будет обрабатываться события. Ниже описан класс
