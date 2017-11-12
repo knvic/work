@@ -15,7 +15,7 @@ public class TestThread_kill {
 
     public void t_kill () throws InterruptedException, ExecutionException {
 
-
+        if(future!=null) {
         System.out.println("Начинаем закрывать поток ");
         Thread.sleep(10000);
         //System.out.println("Начинаем закрывать поток "+ future.get());
@@ -29,7 +29,8 @@ public class TestThread_kill {
         System.out.println("Закрываем поток ");
         Thread.sleep(3000);
         System.out.println("поток остановлен? "+ future1.isCancelled());
-
+        }else {
+            System.out.println("не существует");}
 
 
         }
