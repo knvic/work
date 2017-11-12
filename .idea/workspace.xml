@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +65,8 @@
       <file leaf-file-name="measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
-              <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+            <state relative-caret-position="462">
+              <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -75,14 +75,14 @@
       <file leaf-file-name="test1_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="528">
               <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="operation_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
@@ -92,10 +92,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="528">
               <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
               <folding />
             </state>
@@ -105,7 +115,7 @@
       <file leaf-file-name="measurements_d_select_old_19_10.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1188">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -115,7 +125,7 @@
       <file leaf-file-name="customer_d_select_menu.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -125,8 +135,8 @@
       <file leaf-file-name="customer_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
+            <state relative-caret-position="550">
+              <caret line="25" column="91" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
               <folding />
             </state>
           </provider>
@@ -135,8 +145,8 @@
       <file leaf-file-name="ReportServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
+            <state relative-caret-position="-638">
+              <caret line="552" column="0" lean-forward="false" selection-start-line="552" selection-start-column="0" selection-end-line="552" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -248,7 +258,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/footer.xhtml" />
@@ -257,6 +266,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
       </list>
     </option>
   </component>
@@ -360,6 +370,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -583,6 +596,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data_process" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1033,36 +1110,6 @@
               <option name="myItemId" value="training" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_modem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1096,9 +1143,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1108,8 +1152,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14965986" />
     <property name="project.structure.side.proportion" value="0.34712642" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="JPA.DatabaseSchemaImportDialog" value="e14f5a6a-d2cf-41f5-a15d-c53c40b8db56" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities" />
@@ -2004,11 +2048,20 @@
       <workItem from="1509423791775" duration="15622000" />
       <workItem from="1509442960777" duration="101688000" />
       <workItem from="1509960529173" duration="34320000" />
+      <workItem from="1510401149180" duration="4587000" />
     </task>
+    <task id="LOCAL-00001" summary="перед получение изменений master">
+      <created>1510476682468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510476682468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1519960000" />
+    <option name="totallyTimeSpent" value="1524547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2021,7 +2074,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2418" height="1318" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2042,14 +2095,13 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37207285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5140187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19940221" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20153715" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2059,6 +2111,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2085,6 +2138,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="перед получение изменений master" />
+    <option name="LAST_COMMIT_MESSAGE" value="перед получение изменений master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2147,78 +2204,6 @@
           <line>114</line>
           <properties />
           <option name="timeStamp" value="673" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>625</line>
-          <properties />
-          <option name="timeStamp" value="729" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>624</line>
-          <properties />
-          <option name="timeStamp" value="730" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>532</line>
-          <properties />
-          <option name="timeStamp" value="753" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>533</line>
-          <properties />
-          <option name="timeStamp" value="754" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>537</line>
-          <properties />
-          <option name="timeStamp" value="755" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>538</line>
-          <properties />
-          <option name="timeStamp" value="756" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>542</line>
-          <properties />
-          <option name="timeStamp" value="757" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>543</line>
-          <properties />
-          <option name="timeStamp" value="758" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>547</line>
-          <properties />
-          <option name="timeStamp" value="759" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>548</line>
-          <properties />
-          <option name="timeStamp" value="760" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>552</line>
-          <properties />
-          <option name="timeStamp" value="761" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</url>
-          <line>553</line>
-          <properties />
-          <option name="timeStamp" value="762" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2294,7 +2279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2396,9 +2380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2530">
           <caret line="125" column="57" lean-forward="false" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2430,7 +2411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="887" column="0" lean-forward="true" selection-start-line="887" selection-start-column="0" selection-end-line="887" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2438,7 +2418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="894" column="13" lean-forward="true" selection-start-line="894" selection-start-column="13" selection-end-line="894" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2446,7 +2425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="943" column="94" lean-forward="false" selection-start-line="943" selection-start-column="94" selection-end-line="943" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2462,7 +2440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="885" column="94" lean-forward="false" selection-start-line="885" selection-start-column="94" selection-end-line="885" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2478,7 +2455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="944" column="53" lean-forward="false" selection-start-line="944" selection-start-column="53" selection-end-line="944" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2486,7 +2462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="909" column="94" lean-forward="false" selection-start-line="909" selection-start-column="94" selection-end-line="909" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2494,7 +2469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="935" column="94" lean-forward="false" selection-start-line="935" selection-start-column="94" selection-end-line="935" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2502,7 +2476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="901" column="94" lean-forward="false" selection-start-line="901" selection-start-column="94" selection-end-line="901" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2510,7 +2483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="935" column="94" lean-forward="false" selection-start-line="935" selection-start-column="94" selection-end-line="935" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2542,7 +2514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-99">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2562,19 +2533,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="250" column="91" lean-forward="false" selection-start-line="250" selection-start-column="91" selection-end-line="250" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/teplo_template.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1054">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2582,7 +2544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2590,7 +2551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2598,7 +2558,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="818">
           <caret line="182" column="3" lean-forward="false" selection-start-line="182" selection-start-column="2" selection-end-line="182" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="ResourceBundle">
@@ -2607,23 +2566,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="528">
           <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding />
         </state>
@@ -2631,7 +2582,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="528">
           <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding />
         </state>
@@ -2639,7 +2590,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2647,16 +2598,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+        <state relative-caret-position="462">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
+        <state relative-caret-position="550">
+          <caret line="25" column="91" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="118" />
           <folding />
         </state>
       </provider>
@@ -2665,6 +2616,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="61" column="116" lean-forward="false" selection-start-line="61" selection-start-column="116" selection-end-line="61" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-638">
+          <caret line="552" column="0" lean-forward="false" selection-start-line="552" selection-start-column="0" selection-end-line="552" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding />
         </state>
       </provider>
