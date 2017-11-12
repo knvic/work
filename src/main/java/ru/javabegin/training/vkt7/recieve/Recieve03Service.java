@@ -20,7 +20,7 @@ public interface Recieve03Service {
      */
     int r_3FFE_1(String str); // получаем 65 байт версию сервера
     List<String> r_3FF9(String str);
-    List<Properts> r_3FFE(String str, List<Properts> prop_session);
+    List<Properts> r_3FFE(String str, List<Properts> prop_session, int server_ver);
     ArrayList<Timestamp> r_3FF6(String str) throws ParseException;
     List<Properts> r_3FFC(String str, List<Properts> prop_completed);
     List<Measurements> r_3FFE_Measurements(String str, List<Measurements> current_measur);
@@ -28,7 +28,7 @@ public interface Recieve03Service {
     int r_3F5B(String str);
     int r_3FE9(String str);
 
-
+    String error(int error);
     String hextostr(String hex);
 
 }

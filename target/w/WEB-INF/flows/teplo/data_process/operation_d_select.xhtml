@@ -12,7 +12,7 @@
 <ui:composition template="/WEB-INF/templates/operation_d_select_template.xhtml">
 
     <ui:define name="title">
-        #{msg.book_list}
+        #{msg.operations}
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
@@ -59,24 +59,29 @@
             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
           <!-- <h1>sdfsdfsdfs</h1>
             <h2>#{dop.get(0)}</h2>-->
-            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selectionData.operation}" rowKey="#{u.id}">
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionData.operation}" rowKey="#{u.id}">
                 <f:facet name="header">
                     #{u.customerName}
                 </f:facet>
                 <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect_operation}" update=":form:msgs" />
                 <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect_operation}" update=":form:msgs" />
-                <p:column headerText="name">
+                <p:column headerText="#{msg.customer}">
                     <h:outputText value="#{u.customerName}" />
                 </p:column>
-                <p:column headerText="fam">
-                    <h:outputText value="#{u.dateServer}" />
-                </p:column>
-                <p:column headerText="data">
+                <p:column headerText="Тип результата">
                     <h:outputText value="#{u.typeOperation}" />
                 </p:column>
                 <p:column headerText="data">
                     <h:outputText value="#{u.chronological}" />
                 </p:column>
+                <p:column headerText="Статус">
+                    <h:outputText value="#{u.error}" />
+                </p:column>
+                <p:column headerText="Дата работы">
+                    <h:outputText value="#{u.dateServer}" />
+                </p:column>
+
+
 
             </p:dataTable>
 

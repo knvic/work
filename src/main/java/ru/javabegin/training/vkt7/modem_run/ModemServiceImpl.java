@@ -390,14 +390,14 @@ List<Object> connect=new ArrayList<>();*/
 
     }
 
-
+///////////////////// Запускается шедулером
 
     @Override
     public void get_daily_moth_cron(){
         //LocalDateTime ldt_d1 = LocalDateTime.of(2017, 10, day, 0, 0, 0);
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println("Сегодня LocalDateTime = " + ldt);
-        ldt= ldt.minusDays(8);
+        ldt= ldt.minusDays(1);
         System.out.println("Вчера LocalDateTime = " + ldt);
         ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
         Date data = Date.from(zdt.toInstant());
@@ -417,11 +417,17 @@ List<Object> connect=new ArrayList<>();*/
         };
 
 
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        Future<String> future1 = service.submit(task);
+        Future<String> future2 = service.submit(task);
 
+        service.shutdown();
+/*
 
         ExecutorService executor1 = Executors.newFixedThreadPool(1);
         Future<String> future = executor1.submit(task);
         executor1.shutdown();
+*/
 
     }
 

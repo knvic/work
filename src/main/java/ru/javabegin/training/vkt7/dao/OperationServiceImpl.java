@@ -228,6 +228,9 @@ public class OperationServiceImpl implements OperationService {
         Root<Operation> contactRoot = criteriaQuery.from(Operation.class);
         Join cont = contactRoot.join(Operation_.customer);
 
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
         ParameterExpression<Long> parametr = cb.parameter(Long.class);
         Predicate condition = cb.equal(cont.get(Customer_.id), parametr) ;
         criteriaQuery.where(condition);
