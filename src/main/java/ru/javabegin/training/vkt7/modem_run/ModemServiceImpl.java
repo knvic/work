@@ -35,6 +35,7 @@ public class ModemServiceImpl implements ModemService {
   public static volatile SerialPort serialPort;
     public static volatile boolean stop=true;
     public static volatile  Future<String> future1;
+    public static volatile ExecutorService service;
 
 
 
@@ -418,7 +419,7 @@ List<Object> connect=new ArrayList<>();*/
         };
 
 
-        ExecutorService service = Executors.newSingleThreadExecutor();
+        service = Executors.newSingleThreadExecutor();
         future1 = service.submit(task);
         //Future<String> future2 = service.submit(task);
 
