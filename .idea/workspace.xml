@@ -5,7 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill_modem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w.war" afterPath="$PROJECT_DIR$/target/w.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_12_11_2017_1.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_12_11_2017_1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_run.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_run.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -98,10 +128,10 @@
               <caret line="399" column="28" lean-forward="false" selection-start-line="399" selection-start-column="28" selection-end-line="399" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#1823#1824#0" expanded="false" />
-                <element signature="e#1847#1848#0" expanded="false" />
-                <element signature="e#1877#1878#0" expanded="false" />
-                <element signature="e#1896#1897#0" expanded="false" />
+                <element signature="e#1927#1928#0" expanded="false" />
+                <element signature="e#1951#1952#0" expanded="false" />
+                <element signature="e#1981#1982#0" expanded="false" />
+                <element signature="e#2000#2001#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -133,7 +163,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_run.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -142,8 +172,8 @@
       <file leaf-file-name="TestThread_kill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="225">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -1595,6 +1625,7 @@
       <workItem from="1510474993351" duration="608000" />
       <workItem from="1510489767937" duration="7554000" />
       <workItem from="1510551304566" duration="1495000" />
+      <workItem from="1510552998821" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="локальные добавления в стартовые страницы">
       <created>1510475182515</created>
@@ -1628,7 +1659,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1529617000" />
+    <option name="totallyTimeSpent" value="1529633000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1662,12 +1693,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37122557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3117229" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37122557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20901288" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21201716" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -2202,10 +2233,10 @@
           <caret line="399" column="28" lean-forward="false" selection-start-line="399" selection-start-column="28" selection-end-line="399" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1823#1824#0" expanded="false" />
-            <element signature="e#1847#1848#0" expanded="false" />
-            <element signature="e#1877#1878#0" expanded="false" />
-            <element signature="e#1896#1897#0" expanded="false" />
+            <element signature="e#1927#1928#0" expanded="false" />
+            <element signature="e#1951#1952#0" expanded="false" />
+            <element signature="e#1981#1982#0" expanded="false" />
+            <element signature="e#2000#2001#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2240,8 +2271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="225">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -2251,7 +2282,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_run.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding />
         </state>
       </provider>

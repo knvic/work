@@ -28,7 +28,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
     public volatile static int step;
     public volatile static int recieve_all_byte;
     public static volatile int t;
-    static SerialPort serialPort;
+    public static SerialPort serialPort;
 
     String data;
 
