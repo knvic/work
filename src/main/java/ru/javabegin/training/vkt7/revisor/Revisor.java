@@ -1,6 +1,8 @@
 package ru.javabegin.training.vkt7.revisor;
 
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
+import jssc.SerialPortException;
+import ru.javabegin.training.test_thread.TestThread_kill_modem;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,8 +11,10 @@ import java.time.LocalDateTime;
 import java.util.concurrent.*;
 
 
-import static ru.javabegin.training.test_thread.TestThread_run.atomicInteger;
+
 import static ru.javabegin.training.test_thread.TestThread_run.future2;
+import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.future1;
+import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.atomicInteger;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
 /**
@@ -18,19 +22,17 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  */
 public class Revisor {
  public static volatile int tt=0;
-    Future<String> future;
-    ExecutorService service;
-    Callable task1;
 
 
-    public void Revisor() throws InterruptedException, IOException {
+
+    public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
         File file = new File("D:\\Work\\work\\logRevizor.txt");
         FileWriter writer = new FileWriter(file, true);
         LocalDateTime ldt;
         String log;
 
-        if(future2!=null) {
+        if(future1!=null) {
             ExecutorService executorService = Executors.newSingleThreadExecutor();
             int ai = (int) atomicInteger.get();
             System.out.println("Сохраняем atomicInteger----->>" + ai);
@@ -52,8 +54,11 @@ public class Revisor {
                 writer.flush();
                 writer.close();
 
+                TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
+                testThread_kill_modem.t_kill();
 
-                future2.cancel(true);
+
+               // future2.cancel(true);
 
 
 
