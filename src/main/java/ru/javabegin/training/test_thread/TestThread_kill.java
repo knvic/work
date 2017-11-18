@@ -24,13 +24,7 @@ public class TestThread_kill extends ru.javabegin.training.vkt7.modem_cron.Event
 
         if(future2!=null) {
         System.out.println("------>   Начинаем закрывать поток ");
-        //Thread.sleep(10000);
-     /*   //System.out.println("Начинаем закрывать поток "+ future.get());
-        System.out.println("------>   поток остановлен? "+ future2.isCancelled());
-        Thread.sleep(3000);
-        System.out.println("------>   поток остановлен? "+ future2.isCancelled());
-        Thread.sleep(3000);
-        System.out.println("------>   поток остановлен? "+ future2.isCancelled());*/
+
 
             System.out.println("------>   Посылаем команду стоп ");
             t=1;
@@ -48,10 +42,6 @@ public class TestThread_kill extends ru.javabegin.training.vkt7.modem_cron.Event
 
                 ModemServiceImpl.serialPort.closePort();}
             else {System.out.println(" Port УЖЕ ЗАКРЫТ ");}
-
-
-
-
 
 
             Thread.sleep(3000);

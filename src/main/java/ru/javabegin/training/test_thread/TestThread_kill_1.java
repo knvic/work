@@ -12,7 +12,7 @@ public class TestThread_kill_1 {
 
 
 
-    public static void  main(String[] args)throws InterruptedException, ExecutionException {
+    public  void  t_kill_1() throws InterruptedException, ExecutionException {
 
 if(future!=null) {
     System.out.println("Начинаем закрывать поток ");

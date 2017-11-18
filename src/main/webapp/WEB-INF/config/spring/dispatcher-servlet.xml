@@ -233,6 +233,8 @@
     <bean id="test_db" class="ru.javabegin.training.vkt7.test_db.Test_db_28_10"/>
     <bean id="kill_t" class="ru.javabegin.training.test_thread.TestThread_kill_modem"/>
     <bean id="run_t" class="ru.javabegin.training.test_thread.TestThread_run"/>
+    <bean id="revizor" class="ru.javabegin.training.vkt7.revisor.Revisor"/>
+
 
 
 
@@ -255,6 +257,11 @@
         <task:scheduled ref="run_t" method="t_run" cron="5 25 19 * * ?"/>
         <task:scheduled ref="kill_t" method="t_kill" cron="25 58 21 * * ?"/>
         <task:scheduled ref="kill_t" method="t_kill" cron="50 59 21 * * ?"/>
+
+
+        <task:scheduled ref="revizor" method="Revisor" cron="10 34 18 * * ?"/>
+        <task:scheduled ref="run_t" method="t_run" cron="20 34 18 * * ?"/>
+        <task:scheduled ref="revizor" method="Revisor" cron="25 34 18 * * ?"/>
 
     </task:scheduled-tasks>
 
