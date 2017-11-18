@@ -14,14 +14,15 @@ public class TestThread_kill_1 {
 
     public static void  main(String[] args)throws InterruptedException, ExecutionException {
 
-
-        System.out.println("Начинаем закрывать поток ");
-        Thread.sleep(1000);
-        //System.out.println("Начинаем закрывать поток "+ future.get());
-        System.out.println("поток работает? "+ future.isCancelled());
-            Thread.sleep(3000);
-            future.cancel(true);
-
+if(future!=null) {
+    System.out.println("Начинаем закрывать поток ");
+    Thread.sleep(1000);
+    //System.out.println("Начинаем закрывать поток "+ future.get());
+    System.out.println("поток работает? " + future.isCancelled());
+    Thread.sleep(3000);
+    future.cancel(true);
+}else {
+    System.out.println("не существует");}
 
         }
     }
