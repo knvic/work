@@ -23,13 +23,6 @@ public class TestThread_kill_modem extends ru.javabegin.training.vkt7.modem_cron
 
         if(future1!=null) {
         System.out.println("------>   Начинаем закрывать поток ");
-     /*   Thread.sleep(10000);
-        //System.out.println("Начинаем закрывать поток "+ future.get());
-        System.out.println("------>   поток остановлен? "+ future1.isCancelled());
-        Thread.sleep(3000);
-        System.out.println("------>   поток остановлен? "+ future1.isCancelled());
-        Thread.sleep(3000);*/
-        //System.out.println("------>   поток остановлен? "+ future1.isCancelled());
 
 
             t=1;
