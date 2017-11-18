@@ -2,7 +2,10 @@ package ru.javabegin.training.vkt7.revisor;
 
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
 import jssc.SerialPortException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import ru.javabegin.training.test_thread.TestThread_kill_modem;
+import ru.javabegin.training.vkt7.modem_run.ModemService;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -23,7 +26,9 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 public class Revisor {
  public static volatile int tt=0;
 
-
+    @Qualifier("modemServiceImpl")
+    @Autowired
+    ModemService modemService;
 
     public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
@@ -56,6 +61,10 @@ public class Revisor {
 
                 TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
                 testThread_kill_modem.t_kill();
+
+                Thread.sleep(120000);
+
+                modemService.get_daily_moth_cron();
 
 
                // future2.cancel(true);
