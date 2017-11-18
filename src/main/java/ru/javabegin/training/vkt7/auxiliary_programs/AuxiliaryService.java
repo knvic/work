@@ -19,6 +19,10 @@ public interface AuxiliaryService {
      */
     List<Date> from_the_beginning_of_month(Date date);
 
+    List<String> from_the_beginning_of_month_str(Date date);
+
+
+
 
     LocalDate date_to_localDate(Date data);
 
@@ -33,6 +37,8 @@ public interface AuxiliaryService {
      * @return дата со временем
      */
     LocalDateTime addTime (LocalDateTime data, String hour);
+
+    Date addTime(Date data, String hour);
 
     Timestamp date_TimeStamp (Date data);
 

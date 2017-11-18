@@ -16,21 +16,33 @@ public class Test {
     public static void main (String[] args) {
         AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
         Date input = new Date();
+        System.out.println("Вывод массива с датами");
 
         List<Date> dateList=auxiliaryService.from_the_beginning_of_month(input);
 
         for(Date data:dateList){
             System.out.println(data);
         }
+        System.out.println("Вывод массива со строками ");
+        List<String> dateListStr=auxiliaryService.from_the_beginning_of_month_str(input);
+
+        for(String data:dateListStr){
+            System.out.println(data);
+        }
 
         LocalDateTime ldt = auxiliaryService.date_to_localDateTime(input);
         ldt=auxiliaryService.addTime(ldt,"23");
+
         Date date=auxiliaryService.localDateTime_to_date(ldt);
         String dataStr= auxiliaryService.date_to_vktString(date);
         System.out.println("localDateTime Str = "+dataStr);
 
         dataStr= auxiliaryService.date_to_vktString(ldt);
         System.out.println("localDateTime Str = "+dataStr);
+
+
+        Date date23=auxiliaryService.addTime(input,"22");
+        System.out.println("date23 = "+date23);
 
 
 

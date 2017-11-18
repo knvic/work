@@ -21,38 +21,32 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
 
     @Override
     public List<Date> from_the_beginning_of_month(Date date){
-
-
-
-        //LocalDate dateLocalDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
-        System.out.println("Перевели в  LocalDateTime " + dateLocalDateTime);
-
-        //LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
         LocalDateTime ldt=addTime(dateLocalDateTime,"22");
-
-        System.out.println("Добавили время LocalDateTime(23-00) -  " + ldt);
-
         System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
-
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
-
         List<Date>  dateList=new ArrayList<>();
-
-
-
         while(day.isBefore(ldt)){
-
-            System.out.println("Рассматриваемая дата "+ day+ " находится перед "+ ldt );
-
             dateList.add(localDateTime_to_date(day));
-
             day=day.plusDays(1);
         }
-
-
-
         return dateList;
+    }
+
+
+    @Override
+    public List<String> from_the_beginning_of_month_str(Date date){
+        LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
+        LocalDateTime ldt=addTime(dateLocalDateTime,"22");
+        System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
+        LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
+        List<String>  dateListStr=new ArrayList<>();
+        while(day.isBefore(ldt)){
+          //  System.out.println("Рассматриваемая дата "+ day+ " находится перед "+ ldt );
+            dateListStr.add(date_to_vktString(day));
+            day=day.plusDays(1);
+        }
+        return dateListStr;
     }
 
 
@@ -90,6 +84,16 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     LocalDate  dateLocalDate =data.toLocalDate();
     LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
     return ldt;
+
+    }
+
+    @Override
+    public Date addTime(Date data, String hour){
+      LocalDateTime dataldt=date_to_localDateTime(data);
+        LocalDate  dateLocalDate =dataldt.toLocalDate();
+        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
+        Date dateDate=localDateTime_to_date(ldt);
+        return dateDate;
 
     }
 
@@ -132,7 +136,9 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
         return dataStr;
 
     }
-
+    public int rrr(int a,int b){
+        return a+b;
+    }
 
 
 }
