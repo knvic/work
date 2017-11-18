@@ -2,6 +2,10 @@ package ru.javabegin.training.vkt7.revisor;
 
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.concurrent.*;
 
 
@@ -13,34 +17,53 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  * Created by user on 18.11.2017.
  */
 public class Revisor {
- public static volatile int t=0;
+ public static volatile int tt=0;
     Future<String> future;
     ExecutorService service;
     Callable task1;
 
 
-    public void Revisor() throws InterruptedException {
+    public void Revisor() throws InterruptedException, IOException {
+
+        File file = new File("D:\\Work\\work\\logRevizor.txt");
+        FileWriter writer = new FileWriter(file, true);
+        LocalDateTime ldt;
+        String log;
 
         if(future2!=null) {
             ExecutorService executorService = Executors.newSingleThreadExecutor();
-            System.out.println("Сохраняем atomicInteger----->>" + atomicInteger.get());
             int ai = (int) atomicInteger.get();
             System.out.println("Сохраняем atomicInteger----->>" + ai);
             executorService.submit(callable(20));
-            while (t != 2) {
-               // System.out.println("Ждем таймер ");
-               // System.out.println("atomicInteger=== " + atomicInteger.get());
-                Thread.sleep(3000);
-                System.out.print("\r");
-
+            while (tt != 2) {
+                Thread.sleep(14000);
+                if(ai!= atomicInteger.get()){
+                    tt=1;
+                    break;
+                }
 
             }
-            System.out.println("Время вышло");
-            if (ai+100 > atomicInteger.get()) {
-                System.out.println("Поток завис. Требуется прерывание");
+            System.out.println("Таймер отработал");
+            if (ai== atomicInteger.get()) {
+                System.out.println("Поток завис. Требуется прерывание и перезапуск");
+                ldt=LocalDateTime.now();
+                log=ldt+ " Поток завис. Требуется прерывание  \n";
+                writer.write( log);
+                writer.flush();
+                writer.close();
+
+
                 future2.cancel(true);
+
+
+
                 } else {
                 System.out.println("поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
+                ldt=LocalDateTime.now();
+                log=ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n";
+                writer.write( log);
+                writer.flush();
+                writer.close();
             }
             System.out.println("atomicInteger=== " + atomicInteger.get());
 
@@ -48,6 +71,11 @@ public class Revisor {
         }else
         {
             System.out.println("поток не запущен");
+            ldt=LocalDateTime.now();
+            log=ldt+ " поток не запущен \n";
+            writer.write( log);
+            writer.flush();
+            writer.close();
         }
 
 
@@ -64,18 +92,18 @@ public class Revisor {
 
 
 
-                if (t == 1) {
-                    System.out.println("Ответ получен. Таймер остановлен");
+                if (tt == 1) {
+                    System.out.println("Поток в порядке. Таймер остановлен");
                     return 1;
                 }
                 //
                 System.out.print(i);
                 TimeUnit.SECONDS.sleep(1);
                 System.out.print("\r");
-              // System.out.print("\n  ***atomicInteger = "+ atomicInteger.get());
+
             }
             System.out.println("timeout error");
-            t = 2;
+            tt = 2;
             return 0;
 
 
