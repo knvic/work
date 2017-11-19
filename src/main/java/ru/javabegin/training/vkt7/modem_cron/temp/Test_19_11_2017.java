@@ -18,7 +18,7 @@ import java.util.List;
  * Created by user on 19.11.2017.
  */
 @Component
-@EnableScheduling
+//@EnableScheduling
 public class Test_19_11_2017 {
     @Qualifier("jpaCustomerService")
     @Autowired
@@ -29,7 +29,7 @@ public class Test_19_11_2017 {
 
     private Long customerID;
 
-    @Scheduled(fixedRate = 160000)
+//    @Scheduled(fixedRate = 160000)
     public void find_error(){
 
         Date date=new Date();
