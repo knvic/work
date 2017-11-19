@@ -1,5 +1,8 @@
 package ru.javabegin.training.vkt7.auxiliary_programs;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import ru.javabegin.training.vkt7.entities.Customer;
 
 import java.sql.Timestamp;
@@ -15,6 +18,8 @@ import static java.sql.Timestamp.valueOf;
 /**
  * Created by Николай on 14.11.2017.
  */
+
+@Service("jpaAuxiliaryService")
 public class AuxiliaryServiceImpl implements AuxiliaryService {
 
 
@@ -23,7 +28,7 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     public List<Date> from_the_beginning_of_month(Date date){
         LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
         LocalDateTime ldt=addTime(dateLocalDateTime,"22");
-        System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
+        //System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<Date>  dateList=new ArrayList<>();
         while(day.isBefore(ldt)){
@@ -38,7 +43,7 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     public List<String> from_the_beginning_of_month_str(Date date){
         LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
         LocalDateTime ldt=addTime(dateLocalDateTime,"22");
-        System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
+       // System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<String>  dateListStr=new ArrayList<>();
         while(day.isBefore(ldt)){
@@ -53,7 +58,7 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     @Override
     public LocalDate date_to_localDate(Date data){
         LocalDate dateLocalDate = data.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println("Перевели в  LocalDate " + dateLocalDate);
+       // System.out.println("Перевели в  LocalDate " + dateLocalDate);
 
         return dateLocalDate;
     }
@@ -61,7 +66,7 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     @Override
     public LocalDateTime date_to_localDateTime(Date data){
         LocalDateTime dateLocalDate = data.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        System.out.println("Перевели в  LocalDate " + dateLocalDate);
+    //    System.out.println("Перевели в  LocalDate " + dateLocalDate);
 
         return dateLocalDate;
     }
@@ -72,8 +77,8 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     public Date localDateTime_to_date(LocalDateTime ldt){
         ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
         Date output = Date.from(zdt.toInstant());
-        System.out.println("value of LocalDateTime: " + ldt);
-        System.out.println("value of Date: " + output);
+     //   System.out.println("value of LocalDateTime: " + ldt);
+      //  System.out.println("value of Date: " + output);
 
         return output;
     }

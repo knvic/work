@@ -1,5 +1,6 @@
 package ru.javabegin.training.vkt7.auxiliary_programs;
 
+import com.sun.jmx.snmp.Timestamp;
 import org.junit.*;
 import org.junit.Test;
 
@@ -19,8 +20,12 @@ public class AuxiliaryServiceImplTest {
         System.out.println("Вывод массива с датами");
         List<Date> dateList=auxiliaryService.from_the_beginning_of_month(input);
         for(Date data:dateList){
+
             System.out.println(data);
+            java.sql.Timestamp dd=auxiliaryService.date_TimeStamp(data);
+            System.out.println("ts"+ dd);
         }
+
     }
 
     @Test
@@ -61,7 +66,11 @@ public class AuxiliaryServiceImplTest {
 
     @Test
     public void date_TimeStamp() throws Exception {
-
+        Date input = new Date();
+        input=auxiliaryService.addTime(input,"23");
+        java.sql.Timestamp ts=auxiliaryService.date_TimeStamp(input);
+        System.out.println("data= "+input );
+        System.out.println("datatoTS= "+ts );
     }
 
     @Test

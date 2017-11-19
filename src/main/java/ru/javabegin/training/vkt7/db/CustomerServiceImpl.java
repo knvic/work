@@ -16,6 +16,7 @@ import javax.persistence.criteria.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Николай on 25.09.2017.
@@ -562,6 +563,25 @@ public class CustomerServiceImpl implements CustomerService {
 
         return result;
     }
+
+    @Transactional
+    @Override
+    public void deleteOperation(Long customerID, Long operationID){
+
+        Customer cust = findById(customerID);
+        Set<Operation> operationSet = cust.getOperationSet();
+        Operation toDelOperation = null;
+        for (Operation operation : operationSet) {
+            if (operation.getId().equals(operationID)) {
+                toDelOperation = operation;
+
+            }
+        }
+        operationSet.remove(toDelOperation);
+        save(cust);
+
+    }
+
 
 
     public List<Operation> getOperations(String name) {

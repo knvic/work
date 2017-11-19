@@ -104,7 +104,7 @@
                 <prop key="hibernate.max_fetch_depth">3</prop>
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
                 <prop key="hibernate.jdbc.batch_size">10</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
             </props>
         </property>
     </bean>
@@ -130,7 +130,7 @@
                 <prop key="hibernate.max_fetch_depth">3</prop>
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
                 <prop key="hibernate.jdbc.batch_size">10</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
             </props>
         </property>
     </bean>
@@ -155,7 +155,7 @@
                 <prop key="hibernate.max_fetch_depth">3</prop>
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
                 <prop key="hibernate.jdbc.batch_size">10</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
 
             </props>
         </property>
@@ -205,7 +205,7 @@
 
     <bean id="test_schCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="test_schJob" />
-        <property name="cronExpression" value="5 10 * * * ?" />
+        <property name="cronExpression" value="5 10 2 * * ?" />
     </bean>
 
 
@@ -251,17 +251,20 @@
         <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
        <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
         <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 58 21 * * ?"/>
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 59 21 * * ?"/>
+      <!--  <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 52 19 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 53 19 * * ?"/>
         <task:scheduled ref="run_t" method="t_run" cron="5 23 19 * * ?"/>
         <task:scheduled ref="run_t" method="t_run" cron="5 25 19 * * ?"/>
-        <task:scheduled ref="kill_t" method="t_kill" cron="25 58 21 * * ?"/>
-        <task:scheduled ref="kill_t" method="t_kill" cron="50 59 21 * * ?"/>
+        <task:scheduled ref="kill_t" method="t_kill" cron="25 52 19 * * ?"/>
+        <task:scheduled ref="kill_t" method="t_kill" cron="50 53 19 * * ?"/>
 
 
         <task:scheduled ref="revizor" method="Revisor" cron="10 37 19 * * ?"/>
         <task:scheduled ref="run_t" method="t_run" cron="20 37 19 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="25 37 19 * * ?"/>
+-->
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="10 5 11 * * ?"/>
+        <task:scheduled ref="revizor" method="Revisor" cron="* */15 * * * ?"/>
 
     </task:scheduled-tasks>
 
