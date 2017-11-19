@@ -1,6 +1,6 @@
 package ru.javabegin.training.vkt7.auxiliary_programs;
 
-import com.sun.jmx.snmp.Timestamp;
+//import com.sun.jmx.snmp.Timestamp;
 import org.junit.*;
 import org.junit.Test;
 
