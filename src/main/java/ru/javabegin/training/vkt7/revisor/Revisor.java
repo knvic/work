@@ -32,18 +32,18 @@ public class Revisor {
 
     public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
-        File file = new File("D:\\Work\\work\\logRevizor.txt");
+        File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
         FileWriter writer = new FileWriter(file, true);
         LocalDateTime ldt;
         String log;
 
         if(future1!=null) {
-            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
             int ai = (int) atomicInteger.get();
             System.out.println("Сохраняем atomicInteger----->>" + ai);
-            executorService.submit(callable(20));
+            executorService_revizor.submit(callable(120));
             while (tt != 2) {
-                Thread.sleep(14000);
+               // Thread.sleep(50000);
                 if(ai!= atomicInteger.get()){
                     tt=1;
                     break;
@@ -62,7 +62,7 @@ public class Revisor {
                 TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
                 testThread_kill_modem.t_kill();
 
-                Thread.sleep(120000);
+                Thread.sleep(100000);
 
                 modemService.get_daily_moth_cron();
 
@@ -81,7 +81,7 @@ public class Revisor {
             }
             System.out.println("atomicInteger=== " + atomicInteger.get());
 
-            executorService.shutdown();
+            executorService_revizor.shutdown();
         }else
         {
             System.out.println("поток не запущен");

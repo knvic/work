@@ -254,7 +254,6 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
 
                 if (step == 5) {
-
                     data = serialPort.readHexString(event.getEventValue());
                     System.out.print("Data (step " + step + "):->: " + data);
                     data2 = data;

@@ -773,20 +773,17 @@ type_to_error="daily";
                         stop=false;
                     }
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
-                    Thread.sleep(2000);
+                   // Thread.sleep(2000);
                     step=300;
                     temp="";
                     data="";
                     data2="";
                     step=5;
                     t=0;
-                    executor.submit(callable(7));
+                    executor.submit(callable(4));
                     serialPort.writeIntArray(request);
 
                 }
-
-
-
 
 
             }
@@ -2298,6 +2295,13 @@ t=1;
             t = 0;
             repeat = 0;
             executor.submit(callable(5));
+
+           /* while(repeat!=1000){
+                System.out.println("Тестовое зависание программы");
+                Thread.sleep(20000);
+
+            }*/
+
             serialPort.writeIntArray(request);
 
             atomicInteger.addAndGet(1);
@@ -2509,7 +2513,7 @@ t=1;
                         break;
                     }
                     System.out.println("\n Ответ на 3E CD не поступил. Ошибка по таймауту. Повторяем запрос");
-                    Thread.sleep(5000);
+                    //Thread.sleep(5000);
                     data="";
                     data2="";
                     temp = "";
@@ -2539,7 +2543,7 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    System.out.println("\n error=25.3F CD CRC");
+                    System.out.println("\n error=25.3E CD CRC");
                     error=25;
                     stop=false;
                 }
