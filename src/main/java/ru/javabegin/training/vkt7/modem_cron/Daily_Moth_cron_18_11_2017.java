@@ -25,18 +25,15 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
-import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.m;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
 /**
  * Created by Николай on 12.08.2017.
  */
 @Component
-public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.EventListener_cron {
+public class Daily_Moth_cron_18_11_2017 extends EventListener_cron {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
- public static AtomicInteger atomicInteger;
 
 
     public static String data;
@@ -66,7 +63,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
     private Map<Timestamp, List<Measurements> > total_moth_hashMap=new HashMap<>();
     private  Timestamp tstamp;
     private Timestamp timestamp_daily;
-    ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL;
+    EventListener_cron eL;
 
    private static int requestNum = 0;
    /*private static int[][] requests = {
@@ -79,8 +76,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
     public String daily_all_cycle(List<Customer> customerList,CustomerService customerService, OperationService operationService, Date date, int type ) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException {
 
-        atomicInteger=new AtomicInteger();
-        atomicInteger.addAndGet(1);
+
 
         List<String> service_information =new ArrayList<>();
         List<Timestamp> date_3ff6= new ArrayList<>();
@@ -135,7 +131,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
             eL=null;
         }
 
-         eL= new ru.javabegin.training.vkt7.modem_cron.EventListener_cron();
+         eL= new EventListener_cron();
 
 
         serialPort.addEventListener (eL); //Передаем экземпляр класса EventListener порту, где будет обрабатываться события. Ниже описан класс
@@ -153,10 +149,10 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
         //// Удаляем повторы DAILY ////
 
-        atomicInteger.addAndGet(1);
+
 
         for (int countCustomer=0;countCustomer<customerList.size();countCustomer++){
-            atomicInteger.addAndGet(1);
+
             Long id_c=customerList.get(countCustomer).getId();
             customer=customerList.get(countCustomer);
             System.out.println("FirstName()= = "+ customer.getFirstName());
@@ -251,7 +247,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
         }
         //// Конец удаления повторов DAILY ////
 
-        atomicInteger.addAndGet(1);
+
 
         for (int countCustomer=0;countCustomer<customerList.size();countCustomer++){
 
@@ -327,7 +323,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
 
         stop=true;
-            atomicInteger.addAndGet(1);
+
 
         while (stop!=false){
         try {
@@ -359,7 +355,7 @@ type_to_error="daily";
             System.out.println("\nпосылаем ATH");
             serialPort.writeBytes("ATH\r".getBytes());
 
-            atomicInteger.addAndGet(1);
+
             while(step==100&stop!=false){
 
                 if (data2.contains("OK")){
@@ -449,7 +445,7 @@ type_to_error="daily";
             }
 
 
-            atomicInteger.addAndGet(1);
+
 
 
 
@@ -507,7 +503,7 @@ type_to_error="daily";
 
 
 
-            atomicInteger.addAndGet(1);
+
 
 
 
@@ -534,7 +530,7 @@ type_to_error="daily";
 
 
 
-            atomicInteger.addAndGet(1);
+
 
             Thread.sleep(1000);
             System.out.println("\nНабираем номер");
@@ -667,7 +663,7 @@ type_to_error="daily";
 
             }
 
-            atomicInteger.addAndGet(1);
+
 
             Thread.sleep(1000);
             serialPort.setParams (SerialPort.BAUDRATE_9600,
@@ -712,7 +708,7 @@ type_to_error="daily";
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
             request=null;
             int[] request=new int[crc.size()];
           /*  for(int i=0;i<crc.size();i++ ){
@@ -773,23 +769,26 @@ type_to_error="daily";
                         stop=false;
                     }
                     System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
-                   // Thread.sleep(2000);
+                    Thread.sleep(2000);
                     step=300;
                     temp="";
                     data="";
                     data2="";
                     step=5;
                     t=0;
-                    executor.submit(callable(4));
+                    executor.submit(callable(7));
                     serialPort.writeIntArray(request);
 
                 }
 
 
+
+
+
             }
 
             Thread.sleep(2000);
-            atomicInteger.addAndGet(1);
+
 
 /**
  * 3F FE 1-й проход определение версии
@@ -835,7 +834,7 @@ type_to_error="daily";
 
 /**
  * Ждем начала приема длинных данных.
- */atomicInteger.addAndGet(1);
+ */
 
             while (recieve_all_byte==0&stop!=false){
                 if (t==2){
@@ -867,7 +866,7 @@ type_to_error="daily";
             System.out.println("\nДанные 3F FE (Версия сервера) поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE (Версия сервера 65 байт)");
 
-            atomicInteger.addAndGet(1);
+
                 step=7;
               while(step==7&stop!=false){
 
@@ -916,7 +915,7 @@ type_to_error="daily";
 /**  //////////////////////////////////////////////////
  * 3F F9  (S8) Запрос на чтение служебной информации ////
  */  //////////////////////////////////////////////////
-            atomicInteger.addAndGet(1);
+
 
             Thread.sleep(2000);
             System.out.println("\n Фoрмируем запрос 3F F9 Запрос на чтение служебной информации");
@@ -946,7 +945,7 @@ type_to_error="daily";
                 break;
             }
 
-            atomicInteger.addAndGet(1);
+
 
             System.out.println("\nЖдем получения всех данных после команды 3F F9 Запрос на чтение служебной информации");
 
@@ -984,7 +983,7 @@ type_to_error="daily";
 
                 }
             }
-            atomicInteger.addAndGet(1);
+
 t=1;
             System.out.println(" 3FF9 data2=="+ data2);
 
@@ -1022,7 +1021,7 @@ t=1;
 /**  ////////////////////////////////////////////////////////////////////////////
  * 3F FF  (s10->11) Запрос на запись перечня для чтениz. Требует подтверждения.//////
  */  ////////////////////////////////////////////////////////////////////////////
-            atomicInteger.addAndGet(1);
+
             //List<String> ff_n=new ArrayList<>();
             System.out.println("\nФормируем 3F FF (Запрос на запись перечня для чтение)");
             if(stop==false){
@@ -1092,7 +1091,7 @@ t=1;
             }
 
 
-            atomicInteger.addAndGet(1);
+
 
             t=0;
             repeat=0;
@@ -1146,7 +1145,7 @@ t=1;
 
             Thread.sleep(1000);
 
-            atomicInteger.addAndGet(1);
+
 
 /**       //////////////////////////////////////////////////////////////////////
  * 3F FE  (03)  s11 -> s12 -> 13 Запрос на чтение данных  ////////////////////////////////////////
@@ -1187,7 +1186,6 @@ t=1;
             z=0;
             executor.submit(callable(10));
             serialPort.writeIntArray(request);
-            atomicInteger.addAndGet(1);
 
 /**
  * Ждем начала приема длинных данных.
@@ -1225,7 +1223,7 @@ t=1;
             }
             System.out.println("\nДанные 3F FE поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE ");
-            atomicInteger.addAndGet(1);
+
             List<Properts> prop_specification=new ArrayList<>();
             step=12;
             while(step==12&stop!=false){
@@ -1252,7 +1250,6 @@ t=1;
 
             }
 
-            atomicInteger.addAndGet(1);
 
 /**  ////////////////////Класс  Properts_ready_Impl///////////////////////////////////
  * Формируем из общего массива свойств и массива единиц измерения и количества знаков
@@ -1282,7 +1279,7 @@ t=1;
 
 
 
-            atomicInteger.addAndGet(1);
+
 /**       //////////////////////////////////////////////////////////////////////
  * 3F F6  (03)  s13 -> s14 -> 15 Запрос «Чтение интервала дат»  //////////////////////
  */       //////////////////////////////////////////////////////////////////////
@@ -1315,7 +1312,7 @@ t=1;
             serialPort.writeIntArray(request);
 
 
-            atomicInteger.addAndGet(1);
+
 /**
  * Ждем начала приема длинных данных.
  */
@@ -1350,7 +1347,7 @@ t=1;
 
             System.out.println("\nДанные 3F F6 поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F F6 ");
-            atomicInteger.addAndGet(1);
+
             step=14;
             while(step==14&stop!=false){
 
@@ -1412,7 +1409,7 @@ t=1;
 /**  //////////////////////////////////////////////////
  * 3F FC (S17->18->19) Запрос на чтение перечня активных элементов данных ////
  */  //////////////////////////////////////////////////
-            atomicInteger.addAndGet(1);
+
             Thread.sleep(3000);
             System.out.println("\n Фoрмируем запрос 3F FC перечнь активных элементов данных");
             ff_n=null;
@@ -1483,7 +1480,7 @@ t=1;
 
                 }
             }
-            atomicInteger.addAndGet(1);
+
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -1513,7 +1510,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
 /**  ////////////////////Класс  MeasurementsServiceImpl///////////////////////////////////
  *                      MeasurementsServiceImpl
  * Формируем массивы для измерений
@@ -1549,7 +1546,7 @@ t=1;
 
             //List<String> ff_n=new ArrayList<>();
             System.out.println("\nФормируем 3F FF  Запрос на запись перечня для чтение");
-            atomicInteger.addAndGet(1);
+
 
             /**
              *
@@ -1603,7 +1600,7 @@ t=1;
                 break;
             }
 
-            atomicInteger.addAndGet(1);
+
 
             t=0;
             repeat=0;
@@ -1650,7 +1647,7 @@ t=1;
             }
 
             Thread.sleep(1000);
-            atomicInteger.addAndGet(1);
+
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -1681,7 +1678,7 @@ t=1;
 
 
 
-            atomicInteger.addAndGet(1);
+
 
             if (type==0) {
             /**  ////////////////////////////////////////////////////////////////////////////
@@ -1690,7 +1687,7 @@ t=1;
 
             //List<String> ff_n=new ArrayList<>();
             System.out.println("\nФормируем 3F FD Запрос на запись ТИПА значений");
-                atomicInteger.addAndGet(1);
+
 
             /**
              *
@@ -1741,7 +1738,7 @@ t=1;
                 break;
             }
 
-                atomicInteger.addAndGet(1);
+
 
             t = 0;
             repeat = 0;
@@ -1782,7 +1779,7 @@ t=1;
                 }
 
             }
-                atomicInteger.addAndGet(1);
+
             Thread.sleep(2000);
             if (stop == false) {
                 System.out.println("\n Получена команда STOP ");
@@ -1817,7 +1814,7 @@ t=1;
             ////////////// НАЧАЛО ЦИКЛА ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////// НАЧАЛО ЦИКЛА /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////// НАЧАЛО ЦИКЛА /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                atomicInteger.addAndGet(1);
+
             /**
              * Начинаем цикл из 24 опросов
              */
@@ -1827,7 +1824,6 @@ t=1;
                     System.out.println("\n Получена команда STOP ");
                     break;
                 }
-                atomicInteger.addAndGet(1);
                 String str_date = date_dd_MM_UU_HH.get(q);
                 System.out.println("i= " + q + " Дата и время для отсчета= " + str_date);
 
@@ -1844,7 +1840,7 @@ t=1;
                 /**  ////////////////////////////////////////////////////////////////////////////
                  * 3F FB  10  (s30 - >31) 4.4 Запрос на запись даты. Требует подтверждения.//////
                  */  ////////////////////////////////////////////////////////////////////////////
-                atomicInteger.addAndGet(1);
+
 
                 System.out.println("\nФормируем 3F FB  " + str_date + "      4.4 Запрос на запись даты");
 
@@ -1890,7 +1886,7 @@ t=1;
 
                 t = 0;
                 repeat = 0;
-                atomicInteger.addAndGet(1);
+
                 executor.submit(callable(6));
                 r_3fff = false;
                 while (step == 20) {
@@ -1932,7 +1928,7 @@ t=1;
                     System.out.println("\n Получена команда STOP ");
                     break;
                 }
-                atomicInteger.addAndGet(1);
+
 /**       //////////////////////////////////////////////////////////////////////
  * 3F FE  (03)  s11 -> s12 Запрос на чтение данных  ////////////////////////////////////////
  */
@@ -1961,7 +1957,7 @@ t=1;
                 executor.submit(callable(5));
                 serialPort.writeIntArray(request);
 
-                atomicInteger.addAndGet(1);
+
 /**
  * Ждем начала приема длинных данных.
  */
@@ -1995,7 +1991,7 @@ t=1;
                 }
                 t = 1;
 
-                atomicInteger.addAndGet(1);
+
                 System.out.println("\nДанные 3F FE (СУТОЧНЫЕ ) поступили.");
                 System.out.println("Ожидаем обработку принятых данных 3F FE ");
 
@@ -2039,7 +2035,7 @@ t=1;
 
                 }
 
-                atomicInteger.addAndGet(1);
+
                 System.out.println("q= " + q + " Вывход из цикла. Str_date= " + str_date + "step = " + step);
 //// закрываем цикл работы с набором часовых данных
                 if (stop == false) {
@@ -2052,14 +2048,13 @@ t=1;
 ////// закрываем цикл if при проверке типа type==0 Часовой сбор данных ////////////
         }
 
-            atomicInteger.addAndGet(1);
+
 
         if (type==1) {
 ////(!)(!)(!)(!)/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////Меняем тип запрашиваемго архива на суточный////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////type=1 /////////////////////////////////////////////////////////////////////////////////////////
             type_to_error="daily";
-            atomicInteger.addAndGet(1);
 
             /**  ////////////////////////////////////////////////////////////////////////////
              * 3F FD  10  (s20 - >21) Запрос на запись типа значения. Требует подтверждения.//////
@@ -2118,7 +2113,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
 
             step = 20;
             temp = "";
@@ -2162,7 +2157,7 @@ t=1;
                 }
 
             }
-            atomicInteger.addAndGet(1);
+
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2211,7 +2206,7 @@ t=1;
             Thread.sleep(1000);
 
 
-            atomicInteger.addAndGet(1);
+
             data2 = "";
             temp = "";
 
@@ -2265,7 +2260,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -2295,16 +2290,9 @@ t=1;
             t = 0;
             repeat = 0;
             executor.submit(callable(5));
-
-           /* while(repeat!=1000){
-                System.out.println("Тестовое зависание программы");
-                Thread.sleep(20000);
-
-            }*/
-
             serialPort.writeIntArray(request);
 
-            atomicInteger.addAndGet(1);
+
 /**
  * Ждем начала приема длинных данных.
  */
@@ -2338,7 +2326,7 @@ t=1;
             }
             t = 1;
 
-            atomicInteger.addAndGet(1);
+
             System.out.println("\nДанные 3F FE (СУТОЧЫЕ ) поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F FE ");
 
@@ -2346,7 +2334,6 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
             while (step == 22) {
 
 
@@ -2385,7 +2372,7 @@ t=1;
                 step = 60;
 
             }
-            atomicInteger.addAndGet(1);
+
 
             System.out.println("Дата для суточного архива= " + date_dd_MM_UU_HH.get(23));
 
@@ -2419,7 +2406,7 @@ t=1;
             System.out.println("//////////////////////////////////////////////////////////////////");
 
 
-            atomicInteger.addAndGet(1);
+
 
 
 
@@ -2458,7 +2445,6 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
             System.out.println("\n Формируем запрос 3E CD Чтение номера схемы измерений Тв1");
             ff_2=null;
             ff_2=send03Service.s_3ECD(number);
@@ -2499,7 +2485,7 @@ t=1;
 /**
  * Ждем начала приема длинных данных.
  */
-            atomicInteger.addAndGet(1);
+
             while (recieve_all_byte==0){
                 if (t==2){
                     repeat++;
@@ -2513,7 +2499,7 @@ t=1;
                         break;
                     }
                     System.out.println("\n Ответ на 3E CD не поступил. Ошибка по таймауту. Повторяем запрос");
-                    //Thread.sleep(5000);
+                    Thread.sleep(5000);
                     data="";
                     data2="";
                     temp = "";
@@ -2533,7 +2519,6 @@ t=1;
             System.out.println("\nДанные 3E CD(Тв1) Чтение номера схемы измерений Тв1. поступили.");
             System.out.println("Ожидаем обработку принятых данных 3E CD(Тв1) ");
             step=22;
-            atomicInteger.addAndGet(1);
             while(step==22){
 
 
@@ -2543,7 +2528,7 @@ t=1;
                 if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
                     step = 0;
                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                    System.out.println("\n error=25.3E CD CRC");
+                    System.out.println("\n error=25.3F CD CRC");
                     error=25;
                     stop=false;
                 }
@@ -2565,7 +2550,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
 
             /**       //////////////////////////////////////////////////////////////////////
              * 3F 5B  (03)   Чтение номера схемы измерений Тв2 ////////////////////////////////////////
@@ -2605,7 +2590,7 @@ t=1;
 
 /**
  * Ждем начала приема длинных данных.
- */atomicInteger.addAndGet(1);
+ */
 
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -2645,7 +2630,7 @@ t=1;
 
             System.out.println("\nДанные 3F 5B(Тв2) Чтение номера схемы измерений Тв2. поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F 5B(Тв2)  ");
-            atomicInteger.addAndGet(1);
+
             step=22;
             while(step==22){
 
@@ -2678,7 +2663,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
 
             /**       //////////////////////////////////////////////////////////////////////
              * 3F E9  (03)   Чтение номера активной базы данных ////////////////////////////////////////
@@ -2709,7 +2694,7 @@ t=1;
                 break;
             }
 
-            atomicInteger.addAndGet(1);
+
             recieve_all_byte=0;
             data="";
             temp="";
@@ -2757,7 +2742,7 @@ t=1;
                 System.out.println("\n Получена команда STOP ");
                 break;
             }
-            atomicInteger.addAndGet(1);
+
             System.out.println("\nДанные 3F E9  Чтение номера активной базы данных поступили.");
             System.out.println("Ожидаем обработку принятых данных 3F E9 .");
             step=22;
@@ -2794,7 +2779,7 @@ t=1;
                 break;
             }
 
-            atomicInteger.addAndGet(1);
+
             /////////////////////////////////////////////////////////////////
 
 
@@ -2891,7 +2876,7 @@ t=1;
             }
 
 
-            atomicInteger.addAndGet(1);
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -2954,7 +2939,7 @@ t=1;
 
 
 // Если ни одного измерения итоговых за месяц нет, то выполняем итоговые за месяц type=3
-            atomicInteger.addAndGet(1);
+
 
             //// Выполняем проверку на наличие записи итогового арзива в теплосчетчике. Проверяем дату начала суточного архтва и сравниваем с нашей датой
             Timestamp begin_work = date_3ff6.get(2);
@@ -2994,7 +2979,7 @@ t=1;
 ////(!)(!)(!)(!)/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////Меняем тип запрашиваемго архива на ИТОГОВЫЙ АРХИВ////////////////////////////////////////////////
 ////(!)(!)(!)(!)//////////////////////type=3 /////////////////////////////////////////////////////////////////////////////////////////
-                atomicInteger.addAndGet(1);
+
 
                 /**  ////////////////////////////////////////////////////////////////////////////
                  * 3F FD  10  (s20 - >21) Запрос на запись типа значения. Требует подтверждения.//////
@@ -3047,7 +3032,7 @@ t=1;
                     request[i] = Integer.parseInt(crc.get(i), 16);
                 }
 
-                atomicInteger.addAndGet(1);
+
                 System.out.println("\n посылаем запрос 3F FD Запрос на запись ТИПА значений.");
                 Thread.sleep(5000);
                 if (stop == false) {
@@ -3100,7 +3085,7 @@ t=1;
 
                 }
 
-                atomicInteger.addAndGet(1);
+
 
                 /**  ////////////////////////////////////////////////////////////////////////////
                  * 3F FB  10  (s30 - >31) 4.4 Запрос на запись даты. Требует подтверждения.//////
@@ -3117,7 +3102,7 @@ t=1;
 
 
 
-                atomicInteger.addAndGet(1);
+
 
                 List<String> command_3FFB = send10Service.s_3FFB(number, data_type3.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH")));
 
@@ -3148,7 +3133,7 @@ t=1;
                 step = 20;
                 data2 = "";
                 temp = "";
-                atomicInteger.addAndGet(1);
+
                 if (stop == false) {
                     System.out.println("\n Получена команда STOP ");
                     break;
@@ -3196,7 +3181,7 @@ t=1;
                     }
 
                 }
-                atomicInteger.addAndGet(1);
+
                 Thread.sleep(2000);
                 if (stop == false) {
                     System.out.println("\n Получена команда STOP ");
@@ -3207,7 +3192,7 @@ t=1;
 
 
 
-                atomicInteger.addAndGet(1);
+
 
                 /**       //////////////////////////////////////////////////////////////////////
                  * 3F FE  (03)  s11 -> s12 Запрос на чтение данных  ////////////////////////////////////////
@@ -3237,7 +3222,7 @@ t=1;
                 executor.submit(callable(5));
                 serialPort.writeIntArray(request);
 
-                atomicInteger.addAndGet(1);
+
 /**
  * Ждем начала приема длинных данных.
  */
@@ -3270,7 +3255,7 @@ t=1;
 
                 }
                 t = 1;
-                atomicInteger.addAndGet(1);
+
 
                 System.out.println("\nДанные 3F FE (ИТОГОВЫЕ ТЕКУЩИЕ) поступили.");
                 System.out.println("Ожидаем обработку принятых данных 3F FE ");
@@ -3302,7 +3287,7 @@ t=1;
 
 
 
-                    atomicInteger.addAndGet(1);
+
 
                     measurementsList_moth = recieve03Service.r_3FFE_Measurements(data2, current_measur);
 
@@ -3314,7 +3299,7 @@ t=1;
 
                 }
 
-                atomicInteger.addAndGet(1);
+
 
                 System.out.println("Записываем ИТОГОВЫЕ ТЕКУЩИЕ !!! Проверяем даты");
 
@@ -3347,7 +3332,7 @@ t=1;
 
 
 
-                atomicInteger.addAndGet(1);
+
 
 
             }
@@ -3379,7 +3364,7 @@ t=1;
         }
         break;
         }
-            atomicInteger.addAndGet(1);
+
 
         Thread.sleep(3000);
         System.out.println("\n Переходим в сервисный режим (+++)");
@@ -3409,7 +3394,7 @@ t=1;
 
         Timestamp timestamp_date_input;
 
-            atomicInteger.addAndGet(1);
+
 
     if(error==0&status.equals("OK")&moth==1&date_before==1) {
         System.out.println("В базе отсутствовал Итоговый за мессяц. Начинаем запись");
@@ -3488,7 +3473,7 @@ t=1;
 
     }
 
-            atomicInteger.addAndGet(1);
+
 if(error==0&status.equals("OK")&type==0) {
     System.out.println("Начинаем запись в базу ЧАСОВОГО");
     Thread.sleep(2000);
@@ -3801,7 +3786,7 @@ if(error==0&status.equals("OK")&type==0) {
     }
 
 
-    public void modem_init(SerialPort serialPort, ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL) throws SerialPortException, InterruptedException {
+    public void modem_init(SerialPort serialPort, EventListener_cron eL) throws SerialPortException, InterruptedException {
 
         if (serialPort.isOpened())
         {System.out.println(" Port открыт ");}

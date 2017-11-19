@@ -1,6 +1,11 @@
 package ru.javabegin.training.vkt7.revisor;
 
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
+import jssc.SerialPortException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import ru.javabegin.training.test_thread.TestThread_kill_modem;
+import ru.javabegin.training.vkt7.modem_run.ModemService;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,8 +14,10 @@ import java.time.LocalDateTime;
 import java.util.concurrent.*;
 
 
-import static ru.javabegin.training.test_thread.TestThread_run.atomicInteger;
+
 import static ru.javabegin.training.test_thread.TestThread_run.future2;
+import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.future1;
+import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.atomicInteger;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
 /**
@@ -18,25 +25,25 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  */
 public class Revisor {
  public static volatile int tt=0;
-    Future<String> future;
-    ExecutorService service;
-    Callable task1;
 
+    @Qualifier("modemServiceImpl")
+    @Autowired
+    ModemService modemService;
 
-    public void Revisor() throws InterruptedException, IOException {
+    public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
-        File file = new File("D:\\Work\\work\\logRevizor.txt");
+        File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
         FileWriter writer = new FileWriter(file, true);
         LocalDateTime ldt;
         String log;
 
-        if(future2!=null) {
-            ExecutorService executorService = Executors.newSingleThreadExecutor();
+        if(future1!=null) {
+            ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
             int ai = (int) atomicInteger.get();
             System.out.println("Сохраняем atomicInteger----->>" + ai);
-            executorService.submit(callable(20));
+            executorService_revizor.submit(callable(120));
             while (tt != 2) {
-                Thread.sleep(14000);
+               // Thread.sleep(50000);
                 if(ai!= atomicInteger.get()){
                     tt=1;
                     break;
@@ -52,8 +59,15 @@ public class Revisor {
                 writer.flush();
                 writer.close();
 
+                TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
+                testThread_kill_modem.t_kill();
 
-                future2.cancel(true);
+                Thread.sleep(100000);
+
+                modemService.get_daily_moth_cron();
+
+
+               // future2.cancel(true);
 
 
 
@@ -67,7 +81,7 @@ public class Revisor {
             }
             System.out.println("atomicInteger=== " + atomicInteger.get());
 
-            executorService.shutdown();
+            executorService_revizor.shutdown();
         }else
         {
             System.out.println("поток не запущен");
