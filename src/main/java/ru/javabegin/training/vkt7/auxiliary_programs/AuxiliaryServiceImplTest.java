@@ -1,9 +1,9 @@
 package ru.javabegin.training.vkt7.auxiliary_programs;
 
-import com.sun.jmx.snmp.Timestamp;
 import org.junit.*;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +14,23 @@ import static org.junit.Assert.*;
  * Created by user on 18.11.2017.
  */
 public class AuxiliaryServiceImplTest {
+    @Test
+    public void stringDate_to_TimeStamp() throws Exception {
+
+        String s = "19:11:17:23";
+       Timestamp date=auxiliaryService.stringDate_to_TimeStamp(s);
+
+    }
+
+    @Test
+    public void stringDate_to_Date() throws Exception {
+
+        String s = "19:11:17:23";
+        Date date=auxiliaryService.stringDate_to_Date(s);
+
+
+    }
+
     @Test
     public void from_the_beginning_of_month() throws Exception {
         Date input = new Date();
@@ -32,6 +49,7 @@ public class AuxiliaryServiceImplTest {
     public void from_the_beginning_of_month_str() throws Exception {
         System.out.println("Вывод массива со строками ");
         Date input = new Date();
+        System.out.println("Дата сегодня "+input);
         List<String> dateListStr=auxiliaryService.from_the_beginning_of_month_str(input);
 
         for(String data:dateListStr){

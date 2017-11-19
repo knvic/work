@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.db.ResultService;
@@ -16,6 +17,8 @@ import ru.javabegin.training.vkt7.entities.TestService;
 import ru.javabegin.training.vkt7.modem.*;
 import ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -65,6 +68,10 @@ ResultService resultService;
     @Autowired
     @Qualifier("jpaOperationService")
     private OperationService operationService;
+
+    @Autowired
+    private AuxiliaryService auxiliaryService;
+
 
 
     public static int getM() {
@@ -411,10 +418,17 @@ List<Object> connect=new ArrayList<>();*/
         Callable task = () -> {
             try {
                 System.out.println("работает поток "+ Thread.currentThread().getName());
-                System.out.println("переназываем поток  на modemRequiest");
-                Thread.currentThread().setName("modemRequiest");
+                File file = new File("D:\\Work\\work\\logRevizor.txt");
+                FileWriter writer = new FileWriter(file, true);
+                LocalDateTime ldt1=LocalDateTime.now();
+                String log=ldt1+ " Начал работать поток "+ Thread.currentThread().getName()+" \n";
+                writer.write( log);
+                writer.flush();
+                writer.close();
+                //System.out.println("переназываем поток  на modemRequiest");
+                //Thread.currentThread().setName("modemRequiest");
 
-                daily_moth_cron.daily_all_cycle(customerList, customerService, operationService, data, type);
+                daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);
                 return "123";
             }
             catch (InterruptedException e) {

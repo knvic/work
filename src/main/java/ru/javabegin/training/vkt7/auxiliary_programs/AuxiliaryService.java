@@ -21,6 +21,9 @@ public interface AuxiliaryService {
 
     List<String> from_the_beginning_of_month_str(Date date);
 
+    Date stringDate_to_Date(String stringDate);
+    Timestamp stringDate_to_TimeStamp(String stringDate);
+
 
 
 

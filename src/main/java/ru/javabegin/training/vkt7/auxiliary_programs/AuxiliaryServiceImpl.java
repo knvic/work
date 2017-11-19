@@ -10,6 +10,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -53,6 +54,35 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
         }
         return dateListStr;
     }
+
+
+
+    @Override
+    public Date stringDate_to_Date(String stringDate){
+        List<String> d = new ArrayList<String>(Arrays.asList(stringDate.split(":")));
+        LocalDateTime ldt2 = LocalDateTime.of(2000 + Integer.parseInt(d.get(2)), Integer.parseInt(d.get(1)), Integer.parseInt(d.get(0)), Integer.parseInt(d.get(3)), 0, 0);
+        Date date=localDateTime_to_date(ldt2);
+        System.out.println("Date = " + date);
+
+        System.out.println("LocalDateTime ldt2 = " + ldt2);
+        Timestamp timestamp_daily = Timestamp.valueOf(ldt2);
+        System.out.println(" timestamp для суточного измерения = " + timestamp_daily);
+
+        return date;
+
+    }
+
+    @Override
+    public Timestamp stringDate_to_TimeStamp(String stringDate){
+
+        List<String> d = new ArrayList<String>(Arrays.asList(stringDate.split(":")));
+        LocalDateTime ldt2 = LocalDateTime.of(2000 + Integer.parseInt(d.get(2)), Integer.parseInt(d.get(1)), Integer.parseInt(d.get(0)), Integer.parseInt(d.get(3)), 0, 0);
+        Timestamp timestamp_daily = Timestamp.valueOf(ldt2);
+        System.out.println(" timestamp для суточного измерения = " + timestamp_daily);
+
+        return timestamp_daily;
+    }
+
 
 
     @Override
