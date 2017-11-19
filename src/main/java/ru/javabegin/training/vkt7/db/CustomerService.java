@@ -39,6 +39,13 @@ public interface CustomerService {
 
     List<Operation> getOperationsByCustomerId(Long id);
 
+    /**
+     * Удаляет измерение по ID Customer и ID Operation
+     * @param customerID
+     * @param operationID
+     */
+    void deleteOperation(Long customerID, Long operationID);
+
 
 
 
