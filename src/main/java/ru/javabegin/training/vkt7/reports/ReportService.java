@@ -22,6 +22,7 @@ public interface ReportService {
     List<Object> getObject_fullround (List<Operation> operationList);
 
     List<Object> getObject (List<Operation> operationList);
+    List<Object> getObject_ns (List<Operation> operationList);
 
     List<DataObject> getDataObject (List<Operation> operationList);
 
