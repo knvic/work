@@ -440,6 +440,8 @@ public class ReportServiceImpl implements ReportService{
                 if(m.getText().equals("t1 Тв1")){
 
                     id_col.add(m.getText());
+
+
                     map.put(m.getText(),new Tupel(m.getText(),(new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))) );
 
                 }
@@ -687,6 +689,740 @@ public class ReportServiceImpl implements ReportService{
 
         return objectList;
     }
+
+
+    @Override
+    public List<Object> getObject_ns (List<Operation> operationList){
+        List<DataObject> dataList=new ArrayList<>();
+        List<Object> objectList=new ArrayList<>();
+
+        for(Operation operation:operationList){
+
+            List<Measurements> measurementsList=new ArrayList<>();
+            measurementsList.addAll(operation.getMeasurementsSet());
+            List<String> id_col = new ArrayList<>();
+            DataObject dataItem=new DataObject();
+            Map<String,Tupel> map=new HashMap<String,Tupel>();
+            Tupel tupel=new Tupel();
+
+            String qq= "НС_t1_1, НС_t2_1, НС_t3_1, НС_V1_1, НС_V2_1, НС_V3_1, НС_M1_1, НС_M2_1, НС_M3_1, НС_P1_1, НС_P2_1, НС_Mг_1, НС_Qо_1, НС_Qг_1, НС_dt_1, НС_tх, НС_ta, НС_BНP_1, НС_BOC_1, НС_G1_1, НС_G2_1, НС_G3_1, " +
+                       "НС_t1_2, НС_t2_2, НС_t3_2, НС_V1_2, НС_V2_2, НС_V3_2, НС_M1_2, НС_M2_2, НС_M3_2, НС_P1_2, НС_P2_2, НС_Mг_2, НС_Qо_2, НС_Qг_2, НС_dt_2, НС_BНP_2, НС_BOC_2, НС_G1_2, НС_G2_2, НС_G3_2";
+
+            for (Measurements m:measurementsList){
+
+
+                if(m.getText().equals("t1 Тв1")){
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t1_1");
+                    map.put("НС_t1_1", new Tupel("НС_t1_1", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+
+                if(m.getText().equals("t2 Тв1")){
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t2_1");
+                    map.put("НС_t2_1", new Tupel("НС_t2_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("t3 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t3_1");
+                    map.put("НС_t3_1", new Tupel("НС_t3_1", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("V1 Тв1")){
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V1_1");
+                    map.put("НС_V1_1", new Tupel("НС_V1_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("V2 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V2_1");
+                    map.put("НС_V2_1", new Tupel("НС_V2_1", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("V3 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V3_1");
+                    map.put("НС_V3_1", new Tupel("НС_V3_1", (ns_to_bd(m.getNs()))));
+                }
+                if(m.getText().equals("M1 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M1_1");
+                    map.put("НС_M1_1", new Tupel("НС_M1_1", (ns_to_bd(m.getNs()))));
+                }
+                if(m.getText().equals("M2 Тв1")){
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M2_1");
+                    map.put("НС_M2_1", new Tupel("НС_M2_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("M3 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M3_1");
+                    map.put("НС_M3_1", new Tupel("НС_M3_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("P1 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_P1_1");
+                    map.put("НС_P1_1", new Tupel("НС_P1_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("P2 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_P2_1");
+                    map.put("НС_P2_1", new Tupel("НС_P2_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("Mг Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Mг_1");
+                    map.put("НС_Mг_1", new Tupel("НС_Mг_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("Qо Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Qо_1");
+                    map.put("НС_Qо_1", new Tupel("НС_Qо_1", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("Qг Тв1")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Qг_1");
+                    map.put("НС_Qг_1", new Tupel("НС_Qг_1", (ns_to_bd(m.getNs()))));
+
+                }
+
+                if(m.getText().equals("dt Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_dt_1");
+                    map.put("НС_dt_1", new Tupel("НС_dt_1", (ns_to_bd(m.getNs()))));
+
+                }
+
+                if(m.getText().equals("tх")){
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_tх");
+                    map.put("НС_tх", new Tupel("НС_tх", (ns_to_bd(m.getNs()))));
+
+
+
+
+                }
+                if(m.getText().equals("ta")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_ta");
+                    map.put("НС_ta", new Tupel("НС_ta", (ns_to_bd(m.getNs()))));
+
+
+                }
+
+                if(m.getText().equals("BНP Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_BНP_1");
+                    map.put("НС_BНP_1", new Tupel("НС_BНP_1", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("BOC Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_BOC_1");
+                    map.put("НС_BOC_1", new Tupel("НС_BOC_1", (ns_to_bd(m.getNs()))));
+
+                }
+                if(m.getText().equals("G1 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G1_1");
+                    map.put("НС_G1_1", new Tupel("НС_G1_1", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("G2 Тв1")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G2_1");
+                    map.put("НС_G2_1", new Tupel("НС_G2_1", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("G3 Тв1")){
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G3_1");
+                    map.put("НС_G3_1", new Tupel("НС_G3_1", (ns_to_bd(m.getNs()))));
+
+
+                }
+
+
+                if(m.getText().equals("t1 Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t1_2");
+                    map.put("НС_t1_2", new Tupel("НС_t1_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("t2 Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t2_2");
+                    map.put("НС_t2_2", new Tupel("НС_t2_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("t3 Тв2")){
+
+//
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_t3_2");
+                    map.put("НС_t3_2", new Tupel("НС_t3_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("V1 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V1_2");
+                    map.put("НС_V1_2", new Tupel("НС_V1_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("V2 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V2_2");
+                    map.put("НС_V2_2", new Tupel("НС_V2_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("V3 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_V3_2");
+                    map.put("НС_V3_2", new Tupel("НС_V3_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("M1 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M1_2");
+                    map.put("НС_M1_2", new Tupel("НС_M1_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("M2 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M2_2");
+                    map.put("НС_M2_2", new Tupel("НС_M2_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("M3 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_M3_2");
+                    map.put("НС_M3_2", new Tupel("НС_M3_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("P1 Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_P1_2");
+                    map.put("НС_P1_2", new Tupel("НС_P1_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("P2 Тв2")){
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_P2_2");
+                    map.put("НС_P2_2", new Tupel("НС_P2_2", (ns_to_bd(m.getNs()))));
+
+
+
+
+                }
+                if(m.getText().equals("Mг Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Mг_2");
+                    map.put("НС_Mг_2", new Tupel("НС_Mг_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("Qо Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Qо_2");
+                    map.put("НС_Qо_2", new Tupel("НС_Qо_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("Qг Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(4, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_Qг_2");
+                    map.put("НС_Qг_2", new Tupel("НС_Qг_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+
+                if(m.getText().equals("dt Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_dt_2");
+                    map.put("НС_dt_2", new Tupel("НС_dt_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+
+
+                if(m.getText().equals("BНP Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_BНP_2");
+                    map.put("НС_BНP_2", new Tupel("НС_BНP_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("BOC Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(1, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_BOC_2");
+                    map.put("НС_BOC_2", new Tupel("НС_BOC_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+                if(m.getText().equals("G1 Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G1_2");
+                    map.put("НС_G1_2", new Tupel("НС_G1_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("G2 Тв2")){
+
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G2_2");
+                    map.put("НС_G2_2", new Tupel("НС_G2_2", (ns_to_bd(m.getNs()))));
+
+
+                }
+                if(m.getText().equals("G3 Тв2")){
+
+
+
+                    id_col.add(m.getText());
+                    if (m.getMeasurText()!=null) {
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN))));
+                    }else{
+                        map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                    }
+                    //Добавляем нештатные ситуаии
+                    id_col.add("НС_G3_2");
+                    map.put("НС_G3_2", new Tupel("НС_G3_2", (ns_to_bd(m.getNs()))));
+
+
+
+                }
+
+
+                System.out.println("map.size= "+map.size());
+                System.out.println("id_col.size= "+id_col.size());
+
+            }
+
+            dataItem.setOptionalValues(map);
+            dataItem.setData(operation.getChronological());
+            dataList.add(dataItem);
+            objectList.add(sort_ns(id_col));
+
+        }
+
+        System.out.println("dataList.size= "+dataList.size());
+
+
+
+        objectList.add(0,dataList);
+
+
+
+        return objectList;
+    }
+
+
 
 
     @Override
@@ -976,5 +1712,43 @@ public class ReportServiceImpl implements ReportService{
         return result;
 
     }
+
+    public List<String> sort_ns (List<String> list){
+        //// Делаем соритровку по списку
+        String qq="t1 Тв1,t2 Тв1,t3 Тв1,V1 Тв1,V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, P1 Тв1, P2 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, dt Тв1, tх, ta, BНP Тв1, BOC Тв1, G1 Тв1, G2 Тв1, G3 Тв1, t1 Тв2, t2 Тв2, t3 Тв2, V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, P1 Тв2, P2 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, dt Тв2, BНP Тв2, BOC Тв2, G1 Тв2, G2 Тв2, G3 Тв2" +
+                "НС_t1_1,НС_t2_1,НС_t3_1,НС_V1_1,НС_V2_1 НС_V3_1, НС_M1_1, НС_M2_1, НС_M3_1, НС_P1_1, НС_P2_1, НС_Mг_1, " +
+                "НС_Qо_1, НС_Qг_1, НС_dt_1, НС_tх, НС_ta, НС_BНP_1, НС_BOC_1, НС_G1_1, НС_G2_1, НС_G3_1, НС_t1_2, НС_t2_2, НС_t3_2, НС_V1_2, НС_V2_2, НС_V3_2, НС_M1_2, НС_M2_2, НС_M3_2, НС_P1_2, НС_P2_2, НС_Mг_2, НС_Qо_2, НС_Qг_2, НС_dt_2, НС_BНP_2, НС_BOC_2, НС_G1_2, НС_G2_2, НС_G3_2";
+
+        List<String> et = new ArrayList<>(Arrays.asList(qq.replace(", ",",").split( ",")));
+        List<String> result = new LinkedList<>();
+
+        for (int i=0; i<et.size(); i++){
+            for (String w:list){
+
+                if(w.equals(et.get(i))){
+
+                    if(et.get(i).equals("t1 Тв1")){
+                        System.out.println("eсть" );}
+                    result.add(w);
+                }
+
+
+            }
+
+        }
+        return result;
+
+    }
+
+    /**
+     * Перевol пришедшей нештатной ситуации в BigDecimal
+     * @param ns HEX код нештатной ситуации
+     * @return
+     */
+    public BigDecimal ns_to_bd(String ns){
+        return new BigDecimal(Integer.toString(Integer.parseInt(ns,16)));
+
+    }
+
 
 }

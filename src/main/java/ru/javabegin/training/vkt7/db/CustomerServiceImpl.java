@@ -370,6 +370,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
         criteriaQuery.where(criteria);
+        criteriaQuery.orderBy(cb.asc(contactRoot.get(Operation_.chronological)));
 
         List<Operation> result=em.createQuery(criteriaQuery).getResultList();
         return result;

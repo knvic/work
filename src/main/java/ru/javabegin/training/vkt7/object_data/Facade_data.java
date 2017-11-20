@@ -684,7 +684,8 @@ List<Archive> temp= new ArrayList<>();
         //operations= customerService.getOperationsByCustomerId(id);
 
 
-        operations=operationService.findOperationByIdCustomer(id_Customer);
+        //operations=operationService.findOperationByIdCustomer(id_Customer);
+        operations= customerService.findOperation_daily(id_Customer,null , null, null);
         return operations;
     }
 

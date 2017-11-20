@@ -8,12 +8,12 @@ import static java.math.BigDecimal.ROUND_CEILING;
 /**
  * Created by Николай on 27.10.2017.
  */
-public class Test_round {
+public class Test_round_temp {
 
     public static void main (String[] args) {
 
 
-        double a= 0.3333224441;
+    /*    double a= 0.3333224441;
         System.out.println(" число =  "+ a);
         BigDecimal a1= new BigDecimal(a);
         a1= a1.setScale(4,ROUND_CEILING);
@@ -60,9 +60,17 @@ public class Test_round {
         System.out.println(" из String =  "+ b);
         b=b.movePointRight(3);
         System.out.println(" из String =  "+ b);
+*/
+        String qw="0";
+        BigDecimal bqw = new BigDecimal(qw).setScale(5, RoundingMode.HALF_EVEN);
 
-        String qw="";
-        BigDecimal bqw = new BigDecimal(qw);
+        System.out.println(" из String =  "+bqw);
+        String model = Integer.toString(Integer.parseInt("FF",16));
+        System.out.println(" из String =  "+model);
+        BigDecimal bqw1 = new BigDecimal(model);
+
+        System.out.println(" из String =  "+bqw1);
+
 
 
 
