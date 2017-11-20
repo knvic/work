@@ -6,7 +6,6 @@ import jssc.SerialPortList;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
-import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
@@ -20,7 +19,6 @@ import ru.javabegin.training.vkt7.send.Send03ServiceImpl;
 import ru.javabegin.training.vkt7.send.Send10ServiceImpl;
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.time.*;
@@ -30,14 +28,13 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.m;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
 /**
  * Created by Николай on 12.08.2017.
  */
 @Component
-public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.EventListener_cron {
+public class Daily_Moth_and_Hour_20_11_2017 extends EventListener_cron {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
 
@@ -71,7 +68,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
     private  List<Date> dateList;
     private  Timestamp tstamp;
     private Timestamp timestamp_daily;
-    ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL;
+    EventListener_cron eL;
     private File log_revizor;
     private File log_cron;
 
@@ -84,7 +81,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
 
 
-    public String daily_all_cycle(List<Customer> customerList, CustomerService customerService, AuxiliaryService auxiliaryService, Date date, int type ) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
+    public String daily_all_cycle(List<Customer> customerList, CustomerService customerService, AuxiliaryService auxiliaryService, Date date, int type ) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException {
         log_revizor = new File("C:\\Work\\Java\\work\\logRevizor.txt");
         log_cron=new File("C:\\Work\\Java\\work\\logCron.txt");
         atomicInteger=new AtomicInteger();
@@ -143,7 +140,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
             eL=null;
         }
 
-         eL= new ru.javabegin.training.vkt7.modem_cron.EventListener_cron();
+         eL= new EventListener_cron();
 
 
         serialPort.addEventListener (eL); //Передаем экземпляр класса EventListener порту, где будет обрабатываться события. Ниже описан класс
@@ -1561,7 +1558,376 @@ t=1;
 
             atomicInteger.addAndGet(1);
 
+            if (type==0) {
+            /**  ////////////////////////////////////////////////////////////////////////////
+             * 3F FD  10  (s20 - >21) Запрос на запись типа значения. Требует подтверждения.//////
+             */  ////////////////////////////////////////////////////////////////////////////
 
+            //List<String> ff_n=new ArrayList<>();
+            System.out.println("\nФормируем 3F FD Запрос на запись ТИПА значений");
+                atomicInteger.addAndGet(1);
+
+            /**
+             *
+             * @param number номер узла ДОЛЖЕН БЫТЬ INTEGER
+             * @param type тип измерений. (в данный момент "текущие" - 4) ДОЛЖЕН БЫТЬ INTEGER
+             * @return Массив строки команды
+             * 1 объект
+             */
+            command_3FFD = send10Service.s_3FFD(number, 0);
+
+            System.out.println("\n Полученная команда после добавления всего");
+
+            command_3FFD.forEach(p -> System.out.print(p + " "));
+
+            if (stop == false) {
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
+            /**
+             * Получили строку для получения данных по измерению "текущие"
+             * добавляем контрольную сумму CRC
+             * получаем массив crc - полную строку с контрольной cуммой
+             */
+
+            crc = crc16Service.crc16_t(command_3FFD);
+            System.out.println("\n Добавили контрольную сумму");
+            crc.forEach(p -> System.out.print(p + " "));
+            System.out.println("\n command +CRC = ");
+            for (int i = 0; i < crc.size(); i++) {
+                System.out.print(crc.get(i) + " ");
+            }
+            System.out.println();
+
+
+            request = null;
+            request = new int[crc.size()];
+
+            for (int i = 0; i < crc.size(); i++) {
+                request[i] = Integer.parseInt(crc.get(i), 16);
+            }
+
+
+            System.out.println("\n посылаем запрос 3F FD Запрос на запись ТИПА значений.");
+            Thread.sleep(5000);
+            if (stop == false) {
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
+                atomicInteger.addAndGet(1);
+
+            t = 0;
+            repeat = 0;
+            executor.submit(callable(3));
+            r_3fff = false;
+            step=20;
+            serialPort.writeIntArray(request);
+            while (step == 20) {
+                if (data2.contains("3F FD ")) {
+                    t = 1;
+                    //System.out.println("После запроса 3F FF_n ");
+                    System.out.println("Запрс 3F FD; data2 = " + data2);
+                    r_3fff = recieve10Service.r_3FFD(data2);
+                }
+                if (r_3fff) {
+                    System.out.println("\n Команда 3F FD (Запрос на запись ТИПА прошла. Принятые данные ::  " + data2);
+                    Thread.sleep(1000);
+                    data2 = "";
+                    step = 21;
+                    System.out.println();
+                }
+
+                if (t == 2) {
+                    repeat++;
+                    if (repeat == 6) {
+                        step = 0;
+
+                        System.out.println("\n Ответ не поступил. Ошибка по таймауту.");
+                        System.out.println("\n error=21.3F FD TimeOut");
+                        error = 21;
+                        stop = false;
+                    }
+
+                    System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                    serialPort.writeIntArray(request);
+                    t = 0;
+                    executor.submit(callable(4));
+                }
+
+            }
+                atomicInteger.addAndGet(1);
+            Thread.sleep(2000);
+            if (stop == false) {
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
+            /**
+             * Тестируем последовательное считываение часовых показаний за сутки
+             *
+             * Получаем массив строк-даты с часами для передачи в теплосчтечик
+             */
+
+
+          /*  LocalDateTime ldt_d1 = LocalDateTime.of(2017, 10, 4, 0, 0, 0);
+            System.out.println("Создали дату  LocalDateTime = "+ldt_d1);
+            ZonedDateTime zdt = ldt_d1.atZone(ZoneId.systemDefault());
+            Date output = Date.from(zdt.toInstant());
+            System.out.println("Перевели в  Date: " + output);
+            Instant date_time = output.toInstant();
+            LocalDateTime ldt = LocalDateTime.ofInstant(date_time, ZoneId.systemDefault());
+            System.out.println("Перевели обратно в  LocalDateTime =" + ldt);
+            // String date_str=ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
+            String date_str=ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu"));
+            System.out.println("ddd = "+date_str);
+            //List<String> date_dd_MM_UU_HH = new ArrayList<String>(Arrays.asList(date_str.split(":")));*/
+
+
+
+            // for (String str_date: date_dd_MM_UU_HH) {
+
+
+            ////////////// НАЧАЛО ЦИКЛА ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////// НАЧАЛО ЦИКЛА /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////// НАЧАЛО ЦИКЛА /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                atomicInteger.addAndGet(1);
+            /**
+             * Начинаем цикл из 24 опросов
+             */
+            for (int q = 0; q < date_dd_MM_UU_HH.size(); q++) {
+
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+                atomicInteger.addAndGet(1);
+                String str_date = date_dd_MM_UU_HH.get(q);
+                System.out.println("i= " + q + " Дата и время для отсчета= " + str_date);
+
+                // формируем timestamp из строки для записи в хеш с полученными часовыми данными
+
+
+                List<String> d = new ArrayList<String>(Arrays.asList(str_date.split(":")));
+                LocalDateTime ldt2 = LocalDateTime.of(2000 + Integer.parseInt(d.get(2)), Integer.parseInt(d.get(1)), Integer.parseInt(d.get(0)), Integer.parseInt(d.get(3)), 0, 0);
+                System.out.println("LocalDateTime ldt2 = " + ldt2);
+                Timestamp timestamp = Timestamp.valueOf(ldt2);
+                System.out.println(" timestamp = " + timestamp);
+
+
+                /**  ////////////////////////////////////////////////////////////////////////////
+                 * 3F FB  10  (s30 - >31) 4.4 Запрос на запись даты. Требует подтверждения.//////
+                 */  ////////////////////////////////////////////////////////////////////////////
+                atomicInteger.addAndGet(1);
+
+                System.out.println("\nФормируем 3F FB  " + str_date + "      4.4 Запрос на запись даты");
+
+
+                List<String> command_3FFB = send10Service.s_3FFB(number, str_date);
+
+                System.out.println("\n Полученная команда после добавления всего");
+
+                command_3FFB.forEach(p -> System.out.print(p + " "));
+                /**
+                 * Получили строку для получения данных по измерению "текущие"
+                 * добавляем контрольную сумму CRC
+                 * получаем массив crc - полную строку с контрольной cуммой
+                 */
+                crc = crc16Service.crc16_t(command_3FFB);
+                System.out.println("\n Добавили контрольную сумму");
+                //crc.forEach(p -> System.out.print(p + " "));
+                System.out.println("\n command +CRC = ");
+                for (int i = 0; i < crc.size(); i++) {
+                    System.out.print(crc.get(i) + " ");
+                }
+                System.out.println();
+
+
+                request = null;
+                request = new int[crc.size()];
+
+                for (int i = 0; i < crc.size(); i++) {
+                    request[i] = Integer.parseInt(crc.get(i), 16);
+                }
+                step = 20;
+                data2 = "";
+                temp = "";
+
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+                System.out.println("\n посылаем запрос 3F FB" + str_date + "  4.4 Запрос на запись даты.");
+                Thread.sleep(5000);
+                serialPort.writeIntArray(request);
+
+
+                t = 0;
+                repeat = 0;
+                atomicInteger.addAndGet(1);
+                executor.submit(callable(6));
+                r_3fff = false;
+                while (step == 20) {
+                    if (data2.contains("3F FB ")) {
+                        t = 1;
+                        //System.out.println("После запроса 3F FF_n ");
+                        System.out.println("Запрс 3F FB;" + str_date + " data2 = " + data2);
+                        r_3fff = recieve10Service.r_3FFB(data2);
+                    }
+                    if (r_3fff) {
+                        System.out.println("\n Команда 3F FB (4.4 Запрос на запись даты Принятые данные ::  " + data2);
+                        Thread.sleep(1000);
+                        data2 = "";
+                        step = 150;
+                        System.out.println();
+                    }
+
+                    if (t == 2) {
+                        repeat++;
+                        if (repeat == 6) {
+                            step = 0;
+
+                            System.out.println("\n Ответ не поступил." + str_date + " Ошибка по таймауту.");
+                            System.out.println("\n error=22.3F FB TimeOut");
+                            error = 22;
+                            stop = false;
+                        }
+
+                        System.out.println("\n Ответ не поступил." + str_date + " Ошибка по таймауту. Повторяем запрос");
+                        serialPort.writeIntArray(request);
+                        t = 0;
+                        executor.submit(callable(6));
+                    }
+
+                }
+
+                Thread.sleep(2000);
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+                atomicInteger.addAndGet(1);
+/**       //////////////////////////////////////////////////////////////////////
+ * 3F FE  (03)  s11 -> s12 Запрос на чтение данных  ////////////////////////////////////////
+ */
+                //////////////////////////////////////////////////////////////////////
+
+                System.out.println("\n Формируем запрос 3F FE Запрос на чтение данных" + str_date);
+                ff_2 = null;
+                ff_2 = send03Service.s_3FFE(number);
+                //System.out.println();
+                crc = crc16Service.crc16_t(ff_2);
+                request = null;
+                request = new int[crc.size()];
+                //System.out.println("\n crc size = "+ crc.size());
+                for (int i = 0; i < crc.size(); i++) {
+                    request[i] = Integer.parseInt(crc.get(i), 16);
+                    // System.out.print(+i+":"+request[i]+" ");
+                }
+                //System.out.println("\n request size = "+ request.length);
+                Thread.sleep(5000);
+                System.out.println("\nЖдем получения всех данных после команды 3F FE   " + str_date);
+                data2 = "";
+                step = 21;
+                recieve_all_byte = 0;
+                t = 0;
+                repeat = 0;
+                executor.submit(callable(5));
+                serialPort.writeIntArray(request);
+
+                atomicInteger.addAndGet(1);
+/**
+ * Ждем начала приема длинных данных.
+ */
+                System.out.println("\n проверяем работу получения    " + str_date + " step = " + step);
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+
+                while (recieve_all_byte == 0) {
+                    if (t == 2) {
+                        repeat++;
+                        if (repeat == 6) {
+                            step = 0;
+
+                            System.out.println("\n Ответ не поступил 3F FE(ТЕКУЩИЕ). Ошибка по таймауту.");
+                            System.out.println("\n error=23.3F FE TimeOut");
+                            error = 23;
+                            stop = false;
+                        }
+                        System.out.println("\n Ответ на 3F FE  " + str_date + " не поступил. Ошибка по таймауту. Повторяем запрос");
+                        temp = "";
+                        z = 0;
+                        t = 0;
+                        data2 = "";
+                        serialPort.writeIntArray(request);
+
+                        executor.submit(callable(4));
+                    }
+
+                }
+                t = 1;
+
+                atomicInteger.addAndGet(1);
+                System.out.println("\nДанные 3F FE (СУТОЧНЫЕ ) поступили.");
+                System.out.println("Ожидаем обработку принятых данных 3F FE ");
+
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+                while (step == 22) {
+
+
+                    System.out.println("Принятая строка 3F FE :: " + data2);
+                    //System.out.println("\n Проверяем контрольную сумму :: " +crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})")))));
+                    //Проверяем контрольную сумму. Если !=true то закрываем порт
+                    if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList(data2.replace(" ", "").split("(?<=\\G.{2})")))) != true) {
+                        step = 0;
+                        System.out.println("\n Ошибочная контрольная сумма CRC16 ");
+                        Thread.sleep(2000);
+                        serialPort.writeBytes("+++".getBytes());
+                        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN |
+                                SerialPort.FLOWCONTROL_RTSCTS_OUT);
+                        Thread.sleep(1000);
+                        serialPort.writeBytes("ATH\r".getBytes());
+                        System.out.println("\n Закрываем порт" + data2);
+                        serialPort.closePort();
+                    }
+
+                    System.out.println("Контрольная сумма верна ");
+
+                    // Получаем массив типа <Measurements> с единицами измерения и количеством знаков ранее в ранее посланном запросе
+                    //свойств на переменных для чтения
+
+                    //prop_specification = recieve03Service.r_3FFE(data2,prop_session);
+
+                    System.out.println("размер measurementsList до =" + measurementsList.size());
+                    measurementsList = recieve03Service.r_3FFE_Measurements(data2, current_measur);
+                    System.out.println("обработка завершена");
+                    System.out.println("размер measurementsList после =" + measurementsList.size());
+                    Thread.sleep(1000);
+                    System.out.println("размер measurementsList после через 1с=" + measurementsList.size());
+                    step = 60;
+
+                }
+
+                atomicInteger.addAndGet(1);
+                System.out.println("q= " + q + " Вывход из цикла. Str_date= " + str_date + "step = " + step);
+//// закрываем цикл работы с набором часовых данных
+                if (stop == false) {
+                    System.out.println("\n Получена команда STOP ");
+                    break;
+                }
+                hashMap.put(timestamp, measurementsList);
+            }
+
+////// закрываем цикл if при проверке типа type==0 Часовой сбор данных ////////////
+        }
+
+            atomicInteger.addAndGet(1);
 
         if (type==1) {
 ////(!)(!)(!)(!)/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1706,28 +2072,16 @@ t=1;
                 long customerID = customer.getId();
                 List<Operation> operationList = customerService.findOperation_daily(customerID, auxiliaryService.date_TimeStamp(day), "daily", "OK");
                 if (operationList.size() > 0) {
-
                     System.out.println("CUSTOMER " + customer.getFirstName() + " Измерения за " + day + " есть. Размер массива = " + operationList.size());
-                    auxiliaryService.saveMessage(log_cron,"CUSTOMER " + customer.getFirstName() + " Измерения за " + day + " есть. Размер массива = " + operationList.size());
 
                     for (Operation o : operationList) {
                         System.out.println("getChronological() = " + o.getChronological() + "getCustomer() = " + o.getCustomer() + "getStatus() = " + o.getStatus());
-                    }
-
-                   if(operationList.size()>1){ auxiliaryService.saveMessage(log_cron," Есть дублированные измерения " + day + " размер массива = " + operationList.size());}
-                    for (int i = 1; i < operationList.size(); i++) {
-                        if (operationList.get(i) != null) {
-                            customerService.deleteOperation(customerID, operationList.get(i).getId());
-                        } else {
-                            System.out.println("operationList.get(i)== NULL . ДУБЛИРОВАНИЕ ОТСУТСТВУЕТ");
-                        }
                     }
 
 
                 } else {
                     System.out.println("Измерений за " + day + " НЕТ. Размер массива = " + operationList.size());
                     System.out.println("CUSTOMER " + customer.getFirstName() + " Дата " + day + " <<<----- НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЯ!!!!!!!!!!!!!");
-                    auxiliaryService.saveMessage(log_cron,"CUSTOMER " + customer.getFirstName() + " Дата " + day + " <<<----- НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЯ!!!!!!!!!!!!!");
 
 
 
@@ -3359,7 +3713,7 @@ if(error==0&status.equals("OK")&type==0) {
     }
 
 
-    public void modem_init(SerialPort serialPort, ru.javabegin.training.vkt7.modem_cron.EventListener_cron eL) throws SerialPortException, InterruptedException {
+    public void modem_init(SerialPort serialPort, EventListener_cron eL) throws SerialPortException, InterruptedException {
 
         if (serialPort.isOpened())
         {System.out.println(" Port открыт ");}
