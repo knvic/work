@@ -1,879 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_19_11_2017.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/log4j.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/IndexController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Contact.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/ContactTelDetail_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Contact_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Content_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/CustomerDetails.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Hobby.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/Hobby_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/SpringJPASample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/SpringJPASample_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/projections/Content_p.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/projections/Projection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/projections/Projection1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean14$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean14$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/db/test/TestBean9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/enums/SearchType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/interceptors/CheckUserInterceptor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/BasicView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/Facade$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/Facade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/ListenerView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/SearchCriteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/SelectionContact.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/SelectionView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/User1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/objects/Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/processors/MyBeanPostProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/AddUserSec.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/Facade_sec$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/Facade_sec.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/MyUsDet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/SecurityService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/SecurityServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/security/SecurityuserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/servlets/PdfContent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/servlets/ShowImage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/DateAPITest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/DateParseFormaеTes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_Date_to_LocalDateTime_09_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_06_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_06_10_v1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_09_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_14_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_28_09.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_28_09_v1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_25_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_26_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/temp_datatime/test_datatime_DayOfWeek_12_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/EventListener_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/Crc16/Crc16Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/ResultService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/db/ResultServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Customer_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Measurements.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Measurements_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Operation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Operation_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Result.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Result_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/TestService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/TestServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/entities/Test_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/measurements/MeasurementsService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/measurements/MeasurementsServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/EventListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/Facade_customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/Facade_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/SearchCriteria_cust.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/SearchCriteria_oper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/Selection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/SelectionCustomer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/SelectionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object/Set_cust.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/Projection_mesurements.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_modem/Facade_modem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_modem/SearchCriteria_modem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_modem/SelectionModem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_reports/Facade_reports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_reports/SearchCriteria_reports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/object_reports/SelectionReports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Parser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properts_ready.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/Properts_ready_Impl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/entities/Entries.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/entities/Properts.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/entities/ReadyProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/propert/impl/JaxbParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Main_test_recieve.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Main_test_recieve_04_09.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/recieve/test_3FFE_meas_11_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/Archive.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/DataObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportCustomers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/Test_round.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/Tupel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/reports/testFill.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10_2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Main_test_send.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send03Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send03ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/test_db/Test_db_16_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javabegin/training/vkt7/test_db/Test_db_28_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ru/javastudy/springmvc/controllers/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/db/ContactTelDetail_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/db/Contact_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/db/Content_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/db/Hobby_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/vkt7/entities/Customer_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/vkt7/entities/Measurements_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/vkt7/entities/Operation_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/vkt7/entities/Result_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/ru/javabegin/training/vkt7/entities/Test_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/log4j.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/AllPrinc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/IndexController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/controllers/LoginController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Contact.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/ContactTelDetail_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Contact_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Content_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/CustomerDetails.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Hobby.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/Hobby_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/SpringJPASample.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/SpringJPASample_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/projections/Content_p.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/projections/Projection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/projections/Projection1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean14$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean14$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/db/test/TestBean9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/enums/SearchType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/interceptors/CheckUserInterceptor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/jdbc/JdbcUserDetailsImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/BasicView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/Facade$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/Facade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/ListenerView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/SearchCriteria.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/SelectionContact.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/SelectionView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/User1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/objects/Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/processors/MyBeanPostProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/AddUserSec.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/Facade_sec$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/Facade_sec.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/MyUsDet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/SecurityService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/SecurityServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/security/SecurityuserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/servlets/PdfContent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/servlets/ShowImage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/DateAPITest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/DateParseFormaеTes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_Date_to_LocalDateTime_09_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_06_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_06_10_v1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_09_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_14_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_28_09.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_28_09_v1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_25_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_Daily_Moth_cron_26_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/temp_datatime/test_datatime_DayOfWeek_12_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/EventListener_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/test_modem/TectModemLikoil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/Crc16/Crc16Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/criteria/TestCriteriAPI_14_10_3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/dao/OperationServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/ResultService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/ResultServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Customer_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Measurements.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Measurements_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Operation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Operation_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Result.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Result_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/TestService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/TestServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/entities/Test_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/measurements/MeasurementsService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/measurements/MeasurementsServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Close_connect_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Connect_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Current.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/CurrentData_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/DailyData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Daily_hour_Data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/EventListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Moth_all_Customer_new.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem/Test_save_datatime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_05_11_2017.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron_old.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/Facade_customer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/Facade_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/SearchCriteria_cust.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/SearchCriteria_oper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/Selection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/SelectionCustomer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/SelectionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object/Set_cust.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/Facade_data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/Projection_mesurements.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_data/SelectionData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_modem/Facade_modem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_modem/SearchCriteria_modem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_modem/SelectionModem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_reports/Facade_reports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_reports/SearchCriteria_reports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/object_reports/SelectionReports.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Parser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properties_xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properts_ready.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/Properts_ready_Impl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/entities/Entries.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/entities/Properts.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/entities/ReadyProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/propert/impl/JaxbParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/queue/TestQueue.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Main_test_recieve.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Main_test_recieve_04_09.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/Recieve10ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/recieve/test_3FFE_meas_11_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/Archive.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/DataObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportCustomers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/ReportServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/TestSort.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/Test_round.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/Tupel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/reports/testFill.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_13_10_2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/scheduler/Test_sch_control.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Main_test_send.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send03Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send03ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/send/Send10ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/test_db/Test_db_16_10_1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javabegin/training/vkt7/test_db/Test_db_28_10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/classes/ru/javastudy/springmvc/controllers/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/jsf/faces-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/application-security.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/applicationContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/controllers.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/mysql-datasource.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/config/spring/webflow.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/main/main.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/main/main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/main/teplo_old.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/old/main_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/old/security_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/old/security_old_2.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security/security.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security/security.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security/security_add_user.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security/security_end.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/security/security_ok.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_confirm_delete.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_confirm_delete_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_deleted.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_edit.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_edit_del.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_process.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_process.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/customer_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/customer_process/teplo_add_customer.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/data_process.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/measurements_d_select_old_19_10.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/measurements_d_select_old_28_10.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_confirm_delete.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_confirm_delete_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_deleted.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_edit.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_edit_del.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_m_case.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_m_daily.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_m_select.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/customer_process.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/modem_process.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/process_m_daily.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/modem_process/teplo_add_customer.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/reports_process/reports_process.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/reports_process/reports_process.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/reports_process/test1_reports.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/teplo.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/teplo/teplo.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/test/test.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/flows/test/test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/glassfish-web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/ant-1.8.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/ant-launcher-1.8.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/aspectjrt-1.8.10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/backport-util-concurrent-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/bcprov-jdk15on-1.52.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/c3p0-0.9.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/castor-core-1.3.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/castor-xml-1.3.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-beanutils-1.9.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-codec-1.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-collections-3.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-collections4-4.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-digester-2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-lang-2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/commons-logging-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/core-3.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/curvesapi-1.04.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/ecj-4.3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/hibernate-core-5.0.7.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/hibernate-entitymanager-5.0.7.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/hibernate-jpamodelgen-5.2.10.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/icu4j-57.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/itext-2.1.7.js6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jackson-annotations-2.1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jackson-core-2.9.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jackson-databind-2.1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jakarta-regexp-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jasperreports-6.4.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/javassist-3.18.1-GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jcommon-1.0.23.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jfreechart-1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jsf-api-2.2.14.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jsf-impl-2.2.14.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jssc-2.8.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/lucene-analyzers-common-4.5.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/lucene-core-4.5.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/lucene-queries-4.5.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/lucene-queryparser-4.5.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/lucene-sandbox-4.5.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/mysql-connector-java-5.1.32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/ognl-2.6.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/olap4j-0.9.7.309-JS-3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/poi-3.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/poi-excelant-3.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/poi-ooxml-3.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/poi-ooxml-schemas-3.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/primefaces-6.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/quartz-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/slf4j-api-1.7.25.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-aop-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-beans-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-binding-2.4.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-context-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-context-support-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-core-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-expression-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-faces-2.4.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-jdbc-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-js-2.4.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-js-resources-2.4.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-orm-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-security-acl-4.2.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-security-config-4.2.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-security-core-4.2.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-security-taglibs-4.2.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-security-web-4.2.3.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-tx-4.1.6.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-web-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-webflow-2.4.4.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/spring-webmvc-4.3.9.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/stax-1.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/stax-api-1.0-2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/stax-api-1.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/xml-apis-1.0.b2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/lib/xmlbeans-2.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_en.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/locales/messages_ru.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/springsecurity.taglib.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/ajax_p.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/ajax_proba.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_d_select_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_d_select_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_delete_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_delete_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_edit_delete_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_edit_delete_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_m_select_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_m_select_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_process_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_process_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_select_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/customer_select_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/footer.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/genres.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/header.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/letters.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/library.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/locales.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/logo.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/operation_d_select_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/operation_d_select_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/reports/reports_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/reports/reports_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/search.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/sec.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/sec_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/sec_old1.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/security_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/security_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/teplo_menu.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/templates/teplo_template.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/accessDenied.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/calc.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/error.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/login.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/login1.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/login_old.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/login_old_5_0.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/pr1.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/sec.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/secondPage.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/views/select_customer.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/css/authorization.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/css/dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ajax_loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/book.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/button-right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/button_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/down-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/download.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/edit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/en/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/en/logo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/en/logo1_m.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/en/upload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/eng.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/facebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/feedback.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/lib.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/library.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/load-pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/pluse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/read-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/recycle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/required.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ru/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ru/logo1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ru/logo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ru/logo1_m.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/ru/upload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/rus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/search.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/select-button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/select.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/splash.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/submit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/usa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/user.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/images/vk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/js/library.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_flat_0_2d5972_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_flat_0_4f4f4f_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_flat_100_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_highlight-hard_80_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_highlight-hard_80_e3e3e3_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_highlight-soft_100_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_highlight-soft_75_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_inset-hard_65_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_inset-hard_65_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-bg_inset-soft_95_fef1ec_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_2d5972_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_38667f_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_3a6983_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_616161_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_898989_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces-library/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/charts/charts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/charts/charts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/charts/jqplot.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/clock/clock.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/clock/clock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_hex.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_hsb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_hsb_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_hsb_s.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_indic.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_rgb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_rgb_g.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_rgb_r.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/colorpicker/images/colorpicker_select.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/dock/assets/iepngfix.htc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/dock/dock.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/dock/dock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/dynamiccontent.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/editor/editor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/editor/editor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/editor/images/buttons.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/editor/images/toolbar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/fileupload/fileupload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/fileupload/fileupload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/fileupload/ie-anim.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/fileupload/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/forms/password-meter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/galleria/galleria.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/galleria/galleria.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/gmap/gmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/hotkey/hotkey.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/idlemonitor/idlemonitor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecompare/handle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecompare/imagecompare.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecompare/lt-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecompare/rt-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecropper/crop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecropper/imagecropper.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imagecropper/imagecropper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/imageswitch/imageswitch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/jquery/extensions.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/jquery/jquery-plugins.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/jquery/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/keyboard/keyboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/keyboard/keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/layout/layout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/layout/layout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/lightbox/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/log/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/log/log.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/log/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/log/panel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/messages/messages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/mindmap/mindmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/mousewheel/jquery.mousewheel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/photocam/jscam.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/photocam/photocam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/photocam/photocam.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/primefaces.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/primefaces.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/printer/printer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/push/push.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/raphael/raphael.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/rating/delete.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/rating/rating.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/rating/star.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/css/authorization.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/css/dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/add.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/ajax_loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/book.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/button-right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/button_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/down-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/download.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/edit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/en/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/en/upload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/eng.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/facebook.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/feedback.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/lib.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/library.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/load-pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/pluse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/read-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/recycle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/required.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/ru/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/ru/upload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/rus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/search.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/select-button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/select.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/splash.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/submit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/usa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/user.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/images/vk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/js/library.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_flat_0_2d5972_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_flat_0_4f4f4f_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_flat_100_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_highlight-hard_80_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_highlight-hard_80_e3e3e3_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_highlight-soft_100_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_highlight-soft_75_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_inset-hard_65_85b2cb_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_inset-hard_65_c4c4c4_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-bg_inset-soft_95_fef1ec_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_2d5972_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_38667f_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_3a6983_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_616161_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_898989_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces-library/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/charts/charts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/charts/charts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/charts/jqplot.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/clock/clock.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/clock/clock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_hex.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_hsb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_hsb_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_hsb_s.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_indic.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_rgb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_rgb_g.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_rgb_r.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/colorpicker/images/colorpicker_select.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/dock/assets/iepngfix.htc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/dock/dock.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/dock/dock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/dynamiccontent.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/editor/editor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/editor/editor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/editor/images/buttons.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/editor/images/toolbar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/fileupload/fileupload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/fileupload/fileupload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/fileupload/ie-anim.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/fileupload/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/forms/password-meter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/galleria/galleria.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/galleria/galleria.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/gmap/gmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/hotkey/hotkey.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/idlemonitor/idlemonitor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecompare/handle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecompare/imagecompare.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecompare/lt-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecompare/rt-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecropper/crop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecropper/imagecropper.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imagecropper/imagecropper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/imageswitch/imageswitch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/jquery/extensions.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/jquery/jquery-plugins.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/jquery/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/keyboard/keyboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/keyboard/keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/layout/layout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/layout/layout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/lightbox/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/log/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/log/log.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/log/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/log/panel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/messages/messages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/mindmap/mindmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/mousewheel/jquery.mousewheel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/photocam/jscam.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/photocam/photocam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/photocam/photocam.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/primefaces.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/primefaces.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/printer/printer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/push/push.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/raphael/raphael.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/rating/delete.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/rating/rating.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/rating/star.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/ring/ring.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/ring/ring.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/schedule/schedule.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/schedule/schedule.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/sheet/sheet.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/sheet/sheet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/spacer/dot_clear.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/stack/stack.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/stack/stack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/terminal/terminal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/terminal/terminal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/tree/images/line.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/treetable/images/toggle-collapse-dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/treetable/images/toggle-collapse-light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/treetable/images/toggle-expand-dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/treetable/images/toggle-expand-light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/watermark/watermark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/resources/primefaces/watermark/watermark.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/ring/ring.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/ring/ring.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/schedule/schedule.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/schedule/schedule.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/sheet/sheet.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/sheet/sheet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/spacer/dot_clear.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/stack/stack.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/stack/stack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/terminal/terminal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/terminal/terminal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/tree/images/line.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/treetable/images/toggle-collapse-dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/treetable/images/toggle-collapse-light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/treetable/images/toggle-expand-dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/treetable/images/toggle-expand-light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/watermark/watermark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/resources/primefaces/watermark/watermark.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/calc.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/index.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/login.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/pass.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/secondPage.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/w/views/secondPage1.xhtml" afterPath="" />
+    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="Перед получением обновлений">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/temp/Test_19_11_2017.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/temp/Test_19_11_2017.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
     </list>
     <list id="de9092eb-3279-4b87-9600-843137956520" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/knvic/work&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/w.war&#10;" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -901,7 +30,7 @@
       <file leaf-file-name="Daily_Moth_cron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1798">
+            <state relative-caret-position="8780">
               <caret line="2769" column="16" lean-forward="false" selection-start-line="2769" selection-start-column="16" selection-end-line="2769" selection-end-column="16" />
               <folding />
             </state>
@@ -911,9 +40,11 @@
       <file leaf-file-name="Send10ServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/send/Send10ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4300">
+            <state relative-caret-position="140">
               <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -921,9 +52,13 @@
       <file leaf-file-name="AuxiliaryServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-720">
+            <state relative-caret-position="180">
               <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#5734#5735#0" expanded="false" />
+                <element signature="e#5760#5761#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -933,7 +68,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
               <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -943,7 +80,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -953,7 +92,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="820">
               <caret line="59" column="31" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="59" selection-end-column="31" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -961,9 +102,15 @@
       <file leaf-file-name="ModemServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="940">
               <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2110#2111#0" expanded="false" />
+                <element signature="e#2134#2135#0" expanded="false" />
+                <element signature="e#2164#2165#0" expanded="false" />
+                <element signature="e#2183#2184#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -971,11 +118,9 @@
       <file leaf-file-name="Test_19_11_2017.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/temp/Test_19_11_2017.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="1080">
               <caret line="66" column="13" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="66" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -985,7 +130,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -993,7 +140,7 @@
       <file leaf-file-name="test1_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="520">
               <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding />
             </state>
@@ -1165,8 +312,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1809,7 +955,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2691,7 +1838,8 @@
       <workItem from="1510987522392" duration="418000" />
       <workItem from="1510988088558" duration="32287000" />
       <workItem from="1511080076305" duration="76000" />
-      <workItem from="1511080223552" duration="26815000" />
+      <workItem from="1511080223552" duration="27577000" />
+      <workItem from="1511155936467" duration="1336000" />
     </task>
     <task id="LOCAL-00001" summary="перед получение изменений master">
       <created>1510476682468</created>
@@ -2784,7 +1932,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511103768357</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="переработан класс Daily_Moth_cron. Старая копия Daily_Moth_cron_19_11_2017. В новой версии идет опрос по всем дням от начала месяца.">
+      <created>1511111564857</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1511111564857</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2820,11 +1975,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80266000" />
+    <option name="totallyTimeSpent" value="82364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2841,27 +1996,27 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2979415" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30972517" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3802817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30972517" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21588486" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2903,7 +2058,8 @@
     <MESSAGE value="перед тестом на сервере" />
     <MESSAGE value="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;" />
     <MESSAGE value="Добавлен пакет и класс Cleaner, чистящий базу от измерений с ошилками и от двойников." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен пакет и класс Cleaner, чистящий базу от измерений с ошилками и от двойников." />
+    <MESSAGE value="переработан класс Daily_Moth_cron. Старая копия Daily_Moth_cron_19_11_2017. В новой версии идет опрос по всем дням от начала месяца." />
+    <option name="LAST_COMMIT_MESSAGE" value="переработан класс Daily_Moth_cron. Старая копия Daily_Moth_cron_19_11_2017. В новой версии идет опрос по всем дням от начала месяца." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3147,7 +2303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3155,7 +2310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3163,9 +2317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3173,9 +2324,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="44" column="14" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3193,9 +2341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3213,7 +2358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="62" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3221,7 +2365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3265,14 +2408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/cleaner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/cleaner.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/cleaner/Cleaner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -3283,7 +2419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="520">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding />
         </state>
@@ -3293,7 +2429,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3301,33 +2439,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="59" column="31" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="59" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="940">
           <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2110#2111#0" expanded="false" />
+            <element signature="e#2134#2135#0" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2183#2184#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/send/Send10ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4300">
+        <state relative-caret-position="140">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/temp/Test_19_11_2017.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="1080">
           <caret line="66" column="13" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3335,15 +2481,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
+        <state relative-caret-position="180">
           <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5734#5735#0" expanded="false" />
+            <element signature="e#5760#5761#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3351,13 +2503,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1798">
+        <state relative-caret-position="8780">
           <caret line="2769" column="16" lean-forward="false" selection-start-line="2769" selection-start-column="16" selection-end-line="2769" selection-end-column="16" />
           <folding />
         </state>
