@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import ru.javabegin.training.vkt7.entities.Customer;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -164,6 +167,21 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     }
 
     @Override
+    public void saveMessage(File file, String message) throws IOException {
+
+     FileWriter writer = new FileWriter(file, true);
+
+
+        //message= LocalDateTime.now() +" :: "+ message;
+        message= new Date() +" :: "+ message+ "\n";
+        writer.write(message);
+        writer.flush();
+        writer.close();
+
+    }
+
+
+    @Override
     public String date_to_vktString(LocalDateTime date){
 
         String dataStr =date.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
@@ -174,6 +192,8 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     public int rrr(int a,int b){
         return a+b;
     }
+
+
 
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
+import ru.javabegin.training.vkt7.cleaner.Cleaner;
 import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.db.ResultService;
@@ -38,6 +39,7 @@ public class ModemServiceImpl implements ModemService {
   public static volatile SerialPort serialPort;
     public static volatile boolean stop=true;
     public static volatile  Future<String> future1;
+    public static volatile  Future<String> future0;
     public static volatile ExecutorService service;
 
 
@@ -413,12 +415,33 @@ List<Object> connect=new ArrayList<>();*/
         System.out.println("Перевели в  Date: " + data);
         List<Customer> customerList=customerService.findAllWithDetail();
         Daily_Moth_cron daily_moth_cron =new Daily_Moth_cron();
+        Cleaner cleaner=new Cleaner();
         int type =1;
+
+        Callable task5 = () -> {
+
+
+                System.out.println("работает поток "+ Thread.currentThread().getName());
+            cleaner.cleanOperations(customerService, auxiliaryService);
+                File file = new File("C:\\Work\\Java\\work\\logCleaner.txt");
+                FileWriter writer = new FileWriter(file, true);
+                LocalDateTime ldt1=LocalDateTime.now();
+                String log=ldt1+ " Начал работать поток Очистки Cleaner"+ Thread.currentThread().getName()+" \n";
+                writer.write( log);
+                writer.flush();
+                writer.close();
+
+
+
+
+                return "123";
+
+        };
 
         Callable task = () -> {
             try {
                 System.out.println("работает поток "+ Thread.currentThread().getName());
-                File file = new File("D:\\Work\\work\\logRevizor.txt");
+                File file = new File("C:\\Work\\Java\\work\\logModemService.txt");
                 FileWriter writer = new FileWriter(file, true);
                 LocalDateTime ldt1=LocalDateTime.now();
                 String log=ldt1+ " Начал работать поток "+ Thread.currentThread().getName()+" \n";
@@ -438,6 +461,7 @@ List<Object> connect=new ArrayList<>();*/
 
 
         service = Executors.newSingleThreadExecutor();
+        future0 = service.submit(task5);
         future1 = service.submit(task);
         //Future<String> future2 = service.submit(task);
 

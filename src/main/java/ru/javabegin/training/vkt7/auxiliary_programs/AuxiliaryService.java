@@ -1,5 +1,7 @@
 package ru.javabegin.training.vkt7.auxiliary_programs;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -53,6 +55,8 @@ public interface AuxiliaryService {
     String date_to_vktString(LocalDateTime date);
    /* String date_to_vktString(Timestamp date);
     List<String> date_to_vktString(List<Date> dateList);*/
+
+   void saveMessage(File file, String message) throws IOException;
 
 
 }

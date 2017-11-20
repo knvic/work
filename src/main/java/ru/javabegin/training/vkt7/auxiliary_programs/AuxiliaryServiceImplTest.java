@@ -3,6 +3,7 @@ package ru.javabegin.training.vkt7.auxiliary_programs;
 import org.junit.*;
 import org.junit.Test;
 
+import java.io.File;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -14,6 +15,15 @@ import static org.junit.Assert.*;
  * Created by user on 18.11.2017.
  */
 public class AuxiliaryServiceImplTest {
+    @Test
+    public void saveMessage() throws Exception {
+        File file = new File("C:\\Work\\Java\\work\\logRevizor1.txt");
+        String str="Тест записи";
+
+        auxiliaryService.saveMessage(file,str);
+
+    }
+
     @Test
     public void stringDate_to_TimeStamp() throws Exception {
 
