@@ -85,6 +85,10 @@ public class AuxiliaryServiceImplTest {
     @Test
     public void addTime() throws Exception {
 
+        Date d=auxiliaryService.addTime(new Date(),"23");
+        System.out.println("дата со временем = "+d);
+
+
     }
 
     @Test

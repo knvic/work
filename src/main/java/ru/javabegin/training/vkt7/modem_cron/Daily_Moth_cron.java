@@ -49,18 +49,6 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
     private String type_to_error = "";
 
 
-   /* @Autowired
-    @Qualifier("jpaCustomerService")
-    private CustomerService customerService;
-*/
-
-
-/* public volatile static String data2;
-    public volatile static int step;
-    public volatile static int recieve_all_byte;
-    public static volatile int t;*/
-
-
     public static boolean r_3fff;
     public int server_version=0;
     private int version_oper=1;
@@ -180,7 +168,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
 
     ///// Проверяем есть ли измерение daily за эту дату //////////////////
-    System.out.println("Запрашиваемая дата Date = "+date);
+  /*  System.out.println("Запрашиваемая дата Date = "+date);
     LocalDate date_loc = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     System.out.println("Перевели в  LocalDate = "+date_loc);
     LocalDateTime ldt_oper = LocalDateTime.of(date_loc, LocalTime.of(23,0));
@@ -188,7 +176,11 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
     System.out.println("Запрашиваемая дата LocalDataTime = "+ldt_oper);
     Timestamp ts_oper = Timestamp.valueOf(ldt_oper);
     System.out.println("Запрашиваемая дата TimeStamp = "+ts_oper);
-    System.out.println("\n Проверяем есть ли успешное  OK измерение за указанную дату");
+    System.out.println("\n Проверяем есть ли успешное  OK измерение за указанную дату");*/
+
+
+    Timestamp ts_oper=auxiliaryService.date_TimeStamp(auxiliaryService.addTime(date,"23"));
+
     List<Operation> l_ok= customerService.findOperation_daily(id_c, ts_oper, "daily", "OK");
     if (l_ok.size()>0){
         System.out.println("Измерение  ОК присутствует");
@@ -898,7 +890,7 @@ t=1;
 
 
 /**  ////////////////////////////////////////////////////////////////////////////
- * 3F FF  (s10->11) Запрос на запись перечня для чтениz. Требует подтверждения.//////
+ * 3F FF  (s10->11) Запрос на запись перечня для чтения. Требует подтверждения.//////
  */  ////////////////////////////////////////////////////////////////////////////
             atomicInteger.addAndGet(1);
             //List<String> ff_n=new ArrayList<>();
@@ -1543,7 +1535,7 @@ t=1;
              * Конвертируем в LocalDataTime
              * Переводим в строку вида dd:MM:uu
              */
-            Instant date_time = date.toInstant();
+         /*   Instant date_time = date.toInstant();
             LocalDateTime ldt = LocalDateTime.ofInstant(date_time, ZoneId.systemDefault());
             System.out.println("Перевели Date в  LocalDateTime =" + ldt);
             // String date_str=ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
@@ -1557,7 +1549,7 @@ t=1;
                 date_dd_MM_UU_HH.add(date_str + ":" + String.valueOf(i));
             }
 
-
+*/
 
             atomicInteger.addAndGet(1);
 
@@ -1703,7 +1695,8 @@ t=1;
                 //проверяем есть ли измерение
                 Date day = auxiliaryService.stringDate_to_Date(strData);
 
-                long customerID = customer.getId();
+
+                Long customerID = customerList.get(countCustomer).getId();
                 List<Operation> operationList = customerService.findOperation_daily(customerID, auxiliaryService.date_TimeStamp(day), "daily", "OK");
                 if (operationList.size() > 0) {
 
@@ -1717,7 +1710,15 @@ t=1;
                    if(operationList.size()>1){ auxiliaryService.saveMessage(log_cron," Есть дублированные измерения " + day + " размер массива = " + operationList.size());}
                     for (int i = 1; i < operationList.size(); i++) {
                         if (operationList.get(i) != null) {
+                            System.out.println(" " + day + " размер массива ДО удаления= " + operationList.size());
+                            operationList = customerService.findOperation_daily(customerID, auxiliaryService.date_TimeStamp(day), "daily", "OK");
+                            auxiliaryService.saveMessage(log_cron," " + day + " размер массива ДО удаления= " + operationList.size());
                             customerService.deleteOperation(customerID, operationList.get(i).getId());
+                            System.out.println(" " + day + " размер массива ПОСЛЕ удаления= " + operationList.size());
+                            operationList = customerService.findOperation_daily(customerID, auxiliaryService.date_TimeStamp(day), "daily", "OK");
+                            auxiliaryService.saveMessage(log_cron," " + day + " размер массива ПОСЛЕ удаления= " + operationList.size());
+
+
                         } else {
                             System.out.println("operationList.get(i)== NULL . ДУБЛИРОВАНИЕ ОТСУТСТВУЕТ");
                         }
@@ -2351,19 +2352,10 @@ t=1;
                     System.out.println("Начинаем запись в базу суточный архив");
 
                     // Получили времы сервера для записиси в базу
-                    LocalDateTime localDateTime = LocalDateTime.now();
-                    Timestamp timestamp = Timestamp.valueOf(localDateTime);
 
+                    Timestamp timestamp_date_input=auxiliaryService.date_TimeStamp(new Date());
 
-                    Instant date_input = date.toInstant();
-                    System.out.println("Смотрим пришедшую дату для действий (тип Date) " + date);
-                    LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
-                    System.out.println("перевели пришедшую дату (тип LocalDataTime ) " + date_input_ldt);
-                    Timestamp timestamp_date_input = Timestamp.valueOf(date_input_ldt);
-
-
-
-                    for (Timestamp ts : daily_hashMap.keySet()) {
+                    //for (Timestamp ts : daily_hashMap.keySet()) {
 
 
 
@@ -2384,22 +2376,26 @@ t=1;
                         operation.setCurrentDate3Ff6(date_3ff6.get(1));
                         operation.setBeginDayDate(date_3ff6.get(2));
                         //operation.setDateVkt3Ffb();
-                        operation.setDateServer(timestamp);
-                        operation.setChronological(ts);
+                        operation.setDateServer(timestamp_date_input);
+                        //operation.setChronological(ts);
+                        operation.setChronological(timestamp_daily);
                         operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
                         operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
                         operation.setBaseNumber(String.valueOf(number_active_base));
                         operation.setStatus(status);
                         operation.setError(String.valueOf(error));
+
+
                         if (version_oper > 1) {
                             operation.setVersion(version_oper);
                         }
 
 
                         //measurementsList.forEach(p -> operation.addMeasurements(p));
-                        daily_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
-                        List<Measurements> testlist = daily_hashMap.get(ts);
-                        for (Measurements measurements : testlist) {
+                        //daily_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
+                        measurementsList.forEach(p -> operation.addMeasurements(p));
+                       // List<Measurements> testlist = daily_hashMap.get(ts);
+                        for (Measurements measurements :  measurementsList) {
                             System.out.println(measurements.getText() + " = " + measurements.getMeasurText() + " байт качества -" + measurements.getQualityText() + "NS -" + measurements.getNs());
 
                         }
@@ -2411,7 +2407,7 @@ t=1;
 
                         customer.addOperation(operation);
                         customerService.save(customer);
-                    }
+
 
 
                     System.out.println("Запись значений СУТОЧНОГО архива произведена. ");
@@ -2711,7 +2707,7 @@ t=1;
                     System.out.println("\n Получена команда STOP ");
                     break;
                 }
-                System.out.println("\n посылаем запрос 3F FB" + date_dd_MM_UU_HH.get(23) + "  4.4 Запрос на запись даты.");
+                System.out.println("\n посылаем запрос 3F FB 4.4 Запрос на запись даты."+ data_type3.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH")));
                 Thread.sleep(5000);
                 serialPort.writeIntArray(request);
 
@@ -2725,7 +2721,7 @@ t=1;
                     if (data2.contains("3F FB ")) {
                         t = 1;
                         //System.out.println("После запроса 3F FF_n ");
-                        System.out.println("Запрс 3F FB;" + date_dd_MM_UU_HH.get(23) + " data2 = " + data2);
+                        System.out.println("Запрс 3F FB;" + data_type3.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH")) + " data2 = " + data2);
                         r_3fff = recieve10Service.r_3FFB(data2);
                     }
                     if (r_3fff) {
@@ -2741,13 +2737,13 @@ t=1;
                         if (repeat == 6) {
                             step = 0;
 
-                            System.out.println("\n Ответ не поступил." + date_dd_MM_UU_HH.get(23) + " Ошибка по таймауту.");
+                            System.out.println("\n Ответ не поступил." + data_type3.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH")) + " Ошибка по таймауту.");
                             System.out.println("\n error=22.3F FB TimeOut");
                             error = 22;
                             stop = false;
                         }
 
-                        System.out.println("\n Ответ не поступил." + date_dd_MM_UU_HH.get(23) + " Ошибка по таймауту. Повторяем запрос");
+                        System.out.println("\n Ответ не поступил." + data_type3.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH")) + " Ошибка по таймауту. Повторяем запрос");
                         serialPort.writeIntArray(request);
                         t = 0;
                         executor.submit(callable(6));
@@ -2989,10 +2985,7 @@ t=1;
                     + entry.getValue());*/
 
         for (Timestamp ts : total_moth_hashMap.keySet()) {
-            System.out.println(ts + " имеет");
-           /* for (String pet : personMap.get(person)){
-                System.out.println("  " + pet);
-            }*/
+
 
 
             Operation operation = new Operation();
@@ -3047,72 +3040,6 @@ t=1;
     }
 
             atomicInteger.addAndGet(1);
-if(error==0&status.equals("OK")&type==0) {
-    System.out.println("Начинаем запись в базу ЧАСОВОГО");
-    Thread.sleep(2000);
-    // Получили времы сервера для записиси в базу
-    LocalDateTime localDateTime = LocalDateTime.now();
-    Timestamp timestamp = Timestamp.valueOf(localDateTime);
-
-
-    Instant date_input = date.toInstant();
-    System.out.println("Смотрим пришедшую дату для действий (тип Date) " + date);
-    LocalDateTime date_input_ldt = LocalDateTime.ofInstant(date_input, ZoneId.systemDefault());
-    System.out.println("перевели пришедшую дату (тип LocalDataTime ) " + date_input_ldt);
-    timestamp_date_input = Timestamp.valueOf(date_input_ldt);
-
-/*
-        for (Map.Entry entry : hashMap.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + " Value: "
-                    + entry.getValue());*/
-
-    for (Timestamp ts : hashMap.keySet()) {
-        System.out.println(ts + " имеет");
-           /* for (String pet : personMap.get(person)){
-                System.out.println("  " + pet);
-            }*/
-
-
-        Operation operation = new Operation();
-        operation.setTypeOperation("hour");
-        operation.setServerVersion(String.valueOf(server_version));
-        operation.setProgrammVersion(service_information.get(0));
-        operation.setShemaTv13Ff9(service_information.get(1));
-        operation.setTp3Tv1(service_information.get(2));
-        operation.setT5Tv1(service_information.get(3));
-        operation.setShemaTv23Ff9(service_information.get(4));
-        operation.setTp3Tv2(service_information.get(5));
-        operation.setT5Tv2(service_information.get(6));
-        operation.setIdentificator(service_information.get(7));
-        operation.setNetNumber(service_information.get(8));
-        operation.setModel(service_information.get(10));
-        operation.setBeginHourDate(date_3ff6.get(0));
-        operation.setCurrentDate3Ff6(date_3ff6.get(1));
-        operation.setBeginDayDate(date_3ff6.get(2));
-        //operation.setDateVkt3Ffb();
-        operation.setDateServer(timestamp);
-        operation.setChronological(ts);
-        operation.setShemaTv13Ecd(String.valueOf(shema_Tb1));
-        operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
-        operation.setBaseNumber(String.valueOf(number_active_base));
-        operation.setStatus(status);
-        operation.setError(String.valueOf(error));
-
-
-        //measurementsList.forEach(p -> operation.addMeasurements(p));
-        hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
-
-
-        customer = customerService.findById(id_c);
-        operation.setIdCustomer(customer.getId());
-        operation.setCustomerName(customer.getFirstName());
-
-        customer.addOperation(operation);
-        customerService.save(customer);
-    }
-    System.out.println("Запись значений ЧАСОВОГО АРХИВА произведена. ");
-
-}
 
 
 
@@ -3135,13 +3062,11 @@ if(error==0&status.equals("OK")&type==0) {
     operation.setTypeOperation(type_to_error);
 
         System.out.println("Запрашиваемая дата Date = "+date);
-        date_loc = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println("Перевели в  LocalDate = "+date_loc);
-        ldt_oper = LocalDateTime.of(date_loc, LocalTime.of(23,0));
-        System.out.println("Запрашиваемая дата LocalDataTime = "+ldt_oper);
-        ts_oper = Timestamp.valueOf(ldt_oper);
+
         System.out.println("Запрашиваемая дата TimeStamp = "+ts_oper);
 
+        ts_oper=auxiliaryService.date_TimeStamp(auxiliaryService.addTime(date,"23"));
+        System.out.println("Запрашиваемая дата TimeStamp = "+ts_oper);
     LocalDateTime localDateTime = LocalDateTime.now();
     Timestamp timestamp = Timestamp.valueOf(localDateTime);
 

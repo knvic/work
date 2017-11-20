@@ -32,8 +32,8 @@ public class Revisor {
 
     public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
-        //File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
-        File file = new File("d:\\Work\\work\\logRevizor.txt");
+        File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
+        //File file = new File("d:\\Work\\work\\logRevizor.txt");
         FileWriter writer = new FileWriter(file, true);
         LocalDateTime ldt;
         String log;

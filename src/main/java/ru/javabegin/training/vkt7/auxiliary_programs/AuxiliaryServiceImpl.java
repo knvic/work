@@ -129,7 +129,8 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     public Date addTime(Date data, String hour){
       LocalDateTime dataldt=date_to_localDateTime(data);
         LocalDate  dateLocalDate =dataldt.toLocalDate();
-        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
+        int h=Integer.parseInt(hour);
+        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(h, 0, 0));
         Date dateDate=localDateTime_to_date(ldt);
         return dateDate;
 

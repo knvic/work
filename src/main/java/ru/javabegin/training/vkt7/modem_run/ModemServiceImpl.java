@@ -424,6 +424,7 @@ List<Object> connect=new ArrayList<>();*/
                 System.out.println("работает поток "+ Thread.currentThread().getName());
             cleaner.cleanOperations(customerService, auxiliaryService);
                 File file = new File("C:\\Work\\Java\\work\\logCleaner.txt");
+                //File file = new File("C:\\Work\\Java\\work\\logCleaner.txt");
                 FileWriter writer = new FileWriter(file, true);
                 LocalDateTime ldt1=LocalDateTime.now();
                 String log=ldt1+ " Начал работать поток Очистки Cleaner"+ Thread.currentThread().getName()+" \n";
@@ -442,6 +443,7 @@ List<Object> connect=new ArrayList<>();*/
             try {
                 System.out.println("работает поток "+ Thread.currentThread().getName());
                 File file = new File("C:\\Work\\Java\\work\\logModemService.txt");
+                //File file = new File("C:\\Work\\work\\logModemService.txt");
                 FileWriter writer = new FileWriter(file, true);
                 LocalDateTime ldt1=LocalDateTime.now();
                 String log=ldt1+ " Начал работать поток "+ Thread.currentThread().getName()+" \n";
