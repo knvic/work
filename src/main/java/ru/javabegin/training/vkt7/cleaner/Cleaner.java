@@ -10,6 +10,7 @@ import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -17,10 +18,10 @@ import java.util.List;
  * Created by user on 19.11.2017.
  */
 @Component
+public class Cleaner implements Serializable{
 
-public class Cleaner {
-    @Qualifier("jpaCustomerService")
     @Autowired
+    @Qualifier("jpaCustomerService")
     CustomerService customerService;
 
     @Autowired
@@ -29,7 +30,7 @@ public class Cleaner {
     private Long customerID;
 
 
-    public void cleanOperations(){
+    public void cleanOperations( CustomerService customerService,AuxiliaryService auxiliaryService){
 
         Date date=new Date();
         System.out.println("Текущая дата = "+ date);
