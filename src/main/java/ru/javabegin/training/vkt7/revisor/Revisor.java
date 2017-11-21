@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.concurrent.*;
 
 
@@ -32,99 +33,72 @@ public class Revisor {
 
     public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
-        File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
-        //File file = new File("d:\\Work\\work\\logRevizor.txt");
-        FileWriter writer = new FileWriter(file, true);
-        LocalDateTime ldt;
-        String log;
+        Callable task = () -> {
+            try {
 
-        if(future1!=null) {
-            ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
-            int ai = (int) atomicInteger.get();
-            System.out.println("Сохраняем atomicInteger----->>" + ai);
-            executorService_revizor.submit(callable(120));
-            while (tt != 2) {
-               // Thread.sleep(50000);
-                if(ai!= atomicInteger.get()){
-                    tt=1;
-                    break;
+                File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
+                //File file = new File("d:\\Work\\work\\logRevizor.txt");
+                FileWriter writer = new FileWriter(file, true);
+                Date ldt;
+                String log;
+
+                if(future1!=null) {
+                    ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
+                    int ai = (int) atomicInteger.get();
+                    System.out.println("Сохраняем atomicInteger----->>" + ai);
+                    System.out.println("Ждем 140 секунд ....");
+                    Thread.sleep(140000);
+                    System.out.println("Таймер  Revizor отработал");
+                    if (ai== atomicInteger.get()) {
+                        System.out.println("Поток завис. Требуется прерывание и перезапуск");
+                        ldt=new Date();
+                        log=ldt+ " Поток завис. Требуется прерывание  \n";
+                        writer.write( log);
+                        writer.flush();
+                        writer.close();
+
+                        TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
+                        testThread_kill_modem.t_kill();
+
+                        Thread.sleep(100000);
+
+                        modemService.get_daily_moth_cron();
+
+
+                    } else {
+                        System.out.println("поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
+                        ldt=new Date();
+                        log=ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n";
+                        atomicInteger.set(1);
+                        writer.write( log);
+                        writer.flush();
+                        writer.close();
+                    }
+                    System.out.println("atomicInteger=== " + atomicInteger.get());
+
+                    executorService_revizor.shutdown();
+                }else
+                {
+                    System.out.println("поток не запущен");
+                    ldt=new Date();
+                    log=ldt+ " поток не запущен \n";
+                    writer.write( log);
+                    writer.flush();
+                    writer.close();
                 }
 
+
+                return "123";
             }
-            System.out.println("Таймер отработал");
-            if (ai== atomicInteger.get()) {
-                System.out.println("Поток завис. Требуется прерывание и перезапуск");
-                ldt=LocalDateTime.now();
-                log=ldt+ " Поток завис. Требуется прерывание  \n";
-                writer.write( log);
-                writer.flush();
-                writer.close();
-
-                TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
-                testThread_kill_modem.t_kill();
-
-                Thread.sleep(100000);
-
-                modemService.get_daily_moth_cron();
-
-
-               // future2.cancel(true);
-
-
-
-                } else {
-                System.out.println("поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
-                ldt=LocalDateTime.now();
-                log=ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n";
-                writer.write( log);
-                writer.flush();
-                writer.close();
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
             }
-            System.out.println("atomicInteger=== " + atomicInteger.get());
-
-            executorService_revizor.shutdown();
-        }else
-        {
-            System.out.println("поток не запущен");
-            ldt=LocalDateTime.now();
-            log=ldt+ " поток не запущен \n";
-            writer.write( log);
-            writer.flush();
-            writer.close();
-        }
-
-
-    }
-
-
-    static Callable callable(long Seconds) {
-        return () ->
-        {
-            for (int i = 1; i < Seconds + 1; i++) {
-                if(stop==false){
-                    System.out.println("Ответ из вспомогательного потока. Поступила команда STOP "+ stop);
-                    return 1;}
-
-
-
-                if (tt == 1) {
-                    System.out.println("Поток в порядке. Таймер остановлен");
-                    return 1;
-                }
-                //
-                System.out.print(i);
-                TimeUnit.SECONDS.sleep(1);
-                System.out.print("\r");
-
-            }
-            System.out.println("timeout error");
-            tt = 2;
-            return 0;
-
-
         };
+
+
+        ExecutorService service_revizor = Executors.newSingleThreadExecutor();
+        Future<String> future_revizor = service_revizor.submit(task);
+        service_revizor.shutdown();
+
     }
-
-
-
 }

@@ -3149,12 +3149,13 @@ t=1;
                    if(stop==false){
                        System.out.println("Ответ из вспомогательного потока. Поступила команда STOP "+ stop);
                        return 1;}
+                System.out.print(i);
                     TimeUnit.SECONDS.sleep(1);
                     if (t == 1) {
                         System.out.println("Ответ получен. Таймер остановлен");
                         return 1;
                     }
-                    System.out.print(i + " ");
+                System.out.print("\r");
                 }
                 System.out.println("timeout error");
                 t = 2;
