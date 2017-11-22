@@ -46,6 +46,17 @@ public class ReportServiceImplTest {
 
         System.out.println("Размер "+dataObjectList.size() );
 
+        //u.optionalValues[id].value
+
+        for(DataObject dataObject:dataObjectList){
+
+            System.out.println(dataObject.getOptionalValues().get("t1").getValue());
+            System.out.println(dataObject.getData());
+            System.out.println(dataObject.getOptionalValues().keySet());
+
+            dataObject.getOptionalValues().keySet().forEach(p->System.out.println(p+" = "+dataObject.getOptionalValues().get(p).getValue()));
+        }
+
 
 
 
