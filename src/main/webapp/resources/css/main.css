@@ -51,7 +51,7 @@ body {
 
 /* header */
 .header { width: 100%; height: 40px; background: #555; }
-.header-wrap { width: 940px; margin: 0 auto; }
+.header-wrap { width: 100%; margin: 0 auto; box-sizing: border-box; padding: 0 5%; }
 .language { float: left; margin-top: 14px; }
 .language img { float: left; margin-right: 10px; }
 .social { float: left; margin-top: 10px; margin-left: 79px; }
@@ -689,3 +689,95 @@ body {
     font-size: 30px;
     color:#aeaeae;
 }*/
+/*newage*/
+#wrap {
+
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 30px 5%;
+    background: #fff;
+}
+.right-content {
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.left-menu {
+    float: none;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 20px;
+    top: 0px;}
+.menu a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.menu {
+    float: left;
+    margin-top: 30px;
+    width: 970px;
+    font-size: 14px;
+    margin-left: 90px;
+}
+#header2 .logo {
+    background: url(/app/javax.faces.resource/images/ru/logo.svg) no-repeat left 0;
+    display: block;
+    width: 200px;
+    height: 50px;
+    float: none;
+}
+.left-menu li {
+    margin-bottom: 5px;
+    background: #DB2B36;
+    display: inline-block;
+}
+.left-menu li .ui-button {
+    background: transparent;
+    border: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+#header2 {
+    background: #606060;
+    color: #fff;
+    padding: 20px 5%;
+    display: flex;
+}
+.header-menu {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 55px;
+    padding-top: 15px;
+}
+.header-menu li {
+    display: inline-block;
+}
+.header-menu li .ui-button{
+     border: none;
+    color: #fff;
+     background: transparent;
+     text-transform: uppercase;
+ }
+.header-menu li .ui-button:hover{
+    border: none;color: #DB2B36;
+
+    background: transparent;
+    text-transform: uppercase;
+}
+.logo {
+    margin-top: 5px;
+}
+.header {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+}
+.header a,.header p{
+    color: #DB2B36;
+}
+.ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default{
+    background:#DB2B36;
+}
