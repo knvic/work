@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <import resource="webflow.xml"/>
+    <import resource="controllers.xml"/>
+
+    <mvc:resources location="/" mapping="/resources/**"/>
+    <mvc:annotation-driven/>
+
+    <context:component-scan base-package="ru.javabegin.training" />
+
+    <bean id="userDetailsService" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
+        <property name="dataSource" ref="dataSource1" />
+        <property name="authenticationManager" ref="authenticationManager" />
+        <property name="enableAuthorities" value="true"/>
+    </bean>
+
+
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="flowRegistry"/>
+        <property name="order" value="2"/>
+    </bean>
+
+    <bean name="resourceHandlerJSF" class="org.springframework.faces.webflow.JsfResourceRequestHandler" />
+
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order" value="1" />
+        <property name="mappings">
+            <value>
+                /javax.faces.resource/**=resourceHandlerJSF
+            </value>
+        </property>
+    </bean>
+
+
+
+
+    <bean class="org.springframework.faces.webflow.JsfFlowHandlerAdapter">
+        <property name="flowExecutor" ref="flowExecutor"/>
+    </bean>
+
+
+
+
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.faces.mvc.JsfView"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".xhtml"/>
+    </bean>
+
+    <bean id="msg" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/locales/messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/hibernate"/>
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+    </bean>
+    <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/lukoil"/>
+    <property name="username" value="root" />
+    <property name="password" value="root" />
+</bean>
+    <bean id="dataSource3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/test_persist_26_09"/>
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+    </bean>
+
+
+
+   <!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/Hibernate"/>
+    </bean>-->
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="emf"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource2" />
+        <property name="persistenceUnitName" value="emf_contact" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="packagesToScan" value="ru.javabegin.training"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <prop key="hibernate.jdbc.fetch_size">50</prop>
+                <prop key="hibernate.jdbc.batch_size">10</prop>
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+
+    <bean id="transactionManager1" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="emf_1"/>
+</bean>
+    <tx:annotation-driven transaction-manager="transactionManager1" />
+
+    <bean id="emf_1" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="persistenceUnitName" value="emf_customer" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="packagesToScan" value="ru.javabegin.training"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <prop key="hibernate.jdbc.fetch_size">50</prop>
+                <prop key="hibernate.jdbc.batch_size">10</prop>
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="transactionManager2" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="emf_2"/>
+
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager2" />
+
+    <bean id="emf_2" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource3" />
+        <property name="persistenceUnitName" value="emf_test" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="packagesToScan" value="ru.javabegin.training"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <prop key="hibernate.jdbc.fetch_size">50</prop>
+                <prop key="hibernate.jdbc.batch_size">10</prop>
+                <prop key="hibernate.show_sql">false</prop>
+
+            </props>
+        </property>
+    </bean>
+
+
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+    </bean>
+
+
+
+    <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
+        <property name="attributes">
+            <map>
+                <entry key="facade" value-ref="facade"/>
+            </map>
+        </property>
+    </bean>
+
+
+
+
+
+    <!--Scheduler-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+           <property name="jobDetails">
+            <list>
+                <ref bean="test_schJob" />
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="test_schCronTrigger" />
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="test_sch" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10" />
+
+    <bean id="test_schJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="test_sch" />
+        <property name="targetMethod" value="test" />
+    </bean>
+
+    <bean id="test_schCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="test_schJob" />
+        <property name="cronExpression" value="5 10 2 * * ?" />
+    </bean>
+
+
+
+    <bean id="executorService" class="java.util.concurrent.Executors" factory-method="newFixedThreadPool">
+        <constructor-arg value="5" />
+    </bean>
+
+    <task:executor id="threadPoolTaskExecutor" pool-size="5" />
+    <task:annotation-driven executor="executorService" />
+
+  <!--  <bean id="jobDetail1" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10_1"/>
+    <bean id="jobDetail2" class="ru.javabegin.training.vkt7.scheduler.Test_sch_13_10_2"/>-->
+    <bean id="modem" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+  <!--  <bean id="sch_comtrol" class="ru.javabegin.training.vkt7.scheduler.Test_sch_control"/>
+    <bean id="test_critoria1" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_1"/>
+    <bean id="test_critoria2" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_2"/>
+    <bean id="test_critoria3" class="ru.javabegin.training.vkt7.criteria.TestCriteriAPI_14_10_3"/>-->
+
+    <!--<bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="testdb" class=" ru.javabegin.training.vkt7.test_db.Test_db_16_10_1"/>-->
+    <bean id="modem_moth_n" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="modem_daily_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="temp_datatime" class="ru.javabegin.training.temp_datatime.test_datatime_Daily_Moth_cron_25_10"/>
+    <bean id="test_db" class="ru.javabegin.training.vkt7.test_db.Test_db_28_10"/>
+    <bean id="kill_t" class="ru.javabegin.training.test_thread.TestThread_kill_modem"/>
+    <bean id="run_t" class="ru.javabegin.training.test_thread.TestThread_run"/>
+    <bean id="revizor" class="ru.javabegin.training.vkt7.revisor.Revisor"/>
+
+
+
+
+    <task:scheduler id="serverScheduler" pool-size="5"/>
+    <task:scheduled-tasks scheduler="serverScheduler">
+        <!--<task:scheduled ref="jobDetail1" method="test" cron="25 10 * * * ?"/> &lt;!&ndash; every thirty minute &ndash;&gt;-->
+        <!--<task:scheduled ref="jobDetail2" method="test" cron="30 10 * * * ?"/> &lt;!&ndash; every thirty minute &ndash;&gt;-->
+
+       <!-- <task:scheduled ref="sch_comtrol" method="someMethod" cron="40 10 * * * ?"/>
+        <task:scheduled ref="test_critoria1" method="test" cron="10 * * * * ?"/>
+        <task:scheduled ref="test_critoria2" method="test" cron="*/20 * * * * ?"/>-->
+       <!--<task:scheduled ref="test_critoria3" method="test" cron="*/20 * * * * ?"/>-->
+
+        <!--<task:scheduled ref="modem_moth" method="get_mothly_customer_data_cron" cron="0 39 0 * * ?"/> -->
+       <!--<task:scheduled ref="modem_moth_n" method="get_mothly_customer_data_cron_new" cron="0 5 14 * * ?"/>-->
+        <!--<task:scheduled ref="modem" method="get_daily_customer_data_cron" cron="10 47 15 * * ?"/>-->
+      <!--  <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 52 19 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="5 53 19 * * ?"/>
+        <task:scheduled ref="run_t" method="t_run" cron="5 23 19 * * ?"/>
+        <task:scheduled ref="run_t" method="t_run" cron="5 25 19 * * ?"/>
+        <task:scheduled ref="kill_t" method="t_kill" cron="25 52 19 * * ?"/>
+        <task:scheduled ref="kill_t" method="t_kill" cron="50 53 19 * * ?"/>
+
+
+        <task:scheduled ref="revizor" method="Revisor" cron="10 37 19 * * ?"/>
+        <task:scheduled ref="run_t" method="t_run" cron="20 37 19 * * ?"/>
+        <task:scheduled ref="revizor" method="Revisor" cron="25 37 19 * * ?"/>
+-->
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 43 9 * * ?"/>
+        <task:scheduled ref="revizor" method="Revisor" cron="* */15 * * * ?"/>
+
+    </task:scheduled-tasks>
+
+
+
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+                <property name="paramName" value="lang"/>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+
+</beans>
