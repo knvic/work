@@ -13,6 +13,7 @@ import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
 import javax.swing.table.DefaultTableModel;
+import java.io.DataOutput;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -1420,6 +1421,32 @@ public class ReportServiceImpl implements ReportService{
 
 
         return objectList;
+    }
+
+
+    @Override
+    public void getCalculations(List<DataObject> dataObjectList){
+
+
+        for (DataObject dataObject: dataObjectList) {
+
+           /* if (m.getText().equals("t1 Тв1")) {
+
+                id_col.add(m.getText());
+                if (m.getMeasurText() != null) {
+                    map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
+                } else {
+                    map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+                }
+                //Добавляем нештатные ситуаии
+                id_col.add("НС_t1_1");
+                map.put("НС_t1_1", new Tupel("НС_t1_1", (ns_to_bd(m.getNs()))));
+
+
+            }*/
+        }
+
+
     }
 
 

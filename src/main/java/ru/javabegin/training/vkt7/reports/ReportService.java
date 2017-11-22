@@ -22,9 +22,27 @@ public interface ReportService {
     List<Object> getObject_fullround (List<Operation> operationList);
 
     List<Object> getObject (List<Operation> operationList);
-    List<Object> getObject_ns (List<Operation> operationList);
+
+    /////основное
+
+    /**
+     * Получает список Operation. ПО каждому Operation берутся измерения Measurements
+     * Формируется массив из объектов. Hashmap<Название колонки, <название колонки, значение в BigDecimal>>
+     *
+     * @param operationList
+     * @return
+     * Список из
+     *
+     */
+    List<Object> getObject_ns (List<Operation> operationList);  ///695
+
+
+        void getCalculations(List<DataObject> dataObjectList);  ///1426
+
+    //// конец основное
 
     List<DataObject> getDataObject (List<Operation> operationList);
+
 
 
 
