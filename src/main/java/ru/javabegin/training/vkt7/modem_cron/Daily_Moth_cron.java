@@ -1692,6 +1692,34 @@ t=1;
             for(String strData:dateListStr) {
 
 
+
+                // Сравниваем рассматриваемую дату с датой начала записи суточных значений в теплосчетчике
+
+
+
+
+                LocalDateTime begin_arhive =  auxiliaryService.timestamp_to_localDateTime(date_3ff6.get(2));
+                System.out.println("Переводим в LocalData Time --- "+begin_arhive);
+
+
+
+
+                LocalDateTime target_data=auxiliaryService.stringDate_to_LocalDateTime(strData);
+                date_before = 0;
+                if (begin_arhive.isBefore(target_data)){
+
+                    System.out.println("Запрашиваемая дата "+ strData+ " после даты начала работы устройства "+ begin_arhive+ ". Запрос  СУТОЧНЫЕ возможен");
+                    date_before = 1;
+                }
+                else{
+                    System.out.println("Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive  );
+                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer+ " Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
+                    continue;
+                }
+
+
+
+
                 //проверяем есть ли измерение
                 Date day = auxiliaryService.stringDate_to_Date(strData);
 

@@ -76,6 +76,17 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     }
 
     @Override
+    public LocalDateTime stringDate_to_LocalDateTime(String stringDate){
+        List<String> d = new ArrayList<String>(Arrays.asList(stringDate.split(":")));
+        LocalDateTime ldt2 = LocalDateTime.of(2000 + Integer.parseInt(d.get(2)), Integer.parseInt(d.get(1)), Integer.parseInt(d.get(0)), Integer.parseInt(d.get(3)), 0, 0);
+
+
+        return ldt2;
+
+    }
+
+
+    @Override
     public Timestamp stringDate_to_TimeStamp(String stringDate){
 
         List<String> d = new ArrayList<String>(Arrays.asList(stringDate.split(":")));
