@@ -465,6 +465,7 @@ List<Object> connect=new ArrayList<>();*/
         service = Executors.newSingleThreadExecutor();
         future0 = service.submit(task5);
         future1 = service.submit(task);
+
         //Future<String> future2 = service.submit(task);
 
         service.shutdown();

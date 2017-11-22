@@ -263,7 +263,7 @@
         <task:scheduled ref="run_t" method="t_run" cron="20 37 19 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="25 37 19 * * ?"/>
 -->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 8 19 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 26 8 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
 
     </task:scheduled-tasks>
