@@ -192,6 +192,30 @@ public class Facade_data {
 
        List<String> list1=(List<String>)res.get(1);
        List<DataObject_str> dataObjectList_str=reportService.getObject_ns_to_Str(dataObjectList,list1);
+       List<Object> calculation = reportService.getCalculations(dataObjectList,list1);
+
+       DataObject sum=(DataObject)calculation.get(0);
+       DataObject average=(DataObject)calculation.get(1);
+       DataObject_str sum_str=(DataObject_str) calculation.get(2);
+       DataObject_str average_str=(DataObject_str) calculation.get(3);
+
+      // for(String s:list1) {
+       for(String s:sum_str.getOptionalValues().keySet()) {
+
+           if(sum_str.getOptionalValues().get(s).getValue()!=null){
+           System.out.print(sum.getOptionalValues().get(s).getValue() + "    ");}
+
+
+       }
+       System.out.println();
+       //for(String s:list1) {
+       for(String s:sum_str.getOptionalValues().keySet()) {
+
+           if(average_str.getOptionalValues().get(s).getValue()!=null){
+           System.out.print(average.getOptionalValues().get(s).getValue() + "    ");}
+           // System.out.println();
+       }
+
 
       // searchCriteria_data.setData(dataObjectList);
        searchCriteria_data.setDataObject_strList(dataObjectList_str);
