@@ -1486,7 +1486,7 @@ public class ReportServiceImpl implements ReportService{
         BigDecimal sum_P1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_P2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_Mг_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
-        BigDecimal sum_Qo_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qо_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_Qг_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_dt_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_tx=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
@@ -1508,7 +1508,7 @@ public class ReportServiceImpl implements ReportService{
         BigDecimal sum_P1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_P2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_Mг_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
-        BigDecimal sum_Qo_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qо_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_Qг_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_dt_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal sum_BНP_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
@@ -1530,7 +1530,7 @@ public class ReportServiceImpl implements ReportService{
         int count_P1_1=0;
         int count_P2_1=0;
         int count_Mг_1=0;
-        int count_Qo_1=0;
+        int count_Qо_1=0;
         int count_Qг_1=0;
         int count_dt_1=0;
         int count_tx=0;
@@ -1552,7 +1552,7 @@ public class ReportServiceImpl implements ReportService{
         int count_P1_2=0;
         int count_P2_2=0;
         int count_Mг_2=0;
-        int count_Qo_2=0;
+        int count_Qо_2=0;
         int count_Qг_2=0;
         int count_dt_2=0;
         int count_BНP_2=0;
@@ -1583,21 +1583,514 @@ public class ReportServiceImpl implements ReportService{
                     count_V1_1++;
                 }
                 if(key.equals("V2 Тв1")){
-                    sum_V1_1=sum_V1_1.add(dataObject.getOptionalValues().get(key).getValue());
-                    count_V1_1++;
-                }
-                if(key.equals("V2 Тв1")){
                     sum_V2_1=sum_V2_1.add(dataObject.getOptionalValues().get(key).getValue());
                     count_V2_1++;
                 }
+                if(key.equals("V3 Тв1")){
+                    sum_V3_1=sum_V3_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V3_1++;
+                }
+                if(key.equals("M1 Тв1")){
+                    sum_M1_1=sum_M1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M1_1++;
+                }
+                if(key.equals("M2 Тв1")){
+                    sum_M2_1=sum_M2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M2_1++;
+                }
+                if(key.equals("M3 Тв1")){
+                    sum_M3_1=sum_M3_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M3_1++;
+                }
 
 
+                if(key.equals("P1 Тв1")){
+                    sum_P1_1=sum_P1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_P1_1++;
+                }
+                if(key.equals("P2 Тв1")){
+                    sum_P2_1=sum_P2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_P2_1++;
+                }
+                if(key.equals("Mг Тв1")){
+                    sum_Mг_1=sum_Mг_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Mг_1++;
+                }
+                if(key.equals("Qо Тв1")){
+                    sum_Qо_1=sum_Qо_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Qо_1++;
+                }
+                if(key.equals("Qг Тв1")){
+                    sum_Qг_1=sum_Qг_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Qг_1++;
+                }
+                if(key.equals("dt Тв1")){
+                    sum_dt_1=sum_dt_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_dt_1++;
+                }
+                if(key.equals("tx")){
+                    sum_tx=sum_tx.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_tx++;
+                }
+                if(key.equals("ta")){
+                    sum_ta=sum_ta.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_ta++;
+                }
+                if(key.equals("BНP Тв1")){
+                    sum_BНP_1=sum_BНP_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_BНP_1++;
+                }
+                if(key.equals("BOC Тв1")){
+                    sum_BOC_1=sum_BOC_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_BOC_1++;
+                }
+                if(key.equals("G1 Тв1")){
+                    sum_G1_1=sum_G1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G1_1++;
+                }
+                if(key.equals("G2 Тв1")){
+                    sum_G2_1=sum_G2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G2_1++;
+                }
+                if(key.equals("G3 Тв1")){
+                    sum_G3_1=sum_G3_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G3_1++;
+                }
+
+
+
+
+                if(key.equals("t1 Тв2")){
+                    sum_t1_2=sum_t1_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t1_2++;
+                }
+                if(key.equals("t2 Тв2")){
+                    sum_t2_2=sum_t2_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t2_2++;
+                }
+                if(key.equals("t3 Тв2")){
+                    sum_t3_2=sum_t3_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t3_2++;
+                }
+                if(key.equals("V1 Тв2")){
+                    sum_V1_2=sum_V1_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V1_2++;
+                }
+                if(key.equals("V2 Тв2")){
+                    sum_V2_2=sum_V2_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V2_2++;
+                }
+                if(key.equals("V3 Тв2")){
+                    sum_V3_2=sum_V3_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V3_2++;
+                }
+                if(key.equals("M1 Тв2")){
+                    sum_M1_2=sum_M1_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M1_2++;
+                }
+                if(key.equals("M2 Тв2")){
+                    sum_M2_2=sum_M2_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M2_2++;
+                }
+                if(key.equals("M3 Тв2")){
+                    sum_M3_2=sum_M3_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_M3_2++;
+                }
+
+
+                if(key.equals("P1 Тв2")){
+                    sum_P1_2=sum_P1_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_P1_2++;
+                }
+                if(key.equals("P2 Тв2")){
+                    sum_P2_1=sum_P2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_P2_1++;
+                }
+                if(key.equals("Mг Тв2")){
+                    sum_Mг_2=sum_Mг_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Mг_2++;
+                }
+                if(key.equals("Qо Тв2")){
+                    sum_Qо_2=sum_Qо_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Qо_2++;
+                }
+                if(key.equals("Qг Тв2")){
+                    sum_Qг_2=sum_Qг_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_Qг_2++;
+                }
+                if(key.equals("dt Тв2")){
+                    sum_dt_2=sum_dt_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_dt_2++;
+                }
+
+                if(key.equals("BНP Тв2")){
+                    sum_BНP_2=sum_BНP_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_BНP_2++;
+                }
+                if(key.equals("BOC Тв2")){
+                    sum_BOC_2=sum_BOC_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_BOC_2++;
+                }
+                if(key.equals("G1 Тв2")){
+                    sum_G1_2=sum_G1_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G1_2++;
+                }
+                if(key.equals("G2 Тв2")){
+                    sum_G2_2=sum_G2_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G2_2++;
+                }
+                if(key.equals("G3 Тв2")){
+                    sum_G3_2=sum_G3_2.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_G3_2++;
+                }
+
+
+            } ///конец перебора по key
+
+
+        } ///конец перебора по DataObjectList
+
+        Map<String,Tupel> map_sum=new HashMap<String,Tupel>();
+        Map<String,Tupel> map_average=new HashMap<String,Tupel>();
+
+        Map<String,Tupel_str> map_sum_str=new HashMap<String,Tupel_str>();
+        Map<String,Tupel_str> map_average_str=new HashMap<String,Tupel_str>();
+
+
+        for(String key:id_col){
+            if(key.equals("t1 Тв1")){
+
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
 
 
             }
+            if(key.equals("t2 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("t3 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("V1 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_V1_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V1_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
 
 
-        }
+            }
+            if(key.equals("V2 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_V2_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V2_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("V3 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_V3_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V3_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M1 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_M1_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M1_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M2 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_M2_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M2_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M3 Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_M3_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M3_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+
+
+            if(key.equals("P1 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("P2 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("Mг Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_Mг_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Mг_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("Qо Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_Qо_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Qо_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("Qг Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_Qг_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Qг_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("dt Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("tx")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("ta")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("BНP Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_BНP_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_BНP_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("BOC Тв1")){
+                map_sum.put(key, new Tupel(key, (sum_BOC_1)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_BOC_1.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("G1 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("G2 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("G3 Тв1")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+
+
+
+
+            if(key.equals("t1 Тв2")){
+
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+
+
+            }
+            if(key.equals("t2 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("t3 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("V1 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_V1_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V1_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+
+
+            }
+            if(key.equals("V2 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_V2_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V2_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("V3 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_V3_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_V3_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M1 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_M1_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M1_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M2 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_M2_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M2_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("M3 Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_M3_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_M3_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+
+
+            if(key.equals("P1 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("P2 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("Mг Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_Mг_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Mг_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("Qо Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_Qо_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Qо_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("Qг Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_Qг_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_Qг_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("dt Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+
+            if(key.equals("BНP Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_BНP_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_BНP_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("BOC Тв2")){
+                map_sum.put(key, new Tupel(key, (sum_BOC_2)));
+                map_average.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+
+                map_sum_str.put(key, new Tupel_str(key, (sum_BOC_2.toString())));
+                map_average_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN)).toString()));
+            }
+            if(key.equals("G1 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("G2 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+            if(key.equals("G3 Тв2")){
+                map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
+                map_average.put(key, new Tupel(key, (sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN)))));
+
+                map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+            }
+
+
+        } ///конец перебора по key
+
+        DataObject sum= new DataObject();
+        sum.setStaticval2("ИТОГО");
+        sum.setOptionalValues(map_sum);
+        DataObject average= new DataObject();
+        average.setStaticval2("Средние");
+        average.setOptionalValues(map_average);
+
+        DataObject_str sum_str= new DataObject_str();
+        sum_str.setStaticval2("ИТОГО");
+        sum_str.setOptionalValues(map_sum_str);
+        DataObject_str average_str= new DataObject_str();
+        average_str.setStaticval2("Средние");
+        average_str.setOptionalValues(map_average_str);
+
+
+
 
 
     }
