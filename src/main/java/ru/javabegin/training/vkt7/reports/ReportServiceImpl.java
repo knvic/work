@@ -1424,6 +1424,16 @@ public class ReportServiceImpl implements ReportService{
     }
 
 
+
+    @Override
+    public void getObject_ns_to_str(List<DataObject> dataObjectList, List<String> id_coil){
+
+
+
+
+    }
+
+
     @Override
     public void getCalculations(List<DataObject> dataObjectList){
 
