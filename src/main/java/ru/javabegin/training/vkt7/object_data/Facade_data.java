@@ -13,10 +13,7 @@ import ru.javabegin.training.vkt7.object.SearchCriteria_cust;
 import ru.javabegin.training.vkt7.object.SearchCriteria_oper;
 import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
-import ru.javabegin.training.vkt7.reports.Archive;
-import ru.javabegin.training.vkt7.reports.DataObject;
-import ru.javabegin.training.vkt7.reports.ReportService;
-import ru.javabegin.training.vkt7.reports.Tupel;
+import ru.javabegin.training.vkt7.reports.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -192,9 +189,12 @@ public class Facade_data {
 
        List<Object> res= reportService.getObject_ns(operationList);
        List<DataObject> dataObjectList=(List<DataObject>)res.get(0);
-       List<String> list1=(List<String>)res.get(1);
 
-       searchCriteria_data.setData(dataObjectList);
+       List<String> list1=(List<String>)res.get(1);
+       List<DataObject_str> dataObjectList_str=reportService.getObject_ns_to_Str(dataObjectList,list1);
+
+      // searchCriteria_data.setData(dataObjectList);
+       searchCriteria_data.setDataObject_strList(dataObjectList_str);
        searchCriteria_data.setId_item(list1);
 
 

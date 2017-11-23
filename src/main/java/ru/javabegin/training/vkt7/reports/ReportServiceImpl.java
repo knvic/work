@@ -1429,7 +1429,7 @@ public class ReportServiceImpl implements ReportService{
 
 
     @Override
-    public void getObject_ns_to_Str(List<DataObject> dataObjectList, List<String> id_coil){
+    public List<DataObject_str> getObject_ns_to_Str(List<DataObject> dataObjectList, List<String> id_coil){
 
 
         List<DataObject_str> dataObject_str_List=new ArrayList<>();
@@ -1459,6 +1459,8 @@ public class ReportServiceImpl implements ReportService{
             System.out.println();
         }
         System.out.println("\n///////////////////////////////////////////////////////////");
+
+        return dataObject_str_List;
 
 
     }
