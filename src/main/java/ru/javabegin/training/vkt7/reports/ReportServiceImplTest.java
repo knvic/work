@@ -267,6 +267,8 @@ public class ReportServiceImplTest {
         //  average.getOptionalValues().keySet().forEach(p -> System.out.print(p + " " + average.getOptionalValues().get(p).getValue() + "    "));
 
 
+        //////////////////// Сама конвертация /////////////////////////////////////////////////////////
+
         List<DataObject_str> dataObject_str_List=new ArrayList<>();
  for(DataObject dataObject:dataObjectList){
      DataObject_str dataObject_str=new DataObject_str();

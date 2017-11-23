@@ -8,7 +8,9 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimpleXlsReportConfiguration;
 import net.sf.jasperreports.view.JasperViewer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
@@ -28,7 +30,8 @@ import java.util.*;
 @Service("reportService")
 public class ReportServiceImpl implements ReportService{
 
-
+@Autowired
+    AuxiliaryService auxiliaryService;
 
 
     @Override
@@ -1426,9 +1429,36 @@ public class ReportServiceImpl implements ReportService{
 
 
     @Override
-    public void getObject_ns_to_str(List<DataObject> dataObjectList, List<String> id_coil){
+    public void getObject_ns_to_Str(List<DataObject> dataObjectList, List<String> id_coil){
 
 
+        List<DataObject_str> dataObject_str_List=new ArrayList<>();
+        for(DataObject dataObject:dataObjectList){
+            DataObject_str dataObject_str=new DataObject_str();
+            Map<String,Tupel_str> map_str=new HashMap<String,Tupel_str>();
+
+            for(String coil:id_coil){
+                map_str.put(coil,new Tupel_str(coil,dataObject.getOptionalValues().get(coil).getValue().toString()));
+                //map.put("t1 Тв1", new Tupel("t1 Тв1", (new BigDecimal("65.81").setScale(2, RoundingMode.HALF_EVEN))));
+
+            }
+
+            dataObject_str.setData(auxiliaryService.timeStamp_to_string(dataObject.getData()));
+            dataObject_str.setOptionalValues(map_str);
+            dataObject_str_List.add(dataObject_str);
+
+
+        }
+        System.out.println("\n///////////////////////////////////////////////////////////");
+
+        for(DataObject_str dataObject: dataObject_str_List){
+            for(String s:id_coil){
+
+                System.out.print(dataObject.getOptionalValues().get(s).getValue()+"    ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n///////////////////////////////////////////////////////////");
 
 
     }
