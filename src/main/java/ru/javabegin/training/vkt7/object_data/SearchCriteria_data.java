@@ -9,6 +9,7 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.reports.Archive;
 import ru.javabegin.training.vkt7.reports.DataObject;
+import ru.javabegin.training.vkt7.reports.DataObject_str;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -33,7 +34,17 @@ public class SearchCriteria_data implements Serializable{
     private Archive archive;
 
     private List<DataObject> data;
+    private List<DataObject_str> dataObject_strList;
+
     private List<String> id_item;
+
+    public List<DataObject_str> getDataObject_strList() {
+        return dataObject_strList;
+    }
+
+    public void setDataObject_strList(List<DataObject_str> dataObject_strList) {
+        this.dataObject_strList = dataObject_strList;
+    }
 
     public List<String> getId_item() {
         return id_item;

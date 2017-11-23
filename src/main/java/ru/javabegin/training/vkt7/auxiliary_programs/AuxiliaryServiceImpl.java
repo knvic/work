@@ -97,6 +97,16 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
         return timestamp_daily;
     }
 
+    @Override
+    public String timeStamp_to_string(Timestamp date){
+        LocalDateTime localDateTime=timestamp_to_localDateTime(date);
+
+        String date_str = localDateTime.format(DateTimeFormatter.ofPattern("dd/MM/uu"));
+        return date_str;
+
+    }
+
+
 
 
     @Override
