@@ -198,9 +198,13 @@ public class Facade_data {
        DataObject average=(DataObject)calculation.get(1);
        DataObject_str sum_str=(DataObject_str) calculation.get(2);
        DataObject_str average_str=(DataObject_str) calculation.get(3);
+       List<String> list_calc=new ArrayList<>(sum.getOptionalValues().keySet());
+       list_calc=reportService.sort(list_calc);
 
-      // for(String s:list1) {
-       for(String s:sum_str.getOptionalValues().keySet()) {
+       list_calc.forEach(p->System.out.print(p+" "));
+
+       for(String s:list_calc) {
+       //for(String s:sum_str.getOptionalValues().keySet()) {
 
            if(sum_str.getOptionalValues().get(s).getValue()!=null){
            System.out.print(sum.getOptionalValues().get(s).getValue() + "    ");}
@@ -208,18 +212,23 @@ public class Facade_data {
 
        }
        System.out.println();
-       //for(String s:list1) {
-       for(String s:sum_str.getOptionalValues().keySet()) {
+       for(String s:list_calc) {
+       //for(String s:sum_str.getOptionalValues().keySet()) {
 
            if(average_str.getOptionalValues().get(s).getValue()!=null){
            System.out.print(average.getOptionalValues().get(s).getValue() + "    ");}
            // System.out.println();
        }
 
+List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
+       dataObject_calc_strList.add(sum_str);
+       dataObject_calc_strList.add(average_str);
 
       // searchCriteria_data.setData(dataObjectList);
        searchCriteria_data.setDataObject_strList(dataObjectList_str);
        searchCriteria_data.setId_item(list1);
+       searchCriteria_data.setDataObject_calc_strList(dataObject_calc_strList);
+       searchCriteria_data.setCalc_item(list_calc);
 
 
     }

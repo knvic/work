@@ -35,8 +35,28 @@ public class SearchCriteria_data implements Serializable{
 
     private List<DataObject> data;
     private List<DataObject_str> dataObject_strList;
+    private List<DataObject_str> dataObject_calc_strList;
+
 
     private List<String> id_item;
+
+    public List<DataObject_str> getDataObject_calc_strList() {
+        return dataObject_calc_strList;
+    }
+
+    public void setDataObject_calc_strList(List<DataObject_str> dataObject_calc_strList) {
+        this.dataObject_calc_strList = dataObject_calc_strList;
+    }
+
+    public List<String> getCalc_item() {
+        return calc_item;
+    }
+
+    public void setCalc_item(List<String> calc_item) {
+        this.calc_item = calc_item;
+    }
+
+    private List<String> calc_item;
 
     public List<DataObject_str> getDataObject_strList() {
         return dataObject_strList;
