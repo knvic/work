@@ -1467,25 +1467,136 @@ public class ReportServiceImpl implements ReportService{
 
 
     @Override
-    public void getCalculations(List<DataObject> dataObjectList){
+    public void getCalculations(List<DataObject> dataObjectList, List<String> id_col){
+
+
+        String qq="t1 Тв1,t2 Тв1,t3 Тв1,V1 Тв1,V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, P1 Тв1, P2 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, dt Тв1, tх, ta, BНP Тв1, BOC Тв1," +
+                " G1 Тв1, G2 Тв1, G3 Тв1, t1 Тв2, t2 Тв2, t3 Тв2, V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, P1 Тв2, P2 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, dt Тв2, BНP Тв2, BOC Тв2," +
+                " G1 Тв2, G2 Тв2, G3 Тв2";
+
+        BigDecimal sum_t1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_t2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_t3_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V3_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M3_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_P1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_P2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Mг_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qo_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qг_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_dt_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_tx=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_ta=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_BНP_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_BOC_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G1_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G2_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G3_1=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_t1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_t2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_t3_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_V3_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_M3_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_P1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_P2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Mг_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qo_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_Qг_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_dt_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_BНP_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_BOC_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G1_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G2_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal sum_G3_2=new BigDecimal("0").setScale(2, RoundingMode.HALF_EVEN);
+
+
+        int count_t1_1=0;
+        int count_t2_1=0;
+        int count_t3_1=0;
+        int count_V1_1=0;
+        int count_V2_1=0;
+        int count_V3_1=0;
+        int count_M1_1=0;
+        int count_M2_1=0;
+        int count_M3_1=0;
+        int count_P1_1=0;
+        int count_P2_1=0;
+        int count_Mг_1=0;
+        int count_Qo_1=0;
+        int count_Qг_1=0;
+        int count_dt_1=0;
+        int count_tx=0;
+        int count_ta=0;
+        int count_BНP_1=0;
+        int count_BOC_1=0;
+        int count_G1_1=0;
+        int count_G2_1=0;
+        int count_G3_1=0;
+        int count_t1_2=0;
+        int count_t2_2=0;
+        int count_t3_2=0;
+        int count_V1_2=0;
+        int count_V2_2=0;
+        int count_V3_2=0;
+        int count_M1_2=0;
+        int count_M2_2=0;
+        int count_M3_2=0;
+        int count_P1_2=0;
+        int count_P2_2=0;
+        int count_Mг_2=0;
+        int count_Qo_2=0;
+        int count_Qг_2=0;
+        int count_dt_2=0;
+        int count_BНP_2=0;
+        int count_BOC_2=0;
+        int count_G1_2=0;
+        int count_G2_2=0;
+        int count_G3_2=0;
+
+
 
 
         for (DataObject dataObject: dataObjectList) {
-
-           /* if (m.getText().equals("t1 Тв1")) {
-
-                id_col.add(m.getText());
-                if (m.getMeasurText() != null) {
-                    map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal(m.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN))));
-                } else {
-                    map.put(m.getText(), new Tupel(m.getText(), (new BigDecimal("0").setScale(4, RoundingMode.HALF_EVEN))));
+            for(String key:id_col){
+                if(key.equals("t1 Тв1")){
+                    sum_t1_1=sum_t1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t1_1++;
                 }
-                //Добавляем нештатные ситуаии
-                id_col.add("НС_t1_1");
-                map.put("НС_t1_1", new Tupel("НС_t1_1", (ns_to_bd(m.getNs()))));
+                if(key.equals("t2 Тв1")){
+                    sum_t2_1=sum_t2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t2_1++;
+                }
+                if(key.equals("t3 Тв1")){
+                    sum_t3_1=sum_t3_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_t3_1++;
+                }
+                if(key.equals("V1 Тв1")){
+                    sum_V1_1=sum_V1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V1_1++;
+                }
+                if(key.equals("V2 Тв1")){
+                    sum_V1_1=sum_V1_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V1_1++;
+                }
+                if(key.equals("V2 Тв1")){
+                    sum_V2_1=sum_V2_1.add(dataObject.getOptionalValues().get(key).getValue());
+                    count_V2_1++;
+                }
 
 
-            }*/
+
+
+            }
+
+
         }
 
 
