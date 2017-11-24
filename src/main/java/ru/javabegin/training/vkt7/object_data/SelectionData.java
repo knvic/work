@@ -32,6 +32,16 @@ public class SelectionData implements Serializable {
     private Measurements measurements;
     private Archive archive;
 
+    private boolean check;
+
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
+    }
+
     public Archive getArchive() {
         return archive;
     }
@@ -105,6 +115,7 @@ public class SelectionData implements Serializable {
         FacesMessage msg = new FacesMessage("Customer Unselected", ((Customer) event.getObject()).getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
+
 
     public void onRowSelect_operation(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Operation Selected", ((Operation) event.getObject()).getCustomerName());

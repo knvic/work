@@ -15,28 +15,18 @@
                 <h:form styleClass="genres" id="genresForm">
                     <h1>#{msg.teplo_menu}</h1>
 
-               <!--     <ul>
-                        <li><p:commandButton value="#{msg.add_customer}"    action="add_customer" styleClass="ui-priority-primary" /> </li>
-                    </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" /> </li>
-                    </ul>-->
+
 
                     <ul>
-                        <li><p:commandButton value="#{msg.next}" event="onclick"  action="next"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setOperation(selectionData.getOperation())}"/> </li>
-                    </ul>
-                    <ul>
-                        <li> *************** </li>
+                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
                     </ul>
 
                     <ul>
                         <li><p:commandButton value="#{msg.back}" event="onclick"  action="back"  styleClass="ui-priority-primary" /> </li>
-                    </ul>
-                    <ul>
-                        <li> - - - </li>
-                    </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
+
+                        <li><p:commandButton value="#{msg.next}" event="onclick"  action="next"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setOperation(selectionData.getOperation())}"/> </li>
+
+
                     </ul>
 
 

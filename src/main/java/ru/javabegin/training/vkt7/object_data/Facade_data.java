@@ -305,6 +305,19 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
     }
 
 
+    public boolean  checkSelectedData(){
+        boolean check=false;
+
+        if (searchCriteria_data.getCustomer()!=null){
+            check=true;
+            selectionData.setCheck(true);
+        }
+
+
+        return check;
+    }
+
+
 
     /////////////Measurements ////////////////
     public List<Measurements> getMeasurementsList() {

@@ -13,11 +13,24 @@
                   <evaluate expression="facade_data.findAllCustomers()" result="viewScope.cu"  />
             </on-render>
             <transition on="back" to="data_ready"/>
-            <transition on="next" to="operation"/>
+            <transition on="next" to="operation_action"/>
 
 
 
       </view-state>
+
+
+      <action-state id="operation_action">
+            <evaluate expression="facade_data.checkSelectedData()" />
+
+            <transition on="yes" to="operation" />
+            <transition on="no" to="data_process" >
+                    <set name="flashScope.message" value="'selectCustomer'"/>
+            </transition>
+
+
+      </action-state>
+
 
 
 
@@ -43,14 +56,7 @@
       </action-state>
 
 
-    <!--  <action-state id="measurements_action">
-            <evaluate expression="facade_data.getArchiveByCustomer()"  />
-            <evaluate expression="searchCriteria_data.setArchive(selectionData.getArchive)"  />
 
-
-            &lt;!&ndash;<transition on="no" to="resultIsFalseState" />&ndash;&gt;
-            <transition  to="measurements" />
-      </action-state>-->
 
 
 

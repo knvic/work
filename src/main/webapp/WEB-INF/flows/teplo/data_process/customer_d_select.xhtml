@@ -6,7 +6,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:sec="http://www.springframework.org/security/tags">
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 
 <ui:composition template="/WEB-INF/templates/customer_d_select_template.xhtml">
@@ -17,9 +17,27 @@
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
 
+       <!-- <p:dialog id="dlg" header="Warning" visible="#{selectionData.check}">
+            You need to change password!
+        </p:dialog>-->
+
+        <c:if test="${not empty message}">
+            <span style="float: left" class="error">${message}</span>
+         </c:if>
+
+
+
+
+
+        <p:dialog header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+            <h:outputText value="${message}" styleClass="error" />
+        </p:dialog>
+
 
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
+
+
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
@@ -40,6 +58,8 @@
                 </p:column>
 
             </p:dataTable>
+
+
 
 
 
