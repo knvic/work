@@ -21,56 +21,14 @@
         <h:form id="form">
             <!--<p:growl id="msgs" showDetail="true"/>-->
 
-            <p:dataTable id="eventsDT2" var="u1" value="#{searchCriteria_data.dataObject_calc_strList}" scrollable="true" liveScroll="true"
-                         scrollRows="20" scrollWidth="100%"  scrollHeight="200" resizableColumns="true" lazy="true"
-                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
-                <p:column>
-                    <f:facet name="header">
-                        Дата
-                    </f:facet>
-                    <h:outputText value="#{u1.staticval2}"/>
-                </p:column>
-
-                <p:columns value="#{searchCriteria_data.calc_item}" var="id" >
-                    <f:facet name="header">
-                        <h:outputText value="#{id}"/>
-                    </f:facet>
-                    <h:outputText value="#{u1.optionalValues[id].value}"/>
-                </p:columns>
-
-            </p:dataTable>
-
-
-            <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
-            <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.dataObject_strList}" scrollable="true" liveScroll="true"
-                         scrollRows="20" scrollWidth="100%"  scrollHeight="700" resizableColumns="true" lazy="true"
-                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
-                <p:column>
-                    <f:facet name="header">
-                        Дата
-                    </f:facet>
-                    <h:outputText value="#{u.data}"/>
-                </p:column>
-
-                <p:columns value="#{searchCriteria_data.id_item}" var="id" >
-                    <f:facet name="header">
-                        <h:outputText value="#{id}"/>
-                    </f:facet>
-                    <h:outputText value="#{u.optionalValues[id].value}"/>
-                </p:columns>
-
-            </p:dataTable>
-
-
-
             <p:dataTable id="tbl" var="u" value="#{searchCriteria_data.dataObject_strList}"
                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-                         paginator="true" rows="10" style="margin-bottom:20px">
+                         paginator="true" rows="15" style="margin-bottom:20px">
 
                 <f:facet name="{Exporters}">
                     <h:commandLink>
                         <p:graphicImage name="/images/excel.png" width="24"/>
-                        <p:dataExporter type="xls" target="tbl" fileName="cars" />
+                        <p:dataExporter type="xls" target="tbl" fileName="measurements" />
                     </h:commandLink>
 
 
@@ -90,6 +48,54 @@
                     <h:outputText value="#{u.optionalValues[id].value}"/>
                 </p:columns>
             </p:dataTable>
+
+
+
+            <p:dataTable id="eventsDT2" var="u1" value="#{searchCriteria_data.dataObject_calc_strList}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%"  scrollHeight="200" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u1.staticval2}"/>
+                </p:column>
+
+                <p:columns value="#{searchCriteria_data.calc_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u1.optionalValues[id].value}"/>
+                </p:columns>
+
+            </p:dataTable>
+
+<!--  24.11.2017
+
+            &lt;!&ndash;<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >&ndash;&gt;
+            <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.dataObject_strList}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%"  scrollHeight="700" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u.data}"/>
+                </p:column>
+
+                <p:columns value="#{searchCriteria_data.id_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u.optionalValues[id].value}"/>
+                </p:columns>
+
+            </p:dataTable>
+
+-->
+
+
+
 
 
 
