@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
@@ -38,6 +39,9 @@ public class Facade_data {
 
     @Autowired
     ReportService reportService;
+
+    @Autowired
+    AuxiliaryService auxiliaryService;
 
 
    /* @Autowired
@@ -229,6 +233,32 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
        searchCriteria_data.setId_item(list1);
        searchCriteria_data.setDataObject_calc_strList(dataObject_calc_strList);
        searchCriteria_data.setCalc_item(list_calc);
+
+        ////получаем Итоговы текущие
+       LocalDateTime date_moth=auxiliaryService.timestamp_to_localDateTime(ts_day_to);
+       ///Дата предыдущего месяца
+       Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(ts_day_to);
+       List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
+       System.out.println("размер массива operationList_total "+operationList_total.size() );
+
+       List<Object> total_currint_from_calss= reportService.getCalculations_total(operationList_total,sum);
+       List<DataObject> total_currint=(List<DataObject>)total_currint_from_calss.get(0);
+       List<DataObject_str> total_currint_str=(List<DataObject_str>)total_currint_from_calss.get(1);
+       List<String> total_currint_column=(List<String>)total_currint_from_calss.get(1);
+
+       ///проверяем итоговые значение
+       for (String col : total_currint_column) {
+           System.out.print(col+ "    ");
+
+       }
+
+       for(DataObject_str objectStr:total_currint_str) {
+           for (String col : total_currint_column) {
+               System.out.print(objectStr.getOptionalValues().get(col).getValue()+" ");
+
+           }
+           System.out.println();
+       }
 
 
     }

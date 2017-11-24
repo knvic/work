@@ -2106,7 +2106,7 @@ return calculation;
 
 
     @Override
-    public void getCalculations_total(List<Operation> operationList, DataObject sum) {
+    public List<Object> getCalculations_total(List<Operation> operationList, DataObject sum) {
         String total_element = "V1 Тв1, V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, BНP Тв1, BOC Тв1, " +
                 "V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, BНP Тв2, BOC Тв2";
 
@@ -2204,6 +2204,27 @@ return calculation;
         DataObject_str total_end_str = new DataObject_str();
         total_end_str.setOptionalValues(map_total_sum_str);
         total_end_str.setData("Итого:");
+
+        List<DataObject> total_current=new ArrayList<>();
+        total_current.add(total_begin);
+        total_current.add(sum_new);
+        total_current.add(total_end);
+
+        List<DataObject_str> total_current_str=new ArrayList<>();
+        total_current_str.add(total_begin_str);
+        total_current_str.add(sum_new_str);
+        total_current_str.add(total_end_str);
+
+        List<Object> t_current=new ArrayList<>();
+        ////
+        t_current.add(0,total_current); //лист из трех объектов в формате DataObject значение total_moth, сумма всех значений, итоговое значение
+        t_current.add(1,total_current_str);//лист из трех объектов в формате DataObject_str значение total_moth, сумма всех значений, итоговое значение
+        t_current.add(2,list_calc_total); /// Пережеланный список колонок под измерения итоговые текущие
+
+
+
+
+        return t_current;
 
 
 

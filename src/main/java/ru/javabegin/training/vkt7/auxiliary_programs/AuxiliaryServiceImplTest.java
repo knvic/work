@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +18,20 @@ import static org.junit.Assert.*;
  * Created by user on 18.11.2017.
  */
 public class AuxiliaryServiceImplTest {
+    @Test
+    public void getLastDayPrevisionMoth() throws Exception {
+        LocalDateTime ldt=LocalDateTime.now();
+        System.out.println("ldt="+ldt);
+        Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
+
+
+        Timestamp tstamp = auxiliaryService.getLastDayPrevisionMoth(ts);
+
+        System.out.println("tstamp="+tstamp);
+
+
+    }
+
     @Test
     public void saveMessage() throws Exception {
         File file = new File("C:\\Work\\Java\\work\\logRevizor1.txt");

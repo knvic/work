@@ -41,7 +41,7 @@ public interface ReportService {
 
       List<Object> getCalculations(List<DataObject> dataObjectList,List<String> id_col);  ///
 
-    void getCalculations_total(List<Operation> operationList,DataObject sum);///
+    List<Object> getCalculations_total(List<Operation> operationList,DataObject sum);///
 
     //// конец основное
 

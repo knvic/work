@@ -107,6 +107,17 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     }
 
 
+    @Override
+    public Timestamp getLastDayPrevisionMoth(Timestamp timestamp){
+        LocalDateTime ldt =timestamp_to_localDateTime(timestamp);
+       LocalDate ld=ldt.toLocalDate();
+        Timestamp tstamp = Timestamp.valueOf(LocalDateTime.of(ld.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth()),LocalTime.of(23,00)));
+
+
+        return tstamp;
+    }
+
+
 
 
     @Override

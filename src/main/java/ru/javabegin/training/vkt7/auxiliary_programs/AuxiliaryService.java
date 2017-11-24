@@ -27,6 +27,8 @@ public interface AuxiliaryService {
     LocalDateTime stringDate_to_LocalDateTime(String stringDate);
     Timestamp stringDate_to_TimeStamp(String stringDate);
     String timeStamp_to_string(Timestamp date);
+    Timestamp getLastDayPrevisionMoth(Timestamp timestamp);
+
 
 
 
