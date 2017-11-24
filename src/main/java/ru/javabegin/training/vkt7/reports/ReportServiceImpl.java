@@ -1467,7 +1467,7 @@ public class ReportServiceImpl implements ReportService{
 
 
     @Override
-    public void getCalculations(List<DataObject> dataObjectList, List<String> id_col){
+    public List<Object> getCalculations(List<DataObject> dataObjectList, List<String> id_col){
 
 
         String qq="t1 Тв1,t2 Тв1,t3 Тв1,V1 Тв1,V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, P1 Тв1, P2 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, dt Тв1, tх, ta, BНP Тв1, BOC Тв1," +
@@ -1759,28 +1759,28 @@ public class ReportServiceImpl implements ReportService{
 
         for(String key:id_col){
             if(key.equals("t1 Тв1")){
-
+// BigDecimal qwerty=sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN), 2,RoundingMode.HALF_EVEN);
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
 
 
             }
             if(key.equals("t2 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t2_1.divide(new BigDecimal(count_t2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("t3 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t3_1.divide(new BigDecimal(count_t3_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("V1 Тв1")){
                 map_sum.put(key, new Tupel(key, (sum_V1_1)));
@@ -1828,19 +1828,21 @@ public class ReportServiceImpl implements ReportService{
             }
 
 
+
+
             if(key.equals("P1 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P1_1.divide(new BigDecimal(count_P1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("P2 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P2_1.divide(new BigDecimal(count_P2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("Mг Тв1")){
                 map_sum.put(key, new Tupel(key, (sum_Mг_1)));
@@ -1865,24 +1867,24 @@ public class ReportServiceImpl implements ReportService{
             }
             if(key.equals("dt Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_dt_1.divide(new BigDecimal(count_dt_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("tx")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_tx.divide(new BigDecimal(count_tx).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("ta")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_ta.divide(new BigDecimal(count_ta).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("BНP Тв1")){
                 map_sum.put(key, new Tupel(key, (sum_BНP_1)));
@@ -1900,24 +1902,24 @@ public class ReportServiceImpl implements ReportService{
             }
             if(key.equals("G1 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G1_1.divide(new BigDecimal(count_G1_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("G2 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G2_1.divide(new BigDecimal(count_G2_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("G3 Тв1")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G3_1.divide(new BigDecimal(count_G3_1).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
 
 
@@ -1926,26 +1928,26 @@ public class ReportServiceImpl implements ReportService{
             if(key.equals("t1 Тв2")){
 
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t1_2.divide(new BigDecimal(count_t1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
 
 
             }
             if(key.equals("t2 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t2_2.divide(new BigDecimal(count_t2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("t3 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_t3_2.divide(new BigDecimal(count_t3_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("V1 Тв2")){
                 map_sum.put(key, new Tupel(key, (sum_V1_2)));
@@ -1995,17 +1997,17 @@ public class ReportServiceImpl implements ReportService{
 
             if(key.equals("P1 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P1_2.divide(new BigDecimal(count_P1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("P2 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_P2_2.divide(new BigDecimal(count_P2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("Mг Тв2")){
                 map_sum.put(key, new Tupel(key, (sum_Mг_2)));
@@ -2030,10 +2032,10 @@ public class ReportServiceImpl implements ReportService{
             }
             if(key.equals("dt Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_dt_2.divide(new BigDecimal(count_dt_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
 
             if(key.equals("BНP Тв2")){
@@ -2052,24 +2054,24 @@ public class ReportServiceImpl implements ReportService{
             }
             if(key.equals("G1 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G1_2.divide(new BigDecimal(count_G1_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));;
             }
             if(key.equals("G2 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G2_2.divide(new BigDecimal(count_G2_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
             if(key.equals("G3 Тв2")){
                 map_sum.put(key, new Tupel(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN))));
-                map_average.put(key, new Tupel(key, (sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN)))));
+                map_average.put(key, new Tupel(key, sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)));
 
                 map_sum_str.put(key, new Tupel_str(key, (new BigDecimal("0").setScale(1, RoundingMode.HALF_EVEN).toString())));
-                map_average_str.put(key, new Tupel_str(key, (sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN)).toString())));
+                map_average_str.put(key, new Tupel_str(key, (sum_G3_2.divide(new BigDecimal(count_G3_2).setScale(2, RoundingMode.HALF_EVEN),2,RoundingMode.HALF_EVEN)).toString()));
             }
 
 
@@ -2090,9 +2092,15 @@ public class ReportServiceImpl implements ReportService{
         average_str.setOptionalValues(map_average_str);
 
 
+List<Object> calculation=new ArrayList<>();
+calculation.add(0,sum);
+calculation.add(1,average);
+        calculation.add(2,sum_str);
+        calculation.add(3,average_str);
 
 
 
+return calculation;
     }
 
 

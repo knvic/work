@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import static java.math.BigDecimal.ROUND_CEILING;
+import static java.math.BigDecimal.ROUND_HALF_EVEN;
 
 /**
  * Created by Николай on 27.10.2017.
@@ -61,10 +62,19 @@ public class Test_round {
         b=b.movePointRight(3);
         System.out.println(" из String =  "+ b);
 
-        String qw="";
-        BigDecimal bqw = new BigDecimal(qw);
+        //String qw="";
+       // BigDecimal bqw = new BigDecimal(qw);
+        int count_t1_1=22;
+        BigDecimal sum_t1_1=new BigDecimal("1687.32").setScale(2, RoundingMode.HALF_EVEN);
+        BigDecimal count_1=new BigDecimal(count_t1_1);
+        System.out.println( sum_t1_1);
+        BigDecimal su=new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN);
+      // System.out.println("yy = "+sum_t1_1.divide(new BigDecimal(String.valueOf(count_t1_1)).setScale(2, RoundingMode.HALF_EVEN)));
 
+       //BigDecimal qwerty=sum_t1_1.divide(new BigDecimal(String.valueOf(count_t1_1)).setScale(2, RoundingMode.HALF_EVEN));
 
+        BigDecimal qwerty=sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN), 8,RoundingMode.HALF_EVEN);
 
+        System.out.println(qwerty);
     }
 }
