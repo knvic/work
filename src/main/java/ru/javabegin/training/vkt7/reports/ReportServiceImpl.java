@@ -2105,6 +2105,112 @@ return calculation;
 
 
 
+    @Override
+    public void getCalculations_total(List<Operation> operationList, DataObject sum) {
+        String total_element = "V1 Тв1, V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, BНP Тв1, BOC Тв1, " +
+                "V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, BНP Тв2, BOC Тв2";
+
+        List<String> total_element_all = new ArrayList<>(Arrays.asList(total_element.replace(", ", ",").split(",")));
+
+        List<String> list_calc = new ArrayList<>(sum.getOptionalValues().keySet());
+        List<String> list_calc_total = new ArrayList<>();
+        Map<String, Tupel> map_total = new HashMap<String, Tupel>();
+        Map<String, Tupel_str> map_total_str = new HashMap<String, Tupel_str>();
+
+
+        list_calc = sort(list_calc);
+
+        DataObject total_begin = new DataObject();
+        DataObject_str total_begin_str = new DataObject_str();
+        Operation operation = operationList.get(0);
+        List<Measurements> measurementsList = new ArrayList<>(operation.getMeasurementsSet());
+////Сформировали список для вывода измерений ИТОГОВЫЕ ТЕКУЩИЕ.
+        for (String col : list_calc) {
+            for (String col_total : total_element_all) {
+                if (col.equals(col_total)) {
+                    list_calc_total.add(col);
+                }
+            }
+        }
+
+            //Отсортировали
+            list_calc_total = sort(list_calc_total);
+//// Достали измерение ИТОГОВЫЕ ТЕКУЩИЕ и по сформированному из общего списка колонок заполнили тектовую и цифровую версию DataObject
+////  Формируем данные для помещения Measurements в объекты DataObject и DataObject_str
+            for (String c : list_calc_total) {
+                for (Measurements measurements : measurementsList) {
+                    if (c.equals(measurements.getText())) {
+                        map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText())));
+
+                        System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()));
+                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).toString()));
+
+                    }
+                }
+            }
+
+            total_begin.setOptionalValues(map_total);
+            total_begin.setData(operation.getChronological());
+
+            total_begin_str.setOptionalValues(map_total_str);
+            total_begin_str.setData(auxiliaryService.timeStamp_to_string(operation.getChronological()));
+
+/////
+/////
+       ////Переделываем sum под формат вывода ИТОГОВЫЕ ТЕКУЩИЕ
+        Map<String, Tupel> map_sum = new HashMap<String, Tupel>();
+        Map<String, Tupel_str> map_sum_str = new HashMap<String, Tupel_str>();
+        List<String> old_sum_col= new ArrayList<>(sum.getOptionalValues().keySet());
+        for (String c : list_calc_total) {
+            for(String old_c:old_sum_col) {
+
+                if (c.equals(old_c)) {
+                    map_sum.put(c,new Tupel(c,sum.getOptionalValues().get(c).getValue()));
+                    map_sum_str.put(c, new Tupel_str(c,sum.getOptionalValues().get(c).getValue().toString()));
+
+                }
+            }
+
+
+        }
+
+        DataObject sum_new=new DataObject();
+        sum_new.setOptionalValues(map_sum);
+        sum_new.setData(sum.getData());
+        DataObject_str sum_new_str=new DataObject_str();
+        sum_new_str.setOptionalValues(map_sum_str);
+        sum_new_str.setData(auxiliaryService.timeStamp_to_string(sum.getData()));
+
+
+
+            ////Суммируем
+
+            Map<String, Tupel> map_total_sum = new HashMap<String, Tupel>();
+            Map<String, Tupel_str> map_total_sum_str = new HashMap<String, Tupel_str>();
+
+
+            for (String c : list_calc_total) {
+
+                BigDecimal summa = total_begin.getOptionalValues().get(c).getValue().add(sum.getOptionalValues().get(c).getValue());
+
+                map_total_sum.put(c, new Tupel(c, summa));
+                map_total_sum_str.put(c, new Tupel_str(c, summa.toString()));
+            }
+
+        DataObject total_end = new DataObject();
+        total_end.setOptionalValues(map_total_sum);
+        total_end.setData(auxiliaryService.date_TimeStamp(new Date()));
+
+        DataObject_str total_end_str = new DataObject_str();
+        total_end_str.setOptionalValues(map_total_sum_str);
+        total_end_str.setData("Итого:");
+
+
+
+    }
+
+
+
 
     @Override
     public List<DataObject> getDataObject (List<Operation> operationList){

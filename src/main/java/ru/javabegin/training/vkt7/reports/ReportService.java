@@ -39,7 +39,9 @@ public interface ReportService {
 
     List<DataObject_str> getObject_ns_to_Str(List<DataObject> dataObjectList, List<String> id_coil);  ///1428
 
-        List<Object> getCalculations(List<DataObject> dataObjectList,List<String> id_col);  ///
+      List<Object> getCalculations(List<DataObject> dataObjectList,List<String> id_col);  ///
+
+    void getCalculations_total(List<Operation> operationList,DataObject sum);///
 
     //// конец основное
 
