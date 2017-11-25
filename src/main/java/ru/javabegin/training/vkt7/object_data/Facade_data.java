@@ -16,6 +16,7 @@ import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 import ru.javabegin.training.vkt7.reports.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Timestamp;
@@ -27,7 +28,7 @@ import java.util.*;
  */
 @Component
 @Scope("singleton")
-public class Facade_data {
+public class Facade_data implements Serializable{
 
     @Qualifier("jpaCustomerService")
     @Autowired
@@ -139,7 +140,7 @@ public class Facade_data {
     }
 
 
-   public void getSelectedByData(){
+   public List<Object>  getSelectedByData(){
 
        Customer customer = searchCriteria_data.getCustomer();
        Date day_of =searchCriteria_data.getDay_of();
@@ -240,35 +241,68 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(ts_day_to);
        List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
        System.out.println("размер массива operationList_total "+operationList_total.size() );
+       /// Если Итоговые есть, то выполняем проверка на наличие ИТОГОВЫХ за предыдущий месяц
+       List<DataObject_str> total_current_str=new ArrayList<>();
+       List<String> total_current_column=new ArrayList<>();
+        if(operationList_total.size()!=0) {
+            List<Object> total_currint_from_calss = reportService.getCalculations_total(operationList_total, sum);
+            List<DataObject> total_current = (List<DataObject>) total_currint_from_calss.get(0);
+             total_current_str = (List<DataObject_str>) total_currint_from_calss.get(1);
+            total_current_column = (List<String>) total_currint_from_calss.get(2);
 
-       List<Object> total_currint_from_calss= reportService.getCalculations_total(operationList_total,sum);
-       List<DataObject> total_currint=(List<DataObject>)total_currint_from_calss.get(0);
-       List<DataObject_str> total_currint_str=(List<DataObject_str>)total_currint_from_calss.get(1);
-       List<String> total_currint_column=(List<String>)total_currint_from_calss.get(2);
+            total_current_str.get(1).setData(auxiliaryService.timeStamp_to_string(auxiliaryService.minusDay(ts_day_to, 1)));
 
-       total_currint_str.get(1).setData(auxiliaryService.timeStamp_to_string(auxiliaryService.minusDay(ts_day_to,1)));
 
-       ///проверяем итоговые значение
-       System.out.printf("%10s"," ");
-       for (String col : total_currint_column) {
-           //System.out.print(col+ "    ");
-           System.out.printf("%18s",col);
+            searchCriteria_data.setTotal_current_str(total_current_str);
+            searchCriteria_data.setTotal_current_column(total_current_column);
 
+            ///проверяем итоговые значение
+            System.out.printf("%10s", " ");
+            for (String col : total_current_column) {
+                //System.out.print(col+ "    ");
+                System.out.printf("%18s", col);
+
+            }
+            System.out.println();
+
+            for (DataObject_str objectStr : total_current_str) {
+                System.out.printf("%10s", objectStr.getData());
+                for (String col : total_current_column) {
+
+                    //System.out.print(objectStr.getOptionalValues().get(col).getValue()+" ");
+                    System.out.printf("%18s", objectStr.getOptionalValues().get(col).getValue());
+
+                }
+                System.out.println();
+            }
+
+        }/// конец проверка на наличие ИТОГОВЫХ за предыдущий месяц
+
+       else{
+            searchCriteria_data.setTotal_current_str(null);
+            searchCriteria_data.setTotal_current_column(null);
+        }
+
+        List<Object> objectList=new ArrayList<>();
+       objectList.add(0,total_current_column);
+       objectList.add(1,total_current_str);
+
+       return objectList;
+
+
+    }
+
+
+    public List<String> getTotal_current_column(){
+
+       List<String> tcc=searchCriteria_data.getTotal_current_column();
+       if(tcc==null){
+           System.out.println("Массив пустой");
+       }else {
+           System.out.println("Массив есть!!");
        }
-       System.out.println();
 
-       for(DataObject_str objectStr:total_currint_str) {
-           System.out.printf("%10s",objectStr.getData());
-           for (String col : total_currint_column) {
-
-               //System.out.print(objectStr.getOptionalValues().get(col).getValue()+" ");
-               System.out.printf("%18s",objectStr.getOptionalValues().get(col).getValue());
-
-           }
-           System.out.println();
-       }
-
-
+       return tcc;
     }
 
 

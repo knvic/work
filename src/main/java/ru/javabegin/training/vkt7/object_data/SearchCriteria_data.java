@@ -38,7 +38,29 @@ public class SearchCriteria_data implements Serializable{
     private List<DataObject_str> dataObject_calc_strList;
 
 
+
+
+
     private List<String> id_item;
+
+    private List<String> total_current_column;
+    public List<DataObject_str>  total_current_str;
+
+    public List<String> getTotal_current_column() {
+        return total_current_column;
+    }
+
+    public void setTotal_current_column(List<String> total_current_column) {
+        this.total_current_column = total_current_column;
+    }
+
+    public List<DataObject_str> getTotal_current_str() {
+        return total_current_str;
+    }
+
+    public void setTotal_current_str(List<DataObject_str> total_current_str) {
+        this.total_current_str = total_current_str;
+    }
 
     public List<DataObject_str> getDataObject_calc_strList() {
         return dataObject_calc_strList;

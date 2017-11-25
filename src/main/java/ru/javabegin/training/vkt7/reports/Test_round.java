@@ -75,6 +75,14 @@ public class Test_round {
 
         BigDecimal qwerty=sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN), 8,RoundingMode.HALF_EVEN);
 
-        System.out.println(qwerty);
+        System.out.println("qwerty ="+ qwerty);
+
+
+        sum_t1_1=new BigDecimal("0.00").setScale(2, RoundingMode.HALF_EVEN);
+        count_t1_1=0;
+
+        BigDecimal qwerty1=sum_t1_1.divide(new BigDecimal(count_t1_1).setScale(2, RoundingMode.HALF_EVEN), 8,RoundingMode.HALF_EVEN);
+
+        System.out.println("деление ="+ qwerty1);
     }
 }
