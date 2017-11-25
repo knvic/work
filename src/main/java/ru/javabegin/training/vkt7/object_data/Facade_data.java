@@ -244,17 +244,25 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
        List<Object> total_currint_from_calss= reportService.getCalculations_total(operationList_total,sum);
        List<DataObject> total_currint=(List<DataObject>)total_currint_from_calss.get(0);
        List<DataObject_str> total_currint_str=(List<DataObject_str>)total_currint_from_calss.get(1);
-       List<String> total_currint_column=(List<String>)total_currint_from_calss.get(1);
+       List<String> total_currint_column=(List<String>)total_currint_from_calss.get(2);
+
+       total_currint_str.get(1).setData(auxiliaryService.timeStamp_to_string(auxiliaryService.minusDay(ts_day_to,1)));
 
        ///проверяем итоговые значение
+       System.out.printf("%10s"," ");
        for (String col : total_currint_column) {
-           System.out.print(col+ "    ");
+           //System.out.print(col+ "    ");
+           System.out.printf("%18s",col);
 
        }
+       System.out.println();
 
        for(DataObject_str objectStr:total_currint_str) {
+           System.out.printf("%10s",objectStr.getData());
            for (String col : total_currint_column) {
-               System.out.print(objectStr.getOptionalValues().get(col).getValue()+" ");
+
+               //System.out.print(objectStr.getOptionalValues().get(col).getValue()+" ");
+               System.out.printf("%18s",objectStr.getOptionalValues().get(col).getValue());
 
            }
            System.out.println();

@@ -2140,10 +2140,21 @@ return calculation;
             for (String c : list_calc_total) {
                 for (Measurements measurements : measurementsList) {
                     if (c.equals(measurements.getText())) {
-                        map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText())));
 
-                        System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()));
-                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).toString()));
+                        if (c.equals("Qо Тв1")||c.equals("Qг Тв1")||c.equals("Qо Тв2")||c.equals("Qг Тв2")) {
+                            map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN)));
+                            System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN));
+                            map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN).toString()));
+                        }else if (c.equals("BНP Тв1")||c.equals("BOC Тв1")||c.equals("BНP Тв2")||c.equals("BOC Тв2")) {
+                            map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN)));
+                            System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN));
+                            map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN).toString()));
+                        }else{
+                            map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN)));
+                            System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
+                            map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN).toString()));
+                        }
+
 
                     }
                 }
@@ -2179,7 +2190,7 @@ return calculation;
         sum_new.setData(sum.getData());
         DataObject_str sum_new_str=new DataObject_str();
         sum_new_str.setOptionalValues(map_sum_str);
-        sum_new_str.setData(auxiliaryService.timeStamp_to_string(sum.getData()));
+        sum_new_str.setData(sum.getStaticval2());
 
 
 
@@ -2206,20 +2217,20 @@ return calculation;
         total_end_str.setData("Итого:");
 
         List<DataObject> total_current=new ArrayList<>();
-        total_current.add(total_begin);
-        total_current.add(sum_new);
-        total_current.add(total_end);
+        total_current.add(0,total_begin);
+        total_current.add(1,total_end);
+        total_current.add(2,sum_new);
 
         List<DataObject_str> total_current_str=new ArrayList<>();
-        total_current_str.add(total_begin_str);
-        total_current_str.add(sum_new_str);
-        total_current_str.add(total_end_str);
+        total_current_str.add(0,total_begin_str);
+        total_current_str.add(1,total_end_str);
+        total_current_str.add(2,sum_new_str);
 
         List<Object> t_current=new ArrayList<>();
         ////
         t_current.add(0,total_current); //лист из трех объектов в формате DataObject значение total_moth, сумма всех значений, итоговое значение
         t_current.add(1,total_current_str);//лист из трех объектов в формате DataObject_str значение total_moth, сумма всех значений, итоговое значение
-        t_current.add(2,list_calc_total); /// Пережеланный список колонок под измерения итоговые текущие
+        t_current.add(2,list_calc_total); /// Переlеланный список колонок под измерения итоговые текущие
 
 
 

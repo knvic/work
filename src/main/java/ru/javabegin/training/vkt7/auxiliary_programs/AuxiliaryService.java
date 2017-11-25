@@ -29,6 +29,8 @@ public interface AuxiliaryService {
     String timeStamp_to_string(Timestamp date);
     Timestamp getLastDayPrevisionMoth(Timestamp timestamp);
 
+    Timestamp minusDay(Timestamp timestamp,int day);
+
 
 
 

@@ -117,6 +117,16 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
         return tstamp;
     }
 
+    @Override
+    public Timestamp minusDay(Timestamp timestamp,int day){
+        LocalDateTime ldt =timestamp_to_localDateTime(timestamp);
+        LocalDate ld=ldt.toLocalDate();
+
+        Timestamp tstamp = Timestamp.valueOf(LocalDateTime.of(ld.minusDays(day),LocalTime.of(23,00)));
+
+        return tstamp;
+    }
+
 
 
 
