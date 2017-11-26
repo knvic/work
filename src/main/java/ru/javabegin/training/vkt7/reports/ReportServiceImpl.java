@@ -1407,10 +1407,15 @@ public class ReportServiceImpl implements ReportService{
                 System.out.println("id_col.size= "+id_col.size());
 
             }
+            int size=id_col.size();
+            System.out.println("size= "+size);
+
 
             dataItem.setOptionalValues(map);
             dataItem.setData(operation.getChronological());
             dataList.add(dataItem);
+
+
             objectList.add(sort_ns(id_col));
 
         }
@@ -2534,9 +2539,9 @@ return calculation;
 
     public List<String> sort_ns (List<String> list){
         //// Делаем соритровку по списку
-        String qq="t1 Тв1,t2 Тв1,t3 Тв1,V1 Тв1,V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, P1 Тв1, P2 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, dt Тв1, tх, ta, BНP Тв1, BOC Тв1, G1 Тв1, G2 Тв1, G3 Тв1, t1 Тв2, t2 Тв2, t3 Тв2, V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, P1 Тв2, P2 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, dt Тв2, BНP Тв2, BOC Тв2, G1 Тв2, G2 Тв2, G3 Тв2" +
-                "НС_t1_1,НС_t2_1,НС_t3_1,НС_V1_1,НС_V2_1 НС_V3_1, НС_M1_1, НС_M2_1, НС_M3_1, НС_P1_1, НС_P2_1, НС_Mг_1, " +
-                "НС_Qо_1, НС_Qг_1, НС_dt_1, НС_tх, НС_ta, НС_BНP_1, НС_BOC_1, НС_G1_1, НС_G2_1, НС_G3_1, НС_t1_2, НС_t2_2, НС_t3_2, НС_V1_2, НС_V2_2, НС_V3_2, НС_M1_2, НС_M2_2, НС_M3_2, НС_P1_2, НС_P2_2, НС_Mг_2, НС_Qо_2, НС_Qг_2, НС_dt_2, НС_BНP_2, НС_BOC_2, НС_G1_2, НС_G2_2, НС_G3_2";
+        String qq="t1 Тв1,t2 Тв1,t3 Тв1,V1 Тв1,V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, P1 Тв1, P2 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, dt Тв1, tх, ta, BНP Тв1, BOC Тв1, G1 Тв1, G2 Тв1, G3 Тв1, t1 Тв2, t2 Тв2, t3 Тв2, V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, P1 Тв2, P2 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, dt Тв2, BНP Тв2, BOC Тв2, G1 Тв2, G2 Тв2, G3 Тв2," +
+                "НС_t1_1, НС_t2_1, НС_t3_1, НС_V1_1, НС_V2_1, НС_V3_1, НС_M1_1, НС_M2_1, НС_M3_1, НС_P1_1, НС_P2_1, НС_Mг_1, " +
+                "НС_Qо_1, НС_Qг_1, НС_dt_1, НС_tх, НС_ta, НС_G1_1, НС_G2_1, НС_G3_1, НС_t1_2, НС_t2_2, НС_t3_2, НС_V1_2, НС_V2_2, НС_V3_2, НС_M1_2, НС_M2_2, НС_M3_2, НС_P1_2, НС_P2_2, НС_Mг_2, НС_Qо_2, НС_Qг_2, НС_dt_2, НС_G1_2, НС_G2_2, НС_G3_2";
 
         List<String> et = new ArrayList<>(Arrays.asList(qq.replace(", ",",").split( ",")));
         List<String> result = new LinkedList<>();
