@@ -9,10 +9,10 @@
 
       <view-state id="data_process" view="customer_d_select.xhtml" >
 
-            <on-render>
+            <on-entry>
                   <!--<evaluate expression="facade_data.findAllCustomers()" result="viewScope.cu"  />-->
                   <evaluate expression="facade_data.getCustomerStatus()" result="viewScope.cu"  />
-            </on-render>
+            </on-entry>
             <transition on="back" to="data_ready"/>
             <transition on="next" to="operation_action"/>
 
