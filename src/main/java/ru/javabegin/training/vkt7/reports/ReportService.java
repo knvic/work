@@ -28,6 +28,10 @@ public interface ReportService {
     /**
      * Получает список Operation. ПО каждому Operation берутся измерения Measurements
      * Формируется массив из объектов. Hashmap<Название колонки, <название колонки, значение в BigDecimal>>
+     *     Возвращает список из двух объектов
+     *     1. List<DataObject>
+     *     2. List<String> список колонок
+     *
      *
      * @param operationList
      * @return
@@ -39,8 +43,39 @@ public interface ReportService {
 
     List<DataObject_str> getObject_ns_to_Str(List<DataObject> dataObjectList, List<String> id_coil);  ///1428
 
-      List<Object> getCalculations(List<DataObject> dataObjectList,List<String> id_col);  ///
 
+    /**
+     * Входные данные сформированный масссив List<DataObject> и набор колонок List<String>
+     * Вoзвращает массив объектов: List<Object>
+     *
+     *     DataObject sum объект с суммами
+     *     DataObject average объект сo средними значениями
+     *     DataObject_str sum_str объект с суммами в формате  String
+     *     DataObject_str average_str объект сo средними значениями String
+     *
+     *
+     * @param dataObjectList
+     * @param id_col
+     * @return
+     */
+    List<Object> getCalculations(List<DataObject> dataObjectList,List<String> id_col);  ///
+
+
+
+    /**
+     * Входные данные сформированный масссив List<Operation> с единственным значением TOTAL_CURRENT  за предыдущий месяц
+     * и обзъект  DataObject с семмированными значениями измерений
+     *
+     * Вoзвращает массив объектов: List<Object>
+     *
+     *     List<DataObject> total_current //лист из трех объектов в формате DataObject значение total_moth, сумма всех значений, итоговое значение
+     *     List<DataObject_str> total_current_str //лист из трех объектов в формате DataObject_str значение total_moth, сумма всех значений, итоговое значение
+     *     List <String> list_calc_total/// Переlеланный список колонок под измерения итоговые текущие
+     *     *
+     * @param operationList
+     * @param sum
+     * @return
+     */
     List<Object> getCalculations_total(List<Operation> operationList,DataObject sum);///
 
     //// конец основное

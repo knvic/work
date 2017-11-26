@@ -34,6 +34,11 @@
         </p:dialog>
 
 
+        <p:dialog header="Статусное сообщение" widgetVar="dlg4" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message1}" >
+            <h:outputText value="${message1}" styleClass="error" />
+        </p:dialog>
+
+
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
 
