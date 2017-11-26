@@ -10,12 +10,14 @@ import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.exсel.ConvertExcel;
 import ru.javabegin.training.vkt7.object.SearchCriteria_cust;
 import ru.javabegin.training.vkt7.object.SearchCriteria_oper;
 import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 import ru.javabegin.training.vkt7.reports.*;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -247,7 +249,7 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
         if(operationList_total.size()!=0) {
             List<Object> total_currint_from_calss = reportService.getCalculations_total(operationList_total, sum);
             List<DataObject> total_current = (List<DataObject>) total_currint_from_calss.get(0);
-             total_current_str = (List<DataObject_str>) total_currint_from_calss.get(1);
+            total_current_str = (List<DataObject_str>) total_currint_from_calss.get(1);
             total_current_column = (List<String>) total_currint_from_calss.get(2);
 
             total_current_str.get(1).setData(auxiliaryService.timeStamp_to_string(auxiliaryService.minusDay(ts_day_to, 1)));
@@ -291,6 +293,79 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
 
 
     }
+
+
+    public void getExcel() throws IOException {
+        Customer customer = searchCriteria_data.getCustomer();
+        Date date = new Date();
+        date=auxiliaryService.addTime(date,"23");
+        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
+        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+        List<Operation> operationList_daily=customerService.findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+
+        ConvertExcel convertExcel=new ConvertExcel();
+       // convertExcel.excel();
+        List<Object> object= reportService.getObject_ns(operationList_daily);
+        List<DataObject> dataObjectList =(List<DataObject>) object.get(0);
+        List<String> column=(List<String>) object.get(1);
+        System.out.println("размер 0" +dataObjectList.size());
+        System.out.println("размер 1" +column.size());
+        convertExcel.excel(customer,dataObjectList, column);
+
+
+   }
+
+    public void getExcel_current() throws IOException {
+        Customer customer = searchCriteria_data.getCustomer();
+        Date date = new Date();
+        date=auxiliaryService.addTime(date,"23");
+        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
+        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+        List<Operation> operationList_daily=customerService.findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+
+        ConvertExcel convertExcel=new ConvertExcel();
+        // convertExcel.excel();
+        List<Object> object= reportService.getObject_ns(operationList_daily);
+        List<DataObject> dataObjectList =(List<DataObject>) object.get(0);
+        List<String> column=(List<String>) object.get(1);
+        System.out.println("размер 0" +dataObjectList.size());
+        System.out.println("размер 1" +column.size());
+
+        List<Object> object_calc= reportService.getCalculations(dataObjectList,column);
+
+
+        DataObject sum =  (DataObject)object_calc.get(0);
+        DataObject average= (DataObject)object_calc.get(1);
+
+
+
+        ///Дата предыдущего месяца
+        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(auxiliaryService.date_TimeStamp(date_daily_List.get(0)));
+
+
+
+        List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
+        System.out.println("размер массива operationList_total "+operationList_total.size() );
+
+        List<Object> object_total=reportService.getCalculations_total(operationList_total,sum);
+        List<DataObject> total_list = (List<DataObject>)object_total.get(0);
+        List<String> list_calc_total=(List <String>)object_total.get(2);
+
+        List<String> col_sum_average = new ArrayList<>(sum.getOptionalValues().keySet());
+
+        col_sum_average=reportService.sort(col_sum_average);
+
+
+
+
+
+                convertExcel.excel_current(customer, dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
+
+
+    }
+
+
+
 
 
 

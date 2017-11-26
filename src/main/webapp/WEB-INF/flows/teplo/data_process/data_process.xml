@@ -2,19 +2,36 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
-      start-state="data_process">
+      start-state="data_process1">
 
       <var name="selectionData" class="ru.javabegin.training.vkt7.object_data.SelectionData"/>
 
+      <action-state id="data_process1">
+
+            <evaluate expression="facade_data.getCustomerStatus()" result="flowScope.cu"  />
+            <transition to="data_process" />
+
+
+
+      </action-state>
+
 
       <view-state id="data_process" view="customer_d_select.xhtml" >
-
+<!--
             <on-entry>
-                  <!--<evaluate expression="facade_data.findAllCustomers()" result="viewScope.cu"  />-->
+                  &lt;!&ndash;<evaluate expression="facade_data.findAllCustomers()" result="viewScope.cu"  />&ndash;&gt;
                   <evaluate expression="facade_data.getCustomerStatus()" result="viewScope.cu"  />
-            </on-entry>
+            </on-entry>-->
             <transition on="back" to="data_ready"/>
             <transition on="next" to="operation_action"/>
+
+
+            <transition on="excel" to="excel"/>
+           <!--
+            <transition on="excel">
+                  <evaluate expression="facade_data.getExcel()" />
+                  &lt;!&ndash;<evaluate expression="testBean14.test()"/>&ndash;&gt;
+            </transition>-->
 
 
 
@@ -33,6 +50,24 @@
 
 
       </action-state>
+
+      <action-state id="excel">
+
+
+            <evaluate expression="facade_data.checkSelectedData()" />
+
+            <transition on="yes" to="data_process" >
+                  <evaluate expression="facade_data.getExcel_current()" />
+                  <set name="flashScope.message1" value="'Файл формируется'"/>
+            </transition>
+
+            <transition on="no" to="data_process" >
+                  <set name="flashScope.message" value="'selectCustomer'"/>
+            </transition>
+
+
+      </action-state>
+
 
 
 

@@ -1413,6 +1413,7 @@ public class ReportServiceImpl implements ReportService{
 
             dataItem.setOptionalValues(map);
             dataItem.setData(operation.getChronological());
+            dataItem.setStaticval2(auxiliaryService.timeStamp_to_string(operation.getChronological()));
             dataList.add(dataItem);
 
 
@@ -2167,6 +2168,7 @@ return calculation;
 
             total_begin.setOptionalValues(map_total);
             total_begin.setData(operation.getChronological());
+            total_begin.setStaticval2(auxiliaryService.timeStamp_to_string(operation.getChronological()));
 
             total_begin_str.setOptionalValues(map_total_str);
             total_begin_str.setData(auxiliaryService.timeStamp_to_string(operation.getChronological()));
@@ -2193,6 +2195,7 @@ return calculation;
         DataObject sum_new=new DataObject();
         sum_new.setOptionalValues(map_sum);
         sum_new.setData(sum.getData());
+        sum_new.setStaticval2(auxiliaryService.timeStamp_to_string(sum.getData()));
         DataObject_str sum_new_str=new DataObject_str();
         sum_new_str.setOptionalValues(map_sum_str);
         sum_new_str.setData(sum.getStaticval2());
@@ -2216,6 +2219,7 @@ return calculation;
         DataObject total_end = new DataObject();
         total_end.setOptionalValues(map_total_sum);
         total_end.setData(auxiliaryService.date_TimeStamp(new Date()));
+        total_end.setStaticval2("Итого:");
 
         DataObject_str total_end_str = new DataObject_str();
         total_end_str.setOptionalValues(map_total_sum_str);
