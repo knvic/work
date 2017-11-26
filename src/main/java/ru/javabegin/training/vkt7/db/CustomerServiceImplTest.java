@@ -6,6 +6,7 @@ import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -27,6 +28,12 @@ public class CustomerServiceImplTest {
 
         System.out.println(" date_moth= "+date_moth);
         System.out.println(" date_prevision_moth= "+ date_prevision_moth);
+
+
+
+
+        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+       date_daily_List.forEach(p-> System.out.println(p +" "));
 
     }
 

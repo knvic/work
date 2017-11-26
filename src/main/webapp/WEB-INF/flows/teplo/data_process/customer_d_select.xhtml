@@ -41,7 +41,7 @@
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
-            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionData.cust}" rowKey="#{u.customer}">
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionData.dataCustomer}" rowKey="#{u.customer}">
                 <f:facet name="header">
                     #{msg.customers}
                 </f:facet>
@@ -51,10 +51,14 @@
                     <h:outputText value="#{u.customer.firstName}" />
                 </p:column>
                 <p:column headerText="#{msg.tel_modem}">
-                    <h:outputText value="#{u.moth}" />
+                    <h:outputText value="#{u.status}" />
                 </p:column>
+
                 <p:column headerText="#{msg.tel_modem}">
                     <h:outputText value="#{u.daily_all}" />
+                </p:column>
+                <p:column headerText="#{msg.tel_modem}">
+                    <h:outputText value="#{u.moth}" />
                 </p:column>
 
             </p:dataTable>

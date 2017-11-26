@@ -7,6 +7,7 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.reports.Archive;
+import ru.javabegin.training.vkt7.reports.DataCustomer;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ViewScoped;
@@ -23,6 +24,16 @@ import java.util.Date;
 public class SelectionData implements Serializable {
 
     private Customer cust;
+    private DataCustomer dataCustomer;
+
+    public DataCustomer getDataCustomer() {
+        return dataCustomer;
+    }
+
+    public void setDataCustomer(DataCustomer dataCustomer) {
+        this.dataCustomer = dataCustomer;
+    }
+
     private String modem_operation;
     private Date day_of;
 
@@ -106,8 +117,14 @@ public class SelectionData implements Serializable {
         this.hour = hour;
     }
 
-    public void onRowSelect(SelectEvent event) {
+   /* public void onRowSelect(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Customer Selected", ((Customer) event.getObject()).getFirstName());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }*/
+
+
+     public void onRowSelect(SelectEvent event) {
+        FacesMessage msg = new FacesMessage("Customer Selected", ((DataCustomer) event.getObject()).getCustomer().getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 

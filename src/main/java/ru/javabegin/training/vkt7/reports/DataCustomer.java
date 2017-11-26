@@ -9,6 +9,15 @@ public class DataCustomer implements Serializable{
     Customer customer;
     String moth;
     String daily_all;
+    String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Customer getCustomer() {
         return customer;
@@ -29,11 +38,7 @@ public class DataCustomer implements Serializable{
     public DataCustomer() {
     }
 
-    public DataCustomer(Customer customer, String moth, String daily_all) {
-        this.customer = customer;
-        this.moth = moth;
-        this.daily_all = daily_all;
-    }
+
 
     public String getDaily_all() {
         return daily_all;
