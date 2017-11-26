@@ -3,8 +3,10 @@ package ru.javabegin.training.vkt7.db;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.entities.Result;
+import ru.javabegin.training.vkt7.reports.DataCustomer;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,6 +47,9 @@ public interface CustomerService {
      * @param operationID
      */
     void deleteOperation(Long customerID, Long operationID);
+
+    List<DataCustomer> customerOperationStatus();
+
 
 
 

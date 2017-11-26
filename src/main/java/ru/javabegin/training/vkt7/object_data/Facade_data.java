@@ -293,6 +293,13 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
     }
 
 
+
+    public List<DataCustomer> getCustomerStatus(){
+        List<DataCustomer> dataCustomerList=customerService.customerOperationStatus();
+return dataCustomerList;
+    }
+
+
     public List<String> getTotal_current_column(){
 
        List<String> tcc=searchCriteria_data.getTotal_current_column();

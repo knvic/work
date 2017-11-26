@@ -2,12 +2,15 @@ package ru.javabegin.training.vkt7.db;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.*;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
+import ru.javabegin.training.vkt7.reports.DataCustomer;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +18,9 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -26,6 +32,9 @@ import java.util.Set;
 @Repository
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
+
+@Autowired
+    AuxiliaryService auxiliaryService;
 
 
     final static String ALL_CUSTOMER_NATIVE_QUERY = "select id, first_name, last_name, tel_number, tel_modem, unit_number, e_mail, version from customer";
@@ -582,6 +591,51 @@ public class CustomerServiceImpl implements CustomerService {
         operationSet.remove(toDelOperation);
         save(cust);
 
+    }
+
+
+    @Transactional
+    @Override
+    public List<DataCustomer> customerOperationStatus(){
+        List<Object> resultList=new ArrayList<>();
+        Date date = new Date();
+        date=auxiliaryService.addTime(date,"23");
+
+        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
+
+        //// Проверяем наличие TOTAL_MOTH за предыдущий месяц
+        LocalDateTime date_moth=auxiliaryService.timestamp_to_localDateTime(date_ts);
+        ///Дата предыдущего месяца
+        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(date_ts);
+        List<DataCustomer> dataCustomerList=new ArrayList<>();
+        List<Customer> customerList=findAllWithDetail();
+        for(Customer customer:customerList){
+
+            List<Operation> operationList_total= findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
+            System.out.println("размер массива operationList_total "+operationList_total.size() );
+
+
+            DataCustomer dataCustomer=new DataCustomer();
+            dataCustomer.setCustomer(customer);
+            if (operationList_total.size()>0){
+                System.out.println("Измерения TOTAL присутствуют ");
+                dataCustomer.setMoth("OK");
+            }else
+            {
+                System.out.println("Измерения TOTAL НЕТ ");
+                dataCustomer.setMoth("NO");
+            }
+            dataCustomer.setDaily_all("OK");
+
+            dataCustomerList.add(dataCustomer);
+        }
+
+
+
+
+
+
+        return dataCustomerList;
     }
 
 
