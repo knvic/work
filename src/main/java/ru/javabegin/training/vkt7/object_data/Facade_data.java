@@ -45,6 +45,8 @@ public class Facade_data implements Serializable{
 
     @Autowired
     AuxiliaryService auxiliaryService;
+    @Autowired
+    private DataCustomerList dcl;
 
 
    /* @Autowired
@@ -370,12 +372,14 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
 
 
     public List<DataCustomer> getCustomerStatus(){
-        List<DataCustomer> dataCustomerList=customerService.customerOperationStatus();
+        //List<DataCustomer> dataCustomerList=customerService.customerOperationStatus();
+        List<DataCustomer> dataCustomerList=dcl.getDataCustomerList();
 return dataCustomerList;
     }
 
     public void test_getCustomerStatus(){
         //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
+
         customerService.test_customerOperationStatus();
         //return dataCustomerList;
     }

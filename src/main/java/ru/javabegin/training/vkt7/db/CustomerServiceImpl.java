@@ -11,6 +11,7 @@ import ru.javabegin.training.db.*;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
+import ru.javabegin.training.vkt7.reports.DataCustomerList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -35,6 +36,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 @Autowired
     AuxiliaryService auxiliaryService;
+@Autowired
+DataCustomerList dcs;
 
 
     final static String ALL_CUSTOMER_NATIVE_QUERY = "select id, first_name, last_name, tel_number, tel_modem, unit_number, e_mail, version from customer";
@@ -679,7 +682,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 
-
+        dcs.setDataCustomerList(dataCustomerList);
 
 
         return dataCustomerList;
