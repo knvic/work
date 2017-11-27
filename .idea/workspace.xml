@@ -167,7 +167,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dev_26_11" />
       </map>
     </option>
   </component>
@@ -1323,7 +1323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511807781248</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Промежуточный">
+      <created>1511812513019</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1511812513019</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1359,7 +1366,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238224000" />
+    <option name="totallyTimeSpent" value="238288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1465,7 +1472,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="после получения больших обновлений" />
     <MESSAGE value="Внесены изменения Moth_cron. Удален путь записи суточных черех HashMap" />
     <MESSAGE value="Изменен Revizor. Исправлен шедулер" />
     <MESSAGE value="origin athomicint delete. Отправляем текущую рабочую версию" />
@@ -1490,7 +1496,8 @@
     <MESSAGE value="Данные выводятся в формате excel" />
     <MESSAGE value="текущий коммит" />
     <MESSAGE value="востановленная версия. Без обработки Quality" />
-    <option name="LAST_COMMIT_MESSAGE" value="востановленная версия. Без обработки Quality" />
+    <MESSAGE value="Промежуточный" />
+    <option name="LAST_COMMIT_MESSAGE" value="Промежуточный" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
