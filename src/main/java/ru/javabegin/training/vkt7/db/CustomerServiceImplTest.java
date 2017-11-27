@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
 public class CustomerServiceImplTest {
     @Test
     public void customerOperationStatus() throws Exception {
+
+
         AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
         Date date = new Date();
         date=auxiliaryService.addTime(date,"23");

@@ -27,6 +27,7 @@
 
 
             <transition on="excel" to="excel"/>
+            <transition on="test" to="test"/>
            <!--
             <transition on="excel">
                   <evaluate expression="facade_data.getExcel()" />
@@ -36,6 +37,23 @@
 
 
       </view-state>
+
+
+
+      <action-state id="test">
+
+
+            <evaluate expression="facade_data.test_getCustomerStatus()" />
+
+
+            <transition to="data_process" >
+                  <set name="flashScope.message" value="'тестируем test_getCustomerStatus()'"/>
+            </transition>
+
+
+      </action-state>
+
+
 
 
       <action-state id="operation_action">

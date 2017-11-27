@@ -11,6 +11,7 @@ import ru.javabegin.training.db.*;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
+import ru.javabegin.training.vkt7.reports.DataCustomerList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -35,6 +36,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 @Autowired
     AuxiliaryService auxiliaryService;
+@Autowired
+DataCustomerList dcs;
 
 
     final static String ALL_CUSTOMER_NATIVE_QUERY = "select id, first_name, last_name, tel_number, tel_modem, unit_number, e_mail, version from customer";
@@ -624,6 +627,7 @@ public class CustomerServiceImpl implements CustomerService {
             for(Date day:date_daily_List) {
 
                 for (Operation operation : operationList_daily) {
+                    d=0;
                     if (operation.getChronological().equals(auxiliaryService.date_TimeStamp(day))){
                         d=1;
                             List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
@@ -640,11 +644,120 @@ public class CustomerServiceImpl implements CustomerService {
                 }
                 if(q==1){break;}
 
-                if(d==0){
-                    System.out.println("Измерение за дату " +day+" отсутствуют!!");
-                    daily="Данные не полные";
-                    break;
+
+            }
+            if(d==0){
+                //System.out.println("Измерение за дату " +day+" отсутствуют!!");
+                daily="Данные не полные";
+                //break;
+            }
+
+
+            System.out.println("Customer " +customer.getFirstName());
+            System.out.println(" " +customer.getFirstName());
+
+
+            List<Operation> operationList_total= findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
+            System.out.println("размер массива operationList_total "+operationList_total.size() );
+
+
+            DataCustomer dataCustomer=new DataCustomer();
+            dataCustomer.setCustomer(customer);
+            if (operationList_total.size()>0){
+                System.out.println("Измерения TOTAL присутствуют ");
+                dataCustomer.setMoth("OK");
+            }else
+            {
+                System.out.println("Измерения TOTAL НЕТ ");
+                dataCustomer.setMoth("NO");
+            }
+            dataCustomer.setDaily_all(daily);
+            if (dataCustomer.getMoth().contains("OK")&dataCustomer.getDaily_all().contains("OK")){
+                dataCustomer.setStatus("ГОТОВО");
+            }else
+            {dataCustomer.setStatus("НЕТ");}
+
+            dataCustomerList.add(dataCustomer);
+        }
+
+
+
+        dcs.setDataCustomerList(dataCustomerList);
+
+
+        return dataCustomerList;
+    }
+
+
+
+
+    @Transactional
+    @Override
+    public void test_customerOperationStatus(){
+        List<Object> resultList=new ArrayList<>();
+        Date date = new Date();
+        date=auxiliaryService.addTime(date,"23");
+
+        System.out.println("Дата сегодня" +date);
+
+        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
+
+        //// Проверяем наличие TOTAL_MOTH за предыдущий месяц
+        LocalDateTime date_moth=auxiliaryService.timestamp_to_localDateTime(date_ts);
+        ///Дата предыдущего месяца
+        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(date_ts);
+        System.out.println("Дата конца предыдущегг месяца" +date_moth);
+
+        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+
+        date_daily_List.forEach(p-> System.out.println(p));
+
+
+        List<DataCustomer> dataCustomerList=new ArrayList<>();
+        Customer cust=findById(151L);
+        List<Operation> op=new ArrayList<>(cust.getOperationSet());
+        System.out.println("размер массива = "+op.size());
+        List <Customer> customerList=new ArrayList<>();
+       customerList.add(cust);
+        String daily="OK";
+        int d=0;
+        int q=0;
+        for(Customer customer:customerList){
+            daily="OK";
+            d=0;
+            q=0;
+            // Проверяем наличие всех измерений daily
+            List<Operation> operationList_daily=findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+            for(Date day:date_daily_List) {
+
+
+                for (Operation operation : operationList_daily) {
+                    d=0;
+                    if(date.equals(auxiliaryService.localDateTime_to_date(LocalDateTime.of(2017,11,26,23,0)))){
+                        System.out.println("Дата 26");
+                    }
+                    if (operation.getChronological().equals(auxiliaryService.date_TimeStamp(day))){
+                        d=1;
+                        List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
+                        for(Measurements measurements:measurementsList){
+                            if (!measurements.getQuality().equals("C0")){
+                                q=1;
+                                System.out.println("ERROR QUALITY за дату " +day);
+                                daily="error_QUALITY";
+                                break;
+                            }
+                        }
+                    }
+                    if(q==1){break;}
                 }
+                if(q==1){break;}
+
+
+            }
+            if(d==0){
+                //System.out.println("Измерение за дату " +day+" отсутствуют!!");
+                daily="Данные не полные";
+                break;
             }
 
 
@@ -680,7 +793,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 
-        return dataCustomerList;
+     //   return dataCustomerList;
     }
 
 
