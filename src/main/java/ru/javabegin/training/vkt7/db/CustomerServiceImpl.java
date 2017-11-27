@@ -798,6 +798,54 @@ DataCustomerList dcs;
 
 
 
+    @Transactional
+    @Override
+    public  void deleteOperationQualityErr(){
+        List<Object> resultList=new ArrayList<>();
+        Date date = new Date();
+        date=auxiliaryService.addTime(date,"23");
+
+        System.out.println("Дата сегодня" +date);
+
+        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
+
+        //// Проверяем наличие TOTAL_MOTH за предыдущий месяц
+        LocalDateTime date_moth=auxiliaryService.timestamp_to_localDateTime(date_ts);
+        ///Дата предыдущего месяца
+        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(date_ts);
+        System.out.println("Дата конца предыдущегг месяца" +date_moth);
+
+        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+
+        date_daily_List.forEach(p-> System.out.println(p));
+
+
+
+        List<Customer> customerList=findAllWithDetail();
+
+
+        for(Customer customer:customerList){
+
+            // Проверяем наличие всех измерений daily
+            List<Operation> operationList_daily=findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+               for (Operation operation : operationList_daily) {
+                  List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
+                        for(Measurements measurements:measurementsList){
+                                if (!measurements.getQuality().equals("C0")){
+                                   deleteOperation(customer.getId(),operation.getId());
+                                    break;
+                                }
+                        }
+
+                }
+
+        }
+
+        //   return dataCustomerList;
+    }
+
+
+
     public List<Operation> getOperations(String name) {
         log.info("Finding content by first_name: " );
 

@@ -8,9 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logRevizor.txt" afterPath="$PROJECT_DIR$/logRevizor.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,15 +65,15 @@
       <file leaf-file-name="Facade_data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="385" column="50" lean-forward="false" selection-start-line="385" selection-start-column="50" selection-end-line="385" selection-end-column="50" />
+            <state relative-caret-position="356">
+              <caret line="379" column="41" lean-forward="true" selection-start-line="379" selection-start-column="41" selection-end-line="379" selection-end-column="41" />
               <folding>
                 <element signature="e#2366#2367#0" expanded="true" />
                 <element signature="e#2412#2413#0" expanded="true" />
                 <element signature="e#2726#2740#0" expanded="true" />
                 <element signature="e#3473#3487#0" expanded="true" />
-                <marker date="1511814416845" expanded="false" signature="17675:17686" ph=" { " />
-                <marker date="1511814416845" expanded="false" signature="17727:17733" ph=" }" />
+                <marker date="1511817512276" expanded="false" signature="17733:17744" ph=" { " />
+                <marker date="1511817512276" expanded="false" signature="17785:17791" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -82,29 +83,24 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="691" column="0" lean-forward="false" selection-start-line="691" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
-              <folding>
-                <marker date="1511803650845" expanded="true" signature="22073:22101" ph="@{...}" />
-                <marker date="1511803650845" expanded="true" signature="22148:26034" ph="{...}" />
-                <marker date="1511803650845" expanded="true" signature="26092:27249" ph="{...}" />
-                <marker date="1511803650845" expanded="true" signature="26369:26618" ph="//..." />
-              </folding>
+              <caret line="802" column="44" lean-forward="false" selection-start-line="802" selection-start-column="17" selection-end-line="802" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -218,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/lina/sum.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/lina/sum1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImplTest.java" />
@@ -230,12 +225,13 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java" />
         <option value="$PROJECT_DIR$/logRevizor.txt" />
         <option value="$PROJECT_DIR$/logCron.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
       </list>
     </option>
   </component>
@@ -1340,7 +1336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511812593780</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="корректно принимаются данные с ошибочными quality">
+      <created>1511815441064</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1511815441064</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1376,11 +1379,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241096000" />
+    <option name="totallyTimeSpent" value="243514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4640592" sideWeight="0.50625" order="0" side_tool="true" content_ui="tabs" />
@@ -1393,7 +1395,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.73239434" sideWeight="0.49375" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4723727" sideWeight="0.49375" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1482,7 +1484,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменен Revizor. Исправлен шедулер" />
     <MESSAGE value="origin athomicint delete. Отправляем текущую рабочую версию" />
     <MESSAGE value="Добавлена проверка на возможность запроса измерения СУТОЧНЫЕ по дате начала записей в устройство" />
     <MESSAGE value="Ветка создана из athomicint" />
@@ -1507,7 +1508,8 @@
     <MESSAGE value="востановленная версия. Без обработки Quality" />
     <MESSAGE value="Промежуточный" />
     <MESSAGE value="работа с ошибочными quality" />
-    <option name="LAST_COMMIT_MESSAGE" value="работа с ошибочными quality" />
+    <MESSAGE value="корректно принимаются данные с ошибочными quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="корректно принимаются данные с ошибочными quality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1757,14 +1759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="48" column="59" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1912,19 +1906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="691" column="0" lean-forward="false" selection-start-line="691" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
-          <folding>
-            <marker date="1511803650845" expanded="true" signature="22073:22101" ph="@{...}" />
-            <marker date="1511803650845" expanded="true" signature="22148:26034" ph="{...}" />
-            <marker date="1511803650845" expanded="true" signature="26092:27249" ph="{...}" />
-            <marker date="1511803650845" expanded="true" signature="26369:26618" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1965,17 +1946,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="802" column="44" lean-forward="false" selection-start-line="802" selection-start-column="17" selection-end-line="802" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="385" column="50" lean-forward="false" selection-start-line="385" selection-start-column="50" selection-end-line="385" selection-end-column="50" />
+        <state relative-caret-position="356">
+          <caret line="379" column="41" lean-forward="true" selection-start-line="379" selection-start-column="41" selection-end-line="379" selection-end-column="41" />
           <folding>
             <element signature="e#2366#2367#0" expanded="true" />
             <element signature="e#2412#2413#0" expanded="true" />
             <element signature="e#2726#2740#0" expanded="true" />
             <element signature="e#3473#3487#0" expanded="true" />
-            <marker date="1511814416845" expanded="false" signature="17675:17686" ph=" { " />
-            <marker date="1511814416845" expanded="false" signature="17727:17733" ph=" }" />
+            <marker date="1511817512276" expanded="false" signature="17733:17744" ph=" { " />
+            <marker date="1511817512276" expanded="false" signature="17785:17791" ph=" }" />
           </folding>
         </state>
       </provider>

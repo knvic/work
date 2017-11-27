@@ -50,8 +50,9 @@ public interface CustomerService {
 
     List<DataCustomer> customerOperationStatus(); //599
 
-    void test_customerOperationStatus(); //687
+    void test_customerOperationStatus();//687
 
+    void deleteOperationQualityErr();
 
 
 
