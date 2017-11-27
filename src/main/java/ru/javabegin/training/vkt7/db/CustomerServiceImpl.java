@@ -625,6 +625,7 @@ public class CustomerServiceImpl implements CustomerService {
             for(Date day:date_daily_List) {
 
                 for (Operation operation : operationList_daily) {
+                    d=0;
                     if (operation.getChronological().equals(auxiliaryService.date_TimeStamp(day))){
                         d=1;
                             List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
