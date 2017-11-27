@@ -318,7 +318,23 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                         temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
                     }
                 }
-                else{System.out.println(temp_measur.getText()+"  - не верный байт качества");}
+                else{
+                    try{
+                        temp_measur.setMeasurInt(Integer.parseInt(l2b(measur),16));
+                        if (temp_measur.getEd()!=null){
+                            //    temp_measur.setMeasurText(String.valueOf( temp_measur.getMeasurInt())+temp_measur.getEd());
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
+
+                        }
+                        else{
+                            temp_measur.setMeasurText(String.valueOf(temp_measur.getMeasurInt()));
+                        }
+                    }
+                    catch (Exception e) {
+
+                        System.out.println(temp_measur.getText() + " Не возможно обработать данные не верный байт качества");
+                             }
+                    }
             }
 
             if (razmer==2){
