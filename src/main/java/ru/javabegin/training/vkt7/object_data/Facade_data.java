@@ -374,6 +374,14 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
 return dataCustomerList;
     }
 
+    public void test_getCustomerStatus(){
+        //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
+        customerService.test_customerOperationStatus();
+        //return dataCustomerList;
+    }
+
+
+
 
     public List<String> getTotal_current_column(){
 

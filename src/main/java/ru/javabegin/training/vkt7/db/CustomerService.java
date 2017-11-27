@@ -48,7 +48,9 @@ public interface CustomerService {
      */
     void deleteOperation(Long customerID, Long operationID);
 
-    List<DataCustomer> customerOperationStatus();
+    List<DataCustomer> customerOperationStatus(); //599
+
+    void test_customerOperationStatus(); //687
 
 
 
