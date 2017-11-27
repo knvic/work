@@ -621,6 +621,7 @@ public class CustomerServiceImpl implements CustomerService {
             q=0;
             // Проверяем наличие всех измерений daily
             List<Operation> operationList_daily=findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+            d=0;
             for(Date day:date_daily_List) {
 
                 for (Operation operation : operationList_daily) {
@@ -640,11 +641,12 @@ public class CustomerServiceImpl implements CustomerService {
                 }
                 if(q==1){break;}
 
-                if(d==0){
-                    System.out.println("Измерение за дату " +day+" отсутствуют!!");
-                    daily="Данные не полные";
-                    break;
-                }
+
+            }
+            if(d==0){
+                //System.out.println("Измерение за дату " +day+" отсутствуют!!");
+                daily="Данные не полные";
+               // break;
             }
 
 
