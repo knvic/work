@@ -380,7 +380,8 @@ return dataCustomerList;
     public void test_getCustomerStatus(){
         //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
 
-        customerService.test_customerOperationStatus();
+        //customerService.test_customerOperationStatus();
+        customerService.deleteOperation(104L,14769L);
         //return dataCustomerList;
     }
 

@@ -46,6 +46,7 @@
             <evaluate expression="facade_data.test_getCustomerStatus()" />
 
 
+
             <transition to="data_process" >
                   <set name="flashScope.message" value="'тестируем test_getCustomerStatus()'"/>
             </transition>

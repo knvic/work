@@ -59,3 +59,6 @@ Mon Nov 27 12:02:50 MSK 2017 поток в рабочем состоянии ai = 16atomicInteger = 29
 Mon Nov 27 12:17:50 MSK 2017 поток в рабочем состоянии ai = 130atomicInteger = 141
 Mon Nov 27 12:32:50 MSK 2017 Поток завис. Требуется прерывание  
 Mon Nov 27 13:02:47 MSK 2017 поток в рабочем состоянии ai = 80atomicInteger = 89
+Mon Nov 27 20:47:50 MSK 2017 поток в рабочем состоянии ai = 16atomicInteger = 41
+Mon Nov 27 21:00:30 MSK 2017 поток не запущен 
+Mon Nov 27 21:17:50 MSK 2017 поток в рабочем состоянии ai = 159atomicInteger = 168
