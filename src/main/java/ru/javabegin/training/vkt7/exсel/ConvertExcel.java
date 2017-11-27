@@ -150,6 +150,10 @@ public class ConvertExcel {
             i++;
         }
 
+        total_list.get(1).setStaticval2(list.get(list.size()-1).getStaticval2());
+        total_list.get(2).setStaticval2("ИТОГО:");
+
+
         for (DataObject emp1 : total_list) {
             rownum++;
             row = sheet.createRow(rownum);
