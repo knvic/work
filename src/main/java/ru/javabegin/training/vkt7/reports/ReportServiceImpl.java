@@ -2195,7 +2195,8 @@ return calculation;
         DataObject sum_new=new DataObject();
         sum_new.setOptionalValues(map_sum);
         sum_new.setData(sum.getData());
-        sum_new.setStaticval2(auxiliaryService.timeStamp_to_string(sum.getData()));
+
+
         DataObject_str sum_new_str=new DataObject_str();
         sum_new_str.setOptionalValues(map_sum_str);
         sum_new_str.setData(sum.getStaticval2());
