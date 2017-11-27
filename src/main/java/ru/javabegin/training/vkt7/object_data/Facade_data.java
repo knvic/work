@@ -381,7 +381,10 @@ return dataCustomerList;
         //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
 
         //customerService.test_customerOperationStatus();
-        customerService.deleteOperation(104L,14769L);
+        customerService.deleteOperation(104L,14767L);
+        customerService.deleteOperation(104L,15371L);
+        customerService.deleteOperation(104L,15372L);
+
         //return dataCustomerList;
     }
 
