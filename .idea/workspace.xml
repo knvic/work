@@ -6,14 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="начало работы с новым статусом для  Quality Error">
+    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logRevizor.txt" afterPath="$PROJECT_DIR$/logRevizor.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -170,7 +164,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev_26_11" />
+        <entry key="$PROJECT_DIR$" value="quality_check_27_11" />
       </map>
     </option>
   </component>
@@ -1011,7 +1005,7 @@
       <workItem from="1511720194983" duration="10787000" />
       <workItem from="1511789220757" duration="1572000" />
       <workItem from="1511846549550" duration="5730000" />
-      <workItem from="1511865030300" duration="285000" />
+      <workItem from="1511865030300" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="перед получение изменений master">
       <created>1510476682468</created>
@@ -1349,7 +1343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511815441064</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Статус отображается корректно Quality Error">
+      <created>1511865399043</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1511865399043</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1385,7 +1386,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249529000" />
+    <option name="totallyTimeSpent" value="249681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1462,7 +1463,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="origin athomicint delete. Отправляем текущую рабочую версию" />
     <MESSAGE value="Добавлена проверка на возможность запроса измерения СУТОЧНЫЕ по дате начала записей в устройство" />
     <MESSAGE value="Ветка создана из athomicint" />
     <MESSAGE value="после слияния с design" />
@@ -1487,7 +1487,8 @@
     <MESSAGE value="Промежуточный" />
     <MESSAGE value="работа с ошибочными quality" />
     <MESSAGE value="корректно принимаются данные с ошибочными quality" />
-    <option name="LAST_COMMIT_MESSAGE" value="корректно принимаются данные с ошибочными quality" />
+    <MESSAGE value="Статус отображается корректно Quality Error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Статус отображается корректно Quality Error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
