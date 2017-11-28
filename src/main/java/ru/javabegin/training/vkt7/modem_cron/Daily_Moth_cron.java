@@ -1713,7 +1713,7 @@ t=1;
                 }
                 else{
                     System.out.println("Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive  );
-                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer+ " Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
+                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer.getFirstName()+ " Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
                     continue;
                 }
 

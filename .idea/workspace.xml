@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatime_28_11_17.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logRevizor.txt" afterPath="$PROJECT_DIR$/logRevizor.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -97,8 +95,8 @@
       <file leaf-file-name="Daily_Moth_cron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="1708" column="56" lean-forward="false" selection-start-line="1708" selection-start-column="56" selection-end-line="1708" selection-end-column="56" />
+            <state relative-caret-position="19">
+              <caret line="1715" column="95" lean-forward="false" selection-start-line="1715" selection-start-column="95" selection-end-line="1715" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -167,7 +165,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="hour_total" />
       </map>
     </option>
   </component>
@@ -1017,14 +1015,7 @@
       <workItem from="1511720194983" duration="10787000" />
       <workItem from="1511789220757" duration="1572000" />
       <workItem from="1511846549550" duration="5730000" />
-      <workItem from="1511865030300" duration="5022000" />
-    </task>
-    <task id="LOCAL-00002" summary="Тестируем остановку">
-      <created>1510498401941</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1510498401941</updated>
+      <workItem from="1511865030300" duration="5552000" />
     </task>
     <task id="LOCAL-00003" summary="Тестируем остановку">
       <created>1510498763380</created>
@@ -1362,7 +1353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511865504806</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Исправлен бак с перебором даты при начале работы прибора не с начала месяца">
+      <created>1511874513873</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1511874513873</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1398,7 +1396,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254266000" />
+    <option name="totallyTimeSpent" value="254796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1476,7 +1474,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена проверка на возможность запроса измерения СУТОЧНЫЕ по дате начала записей в устройство" />
     <MESSAGE value="Ветка создана из athomicint" />
     <MESSAGE value="после слияния с design" />
     <MESSAGE value="чистка pom.xml" />
@@ -1501,7 +1498,8 @@
     <MESSAGE value="работа с ошибочными quality" />
     <MESSAGE value="корректно принимаются данные с ошибочными quality" />
     <MESSAGE value="Статус отображается корректно Quality Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Статус отображается корректно Quality Error" />
+    <MESSAGE value="Исправлен бак с перебором даты при начале работы прибора не с начала месяца" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен бак с перебором даты при начале работы прибора не с начала месяца" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1953,8 +1951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="1708" column="56" lean-forward="false" selection-start-line="1708" selection-start-column="56" selection-end-line="1708" selection-end-column="56" />
+        <state relative-caret-position="19">
+          <caret line="1715" column="95" lean-forward="false" selection-start-line="1715" selection-start-column="95" selection-end-line="1715" selection-end-column="95" />
           <folding />
         </state>
       </provider>
