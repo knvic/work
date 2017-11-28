@@ -1706,7 +1706,7 @@ t=1;
 
                 LocalDateTime target_data=auxiliaryService.stringDate_to_LocalDateTime(strData);
                 date_before = 0;
-                if (begin_arhive.isBefore(target_data)){
+                if (begin_arhive.isBefore(target_data)||begin_arhive.isEqual(target_data)){
 
                     System.out.println("Запрашиваемая дата "+ strData+ " после даты начала работы устройства "+ begin_arhive+ ". Запрос  СУТОЧНЫЕ возможен");
                     date_before = 1;
