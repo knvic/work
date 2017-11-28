@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logRevizor.txt" afterPath="$PROJECT_DIR$/logRevizor.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,48 +32,53 @@
       <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3740">
-              <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+            <state relative-caret-position="598">
+              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <folding>
+                <marker date="1511870719974" expanded="true" signature="9855:9883" ph="..." />
+                <marker date="1511870719974" expanded="true" signature="9910:10191" ph="..." />
+                <marker date="1511870719974" expanded="true" signature="9936:10167" ph="..." />
+                <marker date="1511870719974" expanded="true" signature="10062:10140" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logCron.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logCron.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4835">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer_d_select.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
+      <file leaf-file-name="DataCustomerList.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataCustomerList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+            <state relative-caret-position="-5528">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test1_measurements_d_select.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
+      <file leaf-file-name="logModemService.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logModemService.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="21" column="94" lean-forward="false" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdateDataCustomerList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java">
+      <file leaf-file-name="logRevizor.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logRevizor.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="33" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="55" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReportServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36176">
-              <caret line="2150" column="52" lean-forward="false" selection-start-line="2150" selection-start-column="52" selection-end-line="2150" selection-end-column="52" />
+            <state relative-caret-position="-421">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,11 +87,27 @@
       <file leaf-file-name="Facade_data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6018">
-              <caret line="379" column="41" lean-forward="false" selection-start-line="379" selection-start-column="41" selection-end-line="379" selection-end-column="41" />
+            <state relative-caret-position="276">
+              <caret line="393" column="0" lean-forward="false" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
               <folding>
-                <element signature="e#2366#2367#0" expanded="true" />
-                <element signature="e#2412#2413#0" expanded="true" />
+                <marker date="1511870719833" expanded="true" signature="14664:14905" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="14955:15807" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="15853:15978" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="16051:16299" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="16360:16863" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="16539:16742" ph="//..." />
+                <marker date="1511870719833" expanded="true" signature="16905:17096" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="17199:17659" ph="{...}" />
+                <marker date="1511870719833" expanded="false" signature="17733:17744" ph=" { " />
+                <marker date="1511870719833" expanded="false" signature="17785:17791" ph=" }" />
+                <marker date="1511870719833" expanded="true" signature="17800:17875" ph="//..." />
+                <marker date="1511870719833" expanded="true" signature="18252:18333" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="18364:18533" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="18567:18793" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="18856:18985" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="19407:19631" ph="{...}" />
+                <marker date="1511870719833" expanded="true" signature="19471:19599" ph="//..." />
+                <marker date="1511870719833" expanded="true" signature="19681:19832" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -94,9 +116,13 @@
       <file leaf-file-name="CustomerServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10761">
-              <caret line="656" column="19" lean-forward="false" selection-start-line="656" selection-start-column="19" selection-end-line="656" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="3197">
+              <caret line="852" column="37" lean-forward="false" selection-start-line="852" selection-start-column="37" selection-end-line="852" selection-end-column="37" />
+              <folding>
+                <marker date="1511870719740" expanded="true" signature="28015:28021" ph="{...}" />
+                <marker date="1511870719740" expanded="true" signature="28079:29236" ph="{...}" />
+                <marker date="1511870719740" expanded="true" signature="28356:28605" ph="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,32 +130,51 @@
       <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="36" />
+            <state relative-caret-position="513">
+              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataCustomer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java">
+      <file leaf-file-name="logCleaner.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logCleaner.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_process.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
+                <marker date="1511870720005" expanded="true" signature="2686:3040" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="2712:2845" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="3084:3341" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="3427:3957" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="3446:3726" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="3739:3847" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="4041:4430" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="4067:4303" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="4492:4762" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="4518:4644" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="4804:5072" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="5135:5598" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="5161:5287" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="5328:5473" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="5664:5966" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="5689:5815" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="6005:6209" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="6281:6356" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="6390:6518" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="6559:6692" ph="..." />
+                <marker date="1511870720005" expanded="true" signature="6760:6895" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Recieve03ServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6834">
-              <caret line="418" column="20" lean-forward="false" selection-start-line="418" selection-start-column="20" selection-end-line="418" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -152,15 +197,10 @@
       <find>getSe</find>
       <find>che</find>
       <find>get</find>
-      <find>timestamp</find>
-      <find>timestamp_to_s</find>
-      <find>stat</find>
-      <find>upd</find>
-      <find>upda</find>
-      <find>operationsta</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -179,6 +219,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/Daily_all_Customer_old_19_10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/CurrentData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem/Daily_all_Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/dao/OperationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/footer.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/locales/messages.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test_measurements_d_select.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_run.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_12_11_2017_1.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_kill.java" />
@@ -193,14 +243,20 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor_old.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor.java" />
         <option value="$PROJECT_DIR$/logModemService.txt" />
+        <option value="$PROJECT_DIR$/logRevizor.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/logCron.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Tupel_str.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject_str.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/teplo_menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" />
@@ -208,28 +264,12 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Test_round.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/lina/sum.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/lina/sum1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/Employee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/EmployeeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/CreateExcelDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java" />
-        <option value="$PROJECT_DIR$/logRevizor.txt" />
-        <option value="$PROJECT_DIR$/logCron.txt" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml" />
       </list>
     </option>
   </component>
@@ -298,6 +338,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -511,9 +554,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,7 +569,6 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ru.javabegin.training.vkt7.db" />
       <recent name="ru.javabegin.training.vkt7.auxiliary_programs" />
       <recent name="ru.javabegin.training.vkt7.reports" />
     </key>
@@ -544,6 +583,140 @@
       <recent name="ru.javabegin.training.test_thread" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/encodings.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/logRevizor.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_menu.xhtml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImplTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcelTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/CreateExcelDemo.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/Employee.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/EmployeeDAO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomerList.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -557,38 +730,44 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.TomCat">
-    <configuration name="CreateExcelDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="AuxiliaryServiceImplTest.getLastDayPrevisionMoth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.exсel.*" />
+          <option name="PATTERN" value="ru.javabegin.training.vkt7.auxiliary_programs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.exсel.CreateExcelDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="w" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImplTest" />
+      <option name="METHOD_NAME" value="getLastDayPrevisionMoth" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="w" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
     </configuration>
-    <configuration name="CustomerServiceImplTest.customerOperationStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReportServiceImplTest.getObject_ns_to_str" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.db.*" />
+          <option name="PATTERN" value="ru.javabegin.training.vkt7.reports.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="w" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.db" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.db.CustomerServiceImplTest" />
-      <option name="METHOD_NAME" value="customerOperationStatus" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.reports" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.reports.ReportServiceImplTest" />
+      <option name="METHOD_NAME" value="getObject_ns_to_str" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -620,7 +799,7 @@
       <module name="w" />
       <envs />
     </configuration>
-    <configuration name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -814,19 +993,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.TomCat" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Test_round" />
-      <item index="2" class="java.lang.String" itemvalue="Application.sum" />
-      <item index="3" class="java.lang.String" itemvalue="Application.sum1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CustomerServiceImplTest.customerOperationStatus" />
-      <item index="5" class="java.lang.String" itemvalue="Application.CreateExcelDemo" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ReportServiceImplTest.getObject_ns_to_str" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.getLastDayPrevisionMoth" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test_round" />
+      <item index="4" class="java.lang.String" itemvalue="Application.sum" />
+      <item index="5" class="java.lang.String" itemvalue="Application.sum1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CreateExcelDemo" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CustomerServiceImplTest.customerOperationStatus" />
-        <item index="2" class="java.lang.String" itemvalue="Application.sum1" />
-        <item index="3" class="java.lang.String" itemvalue="Application.sum" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Test_round" />
+        <item index="0" class="java.lang.String" itemvalue="Application.sum1" />
+        <item index="1" class="java.lang.String" itemvalue="Application.sum" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Test_round" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.getLastDayPrevisionMoth" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ReportServiceImplTest.getObject_ns_to_str" />
       </list>
     </recent_temporary>
   </component>
@@ -1001,11 +1180,7 @@
       <workItem from="1511501302081" duration="14540000" />
       <workItem from="1511524075668" duration="14592000" />
       <workItem from="1511592239158" duration="28377000" />
-      <workItem from="1511678166083" duration="18339000" />
-      <workItem from="1511720194983" duration="10787000" />
-      <workItem from="1511789220757" duration="1572000" />
-      <workItem from="1511846549550" duration="5730000" />
-      <workItem from="1511865030300" duration="437000" />
+      <workItem from="1511678166083" duration="2684000" />
     </task>
     <task id="LOCAL-00001" summary="перед получение изменений master">
       <created>1510476682468</created>
@@ -1259,118 +1434,27 @@
       <option name="project" value="LOCAL" />
       <updated>1511631985898</updated>
     </task>
-    <task id="LOCAL-00037" summary="Исправлена ошибка вывода НС_">
-      <created>1511680990623</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1511680990623</updated>
-    </task>
-    <task id="LOCAL-00038" summary="измеряем вывод страницы customer_d_select">
-      <created>1511687414287</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1511687414287</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Работает проверка наличия правильных измерений">
-      <created>1511695867609</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1511695867609</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Получено обновление">
-      <created>1511720280734</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1511720280734</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Данные выводятся в формате excel">
-      <created>1511722758402</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1511722758402</updated>
-    </task>
-    <task id="LOCAL-00042" summary="текущий коммит">
-      <created>1511775812000</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1511775812000</updated>
-    </task>
-    <task id="LOCAL-00043" summary="текущий коммит">
-      <created>1511777533057</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1511777533057</updated>
-    </task>
-    <task id="LOCAL-00044" summary="текущий коммит">
-      <created>1511789301361</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1511789301361</updated>
-    </task>
-    <task id="LOCAL-00045" summary="востановленная версия. Без обработки Quality">
-      <created>1511807781248</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1511807781248</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Промежуточный">
-      <created>1511812513019</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1511812513019</updated>
-    </task>
-    <task id="LOCAL-00047" summary="работа с ошибочными quality">
-      <created>1511812593780</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1511812593780</updated>
-    </task>
-    <task id="LOCAL-00048" summary="корректно принимаются данные с ошибочными quality">
-      <created>1511815441064</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1511815441064</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Статус отображается корректно Quality Error">
-      <created>1511865399043</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1511865399043</updated>
-    </task>
-    <option name="localTasksCounter" value="50" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 10h 51m 19s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="AuxiliaryServiceImplTest_getLastDayPrevisionMoth - 2017.11.24 at 20h 37m 20s.xml">
+      <configuration name="AuxiliaryServiceImplTest.getLastDayPrevisionMoth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 10h 52m 56s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="AuxiliaryServiceImplTest_getLastDayPrevisionMoth - 2017.11.24 at 20h 39m 58s.xml">
+      <configuration name="AuxiliaryServiceImplTest.getLastDayPrevisionMoth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 10h 59m 14s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="AuxiliaryServiceImplTest_getLastDayPrevisionMoth - 2017.11.24 at 20h 57m 31s.xml">
+      <configuration name="AuxiliaryServiceImplTest.getLastDayPrevisionMoth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 11h 36m 33s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="ReportServiceImplTest_getObject_ns_to_str - 2017.11.23 at 15h 38m 53s.xml">
+      <configuration name="ReportServiceImplTest.getObject_ns_to_str" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 13h 05m 30s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="ReportServiceImplTest_getObject_ns_to_str - 2017.11.23 at 15h 48m 14s.xml">
+      <configuration name="ReportServiceImplTest.getObject_ns_to_str" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerServiceImplTest_customerOperationStatus - 2017.11.26 at 13h 40m 16s.xml">
-      <configuration name="CustomerServiceImplTest.customerOperationStatus" configurationId="JUnit" />
+    <history-entry file="ReportServiceImplTest_getObject_ns_to_str - 2017.11.23 at 15h 51m 31s.xml">
+      <configuration name="ReportServiceImplTest.getObject_ns_to_str" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ReportServiceImplTest_getObject_ns_to_str - 2017.11.23 at 15h 53m 15s.xml">
       <configuration name="ReportServiceImplTest.getObject_ns_to_str" configurationId="JUnit" />
@@ -1386,7 +1470,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249681000" />
+    <option name="totallyTimeSpent" value="206022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1402,7 +1486,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5070422" sideWeight="0.49375" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4723727" sideWeight="0.49375" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1410,23 +1494,51 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2751896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21018419" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26977247" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24840085" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44203684" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4640592" sideWeight="0.50625" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23400854" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16995709" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52437705" sideWeight="0.49375" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2751896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40303358" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44203684" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17857143" sideWeight="0.6669627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055794" sideWeight="0.5050946" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18959913" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1463,6 +1575,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value=" В Revizor добавлен перезапуск get_daily_modem_cron()" />
+    <MESSAGE value="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class&#10;#&#9;target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class&#10;#&#9;target/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class&#10;#&#9;target/w.war&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class" />
+    <MESSAGE value="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" />
+    <MESSAGE value="промежуточный коммит." />
+    <MESSAGE value="В aux добавлен метод записи" />
+    <MESSAGE value="добавлена проверка на дублирование в ходе измерений. Добавлена запись в промежуточный файл" />
+    <MESSAGE value="промежуточный" />
+    <MESSAGE value="после получения больших обновлений" />
+    <MESSAGE value="Внесены изменения Moth_cron. Удален путь записи суточных черех HashMap" />
+    <MESSAGE value="Изменен Revizor. Исправлен шедулер" />
+    <MESSAGE value="origin athomicint delete. Отправляем текущую рабочую версию" />
     <MESSAGE value="Добавлена проверка на возможность запроса измерения СУТОЧНЫЕ по дате начала записей в устройство" />
     <MESSAGE value="Ветка создана из athomicint" />
     <MESSAGE value="после слияния с design" />
@@ -1477,18 +1600,7 @@
     <MESSAGE value="Добавлен метод getCalculation_total" />
     <MESSAGE value="В терминале выводятся данные getCalculation_total" />
     <MESSAGE value="Выводятся данные итоговых. Идет проветка на наличие итоговых данных" />
-    <MESSAGE value="Исправлена ошибка вывода НС_" />
-    <MESSAGE value="измеряем вывод страницы customer_d_select" />
-    <MESSAGE value="Работает проверка наличия правильных измерений" />
-    <MESSAGE value="Получено обновление" />
-    <MESSAGE value="Данные выводятся в формате excel" />
-    <MESSAGE value="текущий коммит" />
-    <MESSAGE value="востановленная версия. Без обработки Quality" />
-    <MESSAGE value="Промежуточный" />
-    <MESSAGE value="работа с ошибочными quality" />
-    <MESSAGE value="корректно принимаются данные с ошибочными quality" />
-    <MESSAGE value="Статус отображается корректно Quality Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Статус отображается корректно Quality Error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выводятся данные итоговых. Идет проветка на наличие итоговых данных" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1552,17 +1664,11 @@
           <properties />
           <option name="timeStamp" value="673" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="888" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="913" />
+      <option name="time" value="888" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
@@ -1573,6 +1679,146 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/logCron.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4835">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28441">
+          <caret line="1704" column="0" lean-forward="false" selection-start-line="1695" selection-start-column="15" selection-end-line="1718" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/reports_process/reports_process.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <marker date="1511870719974" expanded="true" signature="9855:9883" ph="..." />
+            <marker date="1511870719974" expanded="true" signature="9910:10191" ph="..." />
+            <marker date="1511870719974" expanded="true" signature="9936:10167" ph="..." />
+            <marker date="1511870719974" expanded="true" signature="10062:10140" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor_collable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor_old.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="39" column="70" lean-forward="false" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properts_ready_Impl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/RevisorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properties_xml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/teplo.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/teplo_template.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Tupel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Archive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/Tupel_str.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataObject_str.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportCustomers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1594,6 +1840,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/measurements_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1602,6 +1862,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/operation_d_select_template.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1617,8 +1884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3140">
-          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+        <state relative-caret-position="5627">
+          <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1672,6 +1939,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="72" lean-forward="false" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3247">
@@ -1683,6 +1971,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <marker date="1511870720005" expanded="true" signature="2686:3040" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="2712:2845" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="3084:3341" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="3427:3957" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="3446:3726" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="3739:3847" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="4041:4430" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="4067:4303" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="4492:4762" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="4518:4644" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="4804:5072" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="5135:5598" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="5161:5287" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="5328:5473" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="5664:5966" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="5689:5815" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="6005:6209" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="6281:6356" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="6390:6518" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="6559:6692" ph="..." />
+            <marker date="1511870720005" expanded="true" signature="6760:6895" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="142" lean-forward="false" selection-start-line="21" selection-start-column="142" selection-end-line="21" selection-end-column="142" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,236 +2047,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/operation_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="31" column="52" lean-forward="true" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SearchCriteria_data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="62" lean-forward="false" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/SelectionData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
-          <folding>
-            <element signature="e#861#862#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-            <element signature="e#958#959#0" expanded="false" />
-            <element signature="e#1006#1007#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-            <element signature="e#1306#1307#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/CreateExcelDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="84" column="63" lean-forward="false" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logModemService.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="153" column="47" lean-forward="false" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor_collable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8740">
-          <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logRevizor.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logCleaner.txt" />
-    <entry file="file://$PROJECT_DIR$/logCron.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/data_process.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/customer_d_select_menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="7" lean-forward="false" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6834">
-          <caret line="418" column="20" lean-forward="false" selection-start-line="418" selection-start-column="20" selection-end-line="418" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="36" />
+        <state relative-caret-position="252">
+          <caret line="339" column="41" lean-forward="false" selection-start-line="339" selection-start-column="41" selection-end-line="339" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object_data/Facade_data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6018">
-          <caret line="379" column="41" lean-forward="false" selection-start-line="379" selection-start-column="41" selection-end-line="379" selection-end-column="41" />
+        <state relative-caret-position="276">
+          <caret line="393" column="0" lean-forward="false" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
           <folding>
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2412#2413#0" expanded="true" />
+            <marker date="1511870719833" expanded="true" signature="14664:14905" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="14955:15807" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="15853:15978" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="16051:16299" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="16360:16863" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="16539:16742" ph="//..." />
+            <marker date="1511870719833" expanded="true" signature="16905:17096" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="17199:17659" ph="{...}" />
+            <marker date="1511870719833" expanded="false" signature="17733:17744" ph=" { " />
+            <marker date="1511870719833" expanded="false" signature="17785:17791" ph=" }" />
+            <marker date="1511870719833" expanded="true" signature="17800:17875" ph="//..." />
+            <marker date="1511870719833" expanded="true" signature="18252:18333" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="18364:18533" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="18567:18793" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="18856:18985" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="19407:19631" ph="{...}" />
+            <marker date="1511870719833" expanded="true" signature="19471:19599" ph="//..." />
+            <marker date="1511870719833" expanded="true" signature="19681:19832" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36176">
-          <caret line="2150" column="52" lean-forward="false" selection-start-line="2150" selection-start-column="52" selection-end-line="2150" selection-end-column="52" />
+        <state relative-caret-position="214">
+          <caret line="2546" column="0" lean-forward="false" selection-start-line="2546" selection-start-column="0" selection-end-line="2546" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3740">
-          <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateDataCustomerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="33" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="55" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10761">
-          <caret line="656" column="19" lean-forward="false" selection-start-line="656" selection-start-column="19" selection-end-line="656" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/customer_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/data_process/test1_measurements_d_select.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="94" lean-forward="false" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/DataCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
