@@ -52,17 +52,20 @@
                 </f:facet>
                 <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect}" update=":form:msgs" />
                 <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect}" update=":form:msgs" />
-                <p:column headerText="#{msg.customer}">
+                <p:column headerText="Потребитель">
                     <h:outputText value="#{u.customer.firstName}" />
                 </p:column>
-                <p:column headerText="#{msg.tel_modem}">
+                <p:column headerText="Отчет">
                     <h:outputText value="#{u.status}" />
                 </p:column>
 
-                <p:column headerText="#{msg.tel_modem}">
+                <p:column headerText="Суточные">
                     <h:outputText value="#{u.daily_all}" />
                 </p:column>
-                <p:column headerText="#{msg.tel_modem}">
+                <p:column headerText="Достоверность">
+                    <h:outputText value="#{u.quality}" />
+                </p:column>
+                <p:column headerText="Предыдущий месяц">
                     <h:outputText value="#{u.moth}" />
                 </p:column>
 

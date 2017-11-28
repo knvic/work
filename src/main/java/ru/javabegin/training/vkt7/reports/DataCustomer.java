@@ -9,7 +9,17 @@ public class DataCustomer implements Serializable{
     Customer customer;
     String moth;
     String daily_all;
+    String quality;
     String status;
+
+
+    public String getQuality() {
+        return quality;
+    }
+
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
 
     public String getStatus() {
         return status;

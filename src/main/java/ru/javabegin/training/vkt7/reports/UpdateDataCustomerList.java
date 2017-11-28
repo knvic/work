@@ -47,13 +47,13 @@ public class UpdateDataCustomerList implements Serializable {
             System.out.println("Обновляем данные DataCustomerList!!!");
                     customerService.customerOperationStatus();
 
-                File file = new File("C:\\Work\\Java\\work\\DataCustomerList.txt");
+               /* File file = new File("C:\\Work\\Java\\work\\DataCustomerList.txt");
                 FileWriter writer = new FileWriter(file, true);
                 LocalDateTime ldt1=LocalDateTime.now();
                 String log=ldt1+ "DataCustomerList обновлен "+ Thread.currentThread().getName()+" \n";
                 writer.write( log);
                 writer.flush();
-                writer.close();
+                writer.close();*/
 
                 return "123";
 

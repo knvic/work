@@ -615,10 +615,12 @@ DataCustomerList dcs;
         List<DataCustomer> dataCustomerList=new ArrayList<>();
         List<Customer> customerList=findAllWithDetail();
         String daily="OK";
+        String quality="OK";
         int d=0;
         int q=0;
         for(Customer customer:customerList){
             daily="OK";
+            quality="OK";
 
             d=0;
             q=0;
@@ -628,6 +630,7 @@ DataCustomerList dcs;
 
                 for (Operation operation : operationList_daily) {
                     d=0;
+
                     if (operation.getChronological().equals(auxiliaryService.date_TimeStamp(day))){
                         d=1;
                             List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
@@ -635,20 +638,25 @@ DataCustomerList dcs;
                                 if (!measurements.getQuality().equals("C0")){
                                    q=1;
                                     System.out.println("ERROR QUALITY за дату " +day);
-                                   daily="error_QUALITY";
+                                   quality="error_QUALITY";
                                    break;
                                 }
                             }
                     }
-                    if(q==1){break;}
+
                 }
-                if(q==1){break;}
+
 
 
             }
             if(d==0){
                 //System.out.println("Измерение за дату " +day+" отсутствуют!!");
                 daily="Данные не полные";
+                //break;
+            }
+            if(q==1){
+                //System.out.println("Измерение за дату " +day+" отсутствуют!!");
+                quality="error_QUALITY";
                 //break;
             }
 
@@ -669,13 +677,14 @@ DataCustomerList dcs;
             }else
             {
                 System.out.println("Измерения TOTAL НЕТ ");
-                dataCustomer.setMoth("NO");
+                dataCustomer.setMoth("Отсутствуют");
             }
             dataCustomer.setDaily_all(daily);
+            dataCustomer.setQuality(quality);
             if (dataCustomer.getMoth().contains("OK")&dataCustomer.getDaily_all().contains("OK")){
                 dataCustomer.setStatus("ГОТОВО");
             }else
-            {dataCustomer.setStatus("НЕТ");}
+            {dataCustomer.setStatus("Данные не полные");}
 
             dataCustomerList.add(dataCustomer);
         }
