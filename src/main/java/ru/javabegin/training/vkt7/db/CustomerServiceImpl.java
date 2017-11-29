@@ -20,10 +20,9 @@ import javax.persistence.criteria.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by Николай on 25.09.2017.
@@ -700,6 +699,11 @@ DataCustomerList dcs;
 
 
 
+
+
+
+
+
     @Transactional
     @Override
     public void test_customerOperationStatus(){
@@ -722,12 +726,9 @@ DataCustomerList dcs;
         date_daily_List.forEach(p-> System.out.println(p));
 
 
-        List<DataCustomer> dataCustomerList=new ArrayList<>();
-        Customer cust=findById(151L);
-        List<Operation> op=new ArrayList<>(cust.getOperationSet());
-        System.out.println("размер массива = "+op.size());
-        List <Customer> customerList=new ArrayList<>();
-       customerList.add(cust);
+
+        List <Customer> customerList=findAllWithDetail();
+
         String daily="OK";
         int d=0;
         int q=0;
@@ -735,35 +736,54 @@ DataCustomerList dcs;
             daily="OK";
             d=0;
             q=0;
-            // Проверяем наличие всех измерений daily
-            List<Operation> operationList_daily=findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
+        List<Operation> operationList_daily=findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
             for(Date day:date_daily_List) {
 
+                List <Operation> list = operationList_daily
+                        .parallelStream()
+                        .filter(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day)))
+                        .collect(Collectors.toList());
 
-                for (Operation operation : operationList_daily) {
-                    d=0;
-                    if(date.equals(auxiliaryService.localDateTime_to_date(LocalDateTime.of(2017,11,26,23,0)))){
-                        System.out.println("Дата 26");
-                    }
-                    if (operation.getChronological().equals(auxiliaryService.date_TimeStamp(day))){
-                        d=1;
-                        List<Measurements> measurementsList=new ArrayList<>(operation.getMeasurementsSet());
-                        for(Measurements measurements:measurementsList){
-                            if (!measurements.getQuality().equals("C0")){
-                                q=1;
-                                System.out.println("ERROR QUALITY за дату " +day);
-                                daily="error_QUALITY";
-                                break;
-                            }
-                        }
-                    }
-                    if(q==1){break;}
-                }
-                if(q==1){break;}
+
+                        //.anyMatch(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day)));
+                         if( list.size()>0){ System.out.println(customer.getFirstName()+ " Измерение за дату " +day+" есть");
+                             d=1;
+                             boolean a= list.get(0).getMeasurementsSet()
+                                     .parallelStream()
+                                     .anyMatch(p ->!p.getQuality().equals("C0"));
+                             if(a){
+                                 q=1;
+                                 System.out.println(customer.getFirstName()+ " Quality err за " +day+" есть  ERROR");}
+
+
+                         }
+                         else{ System.out.println(customer.getFirstName()+ " Измерение за дату " +day+" ОТСУТСТВУЮТ");}
+
+
+
+                          /*.filter(p->{
+                              System.out.println(customer.getFirstName()+ " Измерение за дату " +day+" есть");
+                              return true;
+                          });*/
+//                        .findFirst().get().getMeasurementsSet().stream()
+//                        .filter(p ->!p.getQuality().equals("C0"))
+//
+//                        .filter(p->{
+//                            System.out.println(customer.getFirstName()+ "Quality err за " +day+" есть  ERROR");
+//
+//                            return true;
+//                        })  ;
+
+
+                        //.anyMatch(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day)));
+
+
 
 
             }
-            if(d==0){
+
+
+          /*  if(d==0){
                 //System.out.println("Измерение за дату " +day+" отсутствуют!!");
                 daily="Данные не полные";
                 break;
@@ -794,7 +814,7 @@ DataCustomerList dcs;
             }else
             {dataCustomer.setStatus("НЕТ");}
 
-            dataCustomerList.add(dataCustomer);
+            dataCustomerList.add(dataCustomer);*/
         }
 
 
