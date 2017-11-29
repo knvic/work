@@ -1709,11 +1709,12 @@ t=1;
                 if (begin_arhive.isBefore(target_data)||begin_arhive.isEqual(target_data)){
 
                     System.out.println("Запрашиваемая дата "+ strData+ " после даты начала работы устройства "+ begin_arhive+ ". Запрос  СУТОЧНЫЕ возможен");
+                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer.getFirstName()+ " СУТОЧНЫЕ МОЖНО ПРОВОДИТЬ ИЗМЕРЕНИЯ.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
                     date_before = 1;
                 }
                 else{
                     System.out.println("Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive  );
-                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer+ " Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
+                    auxiliaryService.saveMessage(log_cron, "Customer "+ customer.getFirstName()+ " Запрос СУТОЧНЫЕ НЕ ВОЗМОЖЕН!.  Дата "+ strData +" до начала работы устройства " + begin_arhive );
                     continue;
                 }
 
@@ -2423,10 +2424,10 @@ t=1;
                         //daily_hashMap.get(ts).forEach(p -> operation.addMeasurements(p));
                         measurementsList.forEach(p -> operation.addMeasurements(p));
                        // List<Measurements> testlist = daily_hashMap.get(ts);
-                        for (Measurements measurements :  measurementsList) {
+                       /* for (Measurements measurements :  measurementsList) {
                             System.out.println(measurements.getText() + " = " + measurements.getMeasurText() + " байт качества -" + measurements.getQualityText() + "NS -" + measurements.getNs());
 
-                        }
+                        }*/
 
                         customer = customerService.findById(id_c);
                         //Customer customer = customerService.findById(id);
@@ -2439,6 +2440,7 @@ t=1;
 
 
                     System.out.println("Запись значений СУТОЧНОГО архива произведена. ");
+                    auxiliaryService.saveMessage(log_cron, " Запись СУТОЧНЫЕ "+ customer.getFirstName()+ " Дата "+ timestamp_daily);
 
                 }
 
@@ -2451,7 +2453,7 @@ t=1;
             ///////////// закрываем if проверки цикла type ==1 //////
         }
 
-            System.out.println("После записи в  daily_hashMap, timestamp_daily == "+timestamp_daily);
+
 
 
 

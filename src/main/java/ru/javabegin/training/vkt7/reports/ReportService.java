@@ -78,6 +78,9 @@ public interface ReportService {
      */
     List<Object> getCalculations_total(List<Operation> operationList,DataObject sum);///
 
+
+
+
     //// конец основное
 
     List<DataObject> getDataObject (List<Operation> operationList);

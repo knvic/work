@@ -28,11 +28,11 @@
 
             <p:dataTable id="tbl" var="u" value="#{searchCriteria_data.dataObject_strList}"
                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-                         paginator="true" rows="15" style="margin-bottom:20px">
+                         paginator="true"  rows="#{searchCriteria_data.dataObject_strList.size()}" style="margin-bottom:20px">
 
                 <f:facet name="{Exporters}">
                     <h:commandLink>
-                        <p:graphicImage name="/images/excel.png" width="24"/>
+                        <!--<p:graphicImage name="/images/excel.png" width="24"/>-->
                         <p:dataExporter type="xls" target="tbl" fileName="measurements" />
                     </h:commandLink>
 
