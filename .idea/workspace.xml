@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logRevizor.txt" afterPath="$PROJECT_DIR$/logRevizor.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -117,7 +114,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="quality_check_27_11" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
   </component>
@@ -950,7 +947,7 @@
       <workItem from="1511977123848" duration="8879000" />
       <workItem from="1512052638002" duration="1285000" />
       <workItem from="1512062557848" duration="179000" />
-      <workItem from="1512063051810" duration="4605000" />
+      <workItem from="1512063051810" duration="4692000" />
     </task>
     <task id="LOCAL-00001" summary="перед получение изменений master">
       <created>1510476682468</created>
@@ -1225,7 +1222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512067112086</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Изменения TimeOut Daily_moth_cron">
+      <created>1512070550993</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1512070550993</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1261,7 +1265,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222016000" />
+    <option name="totallyTimeSpent" value="222103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1339,7 +1343,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="промежуточный коммит." />
     <MESSAGE value="В aux добавлен метод записи" />
     <MESSAGE value="добавлена проверка на дублирование в ходе измерений. Добавлена запись в промежуточный файл" />
     <MESSAGE value="промежуточный" />
@@ -1364,7 +1367,8 @@
     <MESSAGE value="Промежуточный коммит" />
     <MESSAGE value="после мержа" />
     <MESSAGE value="коммит перед изменениями в Daily_moth_cron" />
-    <option name="LAST_COMMIT_MESSAGE" value="коммит перед изменениями в Daily_moth_cron" />
+    <MESSAGE value="Изменения TimeOut Daily_moth_cron" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменения TimeOut Daily_moth_cron" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
