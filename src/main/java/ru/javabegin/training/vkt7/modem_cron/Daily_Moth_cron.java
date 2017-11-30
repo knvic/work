@@ -658,7 +658,7 @@ type_to_error="daily";
 
             }
 
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
             atomicInteger.addAndGet(1);
 
 /**
@@ -770,7 +770,7 @@ type_to_error="daily";
                   if (server_version>=0&stop!=false) {
                     System.out.println(" Команда 3F FE (Версия сервера 65 байт) прошла");
 
-                    Thread.sleep(2000);
+                    Thread.sleep(500);
                     step=300;
                     System.out.println();
                 }
@@ -778,7 +778,7 @@ type_to_error="daily";
                 else{
                     System.out.println("\n Ошибка приема команды 3F FE (Версия сервера 65 байт). Посылаем повторно ");
                     //serialPort.writeIntArray(request);
-                    Thread.sleep(5000);
+                    Thread.sleep(500);
 
                 }
 
@@ -788,7 +788,7 @@ type_to_error="daily";
  */  //////////////////////////////////////////////////
             atomicInteger.addAndGet(1);
 
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
             System.out.println("\n Фoрмируем запрос 3F F9 Запрос на чтение служебной информации");
 
             ff_n=null;
@@ -810,7 +810,7 @@ type_to_error="daily";
                 // System.out.print(+i+":"+request[i]+" ");
             }
             //System.out.println("\n request size = "+ request.length);
-            Thread.sleep(2000);
+           // Thread.sleep(2000);
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -955,7 +955,7 @@ t=1;
 
 
             System.out.println("\n посылаем запрос 3F FF (Запрос на запись перечня для чтение");
-            Thread.sleep(2000);
+            //Thread.sleep(500);
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -1014,7 +1014,7 @@ t=1;
 
             }
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
 
             atomicInteger.addAndGet(1);
 
@@ -1038,7 +1038,7 @@ t=1;
                 // System.out.print(+i+":"+request[i]+" ");
             }
             //System.out.println("\n request size = "+ request.length);
-            Thread.sleep(5000);
+            Thread.sleep(500);
             System.out.println("\nЖдем получения всех данных после команды 3F FE (Запрос на чтение данных)  ");
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -1143,10 +1143,10 @@ t=1;
             Properts_ready_Impl propertsReadyImp=new  Properts_ready_Impl();
              prop_completed= propertsReadyImp.prop_ready(prop_common, prop_specification);
 
-            prop_completed
+          /*  prop_completed
                     .stream()
                     .forEach(p->System.out.println(p.getId()+"  "+ p.getName() + "  "+ p.getText()+ "  "+ p.getEd()+ "  "+ p.getZnak()));
-            System.out.println();
+            System.out.println();*/
 
   //////////////////////////////////////////////////////////////////////////////////////
 
@@ -1168,7 +1168,7 @@ t=1;
             for(int i=0;i<crc.size();i++ ){
                 request[i]=Integer.parseInt(crc.get(i) ,16);
                  }
-            Thread.sleep(5000);
+            Thread.sleep(500);
             System.out.println("\nЖдем получения всех данных после команды 3F F6 Запрос «Чтение интервала дат»");
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -1283,7 +1283,7 @@ t=1;
  * 3F FC (S17->18->19) Запрос на чтение перечня активных элементов данных ////
  */  //////////////////////////////////////////////////
             atomicInteger.addAndGet(1);
-            Thread.sleep(3000);
+            Thread.sleep(500);
             System.out.println("\n Фoрмируем запрос 3F FC перечнь активных элементов данных");
             ff_n=null;
 
@@ -1305,7 +1305,7 @@ t=1;
                 // System.out.print(+i+":"+request[i]+" ");
             }
             //System.out.println("\n request size = "+ request.length);
-            Thread.sleep(2000);
+           // Thread.sleep(2000);
 
 
 
@@ -1467,7 +1467,7 @@ t=1;
 
 
             System.out.println("\n посылаем запрос 3F FF (Запрос  на запись перечня для чтение");
-            Thread.sleep(5000);
+           // Thread.sleep(5000);
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -1491,7 +1491,7 @@ t=1;
                     r_3fff = recieve10Service.r_3FFF(data2);}
                 if (r_3fff) {
                     System.out.println("\n Команда 3F FF (Запрос на запись) прошла. Принятые данные ::  " + data2);
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                     step=300;
                     data2="";
 
@@ -1519,7 +1519,7 @@ t=1;
 
             }
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
             atomicInteger.addAndGet(1);
             if(stop==false){
                 System.out.println("\n Получена команда STOP ");
@@ -1614,7 +1614,7 @@ t=1;
 
 
             System.out.println("\n посылаем запрос 3F FD Запрос на запись ТИПА значений.");
-            Thread.sleep(5000);
+            //Thread.sleep(5000);
             if (stop == false) {
                 System.out.println("\n Получена команда STOP ");
                 break;
@@ -1639,7 +1639,7 @@ t=1;
                 }
                 if (r_3fff) {
                     System.out.println("\n Команда 3F FD (Запрос на запись ТИПА прошла. Принятые данные ::  " + data2);
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                     data2 = "";
                     step = 21;
                     System.out.println();
@@ -1830,7 +1830,7 @@ t=1;
                     }
                     if (r_3fff) {
                         System.out.println("\n Команда 3F FB (4.4 Запрос на запись даты) Принятые данные ::  " + data2);
-                        Thread.sleep(1000);
+                        //Thread.sleep(1000);
                         data2 = "";
                         step = 150;
                         System.out.println();
@@ -1887,7 +1887,7 @@ t=1;
                     // System.out.print(+i+":"+request[i]+" ");
                 }
                 //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(5000);
+                //Thread.sleep(5000);
                 System.out.println("\nЖдем получения данных СУТОЧНЫЕ после команды 3F FE   " + strData);
                 data2 = "";
                 step = 21;
@@ -1980,7 +1980,7 @@ t=1;
 
                     System.out.println("обработка завершена");
                     System.out.println("размер measurementsList после =" + measurementsList.size());
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                     System.out.println("размер measurementsList после через 1с=" + measurementsList.size());
                     step = 60;
 
@@ -2042,7 +2042,7 @@ t=1;
                     // System.out.print(+i+":"+request[i]+" ");
                 }
                 //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(5000);
+               // Thread.sleep(5000);
                 System.out.println("\nЖдем получения всех данных  3E CD Чтение номера схемы измерений Тв1");
 
 
@@ -2054,7 +2054,7 @@ t=1;
 
                 t = 0;
                 repeat = 0;
-                Thread.sleep(5000);
+                //Thread.sleep(5000);
                 executor.submit(callable(6));
                 step = 300;
                 recieve_all_byte = 0;
@@ -2155,7 +2155,7 @@ t=1;
                     // System.out.print(+i+":"+request[i]+" ");
                 }
                 //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(5000);
+                //Thread.sleep(5000);
                 System.out.println("\nЖдем получения всех данных  3F 5B Чтение номера схемы измерений Тв2");
                 if (stop == false) {
                     System.out.println("\n Получена команда STOP ");
@@ -2268,7 +2268,7 @@ t=1;
                     // System.out.print(+i+":"+request[i]+" ");
                 }
                 //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(5000);
+               // Thread.sleep(5000);
                 System.out.println("\nЖдем получения всех данных  3F E9  Чтение номера активной базы данных");
 
 
