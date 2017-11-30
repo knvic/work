@@ -613,7 +613,7 @@ type_to_error="daily";
             data="";
             step=5;
             serialPort.writeIntArray(request);
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
 
             while(step==5&stop!=false){
                 if (data2.contains("3F FF ")){

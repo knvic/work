@@ -741,12 +741,19 @@ DataCustomerList dcs;
 
                 List <Operation> list = operationList_daily
                         .parallelStream()
-                        .filter(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day)))
+                        .filter(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day))||auxiliaryService.date_TimeStamp(day).before(p.getBeginDayDate())||(p.getChronological().equals(auxiliaryService.date_TimeStamp(day))&&auxiliaryService.date_TimeStamp(day).before(p.getBeginDayDate())))
                         .collect(Collectors.toList());
 
 
                         //.anyMatch(p -> p.getChronological().equals(auxiliaryService.date_TimeStamp(day)));
-                         if( list.size()>0){ System.out.println(customer.getFirstName()+ " Измерение за дату " +day+" есть");
+                         if( list.size()>0){
+
+
+                             if (auxiliaryService.date_TimeStamp(day).before(list.get(0).getBeginDayDate())){
+                                 System.out.println(customer.getFirstName()+ " Измерений за дату " +day+" нет. Счетчик не работал!!");
+                             }else {
+                             System.out.println(customer.getFirstName()+ " Измерение за дату " +day+" есть");}
+
                              d=1;
                              boolean a= list.get(0).getMeasurementsSet()
                                      .parallelStream()
