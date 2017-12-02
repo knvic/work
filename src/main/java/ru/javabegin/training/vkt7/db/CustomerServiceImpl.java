@@ -240,7 +240,7 @@ DataCustomerList dcs;
     @Transactional(readOnly=true)
     @Override
     public  List<Operation> findOperationByIdCustomer(Long id){
-        log.info("Finding operation by id: " );
+     //   log.info("Finding operation by id: " );
        // id=10L;
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -883,7 +883,7 @@ DataCustomerList dcs;
 
 
     public List<Operation> getOperations(String name) {
-        log.info("Finding content by first_name: " );
+       // log.info("Finding content by first_name: " );
 
 
         CriteriaBuilder cb = em.getCriteriaBuilder();

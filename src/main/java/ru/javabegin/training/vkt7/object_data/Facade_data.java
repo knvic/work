@@ -323,6 +323,10 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
         date=auxiliaryService.addTime(date,"23");
         Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
         List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
+        Timestamp temp_ot=auxiliaryService.date_TimeStamp(date_daily_List.get(0));
+        Timestamp temp_do=date_ts;
+        System.out.println("date_daily_List.get(0) "+temp_ot);
+        System.out.println("date_ts "+date_ts);
         List<Operation> operationList_daily=customerService.findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
 
         ConvertExcel convertExcel=new ConvertExcel();

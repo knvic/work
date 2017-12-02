@@ -4,10 +4,11 @@ import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
+
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.recieve.Recieve03ServiceImpl;
 import ru.javabegin.training.vkt7.recieve.Recieve10ServiceImpl;
-
+import org.apache.log4j.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,6 +30,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
     public volatile static int recieve_all_byte;
     public static volatile int t;
     public static SerialPort serialPort;
+    public static volatile  String oldString;
 
     String data;
 
@@ -39,6 +41,10 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
 
     public void serialEvent(SerialPortEvent event) {
+        Logger logger = Logger.getRootLogger();
+       // logger.info("hello world");
+
+        oldString="";
 
 
         if (event.isRXCHAR() && event.getEventValue() > 0) { /*Если происходит событие установленной маски и количество байтов в буфере более 0*/
@@ -257,6 +263,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                     data = serialPort.readHexString(event.getEventValue());
                     System.out.print("Data (step " + step + "):->: " + data);
                     data2 = data;
+                    oldString=data2;
 
                 }
             //    System.out.println();
@@ -292,7 +299,20 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
                         System.out.println("Ждем окончание тамера и новой отправки запроса");
                     }
+
+                    System.out.println("step=6. OldString= "+oldString );
                     /////////////////////////////////////////////
+                    if(z==1&oldString.length()>8&temp.contains(oldString.substring(2,7))){
+
+                        System.out.println("Старые данные!!!!!!!!!!!!" );
+                        System.out.println("Старая строка"+ oldString);
+                        System.out.println("Принимаемая строка"+ temp);
+                        logger.info("Старые данные!!!!!!!!!!!!");
+
+                        count = 0;
+
+                        System.out.println("Ждем окончание тамера и новой отправки запроса");
+                    }
 
 
                     System.out.println("count == " +count+" count_read == " +temp.length() );
@@ -304,6 +324,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
                         step = 300;
                         data2 = temp;
+                        oldString=temp;
                         System.out.println(" На выходе step=6 temp= "+ data2);
                     }
 

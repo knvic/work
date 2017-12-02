@@ -32,12 +32,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.m;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
+//import static ru.javabegin.training.vkt7.modem_cron.EventListener_cron.oldString;
 
 /**
  * Created by Николай on 12.08.2017.
  */
 @Component
-public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.EventListener_cron {
+private class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.EventListener_cron {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
 
@@ -234,7 +235,7 @@ type_to_error="daily";
 
                 if (data2.contains("OK")){
                     t=1;
-                    //System.out.println("После запроса 3F FF_n ");
+
                     System.out.println("\n Инициализация модема выполнена. Принятые данные ::  " + data2);
                     step=0;
                    }
@@ -625,9 +626,11 @@ type_to_error="daily";
                     System.out.println("\n Команда 3F FF_n прошла. Принятые данные ::  " + data2);
 
                     step=300;
+                    oldString=data2;
                     temp="";
                     data="";
                     data2="";
+
 
 
                 }
@@ -2277,15 +2280,17 @@ t=1;
                     break;
                 }
 
+
                 atomicInteger.addAndGet(1);
                 recieve_all_byte = 0;
+                    step = 6;
                 data = "";
                 temp = "";
                 data2 = "";
                 t = 0;
                 repeat = 0;
                 executor.submit(callable(4));
-                step = 6;
+
                 z = 0;
                 serialPort.writeIntArray(request);
 
