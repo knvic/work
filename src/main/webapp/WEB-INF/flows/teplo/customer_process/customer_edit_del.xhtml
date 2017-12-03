@@ -40,6 +40,10 @@
                 </p:column>
 
             </p:dataTable>
+            <h:panelGrid columns="2" cellpadding="5">
+              <p:commandButton value="#{msg.delete}" event="onclick"  action="delete"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/>
+                <p:commandButton value="#{msg.edit}" event="onclick"  action="edit"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/>
+            </h:panelGrid>
 
 
 
@@ -66,6 +70,7 @@
 
             <!--<p:poll interval="15"  update=":form" />-->
 
+<!--
 
             <p:dataTable id="radioDT" var="u" value="${cu}" selection="#{selection.cust}" rowKey="#{u.id}">
                 <f:facet name="header">
@@ -95,6 +100,7 @@
                 </f:facet>
 
             </p:dataTable>
+-->
 
 
 

@@ -30,7 +30,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
     public volatile static int recieve_all_byte;
     public static volatile int t;
     public static SerialPort serialPort;
-    public static volatile  String oldString;
+    public  volatile static String oldString;
 
     String data;
 
@@ -44,7 +44,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
         Logger logger = Logger.getRootLogger();
        // logger.info("hello world");
 
-        oldString="";
+
 
 
         if (event.isRXCHAR() && event.getEventValue() > 0) { /*Если происходит событие установленной маски и количество байтов в буфере более 0*/
@@ -302,7 +302,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
 
                     System.out.println("step=6. OldString= "+oldString );
                     /////////////////////////////////////////////
-                    if(z==1&oldString.length()>8&temp.contains(oldString.substring(2,7))){
+                    /*if(z==1&oldString.length()>8&temp.contains(oldString.substring(2,7))){
 
                         System.out.println("Старые данные!!!!!!!!!!!!" );
                         System.out.println("Старая строка"+ oldString);
@@ -312,7 +312,7 @@ public class EventListener_cron implements SerialPortEventListener   { /*Слу�
                         count = 0;
 
                         System.out.println("Ждем окончание тамера и новой отправки запроса");
-                    }
+                    }*/
 
 
                     System.out.println("count == " +count+" count_read == " +temp.length() );

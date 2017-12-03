@@ -97,6 +97,21 @@ public class Facade_customer {
 
     }
 
+    public void updateCustomer(){
+        //Customer c= searchCriteria_cust.getUpdate_customer();
+        Customer c= searchCriteria_cust.getCustomer();
+        if (!(c.getFirstName()).equals("")) {
+            customerService.save(c);
+        }
+
+
+
+
+
+    }
+
+
+
     public void deleteCustomer(){
         Customer c= searchCriteria_cust.getCustomer();
 

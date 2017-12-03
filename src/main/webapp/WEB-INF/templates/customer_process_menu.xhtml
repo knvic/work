@@ -15,17 +15,29 @@
                 <h:form styleClass="genres" id="genresForm">
                     <h1>#{msg.teplo_menu}</h1>
 
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:commandButton value="#{msg.back}" event="onclick"  action="cancel"  styleClass="ui-priority-primary"/>
+                        <p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" />
+
+                    </h:panelGrid>
+
+
+<!--
+
                     <ul>
-                        <li><p:commandButton value="#{msg.add_customer}"    action="add_customer" styleClass="ui-priority-primary" /> </li>
+                        &lt;!&ndash;<li><p:commandButton value="#{msg.add_customer}"    action="add_customer" styleClass="ui-priority-primary" /> </li>&ndash;&gt;
+
+                        <li><p:commandButton value="#{msg.back}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
 
                         <li><p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" /> </li>
 
-                        <li><p:commandButton value="#{msg.delete_customer}"    action="delete_customer" styleClass="ui-priority-primary" /> </li>
+                        &lt;!&ndash;<li><p:commandButton value="#{msg.delete_customer}"    action="delete_customer" styleClass="ui-priority-primary" /> </li>&ndash;&gt;
 
 
-                        <li><p:commandButton value="#{msg.back}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
+
                     </ul>
 
+-->
 
 
                 </h:form>

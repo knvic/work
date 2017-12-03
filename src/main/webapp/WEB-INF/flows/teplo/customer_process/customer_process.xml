@@ -48,8 +48,8 @@
 
 
       <view-state id="edit" view="customer_edit.xhtml" model="selection.cust">
-
-            <transition on="save_customer" to="save_customer"/>
+            <!--<var name="update_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>-->
+            <transition on="update_customer" to="update_customer"/>
             <transition on="edit_customer" to="customer_select"/>
 
       </view-state>
@@ -79,6 +79,12 @@
 
       <action-state id="save_customer">
             <evaluate expression="facade_customer.saveCustomer()"/>
+            <transition to="customer_ready"/>
+      </action-state>
+
+
+      <action-state id="update_customer">
+            <evaluate expression="facade_customer.updateCustomer()"/>
             <transition to="customer_ready"/>
       </action-state>
 

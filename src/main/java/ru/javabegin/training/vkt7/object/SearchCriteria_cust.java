@@ -25,10 +25,16 @@ public class SearchCriteria_cust implements Serializable{
 
     private Hobby hobby;
     private Customer customer;
+    private Customer update_customer;
     private Operation operation;
 
+    public Customer getUpdate_customer() {
+        return update_customer;
+    }
 
-
+    public void setUpdate_customer(Customer update_customer) {
+        this.update_customer = update_customer;
+    }
 
     public String getText() { return text; }
     public void setText(String text) {

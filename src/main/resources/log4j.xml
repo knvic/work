@@ -41,10 +41,10 @@
 	</logger>
 
 	<logger name="org.springframework.security.access">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	<logger name="org.springframework.webflow">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 
 	<!-- Root Logger -->

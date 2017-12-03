@@ -220,6 +220,7 @@
 
 
     <bean id="modem_daily_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
+    <bean id="modem_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
 
     <bean id="revizor" class="ru.javabegin.training.vkt7.revisor.Revisor"/>
     <bean id="updateDataCustomer" class="ru.javabegin.training.vkt7.reports.UpdateDataCustomerList"/>
@@ -231,10 +232,12 @@
 
 
 
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 48 13 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 19 11 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
-        <!--<task:scheduled ref="updateDataCustomer" method="update" cron="58 * * * * ?"/>-->
+
+        <task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>
+        <task:scheduled ref="updateDataCustomer" method="update" cron="58 * * * * ?"/>
 
 
     </task:scheduled-tasks>

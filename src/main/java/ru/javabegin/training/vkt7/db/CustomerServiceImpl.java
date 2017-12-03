@@ -91,6 +91,13 @@ DataCustomerList dcs;
 
         return customer;
     }
+    @Transactional
+    @Override
+    public void update(Customer customer){
+
+
+
+    }
 
 
     @Override
@@ -264,7 +271,7 @@ DataCustomerList dcs;
     @Transactional(readOnly=true)
     @Override
     public  List<Operation> findOperationByModemCustomer(String modem){
-        log.info("Finding operation by id: " );
+       // log.info("Finding operation by id: " );
         // id=10L;
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -287,7 +294,7 @@ DataCustomerList dcs;
     @Transactional(readOnly=true)
     @Override
     public  List<Operation> findOperation_total_moth(Long id, Timestamp ts, String type, String status){
-        log.info("Finding operation by id: " );
+       // log.info("Finding operation by id: " );
 
         // id=10L;
 
@@ -339,7 +346,7 @@ DataCustomerList dcs;
     @Transactional(readOnly=true)
     @Override
     public  List<Operation> findOperation_daily(Long id, Timestamp ts, String type, String status){
-        log.info("Finding operation by id: " );
+      //  log.info("Finding operation by id: " );
 
         // id=10L;
 
@@ -393,7 +400,7 @@ DataCustomerList dcs;
     @Override
     public List<Operation> findOperation_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status){
 
-        log.info("Finding operation by id: " );
+     //   log.info("Finding operation by id: " );
 
         // id=10L;
 
@@ -458,7 +465,7 @@ DataCustomerList dcs;
     @Override
     public void delete_clone_Operation(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status){
 
-        log.info("Finding operation by id: " );
+      //  log.info("Finding operation by id: " );
 
         // id=10L;
 

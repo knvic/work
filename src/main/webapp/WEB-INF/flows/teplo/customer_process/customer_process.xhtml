@@ -12,30 +12,50 @@
 <ui:composition template="/WEB-INF/templates/customer_process_template.xhtml">
 
     <ui:define name="title">
-        #{msg.book_list}
+        #{msg.customers}
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
 
-        Add Customer
+
         <h:form styleClass="search_form" id="add_user">
+
+            <h:panelGrid id="grid" cellpadding="5" columns="2" style="margin-bottom:15px">
+                <f:facet name="header">
+                    <p:messages id="msgs" />
+                </f:facet>
+
+                <p:outputLabel for="add_name" value="Потребитель" />
+                <p:inputText id="add_name" value="#{add_customer.firstName}" />
+
+                <p:outputLabel for="add_modem" value="Номер модема:" />
+                <p:inputText id="add_modem" value="#{add_customer.telModem}" required="true" requiredMessage="Surname is required." />
+
+                <p:outputLabel for="add_number" value="Номер устройства:" />
+                <p:inputText id="add_number" value="#{add_customer.unitNumber}"  />
+            </h:panelGrid>
+
 
 
             <input type="submit" class="button-text"></input>
-            <ul>
 
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="save_customer" actionListener="#{searchCriteria_cust.setCustomer(add_customer)}" />
 
-            <li><h:inputText  id="add_name" styleClass="search-text" value="#{add_customer.firstName}"/></li>
-
-            <li><h:inputText  id="add_pass" styleClass="search-text" value="#{add_customer.telModem}"/></li>
+            </h:panelGrid>
+           <!-- <ul>
+           <li><h:inputText  id="add_name" styleClass="search-text" value="#{add_customer.firstName}"/></li>
             </ul>
             <ul>
-            <li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="save_customer" actionListener="#{searchCriteria_cust.setCustomer(add_customer)}"/></li>
+            <li><h:inputText  id="add_pass" styleClass="search-text" value="#{add_customer.telModem}"/></li>
+            </ul>-->
+        <!--    <ul>
+            &lt;!&ndash;<li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="save_customer" actionListener="#{searchCriteria_cust.setCustomer(add_customer)}"/></li>&ndash;&gt;
             </ul>
             <ul>
                 <li><p:commandButton id="btnCancel" value="#{msg.back}"  styleClass="button" action="customer_process" ajax="false"/></li>
             </ul>
-
+-->
 
         </h:form>
 
