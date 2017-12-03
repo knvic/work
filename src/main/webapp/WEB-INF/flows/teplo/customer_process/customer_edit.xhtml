@@ -17,28 +17,43 @@
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
 
-        Add Customer
+
         <h:form styleClass="search_form" id="add_user">
 
 
             <input type="submit" class="button-text"></input>
-            <ul>
+
+                <h:panelGrid columns="1" cellpadding="5">
 
 
+
+                    <p:outputLabel for="add_name" value="Потребитель" />
+                    <p:inputText  id="add_name" styleClass="search-text" value="#{searchCriteria_cust.customer.firstName}"/>
+
+                    <p:outputLabel for="add_modem" value="Номер модема" />
+                    <p:inputText  id="add_modem" styleClass="search-text" value="#{searchCriteria_cust.customer.telModem}"/>
+
+                    <p:outputLabel for="add_unit" value="Номер устройства" />
+                    <p:inputText  id="add_unit" styleClass="search-text" value="#{searchCriteria_cust.customer.unitNumber}"/>
+                </h:panelGrid>
+<!--
             <li><h:inputText  id="add_name" styleClass="search-text" value="#{searchCriteria_cust.customer.firstName}"/></li>
                 <li><h:inputText  id="add_modem" styleClass="search-text" value="#{searchCriteria_cust.customer.telModem}"/></li>
                 <li><h:inputText  id="add_unit" styleClass="search-text" value="#{searchCriteria_cust.customer.unitNumber}"/></li>
 
-            <!--<li><h:inputText  id="add_pass" styleClass="search-text" value="#{selObj.telModem}"/></li>-->
+            &lt;!&ndash;<li><h:inputText  id="add_pass" styleClass="search-text" value="#{selObj.telModem}"/></li>&ndash;&gt;
             </ul>
             <ul>
-            <!--<li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="update_customer" actionListener="#{searchCriteria_cust.setUpdate_customer(customer)}"/></li>-->
+            &lt;!&ndash;<li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="update_customer" actionListener="#{searchCriteria_cust.setUpdate_customer(customer)}"/></li>&ndash;&gt;
                 <li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="update_customer" /></li>
             </ul>
             <ul>
                 <li><p:commandButton id="btnCancel" value="#{msg.back}"  styleClass="button" action="customer_process" ajax="false"/></li>
-            </ul>
+            </ul>-->
 
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:commandButton id="btnAdd" value="#{msg.update_customer}"  styleClass="button" action="update_customer" />
+            </h:panelGrid>
 
         </h:form>
 

@@ -16,6 +16,8 @@ import ru.javabegin.training.vkt7.reports.DataObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -173,11 +175,11 @@ public class ConvertExcel {
             }
         }
 
+        LocalDateTime dateTime=LocalDateTime.now();
 
+        System.out.println(dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
 
-
-
-        File file = new File("C:/demo/"+customer.getFirstName()+".xls");
+        File file = new File("C:/demo/"+customer.getFirstName()+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
         file.getParentFile().mkdirs();
 
         FileOutputStream outFile = new FileOutputStream(file);

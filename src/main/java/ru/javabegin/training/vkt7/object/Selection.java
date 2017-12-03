@@ -58,7 +58,7 @@ public class Selection implements Serializable {
     }
 
     public void onRowSelect(SelectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Selected", ((Customer) event.getObject()).getFirstName());
+        FacesMessage msg = new FacesMessage("Потребитель выбран", ((Customer) event.getObject()).getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 

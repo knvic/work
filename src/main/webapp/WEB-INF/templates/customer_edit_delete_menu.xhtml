@@ -22,7 +22,12 @@
                         <li><p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" /> </li>
                     </ul>-->
 
-                    <ul>
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:commandButton value="#{msg.back}" event="onclick"  action="back"  styleClass="ui-priority-primary" />
+                        <p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" />
+                    </h:panelGrid>
+
+                <!--    <ul>
                         <li> </li>
                     </ul>
                     <ul>
@@ -38,7 +43,7 @@
                     <ul>
                         <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
                     </ul>
-
+-->
 
 
                 </h:form>
