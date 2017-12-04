@@ -40,6 +40,8 @@ public class Customer implements Serializable {
     private Integer unitNumber;
     private String eMail;
     private int version;
+    private String branch;
+    private String address;
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
@@ -129,8 +131,22 @@ public class Customer implements Serializable {
         this.version = version;
     }
 
+    @Column(name = "BRANCH")
+    public String getBranch() {
+        return branch;
+    }
 
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+    @Column(name = "ADDRESS")
+    public String getAddress() {
+        return address;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)

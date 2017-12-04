@@ -3,6 +3,7 @@ package ru.javabegin.training.vkt7.modem_cron;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 import jssc.SerialPortList;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.Crc16.Crc16ServiceImpl;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
@@ -86,6 +87,7 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
         List<Measurements> measurementsList_moth=new ArrayList<>();
 
         Map<Timestamp, List<Measurements> > hashMap = new HashMap<>();
+        Logger logger = Logger.getRootLogger();
 
         int shema_Tb1=0;
         int shema_Tb2=0;
@@ -2272,7 +2274,7 @@ t=1;
                     // System.out.print(+i+":"+request[i]+" ");
                 }
                 //System.out.println("\n request size = "+ request.length);
-                Thread.sleep(2000);
+                Thread.sleep(5000);
                 System.out.println("\nЖдем получения всех данных  3F E9  Чтение номера активной базы данных");
 
 
@@ -3149,7 +3151,7 @@ t=1;
 
 
         System.out.println("\n Поток отработал. Закрываем соединение и PORT");
-
+        logger.info("\n Поток отработал. Закрываем соединение и PORT");
         Thread.sleep(1000);
         System.out.println("\n Переходим в сервисный режим (+++)");
         step=0;
