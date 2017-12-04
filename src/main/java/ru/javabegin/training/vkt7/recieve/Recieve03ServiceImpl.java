@@ -89,10 +89,11 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                 System.out.println(ss + Integer.toString(Integer.parseInt(list.get(p), 16)));
             });*/
     IntStream.range(8, 15)
-            .forEach(p-> ss.append(new StringBuffer(list.get(p).subSequence(0, list.get(p).length()))));
+            .forEach(p-> ss.append(new StringBuffer(list.get(p).subSequence(0, list.get(p).length()+1))));
 
     //System.out.println("абонент = "+ss);
-    list_out.add(7,ss.toString());
+
+    list_out.add(7,hexToASCII(ss.toString()));
 
 
 
@@ -771,6 +772,21 @@ int number_active_base=10000;
             a = 0.0001;
         }
         return a;
+    }
+
+    public String hexToASCII(String hex){
+
+
+        List<String> list = new ArrayList<>(Arrays.asList(hex.replace(" ", "").split("(?<=\\G.{2})")));
+        String str="";
+        int decimal=0;
+        for(String s:list){
+            decimal = Integer.parseInt(s, 16);
+
+            System.out.println("Decimal : " + (char)decimal);
+            str=str+(char)decimal;
+        }
+        return str;
     }
 
 

@@ -8,8 +8,6 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
-import org.springframework.beans.factory.annotation.Autowired;
-import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.reports.DataObject;
 
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ConvertExcel {
+public class ConvertExcel_old {
 
 
     private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
@@ -52,30 +50,6 @@ public class ConvertExcel {
         //
         HSSFCellStyle style = createStyleForTitle(workbook);
 
-        row = sheet.createRow(rownum);
-        cell = row.createCell(0, Cell.CELL_TYPE_STRING);
-
-        cell.setCellValue("Потребитель:");
-        cell.setCellStyle(style);
-
-
-        cell = row.createCell(2, Cell.CELL_TYPE_STRING);
-        cell.setCellValue(customer.getFirstName());
-        cell.setCellStyle(style);
-        rownum++;
-
-        row = sheet.createRow(rownum);
-        cell = row.createCell(0, Cell.CELL_TYPE_STRING);
-
-        cell.setCellValue("Адрес :");
-        cell.setCellStyle(style);
-
-
-        cell = row.createCell(2, Cell.CELL_TYPE_STRING);
-        cell.setCellValue(customer.getAddress());
-        cell.setCellStyle(style);
-
-        rownum++;
         row = sheet.createRow(rownum);
         cell = row.createCell(0, Cell.CELL_TYPE_STRING);
         cell.setCellValue("Data");
