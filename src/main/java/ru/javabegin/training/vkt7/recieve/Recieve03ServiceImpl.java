@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.recieve;
 
 
+import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.propert.Properties_xml;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
@@ -22,6 +23,7 @@ import java.util.stream.IntStream;
 /**
  * Created by Николай on 20.08.2017.
  */
+@Component
 public class Recieve03ServiceImpl implements Recieve03Service{
 
     @Override
@@ -775,17 +777,20 @@ int number_active_base=10000;
     }
 
     public String hexToASCII(String hex){
+        System.out.println("hex="+hex);
+        String str = "";
+if(hex!=null) {
+    List<String> list = new ArrayList<>(Arrays.asList(hex.replace(" ", "").split("(?<=\\G.{2})")));
 
+    int decimal = 0;
+    for (String s : list) {
+        decimal = Integer.parseInt(s, 16);
 
-        List<String> list = new ArrayList<>(Arrays.asList(hex.replace(" ", "").split("(?<=\\G.{2})")));
-        String str="";
-        int decimal=0;
-        for(String s:list){
-            decimal = Integer.parseInt(s, 16);
+        System.out.println("Decimal : " + (char) decimal);
+        str = str + (char) decimal;
+    }
+}else {str="";}
 
-            System.out.println("Decimal : " + (char)decimal);
-            str=str+(char)decimal;
-        }
         return str;
     }
 
