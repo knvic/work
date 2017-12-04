@@ -73,6 +73,27 @@ public class Customer implements Serializable {
     }
 
 
+    @Column(name = "BRANCH")
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    @Column(name = "ADDRESS")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
+
+
     @Column(name = "LAST_NAME")
     public String getLastName() {
         return lastName;
@@ -131,22 +152,7 @@ public class Customer implements Serializable {
         this.version = version;
     }
 
-    @Column(name = "BRANCH")
-    public String getBranch() {
-        return branch;
-    }
 
-    public void setBranch(String branch) {
-        this.branch = branch;
-    }
-    @Column(name = "ADDRESS")
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)
@@ -182,7 +188,8 @@ public class Customer implements Serializable {
                 ", unitNumber=" + unitNumber +
                 ", eMail='" + eMail + '\'' +
                 ", version=" + version +
-                ", customerId=" + customerId +
+                ", branch='" + branch + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
