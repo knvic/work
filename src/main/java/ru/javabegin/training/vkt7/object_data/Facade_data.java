@@ -370,6 +370,12 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
 
     }
 
+    public void getExcel_current_all_OK() throws IOException {
+
+GetExcelAllOk getExcelAllOk=new GetExcelAllOk();
+getExcelAllOk.update(customerService, reportService, auxiliaryService);
+
+    }
 
 
 

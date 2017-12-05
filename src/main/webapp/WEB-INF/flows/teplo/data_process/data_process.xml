@@ -27,6 +27,7 @@
 
 
             <transition on="excel" to="excel"/>
+            <transition on="excelOK" to="excelOK"/>
             <transition on="test" to="test"/>
            <!--
             <transition on="excel">
@@ -86,6 +87,18 @@
 
 
       </action-state>
+
+
+      <action-state id="excelOK">
+            <evaluate expression="facade_data.getExcel_current_all_OK()"/>
+
+            <transition to="data_process" >
+
+                  <set name="flashScope.message2" value="'Данные формируются в отдельной директории C:/demo'"/>
+            </transition>
+
+      </action-state>
+
 
 
 
