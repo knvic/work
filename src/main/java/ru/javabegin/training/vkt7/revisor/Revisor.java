@@ -2,6 +2,8 @@ package ru.javabegin.training.vkt7.revisor;
 
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
 import jssc.SerialPortException;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import ru.javabegin.training.test_thread.TestThread_kill_modem;
@@ -31,16 +33,18 @@ public class Revisor {
     @Autowired
     ModemService modemService;
 
-    public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
 
+    public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
+        Logger logger = Logger.getRootLogger();
         Callable task = () -> {
             try {
 
-                File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
+                //File file = new File("C:\\Work\\Java\\work\\logRevizor.txt");
                 //File file = new File("d:\\Work\\work\\logRevizor.txt");
-                FileWriter writer = new FileWriter(file, true);
+                //FileWriter writer = new FileWriter(file, true);
                 Date ldt;
                 String log;
+                logger.info("Начала работать программа ревизор");
 
                 if(future1!=null) {
                     ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
@@ -49,13 +53,16 @@ public class Revisor {
                     System.out.println("Ждем 140 секунд ....");
                     Thread.sleep(140000);
                     System.out.println("Таймер  Revizor отработал");
+                    logger.info("Таймер  Revizor отработал");
                     if (ai== atomicInteger.get()) {
                         System.out.println("Поток завис. Требуется прерывание и перезапуск");
+
                         ldt=new Date();
                         log=ldt+ " Поток завис. Требуется прерывание  \n";
-                        writer.write( log);
-                        writer.flush();
-                        writer.close();
+                        logger.info(ldt+ " Поток завис. Требуется прерывание  \n");
+                        //writer.write( log);
+                        //writer.flush();
+                        //writer.close();
 
                         TestThread_kill_modem testThread_kill_modem=new TestThread_kill_modem();
                         testThread_kill_modem.t_kill();
@@ -69,10 +76,11 @@ public class Revisor {
                         System.out.println("поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
                         ldt=new Date();
                         log=ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n";
+                        logger.info( log);
                         atomicInteger.set(1);
-                        writer.write( log);
-                        writer.flush();
-                        writer.close();
+                        ///writer.write( log);
+                       /// writer.flush();
+                       /// writer.close();
                     }
                     System.out.println("atomicInteger=== " + atomicInteger.get());
 
@@ -82,9 +90,9 @@ public class Revisor {
                     System.out.println("поток не запущен");
                     ldt=new Date();
                     log=ldt+ " поток не запущен \n";
-                    writer.write( log);
-                    writer.flush();
-                    writer.close();
+                    ///writer.write( log);
+                   /// writer.flush();
+                   /// writer.close();
                 }
 
 

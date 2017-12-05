@@ -72,7 +72,7 @@ public class UpdateDataCustomerList implements Serializable {
 
         serviceDataCustomerList.shutdown();
 
-        System.out.println("Основная программа работу закончила");
+        //System.out.println("Основная программа работу закончила");
 
 
     }

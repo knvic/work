@@ -91,11 +91,13 @@ public class Recieve03ServiceImpl implements Recieve03Service{
                 System.out.println(ss + Integer.toString(Integer.parseInt(list.get(p), 16)));
             });*/
     IntStream.range(8, 15)
-            .forEach(p-> ss.append(new StringBuffer(list.get(p).subSequence(0, list.get(p).length()+1))));
+            .forEach(p-> ss.append(new StringBuffer(list.get(p).subSequence(0, list.get(p).length()))));
 
-    //System.out.println("абонент = "+ss);
+    System.out.println("абонент = "+ss);
+    String hex_to_str=hexToASCII(ss.toString());
+    System.out.println("3FF9 полученная строка"+ hex_to_str);
 
-    list_out.add(7,hexToASCII(ss.toString()));
+    list_out.add(7,hex_to_str);
 
 
 

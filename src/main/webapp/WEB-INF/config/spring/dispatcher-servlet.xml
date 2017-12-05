@@ -233,12 +233,12 @@
 
 
 
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 47 12 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="20 35 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
 
         <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
-        <task:scheduled ref="updateDataCustomer" method="update" cron="58 * * * * ?"/>
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>
 
 
 

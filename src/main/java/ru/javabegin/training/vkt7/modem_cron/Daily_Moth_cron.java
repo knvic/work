@@ -421,6 +421,14 @@ type_to_error="daily";
                 break;
             }
 
+
+        /*   while(repeat!=1000){
+                logger.info("Тестовое зависание");
+                System.out.println("Тестовое зависание программы");
+                Thread.sleep(20000);
+
+            }*/
+
             if (tel.equals("")){
                 tel="ATDP+79064426645\r"; //Весна
                 //tel="ATDP+79064427287\r";
@@ -670,6 +678,8 @@ type_to_error="daily";
 /**
  * 3F FE 1-й проход определение версии
   */
+
+
 
             System.out.println("\n Формируем запрос 3F FE (Версия сервера 65 байт)");
             System.out.println("\n step= "+step);
@@ -1902,11 +1912,7 @@ t=1;
                 repeat = 0;
                 executor.submit(callable(5));
 
-           /* while(repeat!=1000){
-                System.out.println("Тестовое зависание программы");
-                Thread.sleep(20000);
 
-            }*/
 
                 serialPort.writeIntArray(request);
 
