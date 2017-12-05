@@ -9,7 +9,7 @@ import java.util.List;
 @Scope("singleton")
 public class DataCustomerList {
 
-    List<DataCustomer> dataCustomerList;
+    static List<DataCustomer> dataCustomerList;
 
     public List<DataCustomer> getDataCustomerList() {
         return dataCustomerList;

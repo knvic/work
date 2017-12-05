@@ -4,13 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.exсel.ConvertExcel;
 
+import java.io.File;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +22,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -31,30 +36,45 @@ public class GetExcelAllOk implements Serializable {
     @Autowired
     @Qualifier("jpaCustomerService")
  CustomerService customerService;
-    @Autowired
-    DataCustomerList dataCustomerList;
+   /* @Autowired
+    DataCustomerList dataCustomerList;*/
 
-    @Autowired
-    AuxiliaryService auxiliaryService;
+
     @Autowired
     ReportService reportService;
 
 
-    public void update(){
+    public void update(CustomerService customerService,ReportService reportService, AuxiliaryService auxiliaryService){
+
+        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getRootLogger();
 
         Callable task = () -> {
+            //AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
                 System.out.println("работает поток "+ Thread.currentThread().getName());
+            logger.info("Формитрование всех OK/. Работает поток "+ Thread.currentThread().getName());
             System.out.println("Формируем файлы Excel для всех готовых (OK) данных DataCustomerList!!!");
-                    customerService.customerOperationStatus();
+                    //customerService.customerOperationStatus();
 
-            List<DataCustomer> list=dataCustomerList.getDataCustomerList();
+            //File file = new File("C:/demo/"+customer.getFirstName()+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
+String dir= "C:/demo/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+"/";
+            File direct = new File("C://demo//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
+            boolean created = direct.mkdir();
+            if(created){
+                System.out.println("Каталог"+"C://demo//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+" успешно создан");
+            logger.info("Каталог успешно создан");}
+
+
+
+
+            List<DataCustomer> list=DataCustomerList.dataCustomerList;
+            System.out.println("размер list= "+list);
             List<Customer> customerList=new ArrayList<>();
 
           /*  list.stream()
                     .filter((p)->p.getStatus().contains("OK")).collect(Collectors.toList())*/
 
           for(DataCustomer dk:list){
-              if(dk.getStatus().contains("OK")){
+              if(dk.getStatus().equals("ГОТОВО")){
                   customerList.add(dk.getCustomer());
 
               }
@@ -109,22 +129,10 @@ public class GetExcelAllOk implements Serializable {
 
 
 
-              convertExcel.excel_current(customer, dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
+              convertExcel.excel_current_OK(customer,dir , dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
 
           }
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-           // System.out.println("///////////////////////////////////////////////////////////////////////");
-            //customerService.test_customerOperationStatus();
 
-               /* File file = new File("C:\\Work\\Java\\work\\DataCustomerList.txt");
-                FileWriter writer = new FileWriter(file, true);
-                LocalDateTime ldt1=LocalDateTime.now();
-                String log=ldt1+ "DataCustomerList обновлен "+ Thread.currentThread().getName()+" \n";
-                writer.write( log);
-                writer.flush();
-                writer.close();*/
 
                 return "123";
 

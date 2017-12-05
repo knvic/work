@@ -371,58 +371,9 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
     }
 
     public void getExcel_current_all_OK() throws IOException {
-       DataCustomerList dataCustomerList;
-       //List<DataCustomer> listOk=dataCustomerList.getDataCustomerList();
 
-        Customer customer = searchCriteria_data.getCustomer();
-        Date date = new Date();
-        date=auxiliaryService.addTime(date,"23");
-        Timestamp date_ts=auxiliaryService.date_TimeStamp(date);
-        List<Date> date_daily_List =auxiliaryService.from_the_beginning_of_month(date);
-        Timestamp temp_ot=auxiliaryService.date_TimeStamp(date_daily_List.get(0));
-        Timestamp temp_do=date_ts;
-        System.out.println("date_daily_List.get(0) "+temp_ot);
-        System.out.println("date_ts "+date_ts);
-        List<Operation> operationList_daily=customerService.findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
-
-        ConvertExcel convertExcel=new ConvertExcel();
-        // convertExcel.excel();
-        List<Object> object= reportService.getObject_ns(operationList_daily);
-        List<DataObject> dataObjectList =(List<DataObject>) object.get(0);
-        List<String> column=(List<String>) object.get(1);
-        System.out.println("размер 0" +dataObjectList.size());
-        System.out.println("размер 1" +column.size());
-
-        List<Object> object_calc= reportService.getCalculations(dataObjectList,column);
-
-
-        DataObject sum =  (DataObject)object_calc.get(0);
-        DataObject average= (DataObject)object_calc.get(1);
-
-
-
-        ///Дата предыдущего месяца
-        Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(auxiliaryService.date_TimeStamp(date_daily_List.get(0)));
-
-
-
-        List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
-        System.out.println("размер массива operationList_total "+operationList_total.size() );
-
-        List<Object> object_total=reportService.getCalculations_total(operationList_total,sum);
-        List<DataObject> total_list = (List<DataObject>)object_total.get(0);
-        List<String> list_calc_total=(List <String>)object_total.get(2);
-
-        List<String> col_sum_average = new ArrayList<>(sum.getOptionalValues().keySet());
-
-        col_sum_average=reportService.sort(col_sum_average);
-
-
-
-
-
-        convertExcel.excel_current(customer, dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
-
+GetExcelAllOk getExcelAllOk=new GetExcelAllOk();
+getExcelAllOk.update(customerService, reportService, auxiliaryService);
 
     }
 
