@@ -12,6 +12,8 @@ import ru.javabegin.training.vkt7.modem_run.ModemService;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.*;
@@ -19,6 +21,7 @@ import java.util.concurrent.*;
 
 
 import static ru.javabegin.training.test_thread.TestThread_run.future2;
+import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.end;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.future1;
 import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.atomicInteger;
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
@@ -45,6 +48,8 @@ public class Revisor {
                 Date ldt;
                 String log;
                 logger.info("Начала работать программа ревизор");
+                logger.info("Статус end : "+ end);
+
 
                 if(future1!=null) {
                     ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
@@ -68,8 +73,21 @@ public class Revisor {
                         testThread_kill_modem.t_kill();
 
                         Thread.sleep(100000);
+                        logger.info("Статус end после thread kill: "+ end);
+                        if(end!=true) {
+                            logger.info("Программа не закончила работу. Перезапуск: "+ end);
+                            modemService.get_daily_moth_cron();
+                        }else
+                        {
+                            logger.info("Программа закончила работу. Перезапуск не требуется . ");
+                            try {
+                                logger.info("Статус задачи future1:"+future1.isDone());
+                            } catch (Exception e) {
+                                logger.info("Статус задачи future1 получить не удалось: Ошибка");
+                                e.printStackTrace();
+                            }
 
-                        modemService.get_daily_moth_cron();
+                        }
 
 
                     } else {

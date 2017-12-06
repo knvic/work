@@ -42,6 +42,7 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.EventListener_cron {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
+ public static volatile boolean end;
 
 
     public static String data;
@@ -75,6 +76,8 @@ public class Daily_Moth_cron extends ru.javabegin.training.vkt7.modem_cron.Event
 
 
     public String daily_all_cycle(List<Customer> customerList, CustomerService customerService, AuxiliaryService auxiliaryService, Date date, int type ) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
+
+      end=false;
         log_revizor = new File("C:\\Work\\Java\\work\\logRevizor.txt");
         log_cron=new File("C:\\Work\\Java\\work\\logCron.txt");
         atomicInteger=new AtomicInteger();
@@ -3178,7 +3181,7 @@ t=1;
         serialPort.closePort();
             if (serialPort.isOpened()) {System.out.println(" Port ЕЩЕ открыт ");}
             else {System.out.println(" Port закрыт ");}
-
+        end=true;
 
 
         return "OK";
