@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/ReadExcel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/ReadExcelDemo.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/ReadExcelDemo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/TestVisitResult.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/TestVisitResult.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,8 +59,8 @@
       <file leaf-file-name="TestVisitResult.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/TestVisitResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="130" column="75" lean-forward="false" selection-start-line="130" selection-start-column="75" selection-end-line="130" selection-end-column="75" />
+            <state relative-caret-position="121">
+              <caret line="141" column="80" lean-forward="true" selection-start-line="141" selection-start-column="80" selection-end-line="141" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1030,14 +1027,7 @@
       <workItem from="1512212626712" duration="43573000" />
       <workItem from="1512392161827" duration="24695000" />
       <workItem from="1512539690723" duration="958000" />
-      <workItem from="1512807148561" duration="20362000" />
-    </task>
-    <task id="LOCAL-00007" summary="Сделана копия Daily_Moth_cron_18_11_2017. В новое добавлен AthomicInteger. Revizor запускает программу Thread_kill_modem">
-      <created>1511029078303</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1511029078303</updated>
+      <workItem from="1512807148561" duration="22173000" />
     </task>
     <task id="LOCAL-00008" summary=" В Revizor добавлен перезапуск get_daily_modem_cron()">
       <created>1511029444830</created>
@@ -1375,7 +1365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512495601703</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Работает парсинг текстового файла">
+      <created>1512836328595</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1512836328595</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1411,10 +1408,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355106000" />
+    <option name="totallyTimeSpent" value="356917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4640592" sideWeight="0.50625" order="0" side_tool="true" content_ui="tabs" />
@@ -1488,7 +1486,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="тестирование методов Report" />
     <MESSAGE value="Протестирован класс с калькуляцией данных ReportService getCalculations" />
     <MESSAGE value="в ReportService добавлен класс конвертации DataObject в класс DataObject_str, без использования BigDecimal для вывода результатов на страницы" />
     <MESSAGE value="протестирована работа конвертации DataObject в DataObject_str при выборке между интервалами дат" />
@@ -1513,7 +1510,8 @@
     <MESSAGE value="промежуточный" />
     <MESSAGE value="добавлен вывод всех готовых данных. Исправляем баки создания директории" />
     <MESSAGE value="добавлен вывод всех готовых данных. Вывод в отдельную директорию" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен вывод всех готовых данных. Вывод в отдельную директорию" />
+    <MESSAGE value="Работает парсинг текстового файла" />
+    <option name="LAST_COMMIT_MESSAGE" value="Работает парсинг текстового файла" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1966,8 +1964,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/TestVisitResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="130" column="75" lean-forward="false" selection-start-line="130" selection-start-column="75" selection-end-line="130" selection-end-column="75" />
+        <state relative-caret-position="121">
+          <caret line="141" column="80" lean-forward="true" selection-start-line="141" selection-start-column="80" selection-end-line="141" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

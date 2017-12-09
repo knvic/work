@@ -112,6 +112,8 @@ public class TestVisitResult {
         }
 
         Path wiki_path = Paths.get(file.getAbsolutePath());
+        String dannie="";
+        String naim="";
         String search="";
 
         Charset charset = Charset.forName("windows-1251");
@@ -119,6 +121,15 @@ public class TestVisitResult {
             List<String> lines = Files.readAllLines(wiki_path, charset);
 
             for (String line : lines) {
+                if (line.contains("Заводской")) {
+                    System.out.println("Найдена строка"+line);
+                    dannie=line;
+                }
+                if (line.contains("Дата")) {
+                    System.out.println("Найдена строка"+line);
+                    naim=line;
+                }
+
                 if (line.contains("30/11/17 24:00")) {
                     System.out.println("Найдена строка"+line);
                     search=line;
@@ -127,9 +138,20 @@ public class TestVisitResult {
         } catch (IOException e) {
             System.out.println(e);
         }
+        //dannie=dannie.replace(" ","");
+        List<String> d_list = new ArrayList<>(Arrays.asList(dannie.split(" ")));
+        d_list.forEach(p->System.out.print(p+" "));
+        System.out.print("\n");
+
+        naim=naim.replace(" ","");
+        List<String> n_list = new ArrayList<>(Arrays.asList(naim.split("\\|")));
+        n_list.forEach(p->System.out.print(p+" "));
+        System.out.print("\n");
+
         search=search.replace(" ","");
-        List<String> list1 = new ArrayList<>(Arrays.asList(search.split("\\|")));
-        list1.forEach(p->System.out.print(p+" "));
+        List<String> s_list = new ArrayList<>(Arrays.asList(search.split("\\|")));
+        s_list.forEach(p->System.out.print(p+" "));
+        System.out.print("\n");
 
 
 
