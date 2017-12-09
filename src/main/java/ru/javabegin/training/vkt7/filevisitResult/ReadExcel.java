@@ -1,46 +1,22 @@
 package ru.javabegin.training.vkt7.filevisitResult;
 
-import java.io.*;
-import java.util.Iterator;
-import org.apache.poi.hssf.extractor.ExcelExtractor;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
 
-public class ReadExcelDemo {
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 
-    public static void main(String[] args) throws IOException {
+public class ReadExcel {
+
+    public  void read(String name) throws IOException {
 
 
-       /* InputStream in = new FileInputStream("C:/demo/vkt/test.xls");
-        HSSFWorkbook wb = new HSSFWorkbook(in);
-
-        Sheet sheet = wb.getSheetAt(0);
-        Iterator<Row> it = sheet.iterator();
-        while (it.hasNext()) {
-            Row row = it.next();
-            Iterator<Cell> cells = row.iterator();
-            while (cells.hasNext()) {
-                Cell cell = cells.next();
-                int cellType = cell.getCellType();
-                switch (cellType) {
-                    case Cell.CELL_TYPE_STRING:
-                        System.out.print(cell.getStringCellValue() + "=");
-                        break;
-                    case Cell.CELL_TYPE_NUMERIC:
-                        System.out.print("[" + cell.getNumericCellValue() + "]");
-                        break;
-
-                    case Cell.CELL_TYPE_FORMULA:
-                        System.out.print("[" + cell.getNumericCellValue() + "]");
-                        break;
-                    default:
-                        System.out.print("|");
-                        break;
-                }
-            }
-            System.out.println();
-        }*/
 
 
         // Read XSL file ДолинаНарзанов_тп_1__05_12_2017.xls
@@ -52,18 +28,12 @@ public class ReadExcelDemo {
         System.out.println("str "+str);
 
         str="test.xls";
-        FileInputStream inputStream = new FileInputStream(new File("C:/demo/vkt/"+str));
 
 
-        //FileInputStream inputStream = new FileInputStream(new File("C:/demo/vkt/test.xls"));
-        //FileInputStream inputStream = new FileInputStream(new File("C:/demo/vkt/ДолинаНарзанов_тп_1__05_12_2017.xls"));
-       // File file = new File("C:/demo/vkt/ДолинаНарзанов_тп_1__05_12_2017.xls");
+        FileInputStream inputStream = new FileInputStream(new File(name));
 
-        // Get the workbook instance for XLS file
-        //HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
 
-        //FileInputStream inputStream = new FileInputStream(file);
-        //HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
+
         HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
 
         // Get first sheet from the workbook
