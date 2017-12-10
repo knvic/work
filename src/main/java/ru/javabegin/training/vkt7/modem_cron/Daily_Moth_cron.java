@@ -3173,14 +3173,18 @@ t=1;
         System.out.println("\n Проверяем открыт ли порт  ");
 
         if (serialPort.isOpened())
-        {System.out.println(" Port открыт ");}
-            else {System.out.println(" Port УЖЕ ЗАКРЫТ ");}
+        {System.out.println(" Port открыт ");
+        logger.info("Port открыт");
+            System.out.println("\n Закрываем порт ");
 
-         System.out.println("\n Закрываем порт ");
+            serialPort.closePort();
 
-        serialPort.closePort();
-            if (serialPort.isOpened()) {System.out.println(" Port ЕЩЕ открыт ");}
-            else {System.out.println(" Port закрыт ");}
+        }
+            else {System.out.println(" Port УЖЕ ЗАКРЫТ ");
+            logger.info("Port УЖЕ ЗАКРЫТ");}
+
+
+
         end=true;
 
 
