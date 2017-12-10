@@ -31,8 +31,14 @@ public interface AuxiliaryService {
 
     Timestamp minusDay(Timestamp timestamp,int day);
 
-
-
+    /**
+     * выдает последний день предыдущего месяца в текстовом формате
+     * типа 30/11/17 24:00
+     * для поиска в текстовом файле ВКТ-7
+     * @return
+     */
+    String forUpdateMoth();
+    Timestamp stringDate_to_TimeStamp_forUpdateMoth(String stringDate);
 
 
     LocalDate date_to_localDate(Date data);
