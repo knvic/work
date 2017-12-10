@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.Customer;
+import ru.javabegin.training.vkt7.filevisitResult.DataProcessing;
 import ru.javabegin.training.vkt7.filevisitResult.TestVisitResult;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
 import ru.javabegin.training.vkt7.reports.DataCustomerList;
@@ -19,6 +20,8 @@ public class UpdateMoth implements Serializable {
 
     @Autowired
     AuxiliaryService auxiliaryService;
+    @Autowired
+    DataProcessing processing;
 
 public void update() throws IOException {
     org.apache.log4j.Logger logger = org.apache.log4j.Logger.getRootLogger();
@@ -45,7 +48,15 @@ public void update() throws IOException {
     String date=auxiliaryService.forUpdateMoth();
 
     TestVisitResult visitResult=new TestVisitResult();
-    visitResult.searchMothTxt(customerName,date);
+    List<Object> objectList= visitResult.searchMothTxt(customerName,date);
+    List<String> listHigh=(List<String>)objectList.get(0);
+    List<String> listZaglavie=(List<String>)objectList.get(1);
+    List<String> listData=(List<String>)objectList.get(2);
+   // DataProcessing processing=new DataProcessing();
+    processing.processing(customerList.get(0), objectList);
+
+
+
 
 
 }

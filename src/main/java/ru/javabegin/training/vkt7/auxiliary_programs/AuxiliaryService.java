@@ -38,6 +38,7 @@ public interface AuxiliaryService {
      * @return
      */
     String forUpdateMoth();
+    Timestamp stringDate_to_TimeStamp_forUpdateMoth(String stringDate);
 
 
     LocalDate date_to_localDate(Date data);

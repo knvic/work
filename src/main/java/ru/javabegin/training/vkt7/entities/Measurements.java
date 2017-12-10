@@ -43,7 +43,15 @@ public class Measurements implements Serializable{
         this.type = type;
             }
 
-
+    public Measurements(int id, String name, String text, String measurText, String quality, String qualityText, String ns) {
+        this.id = id;
+        this.name = name;
+        this.text = text;
+        this.measurText = measurText;
+        this.quality = quality;
+        this.qualityText = qualityText;
+        this.ns = ns;
+    }
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

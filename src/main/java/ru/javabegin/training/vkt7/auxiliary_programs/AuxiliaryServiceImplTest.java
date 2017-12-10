@@ -19,6 +19,13 @@ import static org.junit.Assert.*;
  */
 public class AuxiliaryServiceImplTest {
     @Test
+    public void stringDate_to_TimeStamp_forUpdateMoth() throws Exception {
+        String s="30/11/1724:00";
+        System.out.println("ldt="+auxiliaryService.stringDate_to_TimeStamp_forUpdateMoth(s));
+
+    }
+
+    @Test
     public void forUpdateMoth() throws Exception {
 
         System.out.println(auxiliaryService.forUpdateMoth());
