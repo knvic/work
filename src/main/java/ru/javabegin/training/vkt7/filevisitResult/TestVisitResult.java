@@ -3,17 +3,14 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 import static ru.javabegin.training.vkt7.filevisitResult.MyFileVisitorTxt.file;
-
-import static ru.javabegin.training.vkt7.filevisitResult.TestVisitResult.p1;
-import static ru.javabegin.training.vkt7.filevisitResult.TestVisitResult.p2;
-import static ru.javabegin.training.vkt7.filevisitResult.TestVisitResult.p3;
+import static ru.javabegin.training.vkt7.filevisitResult.TestVisitResult.*;
 
 
 class MyFileVisitorTxt extends SimpleFileVisitor<Path> {
@@ -31,13 +28,13 @@ public static File file;
             containsName =true;
         }
 
-        String customer="Абонент:Долина нарзанов тп-1";
-        String data="30/11/17 24:00";
+        /*customerStr="Абонент:Долина нарзанов тп-1";
+        dataStr="30/11/17 24:00";*/
         Charset charset = Charset.forName("windows-1251");
         String content = new String(Files.readAllBytes(path),charset );
        // System.out.println(content);
         boolean containsContent = false;
-        if(customer!=null && content.contains(customer)&& content.contains(data)) {
+        if(customerStr!=null && content.contains(customerStr)&& content.contains(dataStr)) {
 
             containsContent = true;
         }
@@ -64,11 +61,19 @@ public static File file;
 public class TestVisitResult {
     //public static String p1="Весна";
     //public static String p2="5_12";
-    public static String p1="ДолинаНарзанов_тп_1";
-    public static String p2="5_12";
-    public static String p3="txt";
-    public static void main(String[] args) throws IOException {
+    //public static String p1="ДолинаНарзанов_тп_1";
+    //public static String p2="5_12";
+    //public static String p3="txt";
 
+
+    public static String p3="txt";
+    public static String customerStr;
+    public static String dataStr;
+
+    public List<Object> searchMothTxt(String customer, String date) throws IOException {
+
+        this.customerStr=customer;
+        this.dataStr=date;
         Path pathSource = Paths.get("c:\\demo\\vkt");
         Path pathDestination = Paths.get("c:\\demo\\temp");
 
@@ -138,7 +143,8 @@ public class TestVisitResult {
         } catch (IOException e) {
             System.out.println(e);
         }
-        //dannie=dannie.replace(" ","");
+       // dannie=dannie.replace("  "," ");
+        dannie=dannie.replaceAll("[\\s]{2,}", " ").trim();
         List<String> d_list = new ArrayList<>(Arrays.asList(dannie.split(" ")));
         d_list.forEach(p->System.out.print(p+" "));
         System.out.print("\n");
@@ -148,10 +154,14 @@ public class TestVisitResult {
         n_list.forEach(p->System.out.print(p+" "));
         System.out.print("\n");
 
-        search=search.replace(" ","");
-        List<String> s_list = new ArrayList<>(Arrays.asList(search.split("\\|")));
-        s_list.forEach(p->System.out.print(p+" "));
+        String moth=search.replace(" ","");
+        List<String> moth_list = new ArrayList<>(Arrays.asList(moth.split("\\|")));
+        moth_list.forEach(p->System.out.print(p+" "));
         System.out.print("\n");
+        List<Object> objectList=new ArrayList<>();
+        objectList.add(0,d_list);
+        objectList.add(1,n_list);
+        objectList.add(2,moth_list);
 
 
 
@@ -172,7 +182,7 @@ public class TestVisitResult {
        // readExcel.read(pathDestination.toString());
 
 
-
+    return objectList;
 
     }
 }

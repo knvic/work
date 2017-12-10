@@ -232,6 +232,25 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
         return dataStr;
 
     }
+
+
+    @Override
+    public  String forUpdateMoth(){
+        String str="";
+        LocalDateTime ldt=LocalDateTime.now();
+
+        ldt=ldt.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+
+        //str= ldt.format(DateTimeFormatter.ofPattern("dd:MM:uu:HH"));
+        //ldt=addTime(ldt,"24");
+        str= ldt.format(DateTimeFormatter.ofPattern("dd/MM/uu 24:00"));
+
+
+    return str;
+    }
+
+
+
     public int rrr(int a,int b){
         return a+b;
     }

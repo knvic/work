@@ -225,7 +225,7 @@
     <bean id="revizor" class="ru.javabegin.training.vkt7.revisor.Revisor"/>
     <bean id="updateDataCustomer" class="ru.javabegin.training.vkt7.reports.UpdateDataCustomerList"/>
 
-
+    <bean id="updateMoth" class="ru.javabegin.training.vkt7.reports.UpdateMoth"/>
 
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
@@ -239,6 +239,9 @@
 
         <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
         <task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>
+
+        <task:scheduled ref="updateMoth" method="update" cron="*/15 * * * * ?"/>
+
 
 
 

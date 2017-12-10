@@ -19,6 +19,12 @@ import static org.junit.Assert.*;
  */
 public class AuxiliaryServiceImplTest {
     @Test
+    public void forUpdateMoth() throws Exception {
+
+        System.out.println(auxiliaryService.forUpdateMoth());
+    }
+
+    @Test
     public void getLastDayPrevisionMoth() throws Exception {
         LocalDateTime ldt=LocalDateTime.now();
         System.out.println("ldt="+ldt);
