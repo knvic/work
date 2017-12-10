@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/DataProcessing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/GetPropertsList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/ReadExcel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/ReadExcelDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/TestVisitResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/Translit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateMoth.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Measurements.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Measurements.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -67,19 +57,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="logApp.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logApp.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="20">
-              <caret line="2834" column="38" lean-forward="false" selection-start-line="2834" selection-start-column="38" selection-end-line="2834" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ConvertExcel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
+            <state relative-caret-position="832">
               <caret line="100" column="17" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
               <folding />
             </state>
@@ -126,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4700">
-              <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
+            <state relative-caret-position="398">
+              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -274,8 +255,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/revisor/Revisor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/logApp.log" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
       </list>
     </option>
   </component>
@@ -536,6 +517,15 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="flows" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1051,14 +1041,7 @@
       <workItem from="1512212626712" duration="43573000" />
       <workItem from="1512392161827" duration="25935000" />
       <workItem from="1512463890734" duration="12239000" />
-      <workItem from="1512928133102" duration="12000" />
-    </task>
-    <task id="LOCAL-00004" summary="Работает остановка тестового потока. Перезапуск и новая остановка">
-      <created>1510503141600</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1510503141600</updated>
+      <workItem from="1512928133102" duration="670000" />
     </task>
     <task id="LOCAL-00005" summary="требуется доработка.  Закрытие порта">
       <created>1510512938244</created>
@@ -1396,7 +1379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512540648871</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Merge remote-tracking branch 'remotes/origin/read_excel' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1512928187871</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1512928187871</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1432,7 +1422,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318819000" />
+    <option name="totallyTimeSpent" value="319477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1449,8 +1439,9 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31419286" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31419286" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1470,7 +1461,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18959913" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1510,7 +1500,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="тестирование методов Report" />
     <MESSAGE value="Протестирован класс с калькуляцией данных ReportService getCalculations" />
     <MESSAGE value="в ReportService добавлен класс конвертации DataObject в класс DataObject_str, без использования BigDecimal для вывода результатов на страницы" />
     <MESSAGE value="протестирована работа конвертации DataObject в DataObject_str при выборке между интервалами дат" />
@@ -1535,7 +1524,8 @@
     <MESSAGE value="локальный коммит" />
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/dev_TimeOut_fix' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="добавление статуса end" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление статуса end" />
+    <MESSAGE value="Merge remote-tracking branch 'remotes/origin/read_excel' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'remotes/origin/read_excel' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1851,6 +1841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1879,6 +1870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
           <caret line="319" column="25" lean-forward="false" selection-start-line="319" selection-start-column="16" selection-end-line="319" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1893,6 +1885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1907,6 +1900,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1978,14 +1972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4700">
-          <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logCron.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3500">
@@ -2002,14 +1988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="100" column="17" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logApp.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="20">
@@ -2019,6 +1997,22 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/exсel/ConvertExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="100" column="17" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding />
         </state>
       </provider>
