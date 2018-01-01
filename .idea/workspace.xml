@@ -8,10 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/DataProcessing.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/filevisitResult/DataProcessing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/GetExcelAllOk.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/GetExcelAllOk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateMoth.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/UpdateMoth.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -200,7 +196,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dev_TimeOut" />
       </map>
     </option>
   </component>
@@ -1074,14 +1070,7 @@
       <workItem from="1512463890734" duration="12239000" />
       <workItem from="1512928133102" duration="689000" />
       <workItem from="1512929714869" duration="20186000" />
-      <workItem from="1514197353061" duration="2466000" />
-    </task>
-    <task id="LOCAL-00006" summary="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1511024610615</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1511024610615</updated>
+      <workItem from="1514197353061" duration="2689000" />
     </task>
     <task id="LOCAL-00007" summary="Сделана копия Daily_Moth_cron_18_11_2017. В новое добавлен AthomicInteger. Revizor запускает программу Thread_kill_modem">
       <created>1511029078303</created>
@@ -1419,7 +1408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512929147588</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="конец 2017">
+      <created>1514793307515</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1514793307515</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1455,7 +1451,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342148000" />
+    <option name="totallyTimeSpent" value="342371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1533,7 +1529,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Протестирован класс с калькуляцией данных ReportService getCalculations" />
     <MESSAGE value="в ReportService добавлен класс конвертации DataObject в класс DataObject_str, без использования BigDecimal для вывода результатов на страницы" />
     <MESSAGE value="протестирована работа конвертации DataObject в DataObject_str при выборке между интервалами дат" />
     <MESSAGE value="Промежуточный. Работаем над калькуляцией" />
@@ -1558,7 +1553,8 @@
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/dev_TimeOut_fix' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="добавление статуса end" />
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/read_excel' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'remotes/origin/read_excel' into dev_TimeOut&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="конец 2017" />
+    <option name="LAST_COMMIT_MESSAGE" value="конец 2017" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
