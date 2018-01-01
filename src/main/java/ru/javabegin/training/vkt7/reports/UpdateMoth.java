@@ -43,7 +43,7 @@ public void update() throws IOException {
     System.out.println("Размер найденных= "+customerList.size());
 
     //String customerName="Долина нарзанов тп-1";
-    String customerName="Елзарова Атриумф";
+    String customerName="Холдинг 10";
 
     String date=auxiliaryService.forUpdateMoth();
 

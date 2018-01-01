@@ -107,7 +107,7 @@ String dir= "C:/demo/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d
               DataObject sum =  (DataObject)object_calc.get(0);
               DataObject average= (DataObject)object_calc.get(1);
 
-
+            logger.info("Данные daily для "+ customer.getFirstName()+" сформированы");
 
               ///Дата предыдущего месяца
               Timestamp date_prevision_moth =auxiliaryService.getLastDayPrevisionMoth(auxiliaryService.date_TimeStamp(date_daily_List.get(0)));
@@ -116,7 +116,7 @@ String dir= "C:/demo/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d
 
               List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
               System.out.println("размер массива operationList_total "+operationList_total.size() );
-
+              logger.info("Измерение total_moth для "+ customer.getFirstName()+" есть" + operationList_total.size());
               List<Object> object_total=reportService.getCalculations_total(operationList_total,sum);
               List<DataObject> total_list = (List<DataObject>)object_total.get(0);
               List<String> list_calc_total=(List <String>)object_total.get(2);
@@ -126,11 +126,11 @@ String dir= "C:/demo/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d
               col_sum_average=reportService.sort(col_sum_average);
 
 
-
+              logger.info("Данные для преобразования excel для "+ customer.getFirstName()+" готовы" );
 
 
               convertExcel.excel_current_OK(customer,dir , dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
-
+              logger.info("excel для "+ customer.getFirstName()+" сформирован" );
           }
 
 
