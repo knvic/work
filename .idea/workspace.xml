@@ -7,12 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16Service.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,22 +57,12 @@
     <favorites_list name="w_0407_34_Git" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TectModemLikoil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_modem/TectModemLikoil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Crc16ServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="140" column="8" lean-forward="true" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+            <state relative-caret-position="2176">
+              <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -84,10 +72,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="20" column="51" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
-              <folding>
-                <element signature="e#507#515#0" expanded="true" />
-              </folding>
+              <caret line="20" column="51" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,8 +91,8 @@
       <file leaf-file-name="Crc16ServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="153">
+              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,15 +100,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Crc16ServiceImplTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Crc16ServiceImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="527">
+              <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               <folding>
                 <element signature="e#420#428#0" expanded="true" />
-                <element signature="e#820#828#0" expanded="true" />
+                <element signature="e#897#905#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestASCII.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestASCIITest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Send10ServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/send/Send10ServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,7 +146,7 @@
       <file leaf-file-name="Daily_Moth_cron.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8976">
+            <state relative-caret-position="153">
               <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding />
             </state>
@@ -191,7 +207,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev_TimeOut_fix" />
+        <entry key="$PROJECT_DIR$" value="read_excel" />
       </map>
     </option>
   </component>
@@ -206,9 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/customer_process/customer_process.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object/SearchCriteria_cust.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object/Facade_customer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/teplo/customer_process/customer_edit_del.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/object/Selection.java" />
@@ -257,6 +270,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/ASCII/TestASCII.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java" />
       </list>
     </option>
   </component>
@@ -324,7 +340,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -374,21 +391,59 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="tv7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="tv7" type="462c0819:PsiDirectoryNode" />
+              <item name="ASCII" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="tv7" type="462c0819:PsiDirectoryNode" />
               <item name="crc16" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="vkt7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="vkt7" type="462c0819:PsiDirectoryNode" />
+              <item name="send" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+    <property name="last_opened_file_path" value="D:/общее/Павел/КИПП/_Delta/mbn-Delta-C2000.io" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -397,15 +452,21 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ru.javabegin.training.vkt7.filevisitResult" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.javabegin.training.tv7.ASCII" />
       <recent name="ru.javabegin.training.tv7.crc16" />
       <recent name="ru.javabegin.training.vkt7.Crc16" />
       <recent name="ru.javabegin.training.vkt7.auxiliary_programs" />
       <recent name="ru.javabegin.training.vkt7.recieve" />
-      <recent name="ru.javabegin.training.vkt7.reports" />
     </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="ru.javabegin.training.vkt7.filevisitResult" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.javabegin.training.tv7" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.javabegin.training.tv7.crc16" />
@@ -413,9 +474,6 @@
       <recent name="ru.javabegin.training.vkt7.reports" />
       <recent name="ru.javabegin.training.vkt7.temp_updateabonent" />
       <recent name="ru.javabegin.training.vkt7.exсel" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Work\Java\work\src\main\java\ru\javabegin\training\vkt7\filevisitResult" />
@@ -434,57 +492,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Crc16ServiceImplTest.crc16_valid">
-    <configuration name="AuxiliaryServiceImplTest.forUpdateMoth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.auxiliary_programs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="w" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImplTest" />
-      <option name="METHOD_NAME" value="forUpdateMoth" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="AuxiliaryServiceImplTest.stringDate_to_TimeStamp_forUpdateMoth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.auxiliary_programs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="w" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImplTest" />
-      <option name="METHOD_NAME" value="stringDate_to_TimeStamp_forUpdateMoth" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestASCIITest.send_ASCII">
     <configuration name="Crc16ServiceImplTest.crc16_t (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -497,31 +505,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.crc16" />
       <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.crc16.Crc16ServiceImplTest" />
-      <option name="METHOD_NAME" value="crc16_t" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="Crc16ServiceImplTest.crc16_t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.vkt7.Crc16.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="w" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.vkt7.Crc16" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.vkt7.Crc16.Crc16ServiceImplTest" />
       <option name="METHOD_NAME" value="crc16_t" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -548,6 +531,81 @@
       <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.crc16" />
       <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.crc16.Crc16ServiceImplTest" />
       <option name="METHOD_NAME" value="crc16_valid" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestASCIITest.asc_dec_sumbol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.tv7.ASCII.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="w" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.ASCII" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.ASCII.TestASCIITest" />
+      <option name="METHOD_NAME" value="asc_dec_sumbol" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestASCIITest.proba" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.tv7.ASCII.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="w" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.ASCII" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.ASCII.TestASCIITest" />
+      <option name="METHOD_NAME" value="proba" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestASCIITest.send_ASCII" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.tv7.ASCII.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="w" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.ASCII" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.ASCII.TestASCIITest" />
+      <option name="METHOD_NAME" value="send_ASCII" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -716,19 +774,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.TomCat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.forUpdateMoth" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.stringDate_to_TimeStamp_forUpdateMoth" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t (1)" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_valid" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_valid" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestASCIITest.proba" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestASCIITest.asc_dec_sumbol" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestASCIITest.send_ASCII" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_valid" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.stringDate_to_TimeStamp_forUpdateMoth" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AuxiliaryServiceImplTest.forUpdateMoth" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestASCIITest.send_ASCII" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestASCIITest.asc_dec_sumbol" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestASCIITest.proba" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_t (1)" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.Crc16ServiceImplTest.crc16_valid" />
       </list>
     </recent_temporary>
   </component>
@@ -917,14 +975,11 @@
       <workItem from="1512807148561" duration="22734000" />
       <workItem from="1512888245699" duration="25163000" />
       <workItem from="1513440036138" duration="583000" />
-      <workItem from="1513505259291" duration="3580000" />
-    </task>
-    <task id="LOCAL-00012" summary="В aux добавлен метод записи">
-      <created>1511158426310</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1511158426310</updated>
+      <workItem from="1513505259291" duration="3895000" />
+      <workItem from="1513521449049" duration="20000" />
+      <workItem from="1513697914581" duration="84000" />
+      <workItem from="1513845498571" duration="178000" />
+      <workItem from="1515062801512" duration="6950000" />
     </task>
     <task id="LOCAL-00013" summary="добавлена проверка на дублирование в ходе измерений. Добавлена запись в промежуточный файл">
       <created>1511159668399</created>
@@ -1262,43 +1317,50 @@
       <option name="project" value="LOCAL" />
       <updated>1512926789366</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Начата работа с тв7">
+      <created>1513514196304</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1513514196305</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 05m 28s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 17m 38s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 22m 31s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 23m 46s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 25m 25s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t - 2017.12.17 at 15h 25m 57s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_t_(1) - 2017.12.17 at 15h 31m 58s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_t (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_valid - 2017.12.17 at 15h 35m 14s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_valid" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Crc16ServiceImplTest_crc16_valid - 2017.12.17 at 15h 35m 34s.xml">
-      <configuration name="Crc16ServiceImplTest.crc16_valid" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Crc16ServiceImplTest_crc16_valid - 2017.12.17 at 15h 35m 46s.xml">
       <configuration name="Crc16ServiceImplTest.crc16_valid" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestASCIITest_asc_dec_sumbol - 2018.01.04 at 16h 59m 33s.xml">
+      <configuration name="TestASCIITest.asc_dec_sumbol" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_asc_dec_sumbol - 2018.01.04 at 17h 04m 15s.xml">
+      <configuration name="TestASCIITest.asc_dec_sumbol" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_proba - 2018.01.04 at 16h 58m 02s.xml">
+      <configuration name="TestASCIITest.proba" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_proba - 2018.01.04 at 16h 58m 17s.xml">
+      <configuration name="TestASCIITest.proba" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_send_ASCII - 2018.01.04 at 17h 27m 48s.xml">
+      <configuration name="TestASCIITest.send_ASCII" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_send_ASCII - 2018.01.04 at 17h 44m 14s.xml">
+      <configuration name="TestASCIITest.send_ASCII" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_send_ASCII - 2018.01.04 at 17h 44m 51s.xml">
+      <configuration name="TestASCIITest.send_ASCII" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_send_ASCII - 2018.01.04 at 17h 50m 04s.xml">
+      <configuration name="TestASCIITest.send_ASCII" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestASCIITest_send_ASCII - 2018.01.04 at 17h 54m 13s.xml">
+      <configuration name="TestASCIITest.send_ASCII" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="386804000" />
+    <option name="totallyTimeSpent" value="394351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1315,19 +1377,19 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34127843" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34127843" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18959913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18959913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40303358" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22921109" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15831557" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530916" sideWeight="0.29780033" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1376,7 +1438,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="протестирована работа конвертации DataObject в DataObject_str при выборке между интервалами дат" />
     <MESSAGE value="Промежуточный. Работаем над калькуляцией" />
     <MESSAGE value="Закончен метод ReportService getCalcul... осталось добавить List&lt;Object&gt; и добавить внго получившиеся объекты с BigDecimal и String" />
     <MESSAGE value="добавлена проверка на наличие выбора потребителя. сделан вывод предупреждения." />
@@ -1401,7 +1462,8 @@
     <MESSAGE value="Работает парсинг текстового файла" />
     <MESSAGE value="Работает парсинг текстового файла и вывод в List&lt;Object&gt;" />
     <MESSAGE value="Работает единичный парсинг и запись результатов в базу" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работает единичный парсинг и запись результатов в базу" />
+    <MESSAGE value="Начата работа с тв7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начата работа с тв7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1500,43 +1562,25 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_modem/TectModemLikoil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
+        <state relative-caret-position="153">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8976">
-          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="140" column="8" lean-forward="true" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+        <state relative-caret-position="2380">
+          <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
-          <folding>
-            <element signature="e#507#515#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,6 +1595,144 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="73" lean-forward="false" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
+          <folding>
+            <element signature="e#420#428#0" expanded="true" />
+            <element signature="e#897#905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_modem/TectModemLikoil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="73" lean-forward="false" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
+          <folding>
+            <element signature="e#420#428#0" expanded="true" />
+            <element signature="e#897#905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_modem/TectModemLikoil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="8" lean-forward="true" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="51" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
           <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1558,14 +1740,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="25" column="73" lean-forward="false" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
           <folding>
             <element signature="e#420#428#0" expanded="true" />
-            <element signature="e#820#828#0" expanded="true" />
+            <element signature="e#897#905#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_modem/TectModemLikoil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/Crc16/Crc16Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/общее/Павел/КИПП/_Delta/mbn-Delta-C2000.io">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2482">
+          <caret line="163" column="6" lean-forward="false" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding>
+            <element signature="e#420#428#0" expanded="true" />
+            <element signature="e#897#905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/send/Send10ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

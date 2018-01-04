@@ -22,7 +22,8 @@ public class Crc16ServiceImplTest {
     public void crc16_t() throws Exception {
 
         Crc16ServiceImpl crc16Service=new Crc16ServiceImpl();
-        String str="1B 03 03 26 00 12";
+        String str3="1B 03 03 26 00 12";
+        String str="1B 48 00 1C 00 02 21 66 00 02 00 04 00 01 00 00 00 00";
         String str1="1B 03 03 26 00 12 26 72";
         String str2="FF FF 00 03 3f fc 00 00";
         List<String> list=new ArrayList<String>(Arrays.asList(str.split(" ")));
@@ -30,7 +31,6 @@ public class Crc16ServiceImplTest {
         List<String> list_crc=crc16Service.crc16_t(list);
         list_crc.forEach(p->System.out.println(p));
 
-        System.out.println();
 
 
     }
