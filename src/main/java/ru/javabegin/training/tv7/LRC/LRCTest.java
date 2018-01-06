@@ -65,12 +65,12 @@ public class LRCTest {
 
     @Test
     public void lrcHex() throws Exception {
-        int num1 = (Integer.parseInt("02", 16));
-        int num2 = (Integer.parseInt("01", 16));
-        int num3 = (Integer.parseInt("00", 16));
-        int num4 = (Integer.parseInt("00", 16));
+        int num1 = (Integer.parseInt("1B", 16));
+        int num2 = (Integer.parseInt("03", 16));
+        int num3 = (Integer.parseInt("03", 16));
+        int num4 = (Integer.parseInt("26", 16));
         int num5 = (Integer.parseInt("00", 16));
-        int num6 = (Integer.parseInt("08", 16));
+        int num6 = (Integer.parseInt("12", 16));
         int ff=(Integer.parseInt("FF", 16));
 
         int sum= num1+num2+num3+num4+num5+num6;
