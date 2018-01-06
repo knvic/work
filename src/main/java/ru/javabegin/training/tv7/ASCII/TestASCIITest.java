@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class TestASCIITest {
     @Test
     public void send_ASCII() throws Exception {
-        int a=27;
+        int a=116;
         String a_s=Integer.toString(a);
         String i_to_h=format("%02X", a);
         System.out.println(" i_to_h= "+ i_to_h);
@@ -34,7 +34,10 @@ public class TestASCIITest {
 
     @Test
     public void asc_dec_sumbol() throws Exception {
-        String oct = "3A";
+        //String oct = "3A";
+       // String oct = "3740";  㝀
+        String oct = "37";
+
         int dec = Integer.parseInt(oct, 16);
         System.out.println("В десятичной с.с. будет " + dec);
         System.out.println("Знак ASCII будет " + (char) dec);
