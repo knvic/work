@@ -31,9 +31,7 @@ public class LRC {
         return checkSum;
     }
 
-    public void lrcHex(){
-
-
+    public void lrcC(){
 
     }
 

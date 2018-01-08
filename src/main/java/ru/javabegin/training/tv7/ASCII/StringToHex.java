@@ -40,7 +40,9 @@ public class StringToHex {
 
         StringToHex strToHex = new StringToHex();
         System.out.println("\n***** Convert ASCII to Hex *****");
-        String str = "74";
+        String str = "03";
+
+
         System.out.println("Original input : " + str);
 
         String hex = strToHex.convertStringToHex(str);
@@ -48,7 +50,8 @@ public class StringToHex {
         System.out.println("Hex : " + hex);
 
         System.out.println("\n***** Convert Hex to ASCII *****");
-        hex="4137";
+        //hex= "4137";
+        hex= "3045";
         System.out.println("Hex : " + hex);
         System.out.println("ASCII : " + strToHex.convertHexToString(hex));
     }

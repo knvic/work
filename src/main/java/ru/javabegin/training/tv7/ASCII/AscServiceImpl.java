@@ -9,6 +9,63 @@ import static java.lang.String.format;
 
 public class AscServiceImpl implements AscService {
 
+
+    @Override
+    public  List<String> enctypt(List<String> hexList){
+
+    StringBuilder str = new StringBuilder();
+    hexList.forEach(p->str.append(p));
+    System.out.println(str.toString());
+    String strOut=convertStringToHex(str.toString());
+    List<String> data = new ArrayList<>(Arrays.asList(strOut.replace(" ","").split("(?<=\\G.{2})")));
+    data.add(0,"3A");
+    data.add("0D");
+    data.add("0A");
+
+        return data;
+    }
+
+    @Override
+    public  List<String> dectypt(String str){
+        str=str.replace(" ","");
+        System.out.println("str = "+str);
+        str=str.substring(2, str.length()-4);
+        System.out.println("Delete (:, CR, LF) = "+str);
+        String  strHEX= convertHexToString(str);
+        List<String> data = new ArrayList<>(Arrays.asList(strHEX.replace(" ","").split("(?<=\\G.{2})")));
+
+return data;
+    }
+
+
+    @Override
+    public String convertStringToHex(String str){
+
+        char[] chars = str.toCharArray();
+
+        StringBuffer hex = new StringBuffer();
+        for(int i = 0; i < chars.length; i++){
+            hex.append(Integer.toHexString((int)chars[i]));
+        }
+
+        return hex.toString();
+    }
+
+    @Override
+    public String convertHexToString(String hex){
+        StringBuilder sb = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+        for( int i=0; i<hex.length()-1; i+=2 ){
+            String output = hex.substring(i, (i + 2));
+            int decimal = Integer.parseInt(output, 16);
+            sb.append((char)decimal);
+            temp.append(decimal);
+        }
+
+        return sb.toString();
+    }
+
+
     @Override
     public String asciiToHex(String asciiValue){
         char[] chars = asciiValue.toCharArray();

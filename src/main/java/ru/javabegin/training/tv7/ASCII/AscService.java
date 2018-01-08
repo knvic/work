@@ -3,6 +3,13 @@ package ru.javabegin.training.tv7.ASCII;
 import java.util.List;
 
 public interface AscService {
+
+
+    List<String> enctypt(List<String> hexList);
+    List<String> dectypt(String str);
+    String convertStringToHex(String str);
+    String convertHexToString(String hex);
+
     /**
      *Метод преобразует цепочку HEX символoв. Каждый HEX символ (двоичный байт, напр 27(0x1B)) преобразуется
      * в пару Hex символов.27(0x1B) - ‘1’ (0x31 - символьное представление старших 4-х битов) и ‘B’ (0x42 - символьное представление младших 4-х битов).

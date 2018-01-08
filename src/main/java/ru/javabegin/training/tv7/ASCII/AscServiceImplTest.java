@@ -1,11 +1,45 @@
 package ru.javabegin.training.tv7.ASCII;
 
 import org.junit.Test;
+import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static java.lang.String.format;
 import static org.junit.Assert.*;
 
 public class AscServiceImplTest {
+    @Test
+    public void enctypt() throws Exception {
+
+        String str="1B 03 03 26 00 12";
+        List<String> list = new ArrayList<>(Arrays.asList(str.replace(" ","").split("(?<=\\G.{2})")));
+        LrcServiceImpl lrcService= new LrcServiceImpl();
+
+        list=lrcService.lrcAdd(list);
+        list.forEach( p-> System.out.print(p+" "));
+
+        AscServiceImpl ascService=new AscServiceImpl();
+        list=ascService.enctypt(list);
+        list.forEach( p-> System.out.print(p+" "));
+
+
+    }
+
+    @Test
+    public void dectypt() throws Exception {
+
+        AscServiceImpl ascService=new AscServiceImpl();
+        String str="3A 31 42 30 33 32 34 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 42 45 0D 0A";
+
+        List<String> list=ascService.dectypt(str);
+       list.forEach( p-> System.out.print(p+" "));
+        LrcServiceImpl lrcService= new LrcServiceImpl();
+
+        System.out.println("проверка LRC : "+lrcService.lrcCheck(list));
+    }
 
 
     @Test
@@ -16,7 +50,7 @@ public class AscServiceImplTest {
 
 
 
-        System.out.println("Рез = "+Integer.parseInt("0326",16));
+        System.out.println("Рез = "+Integer.parseInt("72",16));
         System.out.println(" -- - - - - -");
 
 
@@ -83,7 +117,7 @@ public class AscServiceImplTest {
     public void hex_to_ascii() throws Exception {
         AscServiceImpl ascService=new AscServiceImpl();
 
-        System.out.println(ascService.hex_to_ascii("37"));
+        System.out.println(ascService.hex_to_ascii("72"));
 
     }
 
