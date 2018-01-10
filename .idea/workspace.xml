@@ -7,17 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRC.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,7 +80,7 @@
       <file leaf-file-name="TestASCIITest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="544">
               <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="23" />
               <folding />
             </state>
@@ -98,7 +90,7 @@
       <file leaf-file-name="LRCTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
+            <state relative-caret-position="238">
               <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
@@ -108,8 +100,8 @@
       <file leaf-file-name="AscServiceImplTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="17">
+              <caret line="136" column="55" lean-forward="false" selection-start-line="136" selection-start-column="55" selection-end-line="136" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -118,8 +110,8 @@
       <file leaf-file-name="Recieve03ServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="279" column="102" lean-forward="true" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="102" />
+            <state relative-caret-position="4454">
+              <caret line="279" column="102" lean-forward="false" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -128,8 +120,8 @@
       <file leaf-file-name="StringToHex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="901">
+              <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -138,7 +130,7 @@
       <file leaf-file-name="LrcServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
+            <state relative-caret-position="799">
               <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -151,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
-              <caret line="49" column="104" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="104" />
+              <caret line="49" column="104" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -274,10 +266,10 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" />
       </list>
     </option>
   </component>
@@ -346,6 +338,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,7 +473,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
@@ -537,7 +529,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AscServiceImplTest.enctypt">
+  <component name="RunManager" selected="JUnit.AscServiceImplTest.dectypt">
+    <configuration name="AscServiceImplTest.dectypt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.tv7.ASCII.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="w" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.ASCII" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.ASCII.AscServiceImplTest" />
+      <option name="METHOD_NAME" value="dectypt" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="AscServiceImplTest.enctypt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -551,31 +568,6 @@
       <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.ASCII" />
       <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.ASCII.AscServiceImplTest" />
       <option name="METHOD_NAME" value="enctypt" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="LRCTest.lrcC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.tv7.LRC.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="w" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.LRC" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.LRC.LRCTest" />
-      <option name="METHOD_NAME" value="lrcC" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -816,16 +808,16 @@
       <item index="1" class="java.lang.String" itemvalue="Application.StringToHex" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcCheck" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcAdd" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LRCTest.lrcC" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.enctypt" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.enctypt" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.dectypt" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.enctypt" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.dectypt" />
         <item index="1" class="java.lang.String" itemvalue="Application.StringToHex" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcCheck" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcAdd" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.LRCTest.lrcC" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AscServiceImplTest.enctypt" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcCheck" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LrcServiceImplTest.lrcAdd" />
       </list>
     </recent_temporary>
   </component>
@@ -1023,14 +1015,9 @@
       <workItem from="1515226820582" duration="13573000" />
       <workItem from="1515311566282" duration="21260000" />
       <workItem from="1515348030259" duration="715000" />
-      <workItem from="1515395950530" duration="12835000" />
-    </task>
-    <task id="LOCAL-00016" summary="Внесены изменения Moth_cron. Удален путь записи суточных черех HashMap">
-      <created>1511201281442</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1511201281442</updated>
+      <workItem from="1515395950530" duration="17576000" />
+      <workItem from="1515475055682" duration="3478000" />
+      <workItem from="1515562004412" duration="990000" />
     </task>
     <task id="LOCAL-00017" summary="Изменен Revizor. Исправлен шедулер">
       <created>1511287595875</created>
@@ -1368,30 +1355,37 @@
       <option name="project" value="LOCAL" />
       <updated>1515262688117</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="реализован сервис преобразования из/в hex - ascii с добавление контрольной суммы lrc и проверкой lrc">
+      <created>1515417643102</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1515417643102</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="AscServiceImplTest_dectypt - 2018.01.08 at 16h 54m 30s.xml">
+      <configuration name="AscServiceImplTest.dectypt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AscServiceImplTest_dectypt - 2018.01.08 at 18h 16m 23s.xml">
+      <configuration name="AscServiceImplTest.dectypt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AscServiceImplTest_dectypt - 2018.01.08 at 18h 18m 59s.xml">
+      <configuration name="AscServiceImplTest.dectypt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AscServiceImplTest_dectypt - 2018.01.08 at 18h 44m 11s.xml">
+      <configuration name="AscServiceImplTest.dectypt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AscServiceImplTest_dectypt - 2018.01.08 at 18h 52m 24s.xml">
+      <configuration name="AscServiceImplTest.dectypt" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="AscServiceImplTest_enctypt - 2018.01.08 at 14h 36m 39s.xml">
       <configuration name="AscServiceImplTest.enctypt" configurationId="JUnit" />
     </history-entry>
     <history-entry file="AscServiceImplTest_enctypt - 2018.01.08 at 14h 39m 01s.xml">
       <configuration name="AscServiceImplTest.enctypt" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 18m 15s.xml">
-      <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 23m 18s.xml">
-      <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 32m 08s.xml">
-      <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 33m 01s.xml">
-      <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 46m 43s.xml">
-      <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LrcServiceImplTest_lrcCheck - 2018.01.08 at 13h 48m 30s.xml">
       <configuration name="LrcServiceImplTest.lrcCheck" configurationId="JUnit" />
@@ -1404,7 +1398,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="454245000" />
+    <option name="totallyTimeSpent" value="463454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1421,9 +1415,8 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34127843" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34127843" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1433,7 +1426,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16950959" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530916" sideWeight="0.29780033" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1443,6 +1436,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18959913" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1482,7 +1476,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлен метод getCalculation_total" />
     <MESSAGE value="В терминале выводятся данные getCalculation_total" />
     <MESSAGE value="Выводятся данные итоговых. Идет проветка на наличие итоговых данных" />
     <MESSAGE value="Промежуточный коммит" />
@@ -1507,7 +1500,8 @@
     <MESSAGE value="Добввлен пакет для работы с ASCII" />
     <MESSAGE value="Реализован алгоритм LRC. Требуется проверка" />
     <MESSAGE value="Реализован алгоритм LRC. Работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован алгоритм LRC. Работает" />
+    <MESSAGE value="реализован сервис преобразования из/в hex - ascii с добавление контрольной суммы lrc и проверкой lrc" />
+    <option name="LAST_COMMIT_MESSAGE" value="реализован сервис преобразования из/в hex - ascii с добавление контрольной суммы lrc и проверкой lrc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1867,7 +1861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1875,7 +1868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1883,7 +1875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1891,14 +1882,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="279" column="102" lean-forward="true" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="102" />
+        <state relative-caret-position="4454">
+          <caret line="279" column="102" lean-forward="false" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="102" />
           <folding />
         </state>
       </provider>
@@ -1913,7 +1903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="544">
           <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="23" />
           <folding />
         </state>
@@ -1921,16 +1911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="14" selection-end-column="5" />
+          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1945,7 +1927,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
+        <state relative-caret-position="799">
           <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1956,7 +1938,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
-          <caret line="49" column="104" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="104" />
+          <caret line="49" column="104" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="104" />
           <folding />
         </state>
       </provider>
@@ -1969,10 +1951,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        <state relative-caret-position="17">
+          <caret line="136" column="55" lean-forward="false" selection-start-line="136" selection-start-column="55" selection-end-line="136" selection-end-column="55" />
           <folding />
         </state>
       </provider>

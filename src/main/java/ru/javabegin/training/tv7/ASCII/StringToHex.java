@@ -51,7 +51,7 @@ public class StringToHex {
 
         System.out.println("\n***** Convert Hex to ASCII *****");
         //hex= "4137";
-        hex= "3045";
+        hex= "3532";
         System.out.println("Hex : " + hex);
         System.out.println("ASCII : " + strToHex.convertHexToString(hex));
     }
