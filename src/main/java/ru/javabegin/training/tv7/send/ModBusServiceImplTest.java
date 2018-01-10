@@ -13,7 +13,7 @@ public class ModBusServiceImplTest {
         ModBusServiceImpl modBusService=new ModBusServiceImpl();
         AscServiceImpl ascService=new AscServiceImpl();
 
-        List<String> commamd=modBusService.typeUnit(2);
+        List<String> commamd=modBusService.typeUnit(0);
         commamd.forEach(p->System.out.print(p+" "));
 
         List<String> commamdAsc=ascService.enctypt(commamd);
