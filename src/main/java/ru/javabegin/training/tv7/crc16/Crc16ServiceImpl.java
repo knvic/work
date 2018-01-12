@@ -1,4 +1,6 @@
-package ru.javabegin.training.vkt7.Crc16;
+package ru.javabegin.training.tv7.crc16;
+
+
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -82,15 +84,10 @@ public class Crc16ServiceImpl implements Crc16Service,Checksum {
     public boolean crc16_valid (List<String> items){
     boolean crc16=false;
         Crc16ServiceImpl crc = new Crc16ServiceImpl();
-        //ArrayList<String> items = new  ArrayList<String>(Arrays.asList(str.split(" ")));
+
         LinkedList<Integer> data = new  LinkedList<>();
 
-       /* for(int i=0;i<items.size();i++)
-        {
-            data.add(valueOf(items.get(i), 16));
-        }*/
-        //items.forEach(System.out::print);
-       // System.out.println();
+
         for(String item : items.subList(0, items.size()-2)) {
 
             //System.out.print(item);
@@ -134,7 +131,7 @@ public class Crc16ServiceImpl implements Crc16Service,Checksum {
   public List<String> crc16_t (List<String> items){
     Crc16ServiceImpl crc = new Crc16ServiceImpl();
     ArrayList<Integer> data = new ArrayList<>();
-    for(String item : items.subList(2, items.size())) {
+    for(String item : items.subList(0, items.size())) {
         System.out.print(item);
         data.add(valueOf(item, 16));
     }
