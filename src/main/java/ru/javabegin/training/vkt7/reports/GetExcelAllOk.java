@@ -51,7 +51,7 @@ public class GetExcelAllOk implements Serializable {
         Callable task = () -> {
             //AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
                 System.out.println("работает поток "+ Thread.currentThread().getName());
-            logger.info("Формитрование всех OK/. Работает поток "+ Thread.currentThread().getName());
+            logger.info("Формирование всех OK. Работает поток "+ Thread.currentThread().getName());
             System.out.println("Формируем файлы Excel для всех готовых (OK) данных DataCustomerList!!!");
                     //customerService.customerOperationStatus();
 
