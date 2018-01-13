@@ -25,6 +25,8 @@ public class EventListener_tv7 implements SerialPortEventListener   { /*Слуш
     int count_data = 1;
     public static String temp = "";
     public static StringBuilder temp1=new StringBuilder() ;
+    public volatile static StringBuilder data1=new StringBuilder();
+    public volatile static List<String> outTv7;
     long data_res;
     int count = 0;
     static int z = 0;
@@ -112,13 +114,13 @@ public class EventListener_tv7 implements SerialPortEventListener   { /*Слуш
                         System.out.println("Конвертируем в HEX");
                         list.forEach( p-> System.out.print(p+" "));
 
-
                         System.out.println("проверка LRC : ");
                         if(lrcService.lrcCheck(list)){
                             System.out.println("LRC : true");
-                            data2 = temp;
-                            temp="";
-                            System.out.println("Data hextostr:: " + data2);
+                            data1 = temp1;
+                            outTv7=list;
+                            temp1.delete(0,temp1.length());
+
                             recieve_all_byte = 1;
 
                         }
