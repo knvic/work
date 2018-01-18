@@ -106,10 +106,12 @@ public class ModBusServiceImplTest {
     @Test
     public void day1() throws Exception {
         ModBusServiceImpl modBusService=new ModBusServiceImpl();
-        LocalDateTime ldt = LocalDateTime.now().minusDays(1);
+        LocalDateTime ldt = LocalDateTime.now().minusDays(2);
 
         List<String> list=modBusService.day(0,ldt,5);
         list.forEach(p-> System.out.print(p+" "));
+
+
         String uu="00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00";
         System.out.println("\n\n"+uu);
 
