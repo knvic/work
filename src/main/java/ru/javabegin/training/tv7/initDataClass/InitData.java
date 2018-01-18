@@ -8,10 +8,10 @@ public class InitData {
     public List<Parametr> initDay(){
         List<Parametr> list= new ArrayList<>();
 
-        list.add(new Parametr("dd","День",1,"unsigned char"));
         list.add(new Parametr("MM","Месяц",1,"unsigned char"));
-        list.add(new Parametr("uu","Год",1,"unsigned char"));
+        list.add(new Parametr("dd","День",1,"unsigned char"));
         list.add(new Parametr("HH","Час",1,"unsigned char"));
+        list.add(new Parametr("uu","Год",1,"unsigned char"));
 
         list.add(new Parametr("t1_tv1","t1",4,"float"));
         list.add(new Parametr("P1_tv1","P1",4,"float"));
@@ -87,15 +87,17 @@ public class InitData {
         list.add(new Parametr("duration_display","Длит.работы дисплея",2,"unsigned short"));
         list.add(new Parametr("duration_out","Длит.отсут.сет.питания",2,"unsigned short"));
 
-        list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
-        list.add(new Parametr("si_tv1","СИ ТВ1",1,"unsigned char"));
-        list.add(new Parametr("kt3_tv1","КТ3 ТВ1",1,"unsigned char"));
-        list.add(new Parametr("frt_tv1","ФРТ ТВ1",1,"unsigned char"));
 
+        list.add(new Parametr("si_tv1","СИ ТВ1",1,"unsigned char"));
         list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
+        list.add(new Parametr("frt_tv1","ФРТ ТВ1",1,"unsigned char"));
+        list.add(new Parametr("kt3_tv1","КТ3 ТВ1",1,"unsigned char"));
+
         list.add(new Parametr("si_tv2","СИ ТВ2",1,"unsigned char"));
-        list.add(new Parametr("kt3_tv2","КТ3 ТВ2",1,"unsigned char"));
+        list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
         list.add(new Parametr("frt_tv2","ФРТ ТВ2",1,"unsigned char"));
+        list.add(new Parametr("kt3_tv2","КТ3 ТВ2",1,"unsigned char"));
+
 
 
 
@@ -105,10 +107,12 @@ return list;
     public List<Parametr> initTotal(){
         List<Parametr> list= new ArrayList<>();
 
-        list.add(new Parametr("dd","День",1,"unsigned char"));
+
         list.add(new Parametr("MM","Месяц",1,"unsigned char"));
-        list.add(new Parametr("uu","Год",1,"unsigned char"));
+        list.add(new Parametr("dd","День",1,"unsigned char"));
         list.add(new Parametr("HH","Час",1,"unsigned char"));
+        list.add(new Parametr("uu","Год",1,"unsigned char"));
+
 
         list.add(new Parametr("V1_tv1","V1",8,"double"));
         list.add(new Parametr("M1_tv1","M1",8,"double"));
@@ -161,15 +165,16 @@ return list;
         list.add(new Parametr("duration_display","Длит.работы дисплея",4,"unsigned long"));
         list.add(new Parametr("duration_out","Длит.отсут.сет.питания",4,"unsigned long"));
 
-        list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
         list.add(new Parametr("si_tv1","СИ ТВ1",1,"unsigned char"));
-        list.add(new Parametr("kt3_tv1","КТ3 ТВ1",1,"unsigned char"));
-        list.add(new Parametr("frt_tv1","ФРТ ТВ1",1,"unsigned char"));
-
         list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
+        list.add(new Parametr("frt_tv1","ФРТ ТВ1",1,"unsigned char"));
+        list.add(new Parametr("kt3_tv1","КТ3 ТВ1",1,"unsigned char"));
+
         list.add(new Parametr("si_tv2","СИ ТВ2",1,"unsigned char"));
-        list.add(new Parametr("kt3_tv2","КТ3 ТВ2",1,"unsigned char"));
+        list.add(new Parametr("activeBD","Активная БД",1,"unsigned char"));
         list.add(new Parametr("frt_tv2","ФРТ ТВ2",1,"unsigned char"));
+        list.add(new Parametr("kt3_tv2","КТ3 ТВ2",1,"unsigned char"));
+
 
 
 

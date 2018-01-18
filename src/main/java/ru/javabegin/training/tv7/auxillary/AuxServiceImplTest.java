@@ -37,4 +37,13 @@ public class AuxServiceImplTest {
 
     }
 
+
+    @Test
+    public void hexToBinary() throws Exception {
+        AuxServiceImpl auxService=new AuxServiceImpl();
+
+        auxService.hexToBinary("5C");
+
+    }
+
 }

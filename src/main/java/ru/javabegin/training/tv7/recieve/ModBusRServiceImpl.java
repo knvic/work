@@ -123,8 +123,11 @@ public class ModBusRServiceImpl implements ModBusRService {
         int i1=12;
         String str="";
         for(Parametr p:parametrList){
+            System.out.println();
 
             str=temp.substring(i1,i1+p.getSize()*2).toString();
+
+            System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
 
             if (p.getType().equals("unsigned char")) {
                 p.setValue(Integer.toString(Integer.parseInt(str,16)));
