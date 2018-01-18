@@ -137,9 +137,14 @@ public class AscServiceImplTest {
                 "41 20 00 00 42 C8 00 00 41 A0 00 40 43 hexListIn-1 43";
 
 
-        String str="3A 30 30 34 38 30 30 30 30 30 30 31 33 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 41 35 0D 0A ";
+        //String str="3A 30 30 34 38 30 30 30 30 30 30 31 33 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 41 35 0D 0A ";
 
-        List<String> list=ascService.dectypt(str);
+
+        // Чтение суточного архива за 12.01.2018 23:00:00
+            String str="3A 30 30 34 38 30 41 42 34 30 30 36 44 30 30 36 33 30 30 30 36 30 30 30 43 30 30 32 37 30 31 30 43 31 37 31 32 30 30 30 30 30 30 30 31 30 30 30 30 30 30 30 30 42 41 0D 0A  ";
+
+
+            List<String> list=ascService.dectypt(str);
        list.forEach( p-> System.out.print(p+" "));
         LrcServiceImpl lrcService= new LrcServiceImpl();
 
