@@ -6,23 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="Перед получение обновлений получения ModBus">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitDataTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/Parametr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Tupel_tv7.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/EventListener_tv7.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/EventListener_tv7.java" />
+    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logApp.log" afterPath="$PROJECT_DIR$/logApp.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logCleaner.txt" afterPath="$PROJECT_DIR$/logCleaner.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logCron.txt" afterPath="$PROJECT_DIR$/logCron.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logModemService.txt" afterPath="$PROJECT_DIR$/logModemService.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -163,8 +153,8 @@
       <file leaf-file-name="Modem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="664" column="0" lean-forward="true" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -228,7 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/ReportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java" />
@@ -279,6 +268,7 @@
         <option value="$PROJECT_DIR$/logCleaner.txt" />
         <option value="$PROJECT_DIR$/logApp.log" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/reports/GetExcelAllOk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" />
       </list>
     </option>
   </component>
@@ -347,6 +337,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -403,10 +394,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -914,14 +904,8 @@
       <workItem from="1515165169510" duration="1182000" />
       <workItem from="1515675919236" duration="888000" />
       <workItem from="1515744830500" duration="1321000" />
-      <workItem from="1516294062157" duration="14000" />
-    </task>
-    <task id="LOCAL-00009" summary="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class&#10;#&#9;target/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class&#10;#&#9;target/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class&#10;#&#9;target/w.war&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/db/CustomerServiceImpl.class&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/Daily_Moth_cron.class&#10;#&#9;target/w/WEB-INF/classes/ru/javabegin/training/vkt7/modem_cron/EventListener_cron.class">
-      <created>1511104525194</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1511104525194</updated>
+      <workItem from="1516294062157" duration="2412000" />
+      <workItem from="1516456221099" duration="1270000" />
     </task>
     <task id="LOCAL-00010" summary="Merge branch 'athomicInt' of https://github.com/knvic/work into athomicInt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImplTest.java">
       <created>1511111847632</created>
@@ -1259,7 +1243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516293986011</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="После получения обновлений получения ModBus">
+      <created>1516294132860</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294132860</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1295,11 +1286,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348764000" />
+    <option name="totallyTimeSpent" value="352432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4640592" sideWeight="0.50625" order="0" side_tool="true" content_ui="tabs" />
@@ -1312,18 +1302,18 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3499327" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45212767" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49798116" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28398386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42906573" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23733905" sideWeight="0.3330373" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36103153" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18194842" sideWeight="0.70219964" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530916" sideWeight="0.29780033" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1373,7 +1363,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Промежуточный. Работаем над калькуляцией" />
     <MESSAGE value="Закончен метод ReportService getCalcul... осталось добавить List&lt;Object&gt; и добавить внго получившиеся объекты с BigDecimal и String" />
     <MESSAGE value="добавлена проверка на наличие выбора потребителя. сделан вывод предупреждения." />
     <MESSAGE value="Добавлен метод getCalculation_total" />
@@ -1398,7 +1387,8 @@
     <MESSAGE value="конец 2017" />
     <MESSAGE value="исправление бага с переходом года" />
     <MESSAGE value="Перед получение обновлений получения ModBus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перед получение обновлений получения ModBus" />
+    <MESSAGE value="После получения обновлений получения ModBus" />
+    <option name="LAST_COMMIT_MESSAGE" value="После получения обновлений получения ModBus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1751,14 +1741,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logApp.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="206">
-          <caret line="9376" column="69" lean-forward="true" selection-start-line="9376" selection-start-column="69" selection-end-line="9376" selection-end-column="69" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="206">
+          <caret line="9376" column="69" lean-forward="true" selection-start-line="9376" selection-start-column="69" selection-end-line="9376" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1766,7 +1756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4760">
           <caret line="255" column="38" lean-forward="false" selection-start-line="255" selection-start-column="38" selection-end-line="255" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1844,8 +1833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="664" column="0" lean-forward="true" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
           <folding />
         </state>
       </provider>
