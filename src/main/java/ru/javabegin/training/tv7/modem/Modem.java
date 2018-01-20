@@ -519,7 +519,7 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
 
 /**
- * Запрос информации об устройстве
+ * Запрос информации об устройстве п.6.1
   */
 
 
@@ -629,24 +629,20 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
                 System.out.println("server_version = "+server_version);
 */
 
+
+
+/**
+ *
+ * Запрос Чтение СУТОЧНЫЕ
+ *
+ *
+ */
+
             System.out.println("\n Формируем запрос чтения суточных");
 
-            StringBuilder dataSend= new StringBuilder();
-            dataSend.append(format("%02X", 1)); //месяц
-            dataSend.append(format("%02X", 12)); //день
-            dataSend.append(format("%02X", 23)); //час
-            dataSend.append(format("%02X", 18)); //год
-            dataSend.append(format("%02X", 0)); // секунды
-            dataSend.append(format("%02X", 0)); //минуты
-            dataSend.append(format("%04X", 1)); // тип архива
-            dataSend.append(format("%04X", 0)); // номер записи (не используется)
-            dataSend.append(format("%04X", 0)); // Резерв1 не используется
-            List<String> datat = new ArrayList<>(Arrays.asList( dataSend.toString().replace(" ","").split("(?<=\\G.{2})")));
-            List<String> list=modBusService.day(0,2740,109,99,6,12, 1, datat);
-            list.forEach(p-> System.out.print(p+" "));
 
             LocalDateTime ldt=LocalDateTime.now().minusDays(1);
-            list=modBusService.day(0,ldt,2);
+            List<String> list=modBusService.archive(0,ldt,1,2);
             list.forEach(p-> System.out.print(p+" "));
 
             // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
@@ -693,6 +689,7 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
 
 /**
+ * Чтение СУТОЧНЫЕ
  * Ждем начала приема длинных данных.
  */atomicInteger.addAndGet(1);
 
@@ -732,6 +729,108 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
             outTv7.forEach(p->System.out.print(p));
 
+
+
+
+
+
+            /**
+             *
+             * Запрос Чтение ДАННЫЕ О ДАТАХ
+             *
+             *
+             */
+
+            System.out.println("\n Формируем запрос ДАННЫЕ О ДАТАХ");
+
+
+           // LocalDateTime ldt=LocalDateTime.now().minusDays(1);
+            list=modBusService.infOfDate(0,2);
+           // list.forEach(p-> System.out.print(p+" "));
+
+            // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
+            // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 02 0C 0C 17 7E 20 00 00 00 10 00 00 00 0 39
+            commandLRC=lrcService.lrcAdd( list);
+            commandLRC.forEach(p->System.out.print(p+" "));
+
+            commandAsc=ascService.enctypt(commandLRC);
+            commandAsc.forEach(p->System.out.print(p+" "));
+
+          /*  List<String> commandAsc=modBusService.typeUnit(number);
+            commandAsc.forEach(p->System.out.print(p+" "));*/
+
+
+            request=null;
+            request=new int[commandAsc.size()];
+            for(int i=0;i<commandAsc.size();i++ ){
+                request[i]=Integer.parseInt(commandAsc.get(i) ,16);
+                // System.out.print(+i+":"+request[i]+" ");
+            }
+            //System.out.println("\n request size = "+ request.length);
+
+            // Thread.sleep(2000);
+
+            if(stop==false){
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
+            System.out.println("\nЖдем получения ДАННЫЕ О ДАТАХ  ");
+            data1.delete(0,data1.length());
+            temp1.delete(0,temp1.length());
+            outTv7=null;
+
+            t=0;
+            repeat=0;
+            executor.submit(callable(22));
+            recieve_all_byte=0;
+            step=255;
+            System.out.println("step= "+step);
+            z=0;
+            serialPort.writeIntArray(request);
+
+
+
+/**
+ * ДАННЫЕ О ДАТАХ
+ * Ждем начала приема длинных данных.
+ */atomicInteger.addAndGet(1);
+
+            while (recieve_all_byte==0&stop!=false){
+                if (t==2){
+                    repeat++;
+                    if (repeat==3){
+                        step=0;
+
+                        System.out.println("\n Ответ ДАННЫЕ О ДАТАХ не поступил. Ошибка по таймауту.");
+                        System.out.println("\n error=11.ДАННЫЕ О ДАТАХ. Ошибка по TimeOut");
+                        error=11;
+                        stop=false;
+                    }
+                    System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                    data1.delete(0,data1.length());
+                    temp1.delete(0,temp1.length());
+                    outTv7=null;
+                    t=0;
+                    z=0;
+                    serialPort.writeIntArray(request);
+
+                    executor.submit(callable(20));
+                }
+
+            }
+            t=1;
+
+
+            System.out.println("\nДанные ДАННЫЕ О ДАТАХ поступили.");
+            System.out.println("Ожидаем обработку принятых данных ДАННЫЕ О ДАТАХ");
+
+            atomicInteger.addAndGet(1);
+
+
+            System.out.println("Принятая строка ДАННЫЕ О ДАТАХ :: " );
+
+            outTv7.forEach(p->System.out.print(p));
 
 
 

@@ -104,11 +104,11 @@ public class ModBusServiceImplTest {
 
 
     @Test
-    public void day1() throws Exception {
+    public void arhive() throws Exception {
         ModBusServiceImpl modBusService=new ModBusServiceImpl();
         LocalDateTime ldt = LocalDateTime.now().minusDays(2);
 
-        List<String> list=modBusService.day(0,ldt,5);
+        List<String> list=modBusService.archive(0,ldt,1,5);
         list.forEach(p-> System.out.print(p+" "));
 
 

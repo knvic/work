@@ -62,7 +62,7 @@ public class ModBusServiceImpl implements ModBusService {
     }
 
     @Override
-    public List<String> day(int number,Date data, int commandCount){
+    public List<String> archive(int number, Date data, int type, int commandCount){
         AuxServiceImpl auxService=new AuxServiceImpl();
 
         StringBuilder command_temp=new  StringBuilder();
@@ -89,7 +89,7 @@ public class ModBusServiceImpl implements ModBusService {
     }
 
     @Override
-    public List<String> day(int number,LocalDateTime data, int commandCount){
+    public List<String> archive(int number,LocalDateTime data,int type, int commandCount){
         AuxServiceImpl auxService=new AuxServiceImpl();
 
         StringBuilder command_temp=new  StringBuilder();
@@ -114,6 +114,80 @@ public class ModBusServiceImpl implements ModBusService {
         List<String> list = new ArrayList<>(Arrays.asList( command_temp.toString().replace(" ","").split("(?<=\\G.{2})")));
         return list;
     }
+
+
+    @Override
+    public List<String> total(int number,Date data, int commandCount){
+        AuxServiceImpl auxService=new AuxServiceImpl();
+
+        StringBuilder command_temp=new  StringBuilder();
+
+        command_temp.delete(0, command_temp.length()); // очищаем буффер на всякий случай перед начало действий
+        //добавляем адрес
+        command_temp.append(format("%02X", number));
+        //добавляем функцию 0х48 - чтение и запись в одну команду
+        command_temp.append("48");
+        //добавляем адрес начала чтения
+        command_temp.append(format("%04X",  2868)); // адрес чтения
+        command_temp.append(format("%04X", 109 )); //количество регистров чтения
+        command_temp.append(format("%04X", 99 )); //адрес записи
+        command_temp.append(format("%04X", 6 ));  //кол-во регистров записи
+        command_temp.append(format("%04X", 12 )); //количество байт записи
+        command_temp.append(format("%04X", commandCount )); // порядковый номер посылаемой команды (свободно назначаемый)
+        command_temp.append(auxService.Date_to_tv7(data)); // дата суточного архива преобразовання для применения в ТВ7
+        command_temp.append(format("%04X", 3 )); // Тип запрашиваемого архива (3 - итоговый)
+        command_temp.append(format("%04X", 0 )); // номер записи (не используется)
+        command_temp.append(format("%04X", 0 )); // Резерв 1 (не используется)
+
+        List<String> list = new ArrayList<>(Arrays.asList( command_temp.toString().replace(" ","").split("(?<=\\G.{2})")));
+        return list;
+    }
+
+    @Override
+    public List<String> total(int number,LocalDateTime data, int commandCount){
+        AuxServiceImpl auxService=new AuxServiceImpl();
+
+        StringBuilder command_temp=new  StringBuilder();
+
+        command_temp.delete(0, command_temp.length()); // очищаем буффер на всякий случай перед начало действий
+        //добавляем адрес
+        command_temp.append(format("%02X", number));
+        //добавляем функцию 0х48 - чтение и запись в одну команду
+        command_temp.append("48");
+        //добавляем адрес начала чтения
+        command_temp.append(format("%04X",  2868)); // адрес чтения
+        command_temp.append(format("%04X", 109 )); //количество регистров чтения
+        command_temp.append(format("%04X", 99 )); //адрес записи
+        command_temp.append(format("%04X", 6 ));  //кол-во регистров записи
+        command_temp.append(format("%04X", 12 )); //количество байт записи
+        command_temp.append(format("%04X", commandCount )); // порядковый номер посылаемой команды (свободно назначаемый)
+        command_temp.append(auxService.localDate_to_tv7(data)); // дата суточного архива преобразовання для применения в ТВ7
+        command_temp.append(format("%04X", 3 )); // Тип запрашиваемого архива (3 - итоговый)
+        command_temp.append(format("%04X", 0 )); // номер записи (не используется)
+        command_temp.append(format("%04X", 0 )); // Резерв 1 (не используется)
+
+        List<String> list = new ArrayList<>(Arrays.asList( command_temp.toString().replace(" ","").split("(?<=\\G.{2})")));
+        return list;
+    }
+
+    @Override
+    public List<String> infOfDate(int number, int commandCount){
+
+        AuxServiceImpl auxService=new AuxServiceImpl();
+
+        StringBuilder command_temp=new  StringBuilder();
+
+        command_temp.delete(0, command_temp.length()); // очищаем буффер на всякий случай перед начало действий
+        //добавляем адрес
+        command_temp.append(format("%02X", number));
+        //добавляем функцию 0х48 - чтение и запись в одну команду
+        command_temp.append("3");
+        command_temp.append(format("%04X",  2676)); // адрес чтения
+        command_temp.append(format("%04X", 26 )); //количество регистров чтения
+        List<String> list = new ArrayList<>(Arrays.asList( command_temp.toString().replace(" ","").split("(?<=\\G.{2})")));
+        return list;
+    }
+
 
 
 }
