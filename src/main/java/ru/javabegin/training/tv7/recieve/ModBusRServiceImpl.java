@@ -15,6 +15,43 @@ public class ModBusRServiceImpl implements ModBusRService {
 
 
     @Override
+    public void infOfDate(List<String> list){
+        StringBuilder temp=new StringBuilder();
+        list.forEach(p-> temp.append(p));
+        System.out.println("\nStringBuilder = "+temp.toString());
+
+
+        List<String> id_col = new ArrayList<>(Arrays.asList("b_hour_dd","b_hour_MM","b_hour_uu","b_hour_HH","b_hour_mm","b_hour_ss",
+                "b_day_dd","b_day_MM","b_day_uu","b_day_HH","b_day_mm","b_day_ss",
+                "b_moth_dd","b_moth_MM","b_moth_uu","b_moth_HH","b_moth_mm","b_moth_ss",
+                "b_total_dd","b_total_MM","b_total_uu","b_total_HH","b_total_mm","b_total_ss",
+                "e_hour_dd","e_hour_MM","e_hour_uu","e_hour_HH","e_hour_mm","e_hour_ss",
+                "e_day_dd","e_day_MM","e_day_uu","e_day_HH","e_day_mm","e_day_ss",
+                "e_moth_dd","e_moth_MM","e_moth_uu","e_moth_HH","e_moth_mm","e_moth_ss",
+                "e_total_dd","e_total_MM","e_total_uu","e_total_HH","e_total_mm","e_total_ss",
+                "reboot_dd","reboot_MM","reboot_uu","reboot_HH","reboot_mm","reboot_ss"));
+      int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
+        System.out.println("количество принятых байт ="+colRecieve);
+      int j=0;
+        for (int i=6;i<temp.length();i=i+4){
+
+            System.out.println("Дата параметр ="+id_col.get(j));
+            int p1= Integer.parseInt(temp.substring(i,i+2).toString(),16);
+            j=j+1;
+
+            System.out.println("Дата параметр ="+id_col.get(j));
+            int p2= Integer.parseInt(temp.substring(i+2,i+4).toString(),16);
+            j=j+1;
+            //map.put(id_col.get(j+1),new Tupel_tv7(id_col.get(j+1),null));
+        }
+
+
+
+
+    }
+
+
+    @Override
     public void total(List<String> list, List<Parametr> parametrList, int sys){
 
         StringBuilder temp=new StringBuilder();

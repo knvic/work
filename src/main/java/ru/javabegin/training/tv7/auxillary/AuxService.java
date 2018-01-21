@@ -9,4 +9,12 @@ public interface AuxService {
     String l2b (String str);
     String hexToBinary(String hex);
 
+    /**
+     *
+     * @param hex
+     * @param size размер в байтах
+     * @return
+     */
+    String hexToBinary(String hex, int size);
+
 }

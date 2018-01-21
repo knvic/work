@@ -155,6 +155,20 @@ public class AuxServiceImpl implements AuxService {
 
     }
 
+    @Override
+    public String hexToBinary(String hex, int size){
+        String preBin = new BigInteger(hex, 16).toString(2);
+        Integer length = preBin.length();
+        if (length < 8*size) {
+            for (int i = 0; i < 8*size - length; i++) {
+                preBin = "0" + preBin;
+            }
+        }
+        System.out.println(" preBin = "+ preBin);
+        return preBin;
+
+    }
+
 
 
 }

@@ -42,7 +42,18 @@ public class AuxServiceImplTest {
     public void hexToBinary() throws Exception {
         AuxServiceImpl auxService=new AuxServiceImpl();
 
-        auxService.hexToBinary("5C");
+        auxService.hexToBinary("0286", 2);
+
+        String str0286="10 10000110";
+        String str0286_дополненное ="0000001010000110"; //верное преобразование
+        StringBuilder str=new StringBuilder("0000001010000110");
+        System.out.println("реверс :"+str.reverse().toString());
+
+        String str8602="10000110 00000010";
+
+        StringBuilder str1=new StringBuilder( auxService.hexToBinary("80", 1));
+        System.out.println("реверс :"+str1.reverse().toString());
+
 
     }
 
