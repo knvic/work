@@ -23,6 +23,7 @@
           <factory-entry name="emf_contact" value="9622d951-dd5d-4721-be70-2fc026050951" />
           <factory-entry name="emf_customer" value="e14f5a6a-d2cf-41f5-a15d-c53c40b8db56" />
           <factory-entry name="emf_test" value="dataSource3" />
+          <factory-entry name="noname-a.xml@0" value="e14f5a6a-d2cf-41f5-a15d-c53c40b8db56" />
         </datasource-mapping>
       </configuration>
     </facet>

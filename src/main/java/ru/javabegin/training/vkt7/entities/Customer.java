@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.entities;
 
 import ru.javabegin.training.db.Contact;
+import ru.javabegin.training.tv7.entity.Operationtv7;
 
 import javax.persistence.*;
 
@@ -25,7 +26,7 @@ import static javax.persistence.GenerationType.IDENTITY;
       /*  @NamedQuery(name="Contact.findById",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
         @NamedQuery(name="Customer.findAllWithDetail",
-                query="select distinct c from Customer c left join fetch c.operationSet t ")
+                query="select distinct c from Customer c left join fetch c.operationSet t left join fetch c.operationtv7Set p ")
 })
 @SqlResultSetMapping(
         name="customerResult",
@@ -45,6 +46,8 @@ public class Customer implements Serializable {
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
+
+    private Set<Operationtv7> operationtv7Set = new HashSet<Operationtv7>();
 
 
     private Long customerId;
@@ -174,6 +177,30 @@ public class Customer implements Serializable {
 
     public void removeOperation(Operation operation) {
         getOperationSet().remove(operation);
+    }
+
+
+
+    @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
+            orphanRemoval=true)
+
+    public Set<Operationtv7> getOperationtv7Set() {
+        return operationtv7Set;
+    }
+
+    public void setOperationtv7Set(Set<Operationtv7> operationtv7Set) {
+        this.operationtv7Set = operationtv7Set;
+    }
+
+
+
+    public void addOperationtv7(Operationtv7 operationtv7) {
+        operationtv7.setCustomer(this);
+        getOperationtv7Set().add(operationtv7);
+    }
+
+    public void removeOperationtv7(Operationtv7 operationtv7) {
+        getOperationtv7Set().remove(operationtv7);
     }
 
 
