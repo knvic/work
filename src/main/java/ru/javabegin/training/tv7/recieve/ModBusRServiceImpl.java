@@ -7,6 +7,8 @@ import ru.javabegin.training.vkt7.reports.Tupel;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,41 +17,49 @@ public class ModBusRServiceImpl implements ModBusRService {
 
 
     @Override
-    public void infOfDate(List<String> list){
+    public Map<String,Tupel_date> infOfDate(List<String> list){
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-        System.out.println("\nStringBuilder = "+temp.toString());
+      //  System.out.println("\nStringBuilder = "+temp.toString());
+
+        List<String> id_col = new ArrayList<>(Arrays.asList("begin_hour", "begin_day", "begin_moth", "begin_total", "end_hour",
+                "end_day", "end_moth", "end_total", "reboot"));
+      //  System.out.println("количество переменных="+id_col.size());
+    //  int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
+       // System.out.println("количество принятых байт ="+colRecieve);
+       // System.out.println("размер строки ="+temp.length());
+
+        Map<String,Tupel_date> map=new HashMap<>();
+        int j=0;
+
+        for (int i=6;i<temp.length()-2;i=i+12){
 
 
-        List<String> id_col = new ArrayList<>(Arrays.asList("b_hour_dd","b_hour_MM","b_hour_uu","b_hour_HH","b_hour_mm","b_hour_ss",
-                "b_day_dd","b_day_MM","b_day_uu","b_day_HH","b_day_mm","b_day_ss",
-                "b_moth_dd","b_moth_MM","b_moth_uu","b_moth_HH","b_moth_mm","b_moth_ss",
-                "b_total_dd","b_total_MM","b_total_uu","b_total_HH","b_total_mm","b_total_ss",
-                "e_hour_dd","e_hour_MM","e_hour_uu","e_hour_HH","e_hour_mm","e_hour_ss",
-                "e_day_dd","e_day_MM","e_day_uu","e_day_HH","e_day_mm","e_day_ss",
-                "e_moth_dd","e_moth_MM","e_moth_uu","e_moth_HH","e_moth_mm","e_moth_ss",
-                "e_total_dd","e_total_MM","e_total_uu","e_total_HH","e_total_mm","e_total_ss",
-                "reboot_dd","reboot_MM","reboot_uu","reboot_HH","reboot_mm","reboot_ss"));
-        System.out.println("количество переменных="+id_col.size());
-        int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
-        System.out.println("количество принятых байт ="+colRecieve);
-      int j=0;
-        for (int i=6;i<temp.length()+4;i=i+4){
-
-            System.out.println("Дата параметр ="+id_col.get(j));
             int p1= Integer.parseInt(temp.substring(i,i+2).toString(),16);
-            System.out.println("Значение = "+p1);
+            //System.out.println(id_col.get(j)+" = "+p1+" | i= "+i+"  |j= "+j);
+            int p2= Integer.parseInt(temp.substring(i+2,i+4).toString(),16);
+            int p3= Integer.parseInt(temp.substring(i+4,i+6).toString(),16);
+            int p4= Integer.parseInt(temp.substring(i+6,i+8).toString(),16);
+            int p5= Integer.parseInt(temp.substring(i+8,i+10).toString(),16);
+            int p6= Integer.parseInt(temp.substring(i+10,i+12).toString(),16);
+            //System.out.println(id_col.get(j)+"   dd="+p2+"MM="+p1+"uu="+p4+"HH="+p3+"mm="+p6 +"ss="+p5);
+
+            //Создаем LocalDateTime передавая в качестве аргументов
+            //год, месяц, день, час, минуту, сукенду
+            LocalDateTime ldt = LocalDateTime.of(p4+2000, p1, p2, p3, p6, p5);
+
+           // System.out.println(ldt.format(DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss")));
+
+            map.put(id_col.get(j),new Tupel_date(id_col.get(j),ldt));
             j=j+1;
 
-            System.out.println("Дата параметр ="+id_col.get(j));
-            int p2= Integer.parseInt(temp.substring(i+2,i+4).toString(),16);
-            System.out.println("Значение = "+p2);
-            j=j+1;
-            //map.put(id_col.get(j+1),new Tupel_tv7(id_col.get(j+1),null));
         }
 
-
-
+        for (String key:map.keySet())
+              {
+                  System.out.println(key+" : "+map.get(key).getLocalDateTime());
+        }
+return map;
 
     }
 
