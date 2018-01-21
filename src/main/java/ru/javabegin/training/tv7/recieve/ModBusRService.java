@@ -3,12 +3,13 @@ package ru.javabegin.training.tv7.recieve;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ModBusRService {
 
 
 
-    void infOfDate(List<String> list);
+    Map<String,Tupel_date> infOfDate(List<String> list);
     /**
      *
      * @param list пришедшая строка СУТОЧНОГО архива

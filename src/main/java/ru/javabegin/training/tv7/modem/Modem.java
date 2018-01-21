@@ -7,6 +7,9 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.tv7.ASCII.AscServiceImpl;
 import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
+import ru.javabegin.training.tv7.initDataClass.InitData;
+import ru.javabegin.training.tv7.initDataClass.Parametr;
+import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
 import ru.javabegin.training.tv7.send.ModBusServiceImpl;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
@@ -728,6 +731,11 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
             System.out.println("Принятая строка СУТОЧНЫЕ :: " );
 
             outTv7.forEach(p->System.out.print(p));
+            ModBusRServiceImpl modBusRService= new ModBusRServiceImpl();
+            InitData initData = new InitData();
+            List<Parametr> parametrList =initData.initDay();
+
+            modBusRService.day(outTv7, parametrList,1);
 
 
 

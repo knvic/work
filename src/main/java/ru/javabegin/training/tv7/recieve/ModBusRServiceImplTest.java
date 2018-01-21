@@ -17,6 +17,23 @@ import static org.junit.Assert.*;
 
 public class ModBusRServiceImplTest {
     @Test
+    public void infOfDate() throws Exception {
+
+        String str1="3A30313033333630423136304131313030303030373139313731313030303030433146313731303030303030373139313731313030303030313135303931323030303030313134313731323030303030433146313731313030303030313134313731323030303030433143304631303332333946360D0A";
+        String hex="01 03 36 0B 16 0A 11 00 00 07 19 17 11 00 00 0C 1F 17 10 00 00 07 19 17 11 00 00 01 15 09 12 00 00 01 14 17 12 00 00 0C 1F 17 11 00 00 01 14 17 12 00 00 0C 1C 0F 10 32 39 F6";
+
+        AscServiceImpl ascService= new AscServiceImpl();
+        LrcServiceImpl lrcService= new LrcServiceImpl();
+        List<String> inHex=ascService.dectypt(str1);
+        System.out.println("LRC : "+lrcService.lrcCheck(inHex));
+        inHex.forEach(p->System.out.print(p+" "));
+
+        ModBusRServiceImpl modBusRService= new ModBusRServiceImpl();
+        modBusRService.infOfDate(inHex);
+
+    }
+
+    @Test
     public void test_double() throws Exception {
         String str1= "55C047AA593B40E1";
         String str2= "BFA0FD0BEB4440E0";
