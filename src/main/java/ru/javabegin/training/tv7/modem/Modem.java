@@ -724,9 +724,9 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
             modBusRService.day(outTv7, parametrList,1);
 
-            ModBusRServiceImpl modBusRService= new ModBusRServiceImpl();
-            InitData initData = new InitData();
-            List<Parametr> parametrList =initData.initDay();
+
+
+             parametrList =initData.initDay();
 
             modBusRService.day(outTv7, parametrList,1);
 
