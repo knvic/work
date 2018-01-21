@@ -30,17 +30,20 @@ public class ModBusRServiceImpl implements ModBusRService {
                 "e_moth_dd","e_moth_MM","e_moth_uu","e_moth_HH","e_moth_mm","e_moth_ss",
                 "e_total_dd","e_total_MM","e_total_uu","e_total_HH","e_total_mm","e_total_ss",
                 "reboot_dd","reboot_MM","reboot_uu","reboot_HH","reboot_mm","reboot_ss"));
-      int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
+        System.out.println("количество переменных="+id_col.size());
+        int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
         System.out.println("количество принятых байт ="+colRecieve);
       int j=0;
-        for (int i=6;i<temp.length();i=i+4){
+        for (int i=6;i<temp.length()+4;i=i+4){
 
             System.out.println("Дата параметр ="+id_col.get(j));
             int p1= Integer.parseInt(temp.substring(i,i+2).toString(),16);
+            System.out.println("Значение = "+p1);
             j=j+1;
 
             System.out.println("Дата параметр ="+id_col.get(j));
             int p2= Integer.parseInt(temp.substring(i+2,i+4).toString(),16);
+            System.out.println("Значение = "+p2);
             j=j+1;
             //map.put(id_col.get(j+1),new Tupel_tv7(id_col.get(j+1),null));
         }

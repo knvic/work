@@ -181,9 +181,9 @@ public class ModBusServiceImpl implements ModBusService {
         //добавляем адрес
         command_temp.append(format("%02X", number));
         //добавляем функцию 0х48 - чтение и запись в одну команду
-        command_temp.append("3");
+        command_temp.append("03");
         command_temp.append(format("%04X",  2676)); // адрес чтения
-        command_temp.append(format("%04X", 26 )); //количество регистров чтения
+        command_temp.append(format("%04X", 27 )); //количество регистров чтения
         List<String> list = new ArrayList<>(Arrays.asList( command_temp.toString().replace(" ","").split("(?<=\\G.{2})")));
         return list;
     }

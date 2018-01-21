@@ -7,6 +7,9 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.tv7.ASCII.AscServiceImpl;
 import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
+import ru.javabegin.training.tv7.initDataClass.InitData;
+import ru.javabegin.training.tv7.initDataClass.Parametr;
+import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
 import ru.javabegin.training.tv7.send.ModBusServiceImpl;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
@@ -613,21 +616,8 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
                  System.out.print("Принятая строка информации об устройстве  п.6.1 :: " );
                  outTv7.forEach(p->System.out.print(p));
-                /* if (crc16Service.crc16_valid(new ArrayList<>(Arrays.asList( data2.replace(" ","").split("(?<=\\G.{2})"))))!=true){
-                     step = 0;
 
-                     System.out.println("\n Ошибочная контрольная сумма CRC16 ");
-                     System.out.println("\n error=12.3F FE CRC16 Error");
-                     error=12;
-                     stop=false;
-                     break;
 
-                  }
-                  System.out.println("\n Контрольная сумма верна ");
-
-                server_version = recieve03Service.r_3FFE_1( data2);
-                System.out.println("server_version = "+server_version);
-*/
 
 
 
@@ -729,7 +719,11 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
             outTv7.forEach(p->System.out.print(p));
 
+            ModBusRServiceImpl modBusRService= new ModBusRServiceImpl();
+            InitData initData = new InitData();
+            List<Parametr> parametrList =initData.initDay();
 
+            modBusRService.day(outTv7, parametrList,1);
 
 
 
@@ -833,7 +827,7 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
             outTv7.forEach(p->System.out.print(p));
 
 
-
+            modBusRService.infOfDate(outTv7);
 
 
 
