@@ -16,7 +16,7 @@ public interface ModBusRService {
      * @param sys Единицы измерения счетчика 0-СИ 1-МКС
      */
     void total(List<String> list, List<Parametr> parametrList, int sys);
-    void day(List<String> list, List<Parametr> parametrList, int sys);
+    List<Parametr> day(List<String> list, List<Parametr> parametrList, int sys);
     void day_old(List<String> list, List<Parametr> parametrList, int sys);
 
 }

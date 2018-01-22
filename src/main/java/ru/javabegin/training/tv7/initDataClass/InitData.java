@@ -44,27 +44,27 @@ public class InitData {
         list.add(new Parametr("M3_tv2","M3",4,"float"));
 
 
-        list.add(new Parametr("tнв_tv1","tнв",4,"float"));
+        list.add(new Parametr("tnv_tv1","tнв",4,"float"));
         list.add(new Parametr("tx_tv1","tx",4,"float"));
         list.add(new Parametr("Px_tv1","Px",4,"float"));
         list.add(new Parametr("dt_tv1","dt",4,"float"));
         list.add(new Parametr("dM_tv1","dM",4,"float"));
-        list.add(new Parametr("Qтв_tv1","Qтв",4,"float"));
+        list.add(new Parametr("Qtv_tv1","Qтв",4,"float"));
         list.add(new Parametr("Q12_tv1","Q12",4,"float"));
-        list.add(new Parametr("Qг_tv1","Qг",4,"float"));
-        list.add(new Parametr("ВНР_tv1","ВНР",2,"unsigned short"));
-        list.add(new Parametr("ВОС_tv1","ВОС",2,"unsigned short"));
+        list.add(new Parametr("Qg_tv1","Qг",4,"float"));
+        list.add(new Parametr("vnr_tv1","ВНР",2,"unsigned short"));
+        list.add(new Parametr("vos_tv1","ВОС",2,"unsigned short"));
 
-        list.add(new Parametr("tнв_tv2","tнв",4,"float"));
+        list.add(new Parametr("tnv_tv2","tнв",4,"float"));
         list.add(new Parametr("tx_tv2","tx",4,"float"));
         list.add(new Parametr("Px_tv2","Px",4,"float"));
         list.add(new Parametr("dt_tv2","dt",4,"float"));
         list.add(new Parametr("dM_tv2","dM",4,"float"));
-        list.add(new Parametr("Qтв_tv2","Qтв",4,"float"));
+        list.add(new Parametr("Qtv_tv2","Qтв",4,"float"));
         list.add(new Parametr("Q12_tv2","Q12",4,"float"));
-        list.add(new Parametr("Qг_tv2","Qг",4,"float"));
-        list.add(new Parametr("ВНР_tv2","ВНР",2,"unsigned short"));
-        list.add(new Parametr("ВОС_tv2","ВОС",2,"unsigned short"));
+        list.add(new Parametr("Qg_tv2","Qг",4,"float"));
+        list.add(new Parametr("vnr_tv2","ВНР",2,"unsigned short"));
+        list.add(new Parametr("vos_tv2","ВОС",2,"unsigned short"));
 
 
         list.add(new Parametr("dp","dp",4,"float"));

@@ -157,7 +157,7 @@ return map;
 
 
     @Override
-    public void day(List<String> list, List<Parametr> parametrList, int sys){
+    public List<Parametr> day(List<String> list, List<Parametr> parametrList, int sys){
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
@@ -205,8 +205,8 @@ return map;
                 }
                 else {
                     String regularExpression1="^(M\\d_|V\\d_|dM)";
-                    String regularExpression2="^(t\\d_|dt|tx|tнв)";
-                    String regularExpression3="^(ВНР|ВОС)";
+                    String regularExpression2="^(t\\d_|dt|tx|tnv)";
+                    String regularExpression3="^(vnr|vos)";
 
 
 
@@ -248,6 +248,8 @@ return map;
 
                 System.out.print("\n-> "+p.getNameString()+" = " + p.getValue());
             }
+
+            return parametrList;
 
     }
 

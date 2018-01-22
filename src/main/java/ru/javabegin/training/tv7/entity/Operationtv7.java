@@ -1,16 +1,11 @@
 package ru.javabegin.training.tv7.entity;
 
 import ru.javabegin.training.vkt7.entities.Customer;
-import ru.javabegin.training.vkt7.entities.Operation;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 @Entity
-
-
 @Table(name = "operationtv7")
 @NamedQueries({
         @NamedQuery(name="Operationnv7.findAll", query="select c from Operationtv7 c")
@@ -23,7 +18,7 @@ import static javax.persistence.GenerationType.IDENTITY;
         entities=@EntityResult(entityClass=Operationtv7.class)
 )
 public class Operationtv7 {
-    private Long id;
+    private int id;
     private String customerName;
     private String typeOperation;
     private String error;
@@ -53,26 +48,26 @@ public class Operationtv7 {
     private String p3Tv2;
     private String v3Tv2;
     private String m3Tv2;
-    private String tнвTv1;
+    private String tnvTv1;
     private String txTv1;
     private String pxTv1;
     private String dtTv1;
     private String dMTv1;
-    private String qтвTv1;
+    private String qtvTv1;
     private String q12Tv1;
-    private String qгTv1;
-    private String внрTv1;
-    private String восTv1;
-    private String tнвTv2;
+    private String qgTv1;
+    private String vnrTv1;
+    private String vosTv1;
+    private String tnvTv2;
     private String txTv2;
     private String pxTv2;
     private String dtTv2;
     private String dMTv2;
-    private String qтвTv2;
+    private String qtvTv2;
     private String q12Tv2;
-    private String qгTv2;
-    private String внрTv2;
-    private String восTv2;
+    private String qgTv2;
+    private String vnrTv2;
+    private String vosTv2;
     private String dp;
     private String ns1Tv1;
     private String ns2Tv1;
@@ -99,13 +94,12 @@ public class Operationtv7 {
     private Customer customer;
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
     @Column(name = "ID", nullable = false)
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -400,13 +394,13 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "tнв_tv1", nullable = true, length = 45)
-    public String getTнвTv1() {
-        return tнвTv1;
+    @Column(name = "tnv_tv1", nullable = true, length = 45)
+    public String getTnvTv1() {
+        return tnvTv1;
     }
 
-    public void setTнвTv1(String tнвTv1) {
-        this.tнвTv1 = tнвTv1;
+    public void setTnvTv1(String tnvTv1) {
+        this.tnvTv1 = tnvTv1;
     }
 
     @Basic
@@ -450,13 +444,13 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "Qтв_tv1", nullable = true, length = 45)
-    public String getQтвTv1() {
-        return qтвTv1;
+    @Column(name = "Qtv_tv1", nullable = true, length = 45)
+    public String getQtvTv1() {
+        return qtvTv1;
     }
 
-    public void setQтвTv1(String qтвTv1) {
-        this.qтвTv1 = qтвTv1;
+    public void setQtvTv1(String qtvTv1) {
+        this.qtvTv1 = qtvTv1;
     }
 
     @Basic
@@ -470,43 +464,43 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "Qг_tv1", nullable = true, length = 45)
-    public String getQгTv1() {
-        return qгTv1;
+    @Column(name = "Qg_tv1", nullable = true, length = 45)
+    public String getQgTv1() {
+        return qgTv1;
     }
 
-    public void setQгTv1(String qгTv1) {
-        this.qгTv1 = qгTv1;
-    }
-
-    @Basic
-    @Column(name = "ВНР_tv1", nullable = true, length = 45)
-    public String getВнрTv1() {
-        return внрTv1;
-    }
-
-    public void setВнрTv1(String внрTv1) {
-        this.внрTv1 = внрTv1;
+    public void setQgTv1(String qgTv1) {
+        this.qgTv1 = qgTv1;
     }
 
     @Basic
-    @Column(name = "ВОС_tv1", nullable = true, length = 45)
-    public String getВосTv1() {
-        return восTv1;
+    @Column(name = "VNR_tv1", nullable = true, length = 45)
+    public String getVnrTv1() {
+        return vnrTv1;
     }
 
-    public void setВосTv1(String восTv1) {
-        this.восTv1 = восTv1;
+    public void setVnrTv1(String vnrTv1) {
+        this.vnrTv1 = vnrTv1;
     }
 
     @Basic
-    @Column(name = "tнв_tv2", nullable = true, length = 45)
-    public String getTнвTv2() {
-        return tнвTv2;
+    @Column(name = "VOS_tv1", nullable = true, length = 45)
+    public String getVosTv1() {
+        return vosTv1;
     }
 
-    public void setTнвTv2(String tнвTv2) {
-        this.tнвTv2 = tнвTv2;
+    public void setVosTv1(String vosTv1) {
+        this.vosTv1 = vosTv1;
+    }
+
+    @Basic
+    @Column(name = "tnv_tv2", nullable = true, length = 45)
+    public String getTnvTv2() {
+        return tnvTv2;
+    }
+
+    public void setTnvTv2(String tnvTv2) {
+        this.tnvTv2 = tnvTv2;
     }
 
     @Basic
@@ -550,13 +544,13 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "Qтв_tv2", nullable = true, length = 45)
-    public String getQтвTv2() {
-        return qтвTv2;
+    @Column(name = "Qtv_tv2", nullable = true, length = 45)
+    public String getQtvTv2() {
+        return qtvTv2;
     }
 
-    public void setQтвTv2(String qтвTv2) {
-        this.qтвTv2 = qтвTv2;
+    public void setQtvTv2(String qtvTv2) {
+        this.qtvTv2 = qtvTv2;
     }
 
     @Basic
@@ -570,33 +564,33 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "Qг_tv2", nullable = true, length = 45)
-    public String getQгTv2() {
-        return qгTv2;
+    @Column(name = "Qg_tv2", nullable = true, length = 45)
+    public String getQgTv2() {
+        return qgTv2;
     }
 
-    public void setQгTv2(String qгTv2) {
-        this.qгTv2 = qгTv2;
-    }
-
-    @Basic
-    @Column(name = "ВНР_tv2", nullable = true, length = 45)
-    public String getВнрTv2() {
-        return внрTv2;
-    }
-
-    public void setВнрTv2(String внрTv2) {
-        this.внрTv2 = внрTv2;
+    public void setQgTv2(String qgTv2) {
+        this.qgTv2 = qgTv2;
     }
 
     @Basic
-    @Column(name = "ВОС_tv2", nullable = true, length = 45)
-    public String getВосTv2() {
-        return восTv2;
+    @Column(name = "VNR_tv2", nullable = true, length = 45)
+    public String getVnrTv2() {
+        return vnrTv2;
     }
 
-    public void setВосTv2(String восTv2) {
-        this.восTv2 = восTv2;
+    public void setVnrTv2(String vnrTv2) {
+        this.vnrTv2 = vnrTv2;
+    }
+
+    @Basic
+    @Column(name = "VOS_tv2", nullable = true, length = 45)
+    public String getVosTv2() {
+        return vosTv2;
+    }
+
+    public void setVosTv2(String vosTv2) {
+        this.vosTv2 = vosTv2;
     }
 
     @Basic
@@ -710,7 +704,7 @@ public class Operationtv7 {
     }
 
     @Basic
-    @Column(name = "duration_of 220", nullable = true, length = 45)
+    @Column(name = "duration_of_220", nullable = true, length = 45)
     public String getDurationOf220() {
         return durationOf220;
     }
@@ -820,7 +814,6 @@ public class Operationtv7 {
     }
 
 
-
     @ManyToOne
     @JoinColumn(name = "CUSTOMER_ID" )
     //  @JoinColumn(name = "CUSTOMER_ID",insertable = false, updatable = false)
@@ -833,4 +826,169 @@ public class Operationtv7 {
     }
 
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Operationtv7 that = (Operationtv7) o;
+
+        if (id != that.id) return false;
+        if (customerName != null ? !customerName.equals(that.customerName) : that.customerName != null) return false;
+        if (typeOperation != null ? !typeOperation.equals(that.typeOperation) : that.typeOperation != null)
+            return false;
+        if (error != null ? !error.equals(that.error) : that.error != null) return false;
+        if (chronoligical != null ? !chronoligical.equals(that.chronoligical) : that.chronoligical != null)
+            return false;
+        if (idCustomer != null ? !idCustomer.equals(that.idCustomer) : that.idCustomer != null) return false;
+        if (t1Tv1 != null ? !t1Tv1.equals(that.t1Tv1) : that.t1Tv1 != null) return false;
+        if (p1Tv1 != null ? !p1Tv1.equals(that.p1Tv1) : that.p1Tv1 != null) return false;
+        if (v1Tv1 != null ? !v1Tv1.equals(that.v1Tv1) : that.v1Tv1 != null) return false;
+        if (m1Tv1 != null ? !m1Tv1.equals(that.m1Tv1) : that.m1Tv1 != null) return false;
+        if (t2Tv1 != null ? !t2Tv1.equals(that.t2Tv1) : that.t2Tv1 != null) return false;
+        if (p2Tv1 != null ? !p2Tv1.equals(that.p2Tv1) : that.p2Tv1 != null) return false;
+        if (v2Tv1 != null ? !v2Tv1.equals(that.v2Tv1) : that.v2Tv1 != null) return false;
+        if (m2Tv1 != null ? !m2Tv1.equals(that.m2Tv1) : that.m2Tv1 != null) return false;
+        if (t3Tv1 != null ? !t3Tv1.equals(that.t3Tv1) : that.t3Tv1 != null) return false;
+        if (p3Tv1 != null ? !p3Tv1.equals(that.p3Tv1) : that.p3Tv1 != null) return false;
+        if (v3Tv1 != null ? !v3Tv1.equals(that.v3Tv1) : that.v3Tv1 != null) return false;
+        if (m3Tv1 != null ? !m3Tv1.equals(that.m3Tv1) : that.m3Tv1 != null) return false;
+        if (t1Tv2 != null ? !t1Tv2.equals(that.t1Tv2) : that.t1Tv2 != null) return false;
+        if (p1Tv2 != null ? !p1Tv2.equals(that.p1Tv2) : that.p1Tv2 != null) return false;
+        if (v1Tv2 != null ? !v1Tv2.equals(that.v1Tv2) : that.v1Tv2 != null) return false;
+        if (m1Tv2 != null ? !m1Tv2.equals(that.m1Tv2) : that.m1Tv2 != null) return false;
+        if (t2Tv2 != null ? !t2Tv2.equals(that.t2Tv2) : that.t2Tv2 != null) return false;
+        if (p2Tv2 != null ? !p2Tv2.equals(that.p2Tv2) : that.p2Tv2 != null) return false;
+        if (v2Tv2 != null ? !v2Tv2.equals(that.v2Tv2) : that.v2Tv2 != null) return false;
+        if (m2Tv2 != null ? !m2Tv2.equals(that.m2Tv2) : that.m2Tv2 != null) return false;
+        if (t3Tv2 != null ? !t3Tv2.equals(that.t3Tv2) : that.t3Tv2 != null) return false;
+        if (p3Tv2 != null ? !p3Tv2.equals(that.p3Tv2) : that.p3Tv2 != null) return false;
+        if (v3Tv2 != null ? !v3Tv2.equals(that.v3Tv2) : that.v3Tv2 != null) return false;
+        if (m3Tv2 != null ? !m3Tv2.equals(that.m3Tv2) : that.m3Tv2 != null) return false;
+        if (tnvTv1 != null ? !tnvTv1.equals(that.tnvTv1) : that.tnvTv1 != null) return false;
+        if (txTv1 != null ? !txTv1.equals(that.txTv1) : that.txTv1 != null) return false;
+        if (pxTv1 != null ? !pxTv1.equals(that.pxTv1) : that.pxTv1 != null) return false;
+        if (dtTv1 != null ? !dtTv1.equals(that.dtTv1) : that.dtTv1 != null) return false;
+        if (dMTv1 != null ? !dMTv1.equals(that.dMTv1) : that.dMTv1 != null) return false;
+        if (qtvTv1 != null ? !qtvTv1.equals(that.qtvTv1) : that.qtvTv1 != null) return false;
+        if (q12Tv1 != null ? !q12Tv1.equals(that.q12Tv1) : that.q12Tv1 != null) return false;
+        if (qgTv1 != null ? !qgTv1.equals(that.qgTv1) : that.qgTv1 != null) return false;
+        if (vnrTv1 != null ? !vnrTv1.equals(that.vnrTv1) : that.vnrTv1 != null) return false;
+        if (vosTv1 != null ? !vosTv1.equals(that.vosTv1) : that.vosTv1 != null) return false;
+        if (tnvTv2 != null ? !tnvTv2.equals(that.tnvTv2) : that.tnvTv2 != null) return false;
+        if (txTv2 != null ? !txTv2.equals(that.txTv2) : that.txTv2 != null) return false;
+        if (pxTv2 != null ? !pxTv2.equals(that.pxTv2) : that.pxTv2 != null) return false;
+        if (dtTv2 != null ? !dtTv2.equals(that.dtTv2) : that.dtTv2 != null) return false;
+        if (dMTv2 != null ? !dMTv2.equals(that.dMTv2) : that.dMTv2 != null) return false;
+        if (qtvTv2 != null ? !qtvTv2.equals(that.qtvTv2) : that.qtvTv2 != null) return false;
+        if (q12Tv2 != null ? !q12Tv2.equals(that.q12Tv2) : that.q12Tv2 != null) return false;
+        if (qgTv2 != null ? !qgTv2.equals(that.qgTv2) : that.qgTv2 != null) return false;
+        if (vnrTv2 != null ? !vnrTv2.equals(that.vnrTv2) : that.vnrTv2 != null) return false;
+        if (vosTv2 != null ? !vosTv2.equals(that.vosTv2) : that.vosTv2 != null) return false;
+        if (dp != null ? !dp.equals(that.dp) : that.dp != null) return false;
+        if (ns1Tv1 != null ? !ns1Tv1.equals(that.ns1Tv1) : that.ns1Tv1 != null) return false;
+        if (ns2Tv1 != null ? !ns2Tv1.equals(that.ns2Tv1) : that.ns2Tv1 != null) return false;
+        if (ns3Tv1 != null ? !ns3Tv1.equals(that.ns3Tv1) : that.ns3Tv1 != null) return false;
+        if (ns1Tv2 != null ? !ns1Tv2.equals(that.ns1Tv2) : that.ns1Tv2 != null) return false;
+        if (ns2Tv2 != null ? !ns2Tv2.equals(that.ns2Tv2) : that.ns2Tv2 != null) return false;
+        if (ns3Tv2 != null ? !ns3Tv2.equals(that.ns3Tv2) : that.ns3Tv2 != null) return false;
+        if (nsTv1 != null ? !nsTv1.equals(that.nsTv1) : that.nsTv1 != null) return false;
+        if (nsTv2 != null ? !nsTv2.equals(that.nsTv2) : that.nsTv2 != null) return false;
+        if (nsDp != null ? !nsDp.equals(that.nsDp) : that.nsDp != null) return false;
+        if (signsOfEvents != null ? !signsOfEvents.equals(that.signsOfEvents) : that.signsOfEvents != null)
+            return false;
+        if (durationOf220 != null ? !durationOf220.equals(that.durationOf220) : that.durationOf220 != null)
+            return false;
+        if (durationDisplay != null ? !durationDisplay.equals(that.durationDisplay) : that.durationDisplay != null)
+            return false;
+        if (durationOut != null ? !durationOut.equals(that.durationOut) : that.durationOut != null) return false;
+        if (siTv1 != null ? !siTv1.equals(that.siTv1) : that.siTv1 != null) return false;
+        if (activeBdTv1 != null ? !activeBdTv1.equals(that.activeBdTv1) : that.activeBdTv1 != null) return false;
+        if (frtTv1 != null ? !frtTv1.equals(that.frtTv1) : that.frtTv1 != null) return false;
+        if (kt3Tv1 != null ? !kt3Tv1.equals(that.kt3Tv1) : that.kt3Tv1 != null) return false;
+        if (siTv2 != null ? !siTv2.equals(that.siTv2) : that.siTv2 != null) return false;
+        if (activeBdTv2 != null ? !activeBdTv2.equals(that.activeBdTv2) : that.activeBdTv2 != null) return false;
+        if (frtTv2 != null ? !frtTv2.equals(that.frtTv2) : that.frtTv2 != null) return false;
+        if (kt3Tv2 != null ? !kt3Tv2.equals(that.kt3Tv2) : that.kt3Tv2 != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (customerName != null ? customerName.hashCode() : 0);
+        result = 31 * result + (typeOperation != null ? typeOperation.hashCode() : 0);
+        result = 31 * result + (error != null ? error.hashCode() : 0);
+        result = 31 * result + (chronoligical != null ? chronoligical.hashCode() : 0);
+        result = 31 * result + (idCustomer != null ? idCustomer.hashCode() : 0);
+        result = 31 * result + (t1Tv1 != null ? t1Tv1.hashCode() : 0);
+        result = 31 * result + (p1Tv1 != null ? p1Tv1.hashCode() : 0);
+        result = 31 * result + (v1Tv1 != null ? v1Tv1.hashCode() : 0);
+        result = 31 * result + (m1Tv1 != null ? m1Tv1.hashCode() : 0);
+        result = 31 * result + (t2Tv1 != null ? t2Tv1.hashCode() : 0);
+        result = 31 * result + (p2Tv1 != null ? p2Tv1.hashCode() : 0);
+        result = 31 * result + (v2Tv1 != null ? v2Tv1.hashCode() : 0);
+        result = 31 * result + (m2Tv1 != null ? m2Tv1.hashCode() : 0);
+        result = 31 * result + (t3Tv1 != null ? t3Tv1.hashCode() : 0);
+        result = 31 * result + (p3Tv1 != null ? p3Tv1.hashCode() : 0);
+        result = 31 * result + (v3Tv1 != null ? v3Tv1.hashCode() : 0);
+        result = 31 * result + (m3Tv1 != null ? m3Tv1.hashCode() : 0);
+        result = 31 * result + (t1Tv2 != null ? t1Tv2.hashCode() : 0);
+        result = 31 * result + (p1Tv2 != null ? p1Tv2.hashCode() : 0);
+        result = 31 * result + (v1Tv2 != null ? v1Tv2.hashCode() : 0);
+        result = 31 * result + (m1Tv2 != null ? m1Tv2.hashCode() : 0);
+        result = 31 * result + (t2Tv2 != null ? t2Tv2.hashCode() : 0);
+        result = 31 * result + (p2Tv2 != null ? p2Tv2.hashCode() : 0);
+        result = 31 * result + (v2Tv2 != null ? v2Tv2.hashCode() : 0);
+        result = 31 * result + (m2Tv2 != null ? m2Tv2.hashCode() : 0);
+        result = 31 * result + (t3Tv2 != null ? t3Tv2.hashCode() : 0);
+        result = 31 * result + (p3Tv2 != null ? p3Tv2.hashCode() : 0);
+        result = 31 * result + (v3Tv2 != null ? v3Tv2.hashCode() : 0);
+        result = 31 * result + (m3Tv2 != null ? m3Tv2.hashCode() : 0);
+        result = 31 * result + (tnvTv1 != null ? tnvTv1.hashCode() : 0);
+        result = 31 * result + (txTv1 != null ? txTv1.hashCode() : 0);
+        result = 31 * result + (pxTv1 != null ? pxTv1.hashCode() : 0);
+        result = 31 * result + (dtTv1 != null ? dtTv1.hashCode() : 0);
+        result = 31 * result + (dMTv1 != null ? dMTv1.hashCode() : 0);
+        result = 31 * result + (qtvTv1 != null ? qtvTv1.hashCode() : 0);
+        result = 31 * result + (q12Tv1 != null ? q12Tv1.hashCode() : 0);
+        result = 31 * result + (qgTv1 != null ? qgTv1.hashCode() : 0);
+        result = 31 * result + (vnrTv1 != null ? vnrTv1.hashCode() : 0);
+        result = 31 * result + (vosTv1 != null ? vosTv1.hashCode() : 0);
+        result = 31 * result + (tnvTv2 != null ? tnvTv2.hashCode() : 0);
+        result = 31 * result + (txTv2 != null ? txTv2.hashCode() : 0);
+        result = 31 * result + (pxTv2 != null ? pxTv2.hashCode() : 0);
+        result = 31 * result + (dtTv2 != null ? dtTv2.hashCode() : 0);
+        result = 31 * result + (dMTv2 != null ? dMTv2.hashCode() : 0);
+        result = 31 * result + (qtvTv2 != null ? qtvTv2.hashCode() : 0);
+        result = 31 * result + (q12Tv2 != null ? q12Tv2.hashCode() : 0);
+        result = 31 * result + (qgTv2 != null ? qgTv2.hashCode() : 0);
+        result = 31 * result + (vnrTv2 != null ? vnrTv2.hashCode() : 0);
+        result = 31 * result + (vosTv2 != null ? vosTv2.hashCode() : 0);
+        result = 31 * result + (dp != null ? dp.hashCode() : 0);
+        result = 31 * result + (ns1Tv1 != null ? ns1Tv1.hashCode() : 0);
+        result = 31 * result + (ns2Tv1 != null ? ns2Tv1.hashCode() : 0);
+        result = 31 * result + (ns3Tv1 != null ? ns3Tv1.hashCode() : 0);
+        result = 31 * result + (ns1Tv2 != null ? ns1Tv2.hashCode() : 0);
+        result = 31 * result + (ns2Tv2 != null ? ns2Tv2.hashCode() : 0);
+        result = 31 * result + (ns3Tv2 != null ? ns3Tv2.hashCode() : 0);
+        result = 31 * result + (nsTv1 != null ? nsTv1.hashCode() : 0);
+        result = 31 * result + (nsTv2 != null ? nsTv2.hashCode() : 0);
+        result = 31 * result + (nsDp != null ? nsDp.hashCode() : 0);
+        result = 31 * result + (signsOfEvents != null ? signsOfEvents.hashCode() : 0);
+        result = 31 * result + (durationOf220 != null ? durationOf220.hashCode() : 0);
+        result = 31 * result + (durationDisplay != null ? durationDisplay.hashCode() : 0);
+        result = 31 * result + (durationOut != null ? durationOut.hashCode() : 0);
+        result = 31 * result + (siTv1 != null ? siTv1.hashCode() : 0);
+        result = 31 * result + (activeBdTv1 != null ? activeBdTv1.hashCode() : 0);
+        result = 31 * result + (frtTv1 != null ? frtTv1.hashCode() : 0);
+        result = 31 * result + (kt3Tv1 != null ? kt3Tv1.hashCode() : 0);
+        result = 31 * result + (siTv2 != null ? siTv2.hashCode() : 0);
+        result = 31 * result + (activeBdTv2 != null ? activeBdTv2.hashCode() : 0);
+        result = 31 * result + (frtTv2 != null ? frtTv2.hashCode() : 0);
+        result = 31 * result + (kt3Tv2 != null ? kt3Tv2.hashCode() : 0);
+        return result;
+    }
 }

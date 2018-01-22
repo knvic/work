@@ -226,7 +226,7 @@
     <bean id="updateDataCustomer" class="ru.javabegin.training.vkt7.reports.UpdateDataCustomerList"/>
 
     <bean id="updateMoth" class="ru.javabegin.training.vkt7.reports.UpdateMoth"/>
-    <bean id="tv7" class="ru.javabegin.training.tv7.modem.Modem"/>
+    <bean id="tv7" class="ru.javabegin.training.tv7.modem.Tv7_DB_Test"/>
 
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
@@ -242,7 +242,7 @@
         <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>-->
 
         <!--<task:scheduled ref="updateMoth" method="update" cron="*/15 * * * * ?"/>-->
-        <task:scheduled ref="tv7" method="tv7" cron="11 33 12 * * ?"/>
+        <task:scheduled ref="tv7" method="save_tv7" cron="*/20 * * * * ?"/>
 
 
 

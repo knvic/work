@@ -1,6 +1,5 @@
 package ru.javabegin.training.vkt7.entities;
 
-import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.tv7.entity.Operationtv7;
 
 import javax.persistence.*;
@@ -26,7 +25,7 @@ import static javax.persistence.GenerationType.IDENTITY;
       /*  @NamedQuery(name="Contact.findById",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
         @NamedQuery(name="Customer.findAllWithDetail",
-                query="select distinct c from Customer c left join fetch c.operationSet t left join fetch c.operationtv7Set p ")
+                query="select distinct c from Customer c left join fetch c.operationSet t left join fetch c.operationtv7Set h ")
 })
 @SqlResultSetMapping(
         name="customerResult",
