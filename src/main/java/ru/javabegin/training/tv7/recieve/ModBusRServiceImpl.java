@@ -204,20 +204,20 @@ return map;
                     continue;
                 }
                 else {
-                    String regularExpression1="^(M\\d_|V\\d_|dM)";
-                    String regularExpression2="^(t\\d_|dt|tx|tnv)";
+                    String regularExpression1="^(m\\d|v\\d|dM)";
+                    String regularExpression2="^(t\\d|dt|tx|tnv)";
                     String regularExpression3="^(vnr|vos)";
 
 
 
-                    if(p.getName().contains("Q")) {
+                    if(p.getName().contains("q")) {
 
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
                         System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
 
                     }
-                    else if(p.getName().contains("P")){
-                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(3, RoundingMode.HALF_EVEN).toString());
+                    else if(p.getName().contains("p")){
+                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(1, RoundingMode.HALF_EVEN).toString());
                         System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
@@ -246,7 +246,7 @@ return map;
 
             for(Parametr p:parametrList){
 
-                System.out.print("\n-> "+p.getNameString()+" = " + p.getValue());
+                System.out.print("\n-> " +p.getName()+"  "+p.getNameString()+" = " + p.getValue());
             }
 
             return parametrList;
@@ -416,6 +416,9 @@ return map;
         }
         return str_out.toString();
     }
+
+
+
 
 
     public void temp_match(){

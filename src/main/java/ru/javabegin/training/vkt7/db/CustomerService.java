@@ -20,6 +20,7 @@ public interface CustomerService {
     void update(Customer customer);
     void delete (Customer customer);
     Customer findById(Long id);
+    Customer findByIdTv7(Long id);
 
     ///////////// API Criteria ///////////////
    // List<Customer> findByCriteriaQuery_total_moth(Long id); /// Временный для разработки

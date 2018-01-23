@@ -119,6 +119,19 @@ DataCustomerList dcs;
         return query.getSingleResult();
     }
 
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public  Customer findByIdTv7(Long id) {
+        TypedQuery<Customer> query = em.createNamedQuery(
+                "Customer.findById_tv7", Customer.class);
+        query.setParameter("id", id);
+
+        return query.getSingleResult();
+    }
+
     //////////////////API Criteria//////////////////////////////////////////
 
 

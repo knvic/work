@@ -9,17 +9,22 @@ import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.initDataClass.InitData;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
 import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class Tv7_DB_Test {
     @Qualifier("jpaCustomerService")
     @Autowired
     CustomerService customerService;
-    public void save_tv7(){
+    public void save_tv7(CustomerService customerService){
 
         String in="3A " +
                 "30 31 34 38 30 30 44 41 30 30 32 37 30 31 30 43 31 37 31 32 46 42 32 32 34 32 43 30 46 31 43 31 33 46 36 31 41 41 33 45 34 32 43 46 " +
@@ -63,17 +68,130 @@ public class Tv7_DB_Test {
 
 ///запись
 
-        Operationtv7 operation = new Operationtv7();
-        operation.setTypeOperation("day");
+
+
+        //Operationtv7 operation = new Operationtv7();
+        //operation.setTypeOperation("day");
+        Customer customer=null;
+        try {
+     customer = customerService.findByIdTv7(178l);
+
+}catch (Exception e){
+
+    System.out.println(e);
+}
+if (customer!=null){System.out.println("Кoнтакт найден, customer "+ customer.getFirstName()+" id= "+customer.getId());}
+
+/*
+        Customer customer=new Customer();
+        customer.setFirstName("tv7_1");
+        customer.setTelModem("76568");*/
+
+        //Создаем LocalDateTime передавая в качестве аргументов
+        //год, месяц, день, час, минуту, сукенду
+      //  LocalDateTime ldt = LocalDateTime.of(p4+2000, p1, p2, p3, p6, p5);
+       // LocalDateTime ldt = LocalDateTime.of(parametrList.g+2000, p1, p2, p3, p6, p5);
+        LocalDateTime ldt = LocalDateTime.of(Integer.parseInt(find(parametrList,"uu"))+2000,Integer.parseInt(find(parametrList,"MM")),Integer.parseInt(find(parametrList,"dd")),Integer.parseInt(find(parametrList,"HH")),0,0);
+        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+        Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
+        System.out.println("врема Timestamp = "+ts);
+      //  Operationtv7 operation = new Operationtv7(customer.getFirstName(), "day", " ", Timestamp chronoligical, Integer idCustomer, String t1Tv1, String p1Tv1, String v1Tv1, String m1Tv1, String t2Tv1, String p2Tv1, String v2Tv1, String m2Tv1, String t3Tv1, String p3Tv1, String v3Tv1, String m3Tv1, String t1Tv2, String p1Tv2, String v1Tv2, String m1Tv2, String t2Tv2, String p2Tv2, String v2Tv2, String m2Tv2, String t3Tv2, String p3Tv2, String v3Tv2, String m3Tv2, String tnvTv1, String txTv1, String pxTv1, String dtTv1, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tnvTv2, String txTv2, String pxTv2, String dtTv2, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String dp, String ns1Tv1, String ns2Tv1, String ns3Tv1, String ns1Tv2, String ns2Tv2, String ns3Tv2, String nsTv1, String nsTv2, String nsDp, String signsOfEvents, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2);
+
+        System.out.println();
+        List<Parametr> filtered =
+                parametrList
+                        .stream()
+                        .filter(p -> p.getName().contains("t1Tv1"))
+                        .collect(Collectors.toList());
+
+        System.out.println(filtered);
+        System.out.println();
+
+//public Operationtv7(String t1Tv1, String p1Tv1, String v1Tv1, String m1Tv1, String t2Tv1)
+ //Operationtv7(String customerName, String typeOperation, String error, Timestamp chronoligical, Integer idCustomer, String t1Tv1, String p1Tv1, String v1Tv1, String m1Tv1, String t2Tv1, String p2Tv1, String v2Tv1, String m2Tv1, String t3Tv1, String p3Tv1, String v3Tv1, String m3Tv1, String t1Tv2, String p1Tv2, String v1Tv2, String m1Tv2, String t2Tv2, String p2Tv2, String v2Tv2, String m2Tv2, String t3Tv2, String p3Tv2, String v3Tv2, String m3Tv2, String tnvTv1, String txTv1, String pxTv1, String dtTv1, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tnvTv2, String txTv2, String pxTv2, String dtTv2, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String dp, String ns1Tv1, String ns2Tv1, String ns3Tv1, String ns1Tv2, String ns2Tv2, String ns3Tv2, String nsTv1, String nsTv2, String nsDp, String signsOfEvents, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2)
+Operationtv7 operation = new Operationtv7(customer.getFirstName(), "day",  " " , ts,
+        customer.getId(),
+        find(parametrList,"t1Tv1"),
+        find(parametrList,"p1Tv1"),
+        find(parametrList,"v1Tv1"),
+        find(parametrList,"m1Tv1"),
+        find(parametrList,"t2Tv1"),
+        find(parametrList,"p2Tv1"),
+        find(parametrList,"v2Tv1"),
+        find(parametrList,"m2Tv1"),
+        find(parametrList,"t3Tv1"),
+        find(parametrList,"p3Tv1"),
+        find(parametrList,"v3Tv1"),
+        find(parametrList,"m3Tv1"),
+        find(parametrList,"t1Tv2"),
+        find(parametrList,"p1Tv2"),
+        find(parametrList,"v1Tv2"),
+        find(parametrList,"m1Tv2"),
+        find(parametrList,"t2Tv2"),
+        find(parametrList,"p2Tv2"),
+        find(parametrList,"v2Tv2"),
+        find(parametrList,"m2Tv2"),
+        find(parametrList,"t3Tv2"),
+        find(parametrList,"p3Tv2"),
+        find(parametrList,"v3Tv2"),
+        find(parametrList,"m3Tv2"),
+        find(parametrList,"tnvTv1"),
+        find(parametrList,"txTv1"),
+        find(parametrList,"pxTv1"),
+        find(parametrList,"dtTv1"),
+        find(parametrList,"dMTv1"),
+        find(parametrList,"qtvTv1"),
+        find(parametrList,"q12Tv1"),
+        find(parametrList,"qgTv1"),
+        find(parametrList,"vnrTv1"),
+        find(parametrList,"vosTv1"),
+        find(parametrList,"tnvTv2"),
+        find(parametrList,"txTv2"),
+        find(parametrList,"pxTv2"),
+        find(parametrList,"dtTv2"),
+        find(parametrList,"dMTv2"),
+        find(parametrList,"qtvTv2"),
+        find(parametrList,"q12Tv2"),
+        find(parametrList,"qgTv2"),
+        find(parametrList,"vnrTv2"),
+        find(parametrList,"vosTv2"),
+        find(parametrList,"dp"),
+        find(parametrList,"ns1Tv1"),
+        find(parametrList,"ns2Tv1"),
+        find(parametrList,"ns3Tv1"),
+        find(parametrList,"ns1Tv2"),
+        find(parametrList,"ns2Tv2"),
+        find(parametrList,"ns3Tv2"),
+        find(parametrList,"nsTv1"),
+        find(parametrList,"nsTv2"),
+        find(parametrList,"nsDp"),
+        find(parametrList,"signsOfEvents"),
+        find(parametrList,"durationOf220"),
+        find(parametrList,"durationDisplay"),
+        find(parametrList,"durationOut"),
+        find(parametrList,"siTv1"),
+        find(parametrList,"activeBdTv1"),
+        find(parametrList,"frtTv1"),
+        find(parametrList,"kt3Tv1"),
+        find(parametrList,"siTv2"),
+        find(parametrList,"activeBdTv2"),
+        find(parametrList,"frtTv2"),
+        find(parametrList,"kt3Tv2")  );
+
+
+
+
+/*
 
         Customer customer=new Customer();
-        customer.setFirstName("tv7");
-        customer.setTelModem("345345345");
+        customer.setFirstName("tv7_1");
+        customer.setTelModem("76568");
+*/
 
         //Customer customer = customerService.findById(id);
 
-        operation.setCustomerName(customer.getFirstName());
-        operation.setT1Tv1("112345");
+
+
 
 
         customer.addOperationtv7(operation);
@@ -81,6 +199,18 @@ public class Tv7_DB_Test {
 
 
 
+    }
+
+
+    public String find(List<Parametr> parametrList, String parametr){
+        String val= parametrList
+                .stream()
+                .filter(p -> p.getName().contains(parametr))
+                .collect(Collectors.toList())
+                .get(0).getValue();
+
+        System.out.println(val);
+        return val;
     }
 
 

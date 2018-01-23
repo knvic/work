@@ -1,9 +1,12 @@
 package ru.javabegin.training.tv7.auxillary;
 
 import org.junit.Test;
+import ru.javabegin.training.tv7.initDataClass.Parametr;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -53,6 +56,11 @@ public class AuxServiceImplTest {
 
         StringBuilder str1=new StringBuilder( auxService.hexToBinary("80", 1));
         System.out.println("реверс :"+str1.reverse().toString());
+
+
+
+
+
 
 
     }
