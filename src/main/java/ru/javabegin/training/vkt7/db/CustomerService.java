@@ -1,11 +1,13 @@
 package ru.javabegin.training.vkt7.db;
 
+import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.entities.Result;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -16,11 +18,13 @@ public interface CustomerService {
 
     List<Customer> findAll();
     List<Customer> findAllWithDetail();
+    List<Customer> findAllWithDetailTv7();
     Customer save(Customer customer);
     void update(Customer customer);
     void delete (Customer customer);
     Customer findById(Long id);
     Customer findByIdTv7(Long id);
+    Customer findByIdTv7T(Long id);
 
     ///////////// API Criteria ///////////////
    // List<Customer> findByCriteriaQuery_total_moth(Long id); /// Временный для разработки
@@ -55,6 +59,9 @@ public interface CustomerService {
     void test_customerOperationStatus();//687
 
     void deleteOperationQualityErr();
+
+
+    List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt);
 
 
 

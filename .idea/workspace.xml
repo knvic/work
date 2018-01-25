@@ -7,14 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/TestReflection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/testReflectionTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/Temp_test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImplTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/CustomerServiceTV7Impl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Podgotovka.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e14f5a6a-d2cf-41f5-a15d-c53c40b8db56.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e14f5a6a-d2cf-41f5-a15d-c53c40b8db56.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
@@ -47,17 +59,7 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="lukoil@localhost" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="lukoil@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="lukoil" type="e3449647:DbNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FavoritesManager">
@@ -65,24 +67,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModBusRServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java">
+      <file leaf-file-name="Tv7_DB_Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2635">
-              <caret line="219" column="134" lean-forward="false" selection-start-line="219" selection-start-column="134" selection-end-line="219" selection-end-column="134" />
+            <state relative-caret-position="-901">
+              <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tv7_DB_Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java">
+      <file leaf-file-name="Tv7Run.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="96" column="52" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="96" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,33 +90,18 @@
       <file leaf-file-name="CustomerServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="126" column="43" lean-forward="false" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
+            <state relative-caret-position="473">
+              <caret line="1027" column="0" lean-forward="false" selection-start-line="1027" selection-start-column="0" selection-end-line="1027" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
+      <file leaf-file-name="EventListener_tv7.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/EventListener_tv7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="238" column="4" lean-forward="true" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1846#1857#0" expanded="true" />
-                <element signature="e#1921#1935#0" expanded="true" />
-                <element signature="e#2001#2016#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="-459">
+              <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -125,8 +110,41 @@
       <file leaf-file-name="Operationtv7.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6783">
-              <caret line="805" column="0" lean-forward="true" selection-start-line="805" selection-start-column="0" selection-end-line="805" selection-end-column="0" />
+            <state relative-caret-position="509">
+              <caret line="184" column="5" lean-forward="false" selection-start-line="184" selection-start-column="5" selection-end-line="184" selection-end-column="5" />
+              <folding>
+                <element signature="e#6259#6260#0" expanded="true" />
+                <element signature="e#6284#6285#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="63" column="95" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModBusRServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="48" column="78" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Podgotovka.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Podgotovka.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="31" column="80" lean-forward="false" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,11 +152,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tv7Run.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java">
+      <file leaf-file-name="CustomerServiceTV7Impl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/CustomerServiceTV7Impl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="765">
+              <caret line="63" column="5" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,31 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InitData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java">
+      <file leaf-file-name="Tupel_tv7.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Tupel_tv7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="163" column="34" lean-forward="false" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Operationtv7T.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6596">
-              <caret line="599" column="0" lean-forward="false" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModBusRServiceImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="321" column="39" lean-forward="false" selection-start-line="321" selection-start-column="39" selection-end-line="321" selection-end-column="39" />
+            <state relative-caret-position="221">
+              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -190,9 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findOperationb</find>
-      <find>findOperation_b</find>
-      <find>poi</find>
       <find>log</find>
       <find>log.</find>
       <find>3F FF_n</find>
@@ -220,6 +215,9 @@
       <find>M</find>
       <find>param</find>
       <find>dm</find>
+      <find>date_to_localDateTime</find>
+      <find>localDateTime_to_date</find>
+      <find>addTime</find>
     </findStrings>
     <replaceStrings>
       <replace>list</replace>
@@ -256,16 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/ASCII/TestASCII.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/AuxLrcImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/ByteToHex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LRCTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImpl.java" />
@@ -284,8 +272,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/InitData.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/Parametr.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitDataTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/NS/NsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/NS/NsServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/NS/NsServiceImpl.java" />
@@ -294,19 +280,31 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Tupel_date.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/testReflection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/testReflectionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/Temp_test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/CustomerServiceTV7Impl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Podgotovka.java" />
       </list>
     </option>
   </component>
@@ -375,9 +373,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -410,6 +409,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="training" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="temp_datatime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="work" type="b2602c69:ProjectViewProjectNode" />
@@ -477,7 +485,37 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="tv7" type="462c0819:PsiDirectoryNode" />
+              <item name="save" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="tv7" type="462c0819:PsiDirectoryNode" />
+              <item name="send" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
               <item name="vkt7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="vkt7" type="462c0819:PsiDirectoryNode" />
+              <item name="auxiliary_programs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="work" type="b2602c69:ProjectViewProjectNode" />
@@ -498,6 +536,16 @@
               <item name="training" type="462c0819:PsiDirectoryNode" />
               <item name="vkt7" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="vkt7" type="462c0819:PsiDirectoryNode" />
+              <item name="modem_run" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="work" type="b2602c69:ProjectViewProjectNode" />
@@ -544,7 +592,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,11 +613,11 @@
       <recent name="ru.javabegin.training.vkt7.filevisitResult" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.javabegin.training.tv7.auxillary" />
+      <recent name="ru.javabegin.training.test_Reflection" />
       <recent name="ru.javabegin.training.tv7.recieve" />
       <recent name="ru.javabegin.training.tv7.NS" />
-      <recent name="ru.javabegin.training.tv7.auxillary" />
       <recent name="ru.javabegin.training.tv7.initDataClass" />
-      <recent name="ru.javabegin.training.tv7.send" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -606,7 +653,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.TomCat">
-    <configuration name="AuxServiceImplTest.hexToBinary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuxDateTimeServiceImplTest.from_the_beginning_of_month" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ru.javabegin.training.tv7.auxillary.*" />
@@ -617,8 +664,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.auxillary" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.auxillary.AuxServiceImplTest" />
-      <option name="METHOD_NAME" value="hexToBinary" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.auxillary.AuxDateTimeServiceImplTest" />
+      <option name="METHOD_NAME" value="from_the_beginning_of_month" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -631,19 +678,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ModBusRServiceImplTest.day" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuxServiceImplTest.checkOfDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.tv7.initDataClass.*" />
+          <option name="PATTERN" value="ru.javabegin.training.tv7.auxillary.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="w" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.recieve" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.recieve.ModBusRServiceImplTest" />
-      <option name="METHOD_NAME" value="day" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.auxillary" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.auxillary.AuxServiceImplTest" />
+      <option name="METHOD_NAME" value="checkOfDate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -681,44 +728,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="NsServiceImplTest.nsSE" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModBusRServiceImplTest.total" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.tv7.NS.*" />
+          <option name="PATTERN" value="ru.javabegin.training.tv7.recieve.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="w" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.NS" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.NS.NsServiceImplTest" />
-      <option name="METHOD_NAME" value="nsSE" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="NsServiceImplTest.nsT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.javabegin.training.tv7.NS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="w" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.NS" />
-      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.NS.NsServiceImplTest" />
-      <option name="METHOD_NAME" value="nsT" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.tv7.recieve" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.tv7.recieve.ModBusRServiceImplTest" />
+      <option name="METHOD_NAME" value="total" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -885,21 +907,46 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="testReflectionTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.javabegin.training.test_Reflection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="w" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.javabegin.training.test_Reflection" />
+      <option name="MAIN_CLASS_NAME" value="ru.javabegin.training.test_Reflection.testReflectionTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.TomCat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.day" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AuxServiceImplTest.hexToBinary" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NsServiceImplTest.nsT" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NsServiceImplTest.nsSE" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.infOfDate" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.infOfDate" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.total" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.testReflectionTest.test1" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.AuxServiceImplTest.checkOfDate" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.AuxDateTimeServiceImplTest.from_the_beginning_of_month" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.day" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.infOfDate" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NsServiceImplTest.nsT" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NsServiceImplTest.nsSE" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AuxServiceImplTest.hexToBinary" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.AuxDateTimeServiceImplTest.from_the_beginning_of_month" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AuxServiceImplTest.checkOfDate" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.infOfDate" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ModBusRServiceImplTest.total" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.testReflectionTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -1112,14 +1159,9 @@
       <workItem from="1516431214793" duration="15626000" />
       <workItem from="1516518049692" duration="7387000" />
       <workItem from="1516597909187" duration="21831000" />
-      <workItem from="1516684497107" duration="18071000" />
-    </task>
-    <task id="LOCAL-00028" summary="Промежуточный. Работаем над калькуляцией">
-      <created>1511454315960</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1511454315960</updated>
+      <workItem from="1516684497107" duration="19342000" />
+      <workItem from="1516771600928" duration="21610000" />
+      <workItem from="1516858020596" duration="25224000" />
     </task>
     <task id="LOCAL-00029" summary="Закончен метод ReportService getCalcul... осталось добавить List&lt;Object&gt; и добавить внго получившиеся объекты с BigDecimal и String">
       <created>1511457966571</created>
@@ -1457,43 +1499,50 @@
       <option name="project" value="LOCAL" />
       <updated>1516608747431</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="добавлен класс для entity тв7 для итоговых измерений.">
+      <created>1516726338194</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1516726338195</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 11h 30m 16s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxDateTimeServiceImplTest_from_the_beginning_of_month - 2018.01.25 at 15h 26m 59s.xml">
+      <configuration name="AuxDateTimeServiceImplTest.from_the_beginning_of_month" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 11h 32m 08s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 02m 45s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 11h 36m 24s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 03m 07s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 11h 36m 31s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 03m 44s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 11h 52m 00s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 18m 23s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 16h 00m 11s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 19m 20s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 16h 13m 58s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 31m 47s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 16h 17m 43s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 32m 25s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 16h 19m 16s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 32m 38s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ModBusRServiceImplTest_day - 2018.01.23 at 16h 19m 57s.xml">
-      <configuration name="ModBusRServiceImplTest.day" configurationId="JUnit" />
+    <history-entry file="AuxServiceImplTest_checkOfDate - 2018.01.25 at 11h 35m 56s.xml">
+      <configuration name="AuxServiceImplTest.checkOfDate" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="680910000" />
+    <option name="totallyTimeSpent" value="729015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1510,7 +1559,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21776815" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54821235" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34561214" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1521,8 +1570,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40303358" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24093817" sideWeight="0.21191135" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24093817" sideWeight="0.7880886" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24360341" sideWeight="0.2305936" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24626866" sideWeight="0.7694064" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530916" sideWeight="0.29780033" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446352" sideWeight="0.5108108" order="7" side_tool="true" content_ui="tabs" />
@@ -1572,7 +1621,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлено поле Customer Address" />
     <MESSAGE value="Исправлено получение заводского номера (3FF9)" />
     <MESSAGE value="Исправлена база. Исправлено получение заводского номера (3FF9)" />
     <MESSAGE value="Добавлен вывод вExcel файл заводского номера" />
@@ -1597,7 +1645,8 @@
     <MESSAGE value="прием и парсинг modbus. данн о датах архивов" />
     <MESSAGE value="добавлен entity класс для ТВ7" />
     <MESSAGE value="добавлен класс для entity тв7. Протестирована записьданных в базу. Customer -&gt; operationtv7" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен класс для entity тв7. Протестирована записьданных в базу. Customer -&gt; operationtv7" />
+    <MESSAGE value="добавлен класс для entity тв7 для итоговых измерений." />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен класс для entity тв7 для итоговых измерений." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1683,7 +1732,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1129" />
+      <option name="time" value="1138" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
@@ -1694,145 +1743,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Day.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/propert/Properties_xml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitDataTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="59" lean-forward="false" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/recieve/Recieve03ServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11254">
-          <caret line="679" column="0" lean-forward="false" selection-start-line="624" selection-start-column="4" selection-end-line="679" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/LRC/LrcServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/NS/NsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/NS/NsServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/ByteToHex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/AscServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="150" column="28" lean-forward="false" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/StringToHex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/crc16/Crc16ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="183" column="30" lean-forward="false" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Tupel_date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateAPITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateParseFormaеTes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="26" column="100" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1886,55 +1800,289 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/EventListener_tv7.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/Parametr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1853">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java">
+    <entry file="das://table:/67a99ba5/e14f5a6a-d2cf-41f5-a15d-c53c40b8db56/lukoil.operationtv7">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/TestReflection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="13" column="91" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_Reflection/testReflectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="145" column="36" lean-forward="false" selection-start-line="145" selection-start-column="36" selection-end-line="145" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/Temp_test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/modem_run/ModemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5950">
-          <caret line="43" column="51" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="43" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="244" column="59" lean-forward="false" selection-start-line="244" selection-start-column="59" selection-end-line="244" selection-end-column="59" />
+        <state relative-caret-position="272">
+          <caret line="416" column="15" lean-forward="false" selection-start-line="416" selection-start-column="15" selection-end-line="416" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/save/SaveServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="135" column="39" lean-forward="false" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="146" column="41" lean-forward="false" selection-start-line="146" selection-start-column="41" selection-end-line="146" selection-end-column="41" />
+        <state relative-caret-position="520">
+          <caret line="183" column="30" lean-forward="false" selection-start-line="183" selection-start-column="30" selection-end-line="183" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="111" column="22" lean-forward="false" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/Tupel_date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRService.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/test_datatie_daily_List_10_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="40" column="40" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="40" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2260#2271#0" expanded="true" />
+            <element signature="e#2335#2349#0" expanded="true" />
+            <element signature="e#2415#2430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="251" column="51" lean-forward="false" selection-start-line="251" selection-start-column="51" selection-end-line="251" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/auxiliary_programs/AuxiliaryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="167" column="5" lean-forward="true" selection-start-line="161" selection-start-column="3" selection-end-line="167" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="83" lean-forward="false" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxDateTimeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateParseFormaеTes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="100" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/temp_datatime/DateAPITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="100" lean-forward="false" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="180" column="69" lean-forward="true" selection-start-line="180" selection-start-column="7" selection-end-line="180" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="48" column="78" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/EventListener_tv7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="63" column="95" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-901">
+          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1947,116 +2095,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/Parametr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/auxillary/AuxServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/67a99ba5/e14f5a6a-d2cf-41f5-a15d-c53c40b8db56/lukoil.operationtv7">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7Run.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="33" />
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/CustomerServiceTV7Impl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="126" column="43" lean-forward="false" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Tv7_DB_Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="96" column="52" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="96" selection-end-column="52" />
+        <state relative-caret-position="765">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="321" column="39" lean-forward="false" selection-start-line="321" selection-start-column="39" selection-end-line="321" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="219" column="134" lean-forward="false" selection-start-line="219" selection-start-column="134" selection-end-line="219" selection-end-column="134" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/initDataClass/InitData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="163" column="34" lean-forward="false" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6783">
-          <caret line="805" column="0" lean-forward="true" selection-start-line="805" selection-start-column="0" selection-end-line="805" selection-end-column="0" />
+        <state relative-caret-position="509">
+          <caret line="184" column="5" lean-forward="false" selection-start-line="184" selection-start-column="5" selection-end-line="184" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6259#6260#0" expanded="true" />
+            <element signature="e#6284#6285#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/entity/Operationtv7T.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/db/CustomerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6596">
-          <caret line="599" column="0" lean-forward="false" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+        <state relative-caret-position="473">
+          <caret line="1027" column="0" lean-forward="false" selection-start-line="1027" selection-start-column="0" selection-end-line="1027" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/vkt7/entities/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Podgotovka.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="238" column="4" lean-forward="true" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="4" />
+        <state relative-caret-position="127">
+          <caret line="31" column="80" lean-forward="false" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1846#1857#0" expanded="true" />
-            <element signature="e#1921#1935#0" expanded="true" />
-            <element signature="e#2001#2016#0" expanded="true" />
           </folding>
         </state>
       </provider>

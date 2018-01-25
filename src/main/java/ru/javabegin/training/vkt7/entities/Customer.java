@@ -24,13 +24,17 @@ import static javax.persistence.GenerationType.IDENTITY;
                 query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id"),
         @NamedQuery(name="Customer.findById_tv7",
                 query="select distinct c from Customer c left join fetch c.operationtv7Set h where c.id = :id"),
+        @NamedQuery(name="Customer.findById_tv7_t",
+                query="select distinct c from Customer c left join fetch c.operationtv7TSet h where c.id = :id"),
 
       /*  @NamedQuery(name="Contact.findById",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
         @NamedQuery(name="Customer.findAllWithDetail",
-                query="select distinct c from Customer c left join fetch c.operationSet t left join fetch c.operationtv7Set h "),
+                query="select distinct c from Customer c   left join fetch c.operationSet t where c.unitType like 'ВКТ7' "),
         @NamedQuery(name="Customer.findAllWithDetail_tv7",
-                query="select distinct c from Customer c left join fetch c.operationtv7Set h ")
+                query="select distinct c from Customer c left join fetch c.operationtv7Set h left join fetch c.operationtv7TSet p where c.unitType like 'ТВ7' "),
+        @NamedQuery(name="Customer.findAllWithDetail_tv7_t",
+                query="select distinct c from Customer c left join fetch c.operationtv7TSet h ")
 })
 @SqlResultSetMapping(
         name="customerResult",
@@ -47,6 +51,7 @@ public class Customer implements Serializable {
     private int version;
     private String branch;
     private String address;
+    private String unitType;
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
@@ -161,7 +166,14 @@ public class Customer implements Serializable {
         this.version = version;
     }
 
+    @Column(name = "UNIT_TYPE")
+    public String getUnitType() {
+        return unitType;
+    }
 
+    public void setUnitType(String unitType) {
+        this.unitType = unitType;
+    }
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)

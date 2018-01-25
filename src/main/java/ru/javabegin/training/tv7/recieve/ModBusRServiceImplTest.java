@@ -4,10 +4,13 @@ import org.junit.Test;
 import ru.javabegin.training.tv7.ASCII.AscServiceImpl;
 import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
 import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.initDataClass.InitData;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
+import ru.javabegin.training.tv7.save.SaveServiceImpl;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 
+import java.lang.reflect.Field;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
 
 import static org.junit.Assert.*;
 
@@ -119,7 +123,117 @@ public class ModBusRServiceImplTest {
         InitData initData = new InitData();
         List<Parametr> totalList =initData.initTotal();
 
-        modBusRService.total(inHex,  totalList,1);
+        totalList= modBusRService.total(inHex,  totalList,1);
+
+        SaveServiceImpl saveService=new SaveServiceImpl();
+        Operationtv7T operationtv7T=saveService.saveTotal(totalList);
+
+/*
+
+        LocalDateTime ldt = LocalDateTime.of(2018,1,9,23,0,0);
+        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+        Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
+        System.out.println("врема Timestamp = "+ts);
+
+
+        String oo= totalList
+                .stream()
+                .filter(p -> p.getName().contains("tvminTv1"))
+                .collect(Collectors.toList())
+                .get(0).getValue();
+
+        System.out.println("Искомый параметр "+oo);
+
+
+
+//public Operationtv7T(String customerName, String error, Timestamp chronoligical, Long idCustomer, String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1, String v3Tv1, String m3Tv1, String v1Tv2, String m1Tv2, String v2Tv2, String m2Tv2, String v3Tv2, String m3Tv2, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tvminTv1, String tvmaxTv1, String tdtTv1, String tno220Tv1, String tterrTv1, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String tvminTv2, String tvmaxTv2, String tdtTv2, String tno220Tv2, String tterrTv2, String dp, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2)
+
+Operationtv7T operationtv7T=new Operationtv7T(
+"customerName",
+"те",
+ts,
+200l,
+find(totalList,"v1Tv1"),
+find(totalList,"m1Tv1"),
+find(totalList,"v2Tv1"),
+find(totalList,"m2Tv1"),
+find(totalList,"v3Tv1"),
+find(totalList,"m3Tv1"),
+find(totalList,"v1Tv2"),
+find(totalList,"m1Tv2"),
+find(totalList,"v2Tv2"),
+find(totalList,"m2Tv2"),
+find(totalList,"v3Tv2"),
+find(totalList,"m3Tv2"),
+find(totalList,"dMTv1"),
+find(totalList,"qtvTv1"),
+find(totalList,"q12Tv1"),
+find(totalList,"qgTv1"),
+find(totalList,"vnrTv1"),
+find(totalList,"vosTv1"),
+find(totalList,"tvminTv1"),
+find(totalList,"tvmaxTv1"),
+find(totalList,"tdtTv1"),
+find(totalList,"tno220Tv1"),
+find(totalList,"tterrTv1"),
+find(totalList,"dMTv2"),
+find(totalList,"qtvTv2"),
+find(totalList,"q12Tv2"),
+find(totalList,"qgTv2"),
+find(totalList,"vnrTv2"),
+find(totalList,"vosTv2"),
+find(totalList,"tvminTv2"),
+find(totalList,"tvmaxTv2"),
+find(totalList,"tdtTv2"),
+find(totalList,"tno220Tv2"),
+find(totalList,"tterrTv2"),
+find(totalList,"dp"),
+find(totalList,"durationOf220"),
+find(totalList,"durationDisplay"),
+find(totalList,"durationOut"),
+find(totalList,"siTv1"),
+find(totalList,"activeBdTv1"),
+find(totalList,"frtTv1"),
+find(totalList,"kt3Tv1"),
+find(totalList,"siTv2"),
+find(totalList,"activeBdTv2"),
+find(totalList,"frtTv2"),
+find(totalList,"kt3Tv2"));
+
+
+*/
+
+
+//Рефлексия
+
+        System.out.println("Рефлексия ---------------------");
+        //Class mClassObject = Operationtv7T.class;
+        Class mClassObject = Class.forName("ru.javabegin.training.tv7.entity.Operationtv7T");
+
+        String fullClassName = mClassObject.getName();
+        System.out.println("fullClassName "+fullClassName);
+
+        String justClassName = mClassObject.getSimpleName();
+        System.out.println("justClassName "+justClassName);
+
+
+       // Field field = mClassObject.getField("kt3Tv2");
+       // String fieldName = field.getName();
+       // System.out.println("fieldName "+fieldName);
+
+        //Field[] fields = mClassObject.getFields();
+        Field[] fields = mClassObject.getDeclaredFields();
+        System.out.println("размер :: "+fields.length);
+        for(Field f:fields){
+            //Field field = mClassObject.getField("fieldName");
+            String fName = f.getName();
+            System.out.println("Название поля :  -->"+fName);
+        }
+
+
+
+////
+
 
 
     }

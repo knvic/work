@@ -72,6 +72,69 @@ public class Operationtv7T {
 
     private Customer customer;
 
+    public Operationtv7T() {
+    }
+
+    public Operationtv7T(String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1) {
+        this.v1Tv1 = v1Tv1;
+        this.m1Tv1 = m1Tv1;
+        this.v2Tv1 = v2Tv1;
+        this.m2Tv1 = m2Tv1;
+    }
+
+    public Operationtv7T(String customerName, String error, Timestamp chronoligical, Long idCustomer, String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1, String v3Tv1, String m3Tv1, String v1Tv2, String m1Tv2, String v2Tv2, String m2Tv2, String v3Tv2, String m3Tv2, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tvminTv1, String tvmaxTv1, String tdtTv1, String tno220Tv1, String tterrTv1, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String tvminTv2, String tvmaxTv2, String tdtTv2, String tno220Tv2, String tterrTv2, String dp, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2) {
+        this.customerName = customerName;
+        this.error = error;
+        this.chronoligical = chronoligical;
+        this.idCustomer = idCustomer;
+        this.v1Tv1 = v1Tv1;
+        this.m1Tv1 = m1Tv1;
+        this.v2Tv1 = v2Tv1;
+        this.m2Tv1 = m2Tv1;
+        this.v3Tv1 = v3Tv1;
+        this.m3Tv1 = m3Tv1;
+        this.v1Tv2 = v1Tv2;
+        this.m1Tv2 = m1Tv2;
+        this.v2Tv2 = v2Tv2;
+        this.m2Tv2 = m2Tv2;
+        this.v3Tv2 = v3Tv2;
+        this.m3Tv2 = m3Tv2;
+        this.dMTv1 = dMTv1;
+        this.qtvTv1 = qtvTv1;
+        this.q12Tv1 = q12Tv1;
+        this.qgTv1 = qgTv1;
+        this.vnrTv1 = vnrTv1;
+        this.vosTv1 = vosTv1;
+        this.tvminTv1 = tvminTv1;
+        this.tvmaxTv1 = tvmaxTv1;
+        this.tdtTv1 = tdtTv1;
+        this.tno220Tv1 = tno220Tv1;
+        this.tterrTv1 = tterrTv1;
+        this.dMTv2 = dMTv2;
+        this.qtvTv2 = qtvTv2;
+        this.q12Tv2 = q12Tv2;
+        this.qgTv2 = qgTv2;
+        this.vnrTv2 = vnrTv2;
+        this.vosTv2 = vosTv2;
+        this.tvminTv2 = tvminTv2;
+        this.tvmaxTv2 = tvmaxTv2;
+        this.tdtTv2 = tdtTv2;
+        this.tno220Tv2 = tno220Tv2;
+        this.tterrTv2 = tterrTv2;
+        this.dp = dp;
+        this.durationOf220 = durationOf220;
+        this.durationDisplay = durationDisplay;
+        this.durationOut = durationOut;
+        this.siTv1 = siTv1;
+        this.activeBdTv1 = activeBdTv1;
+        this.frtTv1 = frtTv1;
+        this.kt3Tv1 = kt3Tv1;
+        this.siTv2 = siTv2;
+        this.activeBdTv2 = activeBdTv2;
+        this.frtTv2 = frtTv2;
+        this.kt3Tv2 = kt3Tv2;
+    }
+
     @Id
     @Column(name = "ID", nullable = false)
     public int getId() {

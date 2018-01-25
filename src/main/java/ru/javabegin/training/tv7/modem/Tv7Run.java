@@ -19,6 +19,9 @@ public class Tv7Run {
     CustomerService customerService;
 
 
+
+
+
     public static volatile Future<String> futureTV7_1;
     public static volatile  Future<String> futureTV7_2;
     public static volatile ExecutorService serviceTV7;
@@ -50,4 +53,35 @@ public class Tv7Run {
 
 
     }
+
+    public void run_tv7_1(){
+        Podgotovka podgotovka=new Podgotovka();
+
+        Callable task = () -> {
+            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+            String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
+
+            podgotovka.pRun(customerService);
+            //daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);
+            return "123";
+        };
+
+
+        serviceTV7 = Executors.newSingleThreadExecutor();
+        futureTV7_1 = serviceTV7.submit(task);
+
+
+        //Future<String> future2 = service.submit(task);
+
+        serviceTV7.shutdown();
+
+        System.out.println("Основная программа работу закончила");
+
+
+
+    }
+
+
+
 }

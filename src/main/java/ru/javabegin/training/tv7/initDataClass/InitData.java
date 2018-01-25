@@ -143,7 +143,7 @@ return list;
         list.add(new Parametr("tvmaxTv1","Tvmax",2,"unsigned short"));
         list.add(new Parametr("tdtTv1","Tdt",2,"unsigned short"));
         list.add(new Parametr("tno220Tv1","Tбез.пит.",2,"unsigned short"));
-        list.add(new Parametr("tterr.Tv1","Ttнеиспр.",2,"unsigned short"));
+        list.add(new Parametr("tterrTv1","Ttнеиспр.",2,"unsigned short"));
 
 
         list.add(new Parametr("dMTv2","dM",8,"double"));
@@ -157,7 +157,7 @@ return list;
         list.add(new Parametr("tvmaxTv2","Tvmax",2,"unsigned short"));
         list.add(new Parametr("tdtTv2","Tdt",2,"unsigned short"));
         list.add(new Parametr("tno220Tv2","Tбез.пит.",2,"unsigned short"));
-        list.add(new Parametr("tterr.Tv2","Ttнеиспр.",2,"unsigned short"));
+        list.add(new Parametr("tterrTv2","Ttнеиспр.",2,"unsigned short"));
 
 
         list.add(new Parametr("dp","dp",8,"double"));

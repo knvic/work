@@ -22,8 +22,8 @@ public class ModBusRServiceImpl implements ModBusRService {
         list.forEach(p-> temp.append(p));
       //  System.out.println("\nStringBuilder = "+temp.toString());
 
-        List<String> id_col = new ArrayList<>(Arrays.asList("begin_hour", "begin_day", "begin_moth", "begin_total", "end_hour",
-                "end_day", "end_moth", "end_total", "reboot"));
+        List<String> id_col = new ArrayList<>(Arrays.asList("begin_hour", "begin_day", "begin_month", "begin_total", "end_hour",
+                "end_day", "end_month", "end_total", "reboot"));
       //  System.out.println("количество переменных="+id_col.size());
     //  int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
        // System.out.println("количество принятых байт ="+colRecieve);
@@ -65,7 +65,7 @@ return map;
 
 
     @Override
-    public void total(List<String> list, List<Parametr> parametrList, int sys){
+    public List<Parametr> total(List<String> list, List<Parametr> parametrList, int sys){
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
@@ -108,12 +108,12 @@ return map;
                     continue;
                 }
                 else {
-                    String regularExpression1="^(M\\d_|V\\d_|dM)";
+                    String regularExpression1="^(m\\d|v\\d|dM)";
                     String regularExpression2="^(t\\d_|dt|tx|tнв)";
 
 
 
-                    if(p.getName().contains("Q")) {
+                    if(p.getName().contains("q")) {
 
                         p.setValue(new BigDecimal(Double.longBitsToDouble(Long.parseLong(l2b(str), 16))/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
                         System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
@@ -149,6 +149,8 @@ return map;
 
             System.out.print("\n-> "+p.getNameString()+" = " + p.getValue());
         }
+
+        return parametrList;
 
     }
 

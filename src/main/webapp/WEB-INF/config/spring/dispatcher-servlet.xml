@@ -228,6 +228,8 @@
     <bean id="updateMoth" class="ru.javabegin.training.vkt7.reports.UpdateMoth"/>
     <bean id="tv7" class="ru.javabegin.training.tv7.modem.Tv7Run"/>
 
+    <bean id="podgotovka" class="ru.javabegin.training.tv7.modem.Podgotovka"/>
+
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
     <task:scheduled-tasks scheduler="serverScheduler">
@@ -239,10 +241,15 @@
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
 
         <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
+
         <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>-->
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 8 9 * * ?"/>
+
+
 
         <!--<task:scheduled ref="updateMoth" method="update" cron="*/15 * * * * ?"/>-->
-        <task:scheduled ref="tv7" method="run_tv7" cron="50 * * * * ?"/>
+        <!--<task:scheduled ref="tv7" method="run_tv7" cron="50 * * * * ?"/>-->
+        <task:scheduled ref="tv7" method="run_tv7_1" cron="50 * * * * ?"/>
 
 
 

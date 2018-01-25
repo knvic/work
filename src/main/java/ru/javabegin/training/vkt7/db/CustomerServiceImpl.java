@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.*;
+import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7_;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
@@ -73,6 +75,16 @@ DataCustomerList dcs;
         return customerList;
     }
 
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer> findAllWithDetailTv7() {
+        List<Customer> customerList = em.createNamedQuery(
+                "Customer.findAllWithDetail_tv7", Customer.class).getResultList();
+        return customerList;
+    }
+
+
     @Transactional
     @Override
     public Customer save(Customer customer) {
@@ -127,6 +139,17 @@ DataCustomerList dcs;
     public  Customer findByIdTv7(Long id) {
         TypedQuery<Customer> query = em.createNamedQuery(
                 "Customer.findById_tv7", Customer.class);
+        query.setParameter("id", id);
+
+        return query.getSingleResult();
+    }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public  Customer findByIdTv7T(Long id) {
+        TypedQuery<Customer> query = em.createNamedQuery(
+                "Customer.findById_tv7_t", Customer.class);
         query.setParameter("id", id);
 
         return query.getSingleResult();
@@ -996,6 +1019,41 @@ DataCustomerList dcs;
         return result;
 */
 
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt){
+        // log.info("Finding по номеру модема и времени операции: " );
+        ldt=auxiliaryService.addTime(ldt,"23");
+
+        Timestamp date=auxiliaryService.localDateTime_TimeStamp(ldt);
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operationtv7> criteriaQuery = cb.createQuery(Operationtv7.class);
+        Root<Operationtv7> contactRoot = criteriaQuery.from(Operationtv7.class);
+        // contactRoot.fetch(Operationv7_.measurementsSet, JoinType.LEFT);
+        //contactRoot.fetch(Operation_.customer, JoinType.RIGHT);
+        Join cont = contactRoot.join(Operationtv7_.customer,JoinType.LEFT);
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+        if (idCustomer != null) {
+            Predicate p =cb.equal(cont.get(Customer_.id), idCustomer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7_.chronoligical),date);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        return em.createQuery(criteriaQuery).getResultList();
+
+    }
 
 
 }
