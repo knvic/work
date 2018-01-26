@@ -96,6 +96,25 @@ public class Operationtv7 {
     public Operationtv7() {
     }
 
+    public Operationtv7(int id, String v1Tv1, String m1Tv1,Timestamp chronoligical) {
+        this.id = id;
+        this.v1Tv1 = v1Tv1;
+        this.m1Tv1 = m1Tv1;
+        this.chronoligical =chronoligical;
+
+    }
+
+
+    public Operationtv7(Long id,String t1Tv1, String p1Tv1, String v1Tv1, String m1Tv1, String t2Tv1) {
+        this.t1Tv1 = t1Tv1;
+        this.p1Tv1 = p1Tv1;
+        this.v1Tv1 = v1Tv1;
+        this.m1Tv1 = m1Tv1;
+        this.t2Tv1 = t2Tv1;
+    }
+
+
+
     public Operationtv7(String t1Tv1, String p1Tv1, String v1Tv1, String m1Tv1, String t2Tv1) {
         this.t1Tv1 = t1Tv1;
         this.p1Tv1 = p1Tv1;

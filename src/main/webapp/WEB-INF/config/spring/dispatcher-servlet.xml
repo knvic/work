@@ -242,7 +242,7 @@
 
         <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
 
-        <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>-->
+        <task:scheduled ref="updateDataCustomer" method="update" cron="5 * * * * ?"/>
         <task:scheduled ref="updateDataCustomer" method="update" cron="50 8 9 * * ?"/>
 
 

@@ -75,12 +75,7 @@ public class Operationtv7T {
     public Operationtv7T() {
     }
 
-    public Operationtv7T(String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1) {
-        this.v1Tv1 = v1Tv1;
-        this.m1Tv1 = m1Tv1;
-        this.v2Tv1 = v2Tv1;
-        this.m2Tv1 = m2Tv1;
-    }
+
 
     public Operationtv7T(String customerName, String error, Timestamp chronoligical, Long idCustomer, String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1, String v3Tv1, String m3Tv1, String v1Tv2, String m1Tv2, String v2Tv2, String m2Tv2, String v3Tv2, String m3Tv2, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tvminTv1, String tvmaxTv1, String tdtTv1, String tno220Tv1, String tterrTv1, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String tvminTv2, String tvmaxTv2, String tdtTv2, String tno220Tv2, String tterrTv2, String dp, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2) {
         this.customerName = customerName;
