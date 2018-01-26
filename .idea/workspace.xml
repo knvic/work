@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -89,8 +88,8 @@
       <file leaf-file-name="logApp.log" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logApp.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-217958">
-              <caret line="1456" column="43" lean-forward="false" selection-start-line="1456" selection-start-column="43" selection-end-line="1456" selection-end-column="43" />
+            <state relative-caret-position="242">
+              <caret line="12342" column="76" lean-forward="true" selection-start-line="12342" selection-start-column="76" selection-end-line="12342" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -448,6 +447,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -949,13 +949,6 @@
       <workItem from="1516526226023" duration="1957000" />
       <workItem from="1516550357196" duration="555000" />
     </task>
-    <task id="LOCAL-00013" summary="добавлена проверка на дублирование в ходе измерений. Добавлена запись в промежуточный файл">
-      <created>1511159668399</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1511159668399</updated>
-    </task>
     <task id="LOCAL-00014" summary="промежуточный">
       <created>1511160598954</created>
       <option name="number" value="00014" />
@@ -1292,7 +1285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516974291635</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Промежуточный лог. работает вроде все, но поток ВКТ7 не закрывается">
+      <created>1516974388872</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1516974388872</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1328,10 +1328,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370596000" />
+    <option name="totallyTimeSpent" value="371313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4640592" sideWeight="0.50625" order="0" side_tool="true" content_ui="tabs" />
@@ -1344,7 +1345,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3716143" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24485373" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34454912" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1904,8 +1905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logApp.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-217958">
-          <caret line="1456" column="43" lean-forward="false" selection-start-line="1456" selection-start-column="43" selection-end-line="1456" selection-end-column="43" />
+        <state relative-caret-position="242">
+          <caret line="12342" column="76" lean-forward="true" selection-start-line="12342" selection-start-column="76" selection-end-line="12342" selection-end-column="76" />
         </state>
       </provider>
       <provider editor-type-id="text-editor">
