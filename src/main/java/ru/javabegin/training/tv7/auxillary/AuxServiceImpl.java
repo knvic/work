@@ -1,5 +1,7 @@
 package ru.javabegin.training.tv7.auxillary;
 
+import ru.javabegin.training.tv7.recieve.Tupel_date;
+
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,6 +9,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.Function;
 
 import static java.lang.String.format;
 
@@ -167,6 +170,41 @@ public class AuxServiceImpl implements AuxService {
         System.out.println(" preBin = "+ preBin);
         return preBin;
 
+    }
+
+
+    @Override
+    public boolean checkOfDate(String typeOfDate, Map<String,Tupel_date> infOfDate, LocalDateTime ldt){
+        boolean check=false;
+       LocalDate dateLocalDate =ldt.toLocalDate();
+
+        ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
+        System.out.println("проверяемая дата : "+ldt);
+
+        infOfDate.entrySet().stream()
+                .sorted(Comparator.comparing(Map.Entry::getKey))
+                /*.sorted(Comparator.comparing(
+                        (Function<Map.Entry<String, Long>, Long>) Map.Entry::getValue).reversed())
+                .limit(10)*/
+                .forEach(x -> System.out.println(x.getKey()));
+
+
+        if (typeOfDate.equals("day")){
+           // today.isBefore(LocalDate.of(2017,3,2))
+            System.out.println("элемент пришедшего массива дат begin_day  : "+ infOfDate.get("begin_day").getLocalDateTime());
+            if(ldt.isAfter(infOfDate.get("begin_day").getLocalDateTime())||ldt.isEqual(infOfDate.get("begin_day").getLocalDateTime())){check=true;}
+
+        }
+        if (typeOfDate.equals("month")){
+            System.out.println("элемент пришедшего массива дат begin_moth  : "+ infOfDate.get("begin_month").getLocalDateTime());
+            if(ldt.isAfter(infOfDate.get("begin_month").getLocalDateTime())||ldt.isEqual(infOfDate.get("begin_month").getLocalDateTime())){check=true;}
+        }
+        if (typeOfDate.equals("total")){
+            System.out.println("элемент пришедшего массива дат begin_total  : "+ infOfDate.get("begin_total").getLocalDateTime());
+            if(ldt.isAfter(infOfDate.get("begin_total").getLocalDateTime())||ldt.isEqual(infOfDate.get("begin_total").getLocalDateTime())){check=true;}
+        }
+
+        return  check;
     }
 
 

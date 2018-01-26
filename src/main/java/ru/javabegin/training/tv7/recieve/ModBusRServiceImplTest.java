@@ -3,15 +3,24 @@ package ru.javabegin.training.tv7.recieve;
 import org.junit.Test;
 import ru.javabegin.training.tv7.ASCII.AscServiceImpl;
 import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
+import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.initDataClass.InitData;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
+import ru.javabegin.training.tv7.save.SaveServiceImpl;
+import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 
+import java.lang.reflect.Field;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 
 import static org.junit.Assert.*;
 
@@ -114,7 +123,117 @@ public class ModBusRServiceImplTest {
         InitData initData = new InitData();
         List<Parametr> totalList =initData.initTotal();
 
-        modBusRService.total(inHex,  totalList,1);
+        totalList= modBusRService.total(inHex,  totalList,1);
+
+        SaveServiceImpl saveService=new SaveServiceImpl();
+        Operationtv7T operationtv7T=saveService.saveTotal(totalList);
+
+/*
+
+        LocalDateTime ldt = LocalDateTime.of(2018,1,9,23,0,0);
+        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+        Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
+        System.out.println("врема Timestamp = "+ts);
+
+
+        String oo= totalList
+                .stream()
+                .filter(p -> p.getName().contains("tvminTv1"))
+                .collect(Collectors.toList())
+                .get(0).getValue();
+
+        System.out.println("Искомый параметр "+oo);
+
+
+
+//public Operationtv7T(String customerName, String error, Timestamp chronoligical, Long idCustomer, String v1Tv1, String m1Tv1, String v2Tv1, String m2Tv1, String v3Tv1, String m3Tv1, String v1Tv2, String m1Tv2, String v2Tv2, String m2Tv2, String v3Tv2, String m3Tv2, String dMTv1, String qtvTv1, String q12Tv1, String qgTv1, String vnrTv1, String vosTv1, String tvminTv1, String tvmaxTv1, String tdtTv1, String tno220Tv1, String tterrTv1, String dMTv2, String qtvTv2, String q12Tv2, String qgTv2, String vnrTv2, String vosTv2, String tvminTv2, String tvmaxTv2, String tdtTv2, String tno220Tv2, String tterrTv2, String dp, String durationOf220, String durationDisplay, String durationOut, String siTv1, String activeBdTv1, String frtTv1, String kt3Tv1, String siTv2, String activeBdTv2, String frtTv2, String kt3Tv2)
+
+Operationtv7T operationtv7T=new Operationtv7T(
+"customerName",
+"те",
+ts,
+200l,
+find(totalList,"v1Tv1"),
+find(totalList,"m1Tv1"),
+find(totalList,"v2Tv1"),
+find(totalList,"m2Tv1"),
+find(totalList,"v3Tv1"),
+find(totalList,"m3Tv1"),
+find(totalList,"v1Tv2"),
+find(totalList,"m1Tv2"),
+find(totalList,"v2Tv2"),
+find(totalList,"m2Tv2"),
+find(totalList,"v3Tv2"),
+find(totalList,"m3Tv2"),
+find(totalList,"dMTv1"),
+find(totalList,"qtvTv1"),
+find(totalList,"q12Tv1"),
+find(totalList,"qgTv1"),
+find(totalList,"vnrTv1"),
+find(totalList,"vosTv1"),
+find(totalList,"tvminTv1"),
+find(totalList,"tvmaxTv1"),
+find(totalList,"tdtTv1"),
+find(totalList,"tno220Tv1"),
+find(totalList,"tterrTv1"),
+find(totalList,"dMTv2"),
+find(totalList,"qtvTv2"),
+find(totalList,"q12Tv2"),
+find(totalList,"qgTv2"),
+find(totalList,"vnrTv2"),
+find(totalList,"vosTv2"),
+find(totalList,"tvminTv2"),
+find(totalList,"tvmaxTv2"),
+find(totalList,"tdtTv2"),
+find(totalList,"tno220Tv2"),
+find(totalList,"tterrTv2"),
+find(totalList,"dp"),
+find(totalList,"durationOf220"),
+find(totalList,"durationDisplay"),
+find(totalList,"durationOut"),
+find(totalList,"siTv1"),
+find(totalList,"activeBdTv1"),
+find(totalList,"frtTv1"),
+find(totalList,"kt3Tv1"),
+find(totalList,"siTv2"),
+find(totalList,"activeBdTv2"),
+find(totalList,"frtTv2"),
+find(totalList,"kt3Tv2"));
+
+
+*/
+
+
+//Рефлексия
+
+        System.out.println("Рефлексия ---------------------");
+        //Class mClassObject = Operationtv7T.class;
+        Class mClassObject = Class.forName("ru.javabegin.training.tv7.entity.Operationtv7T");
+
+        String fullClassName = mClassObject.getName();
+        System.out.println("fullClassName "+fullClassName);
+
+        String justClassName = mClassObject.getSimpleName();
+        System.out.println("justClassName "+justClassName);
+
+
+       // Field field = mClassObject.getField("kt3Tv2");
+       // String fieldName = field.getName();
+       // System.out.println("fieldName "+fieldName);
+
+        //Field[] fields = mClassObject.getFields();
+        Field[] fields = mClassObject.getDeclaredFields();
+        System.out.println("размер :: "+fields.length);
+        for(Field f:fields){
+            //Field field = mClassObject.getField("fieldName");
+            String fName = f.getName();
+            System.out.println("Название поля :  -->"+fName);
+        }
+
+
+
+////
+
 
 
     }
@@ -155,7 +274,118 @@ public class ModBusRServiceImplTest {
         InitData initData = new InitData();
         List<Parametr> parametrList =initData.initDay();
 
-        modBusRService.day(inHex, parametrList,1);
+ parametrList= modBusRService.day(inHex, parametrList,1);
+
+        System.out.println("Из теста ");
+
+        parametrList.forEach(p->System.out.println(p.getName()+"   "+p.getValue()));
+
+        System.out.println("Фильтрация ");
+        //List<Parametr> filtered =
+
+        String oo= parametrList
+                        .stream()
+                        .filter(p -> p.getName().contains("nsDp"))
+                        .collect(Collectors.toList())
+                .get(0).getValue();
+
+        System.out.println(oo);
+
+
+/*
+
+        Operationtv7 operation = new Operationtv7(find(parametrList,"t1Tv1"),
+                find(parametrList,"p1Tv1"), find(parametrList,"v1Tv1"), find(parametrList,"m1Tv1"), find(parametrList,"t2Tv1"));
+
+        System.out.println(operation);
+*/
+
+
+//год, месяц, день, час, минуту, сукенду
+        //  LocalDateTime ldt = LocalDateTime.of(p4+2000, p1, p2, p3, p6, p5);
+        // LocalDateTime ldt = LocalDateTime.of(parametrList.g+2000, p1, p2, p3, p6, p5);
+        LocalDateTime ldt = LocalDateTime.of(2018,1,9,23,0,0);
+        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+        Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
+        System.out.println("врема Timestamp = "+ts);
+
+
+        Operationtv7 operation = new Operationtv7("dfgdfg", "day",  " " , ts,
+                12l,
+                find(parametrList,"t1Tv1"),
+                find(parametrList,"p1Tv1"),
+                find(parametrList,"v1Tv1"),
+                find(parametrList,"m1Tv1"),
+                find(parametrList,"t2Tv1"),
+                find(parametrList,"p2Tv1"),
+                find(parametrList,"v2Tv1"),
+                find(parametrList,"m2Tv1"),
+                find(parametrList,"t3Tv1"),
+                find(parametrList,"p3Tv1"),
+                find(parametrList,"v3Tv1"),
+                find(parametrList,"m3Tv1"),
+                find(parametrList,"t1Tv2"),
+                find(parametrList,"p1Tv2"),
+                find(parametrList,"v1Tv2"),
+                find(parametrList,"m1Tv2"),
+                find(parametrList,"t2Tv2"),
+                find(parametrList,"p2Tv2"),
+                find(parametrList,"v2Tv2"),
+                find(parametrList,"m2Tv2"),
+                find(parametrList,"t3Tv2"),
+                find(parametrList,"p3Tv2"),
+                find(parametrList,"v3Tv2"),
+                find(parametrList,"m3Tv2"),
+                find(parametrList,"tnvTv1"),
+                find(parametrList,"txTv1"),
+                find(parametrList,"pxTv1"),
+                find(parametrList,"dtTv1"),
+                find(parametrList,"dMTv1"),
+                find(parametrList,"qtvTv1"),
+                find(parametrList,"q12Tv1"),
+                find(parametrList,"qgTv1"),
+                find(parametrList,"vnrTv1"),
+                find(parametrList,"vosTv1"),
+                find(parametrList,"tnvTv2"),
+                find(parametrList,"txTv2"),
+                find(parametrList,"pxTv2"),
+                find(parametrList,"dtTv2"),
+                find(parametrList,"dMTv2"),
+                find(parametrList,"qtvTv2"),
+                find(parametrList,"q12Tv2"),
+                find(parametrList,"qgTv2"),
+                find(parametrList,"vnrTv2"),
+                find(parametrList,"vosTv2"),
+                find(parametrList,"dp"),
+                find(parametrList,"ns1Tv1"),
+                find(parametrList,"ns2Tv1"),
+                find(parametrList,"ns3Tv1"),
+                find(parametrList,"ns1Tv2"),
+                find(parametrList,"ns2Tv2"),
+                find(parametrList,"ns3Tv2"),
+                find(parametrList,"nsTv1"),
+                find(parametrList,"nsTv2"),
+                find(parametrList,"nsDp"),
+                find(parametrList,"signsOfEvents"),
+                find(parametrList,"durationOf220"),
+                find(parametrList,"durationDisplay"),
+                find(parametrList,"durationOut"),
+                find(parametrList,"siTv1"),
+                find(parametrList,"activeBdTv1"),
+                find(parametrList,"frtTv1"),
+                find(parametrList,"kt3Tv1"),
+                find(parametrList,"siTv2"),
+                find(parametrList,"activeBdTv2"),
+                find(parametrList,"frtTv2"),
+                find(parametrList,"kt3Tv2")  );
+
+
+        System.out.println(operation);
+
+
+
+
+        //  parametrList.stream().filter("t1_tv1"::equals).findFirst().get();
 
 
 
@@ -200,6 +430,18 @@ public class ModBusRServiceImplTest {
             str_out.append(list.get(i));
         }
         return str_out.toString();
+    }
+
+    public String find(List<Parametr> parametrList, String parametr){
+        System.out.println(parametr+" ");
+        String val= parametrList
+                .parallelStream()
+                .filter(p -> p.getName().contains(parametr))
+                .collect(Collectors.toList())
+                .get(0).getValue();
+
+        System.out.println(parametr+" "+val);
+        return val;
     }
 
 

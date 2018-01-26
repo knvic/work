@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.entities;
 
-import ru.javabegin.training.db.Contact;
+import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
 
 import javax.persistence.*;
 
@@ -21,11 +22,19 @@ import static javax.persistence.GenerationType.IDENTITY;
         @NamedQuery(name="Customer.findAll", query="select c from Customer c"),
         @NamedQuery(name="Customer.findById",
                 query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id"),
+        @NamedQuery(name="Customer.findById_tv7",
+                query="select distinct c from Customer c left join fetch c.operationtv7Set h where c.id = :id"),
+        @NamedQuery(name="Customer.findById_tv7_t",
+                query="select distinct c from Customer c left join fetch c.operationtv7TSet h where c.id = :id"),
 
       /*  @NamedQuery(name="Contact.findById",
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
         @NamedQuery(name="Customer.findAllWithDetail",
-                query="select distinct c from Customer c left join fetch c.operationSet t ")
+                query="select distinct c from Customer c   left join fetch c.operationSet t where c.unitType like 'ВКТ7' "),
+        @NamedQuery(name="Customer.findAllWithDetail_tv7",
+                query="select distinct c from Customer c left join fetch c.operationtv7Set h left join fetch c.operationtv7TSet p where c.unitType like 'ТВ7' "),
+        @NamedQuery(name="Customer.findAllWithDetail_tv7_t",
+                query="select distinct c from Customer c left join fetch c.operationtv7TSet h ")
 })
 @SqlResultSetMapping(
         name="customerResult",
@@ -42,9 +51,14 @@ public class Customer implements Serializable {
     private int version;
     private String branch;
     private String address;
+    private String unitType;
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
+
+    private Set<Operationtv7> operationtv7Set = new HashSet<Operationtv7>();
+
+    private Set<Operationtv7T> operationtv7TSet = new HashSet<Operationtv7T>();
 
 
     private Long customerId;
@@ -152,7 +166,14 @@ public class Customer implements Serializable {
         this.version = version;
     }
 
+    @Column(name = "UNIT_TYPE")
+    public String getUnitType() {
+        return unitType;
+    }
 
+    public void setUnitType(String unitType) {
+        this.unitType = unitType;
+    }
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)
@@ -175,6 +196,57 @@ public class Customer implements Serializable {
     public void removeOperation(Operation operation) {
         getOperationSet().remove(operation);
     }
+
+
+
+    @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
+            orphanRemoval=true)
+
+    public Set<Operationtv7> getOperationtv7Set() {
+        return operationtv7Set;
+    }
+
+    public void setOperationtv7Set(Set<Operationtv7> operationtv7Set) {
+        this.operationtv7Set = operationtv7Set;
+    }
+
+
+
+    public void addOperationtv7(Operationtv7 operationtv7) {
+        operationtv7.setCustomer(this);
+        getOperationtv7Set().add(operationtv7);
+    }
+
+    public void removeOperationtv7(Operationtv7 operationtv7) {
+        getOperationtv7Set().remove(operationtv7);
+    }
+
+
+
+
+    @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
+            orphanRemoval=true)
+
+    public Set<Operationtv7T> getOperationtv7TSet() {
+        return operationtv7TSet;
+    }
+
+    public void setOperationtv7TSet(Set<Operationtv7T> operationtv7TSet) {
+        this.operationtv7TSet = operationtv7TSet;
+    }
+
+
+
+    public void addOperationtv7T(Operationtv7T operationtv7T) {
+        operationtv7T.setCustomer(this);
+        getOperationtv7TSet().add(operationtv7T);
+    }
+
+    public void removeOperationtv7T(Operationtv7T operationtv7T) {
+        getOperationtv7TSet().remove(operationtv7T);
+    }
+
+
 
 
     @Override
