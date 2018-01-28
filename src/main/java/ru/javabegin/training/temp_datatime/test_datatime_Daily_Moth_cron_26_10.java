@@ -27,7 +27,7 @@ private CustomerService customerService;
     public static void main(String[] args) throws ParseException {
 
 
-        LocalDate a1=LocalDate.of(2017,10,1);
+        LocalDate a1=LocalDate.of(2017,11,30);
         LocalDate a2=LocalDate.of(2017,10,25);
         LocalTime t=LocalTime.of(23,00);
 
@@ -42,6 +42,12 @@ private CustomerService customerService;
 
 
 
+        System.out.println();
+
+        LocalDateTime ldt55=(ldt1.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth());
+
+        System.out.println("ldt =  " + ldt1);
+        System.out.println("ldt55 =  " + ldt55);
 
 
 
