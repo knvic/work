@@ -62,45 +62,11 @@ public class EventListener_tv7 implements SerialPortEventListener   { /*Слуш
                 Recieve10ServiceImpl recieve10Service = new Recieve10ServiceImpl();
 
                 if (step == 255) {
-                    //data = serialPort.readHexString(event.getEventValue());
-                  //  System.out.println("Data tv7 :: " + data);
-                   // String data1 = data.replace(" ", "");
-
-                  /*  temp = temp + serialPort.readHexString(event.getEventValue());
-                    System.out.println("Пришедшая строка : "+temp);*/
-                  /* if (temp.replace(" ", "").contains("3A")&temp.replace(" ", "").contains("0D0A")){
-                        System.out.println("Ответ пришел полностью!!!!");
-                       List<String> list=ascService.dectypt(temp);
-                       System.out.println("Конвертируем в HEX");
-                       list.forEach( p-> System.out.print(p+" "));
 
 
-                       System.out.println("проверка LRC : ");
-                       if(lrcService.lrcCheck(list)){
-                           System.out.println("LRC : true");
-                           data2 = temp;
-                           temp="";
-                           System.out.println("Data hextostr:: " + data2);
-                           recieve_all_byte = 1;
-
-                       }
-                       else{
-                           System.out.println("LRC : false");
-                           System.out.println("Данные приняты не корректно ");
-                       };
-
-                        // System.out.println("temp= "+temp);
-                     *//*   data1 = temp.replace(" ", "");
-                        System.out.println("data1="+data1);
-                        //data1=data1.substring(0,data1.length()-12);
-                        //  System.out.println("data1="+data1);*//*
-
-
-                    }
-*/
                     temp1.append(serialPort.readHexString(event.getEventValue()));
 
-                    System.out.println("Принятая строка : "+ temp1.toString());
+                //    System.out.println("Принятая строка : "+ temp1.toString());
                     String regularExpression1="^3A[A-Z\\d]*0D0A$";
 
 
@@ -108,13 +74,13 @@ public class EventListener_tv7 implements SerialPortEventListener   { /*Слуш
                     Matcher match = pattern.matcher(temp1.toString().replace(" ", ""));
 
                     if(match.find()){
-                        System.out.println("Найдено");
-                        System.out.println("Ответ пришел полностью!!!!");
+                    //    System.out.println("Найдено");
+                  //      System.out.println("Ответ пришел полностью!!!!");
                         List<String> list=ascService.dectypt(temp1.toString().replace(" ", ""));
-                        System.out.println("Конвертируем в HEX");
+                  //      System.out.println("Конвертируем в HEX");
                         list.forEach( p-> System.out.print(p+" "));
 
-                        System.out.println("проверка LRC : ");
+                  //      System.out.println("проверка LRC : ");
                         if(lrcService.lrcCheck(list)){
                             System.out.println("LRC : true");
                             data1 = temp1;

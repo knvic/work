@@ -415,6 +415,8 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
                     System.out.println("\n Связь Установлена!! Продолжаем работать "+data2);
                     Thread.sleep(2000);
 
+
+
                     step=300;
                 }
 

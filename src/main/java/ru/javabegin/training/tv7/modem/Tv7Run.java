@@ -26,6 +26,36 @@ public class Tv7Run {
     public static volatile  Future<String> futureTV7_2;
     public static volatile ExecutorService serviceTV7;
 
+
+
+    public void tv7RunCron(){
+        Modem_cron modem_cron=new Modem_cron();
+
+        Callable task = () -> {
+            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+            String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
+
+            modem_cron.tv7_cron(customerService);
+            //daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);
+            return "123";
+        };
+
+
+        serviceTV7 = Executors.newSingleThreadExecutor();
+        futureTV7_1 = serviceTV7.submit(task);
+
+
+        //Future<String> future2 = service.submit(task);
+
+        serviceTV7.shutdown();
+
+        System.out.println("Основная программа работу закончила");
+
+
+
+    }
+
     public void run_tv7(){
         Tv7_DB_Test tv7DbTest=new Tv7_DB_Test();
 

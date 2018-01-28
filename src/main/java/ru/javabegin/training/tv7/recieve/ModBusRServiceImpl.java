@@ -163,7 +163,7 @@ return map;
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-        System.out.print("\nstr = "+temp.toString());
+      //  System.out.print("\nstr = "+temp.toString());
         String in = "0148" +
                 "00DA 8-0027 12-01 14-0C 16-17 18-12 20-FB2242C0 28-F1C13F61" +
                 "36-AA3E42CF 44-9BA842C7 52-0A844245 60-69B43F5A  68-400042C8 76-06ED42C6 84-00007FF0" +
@@ -179,25 +179,25 @@ return map;
 
             str=temp.substring(i1,i1+p.getSize()*2).toString();
 
-            System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
+      //      System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
 
             if (p.getType().equals("unsigned char")) {
                 p.setValue(Integer.toString(Integer.parseInt(str,16)));
-                System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
+     //           System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("unsigned short")){
                 p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(2, RoundingMode.HALF_EVEN).toString());
-                System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+      //          System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("float")) {
 
 
                 float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
-                System.out.println("парамметр : "+p.getName());
-                System.out.println("строка : "+str);
-                System.out.println("float m_ : "+ m_);
+      //          System.out.println("парамметр : "+p.getName());
+       //         System.out.println("строка : "+str);
+       //         System.out.println("float m_ : "+ m_);
 
 
                 if (Float.isNaN(m_)){
@@ -215,21 +215,21 @@ return map;
                     if(p.getName().contains("q")) {
 
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+     //                   System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
 
                     }
                     else if(p.getName().contains("p")){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(1, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+       //                 System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
                     else if (Pattern.compile(regularExpression2).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
 
@@ -246,10 +246,10 @@ return map;
             }
 
 
-            for(Parametr p:parametrList){
+            /*for(Parametr p:parametrList){
 
                 System.out.print("\n-> " +p.getName()+"  "+p.getNameString()+" = " + p.getValue());
-            }
+            }*/
 
             return parametrList;
 

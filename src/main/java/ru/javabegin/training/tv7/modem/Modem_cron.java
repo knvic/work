@@ -443,6 +443,10 @@ public class Modem_cron extends EventListener_tv7 {
                             System.out.println("\n Связь Установлена!! Продолжаем работать " + data2);
                             Thread.sleep(2000);
 
+
+                            t=1;
+
+
                             step = 300;
                         } else if (data2.contains("NO CARRIER") & call < 3) {
                             t = 0;
@@ -533,11 +537,14 @@ public class Modem_cron extends EventListener_tv7 {
                     ModBusServiceImpl modBusService = new ModBusServiceImpl();
                     LrcServiceImpl lrcService = new LrcServiceImpl();
                     AscServiceImpl ascService = new AscServiceImpl();
+                    ModBusRServiceImpl modBusRService = new ModBusRServiceImpl();
+                    InitData initData = new InitData();
 
 
 //////////////////////////////////////////////////////////////////////////////////
 
 
+t=1;
 
 
 /**
@@ -552,13 +559,13 @@ public class Modem_cron extends EventListener_tv7 {
                         break;
                     }
                     List<String> command = modBusService.typeUnit(number);
-                    command.forEach(p -> System.out.print(p + " "));
+                   // command.forEach(p -> System.out.print(p + " "));
 
                     List<String> commandLRC = lrcService.lrcAdd(command);
                     commandLRC.forEach(p -> System.out.print(p + " "));
 
                     List<String> commandAsc = ascService.enctypt(commandLRC);
-                    commandAsc.forEach(p -> System.out.print(p + " "));
+                    //commandAsc.forEach(p -> System.out.print(p + " "));
 
           /*  List<String> commandAsc=modBusService.typeUnit(number);
             commandAsc.forEach(p->System.out.print(p+" "));*/
@@ -572,7 +579,7 @@ public class Modem_cron extends EventListener_tv7 {
                     }
                     //System.out.println("\n request size = "+ request.length);
 
-                    // Thread.sleep(2000);
+                    Thread.sleep(1000);
 
                     if (stop == false) {
                         System.out.println("\n Получена команда STOP ");
@@ -696,7 +703,7 @@ public class Modem_cron extends EventListener_tv7 {
                     }
                     //System.out.println("\n request size = "+ request.length);
 
-                    // Thread.sleep(2000);
+                    Thread.sleep(1000);
 
                     if (stop == false) {
                         System.out.println("\n Получена команда STOP ");
@@ -710,7 +717,7 @@ public class Modem_cron extends EventListener_tv7 {
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(22));
+                    executor.submit(callable(5));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -758,8 +765,7 @@ public class Modem_cron extends EventListener_tv7 {
                     System.out.println("Принятая строка СУТОЧНЫЕ :: ");
 
                     outTv7.forEach(p -> System.out.print(p));
-                    ModBusRServiceImpl modBusRService = new ModBusRServiceImpl();
-                    InitData initData = new InitData();
+
                     List<Parametr> parametrList = initData.initDay();
 
                         parametrList= modBusRService.day(outTv7, parametrList, 1);
@@ -774,7 +780,7 @@ public class Modem_cron extends EventListener_tv7 {
 
                     SaveServiceImpl saveService=new SaveServiceImpl();
                     Operationtv7 operationtv7=saveService.saveDay(parametrList);
-
+                        operationtv7.setCustomerName(customer.getFirstName());
 
 
 
@@ -783,6 +789,8 @@ public class Modem_cron extends EventListener_tv7 {
                     customerService.save(customer);
 
                         ///
+
+                        Thread.sleep(500);
 
 
 

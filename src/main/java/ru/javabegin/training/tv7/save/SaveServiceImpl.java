@@ -25,7 +25,7 @@ public class SaveServiceImpl implements SaveService {
         LocalDateTime ldt = LocalDateTime.of(Integer.parseInt(find(parametrList,"uu"))+2000,Integer.parseInt(find(parametrList,"MM")),Integer.parseInt(find(parametrList,"dd")),Integer.parseInt(find(parametrList,"HH")),0,0);
         AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
         Timestamp ts=auxiliaryService.localDateTime_TimeStamp(ldt);
-        System.out.println("врема Timestamp = "+ts);
+        System.out.println("время Timestamp = "+ts);
 
 
         Operationtv7 operation = new Operationtv7("", "day",  " " , ts,
@@ -168,14 +168,14 @@ return operation;
 
     @Override
     public String find(List<Parametr> parametrList, String parametr){
-        System.out.println(parametr+" ");
+       // System.out.println(parametr+" ");
         String val= parametrList
                 .parallelStream()
                 .filter(p -> p.getName().contains(parametr))
                 .collect(Collectors.toList())
                 .get(0).getValue();
 
-        System.out.println(parametr+" "+val);
+        //System.out.println(parametr+" "+val);
         return val;
     }
 
