@@ -22,6 +22,7 @@ import javax.persistence.criteria.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -1025,7 +1026,11 @@ DataCustomerList dcs;
     @Override
     public List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt){
         // log.info("Finding по номеру модема и времени операции: " );
-        ldt=auxiliaryService.addTime(ldt,"23");
+        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
+        if (type.equals("month")){
+            ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+            }
+
 
         Timestamp date=auxiliaryService.localDateTime_TimeStamp(ldt);
         CriteriaBuilder cb = em.getCriteriaBuilder();

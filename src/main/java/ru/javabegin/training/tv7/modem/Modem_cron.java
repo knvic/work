@@ -12,6 +12,7 @@ import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.initDataClass.InitData;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
 import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
+import ru.javabegin.training.tv7.recieve.Tupel_date;
 import ru.javabegin.training.tv7.save.SaveServiceImpl;
 import ru.javabegin.training.tv7.send.ModBusServiceImpl;
 import ru.javabegin.training.vkt7.db.CustomerService;
@@ -539,6 +540,8 @@ public class Modem_cron extends EventListener_tv7 {
                     AscServiceImpl ascService = new AscServiceImpl();
                     ModBusRServiceImpl modBusRService = new ModBusRServiceImpl();
                     InitData initData = new InitData();
+                    AuxDateTimeServiceImpl auxDateTimeService=new AuxDateTimeServiceImpl();
+                    SaveServiceImpl saveService=new SaveServiceImpl();
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -645,6 +648,111 @@ t=1;
 
 
 
+    /**
+     *
+     *           ДАННЫЕ О ДАТАХ
+     *Запрос Чтение
+     *
+     */
+
+                    System.out.println("\n Формируем запрос ДАННЫЕ О ДАТАХ");
+
+
+                    // LocalDateTime ldt=LocalDateTime.now().minusDays(1);
+                    List<String>list = modBusService.infOfDate(0, 2);
+                    // list.forEach(p-> System.out.print(p+" "));
+
+                    // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
+                    // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 02 0C 0C 17 7E 20 00 00 00 10 00 00 00 0 39
+                    commandLRC = lrcService.lrcAdd(list);
+                    commandLRC.forEach(p -> System.out.print(p + " "));
+
+                    commandAsc = ascService.enctypt(commandLRC);
+                    commandAsc.forEach(p -> System.out.print(p + " "));
+
+          /*  List<String> commandAsc=modBusService.typeUnit(number);
+            commandAsc.forEach(p->System.out.print(p+" "));*/
+
+
+                    request = null;
+                    request = new int[commandAsc.size()];
+                    for (int i = 0; i < commandAsc.size(); i++) {
+                        request[i] = Integer.parseInt(commandAsc.get(i), 16);
+                        // System.out.print(+i+":"+request[i]+" ");
+                    }
+                    //System.out.println("\n request size = "+ request.length);
+
+                    // Thread.sleep(2000);
+
+                    if (stop == false) {
+                        System.out.println("\n Получена команда STOP ");
+                        break;
+                    }
+
+                    System.out.println("\nЖдем получения ДАННЫЕ О ДАТАХ  ");
+                    data1.delete(0, data1.length());
+                    temp1.delete(0, temp1.length());
+                    outTv7 = null;
+
+                    t = 0;
+                    repeat = 0;
+                    executor.submit(callable(22));
+                    recieve_all_byte = 0;
+                    step = 255;
+                    System.out.println("step= " + step);
+                    z = 0;
+                    serialPort.writeIntArray(request);
+
+
+                    /**
+                     * Ждем начала приема длинных данных.
+                     * ДАННЫЕ О ДАТАХ
+                     *
+                     */
+                    atomicInteger.addAndGet(1);
+
+                    while (recieve_all_byte == 0 & stop != false) {
+                        if (t == 2) {
+                            repeat++;
+                            if (repeat == 3) {
+                                step = 0;
+
+                                System.out.println("\n Ответ ДАННЫЕ О ДАТАХ не поступил. Ошибка по таймауту.");
+                                System.out.println("\n error=11.ДАННЫЕ О ДАТАХ. Ошибка по TimeOut");
+                                error = 11;
+                                stop = false;
+                            }
+                            System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                            data1.delete(0, data1.length());
+                            temp1.delete(0, temp1.length());
+                            outTv7 = null;
+                            t = 0;
+                            z = 0;
+                            serialPort.writeIntArray(request);
+
+                            executor.submit(callable(20));
+                        }
+
+                    }
+                    t = 1;
+
+
+                    System.out.println("\nДанные ДАННЫЕ О ДАТАХ поступили.");
+                    System.out.println("Ожидаем обработку принятых данных ДАННЫЕ О ДАТАХ");
+
+                    atomicInteger.addAndGet(1);
+
+
+                    System.out.println("Принятая строка ДАННЫЕ О ДАТАХ :: ");
+
+                    outTv7.forEach(p -> System.out.print(p));
+                    Map<String,Tupel_date> infOfDate =modBusRService.infOfDate(outTv7);
+
+
+
+
+
+
 ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ ////// СУТОЧНЫЕ
 
                     /**
@@ -665,9 +773,15 @@ t=1;
                             continue;
 
                         }
-                        System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ" );
 
 
+                    /// Проверяем попадает запрашиваемая дата после начала записи СУТОЧНЫЕ в счетчике!!
+                        if (auxDateTimeService.checkBeginArchive(infOfDate, ldt, "day")==false){
+                            System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
+                            continue;
+                        }
+
+                        System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
 
 /**
  *
@@ -680,7 +794,7 @@ t=1;
 
 
 
-                    List<String> list = modBusService.archive(0, ldt, 1, 2);
+                   list = modBusService.archive(0, ldt, 1, 2);
                     list.forEach(p -> System.out.print(p + " "));
 
                     // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
@@ -778,7 +892,7 @@ t=1;
 
                     if (customer!=null){System.out.println("Кoнтакт найден, customer "+ customer.getFirstName()+" id= "+customer.getId());}
 
-                    SaveServiceImpl saveService=new SaveServiceImpl();
+                   saveService=new SaveServiceImpl();
                     Operationtv7 operationtv7=saveService.saveDay(parametrList);
                         operationtv7.setCustomerName(customer.getFirstName());
 
@@ -801,22 +915,45 @@ t=1;
  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////
 
 
-
-
-
                     /**
-                     *
-                     * Запрос Чтение ДАННЫЕ О ДАТАХ
-                     *
+                     * Получаем данные за МЕСЯЦ
                      *
                      */
 
-                    System.out.println("\n Формируем запрос ДАННЫЕ О ДАТАХ");
+                    //
+                    // Проверяем наличие измерения СУТОЧНЫЕ за указанный день
+                    // если есть, то пропускаем клиента (для ускорения)
+
+                   listtv7 = customerService.findOperationtv7ByDate("month",customer.getId(),ldtime);
+
+                    if (listtv7.size()!=0){
+                        System.out.println(customer.getFirstName()+ " Измерения  МЕСЯЦ за "+ ldtime +" присутствуют" );
+                        continue;
+
+                    }
+                    System.out.println(customer.getFirstName()+ " -- Измерений МЕСЯЦ за "+ ldtime +" НЕТ" );
 
 
-                    // LocalDateTime ldt=LocalDateTime.now().minusDays(1);
-                    List<String>list = modBusService.infOfDate(0, 2);
-                    // list.forEach(p-> System.out.print(p+" "));
+                    /// Проверяем попадает запрашиваемая дата после начала записи МЕСЯЦ в счетчике!!
+                    if (auxDateTimeService.checkBeginArchive(infOfDate, ldtime , "month")==false){
+                        System.out.println(customer.getFirstName()+ "дата начала АРХИВа СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldtime  +" Получение данные не возможно" );
+                        continue;
+                    }
+
+                    System.out.println(customer.getFirstName()+ " -- Измерений СУТОЧНЫЕ за "+ ldtime  +" НЕТ, но Данные в архиве счетчика присутствуют" );
+
+
+
+
+
+//////////////////////  МЕСЯЦ
+
+                    System.out.println("\n Формируем запрос чтения АРХИВ ЗА МЕСЯЦ");
+
+
+
+                    list = modBusService.archive(0, ldtime, 2, 3);
+                    list.forEach(p -> System.out.print(p + " "));
 
                     // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
                     // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 02 0C 0C 17 7E 20 00 00 00 10 00 00 00 0 39
@@ -838,21 +975,21 @@ t=1;
                     }
                     //System.out.println("\n request size = "+ request.length);
 
-                    // Thread.sleep(2000);
+                    Thread.sleep(1000);
 
                     if (stop == false) {
                         System.out.println("\n Получена команда STOP ");
                         break;
                     }
 
-                    System.out.println("\nЖдем получения ДАННЫЕ О ДАТАХ  ");
+                    System.out.println("\nЖдем получения АРХИВ ЗА МЕСЯЦ  ");
                     data1.delete(0, data1.length());
                     temp1.delete(0, temp1.length());
                     outTv7 = null;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(22));
+                    executor.submit(callable(5));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -861,7 +998,7 @@ t=1;
 
 
 /**
- * ДАННЫЕ О ДАТАХ
+ * Чтение АРХИВ ЗА МЕСЯЦ
  * Ждем начала приема длинных данных.
  */atomicInteger.addAndGet(1);
 
@@ -871,12 +1008,12 @@ t=1;
                             if (repeat == 3) {
                                 step = 0;
 
-                                System.out.println("\n Ответ ДАННЫЕ О ДАТАХ не поступил. Ошибка по таймауту.");
-                                System.out.println("\n error=11.ДАННЫЕ О ДАТАХ. Ошибка по TimeOut");
+                                System.out.println("\n Ответ АРХИВ ЗА МЕСЯЦ не поступил. Ошибка по таймауту.");
+                                System.out.println("\n error=Ошибка по TimeOut");
                                 error = 11;
                                 stop = false;
                             }
-                            System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                            System.out.println("\n Ответ АРХИВ ЗА МЕСЯЦ не поступил. Ошибка по таймауту. Повторяем запрос");
                             data1.delete(0, data1.length());
                             temp1.delete(0, temp1.length());
                             outTv7 = null;
@@ -891,15 +1028,53 @@ t=1;
                     t = 1;
 
 
-                    System.out.println("\nДанные ДАННЫЕ О ДАТАХ поступили.");
-                    System.out.println("Ожидаем обработку принятых данных ДАННЫЕ О ДАТАХ");
+                    System.out.println("\nДанные АРХИВ ЗА МЕСЯЦ поступили.");
+                    System.out.println("Ожидаем обработку принятых данных АРХИВ ЗА МЕСЯЦ");
 
                     atomicInteger.addAndGet(1);
 
 
-                    System.out.println("Принятая строка ДАННЫЕ О ДАТАХ :: ");
+                    System.out.println("Принятая строка АРХИВ ЗА МЕСЯЦ :: ");
 
                     outTv7.forEach(p -> System.out.print(p));
+
+                    List<Parametr> parametrList = initData.initDay();
+
+                    parametrList= modBusRService.day(outTv7, parametrList, 1);
+
+
+
+                    ///
+                    customer = customerService.findByIdTv7(customer.getId());
+
+
+                    if (customer!=null){System.out.println("Кoнтакт найден, customer "+ customer.getFirstName()+" id= "+customer.getId());}
+
+
+                    Operationtv7 operationtv7=saveService.saveDay(parametrList);
+                    operationtv7.setTypeOperation("month");
+                    operationtv7.setCustomerName(customer.getFirstName());
+
+
+
+
+                    customer.addOperationtv7(operationtv7);
+
+                        customerService.save(customer);
+                    System.out.println("Данные АРХИВ ЗА МЕСЯЦ записаны");
+
+                    ///
+
+                    Thread.sleep(500);
+
+
+
+////////////////////////////
+
+
+
+
+
 
 
                 } catch (SerialPortException ex) {

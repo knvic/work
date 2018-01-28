@@ -1,10 +1,13 @@
 package ru.javabegin.training.tv7.auxillary;
 
+import ru.javabegin.training.tv7.recieve.Tupel_date;
+
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class AuxDateTimeServiceImpl implements AuxDateTimeService {
 
@@ -74,5 +77,33 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
         //  System.out.println("value of Date: " + output);
 
         return output;
+    }
+
+    @Override
+    public boolean checkBeginArchive(Map<String,Tupel_date> infOfDate, LocalDateTime targetDate, String type){
+        // "begin_hour", "begin_day", "begin_month", "begin_total", "end_hour", "end_day", "end_month", "end_total", "reboot"
+        boolean result=false;
+        if (type.equals("day")){
+            System.out.println("begin_day"+" : "+infOfDate.get("begin_day").getLocalDateTime());
+            targetDate=addTime(targetDate,"23");
+            if(targetDate.isAfter(infOfDate.get("begin_day").getLocalDateTime())||targetDate.equals(infOfDate.get("begin_day").getLocalDateTime())){result=true;}
+
+        }
+        if (type.equals("month")){
+            System.out.println("begin_month"+" : "+infOfDate.get("begin_month").getLocalDateTime());
+            System.out.println("Последний день этого месяца : " + targetDate.with(TemporalAdjusters.lastDayOfMonth()));
+            targetDate=addTime(targetDate.with(TemporalAdjusters.lastDayOfMonth()),"23");
+            System.out.println("Получившаяся targetDate : "+targetDate);
+            if(targetDate.isAfter(infOfDate.get("begin_day").getLocalDateTime())||targetDate.equals(infOfDate.get("begin_month").getLocalDateTime())){result=true;}
+
+        }
+        if (type.equals("total")){
+            System.out.println("begin_total"+" : "+infOfDate.get("begin_total").getLocalDateTime());
+            targetDate=addTime(targetDate,"23");
+            if(targetDate.isAfter(infOfDate.get("begin_total").getLocalDateTime())||targetDate.equals(infOfDate.get("begin_total").getLocalDateTime())){result=true;}
+
+        }
+
+        return result;
     }
 }
