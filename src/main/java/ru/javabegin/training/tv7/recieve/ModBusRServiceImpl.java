@@ -20,7 +20,7 @@ public class ModBusRServiceImpl implements ModBusRService {
     public Map<String,Tupel_date> infOfDate(List<String> list){
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-      //  System.out.println("\nStringBuilder = "+temp.toString());
+       System.out.println("\nStringBuilder = "+temp.toString());
 
         List<String> id_col = new ArrayList<>(Arrays.asList("begin_hour", "begin_day", "begin_month", "begin_total", "end_hour",
                 "end_day", "end_month", "end_total", "reboot"));
@@ -46,7 +46,14 @@ public class ModBusRServiceImpl implements ModBusRService {
 
             //Создаем LocalDateTime передавая в качестве аргументов
             //год, месяц, день, час, минуту, сукенду
-            LocalDateTime ldt = LocalDateTime.of(p4+2000, p1, p2, p3, p6, p5);
+            LocalDateTime ldt=null;
+            try {
+                ldt = LocalDateTime.of(p4 + 2000, p1, p2, p3, p6, p5);
+            }catch (Exception e){
+                System.out.println(e);
+                System.out.println("Архив "+id_col.get(j)+" пуст");
+
+            }
 
            // System.out.println(ldt.format(DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss")));
 
@@ -163,7 +170,7 @@ return map;
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-      //  System.out.print("\nstr = "+temp.toString());
+        System.out.print("\nstr = "+temp.toString());
         String in = "0148" +
                 "00DA 8-0027 12-01 14-0C 16-17 18-12 20-FB2242C0 28-F1C13F61" +
                 "36-AA3E42CF 44-9BA842C7 52-0A844245 60-69B43F5A  68-400042C8 76-06ED42C6 84-00007FF0" +
@@ -194,7 +201,8 @@ return map;
             if (p.getType().equals("float")) {
 
 
-                float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
+                //float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
+                float m_ = Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16));
       //          System.out.println("парамметр : "+p.getName());
        //         System.out.println("строка : "+str);
        //         System.out.println("float m_ : "+ m_);
@@ -223,7 +231,7 @@ return map;
       //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
-                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
+                        p.setValue(new BigDecimal(Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
        //                 System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
@@ -246,10 +254,10 @@ return map;
             }
 
 
-            /*for(Parametr p:parametrList){
+            for(Parametr p:parametrList){
 
                 System.out.print("\n-> " +p.getName()+"  "+p.getNameString()+" = " + p.getValue());
-            }*/
+            }
 
             return parametrList;
 

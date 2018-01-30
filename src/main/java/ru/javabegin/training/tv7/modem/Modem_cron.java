@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -154,14 +155,13 @@ public class Modem_cron extends EventListener_tv7 {
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
         LocalDateTime ldtime = LocalDateTime.now().minusDays(1);
+        LocalDateTime ldtime_month=ldtime;
         List<LocalDateTime> listDate=dateTimeService.from_the_beginning_of_month(ldtime);
 
         for (Customer customer:customerList) {
             System.out.println("\nКлиент ---------- " + customer.getFirstName());
 
-
-
-
+            tel=customer.getTelModem();
 
 
 
@@ -183,7 +183,7 @@ public class Modem_cron extends EventListener_tv7 {
              */
 
 
-
+            Thread.sleep(5000);
 
 
 
@@ -205,9 +205,10 @@ public class Modem_cron extends EventListener_tv7 {
                     int repeat = 0;
                     serialPort.writeBytes("+++".getBytes());
                     Thread.sleep(1000);
-                    executor.submit(callable(8));
+
                     serialPort.writeBytes("+++".getBytes());
                     Thread.sleep(1000);
+                    executor.submit(callable(3,"посылаем ATH"));
                     System.out.println("\nпосылаем ATH");
                     serialPort.writeBytes("ATH\r".getBytes());
 
@@ -261,6 +262,7 @@ public class Modem_cron extends EventListener_tv7 {
                                 stop = false;
 
                             }
+                            step=300;
                             System.out.println("\n Ответот модема не поступил Ошибка по таймауту. Повторяем запрос");
 
                             if (serialPort.isOpened()) {
@@ -296,13 +298,16 @@ public class Modem_cron extends EventListener_tv7 {
                             //serialPort.addEventListener (new EventListener ()); //Передаем экземпляр класса EventListener порту, где будет обрабатываться события. Ниже описан класс
 
                             eL.setSerialPort(serialPort);
+
                             Thread.sleep(1000);
                             t = 0;
-                            executor.submit(callable(5));
+
                             data2 = "";
                             serialPort.writeBytes("+++".getBytes());
+
                             System.out.println("\nпосылаем ATH");
                             Thread.sleep(1000);
+                            executor.submit(callable(3,"посылаем ATH"));
                             serialPort.writeBytes("ATH\r".getBytes());
 
                         }
@@ -319,11 +324,12 @@ public class Modem_cron extends EventListener_tv7 {
                         System.out.println("\n Получена команда STOP ");
                         break;
                     }
+                    System.out.println("\n посылвем AT+CREG? ");
                     serialPort.writeBytes("AT+CREG?\r".getBytes());
                     System.out.println("\n Ждем данных от модема ");
 
                     t = 0;
-                    executor.submit(callable(10));
+                    executor.submit(callable(3,"посылвем AT+CREG?"));
                     step = 0;
                     while (data2 == null) {
 
@@ -338,10 +344,10 @@ public class Modem_cron extends EventListener_tv7 {
                     t = 1;
                     System.out.println("\n Ответ от можема получен");
                     System.out.println("\n Проверка регистрации модема");
-
+                    Thread.sleep(1000);
 
                     t = 0;
-                    executor.submit(callable(10));
+                    executor.submit(callable(3,"Проверка регистрации модема"));
 
                     while (step == 0 & stop == true) {
 
@@ -435,7 +441,7 @@ public class Modem_cron extends EventListener_tv7 {
 
                     t = 0;
                     int call = 0;
-                    executor.submit(callable(60));
+                    executor.submit(callable(60,"установки связи первое"));
 
                     while (step == 777 & stop == true) {
 
@@ -455,7 +461,7 @@ public class Modem_cron extends EventListener_tv7 {
                             temp = "";
                             Thread.sleep(1000);
                             serialPort.writeBytes(tel.getBytes());
-                            executor.submit(callable(60));
+                            executor.submit(callable(60,"установки связи NO CARRIER"));
                             call = call + 1;
 
                         } else if (data2.contains("NO CARRIER") & call == 3) {
@@ -477,7 +483,7 @@ public class Modem_cron extends EventListener_tv7 {
                             System.out.println("Повторяем набор номера. call = " + call);
                             Thread.sleep(1000);
                             serialPort.writeBytes(tel.getBytes());
-                            executor.submit(callable(60));
+                            executor.submit(callable(60, "установка связи после NO DIALTONE"));
                             call = call + 1;
 
                         } else if (data2.contains("NO DIALTONE") & call == 3) {
@@ -505,7 +511,7 @@ public class Modem_cron extends EventListener_tv7 {
                             temp = "";
                             Thread.sleep(1000);
                             serialPort.writeBytes(tel.getBytes());
-                            executor.submit(callable(60));
+                            executor.submit(callable(60, "t == 2 & call < 3 "));
                             call = call + 1;
 
                         }
@@ -597,7 +603,7 @@ t=1;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(22));
+                    Future<String> task= executor.submit(callable(6,"- - ->>Ждем получения всех данных  информации об устройстве  п.6.1"));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -632,7 +638,20 @@ t=1;
                         }
 
                     }
+
+                    try {
+                        System.out.println("-   -   -   -   isCancelled() future " + task.isCancelled());
+                        System.out.println("------- -----  Поток есть и не прерван ");
+
+                    } catch (Exception e){
+                        System.out.println("Нет еще потока "+e);
+
+                    }
+
                     t = 1;
+                    Thread.sleep(1000);
+
+
 
 
                     System.out.println("\nДанные по информации об устройстве  п.6.1 поступили.");
@@ -696,7 +715,7 @@ t=1;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(22));
+                    executor.submit(callable(7," - - - >>>Ждем получения ДАННЫЕ О ДАТАХ "));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -734,6 +753,7 @@ t=1;
                         }
 
                     }
+
                     t = 1;
 
 
@@ -763,14 +783,13 @@ t=1;
 
 
                     /// Проверяем на наличие измерений с начала месяца по СУТОЧНЫЕ!!
-
                     for (LocalDateTime ldt:listDate ) {
 
                         listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),ldt);
 
                         if (listtv7.size()!=0){
                             System.out.println(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют" );
-                            continue;
+                            break;
 
                         }
 
@@ -778,23 +797,28 @@ t=1;
                     /// Проверяем попадает запрашиваемая дата после начала записи СУТОЧНЫЕ в счетчике!!
                         if (auxDateTimeService.checkBeginArchive(infOfDate, ldt, "day")==false){
                             System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
-                            continue;
+                            break;
                         }
 
                         System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
 
-/**
+/*
+*
  *
  * Запрос Чтение СУТОЧНЫЕ
  *
  *
- */
+*/
+
 
                     System.out.println("\n Формируем запрос чтения суточных");
 
 
 
                    list = modBusService.archive(0, ldt, 1, 2);
+
+                        System.out.println("\n ::::: ::: Дата для суточных -> "+ldt);
+
                     list.forEach(p -> System.out.print(p + " "));
 
                     // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
@@ -805,9 +829,9 @@ t=1;
                     commandAsc = ascService.enctypt(commandLRC);
                     commandAsc.forEach(p -> System.out.print(p + " "));
 
-          /*  List<String> commandAsc=modBusService.typeUnit(number);
-            commandAsc.forEach(p->System.out.print(p+" "));*/
-
+                  /*  commandAsc=modBusService.typeUnit(number);
+                    commandAsc.forEach(p->System.out.print(p+" "));
+*/
 
                     request = null;
                     request = new int[commandAsc.size()];
@@ -831,7 +855,7 @@ t=1;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(5));
+                    executor.submit(callable(7,"Ждем получения СУТОЧНЫЕ "));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -839,10 +863,12 @@ t=1;
                     serialPort.writeIntArray(request);
 
 
-/**
+/*
+*
  * Чтение СУТОЧНЫЕ
  * Ждем начала приема длинных данных.
- */atomicInteger.addAndGet(1);
+ atomicInteger.addAndGet(1);
+*/
 
                     while (recieve_all_byte == 0 & stop != false) {
                         if (t == 2) {
@@ -921,11 +947,14 @@ t=1;
                      */
 
                     //
-                    // Проверяем наличие измерения СУТОЧНЫЕ за указанный день
+                    // Проверяем наличие измерения МЕСЯЦ за указанный день
                     // если есть, то пропускаем клиента (для ускорения)
+                    t=1;
+                    ldtime= ldtime_month;
+
 
                    listtv7 = customerService.findOperationtv7ByDate("month",customer.getId(),ldtime);
-
+                    System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ :: :: "+ ldtime);
                     if (listtv7.size()!=0){
                         System.out.println(customer.getFirstName()+ " Измерения  МЕСЯЦ за "+ ldtime +" присутствуют" );
                         continue;
@@ -951,8 +980,8 @@ t=1;
                     System.out.println("\n Формируем запрос чтения АРХИВ ЗА МЕСЯЦ");
 
 
-
-                    list = modBusService.archive(0, ldtime, 2, 3);
+                    ldtime=auxDateTimeService.addTime((ldtime.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+                    list = modBusService.archive(0, ldtime, 2, 120);
                     list.forEach(p -> System.out.print(p + " "));
 
                     // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
@@ -989,7 +1018,7 @@ t=1;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(5));
+                    executor.submit(callable(5," - - - >>Ждем получения АРХИВ ЗА МЕСЯЦ"));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -1038,7 +1067,8 @@ t=1;
 
                     outTv7.forEach(p -> System.out.print(p));
 
-                    List<Parametr> parametrList = initData.initDay();
+                   InitData initData11=new InitData();
+                    List<Parametr> parametrList = initData11.initDay();
 
                     parametrList= modBusRService.day(outTv7, parametrList, 1);
 
@@ -1159,6 +1189,36 @@ t=1;
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
+static Callable callable(long Seconds, String name) {
+    return () ->
+    {
+        final Thread currentThread = Thread.currentThread();
+        final String oldName = currentThread.getName();
+        currentThread.setName("STREAM ====>>>>" + name);
+        System.out.println("STREAM ====>>>> работает поток "+ currentThread.getName());
+        try {
+            for (int i = 1; i < Seconds + 1; i++) {
+
+                System.out.print(i);
+                TimeUnit.SECONDS.sleep(1);
+                if (t == 1) {
+                    System.out.println("STREAM ====>>>> " + currentThread.getName() + " получен. Таймер остановлен");
+                    return 1;
+                }
+                System.out.print("\r");
+            }
+            System.out.println("STREAM ====>>>>timeout error " + currentThread.getName());
+            t = 2;
+            return 0;
+        }finally {
+            currentThread.setName(oldName);
+        }
+
+    };
+}
+
+
+
     static Callable callable(long Seconds) {
         return () ->
         {

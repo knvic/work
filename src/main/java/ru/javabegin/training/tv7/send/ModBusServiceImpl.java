@@ -107,7 +107,7 @@ public class ModBusServiceImpl implements ModBusService {
         command_temp.append(format("%04X", 12 )); //количество байт записи
         command_temp.append(format("%04X", commandCount )); // порядковый номер посылаемой команды (свободно назначаемый)
         command_temp.append(auxService.localDate_to_tv7(data)); // дата суточного архива преобразовання для применения в ТВ7
-        command_temp.append(format("%04X", 1 )); // Тип запрашиваемого архива (1 - суточный архив)
+        command_temp.append(format("%04X", type )); // Тип запрашиваемого архива (1 - суточный архив)
         command_temp.append(format("%04X", 0 )); // номер записи (не используется)
         command_temp.append(format("%04X", 0 )); // Резерв 1 (не используется)
 
