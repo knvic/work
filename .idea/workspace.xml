@@ -6,19 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="перед мержем с изменениями тв7 da month">
+    <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/logApp.log" afterPath="$PROJECT_DIR$/logApp.log" />
-      <change beforePath="$PROJECT_DIR$/logCleaner.txt" afterPath="$PROJECT_DIR$/logCleaner.txt" />
-      <change beforePath="$PROJECT_DIR$/logCron.txt" afterPath="$PROJECT_DIR$/logCron.txt" />
-      <change beforePath="$PROJECT_DIR$/logModemService.txt" afterPath="$PROJECT_DIR$/logModemService.txt" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem_cron.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/modem/Modem_cron.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/send/ModBusServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
-      <change beforePath="$PROJECT_DIR$/w.iml" afterPath="$PROJECT_DIR$/w.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1033,14 +1023,7 @@
       <workItem from="1516550357196" duration="555000" />
       <workItem from="1516975668573" duration="5964000" />
       <workItem from="1517062904352" duration="172000" />
-      <workItem from="1517063154194" duration="58996000" />
-    </task>
-    <task id="LOCAL-00017" summary="Изменен Revizor. Исправлен шедулер">
-      <created>1511287595875</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1511287595875</updated>
+      <workItem from="1517063154194" duration="59650000" />
     </task>
     <task id="LOCAL-00018" summary="origin athomicint delete. Отправляем текущую рабочую версию">
       <created>1511332985216</created>
@@ -1378,7 +1361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517141689602</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Промежуточный. перед мержем с добавлением потоков">
+      <created>1517331352731</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1517331352731</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1414,7 +1404,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="436445000" />
+    <option name="totallyTimeSpent" value="437099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1492,7 +1482,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Промежуточный коммит" />
     <MESSAGE value="после мержа" />
     <MESSAGE value="коммит перед изменениями в Daily_moth_cron" />
     <MESSAGE value="Изменения TimeOut Daily_moth_cron" />
@@ -1517,7 +1506,8 @@
     <MESSAGE value="Промежуточный лог. работает вроде все, но поток ВКТ7 не закрывается" />
     <MESSAGE value="после мержа с ТВ7 (классы, добавление в базу полей и значений)" />
     <MESSAGE value="перед мержем с изменениями тв7 da month" />
-    <option name="LAST_COMMIT_MESSAGE" value="перед мержем с изменениями тв7 da month" />
+    <MESSAGE value="Промежуточный. перед мержем с добавлением потоков" />
+    <option name="LAST_COMMIT_MESSAGE" value="Промежуточный. перед мержем с добавлением потоков" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
