@@ -24,10 +24,10 @@ public class ModBusRServiceImpl implements ModBusRService {
 
         List<String> id_col = new ArrayList<>(Arrays.asList("begin_hour", "begin_day", "begin_month", "begin_total", "end_hour",
                 "end_day", "end_month", "end_total", "reboot"));
-      //  System.out.println("количество переменных="+id_col.size());
-    //  int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
-       // System.out.println("количество принятых байт ="+colRecieve);
-       // System.out.println("размер строки ="+temp.length());
+      // System.out.println("количество переменных="+id_col.size());
+      //int colRecieve=Integer.parseInt(temp.substring(4,6).toString(),16);
+       //System.out.println("количество принятых байт ="+colRecieve);
+        //System.out.println("размер строки ="+temp.length());
 
         Map<String,Tupel_date> map=new HashMap<>();
         int j=0;
@@ -38,15 +38,27 @@ public class ModBusRServiceImpl implements ModBusRService {
             int p1= Integer.parseInt(temp.substring(i,i+2).toString(),16);
             //System.out.println(id_col.get(j)+" = "+p1+" | i= "+i+"  |j= "+j);
             int p2= Integer.parseInt(temp.substring(i+2,i+4).toString(),16);
+
             int p3= Integer.parseInt(temp.substring(i+4,i+6).toString(),16);
+
             int p4= Integer.parseInt(temp.substring(i+6,i+8).toString(),16);
+
             int p5= Integer.parseInt(temp.substring(i+8,i+10).toString(),16);
+
             int p6= Integer.parseInt(temp.substring(i+10,i+12).toString(),16);
+
             //System.out.println(id_col.get(j)+"   dd="+p2+"MM="+p1+"uu="+p4+"HH="+p3+"mm="+p6 +"ss="+p5);
 
             //Создаем LocalDateTime передавая в качестве аргументов
             //год, месяц, день, час, минуту, сукенду
-            LocalDateTime ldt = LocalDateTime.of(p4+2000, p1, p2, p3, p6, p5);
+            LocalDateTime ldt=null;
+            try {
+                ldt = LocalDateTime.of(p4 + 2000, p1, p2, p3, p6, p5);
+            }catch (Exception e){
+                System.out.println(e);
+                System.out.println("Архив "+id_col.get(j)+" пуст");
+
+            }
 
            // System.out.println(ldt.format(DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss")));
 
@@ -179,25 +191,26 @@ return map;
 
             str=temp.substring(i1,i1+p.getSize()*2).toString();
 
-      //      System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
+            System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
 
             if (p.getType().equals("unsigned char")) {
                 p.setValue(Integer.toString(Integer.parseInt(str,16)));
-     //           System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
+                System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("unsigned short")){
                 p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(2, RoundingMode.HALF_EVEN).toString());
-      //          System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+               System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("float")) {
 
 
-                float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
-      //          System.out.println("парамметр : "+p.getName());
-       //         System.out.println("строка : "+str);
-       //         System.out.println("float m_ : "+ m_);
+               // float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
+                float m_ = Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16));
+                System.out.println("парамметр : "+p.getName());
+               System.out.println("строка : "+str);
+               System.out.println("float m_ : "+ m_);
 
 
                 if (Float.isNaN(m_)){
@@ -215,21 +228,22 @@ return map;
                     if(p.getName().contains("q")) {
 
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
-     //                   System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
 
                     }
                     else if(p.getName().contains("p")){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(1, RoundingMode.HALF_EVEN).toString());
-      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
-                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-       //                 System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                       // p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
+                        p.setValue(new BigDecimal(Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
                     else if (Pattern.compile(regularExpression2).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
 

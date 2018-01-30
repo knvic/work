@@ -2,6 +2,12 @@ package ru.javabegin.training.tv7.ASCII;
 
 public class TestASCII {
 
+    void hexToFloat(String hex){
+
+
+    }
+
+
     void send_ASCII(){
 
     }

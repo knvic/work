@@ -160,7 +160,7 @@ public class Modem_cron extends EventListener_tv7 {
             System.out.println("\nКлиент ---------- " + customer.getFirstName());
 
 
-
+            tel=customer.getTelModem();
 
 
 

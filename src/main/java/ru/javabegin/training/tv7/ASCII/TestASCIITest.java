@@ -2,13 +2,55 @@ package ru.javabegin.training.tv7.ASCII;
 
 import org.junit.Test;
 
+import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.String.format;
 import static org.junit.Assert.*;
 
 public class TestASCIITest {
+
+    @Test
+    public void hexToFloat() {
+        String str="CF98BDC2";
+        System.out.println("str= "+str);
+
+        System.out.println("str Float - Mid-Little Endian (CDAB)= "+l2b(str));
+
+//        float m_  =Float.intBitsToFloat(Integer.parseInt("BDC2CF98"));
+        // java.lang.NumberFormatException: For input string: "BE859F52"
+
+        //float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
+
+       // p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
+
+
+
+        String myString = "BDC2CF98";
+
+        // Вариант правильного преобразования 1
+        Long i = Long.parseLong(myString, 16);
+        Float f = Float.intBitsToFloat(i.intValue());
+        System.out.println(f);
+        System.out.println(Integer.toHexString(Float.floatToIntBits(f)));
+
+        // Вариант правильного преобразования 2
+        f = Float.intBitsToFloat((int) Long.parseLong(myString, 16));
+        System.out.println(f);
+
+
+
+        //double e = Double.longBitsToDouble(Long.parseLong(l2b(str), 16));
+        //System.out.println("e= "+e);
+
+
+    }
+
+
+
     @Test
     public void send_ASCII() throws Exception {
         int a=72;
@@ -57,6 +99,15 @@ public class TestASCIITest {
             hex.append(Integer.toHexString((int) chars[i]));
         }
         return hex.toString();
+    }
+    public String l2b (String str) {
+        StringBuilder str_out = new StringBuilder();
+        List<String> list = new ArrayList<>(Arrays.asList(str.replace(" ", "").split("(?<=\\G.{4})")));
+        Collections.reverse(list);
+        for (int i = 0; i < list.size(); i++){
+            str_out.append(list.get(i));
+        }
+        return str_out.toString();
     }
 
 }
