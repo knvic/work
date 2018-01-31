@@ -7,14 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8818a753-3e7c-43c2-ae43-49c9959b4bf9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/Thread_2018.java" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/w_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_12_11_2017_1.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/test_thread/TestThread_12_11_2017_1.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCII.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/ASCII/TestASCIITest.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/Temp_test.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/Temp_test.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImplTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/logApp.log" afterPath="$PROJECT_DIR$/logApp.log" />
+      <change beforePath="$PROJECT_DIR$/logCleaner.txt" afterPath="$PROJECT_DIR$/logCleaner.txt" />
+      <change beforePath="$PROJECT_DIR$/logCron.txt" afterPath="$PROJECT_DIR$/logCron.txt" />
+      <change beforePath="$PROJECT_DIR$/logModemService.txt" afterPath="$PROJECT_DIR$/logModemService.txt" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml" />
       <change beforePath="$PROJECT_DIR$/w.iml" afterPath="$PROJECT_DIR$/w.iml" />
     </list>
@@ -68,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+              <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1032,14 +1030,7 @@
       <workItem from="1516975668573" duration="5964000" />
       <workItem from="1517062904352" duration="172000" />
       <workItem from="1517063154194" duration="59650000" />
-      <workItem from="1517331943145" duration="178000" />
-    </task>
-    <task id="LOCAL-00018" summary="origin athomicint delete. Отправляем текущую рабочую версию">
-      <created>1511332985216</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1511332985216</updated>
+      <workItem from="1517331943145" duration="4576000" />
     </task>
     <task id="LOCAL-00019" summary="Добавлена проверка на возможность запроса измерения СУТОЧНЫЕ по дате начала записей в устройство">
       <created>1511337181266</created>
@@ -1377,7 +1368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517331352731</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Merge remote-tracking branch 'remotes/origin/tv7_day' into tv7_day_moth&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ru/javabegin/training/tv7/modem/Modem_cron.java&#10;#&#9;src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java">
+      <created>1517332142718</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1517332142718</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1413,7 +1411,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437277000" />
+    <option name="totallyTimeSpent" value="441675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1430,8 +1428,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2464146" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46284226" sideWeight="0.49375" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.49656653" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.344245" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1451,7 +1450,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.344245" sideWeight="0.49656653" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19515477" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1491,7 +1489,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="после мержа" />
     <MESSAGE value="коммит перед изменениями в Daily_moth_cron" />
     <MESSAGE value="Изменения TimeOut Daily_moth_cron" />
     <MESSAGE value="Ветка TimeOut Daily_moth_cron" />
@@ -1516,7 +1513,8 @@
     <MESSAGE value="после мержа с ТВ7 (классы, добавление в базу полей и значений)" />
     <MESSAGE value="перед мержем с изменениями тв7 da month" />
     <MESSAGE value="Промежуточный. перед мержем с добавлением потоков" />
-    <option name="LAST_COMMIT_MESSAGE" value="Промежуточный. перед мержем с добавлением потоков" />
+    <MESSAGE value="Merge remote-tracking branch 'remotes/origin/tv7_day' into tv7_day_moth&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ru/javabegin/training/tv7/modem/Modem_cron.java&#10;#&#9;src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'remotes/origin/tv7_day' into tv7_day_moth&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ru/javabegin/training/tv7/modem/Modem_cron.java&#10;#&#9;src/main/java/ru/javabegin/training/tv7/recieve/ModBusRServiceImpl.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1967,7 +1965,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding />
         </state>
       </provider>
