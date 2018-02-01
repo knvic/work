@@ -588,7 +588,7 @@ t=1;
                         // System.out.print(+i+":"+request[i]+" ");
                     }
                     //System.out.println("\n request size = "+ request.length);
-
+                    atomicInteger.addAndGet(1);
                     Thread.sleep(1000);
 
                     if (stop == false) {
@@ -614,7 +614,8 @@ t=1;
 
 /**
  * Ждем начала приема длинных данных.
- */atomicInteger.addAndGet(1);
+ */
+atomicInteger.addAndGet(1);
 
                     while (recieve_all_byte == 0 & stop != false) {
                         if (t == 2) {
@@ -785,7 +786,7 @@ t=1;
 
                     /// Проверяем на наличие измерений с начала месяца по СУТОЧНЫЕ!!
                     for (LocalDateTime ldt:listDate ) {
-
+                        atomicInteger.addAndGet(1);
                         listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),ldt);
 
                         if (listtv7.size()!=0){
@@ -870,6 +871,7 @@ t=1;
  * Ждем начала приема длинных данных.
  atomicInteger.addAndGet(1);
 */
+atomicInteger.addAndGet(1);
 
                     while (recieve_all_byte == 0 & stop != false) {
                         if (t == 2) {
@@ -954,6 +956,7 @@ t=1;
                     customerService.save(customer);
 
                         ///
+                        atomicInteger.addAndGet(1);
 
                         Thread.sleep(500);
 
@@ -1019,7 +1022,7 @@ t=1;
 
           /*  List<String> commandAsc=modBusService.typeUnit(number);
             commandAsc.forEach(p->System.out.print(p+" "));*/
-
+                    atomicInteger.addAndGet(1);
 
                     request = null;
                     request = new int[commandAsc.size()];
@@ -1190,7 +1193,7 @@ t=1;
                 status = "ERROR";
             }
 
-
+            atomicInteger.addAndGet(1);
             Timestamp timestamp_date_input;
 
             atomicInteger.addAndGet(1);
@@ -1214,6 +1217,7 @@ t=1;
         Thread.sleep(1000);
         System.out.println("\n Переходим в сервисный режим (+++)");
         step=0;
+        atomicInteger.addAndGet(1);
         serialPort.writeBytes("+++".getBytes());
         Thread.sleep(2000);
         System.out.println("\n Разрываем связь");
