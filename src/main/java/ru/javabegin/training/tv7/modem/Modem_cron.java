@@ -28,6 +28,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
 
 import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
@@ -904,11 +905,35 @@ t=1;
 
                     System.out.println("Принятая строка СУТОЧНЫЕ :: ");
 
-                    outTv7.forEach(p -> System.out.print(p));
+                   outTv7.forEach(p -> System.out.print(p));
+                   String regularExpression1="^(83|90)";
 
-                    List<Parametr> parametrList = initData.initDay();
+                   if (Pattern.compile(regularExpression1).matcher(outTv7.get(1)).find()){
 
-                        parametrList= modBusRService.day(outTv7, parametrList, 1);
+                       List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                       errList.forEach(p->System.out.println(p));
+                       logger.info(customer.getFirstName()+ "  "+ldt+ " " + errList.get(0));
+
+                       continue;
+
+                   }
+                   String regularExpression2="^(C8)";
+
+                    if (Pattern.compile(regularExpression2).matcher(outTv7.get(1)).find()){
+
+                        List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                        errList.forEach(p->System.out.println(p));
+                        logger.info(customer.getFirstName()+ "  "+ldt+ "  ОШИБКА ЧТЕНИЯ " + errList.get(0)+ "  ОШИБКА ЗАПИСИ " + errList.get(1));
+
+                        continue;
+
+                    }
+
+                   List<Parametr> parametrList = initData.initDay();
+
+                   parametrList= modBusRService.day(outTv7, parametrList, 1);
 
 
 
@@ -1066,6 +1091,33 @@ t=1;
                     System.out.println("Принятая строка АРХИВ ЗА МЕСЯЦ :: ");
 
                     outTv7.forEach(p -> System.out.print(p));
+
+
+
+                    String regularExpression1="^(83|90)";
+
+                    if (Pattern.compile(regularExpression1).matcher(outTv7.get(1)).find()){
+
+                        List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                        errList.forEach(p->System.out.println(p));
+                        logger.info(customer.getFirstName()+ "  "+ldtime+ " " + errList.get(0));
+
+                        continue;
+
+                    }
+                    String regularExpression2="^(C8)";
+
+                    if (Pattern.compile(regularExpression2).matcher(outTv7.get(1)).find()){
+
+                        List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                        errList.forEach(p->System.out.println(p));
+                        logger.info(customer.getFirstName()+ "  "+ldtime+ "  ОШИБКА ЧТЕНИЯ " + errList.get(0)+ "  ОШИБКА ЗАПИСИ " + errList.get(1));
+
+                        continue;
+
+                    }
 
                    InitData initData11=new InitData();
                     List<Parametr> parametrList = initData11.initDay();

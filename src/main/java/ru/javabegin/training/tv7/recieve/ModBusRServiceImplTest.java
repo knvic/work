@@ -427,6 +427,45 @@ find(totalList,"kt3Tv2"));
     }
 
 
+    @Test
+    public void errorProcessing() {
+
+
+String asc="3A30314338383430303030373833420D0A";
+
+String strh = "01C8840000783B";
+
+        AscServiceImpl ascService= new AscServiceImpl();
+        LrcServiceImpl lrcService= new LrcServiceImpl();
+        List<String> inHex=ascService.dectypt(asc);
+        System.out.println("LRC : "+lrcService.lrcCheck(inHex));
+        inHex.forEach(p->System.out.print(p+" "));
+//// Сам тест
+        ModBusRServiceImpl modBusRService= new ModBusRServiceImpl();
+
+        System.out.println();
+
+        List<String> errList = modBusRService.errorProcessing(inHex);
+        System.out.println("результат работы программы");
+        errList.forEach(p->System.out.println(p));
+        String regularExpression2="^(C8)";
+
+        if (Pattern.compile(regularExpression2).matcher(inHex.get(1)).find()){
+
+             errList = modBusRService.errorProcessing(inHex);
+
+            errList.forEach(p->System.out.println(p));
+            System.out.println("CUSTOMER"+ "  "+"Дата "+ "  ОШИБКА ЧТЕНИЯ " + errList.get(0)+ "  ОШИБКА ЗАПИСИ " + errList.get(1));
+
+
+
+        }
+
+
+
+    }
+
+
 
 
 
@@ -478,6 +517,7 @@ find(totalList,"kt3Tv2"));
         System.out.println(parametr+" "+val);
         return val;
     }
+
 
 
 }

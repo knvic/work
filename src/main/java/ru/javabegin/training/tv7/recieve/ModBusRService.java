@@ -17,6 +17,8 @@ public interface ModBusRService {
      */
     List<Parametr> total(List<String> list, List<Parametr> parametrList, int sys);
     List<Parametr> day(List<String> list, List<Parametr> parametrList, int sys);
+    List<String> errorProcessing(List<String> hexList);
     void day_old(List<String> list, List<Parametr> parametrList, int sys);
+
 
 }
