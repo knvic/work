@@ -40,7 +40,7 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 public class Modem_cron extends EventListener_tv7 {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
-
+    public static volatile boolean end_tv7;
 
     public static String data;
 
@@ -72,7 +72,7 @@ public class Modem_cron extends EventListener_tv7 {
     //public String tv7() throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
     public static void tv7_cron(CustomerService customerService) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
 
-
+        end_tv7=false;
 
         atomicInteger=new AtomicInteger();
         atomicInteger.addAndGet(1);
@@ -1232,7 +1232,7 @@ t=1;
             if (serialPort.isOpened()) {System.out.println(" Port ЕЩЕ открыт ");}
             else {System.out.println(" Port закрыт ");}
 
-
+        end_tv7=true;
 
        // return "OK";
     }
