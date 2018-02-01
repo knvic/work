@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.db.CustomerService;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -35,8 +36,9 @@ public class Tv7Run {
             System.out.println("работает поток "+ Thread.currentThread().getName());
 
             String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
+            LocalDateTime ldt= LocalDateTime.now().minusDays(1);
 
-            modem_cron.tv7_cron(customerService);
+            modem_cron.tv7_cron(customerService, ldt);
             //daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);
             return "123";
         };

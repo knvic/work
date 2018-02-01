@@ -70,7 +70,7 @@ public class Modem_cron extends EventListener_tv7 {
 
 
     //public String tv7() throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
-    public static void tv7_cron(CustomerService customerService) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
+    public static void tv7_cron(CustomerService customerService, LocalDateTime date) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
 
 
 
@@ -155,9 +155,9 @@ public class Modem_cron extends EventListener_tv7 {
         List<Customer> customerList=customerService.findAllWithDetailTv7();
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
-        LocalDateTime ldtime = LocalDateTime.now().minusDays(1);
-        LocalDateTime ldtime_month=ldtime;
-        List<LocalDateTime> listDate=dateTimeService.from_the_beginning_of_month(ldtime);
+        //LocalDateTime ldtime = LocalDateTime.now().minusDays(1);
+        //LocalDateTime ldtime_month=ldtime;
+        List<LocalDateTime> listDate=dateTimeService.from_the_beginning_of_month(date);
 
         for (Customer customer:customerList) {
             System.out.println("\nКлиент ---------- " + customer.getFirstName());
@@ -170,14 +170,16 @@ public class Modem_cron extends EventListener_tv7 {
                 // Проверяем наличие измерения СУТОЧНЫЕ за указанный день
                 // если есть, то пропускаем клиента (для ускорения)
 
-                List<Operationtv7> listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),ldtime);
+                List<Operationtv7> listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),date);
 
                 if (listtv7.size()!=0){
-                    System.out.println(customer.getFirstName()+ " Измерения за "+ ldtime +" присутствуют" );
+                    System.out.println(customer.getFirstName()+ " Измерения за "+ date +" присутствуют" );
+                    logger.info(customer.getFirstName()+ " Измерения за "+ date +" присутствуют");
                     continue;
 
                 }
-                System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldtime +" НЕТ" );
+                System.out.println(customer.getFirstName()+ " -- Измерений за "+ date +" НЕТ" );
+            logger.info(customer.getFirstName()+ " -- Измерений за "+ date+" НЕТ");
 
             /**
              * Если измерений за указанный день нет, то подключаемся к клиену
@@ -430,6 +432,7 @@ public class Modem_cron extends EventListener_tv7 {
                     step = 777;
                     data2 = "";
                     temp = "";
+                    logger.info("Телефон = "+tel);
                     serialPort.writeBytes(tel.getBytes());
                     //serialPort.writeBytes("ATDP+79064427319\r".getBytes());
 
@@ -664,6 +667,23 @@ t=1;
                     System.out.print("Принятая строка информации об устройстве  п.6.1 :: ");
                     outTv7.forEach(p -> System.out.print(p));
 
+                    try {
+                        System.out.println("-   -   -   -    task isCancelled() future " + task.isCancelled());
+                        System.out.println("------- -----  Поток есть и не прерван ");
+
+                    } catch (Exception e){
+                        System.out.println("Нет еще потока "+e);
+
+                    }
+
+                    try {
+                        System.out.println("-   -   -   -    закрываем поток " + task.cancel(true));
+                        System.out.println("------- -----  Прерываем поток ");
+
+                    } catch (Exception e){
+                        System.out.println("Потока уже нет "+e);
+
+                    }
 
 
 
@@ -716,7 +736,7 @@ t=1;
 
                     t = 0;
                     repeat = 0;
-                    executor.submit(callable(7," - - - >>>Ждем получения ДАННЫЕ О ДАТАХ "));
+                    task= executor.submit(callable(7," - - - >>>Ждем получения ДАННЫЕ О ДАТАХ "));
                     recieve_all_byte = 0;
                     step = 255;
                     System.out.println("step= " + step);
@@ -750,12 +770,21 @@ t=1;
                             z = 0;
                             serialPort.writeIntArray(request);
 
-                            executor.submit(callable(20));
+                            executor.submit(callable(7," - - - >>>Ждем получения ДАННЫЕ О ДАТАХ повторный пуск!!!!!!!!!!!!!! "));
                         }
 
                     }
 
                     t = 1;
+
+                    try {
+                        System.out.println("-   -   -   -    закрываем поток " + task.cancel(true));
+                        System.out.println("------- -----  Прерываем поток ");
+
+                    } catch (Exception e){
+                        System.out.println("Потока уже нет "+e);
+
+                    }
 
 
                     System.out.println("\nДанные ДАННЫЕ О ДАТАХ поступили.");
@@ -787,22 +816,26 @@ t=1;
                     for (LocalDateTime ldt:listDate ) {
 
                         listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),ldt);
+                        logger.info("Проверяем по наличию СУТОЧНЫЕ для  "+customer.getFirstName()+" дата "+ ldt);
 
                         if (listtv7.size()!=0){
                             System.out.println(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют" );
-                            break;
+                            logger.info(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют");
+                           continue;
 
                         }
 
-
+                        logger.info(customer.getFirstName()+ " Измерения за "+ ldt +" НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ");
                     /// Проверяем попадает запрашиваемая дата после начала записи СУТОЧНЫЕ в счетчике!!
+                        logger.info(customer.getFirstName()+ "Сверяем c датами начала архивов");
                         if (auxDateTimeService.checkBeginArchive(infOfDate, ldt, "day")==false){
                             System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
-                            break;
+                            logger.info(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
+                            continue;
                         }
 
                         System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
-
+                        logger.info(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
 /*
 *
  *
@@ -975,26 +1008,26 @@ t=1;
                     // Проверяем наличие измерения МЕСЯЦ за указанный день
                     // если есть, то пропускаем клиента (для ускорения)
                     t=1;
-                    ldtime= ldtime_month;
 
 
-                   listtv7 = customerService.findOperationtv7ByDate("month",customer.getId(),ldtime);
-                    System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ :: :: "+ ldtime);
+
+                   listtv7 = customerService.findOperationtv7ByDate("month",customer.getId(),date);
+
                     if (listtv7.size()!=0){
-                        System.out.println(customer.getFirstName()+ " Измерения  МЕСЯЦ за "+ ldtime +" присутствуют" );
+                        System.out.println(customer.getFirstName()+ " Измерения  МЕСЯЦ за "+ date.minusMonths(1).getMonth() +" присутствуют" );
                         continue;
 
                     }
-                    System.out.println(customer.getFirstName()+ " -- Измерений МЕСЯЦ за "+ ldtime +" НЕТ" );
+                    System.out.println(customer.getFirstName()+ " -- Измерений МЕСЯЦ за "+ date.minusMonths(1).getMonth()  +" НЕТ" );
 
 
                     /// Проверяем попадает запрашиваемая дата после начала записи МЕСЯЦ в счетчике!!
-                    if (auxDateTimeService.checkBeginArchive(infOfDate, ldtime , "month")==false){
-                        System.out.println(customer.getFirstName()+ "дата начала АРХИВа СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldtime  +" Получение данные не возможно" );
+                    if (auxDateTimeService.checkBeginArchive(infOfDate, date , "month")==false){
+                        System.out.println(customer.getFirstName()+ "дата начала АРХИВа СУТОЧНЫЕ находятся после запрашиваемой даты "+ date.minusMonths(1).getMonth()   +" Получение данные не возможно" );
                         continue;
                     }
 
-                    System.out.println(customer.getFirstName()+ " -- Измерений СУТОЧНЫЕ за "+ ldtime  +" НЕТ, но Данные в архиве счетчика присутствуют" );
+                    System.out.println(customer.getFirstName()+ " -- Измерений СУТОЧНЫЕ за "+ date.minusMonths(1).getMonth()   +" НЕТ, но Данные в архиве счетчика присутствуют" );
 
 
 
@@ -1005,7 +1038,8 @@ t=1;
                     System.out.println("\n Формируем запрос чтения АРХИВ ЗА МЕСЯЦ");
 
 
-                    ldtime=auxDateTimeService.addTime((ldtime.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+                    LocalDateTime ldtime=auxDateTimeService.addTime((date.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+                    logger.info("АРХИВ ЗА МЕСЯЦ дата "+ldtime);
                     list = modBusService.archive(0, ldtime, 2, 120);
                     list.forEach(p -> System.out.print(p + " "));
 

@@ -243,7 +243,7 @@
 
         <!--<task:scheduled ref="updateMoth" method="update" cron="5 27 23 * * ?"/>-->
 
-        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="50 58 20 * * ?"/>
+        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="50 40 20 * * ?"/>
 
 
 

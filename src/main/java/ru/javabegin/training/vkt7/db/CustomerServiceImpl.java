@@ -1029,6 +1029,7 @@ DataCustomerList dcs;
         if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
         if (type.equals("month")){
             ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+            System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
             }
 
 

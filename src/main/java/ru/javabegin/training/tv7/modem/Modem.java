@@ -382,8 +382,9 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
             if (tel.equals("")){
                 //tel="ATDP+79064628305\r"; //Акварель
-                tel="ATDP+79064427267\r";//ЗАО "Фудстар"
+                //tel="ATDP+79064427267\r";//ЗАО "Фудстар"
                // tel="ATDP+79054125173\r";//ООО "Инвестиции "Запод"
+                tel="ATDP+79054125074\r"; // Магомедов
 
             }
             else {
