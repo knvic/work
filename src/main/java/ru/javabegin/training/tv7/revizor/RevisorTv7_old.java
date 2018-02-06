@@ -4,9 +4,7 @@ import jssc.SerialPortException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import ru.javabegin.training.test_thread.TestThread_kill_modem;
 import ru.javabegin.training.thread.ThreadKillTv7;
-import ru.javabegin.training.thread.ThreadKillTv7_test;
 import ru.javabegin.training.tv7.modem.Tv7Run;
 import ru.javabegin.training.vkt7.modem_run.ModemService;
 
@@ -16,16 +14,13 @@ import java.util.concurrent.*;
 
 import static ru.javabegin.training.tv7.modem.Modem_cron.atomicInteger;
 import static ru.javabegin.training.tv7.modem.Modem_cron.end_tv7;
-
 import static ru.javabegin.training.tv7.modem.Tv7Run.futureTV7_1;
-import static ru.javabegin.training.tv7.revizor.TestRevizorThread.end_tv7_temp;
-
 
 
 /**
  * Created by user on 18.11.2017.
  */
-public class RevisorTv7 {
+public class RevisorTv7_old {
  public static volatile int tttv7=0;
 
     @Qualifier("modemServiceImpl")

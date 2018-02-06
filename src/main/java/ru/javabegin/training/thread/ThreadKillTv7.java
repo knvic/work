@@ -57,21 +57,27 @@ public class ThreadKillTv7 extends ru.javabegin.training.tv7.modem.Modem_cron{
             logger.info("------>   Закрываем поток ");
         Thread.sleep(3000);
             futureTV7_1.cancel(true);
+            System.out.println("------> Проверяем снята ли задача (futureTV7_1.isCancelled())=="+ futureTV7_1.isCancelled());
 
 
 
             serviceTV7.shutdownNow();
-            System.out.println("------>  executor Закрываем ? " + serviceTV7.isShutdown());
-
+            System.out.println("------>  executor Закрываем serviceTV7.isShutdown() " + serviceTV7.isShutdown());
+            System.out.println("------>  executor Закрываем serviceTV7.isTerminated() " + serviceTV7.isTerminated());
 
             Thread.sleep(3000);
             serviceTV7.shutdownNow();
 
             System.out.println("------>  executor  service.isShutdown() ? " + serviceTV7.isShutdown());
-            futureTV7_1=null;
+            try {
+                futureTV7_1=null;
+            }
+            catch (Exception e){
+                System.out.println("Поток уже звакрыт и не существует =>"+e);
+            }
 
         }else {
-            System.out.println("------>   не существует!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");}
+            System.out.println("------> поток не запущен");}
 
 
         }

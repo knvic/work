@@ -15,6 +15,17 @@
 
     <context:component-scan base-package="ru.javabegin.training" />
 
+    <!--<bean id="appProperties"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:tv7.properties</value>
+
+            </list>
+        </property>
+    </bean>
+-->
+
     <bean id="userDetailsService" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
         <property name="dataSource" ref="dataSource1" />
         <property name="authenticationManager" ref="authenticationManager" />
@@ -223,27 +234,35 @@
     <bean id="modem_moth_cron" class="ru.javabegin.training.vkt7.modem_run.ModemServiceImpl"/>
 
     <bean id="revizor" class="ru.javabegin.training.vkt7.revisor.Revisor"/>
+    <bean id="revizorTv7" class="ru.javabegin.training.tv7.revizor.RevisorTv7"/>
     <bean id="updateDataCustomer" class="ru.javabegin.training.vkt7.reports.UpdateDataCustomerList"/>
 
     <bean id="updateMoth" class="ru.javabegin.training.vkt7.reports.UpdateMoth"/>
     <bean id="tv7Cron" class="ru.javabegin.training.tv7.modem.Tv7Run"/>
+    <bean id="tv7RevizorTest_temp" class="ru.javabegin.training.tv7.revizor.TestRevizorThread"/>
 
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
     <task:scheduled-tasks scheduler="serverScheduler">
 
 
-
+        <!--Для ВКТ-7-->
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="20 0 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
-
-        <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
         <task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>
 
+
+        <!--Вспомогательные Для ВКТ-7-->
+        <!--<task:scheduled ref="modem_moth_cron" method="get_moth_cron" cron="3 25 15 * * ?"/>-->
         <!--<task:scheduled ref="updateMoth" method="update" cron="5 27 23 * * ?"/>-->
 
-        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="50 40 20 * * ?"/>
+
+        <!--Для ТВ-7-->
+        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */2 * * * ?"/>-->
+        <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
+
+        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="50 45 10 * * ?"/>
 
 
 

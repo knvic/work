@@ -170,19 +170,20 @@ return map;
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-        System.out.print("\nstr = "+temp.toString());
-        String in = "0148" +
+        //System.out.print("\nstr = "+temp.toString().replace(" ",""));
+        //System.out.println("\nПосле вывода строки ");
+        /*String in = "0148" +
                 "00DA 8-0027 12-01 14-0C 16-17 18-12 20-FB2242C0 28-F1C13F61" +
                 "36-AA3E42CF 44-9BA842C7 52-0A844245 60-69B43F5A  68-400042C8 76-06ED42C6 84-00007FF0" +
                 "92-00007FF0 100-00007FF0 108-00007FF0 116-00007FF0 124-00007FF0 132-00007FF0 `140-00007FF0 148-00007FF0 156-00007FF0 164-00007FF0 172-00007FF0 " +
                 "180-00007FF0 188-00007FF0 196-00007FF0 204-00007FF0 212-00007FF0 220-00007FF0 228-00007FF0 236-EBC0423C 244-5D203F4A 252-702A419F 260-00007FF0" +
                 "268-00007FF0 276-00180000 284-00007FF0 292-00007FF0 300-00007FF0 308-00007FF0 316-00007FF0 324-00007FF0 332-00007FF0 340-00007FF0 348-0000 0000 " +
-                "00007FF0 00000000 00000000 00000000 02840000 00000000 00000600 01000000 0B040000 95210000 00000000 0000A5";
+                "00007FF0 00000000 00000000 00000000 02840000 00000000 00000600 01000000 0B040000 95210000 00000000 0000A5";*/
         AscServiceImpl ascService=new AscServiceImpl();
         int i1=12;
         String str="";
         for(Parametr p:parametrList){
-            System.out.println();
+            //System.out.println();
 
             str=temp.substring(i1,i1+p.getSize()*2).toString();
 
@@ -254,10 +255,10 @@ return map;
             }
 
 
-            for(Parametr p:parametrList){
+           /* for(Parametr p:parametrList){
 
                 System.out.print("\n-> " +p.getName()+"  "+p.getNameString()+" = " + p.getValue());
-            }
+            }*/
 
             return parametrList;
 

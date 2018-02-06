@@ -37,7 +37,7 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  * Created by Николай on 12.08.2017.
  */
 @Component
-public class Modem_cron extends EventListener_tv7 {
+public class Modem_cron_old extends EventListener_tv7 {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
     public static volatile boolean end_tv7;

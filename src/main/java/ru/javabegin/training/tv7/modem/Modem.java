@@ -381,10 +381,10 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
             }*/
 
             if (tel.equals("")){
-                //tel="ATDP+79064628305\r"; //Акварель
+                tel="ATDP+79064628305\r"; //Акварель
                 //tel="ATDP+79064427267\r";//ЗАО "Фудстар"
                // tel="ATDP+79054125173\r";//ООО "Инвестиции "Запод"
-                tel="ATDP+79054125074\r"; // Магомедов
+               // tel="ATDP+79054125074\r"; // Магомедов
 
             }
             else {
@@ -1028,7 +1028,7 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
 
 /**
- * Чтение СУТОЧНЫЕ
+ * Чтение МЕСЯЦ
  * Ждем начала приема длинных данных.
  */atomicInteger.addAndGet(1);
 
@@ -1075,14 +1075,144 @@ public class Modem extends ru.javabegin.training.tv7.modem.EventListener_tv7 {
 
 
 
-            parametrList =initData.initDay();
 
-            modBusRService.day(outTv7, parametrList,1);
 
 
 ///////////////////////////////////////////////
 
 
+            /**
+             * ИТОГОВЫЕ
+             */
+
+
+            ///// Чтение ИТОГОВЫЕ
+
+            /**
+             *
+             * Запрос Чтение ИТОГОВЫЕ
+             *
+             *
+             */
+
+            System.out.println("\n Формируем запрос чтения ИТОГОВЫЕ");
+
+            //AuxDateTimeServiceImpl auxDateTimeService=new AuxDateTimeServiceImpl();
+            ldt=LocalDateTime.now().minusDays(1);
+
+            ldt=auxDateTimeService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+            System.out.println(" Дата для месячные = "+ldt);
+
+            //list=modBusService.archive(0,ldt,2,2);
+            list=modBusService.total(0,ldt,2);
+
+            list.forEach(p-> System.out.print(p+" "));
+
+            // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
+            // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 02 0C 0C 17 7E 20 00 00 00 10 00 00 00 0 39
+            commandLRC=lrcService.lrcAdd( list);
+            // commandLRC.forEach(p->System.out.print(p+" "));
+
+            commandAsc=ascService.enctypt(commandLRC);
+            // commandAsc.forEach(p->System.out.print(p+" "));
+
+          /*  List<String> commandAsc=modBusService.typeUnit(number);
+            commandAsc.forEach(p->System.out.print(p+" "));*/
+
+
+            request=null;
+            request=new int[commandAsc.size()];
+            for(int i=0;i<commandAsc.size();i++ ){
+                request[i]=Integer.parseInt(commandAsc.get(i) ,16);
+                // System.out.print(+i+":"+request[i]+" ");
+            }
+            //System.out.println("\n request size = "+ request.length);
+
+            Thread.sleep(2000);
+
+            if(stop==false){
+                System.out.println("\n Получена команда STOP ");
+                break;
+            }
+
+            System.out.println("\nЖдем получения ИТОГОВЫЕ  ");
+            data1.delete(0,data1.length());
+            temp1.delete(0,temp1.length());
+            outTv7=null;
+
+            t=0;
+            repeat=0;
+            executor.submit(callable(5));
+            recieve_all_byte=0;
+            step=255;
+            System.out.println("step= "+step);
+            z=0;
+            serialPort.writeIntArray(request);
+
+
+
+/**
+ * Чтение ИТОГОВЫЕ
+ * Ждем начала приема длинных данных.
+ */atomicInteger.addAndGet(1);
+
+            while (recieve_all_byte==0&stop!=false){
+                if (t==2){
+                    repeat++;
+                    if (repeat==3){
+                        step=0;
+
+                        System.out.println("\n Ответ ИТОГОВЫЕ не поступил. Ошибка по таймауту.");
+                        System.out.println("\n error=11.3F FE 65 байт. Ошибка по TimeOut");
+                        error=11;
+                        stop=false;
+                    }
+                    System.out.println("\n Ответ не поступил. Ошибка по таймауту. Повторяем запрос");
+                    data1.delete(0,data1.length());
+                    temp1.delete(0,temp1.length());
+                    outTv7=null;
+                    t=0;
+                    z=0;
+                    serialPort.writeIntArray(request);
+
+                    executor.submit(callable(5));
+                }
+
+            }
+            t=1;
+
+
+            System.out.println("\nДанные ИТОГОВЫЕ поступили.");
+            System.out.println("Ожидаем обработку принятых данных ИТОГОВЫЕ");
+
+            atomicInteger.addAndGet(1);
+
+
+            System.out.println("Принятая строка ИТОГОВЫЕ :: " );
+
+            outTv7.forEach(p->System.out.print(p));
+
+
+            parametrList =initData1.initTotal();
+
+            modBusRService.total(outTv7, parametrList,1);
+
+
+
+
+
+
+
+
+
+
+
+
+            /**
+             * Конец работы с  ИТОГОВЫЕ
+             *
+             */
+/////////////////////////////////////
 
 
 

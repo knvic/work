@@ -18,7 +18,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
         //System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<Date>  dateList=new ArrayList<>();
-        while(day.isBefore(ldt)){
+        while(day.isBefore(ldt.plusDays(1))){
             dateList.add(localDateTime_to_date(day));
             day=day.plusDays(1);
         }
@@ -34,7 +34,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
         System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<LocalDateTime>  dateList=new ArrayList<>();
-        while(day.isBefore(ldt)){
+        while(day.isBefore(ldt.plusDays(1))){
             dateList.add(day);
             day=day.plusDays(1);
         }

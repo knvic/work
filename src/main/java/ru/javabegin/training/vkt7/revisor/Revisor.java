@@ -52,7 +52,7 @@ public class Revisor {
 
 
                 if(future1!=null) {
-                    ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
+
                     int ai = (int) atomicInteger.get();
                     System.out.println("Сохраняем atomicInteger----->>" + ai);
                     System.out.println("Ждем 140 секунд ....");
@@ -102,7 +102,7 @@ public class Revisor {
                     }
                     System.out.println("atomicInteger=== " + atomicInteger.get());
 
-                    executorService_revizor.shutdown();
+
                 }else
                 {
                     System.out.println("поток не запущен");

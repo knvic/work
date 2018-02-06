@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import ru.javabegin.training.test_thread.TestThread_kill_modem;
 import ru.javabegin.training.thread.ThreadKillTv7;
+import ru.javabegin.training.thread.ThreadKillTv7_test;
 import ru.javabegin.training.tv7.modem.Tv7Run;
 import ru.javabegin.training.vkt7.modem_run.ModemService;
 
@@ -13,17 +14,19 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.concurrent.*;
 
+import static ru.javabegin.training.tv7.modem.Modem_cron.atomicInteger;
 import static ru.javabegin.training.tv7.modem.Modem_cron.end_tv7;
+
 import static ru.javabegin.training.tv7.modem.Tv7Run.futureTV7_1;
-import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.atomicInteger;
-import static ru.javabegin.training.vkt7.modem_cron.Daily_Moth_cron.end;
-import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.future1;
+import static ru.javabegin.training.tv7.revizor.TestRevizorThread.end_tv7_temp;
+
+
 
 /**
  * Created by user on 18.11.2017.
  */
 public class RevisorTv7 {
- public static volatile int tttv7=0;
+
 
     @Qualifier("modemServiceImpl")
     @Autowired
@@ -34,47 +37,54 @@ public class RevisorTv7 {
 
 
     public void RevisorTv7() throws InterruptedException, IOException, ExecutionException, SerialPortException {
-        Logger logger = Logger.getRootLogger();
+
         Callable task = () -> {
             try {
+                Logger logger = Logger.getRootLogger();
+
+                Date ldt =new Date();
 
 
-                Date ldt;
-                String log;
-                logger.info("TV7 -> Начала работать программа ревизор");
-                logger.info("TV7 -> Статус end : "+ end_tv7);
+                logger.info("TV7 -> REVIZZOR! Статус окончания работы программы : => "+ end_tv7);
 
 
-                if( futureTV7_1!=null) {
-                    ExecutorService executorService_revizor = Executors.newFixedThreadPool(2);
+
+                if( futureTV7_1!=null&end_tv7!=true) {
+
                     int ai = (int) atomicInteger.get();
-                    System.out.println("Сохраняем atomicInteger----->>" + ai);
-                    System.out.println("Ждем 20 секунд ....");
-                    Thread.sleep(20000);
-                    System.out.println("Таймер  Revizor отработал");
-                    logger.info("Таймер  Revizor отработал");
+                    logger.info("TV7 ->  Сохраняем atomicInteger----->> " + ai+" Ждем 40 секунд ..");
+                    Thread.sleep(40000);
+                    logger.info("TV7 ->  Таймер  Revizor отработал");
+
                     if (ai== atomicInteger.get()) {
-                        System.out.println("Поток завис. Требуется прерывание и перезапуск");
+                        System.out.println("TV7 -> Поток завис. Требуется прерывание и перезапуск");
 
-                        ldt=new Date();
 
-                        logger.info(ldt+ " Поток завис. Требуется прерывание  \n");
+                        logger.info("TV7 -> "+ldt+ " Поток завис. Требуется прерывание  \n");
                         ThreadKillTv7 killTv7=new ThreadKillTv7();
                         killTv7.tv7_kill();
 
+                        Thread.sleep(20000);
 
+                        try {
+                            System.out.println("-   -   -   -  Поток работает : isCancelled() => " + futureTV7_1.isCancelled());
 
-                        Thread.sleep(30000);
-                        logger.info("Статус end после thread kill: "+end_tv7);
+                        } catch (Exception e){
+                            System.out.println("Поток не запущен "+e);
+
+                        }
+
+                        logger.info("TV7 -> Программа закончила работу => "+end_tv7);
                         if(end_tv7!=true) {
-                            logger.info("Программа не закончила работу. Перезапуск: "+ end_tv7);
+                            logger.info("Программа не закончила работу. Перезапуск: end_tv7 "+ end_tv7);
 
                             tv7Run.tv7RunCron();
+
                         }else
                         {
-                            logger.info("Программа закончила работу. Перезапуск не требуется . ");
+                            logger.info("TV7 -> Программа закончила работу. Перезапуск не требуется . ");
                             try {
-                                logger.info("Статус задачи future1:"+futureTV7_1.isDone());
+                                logger.info("Статус задачи futureTV7_1.isCancelled() : "+futureTV7_1.isCancelled());
                             } catch (Exception e) {
                                 logger.info("Статус задачи future1 получить не удалось: Ошибка");
                                 e.printStackTrace();
@@ -84,26 +94,19 @@ public class RevisorTv7 {
 
 
                     } else {
-                        System.out.println("поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
-                        ldt=new Date();
-                        log=ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n";
-                        logger.info( log);
-                        atomicInteger.set(1);
-                        ///writer.write( log);
-                       /// writer.flush();
-                       /// writer.close();
-                    }
-                    System.out.println("atomicInteger=== " + atomicInteger.get());
+                        System.out.println("TV7 -> REVIZOR Поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get());
 
-                    executorService_revizor.shutdown();
+                        logger.info("TV7 -> REVIZOR "+ ldt+ " поток в рабочем состоянии ai = "+ai+ "atomicInteger = "+atomicInteger.get()+"\n");
+                        atomicInteger.set(1);
+
+                    }
+                    System.out.println("TV7 -> REVIZOR  atomicInteger=== " + atomicInteger.get());
+
+
                 }else
                 {
-                    System.out.println("поток не запущен");
-                    ldt=new Date();
-                    log=ldt+ " поток не запущен \n";
-                    ///writer.write( log);
-                   /// writer.flush();
-                   /// writer.close();
+                    logger.info("TV7 -> REVIZOR Поток не в работе, либо закончил работу");
+
                 }
 
 
@@ -120,4 +123,35 @@ public class RevisorTv7 {
         service_revizor_tv7.shutdown();
 
     }
+
+    public static void proverka(){
+        ///////////////////
+
+        try {
+            System.out.println("-   -   -   -  Поток работает : isCancelled() => " + futureTV7_1.isCancelled());
+
+        } catch (Exception e){
+            System.out.println("Поток не запущен "+e);
+
+        }
+      /*  try {
+            System.out.println("-   -   -   -  проверяем service: service.isShutdown() => =>  " + exe.isShutdown());
+
+        } catch (Exception e){
+            System.out.println("service.isShutdown() не возможно "+e);
+
+        }
+        try {
+            System.out.println("-   -   -   -  проверяем service: service.isTerminated() => => => " + futureTV7_1.isTerminated());
+
+        } catch (Exception e){
+            System.out.println("service.isTerminated() не возможно "+e);
+
+        }*/
+
+//////////////////////
+
+
+    }
+
 }

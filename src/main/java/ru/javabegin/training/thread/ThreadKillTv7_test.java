@@ -4,14 +4,15 @@ import jssc.SerialPortException;
 
 import java.util.concurrent.ExecutionException;
 
-import static ru.javabegin.training.tv7.modem.Tv7Run.futureTV7_1;
-import static ru.javabegin.training.tv7.modem.Tv7Run.serviceTV7;
-import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.*;
+
+import static ru.javabegin.training.tv7.revizor.TestRevizorThread.futureTV7_1;
+import static ru.javabegin.training.tv7.revizor.TestRevizorThread.serviceTV7;
+import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 
 /**
  * Created by Николай on 12.11.2017.
  */
-public class ThreadKillTv7 extends ru.javabegin.training.tv7.modem.Modem_cron{
+public class ThreadKillTv7_test extends ru.javabegin.training.tv7.modem.Modem_cron{
 
 
 
@@ -26,49 +27,35 @@ public class ThreadKillTv7 extends ru.javabegin.training.tv7.modem.Modem_cron{
             t=1;
             stop=false;
             Thread.sleep(4000);
-            if (serialPort!=null&serialPort.isOpened())
-            {logger.info(" Port открыт. Программа kill разрывает связь и закрывает порт");
-                System.out.println(" Port открыт. Программа kill разрывает связь и закрывает порт");
-               serialPort.writeBytes("+++".getBytes());
-                System.out.println("\nпосылаем ATH");
-                Thread.sleep(1000);
-               serialPort.writeBytes("ATH\r".getBytes());
 
-
-                System.out.println("\n Закрываем порт ");
-
-                serialPort.closePort();}
-            else {logger.info(" Port УЖЕ ЗАКРЫТ ");
-                System.out.println(" Port УЖЕ ЗАКРЫТ ");}
-
-
-            if (serialPort.isOpened())
-            {logger.info("Прерываем программу но порт ОТКРЫТ!!! ");
-                logger.info("Прерываем программу но порт ОТКРЫТ!!! ");
-                System.out.println(" Port открыт ");}
-            else {System.out.println(" Port УЖЕ ЗАКРЫТ ");}
-
-
-
+            System.out.println("Проверяем статус задачи futureTV7_1 (futureTV7_1.isCancelled()) : "+futureTV7_1.isCancelled());
 
             //  Thread.sleep(3000);
             futureTV7_1.cancel(true);
         System.out.println("------>   Закрываем поток ");
-            logger.info("------>   Закрываем поток ");
+
         Thread.sleep(3000);
             futureTV7_1.cancel(true);
 
-
+            System.out.println("Проверяем статус задачи futureTV7_1 (futureTV7_1.isCancelled())  после прерывания потока: "+futureTV7_1.isCancelled());
 
             serviceTV7.shutdownNow();
-            System.out.println("------>  executor Закрываем ? " + serviceTV7.isShutdown());
+            System.out.println("------>  executor Закрываем  serviceTV7.isShutdown() -- " + serviceTV7.isShutdown());
+            System.out.println("------>  executor Закрываем  serviceTV7.isTerminated() == " + serviceTV7.isTerminated());
 
 
             Thread.sleep(3000);
             serviceTV7.shutdownNow();
+            System.out.println("------>  executor Закрываем  serviceTV7.isShutdown() -- " + serviceTV7.isShutdown());
+            System.out.println("------>  executor Закрываем  serviceTV7.isTerminated() == " + serviceTV7.isTerminated());
 
-            System.out.println("------>  executor  service.isShutdown() ? " + serviceTV7.isShutdown());
-            futureTV7_1=null;
+           try {
+               futureTV7_1=null;
+           }
+            catch (Exception e){
+                System.out.println(e);
+            }
+
 
         }else {
             System.out.println("------>   не существует!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");}

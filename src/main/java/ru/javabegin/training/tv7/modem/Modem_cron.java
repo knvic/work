@@ -78,17 +78,12 @@ public class Modem_cron extends EventListener_tv7 {
         atomicInteger.addAndGet(1);
         oldString="";
 
-        List<String> service_information =new ArrayList<>();
-        List<Timestamp> date_3ff6= new ArrayList<>();
-        List<Measurements> measurementsList=new ArrayList<>();
-        List<Measurements> measurementsList_moth=new ArrayList<>();
 
-        Map<Timestamp, List<Measurements> > hashMap = new HashMap<>();
+
+
         Logger logger = Logger.getRootLogger();
 
-        int shema_Tb1=0;
-        int shema_Tb2=0;
-        int number_active_base=0;
+
         int number=0;
         //Customer customer;
         String tel="";
@@ -155,11 +150,15 @@ public class Modem_cron extends EventListener_tv7 {
         List<Customer> customerList=customerService.findAllWithDetailTv7();
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
-        //LocalDateTime ldtime = LocalDateTime.now().minusDays(1);
-        //LocalDateTime ldtime_month=ldtime;
+
         List<LocalDateTime> listDate=dateTimeService.from_the_beginning_of_month(date);
 
+        customerList.forEach(p->System.out.println(p.getFirstName()));
+int count_temp=0;
         for (Customer customer:customerList) {
+            count_temp=count_temp+1;
+            System.out.println("Проход по клиентам № "+count_temp);
+            Thread.sleep(2000);
             System.out.println("\nКлиент ---------- " + customer.getFirstName());
 
             tel=customer.getTelModem();
@@ -620,6 +619,8 @@ t=1;
  */
 atomicInteger.addAndGet(1);
 
+                    boolean dataFig = false;
+
                     while (recieve_all_byte == 0 & stop != false) {
                         if (t == 2) {
                             repeat++;
@@ -629,7 +630,9 @@ atomicInteger.addAndGet(1);
                                 System.out.println("\n Ответ информации об устройстве  п.6.1 не поступил  Ошибка по таймауту.");
                                 System.out.println("\n error=11. Ошибка по TimeOut");
                                 error = 11;
+                                dataFig=true;
                                 stop = false;
+
                             }
                             System.out.println("\n Ответ информации об устройстве  п.6.1 не поступил. Ошибка по таймауту. Повторяем запрос");
                             data1.delete(0, data1.length());
@@ -639,10 +642,12 @@ atomicInteger.addAndGet(1);
                             z = 0;
                             serialPort.writeIntArray(request);
 
-                            executor.submit(callable(20));
+                            executor.submit(callable(4));
                         }
 
                     }
+
+                    if (dataFig){continue;}
 
                     try {
                         System.out.println("-   -   -   -   isCancelled() future " + task.isCancelled());
@@ -820,7 +825,7 @@ atomicInteger.addAndGet(1);
                         logger.info("Проверяем по наличию СУТОЧНЫЕ для  "+customer.getFirstName()+" дата "+ ldt);
 
                         if (listtv7.size()!=0){
-                            System.out.println(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют" );
+                            //System.out.println(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют" );
                             logger.info(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют");
                            continue;
 
@@ -830,12 +835,12 @@ atomicInteger.addAndGet(1);
                     /// Проверяем попадает запрашиваемая дата после начала записи СУТОЧНЫЕ в счетчике!!
                         logger.info(customer.getFirstName()+ "Сверяем c датами начала архивов");
                         if (auxDateTimeService.checkBeginArchive(infOfDate, ldt, "day")==false){
-                            System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
+                           // System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
                             logger.info(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
                             continue;
                         }
 
-                        System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
+                       // System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
                         logger.info(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
 /*
 *
@@ -850,7 +855,7 @@ atomicInteger.addAndGet(1);
 
 
 
-                   list = modBusService.archive(0, ldt, 1, 2);
+                   list = modBusService.archive(0, ldt, 1, 100);
 
                         System.out.println("\n ::::: ::: Дата для суточных -> "+ldt);
 
