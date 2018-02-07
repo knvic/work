@@ -156,7 +156,7 @@ public class ModBusServiceImpl implements ModBusService {
         command_temp.append("48");
         //добавляем адрес начала чтения
         command_temp.append(format("%04X",  2868)); // адрес чтения
-        command_temp.append(format("%04X", 109 )); //количество регистров чтения
+        command_temp.append(format("%04X", 115 )); //количество регистров чтения
         command_temp.append(format("%04X", 99 )); //адрес записи
         command_temp.append(format("%04X", 6 ));  //кол-во регистров записи
         command_temp.append(format("%04X", 12 )); //количество байт записи

@@ -1007,6 +1007,220 @@ atomicInteger.addAndGet(1);
  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////  /// КОНЕЦ СУТОЧНЫЕ ////
 
 
+
+
+
+
+                    ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ /// ////// ИТОГОВЫЕ ///
+
+                    /**
+                     * Проверяем наличие измерений ИТОГОВЫЕ для всех дат с начала месяца
+                     *
+                     */
+
+
+
+                    /// Проверяем на наличие измерений с начала месяца по СУТОЧНЫЕ!!
+                    for (LocalDateTime ldt:listDate ) {
+                        atomicInteger.addAndGet(1);
+                       /* listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),ldt);
+                        logger.info("Проверяем по наличию ИТОГОВЫЕ для  "+customer.getFirstName()+" дата "+ ldt);
+
+                        if (listtv7.size()!=0){
+                            System.out.println(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют" );
+                            logger.info(customer.getFirstName()+ " Измерения за "+ ldt +" присутствуют");
+                            continue;
+
+                        }
+
+                        logger.info(customer.getFirstName()+ " Измерения за "+ ldt +" НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ");
+                        /// Проверяем попадает запрашиваемая дата после начала записи СУТОЧНЫЕ в счетчике!!
+                        logger.info(customer.getFirstName()+ "Сверяем c датами начала архивов");
+                        if (auxDateTimeService.checkBeginArchive(infOfDate, ldt, "day")==false){
+                            System.out.println(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
+                            logger.info(customer.getFirstName()+ "начало записи данных СУТОЧНЫЕ находятся после запрашиваемой даты "+ ldt +" Получение данные не возможно" );
+                            continue;
+                        }
+
+                        System.out.println(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );
+                        logger.info(customer.getFirstName()+ " -- Измерений за "+ ldt +" НЕТ, но Данные в архиве счетчика присутствуют" );*/
+
+
+                        /*
+                         *
+                         *
+                         * Запрос Чтение СУТОЧНЫЕ
+                         *
+                         *
+                         */
+
+
+                        System.out.println("\n Формируем запрос чтения ИТОГОВЫЕ");
+
+
+
+                        list = modBusService.archive(0, ldt, 1, 2);
+                        list = modBusService.total(0, ldt,  30);
+
+                        System.out.println("\n ::::: ::: Дата для суточных -> "+ldt);
+
+                        list.forEach(p -> System.out.print(p + " "));
+
+                        // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 01 01 0C 17 12 00 00 00 01 00 00 00 00 E0
+                        // 00 48 0A B4 00 6D 00 63 00 06 00 0C 00 02 0C 0C 17 7E 20 00 00 00 10 00 00 00 0 39
+                        commandLRC = lrcService.lrcAdd(list);
+                        commandLRC.forEach(p -> System.out.print(p + " "));
+
+                        commandAsc = ascService.enctypt(commandLRC);
+                        commandAsc.forEach(p -> System.out.print(p + " "));
+
+                  /*  commandAsc=modBusService.typeUnit(number);
+                    commandAsc.forEach(p->System.out.print(p+" "));
+*/
+
+                        request = null;
+                        request = new int[commandAsc.size()];
+                        for (int i = 0; i < commandAsc.size(); i++) {
+                            request[i] = Integer.parseInt(commandAsc.get(i), 16);
+                            // System.out.print(+i+":"+request[i]+" ");
+                        }
+                        //System.out.println("\n request size = "+ request.length);
+
+                        Thread.sleep(1000);
+
+                        if (stop == false) {
+                            System.out.println("\n Получена команда STOP ");
+                            break;
+                        }
+
+                        System.out.println("\nЖдем получения ИТОГОВЫЕ  ");
+                        data1.delete(0, data1.length());
+                        temp1.delete(0, temp1.length());
+                        outTv7 = null;
+
+                        t = 0;
+                        repeat = 0;
+                        executor.submit(callable(7,"Ждем получения ИТОГОВЫЕ"));
+                        recieve_all_byte = 0;
+                        step = 255;
+                        System.out.println("step= " + step);
+                        z = 0;
+                        serialPort.writeIntArray(request);
+
+
+/*
+*
+ * Чтение СУТОЧНЫЕ
+ * Ждем начала приема длинных данных.
+ atomicInteger.addAndGet(1);
+*/
+                        atomicInteger.addAndGet(1);
+
+                        while (recieve_all_byte == 0 & stop != false) {
+                            if (t == 2) {
+                                repeat++;
+                                if (repeat == 3) {
+                                    step = 0;
+
+                                    System.out.println("\n Ответ ИТОГОВЫЕ не поступил. Ошибка по таймауту.");
+                                    System.out.println("\n error=11.3F FE 65 байт. Ошибка по TimeOut");
+                                    error = 11;
+                                    stop = false;
+                                }
+                                System.out.println("\n Ответ ИТОГОВЫЕ не поступил. Ошибка по таймауту. Повторяем запрос");
+                                data1.delete(0, data1.length());
+                                temp1.delete(0, temp1.length());
+                                outTv7 = null;
+                                t = 0;
+                                z = 0;
+                                serialPort.writeIntArray(request);
+
+                                executor.submit(callable(20));
+                            }
+
+                        }
+                        t = 1;
+
+
+                        System.out.println("\nДанные ИТОГОВЫЕ поступили.");
+                        System.out.println("Ожидаем обработку принятых данных ИТОГОВЫЕ");
+
+                        atomicInteger.addAndGet(1);
+
+
+                        System.out.println("Принятая строка ИТОГОВЫЕ :: ");
+
+                        outTv7.forEach(p -> System.out.print(p));
+                        String regularExpression1="^(83|90)";
+
+                        if (Pattern.compile(regularExpression1).matcher(outTv7.get(1)).find()){
+
+                            List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                            errList.forEach(p->System.out.println(p));
+                            logger.info(customer.getFirstName()+ "  "+ldt+ " " + errList.get(0));
+
+                            continue;
+
+                        }
+                        String regularExpression2="^(C8)";
+
+                        if (Pattern.compile(regularExpression2).matcher(outTv7.get(1)).find()){
+
+                            List<String> errList = modBusRService.errorProcessing(outTv7);
+
+                            errList.forEach(p->System.out.println(p));
+                            logger.info(customer.getFirstName()+ "  "+ldt+ "  ОШИБКА ЧТЕНИЯ " + errList.get(0)+ "  ОШИБКА ЗАПИСИ " + errList.get(1));
+
+                            continue;
+
+                        }
+
+                        List<Parametr> parametrList = initData.initTotal();
+
+                        parametrList= modBusRService.total(outTv7, parametrList, 1);
+
+
+
+                        ///
+                        customer = customerService.findByIdTv7(customer.getId());
+
+
+                        if (customer!=null){System.out.println("Кoнтакт найден, customer "+ customer.getFirstName()+" id= "+customer.getId());}
+
+                       /* saveService=new SaveServiceImpl();
+                        Operationtv7 operationtv7=saveService.saveDay(parametrList);
+                        operationtv7.setCustomerName(customer.getFirstName());
+
+
+
+
+                        customer.addOperationtv7(operationtv7);
+                        customerService.save(customer);
+*/
+                        ///
+                        atomicInteger.addAndGet(1);
+
+                        Thread.sleep(500);
+
+
+
+
+
+
+                    }
+
+
+
+                    /// КОНЕЦ ИТОГОВЫЕ ////  /// КОНЕЦ ИТОГОВЫЕ //// /// КОНЕЦ ИТОГОВЫЕ //// /// КОНЕЦ ИТОГОВЫЕ //// /// КОНЕЦ ИТОГОВЫЕ //// /// КОНЕЦ ИТОГОВЫЕ ////
+
+
+
+
+
+
+
+
                     /**
                      * Получаем данные за МЕСЯЦ
                      *

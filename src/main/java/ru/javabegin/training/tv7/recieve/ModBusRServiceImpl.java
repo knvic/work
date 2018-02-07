@@ -77,14 +77,26 @@ return map;
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
         System.out.println("\nStringBuilder = "+temp.toString());
+        System.out.println("\nStringBuilderSize = "+temp.toString().length());
 
         AscServiceImpl ascService=new AscServiceImpl();
         int i1=12;
         String str="";
         for(Parametr p:parametrList){
 
-            str=temp.substring(i1,i1+p.getSize()*2).toString();
-            System.out.println(p.getNameString()+" : str= "+ str);
+            if (i1>448){
+                System.out.println(" i1>448  i1= "+i1);
+                System.out.println(" i1>448  temp.lingth= "+temp.length());
+                //str = temp.substring(i1-2).toString();
+                System.out.println(" i1>448 str = "+str);
+            }
+            try {
+                str = temp.substring(i1, i1 + p.getSize() * 2).toString();
+            }
+            catch (Exception e){
+                System.out.println(" Что то со стокой= ");
+            }
+            System.out.println(p.getNameString()+" : str= "+ str+ " i1= "+i1 );
 
             if (p.getType().equals("unsigned char")) {
                 p.setValue(Integer.toString(Integer.parseInt(str,16)));
@@ -149,12 +161,13 @@ return map;
 
 
             i1=i1+p.getSize()*2;
+
         }
 
 
         for(Parametr p:parametrList){
 
-            System.out.print("\n-> "+p.getNameString()+" = " + p.getValue());
+            System.out.print("\nTOTAL ->  "+p.getNameString()+" = " + p.getValue());
         }
 
         return parametrList;
