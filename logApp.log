@@ -1,0 +1,225 @@
+2018-02-08 16:51:36 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
+2018-02-08 16:51:36 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Thu Feb 08 16:51:36 MSK 2018]; root of context hierarchy
+2018-02-08 16:51:37 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
+2018-02-08 16:51:37 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
+2018-02-08 16:51:37 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
+2018-02-08 16:51:37 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
+2018-02-08 16:51:38 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
+2018-02-08 16:51:38 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
+2018-02-08 16:51:38 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
+2018-02-08 16:51:38 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
+2018-02-08 16:51:39 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-02-08 16:51:39 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2018-02-08 16:51:40 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@27b5ac59, org.springframework.security.web.session.ConcurrentSessionFilter@3f0f6761, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@533ea76e, org.springframework.security.web.header.HeaderWriterFilter@28b6b4d3, org.springframework.security.web.authentication.logout.LogoutFilter@22eb12f8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@669b4dab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40b893c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5db5a729, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27b302b5, org.springframework.security.web.session.SessionManagementFilter@1bf9e5fd, org.springframework.security.web.access.ExceptionTranslationFilter@1f5b4bd8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f272bf5]
+2018-02-08 16:51:40 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
+2018-02-08 16:51:40 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 4238 ms
+2018-02-08 16:51:45 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2018-02-08 16:51:45 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Feb 08 16:51:45 MSK 2018]; parent: Root WebApplicationContext
+2018-02-08 16:51:45 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
+2018-02-08 16:51:45 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
+2018-02-08 16:51:45 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
+2018-02-08 16:51:47 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Tomcat 9.0\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
+2018-02-08 16:51:49 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-08 16:51:49 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 16:51:49 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-02-08 16:51:50 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
+2018-02-08 16:51:50 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: emf_contact
+	...]
+2018-02-08 16:51:51 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
+2018-02-08 16:51:51 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-02-08 16:51:51 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2018-02-08 16:51:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-02-08 16:51:54 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-08 16:51:58 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-02-08 16:52:00 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
+2018-02-08 16:52:00 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-02-08 16:52:01 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
+2018-02-08 16:52:01 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: emf_customer
+	...]
+2018-02-08 16:52:02 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-08 16:52:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-02-08 16:52:02 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
+2018-02-08 16:52:02 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-02-08 16:52:03 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
+2018-02-08 16:52:03 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: emf_test
+	...]
+2018-02-08 16:52:03 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
+2018-02-08 16:52:03 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-08 16:52:03 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2018-02-08 16:52:04 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-02-08 16:52:04 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
+2018-02-08 16:52:06 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-02-08 16:52:06 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-02-08 16:52:06 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-02-08 16:52:07 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
+2018-02-08 16:52:07 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
+2018-02-08 16:52:10 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Feb 08 16:51:45 MSK 2018]; parent: Root WebApplicationContext
+2018-02-08 16:52:11 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Feb 08 16:51:45 MSK 2018]; parent: Root WebApplicationContext
+2018-02-08 16:52:16 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
+2018-02-08 16:52:17 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
+2018-02-08 16:52:17 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-08 16:52:17 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
+2018-02-08 16:52:18 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-02-08 16:52:18 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
+2018-02-08 16:52:18 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 33446 ms
+2018-02-08 16:52:21 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Thu Feb 08 16:52:21 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-02-08 16:52:21 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@52208eb2] to [org.springframework.web.context.request.RequestScope@5ec560c3]
+2018-02-08 16:52:21 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-08 16:52:53 INFO  root:181 - Акварель -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 16:53:04 INFO  root:434 - Телефон = ATDP+79064628305
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-01T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-01T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-02T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-02T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-03T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-03T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-04T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-04T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-05T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-05T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-06T23:00
+2018-02-08 16:53:42 INFO  root:829 - Акварель Измерения за 2018-02-06T23:00 присутствуют
+2018-02-08 16:53:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-07T23:00
+2018-02-08 16:53:42 INFO  root:834 - Акварель Измерения за 2018-02-07T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:53:42 INFO  root:836 - АкварельСверяем c датами начала архивов
+2018-02-08 16:53:42 INFO  root:844 - Акварель -- Измерений за 2018-02-07T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:53:46 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:53:46 INFO  CustomerServiceImpl:100 - Contact saved with id: 178
+2018-02-08 16:54:40 INFO  root:181 - ЗАО "Фудстар" -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 16:54:50 INFO  root:434 - Телефон = ATDP+79064427267
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-01T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-01T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-02T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-02T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-03T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-03T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-04T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-04T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-05T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-05T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-06T23:00
+2018-02-08 16:55:27 INFO  root:829 - ЗАО "Фудстар" Измерения за 2018-02-06T23:00 присутствуют
+2018-02-08 16:55:27 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-07T23:00
+2018-02-08 16:55:27 INFO  root:834 - ЗАО "Фудстар" Измерения за 2018-02-07T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:55:27 INFO  root:836 - ЗАО "Фудстар"Сверяем c датами начала архивов
+2018-02-08 16:55:27 INFO  root:844 - ЗАО "Фудстар" -- Измерений за 2018-02-07T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:55:31 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:55:31 INFO  CustomerServiceImpl:100 - Contact saved with id: 179
+2018-02-08 16:55:58 INFO  root:1264 - АРХИВ ЗА МЕСЯЦ дата 2018-01-31T23:00
+2018-02-08 16:56:01 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:56:01 INFO  CustomerServiceImpl:100 - Contact saved with id: 179
+2018-02-08 16:56:13 INFO  root:181 - Нерсесян М.А. -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 16:56:44 INFO  root:181 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 16:56:54 INFO  root:434 - Телефон = ATDP+79054125173
+2018-02-08 16:57:42 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-01T23:00
+2018-02-08 16:57:42 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-01T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:57:42 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:57:42 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-01T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:57:46 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:57:46 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:57:46 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-02T23:00
+2018-02-08 16:57:46 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-02T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:57:46 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:57:46 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-02T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:57:50 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:57:50 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:57:50 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-03T23:00
+2018-02-08 16:57:50 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-03T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:57:50 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:57:50 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-03T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:57:54 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:57:54 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:57:54 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-04T23:00
+2018-02-08 16:57:54 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-04T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:57:54 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:57:54 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-04T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:57:58 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:57:58 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:57:58 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-05T23:00
+2018-02-08 16:57:58 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-05T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:57:58 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:57:58 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-05T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:58:02 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:58:02 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:58:02 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-06T23:00
+2018-02-08 16:58:02 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-06T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:58:02 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:58:02 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-06T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:58:06 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:58:06 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:58:06 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  ООО "Инвестиции "Запод" дата 2018-02-07T23:00
+2018-02-08 16:58:06 INFO  root:834 - ООО "Инвестиции "Запод" Измерения за 2018-02-07T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 16:58:06 INFO  root:836 - ООО "Инвестиции "Запод"Сверяем c датами начала архивов
+2018-02-08 16:58:06 INFO  root:844 - ООО "Инвестиции "Запод" -- Измерений за 2018-02-07T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 16:58:12 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:58:12 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:58:40 INFO  root:1264 - АРХИВ ЗА МЕСЯЦ дата 2018-01-31T23:00
+2018-02-08 16:58:44 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 16:58:44 INFO  CustomerServiceImpl:100 - Contact saved with id: 184
+2018-02-08 16:58:55 INFO  root:181 - Саноторий Электроника -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 16:59:05 INFO  root:434 - Телефон = ATDP+79064427903
+2018-02-08 16:59:59 INFO  root:181 - Целебный Нарзан -- Измерений за 2018-02-07T16:52:50.034 НЕТ
+2018-02-08 17:00:09 INFO  root:434 - Телефон = ATDP+79064427687
+2018-02-08 17:00:30 INFO  root:50 - Начала работать программа ревизор
+2018-02-08 17:00:30 INFO  root:51 - Статус end : false
+2018-02-08 17:00:47 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-01T23:00
+2018-02-08 17:00:47 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-01T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:00:47 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:00:47 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-01T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:00:50 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:00:50 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:00:51 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-02T23:00
+2018-02-08 17:00:51 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-02T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:00:51 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:00:51 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-02T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:00:54 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:00:54 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:00:55 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-03T23:00
+2018-02-08 17:00:55 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-03T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:00:55 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:00:55 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-03T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:00:58 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:00:58 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:00:59 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-04T23:00
+2018-02-08 17:00:59 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-04T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:00:59 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:00:59 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-04T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:01:02 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:01:02 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:01:03 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-05T23:00
+2018-02-08 17:01:03 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-05T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:01:03 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:01:03 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-05T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:01:06 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:01:06 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:01:06 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-06T23:00
+2018-02-08 17:01:06 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-06T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:01:06 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:01:06 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-06T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:01:10 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:01:10 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:01:10 INFO  root:825 - Проверяем по наличию СУТОЧНЫЕ для  Целебный Нарзан дата 2018-02-07T23:00
+2018-02-08 17:01:10 INFO  root:834 - Целебный Нарзан Измерения за 2018-02-07T23:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
+2018-02-08 17:01:10 INFO  root:836 - Целебный НарзанСверяем c датами начала архивов
+2018-02-08 17:01:10 INFO  root:844 - Целебный Нарзан -- Измерений за 2018-02-07T23:00 НЕТ, но Данные в архиве счетчика присутствуют
+2018-02-08 17:01:14 INFO  CustomerServiceImpl:97 - Updating existing contact
+2018-02-08 17:01:14 INFO  CustomerServiceImpl:100 - Contact saved with id: 186
+2018-02-08 17:01:41 INFO  root:1264 - АРХИВ ЗА МЕСЯЦ дата 2018-01-31T23:00
+2018-02-08 17:01:44 INFO  root:1372 - Целебный Нарзан  2018-01-31T23:00  ОШИБКА ЧТЕНИЯ Указанная дата вне диапазона архива прибора  ОШИБКА ЗАПИСИ нет ошибок
+2018-02-08 17:02:07 INFO  root:1469 - 
+ Поток отработал. Закрываем соединение и PORT
