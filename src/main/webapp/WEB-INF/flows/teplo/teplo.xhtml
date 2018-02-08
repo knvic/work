@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags">
+
+
+<ui:composition template="/WEB-INF/templates/teplo_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.customers}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true" scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    #{msg.customers}
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selection.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selection.onRowUnselect}" update=":form:msgs" />
+                <p:column headerText="#{msg.customer}">
+                <h:outputText value="#{u.firstName}" />
+            </p:column>
+                <p:column headerText="#{msg.unitType}">
+                    <h:outputText value="#{u.unitType}" />
+                </p:column>
+                <p:column headerText="Адрес:">
+                    <h:outputText value="#{u.address}" />
+                </p:column>
+                <p:column headerText="#{msg.tel_modem}">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+                <p:column headerText="#{msg.tel_modem}">
+                    <h:outputText value="#{u.unitNumber}" />
+                </p:column>
+
+            </p:dataTable>
+
+
+
+            <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                <p:outputPanel id="carDetail" style="text-align:center;">
+                    <p:panelGrid  columns="2" rendered="#{not empty selectionContact.ud}" columnClasses="label,value">
+
+
+                        <h:outputText value="Name:" />
+                        <h:outputText value="#{selectionContact.ud.firstName}" />
+                        <h:outputText value="Authorites:" />
+                        <h:outputText value="#{selectionContact.ud.lastName}" />
+                        <h:outputText value="RemoteIP:" />
+                        <h:outputText value="#{selectionContact.ud.birthDate}" />
+
+
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+            <!--<p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />-->
+
+            <p:growl id="grow2" life="5000" />
+
+
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+
+        </h:form>
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

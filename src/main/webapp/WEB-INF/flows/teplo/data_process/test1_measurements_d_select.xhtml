@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/operation_d_select_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.operations}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+
+        <p:dialog header="Данные не полные" widgetVar="dlg3" tableStyle="table-layout: auto;" showEffect="explode" hideEffect="explode" height="100" visible="${empty object[0]}" >
+            <h:outputText value="Нет ИТОГОВЫЕ за предыдущий месяц!!!" styleClass="error" />
+        </p:dialog>
+
+        <h:form id="form">
+            <!--<p:growl id="msgs" showDetail="true"/>-->
+
+            <p:dataTable id="tbl" var="u" value="#{searchCriteria_data.dataObject_strList}"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                         paginator="true"  rows="#{searchCriteria_data.dataObject_strList.size()}" style="margin-bottom:20px">
+
+                <f:facet name="{Exporters}">
+                    <h:commandLink>
+                        <!--<p:graphicImage name="/images/excel.png" width="24"/>-->
+                        <p:dataExporter type="xls" target="tbl" fileName="measurements" />
+                    </h:commandLink>
+
+
+                </f:facet>
+
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u.data}"/>
+                </p:column>
+
+                <p:columns value="#{searchCriteria_data.id_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u.optionalValues[id].value}"/>
+                </p:columns>
+            </p:dataTable>
+
+
+
+            <p:dataTable id="eventsDT2" var="u1" value="#{searchCriteria_data.dataObject_calc_strList}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%"  scrollHeight="200" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u1.staticval2}"/>
+                </p:column>
+
+                <p:columns value="#{searchCriteria_data.calc_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u1.optionalValues[id].value}"/>
+                </p:columns>
+
+            </p:dataTable>
+
+
+
+            <!--<c:if test="${not empty t_c_col}">-->
+            <c:if test="${not empty object[0]}">
+
+            <!--<p:dataTable id="eventsDT3" var="u2" value="#{searchCriteria_data.total_current_str}" scrollable="true" liveScroll="true"-->
+            <p:dataTable id="eventsDT3" var="u2" value="#{object[1]}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%"  scrollHeight="200" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u2.data}"/>
+                </p:column>
+
+                <!--<p:columns value="#{searchCriteria_data.total_current_column}" var="id" >-->
+                <!--<p:columns value="${t_c_col}" var="id" >-->
+                <p:columns value="${object[0]}" var="id" >
+
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u2.optionalValues[id].value}"/>
+                </p:columns>
+
+            </p:dataTable>
+            </c:if>
+<!--  24.11.2017
+
+            &lt;!&ndash;<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >&ndash;&gt;
+            <p:dataTable id="eventsDT1" var="u" value="#{searchCriteria_data.dataObject_strList}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%"  scrollHeight="700" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u.data}"/>
+                </p:column>
+
+                <p:columns value="#{searchCriteria_data.id_item}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u.optionalValues[id].value}"/>
+                </p:columns>
+
+            </p:dataTable>
+
+-->
+
+
+
+
+
+
+
+
+        </h:form>
+
+
+    </ui:define>
+    <!-- <ui:define name="ajax_p">
+
+    <div class="box-sh">
+
+        <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+    </div>
+
+    </ui:define>
+    -->
+
+
+</ui:composition>
+
+</html>

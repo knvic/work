@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="ru.javabegin.training.vkt7.entities.Measurements">
+        <table name="measurements" schema="lukoil" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="5"/>
+            </id>
+            <basic name="name">
+                <column name="NAME" nullable="false" length="10"/>
+            </basic>
+            <basic name="text">
+                <column name="TEXT" nullable="false" length="50"/>
+            </basic>
+            <basic name="ed">
+                <column name="ED" nullable="false" length="45"/>
+            </basic>
+            <basic name="znak">
+                <column name="ZNAK" nullable="false" precision="2"/>
+            </basic>
+            <basic name="size">
+                <column name="SIZE" nullable="false" precision="2"/>
+            </basic>
+            <basic name="type">
+                <column name="TYPE" nullable="false" length="45"/>
+            </basic>
+            <basic name="measurInt">
+                <column name="MEASUR_INT" nullable="false" precision="11"/>
+            </basic>
+            <basic name="measurFloat">
+                <column name="MEASUR_FLOAT" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="measurText">
+                <column name="MEASUR_TEXT" nullable="false" length="45"/>
+            </basic>
+            <basic name="quality">
+                <column name="QUALITY" nullable="false" length="45"/>
+            </basic>
+            <basic name="qualityText">
+                <column name="QUALITY_TEXT" nullable="false" length="45"/>
+            </basic>
+            <basic name="ns">
+                <column name="NS" nullable="false" length="45"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

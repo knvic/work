@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title></title>
+    </h:head>
+
+    <h:body>
+        <ui:composition>
+            <div class="left-menu">
+                <h:form styleClass="genres" id="genresForm">
+                    <h1>#{msg.teplo_menu}</h1>
+
+               <!--     <ul>
+                        <li><p:commandButton value="#{msg.add_customer}"    action="add_customer" styleClass="ui-priority-primary" /> </li>
+                    </ul>
+                    <ul>
+                        <li><p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" /> </li>
+                    </ul>-->
+
+                    <ul>
+                        <li><p:commandButton value="#{msg.next}" event="onclick"  action="next"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_modem.setCustomer(selectionModem.cust)}"/> </li>
+
+                        <li><p:commandButton value="#{msg.back}" event="onclick"  action="back"  styleClass="ui-priority-primary" /> </li>
+
+                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
+                    </ul>
+
+
+
+                </h:form>
+            </div>
+        </ui:composition>
+    </h:body>
+</html>
+

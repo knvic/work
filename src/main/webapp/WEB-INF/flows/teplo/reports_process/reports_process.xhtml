@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags">
+
+
+<ui:composition template="/WEB-INF/templates/reports/reports_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+
+            <p:growl id="msgs" showDetail="true" />
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="Button:" />
+                <p:calendar id="button" value="#{selectionReports.day_of}" showOn="button" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="Button1:" />
+                <p:calendar id="button2" value="#{selectionReports.day_to}" showOn="button" />
+            </h:panelGrid>
+
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionReports.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{selectionReports.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+            <p:commandButton value="#{msg.select}" event="onclick"  action="action_select"  actionListener="#{searchCriteria_reports.set_all_data(selectionReports.day_of, selectionReports.day_to)}" icon="ui-icon-check" />
+
+
+
+
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+
+
+
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selectionData.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    Select Events
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selectionData.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selectionData.onRowUnselect}" update=":form:msgs" />
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.unitNumber}" />
+                </p:column>
+
+            </p:dataTable>
+
+
+            <p:commandButton value="Submit" action="action" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+
+
+
+            <!--<p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />-->
+
+
+
+
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+
+
+
+
+        </h:form>
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

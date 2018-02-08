@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/operation_d_select_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true"/>
+            <!--<p:dataTable id="eventsDT1" var="u" value="#{facade_data.archiveList}" scrollable="true"  >-->
+            <p:dataTable id="eventsDT1" var="u" value="#{report}" scrollable="true" liveScroll="true"
+                         scrollRows="20" scrollWidth="100%" resizableColumns="true" lazy="true"
+                         tableStyle="table-layout: auto;" styleClass="measurementsd_table">
+
+                <p:column>
+                    <f:facet name="header">
+                        ID
+                    </f:facet>
+                    <h:outputText value="#{u.id}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        Потребитель
+                    </f:facet>
+                    <h:outputText value="#{u.firstName}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        Номер
+                    </f:facet>
+                    <h:outputText value="#{u.telModem}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        Qo
+                    </f:facet>
+                    <h:outputText value="#{u.q}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        Тариф
+                    </f:facet>
+                    <h:outputText value="#{u.tarifRUR}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        Сумма
+                    </f:facet>
+                    <h:outputText value="#{u.sumRUR}"/>
+                </p:column>
+
+
+
+
+
+
+
+
+            </p:dataTable>
+
+
+        </h:form>
+
+
+    </ui:define>
+    <!-- <ui:define name="ajax_p">
+
+    <div class="box-sh">
+
+        <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+    </div>
+
+    </ui:define>
+    -->
+
+
+</ui:composition>
+
+</html>

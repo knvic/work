@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="ru.javabegin.training.vkt7.entities.Result">
+        <table name="result" schema="lukoil" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="11"/>
+            </id>
+            <basic name="customerId">
+                <column name="CUSTOMER_ID" nullable="false" precision="11"/>
+            </basic>
+            <basic name="typeResult">
+                <column name="TYPE_RESULT" nullable="false" length="45"/>
+            </basic>
+            <basic name="serverVersion">
+                <column name="SERVER_VERSION" nullable="false" length="4"/>
+            </basic>
+            <basic name="programmVersion">
+                <column name="PROGRAMM_VERSION" nullable="false" length="4"/>
+            </basic>
+            <basic name="shemaTv13Ff9">
+                <column name="SHEMA_TV_1_3FF9" nullable="false" length="2"/>
+            </basic>
+            <basic name="tp3Tv1">
+                <column name="TP3_TV_1" nullable="false" length="2"/>
+            </basic>
+            <basic name="t5Tv1">
+                <column name="T5_TV_1" nullable="false" length="2"/>
+            </basic>
+            <basic name="shemaTv23Ff9">
+                <column name="SHEMA_TV_2_3FF9" nullable="false" length="2"/>
+            </basic>
+            <basic name="tp3Tv2">
+                <column name="TP3_TV_2" nullable="false" length="2"/>
+            </basic>
+            <basic name="t5Tv2">
+                <column name="T5_TV_2" nullable="false" length="2"/>
+            </basic>
+            <basic name="identificator">
+                <column name="IDENTIFICATOR" nullable="false" length="45"/>
+            </basic>
+            <basic name="netNumber">
+                <column name="NET_NUMBER" nullable="false" length="4"/>
+            </basic>
+            <basic name="resultDate3Ff9">
+                <column name="RESULT_DATE_3FF9" nullable="false" length="45"/>
+            </basic>
+            <basic name="model">
+                <column name="MODEL" nullable="false" length="4"/>
+            </basic>
+            <basic name="beginHourDate">
+                <column name="BEGIN_HOUR_DATE" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="currentDate">
+                <column name="CURRENT_DATE" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="beginDayDate">
+                <column name="BEGIN_DAY_DATE" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="shemaTv13Ecd">
+                <column name="SHEMA_TV_1_3ECD" nullable="false" length="2"/>
+            </basic>
+            <basic name="shemaTv23F5B">
+                <column name="SHEMA_TV_2_3F5B" nullable="false" length="2"/>
+            </basic>
+            <basic name="numberBase">
+                <column name="NUMBER_BASE" nullable="false" length="2"/>
+            </basic>
+            <basic name="status">
+                <column name="STATUS" nullable="false" length="45"/>
+            </basic>
+            <basic name="error">
+                <column name="ERROR" nullable="false" length="45"/>
+            </basic>
+            <basic name="dateResultServer">
+                <column name="DATE_RESULT_SERVER" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="version">
+                <column name="VERSION" precision="11"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

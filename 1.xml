@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<properties>
+    <entry>
+        <id>0</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t1_1Type</name>
+        <size>0</size>
+        <text>t1 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>1</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t2_1Type</name>
+        <size>0</size>
+        <text>t2 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>2</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t3_1Type</name>
+        <size>0</size>
+        <text>t3 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>3</id>
+        <id_ed>46</id_ed>
+        <id_znak>59</id_znak>
+        <name>V1_1Type</name>
+        <size>0</size>
+        <text>V1 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>4</id>
+        <id_ed>46</id_ed>
+        <id_znak>59</id_znak>
+        <name>V2_1Type</name>
+        <size>0</size>
+        <text>V2 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>5</id>
+        <id_ed>46</id_ed>
+        <id_znak>59</id_znak>
+        <name>V3_1Type</name>
+        <size>0</size>
+        <text>V3 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>6</id>
+        <id_ed>47</id_ed>
+        <id_znak>60</id_znak>
+        <name>M1_1Type</name>
+        <size>0</size>
+        <text>M1 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>7</id>
+        <id_ed>47</id_ed>
+        <id_znak>60</id_znak>
+        <name>M2_1Type</name>
+        <size>0</size>
+        <text>M2 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>8</id>
+        <id_ed>47</id_ed>
+        <id_znak>60</id_znak>
+        <name>M3_1Type</name>
+        <size>0</size>
+        <text>M3 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>9</id>
+        <id_ed>48</id_ed>
+        <id_znak>61</id_znak>
+        <name>P1_1Type</name>
+        <size>0</size>
+        <text>P1 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>10</id>
+        <id_ed>48</id_ed>
+        <id_znak>61</id_znak>
+        <name>P2_1Type</name>
+        <size>0</size>
+        <text>P2 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>11</id>
+        <id_ed>52</id_ed>
+        <id_znak>65</id_znak>
+        <name>Mg_1TypeP</name>
+        <size>0</size>
+        <text>Mг Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>12</id>
+        <id_ed>53</id_ed>
+        <id_znak>66</id_znak>
+        <name>Qo_1TypeP</name>
+        <size>0</size>
+        <text>Qо Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>13</id>
+        <id_ed>54</id_ed>
+        <id_znak>66</id_znak>
+        <name>Qg_1TypeP</name>
+        <size>0</size>
+        <text>Qг Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>14</id>
+        <id_ed>49</id_ed>
+        <id_znak>62</id_znak>
+        <name>dt_1TypeP</name>
+        <size>0</size>
+        <text>dt Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>15</id>
+        <id_ed>50</id_ed>
+        <id_znak>63</id_znak>
+        <name>tswTypeP</name>
+        <size>0</size>
+        <text>tх</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>16</id>
+        <id_ed>51</id_ed>
+        <id_znak>64</id_znak>
+        <name>taTypeP</name>
+        <size>0</size>
+        <text>ta</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>17</id>
+        <id_ed>55</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntType_1HIP</name>
+        <size>0</size>
+        <text>BНP Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>18</id>
+        <id_ed>56</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntType_1P</name>
+        <size>0</size>
+        <text>BOC Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>19</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G1Type</name>
+        <size>0</size>
+        <text>G1 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>20</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G2Type</name>
+        <size>0</size>
+        <text>G2 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>21</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G3Type</name>
+        <size>0</size>
+        <text>G3 Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>22</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t1_2Type</name>
+        <size>0</size>
+        <text>t1 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>23</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t2_2Type</name>
+        <size>0</size>
+        <text>t2 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>24</id>
+        <id_ed>44</id_ed>
+        <id_znak>57</id_znak>
+        <name>t3_2Type</name>
+        <size>0</size>
+        <text>t3 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>25</id>
+        <id_ed>46</id_ed>
+        <id_znak>69</id_znak>
+        <name>V1_2Type</name>
+        <size>0</size>
+        <text>V1 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>26</id>
+        <id_ed>46</id_ed>
+        <id_znak>69</id_znak>
+        <name>V2_2Type</name>
+        <size>0</size>
+        <text>V2 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>27</id>
+        <id_ed>46</id_ed>
+        <id_znak>69</id_znak>
+        <name>V3_2Type</name>
+        <size>0</size>
+        <text>V3 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>28</id>
+        <id_ed>47</id_ed>
+        <id_znak>70</id_znak>
+        <name>M1_2Type</name>
+        <size>0</size>
+        <text>M1 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>29</id>
+        <id_ed>47</id_ed>
+        <id_znak>70</id_znak>
+        <name>M2_2Type</name>
+        <size>0</size>
+        <text>M2 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>30</id>
+        <id_ed>47</id_ed>
+        <id_znak>70</id_znak>
+        <name>M3_2Type</name>
+        <size>0</size>
+        <text>M3 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>31</id>
+        <id_ed>48</id_ed>
+        <id_znak>71</id_znak>
+        <name>P1_2Type</name>
+        <size>0</size>
+        <text>P1 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>32</id>
+        <id_ed>48</id_ed>
+        <id_znak>71</id_znak>
+        <name>P2_2Type</name>
+        <size>0</size>
+        <text>P2 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>33</id>
+        <id_ed>52</id_ed>
+        <id_znak>75</id_znak>
+        <name>Mg_2TypeP</name>
+        <size>0</size>
+        <text>Mг Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>34</id>
+        <id_ed>53</id_ed>
+        <id_znak>76</id_znak>
+        <name>Qo_2TypeP</name>
+        <size>0</size>
+        <text>Qо Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>35</id>
+        <id_ed>54</id_ed>
+        <id_znak>76</id_znak>
+        <name>Qg_2TypeP</name>
+        <size>0</size>
+        <text>Qг Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>36</id>
+        <id_ed>49</id_ed>
+        <id_znak>72</id_znak>
+        <name>dt_2TypeP</name>
+        <size>0</size>
+        <text>dt Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>37</id>
+        <id_ed>50</id_ed>
+        <id_znak>73</id_znak>
+        <name>tsw_2TypeP</name>
+        <size>0</size>
+        <text>резерв</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>38</id>
+        <id_ed>51</id_ed>
+        <id_znak>74</id_znak>
+        <name>ta_2TypeP</name>
+        <size>0</size>
+        <text>резерв</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>39</id>
+        <id_ed>55</id_ed>
+        <id_znak>0</id_znak>
+        <name>Qnt_2TypeHIP</name>
+        <size>0</size>
+        <text>BНP Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>40</id>
+        <id_ed>56</id_ed>
+        <id_znak>0</id_znak>
+        <name>Qnt_2TypeP</name>
+        <size>0</size>
+        <text> BOC Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>41</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G1_2Type</name>
+        <size>0</size>
+        <text>G1 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>42</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G2_2Type</name>
+        <size>0</size>
+        <text>G2 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>43</id>
+        <id_ed>45</id_ed>
+        <id_znak>0</id_znak>
+        <name>G3_2Type</name>
+        <size>0</size>
+        <text>G3 Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>44</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по t (температуре)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>45</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>GTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по G (расходу)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>46</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>VTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по V (объему)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>47</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по M (массе)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>48</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>PTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по P (давлению)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>49</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>dtTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по dt (температуре)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>50</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tswTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по tx (температуре)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>51</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>taTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по ta (температуре)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>52</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MgTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по M (массе)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>53</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QoTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по Q (теплу)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>54</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QgTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по Q (теплу)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>55</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntTypeHIM</name>
+        <size>0</size>
+        <text>ед. измерения по BНP (времени)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>56</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntTypeM</name>
+        <size>0</size>
+        <text>ед. измерения по ВОС (времени)* (см. прим.)</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>57</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tTypeFractDiNum</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для t</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>58</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>GTypeFractDigNum1</name>
+        <size>0</size>
+        <text>резерв</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>59</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>VTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для V по Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>60</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для M по Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>61</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>PTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для P</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>62</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>dtTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для dt</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>63</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tswTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для tx</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>64</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>taTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для ta</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>65</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MgTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для Mг</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>66</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QoTypeFractDigNum1</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для Q по Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>67</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tTypeFractDigNum2</name>
+        <size>0</size>
+        <text>резерв</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>68</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>GTypeFractDigNum2</name>
+        <size>0</size>
+        <text>резерв</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>69</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>VTypeFractDigNum2</name>
+        <size>0</size>
+        <text>ол-во знаков после запятой для V по Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>70</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для M по Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>71</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>PTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для P</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>72</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>dtTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для dt</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>73</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>tswTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для tx</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>74</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>taTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для ta</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>75</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>MgTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для Mг</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>76</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QoTypeFractDigNum2</name>
+        <size>0</size>
+        <text>кол-во знаков после запятой для Q по Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>77</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>NSPrintTypeM_1</name>
+        <size>0</size>
+        <text>Наличие нештатной ситуации по ТВ1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>78</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>NSPrintTypeM_2</name>
+        <size>0</size>
+        <text>Наличие нештатной ситуации по ТВ2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>79</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntNS_1</name>
+        <size>0</size>
+        <text>Длительность НС по параметрам Тв1</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>80</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>QntNS_2</name>
+        <size>0</size>
+        <text>Длительность НС по параметрам Тв2</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>81</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>DopInpImpP_Type</name>
+        <size>0</size>
+        <text>DI</text>
+        <znak>0</znak>
+    </entry>
+    <entry>
+        <id>82</id>
+        <id_ed>0</id_ed>
+        <id_znak>0</id_znak>
+        <name>P3P_Type</name>
+        <size>0</size>
+        <text>P3</text>
+        <znak>0</znak>
+    </entry>
+</properties>
