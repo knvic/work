@@ -175,7 +175,7 @@ return operation;
                 .collect(Collectors.toList())
                 .get(0).getValue();
 
-        //System.out.println(parametr+" "+val);
+        System.out.println(parametr+" "+val);
         return val;
     }
 

@@ -9,6 +9,7 @@ import ru.javabegin.training.tv7.ASCII.AscServiceImpl;
 import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
 import ru.javabegin.training.tv7.auxillary.AuxDateTimeServiceImpl;
 import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.initDataClass.InitData;
 import ru.javabegin.training.tv7.initDataClass.Parametr;
 import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
@@ -1183,21 +1184,21 @@ atomicInteger.addAndGet(1);
 
 
                         ///
-                        customer = customerService.findByIdTv7(customer.getId());
+                        customer = customerService.findByIdTv7T(customer.getId());
 
 
                         if (customer!=null){System.out.println("Кoнтакт найден, customer "+ customer.getFirstName()+" id= "+customer.getId());}
 
-                       /* saveService=new SaveServiceImpl();
-                        Operationtv7 operationtv7=saveService.saveDay(parametrList);
-                        operationtv7.setCustomerName(customer.getFirstName());
+                        saveService=new SaveServiceImpl();
+                        Operationtv7T operationtv7T=saveService.saveTotal(parametrList);
+                        logger.info("Operationtv7T created "+operationtv7T);
+                        operationtv7T.setCustomerName(customer.getFirstName());
 
 
 
 
-                        customer.addOperationtv7(operationtv7);
+                        customer.addOperationtv7T(operationtv7T);
                         customerService.save(customer);
-*/
                         ///
                         atomicInteger.addAndGet(1);
 
