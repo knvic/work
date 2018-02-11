@@ -63,6 +63,10 @@ public interface CustomerService {
 
     List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt);
 
+    List<Customer> findTv7Customers();
+
+    //List<Operationtv7> findOperationtv7All();
+
 
 
 
