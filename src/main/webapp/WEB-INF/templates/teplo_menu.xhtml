@@ -15,17 +15,34 @@
                 <h:form styleClass="genres" id="genresForm">
                    <!-- <h1>#{msg.teplo_menu}</h1>-->
 
-                    <ul>
+
+                    <div class="ui-g">
+                        <div class="ui-g-2"><p:commandButton value="#{msg.teplo_work_data}"    action="data_process" styleClass="ui-priority-primary" /></div>
+                        <div class="ui-g-2"><p:commandButton value="#{msg.teplo_work_data_tv7}"    action="data_tv7_process" styleClass="ui-priority-primary" /></div>
+                        <div class="ui-g-2"><p:commandButton value="#{msg.customers}"    action="customer_process" styleClass="ui-priority-primary" /></div>
+
+                    </div>
+
+
+                <!--    <div class="row">
+                        <div class="col-xs-2 "><p:commandButton value="#{msg.teplo_work_data}"    action="data_process" styleClass="ui-priority-primary" />
+                            <p:commandButton value="#{msg.teplo_work_data_tv7}"    action="data_process_tv7" styleClass="ui-priority-primary" />
+                            <div class="col-xs-2 "><p:commandButton value="#{msg.teplo_work_data_tv7}"    action="data_process_tv7" styleClass="ui-priority-primary" /></div>
+                            <div class="col-xs-3 "><p:commandButton value="#{msg.customers}"    action="customer_process" styleClass="ui-priority-primary" /></div>
+                        </div>
+
+                    </div>-->
+
+
+   <!--                 <ul>
                         <li><p:commandButton value="#{msg.teplo_work_data}"    action="data_process" styleClass="ui-priority-primary" /> </li>
+
+                        <li><p:commandButton value="#{msg.teplo_work_data_tv7}"    action="data_process_tv7" styleClass="ui-priority-primary" /> </li>
 
                         <li><p:commandButton value="#{msg.customers}"    action="customer_process" styleClass="ui-priority-primary" /> </li>
 
-                       <!-- <li><p:commandButton value="#{msg.reports}"    action="reports_process" styleClass="ui-priority-primary" /> </li>
 
-                        <li><p:commandButton value="#{msg.teplo_work_modem}"    action="modem_process" styleClass="ui-priority-primary" /> </li>
--->
-                        <!--<li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>-->
-                    </ul>
+                    </ul>-->
 
 
 

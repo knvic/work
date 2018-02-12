@@ -30,6 +30,9 @@
             <transition on="reports_process" to="reports">
             </transition>
 
+            <transition on="data_tv7_process" to="data_tv7">
+            </transition>
+
       </view-state>
 
       <subflow-state id="addCustomer" subflow="teplo/customer_process">
@@ -44,6 +47,9 @@
       </subflow-state>
       <subflow-state id="reports" subflow="teplo/reports_process">
             <transition on="reports_ready" to="endState" />
+      </subflow-state>
+      <subflow-state id="data_tv7" subflow="teplo/data_tv7_process">
+            <transition on="data_tv7_ready" to="endState" />
       </subflow-state>
 
 

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title></title>
+    </h:head>
+
+    <h:body>
+        <ui:composition>
+            <div class="header-menu">
+                <h:form styleClass="genres" id="genresForm">
+
+
+
+                    <div class="ui-g">
+                        <div class="ui-g-1"><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /></div>
+                    </div>
+
+                    <div class="ui-g">
+                        <div class="ui-g-1"></div>
+                        <div class="ui-g-2"><p:commandButton value="#{msg.tv7Archiv}" event="onclick"  action="day_month"  styleClass="ui-priority-primary" actionListener="#{searchCriteriaTv7.setCustomer(selectionTv7.cust)}"/></div>
+                        <div class="ui-g-2"><p:commandButton value="#{msg.tv7Total}" event="onclick"  action="total"  styleClass="ui-priority-primary" actionListener="#{searchCriteriaTv7.setCustomer(selectionTv7.cust)}"/></div>
+
+
+                    </div>
+
+
+
+                </h:form>
+            </div>
+        </ui:composition>
+    </h:body>
+</html>
+

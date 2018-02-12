@@ -1026,14 +1026,19 @@ DataCustomerList dcs;
     @Override
     public List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt){
         // log.info("Finding по номеру модема и времени операции: " );
+        Timestamp date=null;
         if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
         if (type.equals("month")){
             ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
             System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
             }
 
-
-        Timestamp date=auxiliaryService.localDateTime_TimeStamp(ldt);
+        try {
+            date = auxiliaryService.localDateTime_TimeStamp(ldt);
+        }
+        catch (Exception e){
+            System.out.println("Дата не задана и равна NULL");
+        }
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operationtv7> criteriaQuery = cb.createQuery(Operationtv7.class);
         Root<Operationtv7> contactRoot = criteriaQuery.from(Operationtv7.class);
@@ -1060,6 +1065,17 @@ DataCustomerList dcs;
         return em.createQuery(criteriaQuery).getResultList();
 
     }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer>  findTv7Customers() {
+        List<Customer> customerList = em.createNamedQuery(
+                "Customer.findTv7Cusromers", Customer.class).getResultList();
+        return customerList;
+    }
+
+
 
 
 }

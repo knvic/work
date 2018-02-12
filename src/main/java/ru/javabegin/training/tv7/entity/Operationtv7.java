@@ -3,6 +3,7 @@ package ru.javabegin.training.tv7.entity;
 import ru.javabegin.training.vkt7.entities.Customer;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,7 +18,7 @@ import java.sql.Timestamp;
         name="operationtv7Result",
         entities=@EntityResult(entityClass=Operationtv7.class)
 )
-public class Operationtv7 {
+public class Operationtv7 implements Serializable{
     private int id;
     private String customerName;
     private String typeOperation;

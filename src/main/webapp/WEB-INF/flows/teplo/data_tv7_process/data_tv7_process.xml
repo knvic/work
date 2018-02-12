@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="data_tv7_process">
+
+      <var name="selectionTv7" class="ru.javabegin.training.tv7.object_data_tv7.SelectionTv7"/>
+      <!--//<var name="searchCriteriaTv7" class="ru.javabegin.training.tv7.object_data_tv7.SearchCriteriaTv7"/>-->
+
+      <view-state id="data_tv7_process" view="customer_tv7_d_select.xhtml" >
+            <on-entry>
+                  <evaluate expression="facadeTv7.findTv7Customers()" result="viewScope.cu"  />
+            </on-entry>
+
+
+            <transition on="day_month" to="archive"/>
+
+
+
+
+
+      </view-state>
+
+
+
+
+
+
+
+
+
+
+    <view-state id="archive" view="tv7_archive.xhtml">
+        <on-entry>
+            <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.archive" />
+        </on-entry>
+
+
+</view-state>
+
+
+
+
+      <end-state id="data_tv7_ready"  />
+
+
+      <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
+
+            <transition on="cancel" to="data_tv7_ready" />
+      </global-transitions>
+
+
+
+
+
+
+
+</flow>
