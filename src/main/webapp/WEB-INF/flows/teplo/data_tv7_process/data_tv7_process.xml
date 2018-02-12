@@ -5,7 +5,7 @@
       start-state="data_tv7_process">
 
       <var name="selectionTv7" class="ru.javabegin.training.tv7.object_data_tv7.SelectionTv7"/>
-      <var name="searchCriteriaTv7" class="ru.javabegin.training.tv7.object_data_tv7.SearchCriteriaTv7"/>
+      <!--//<var name="searchCriteriaTv7" class="ru.javabegin.training.tv7.object_data_tv7.SearchCriteriaTv7"/>-->
 
       <view-state id="data_tv7_process" view="customer_tv7_d_select.xhtml" >
             <on-entry>
@@ -13,7 +13,7 @@
             </on-entry>
 
 
-            <transition on="day_month" to="action_archive"/>
+            <transition on="day_month" to="archive"/>
 
 
 
@@ -26,12 +26,17 @@
 
 
 
-     <action-state id="action_archive">
 
-     <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.cu" />
 
-     </action-state>
 
+
+    <view-state id="archive" view="tv7_archive.xhtml">
+        <on-entry>
+            <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.archive" />
+        </on-entry>
+
+
+</view-state>
 
 
 
