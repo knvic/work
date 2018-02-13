@@ -17,6 +17,9 @@ public class SelectionTv7 implements Serializable {
 
     private Customer cust;
 
+    private boolean check;
+
+
     public void onRowSelect(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Потребитель выбран", ((Customer) event.getObject()).getFirstName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -34,5 +37,13 @@ public class SelectionTv7 implements Serializable {
 
     public void setCust(Customer cust) {
         this.cust = cust;
+    }
+
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
     }
 }

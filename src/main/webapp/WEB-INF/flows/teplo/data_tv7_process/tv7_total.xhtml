@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/tv7/customer_tv7_select_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.customers}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+
+                <p:dataTable var="u" value="#{total}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="10"
+                             paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15"  scrollable="true" scrollWidth="1600">
+                    <f:facet name="header">
+                        #{msg.customers}
+                    </f:facet>
+
+
+
+                    <p:column>
+                        <f:facet name="header" tableStyle="table-layout: auto;">
+                            <p:outputLabel value="Потребитель" />
+                        </f:facet>
+                        <h:outputText value="#{u.customerName}" />
+                    </p:column>
+
+                    <p:column  headerText="Дата записи">
+                        <h:outputText value="#{u.chronoligical}" />
+                    </p:column>
+
+
+
+                    <p:column headerText="V1 по ТВ1">
+                        <h:outputText value="#{u.v1Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="M1 по ТВ1">
+                        <h:outputText value="#{u.m1Tv1}" />
+                    </p:column>
+
+
+
+
+                    <p:column headerText="V2 по ТВ1">
+                        <h:outputText value="#{u.v2Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="M2 по ТВ1">
+                        <h:outputText value="#{u.m2Tv1}" />
+                    </p:column>
+
+
+                    <p:column headerText="V3 по ТВ1">
+                        <h:outputText value="#{u.v3Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="M3 по ТВ1">
+                        <h:outputText value="#{u.m3Tv1}" />
+                    </p:column>
+
+
+
+
+                    <p:column headerText="V1 по ТВ2">
+                        <h:outputText value="#{u.v1Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M1 по ТВ2">
+                        <h:outputText value="#{u.m1Tv2}" />
+                    </p:column>
+
+
+
+
+                    <p:column headerText="V2 по ТВ2">
+                        <h:outputText value="#{u.v2Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M2 по ТВ2">
+                        <h:outputText value="#{u.m2Tv2}" />
+                    </p:column>
+
+
+
+                    <p:column headerText="V3 по ТВ2">
+                        <h:outputText value="#{u.v3Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M3 по ТВ2">
+                        <h:outputText value="#{u.m3Tv2}" />
+                    </p:column>
+
+
+
+                    <p:column headerText="dM по ТВ1">
+                        <h:outputText value="#{u.dMTv1}" />
+                    </p:column>
+
+                    <p:column headerText="Qтв по ТВ1">
+                        <h:outputText value="#{u.qtvTv1}" />
+                    </p:column>
+
+                    <p:column headerText="Q12 по ТВ1">
+                        <h:outputText value="#{u.q12Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="Qг по ТВ1">
+                        <h:outputText value="#{u.qgTv1}" />
+                    </p:column>
+
+                    <p:column headerText="ВНР по ТВ1">
+                        <h:outputText value="#{u.vnrTv1}" />
+                    </p:column>
+
+                    <p:column headerText="ВОС по ТВ1">
+                        <h:outputText value="#{u.vosTv1}" />
+                    </p:column>
+
+
+
+
+                    <p:column headerText="dM по ТВ2">
+                        <h:outputText value="#{u.dMTv2}" />
+                    </p:column>
+
+                    <p:column headerText="Qтв по ТВ2">
+                        <h:outputText value="#{u.qtvTv2}" />
+                    </p:column>
+
+                    <p:column headerText="Q12 по ТВ2">
+                        <h:outputText value="#{u.q12Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="Qг по ТВ2">
+                        <h:outputText value="#{u.qgTv2}" />
+                    </p:column>
+
+                    <p:column headerText="ВНР по ТВ2">
+                        <h:outputText value="#{u.vnrTv2}" />
+                    </p:column>
+
+                    <p:column headerText="ВОС по ТВ2">
+                        <h:outputText value="#{u.vosTv2}" />
+                    </p:column>
+
+
+
+
+
+
+
+
+
+                    <f:facet name="paginatorTopLeft">
+                        <p:commandButton type="button" icon="fa fa-sync" />
+                    </f:facet>
+
+                    <f:facet name="paginatorBottomRight">
+                        <p:commandButton type="button" icon="fa fa-cloud-upload" />
+                    </f:facet>
+                </p:dataTable>
+            </h:form>
+
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+
+
+
+
+
+
+
+
+
+    </ui:define>
+
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

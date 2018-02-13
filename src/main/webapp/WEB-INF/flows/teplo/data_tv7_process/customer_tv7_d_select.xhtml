@@ -19,7 +19,9 @@
 
 
 
-
+        <p:dialog header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+            <h:outputText value="${message}" styleClass="error" />
+        </p:dialog>
 
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
