@@ -40,6 +40,8 @@
     <on-entry>
         <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.archive" />
     </on-entry>
+
+        <transition on="back" to="data_tv7_process"/>
     </view-state>
 
 
@@ -63,6 +65,7 @@
         <on-entry>
             <evaluate expression="facadeTv7.findTv7Total()" result="viewScope.total" />
         </on-entry>
+        <transition on="back" to="data_tv7_process"/>
     </view-state>
 
 
