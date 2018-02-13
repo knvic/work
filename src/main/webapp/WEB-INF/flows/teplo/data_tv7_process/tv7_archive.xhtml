@@ -24,34 +24,214 @@
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
 
-            <h:form>
-                <p:dataTable var="u" value="#{archive}" rows="10"
+
+                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="10"
                              paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             rowsPerPageTemplate="5,10,15" >
+                             rowsPerPageTemplate="5,10,15"  scrollable="true" scrollWidth="1600">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>
 
 
 
-
-                    <p:column headerText="#{msg.customer}">
+                    <p:column>
+                        <f:facet name="header" tableStyle="table-layout: auto;">
+                            <p:outputLabel value="Потребитель" />
+                        </f:facet>
                         <h:outputText value="#{u.customerName}" />
                     </p:column>
-                    <p:column headerText="#{msg.unitType}">
+                    <p:column tableStyle="table-layout: auto;" headerText="Тип архива">
                         <h:outputText value="#{u.typeOperation}" />
                     </p:column>
-                    <p:column headerText="Адрес:">
+                    <p:column  headerText="Дата записи">
                         <h:outputText value="#{u.chronoligical}" />
                     </p:column>
-                    <p:column headerText="#{msg.tel_modem}">
+
+                    <p:column headerText="t1 по ТВ1">
                         <h:outputText value="#{u.t1Tv1}" />
                     </p:column>
 
-                    <p:column headerText="#{msg.tel_modem}">
+                    <p:column headerText="P1 по ТВ1">
+                        <h:outputText value="#{u.p1Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="V1 по ТВ1">
                         <h:outputText value="#{u.v1Tv1}" />
                     </p:column>
+
+                    <p:column headerText="M1 по ТВ1">
+                        <h:outputText value="#{u.m1Tv1}" />
+                    </p:column>
+
+
+                    <p:column headerText="t2 по ТВ1">
+                    <h:outputText value="#{u.t2Tv1}" />
+                </p:column>
+
+                    <p:column headerText="P2 по ТВ1">
+                        <h:outputText value="#{u.p2Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="V2 по ТВ1">
+                        <h:outputText value="#{u.v2Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="M2 по ТВ1">
+                        <h:outputText value="#{u.m2Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="t3 по ТВ1">
+                        <h:outputText value="#{u.t3Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="P3 по ТВ1">
+                        <h:outputText value="#{u.p3Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="V3 по ТВ1">
+                        <h:outputText value="#{u.v3Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="M3 по ТВ1">
+                        <h:outputText value="#{u.m3Tv1}" />
+                    </p:column>
+
+
+                    <p:column headerText="t1 по ТВ2">
+                        <h:outputText value="#{u.t1Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="P1 по ТВ2">
+                        <h:outputText value="#{u.p1Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="V1 по ТВ2">
+                        <h:outputText value="#{u.v1Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M1 по ТВ2">
+                        <h:outputText value="#{u.m1Tv2}" />
+                    </p:column>
+
+
+                    <p:column headerText="t2 по ТВ2">
+                        <h:outputText value="#{u.t2Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="P2 по ТВ2">
+                        <h:outputText value="#{u.p2Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="V2 по ТВ2">
+                        <h:outputText value="#{u.v2Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M2 по ТВ2">
+                        <h:outputText value="#{u.m2Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="t3 по ТВ2">
+                        <h:outputText value="#{u.t3Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="P3 по ТВ1">
+                        <h:outputText value="#{u.p3Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="V3 по ТВ2">
+                        <h:outputText value="#{u.v3Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="M3 по ТВ2">
+                        <h:outputText value="#{u.m3Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="tнв по ТВ1">
+                        <h:outputText value="#{u.tnvTv1}" />
+                    </p:column>
+
+                    <p:column headerText="tx по ТВ1">
+                        <h:outputText value="#{u.txTv1}" />
+                    </p:column>
+
+                    <p:column headerText="Px по ТВ1">
+                        <h:outputText value="#{u.pxTv1}" />
+                    </p:column>
+
+                    <p:column headerText="dt по ТВ1">
+                        <h:outputText value="#{u.dtTv1}" />
+                    </p:column>
+
+                    <p:column headerText="dM по ТВ1">
+                        <h:outputText value="#{u.dMTv1}" />
+                    </p:column>
+
+                    <p:column headerText="Qтв по ТВ1">
+                        <h:outputText value="#{u.qtvTv1}" />
+                    </p:column>
+
+                    <p:column headerText="Q12 по ТВ1">
+                        <h:outputText value="#{u.q12Tv1}" />
+                    </p:column>
+
+                    <p:column headerText="Qг по ТВ1">
+                        <h:outputText value="#{u.qgTv1}" />
+                    </p:column>
+
+                    <p:column headerText="ВНР по ТВ1">
+                        <h:outputText value="#{u.vnrTv1}" />
+                    </p:column>
+
+                    <p:column headerText="ВОС по ТВ1">
+                        <h:outputText value="#{u.vosTv1}" />
+                    </p:column>
+
+
+                    <p:column headerText="tнв по ТВ2">
+                        <h:outputText value="#{u.tnvTv2}" />
+                    </p:column>
+
+                    <p:column headerText="tx по ТВ2">
+                        <h:outputText value="#{u.txTv2}" />
+                    </p:column>
+
+                    <p:column headerText="Px по ТВ2">
+                        <h:outputText value="#{u.pxTv2}" />
+                    </p:column>
+
+                    <p:column headerText="dt по ТВ2">
+                        <h:outputText value="#{u.dtTv2}" />
+                    </p:column>
+
+                    <p:column headerText="dM по ТВ2">
+                        <h:outputText value="#{u.dMTv2}" />
+                    </p:column>
+
+                    <p:column headerText="Qтв по ТВ2">
+                        <h:outputText value="#{u.qtvTv2}" />
+                    </p:column>
+
+                    <p:column headerText="Q12 по ТВ2">
+                        <h:outputText value="#{u.q12Tv2}" />
+                    </p:column>
+
+                    <p:column headerText="Qг по ТВ2">
+                        <h:outputText value="#{u.qgTv2}" />
+                    </p:column>
+
+                    <p:column headerText="ВНР по ТВ2">
+                        <h:outputText value="#{u.vnrTv2}" />
+                    </p:column>
+
+                    <p:column headerText="ВОС по ТВ2">
+                        <h:outputText value="#{u.vosTv2}" />
+                    </p:column>
+
+
+
+
+
 
 
 
@@ -70,7 +250,12 @@
 
 
 
-        </h:form>
+
+
+
+
+
+
 
 
     </ui:define>
