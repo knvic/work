@@ -1,6 +1,7 @@
 package ru.javabegin.training.vkt7.db;
 
 import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.entities.Result;
@@ -62,6 +63,8 @@ public interface CustomerService {
 
 
     List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt);
+
+    List<Operationtv7T> findOperationtv7TByDate(String type, Long idCustomer, LocalDateTime ldt);
 
     List<Customer> findTv7Customers();
 

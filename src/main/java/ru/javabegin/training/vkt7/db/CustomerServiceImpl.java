@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.*;
 import ru.javabegin.training.tv7.entity.Operationtv7;
+import ru.javabegin.training.tv7.entity.Operationtv7T;
+import ru.javabegin.training.tv7.entity.Operationtv7T_;
 import ru.javabegin.training.tv7.entity.Operationtv7_;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
@@ -1065,6 +1067,53 @@ DataCustomerList dcs;
         return em.createQuery(criteriaQuery).getResultList();
 
     }
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operationtv7T> findOperationtv7TByDate(String type, Long idCustomer, LocalDateTime ldt){
+        // log.info("Finding по номеру модема и времени операции: " );
+        Timestamp date=null;
+        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
+        if (type.equals("month")){
+            ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+            System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
+        }
+
+        try {
+            date = auxiliaryService.localDateTime_TimeStamp(ldt);
+        }
+        catch (Exception e){
+            System.out.println("Дата не задана и равна NULL");
+        }
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operationtv7T> criteriaQuery = cb.createQuery(Operationtv7T.class);
+        Root<Operationtv7T> contactRoot = criteriaQuery.from(Operationtv7T.class);
+        // contactRoot.fetch(Operationv7_.measurementsSet, JoinType.LEFT);
+        //contactRoot.fetch(Operation_.customer, JoinType.RIGHT);
+        Join cont = contactRoot.join(Operationtv7T_.customer,JoinType.LEFT);
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+        if (idCustomer != null) {
+            Predicate p =cb.equal(cont.get(Customer_.id), idCustomer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7T_.chronoligical),date);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        return em.createQuery(criteriaQuery).getResultList();
+
+    }
+
+
 
 
     @Transactional(readOnly=true)
