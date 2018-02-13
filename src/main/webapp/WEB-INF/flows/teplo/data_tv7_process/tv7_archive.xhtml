@@ -24,98 +24,27 @@
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
 
-            <h:form>
-                <p:dataTable var="u" value="#{archive}" rows="10"
+
+                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="10"
                              paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             rowsPerPageTemplate="5,10,15" scrollable="true" scrollWidth="1600">
+                             rowsPerPageTemplate="5,10,15"  scrollable="true" scrollWidth="1600">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>
 
-<!--
-                    private String customerName;
-                    private String typeOperation;
-                    private String error;
-                    private Timestamp chronoligical;
-                    private Long idCustomer;
-                    private String t1Tv1;
-                    private String p1Tv1;
-                    private String v1Tv1;
-                    private String m1Tv1;
-                    private String t2Tv1;
-                    private String p2Tv1;
-                    private String v2Tv1;
-                    private String m2Tv1;
-                    private String t3Tv1;
-                    private String p3Tv1;
-                    private String v3Tv1;
-                    private String m3Tv1;
-                    private String t1Tv2;
-                    private String p1Tv2;
-                    private String v1Tv2;
-                    private String m1Tv2;
-                    private String t2Tv2;
-                    private String p2Tv2;
-                    private String v2Tv2;
-                    private String m2Tv2;
-                    private String t3Tv2;
-                    private String p3Tv2;
-                    private String v3Tv2;
-                    private String m3Tv2;
-                    private String tnvTv1;
-                    private String txTv1;
-                    private String pxTv1;
-                    private String dtTv1;
-                    private String dMTv1;
-                    private String qtvTv1;
-                    private String q12Tv1;
-                    private String qgTv1;
-                    private String vnrTv1;
-                    private String vosTv1;
-                    private String tnvTv2;
-                    private String txTv2;
-                    private String pxTv2;
-                    private String dtTv2;
-                    private String dMTv2;
-                    private String qtvTv2;
-                    private String q12Tv2;
-                    private String qgTv2;
-                    private String vnrTv2;
-                    private String vosTv2;
-                    private String dp;
-                    private String ns1Tv1;
-                    private String ns2Tv1;
-                    private String ns3Tv1;
-                    private String ns1Tv2;
-                    private String ns2Tv2;
-                    private String ns3Tv2;
-                    private String nsTv1;
-                    private String nsTv2;
-                    private String nsDp;
-                    private String signsOfEvents;
-                    private String durationOf220;
-                    private String durationDisplay;
-                    private String durationOut;
-                    private String siTv1;
-                    private String activeBdTv1;
-                    private String frtTv1;
-                    private String kt3Tv1;
-                    private String siTv2;
-                    private String activeBdTv2;
-                    private String frtTv2;
-                    private String kt3Tv2;-->
+
 
                     <p:column>
-                        <f:facet name="header">
+                        <f:facet name="header" tableStyle="table-layout: auto;">
                             <p:outputLabel value="Потребитель" />
                         </f:facet>
                         <h:outputText value="#{u.customerName}" />
                     </p:column>
-                    <p:column headerText="Тип архива">
+                    <p:column tableStyle="table-layout: auto;" headerText="Тип архива">
                         <h:outputText value="#{u.typeOperation}" />
                     </p:column>
-                    <p:column headerText="Дата записи">
+                    <p:column  headerText="Дата записи">
                         <h:outputText value="#{u.chronoligical}" />
                     </p:column>
 
@@ -321,7 +250,12 @@
 
 
 
-        </h:form>
+
+
+
+
+
+
 
 
     </ui:define>
