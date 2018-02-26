@@ -6,6 +6,7 @@
 
       <var name="selectionTv7" class="ru.javabegin.training.tv7.object_data_tv7.SelectionTv7"/>
       <!--//<var name="searchCriteriaTv7" class="ru.javabegin.training.tv7.object_data_tv7.SearchCriteriaTv7"/>-->
+    <var name="markersView" class="ru.javabegin.training.vkt7.Maps.MarkersView"/>
 
       <view-state id="data_tv7_process" view="customer_tv7_d_select.xhtml" >
             <on-entry>
@@ -62,15 +63,54 @@
 
 
     <view-state id="total" view="tv7_total.xhtml">
+
         <on-entry>
             <evaluate expression="facadeTv7.findTv7Total()" result="viewScope.total" />
         </on-entry>
         <transition on="back" to="data_tv7_process"/>
+        <transition on="action_selectTv7T" to="action_selectTv7T"/>
+
+
+    </view-state>
+
+
+    <action-state id="action_selectTv7T">
+
+
+        <evaluate expression="facadeTv7.checkDateOfDateToSelected()" />
+
+        <transition on="yes" to="total_getDate" />
+        <transition on="no" to="total" >
+            <set name="flashScope.message" value="'Select Date for Report'"/>
+        </transition>
+
+
+    </action-state>
+
+
+    <view-state id="total_getDate" view="tv7_total_getDate.xhtml" >
+
+
+        <on-entry>
+            <!--<evaluate expression="facade_data.getTotal_current_column()" result="flashScope.t_c_col"/>-->
+            <evaluate expression="facadeTv7.getSelectedByData()" result="viewScope.total" />
+        </on-entry>
+
+        <transition on="back" to="total"/>
+        <!--<transition on="next" to="measurements"/>-->
+
     </view-state>
 
 
 
-      <end-state id="data_tv7_ready"  />
+
+
+
+
+
+
+
+    <end-state id="data_tv7_ready"  />
 
 
       <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
