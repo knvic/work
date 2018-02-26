@@ -93,7 +93,13 @@ public class EventListener_tv7 implements SerialPortEventListener   { /*Слуш
                         else{
                             System.out.println("LRC : false");
                             System.out.println("Данные приняты не корректно ");
-                        };
+                            data1 = temp1;
+                            outTv7=list;
+                            temp1.delete(0,temp1.length());
+
+                            recieve_all_byte = 1;
+
+                        }
                     }
 
 

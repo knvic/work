@@ -27,10 +27,10 @@
             <p:growl id="msgs" showDetail="true" />
 
             <h:form>
-                <p:dataTable var="u" value="#{cu}" rows="10"
+                <p:dataTable var="u" value="#{cu}" rows="20"
                              paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             rowsPerPageTemplate="5,10,15" selectionMode="single" selection="#{selectionTv7.cust}" rowKey="#{u.id}">
+                             rowsPerPageTemplate="20,35,50" selectionMode="single" selection="#{selectionTv7.cust}" rowKey="#{u.id}">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>

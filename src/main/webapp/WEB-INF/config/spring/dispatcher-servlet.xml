@@ -247,10 +247,10 @@
 
 
         <!--Для ВКТ-7-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="20 1 0 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="20 0 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
-        <task:scheduled ref="updateDataCustomer" method="update" cron="50 * * * * ?"/>
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 */2 * * * ?"/>
 
 
         <!--Вспомогательные Для ВКТ-7-->
@@ -258,11 +258,14 @@
         <!--<task:scheduled ref="updateMoth" method="update" cron="5 27 23 * * ?"/>-->
 
 
-        <!--Для ТВ-7-->
-        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */5 * * * ?"/>-->
+        <!--Для ТВ-7 ############# начало ###############################################   -->
+        <!--Запуск ревизора-->
+
+        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */3 * * * ?"/>-->
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
-        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 10 16 * * ?"/>
+        <!--<task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 11 19 * * ?"/>-->
+        <!--Для ТВ-7 ############ конец #############################################   -->
 
 
 

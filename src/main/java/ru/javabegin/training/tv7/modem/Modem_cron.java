@@ -1060,10 +1060,10 @@ atomicInteger.addAndGet(1);
 
 
 
-                        list = modBusService.archive(0, ldt, 1, 2);
-                        list = modBusService.total(0, ldt,  30);
+                       // list = modBusService.archive(0, ldt, 1, 2);
+                        list = modBusService.total(1, ldt,  30);
 
-                        System.out.println("\n ::::: ::: Дата для суточных -> "+ldt);
+                        System.out.println("\n"+ customer.getFirstName()+" ::::: ::: Дата для ИТОГОВЫЕ -> "+ldt);
 
                         list.forEach(p -> System.out.print(p + " "));
 
@@ -1101,7 +1101,7 @@ atomicInteger.addAndGet(1);
 
                         t = 0;
                         repeat = 0;
-                        executor.submit(callable(7,"Ждем получения ИТОГОВЫЕ"));
+                        executor.submit(callable(7,"Ждем получения ИТОГОВЫЕ "+ customer.getFirstName()));
                         recieve_all_byte = 0;
                         step = 255;
                         System.out.println("step= " + step);
@@ -1123,8 +1123,8 @@ atomicInteger.addAndGet(1);
                                 if (repeat == 3) {
                                     step = 0;
 
-                                    System.out.println("\n Ответ ИТОГОВЫЕ не поступил. Ошибка по таймауту.");
-                                    System.out.println("\n error=11.3F FE 65 байт. Ошибка по TimeOut");
+                                    System.out.println("\n"+  customer.getFirstName()+ " Ответ ИТОГОВЫЕ не поступил. Ошибка по таймауту.");
+                                    System.out.println("\n  Ошибка по TimeOut");
                                     error = 11;
                                     stop = false;
                                 }
@@ -1134,9 +1134,11 @@ atomicInteger.addAndGet(1);
                                 outTv7 = null;
                                 t = 0;
                                 z = 0;
+                                executor.submit(callable(7,"Ждем получения СУТОЧНЫЕ "));
+
                                 serialPort.writeIntArray(request);
 
-                                executor.submit(callable(20));
+
                             }
 
                         }
@@ -1144,7 +1146,7 @@ atomicInteger.addAndGet(1);
 
 
                         System.out.println("\nДанные ИТОГОВЫЕ поступили.");
-                        System.out.println("Ожидаем обработку принятых данных ИТОГОВЫЕ");
+                        System.out.println( customer.getFirstName()+" Ожидаем обработку принятых данных ИТОГОВЫЕ");
 
                         atomicInteger.addAndGet(1);
 

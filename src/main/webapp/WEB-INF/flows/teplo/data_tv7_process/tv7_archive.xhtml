@@ -25,10 +25,10 @@
             <p:growl id="msgs" showDetail="true" />
 
 
-                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="10"
+                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="20"
                              paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             rowsPerPageTemplate="5,10,15"  scrollable="true" scrollWidth="1600">
+                             rowsPerPageTemplate="20,35,50"  scrollable="true" scrollWidth="1600">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>
