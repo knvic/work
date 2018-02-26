@@ -1125,6 +1125,132 @@ DataCustomerList dcs;
     }
 
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operationtv7> findTv7_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status){
+
+        //   log.info("Finding operation by id: " );
+
+        // id=10L;
+
+
+
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operationtv7> criteriaQuery = cb.createQuery(Operationtv7.class);
+
+        Root<Operationtv7> contactRoot = criteriaQuery.from(Operationtv7.class);
+        //contactRoot.fetch(Operationtv7_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operationtv7_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id_customer != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id_customer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_of != null) {
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operationtv7_.chronoligical),
+                    day_of);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_to != null) {
+            Predicate p = cb.lessThan(contactRoot.get(Operationtv7_.chronoligical),
+                    day_to);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }
+
+
+       /* if (status != null) {
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                    status);
+            criteria = cb.and(criteria, p);
+        }*/
+
+
+        criteriaQuery.where(criteria);
+        criteriaQuery.orderBy(cb.asc(contactRoot.get(Operationtv7_.chronoligical)));
+
+        List<Operationtv7> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+
+
+    }
+
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operationtv7T> findTv7T_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to){
+
+        //   log.info("Finding operation by id: " );
+
+        // id=10L;
+
+
+
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operationtv7T> criteriaQuery = cb.createQuery(Operationtv7T.class);
+
+        Root<Operationtv7T> contactRoot = criteriaQuery.from(Operationtv7T.class);
+        //contactRoot.fetch(Operationtv7_.measurementsSet, JoinType.LEFT);
+        Join cont = contactRoot.join(Operationtv7T_.customer,JoinType.LEFT);
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+
+        if (id_customer != null) {
+            Predicate p = cb.equal(cont.get(Customer_.id),
+                    id_customer);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_of != null) {
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operationtv7T_.chronoligical),
+                    day_of);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (day_to != null) {
+            Predicate p = cb.lessThan(contactRoot.get(Operationtv7T_.chronoligical),
+                    day_to);
+            criteria = cb.and(criteria, p);
+        }
+
+/*
+        if (type != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7T_.typeOperation),
+                    type);
+            criteria = cb.and(criteria, p);
+        }*/
+
+
+       /* if (status != null) {
+            Predicate p = cb.like(contactRoot.get(Operation_.status),
+                    status);
+            criteria = cb.and(criteria, p);
+        }*/
+
+
+        criteriaQuery.where(criteria);
+        criteriaQuery.orderBy(cb.asc(contactRoot.get(Operationtv7T_.chronoligical)));
+
+        List<Operationtv7T> result=em.createQuery(criteriaQuery).getResultList();
+        return result;
+
+
+    }
+
 
 
 }

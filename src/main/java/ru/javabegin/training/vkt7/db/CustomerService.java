@@ -68,6 +68,9 @@ public interface CustomerService {
 
     List<Customer> findTv7Customers();
 
+    List<Operationtv7> findTv7_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to, String type, String status);
+    List<Operationtv7T> findTv7T_betwen_data(Long id_customer, Timestamp day_of,Timestamp day_to);
+
     //List<Operationtv7> findOperationtv7All();
 
 
