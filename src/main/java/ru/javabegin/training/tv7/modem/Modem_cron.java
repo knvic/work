@@ -1050,7 +1050,7 @@ atomicInteger.addAndGet(1);
                         /*
                          *
                          *
-                         * Запрос Чтение СУТОЧНЫЕ
+                         * Запрос Чтение ИТОГОВЫЕ
                          *
                          *
                          */
@@ -1059,11 +1059,26 @@ atomicInteger.addAndGet(1);
                         System.out.println("\n Формируем запрос чтения ИТОГОВЫЕ");
 
 
+                        //Проверяем наличие измерения за указанную дату
+
+
+                        List<Operationtv7T> operationtv7TList=customerService.findOperationtv7TByDate("",customer.getId(),ldt);
+                        if(operationtv7TList.size()>0){
+                            System.out.println(customer.getFirstName()+ "ИТОГОВОЕ за "+ldt+ " присутствует");
+                            continue;
+
+                        }else
+                        {System.out.println(customer.getFirstName()+ "ИТОГОВЫХ за "+ldt+ " НЕТ. НУЖНО ПРОВОДИТЬ СЧИТЫВАНИЕ");}
+
+
 
                        // list = modBusService.archive(0, ldt, 1, 2);
                         list = modBusService.total(1, ldt,  30);
 
                         System.out.println("\n"+ customer.getFirstName()+" ::::: ::: Дата для ИТОГОВЫЕ -> "+ldt);
+
+
+
 
                         list.forEach(p -> System.out.print(p + " "));
 

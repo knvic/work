@@ -140,9 +140,12 @@ return map;
                 }
                 else {
                     // String regularExpression1="^(m\\d|v\\d|dM)";
-                    String regularExpression2="^(t\\d_|dt|tx|tнв)";
 
                     String regularExpression1="^(m\\d|v\\d)";
+
+                    String regularExpression2="^(t\\d_|dt|tx|tнв)";
+
+
                     String regularExpression3="^(dM)";
 
 
