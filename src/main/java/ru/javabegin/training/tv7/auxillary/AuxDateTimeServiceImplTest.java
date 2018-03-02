@@ -6,6 +6,7 @@ import ru.javabegin.training.tv7.LRC.LrcServiceImpl;
 import ru.javabegin.training.tv7.recieve.ModBusRServiceImpl;
 import ru.javabegin.training.tv7.recieve.Tupel_date;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +69,16 @@ public class AuxDateTimeServiceImplTest {
         System.out.println("начало массива TOTAL = "+infOfDate.get("begin_total").getLocalDateTime());
         System.out.println("проверяемая дата = "+ldt4);
         System.out.println("Результат = "+result);
+
+    }
+
+    @Test
+    public void timeStamp_to_stringData() {
+        AuxDateTimeServiceImpl auxDateTimeService=new AuxDateTimeServiceImpl();
+        Timestamp ts=Timestamp.valueOf(LocalDateTime.now());
+        System.out.println("ts = "+ts);
+        System.out.println("Результат = "+auxDateTimeService.timeStamp_to_stringData(ts));
+
 
     }
 }

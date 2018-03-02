@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.entity.Operationtv7T;
+import ru.javabegin.training.tv7.excel.Calculation;
 import ru.javabegin.training.tv7.excel.DataObjectTv7;
 import ru.javabegin.training.tv7.excel.GetListData;
 import ru.javabegin.training.tv7.excel.GetListDataImpl;
@@ -135,7 +136,7 @@ public class FacadeTv7 {
     }
 
 
-    public List<Object>  get_SelectedByData_Archive() {
+    public List<Object> getSelectedByData_Archive() throws NoSuchFieldException, IllegalAccessException {
 
 
         Customer customer = searchCriteriaTv7.getCustomer();
@@ -184,12 +185,14 @@ public class FacadeTv7 {
         listData.add(0,operationtv7List);
         listData.add(1,total);
 
+        Calculation calculation = new Calculation();
 
+        List<Object> dataObject = calculation.archiveXsl(operationtv7List, total );
        // List<DataObjectTv7>
 
 
 
-        return listData;
+        return  dataObject;
     }
 
 

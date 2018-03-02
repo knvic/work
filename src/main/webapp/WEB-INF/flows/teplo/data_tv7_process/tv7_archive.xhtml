@@ -18,11 +18,42 @@
     <ui:define name="content">
 
 
-
+        <p:dialog header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+            <h:outputText value="${message}" styleClass="error" />
+        </p:dialog>
 
 
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="От даты:" />
+                <p:calendar id="button" value="#{selectionTv7.day_of}" showOn="button" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="До даты:" />
+                <p:calendar id="button2" value="#{selectionTv7.day_to}" showOn="button" />
+            </h:panelGrid>
+
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Дата от:" />
+                    <h:outputText value="#{selectionTv7.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Дата до:" />
+                    <h:outputText value="#{selectionTv7.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+
+            <p:commandButton value="#{msg.select}" event="onclick"  action="action_selectTv7"  actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" />
 
 
                 <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="35"

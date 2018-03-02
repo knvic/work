@@ -3,6 +3,8 @@ package ru.javabegin.training.test_Reflection;
 import ru.javabegin.training.tv7.entity.Operationtv7;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,17 +49,23 @@ public class TestReflection {
 
         System.out.println("проверка :: "+fieldName);
       //  ff.set(mClassObject,"2342342");
-        int i=0;
+        double i=22.345;
         for (String id :archive) {
             ff=mClassObject.getDeclaredField(id);
             ff.setAccessible(true);
             System.out.println("Поле "+ff.getName()+" получаем значение :: "+ ff.get(o));
             ff.set(o,String.valueOf(i));
-            i=i+100;
+            i=i+43.874;
             System.out.println("Поле "+ff.getName()+"новое значение :: "+ ff.get(o));
+            //BigDecimal field_value= new BigDecimal((String)ff.get(o)).setScale(2, RoundingMode.HALF_EVEN);
+            BigDecimal field_value= new BigDecimal((String)ff.get(o));
+            System.out.println("Поле "+ff.getName()+"d bigdecimal "+field_value.toString() );
+
         }
 
-        System.out.println("проверка :: ");
+
+
+
 ////
 
     }

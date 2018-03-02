@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/tv7/customer_tv7_archive_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.customers}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <p:dialog header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+            <h:outputText value="${message}" styleClass="error" />
+        </p:dialog>
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="От даты:" />
+                <p:calendar id="button" value="#{selectionTv7.day_of}" showOn="button" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="До даты:" />
+                <p:calendar id="button2" value="#{selectionTv7.day_to}" showOn="button" />
+            </h:panelGrid>
+
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Дата от:" />
+                    <h:outputText value="#{selectionTv7.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Дата до:" />
+                    <h:outputText value="#{selectionTv7.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+
+            <p:commandButton value="#{msg.select}" event="onclick"  action="action_selectTv7T"  actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" />
+
+
+
+            <p:dataTable var="u" value="#{archive[1]}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="35"
+                             paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="35,50,70"  scrollable="true" scrollWidth="1600">
+                    <f:facet name="header">
+                        #{msg.customers}
+                    </f:facet>
+
+
+
+
+                <p:column>
+                    <f:facet name="header">
+                        Дата
+                    </f:facet>
+                    <h:outputText value="#{u.dataString}"/>
+                </p:column>
+
+                <p:columns value="#{archive[0]}" var="id" >
+                    <f:facet name="header">
+                        <h:outputText value="#{id}"/>
+                    </f:facet>
+                    <h:outputText value="#{u.optionalValues[id].value}"/>
+                </p:columns>
+
+
+
+
+
+
+
+
+
+
+
+                <f:facet name="paginatorTopLeft">
+                        <p:commandButton type="button" icon="fa fa-sync" />
+                    </f:facet>
+
+                    <f:facet name="paginatorBottomRight">
+                        <p:commandButton type="button" icon="fa fa-cloud-upload" />
+                    </f:facet>
+                </p:dataTable>
+
+
+
+            </h:form>
+
+      <!--  <p:gmap center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:100%;height:400px" model="#{markersView.simpleModel}" />
+
+            &lt;!&ndash;<p:poll interval="15"  update=":form" />&ndash;&gt;
+
+-->
+
+
+
+
+
+
+
+
+
+    </ui:define>
+
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

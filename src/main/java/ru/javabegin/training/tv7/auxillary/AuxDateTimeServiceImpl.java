@@ -2,7 +2,9 @@ package ru.javabegin.training.tv7.auxillary;
 
 import ru.javabegin.training.tv7.recieve.Tupel_date;
 
+import java.sql.Timestamp;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Date;
@@ -105,5 +107,16 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
         }
 
         return result;
+    }
+
+
+    @Override
+    public String timeStamp_to_stringData(Timestamp tsData){
+
+        LocalDateTime ldt = tsData.toLocalDateTime();
+
+        String data=ldt.format(DateTimeFormatter.ofPattern("dd.MM.uu HH"));
+
+      return data;
     }
 }
