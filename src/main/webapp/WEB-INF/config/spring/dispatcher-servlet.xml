@@ -261,10 +261,10 @@
         <!--Для ТВ-7 ############# начало ###############################################   -->
         <!--Запуск ревизора-->
 
-        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */3 * * * ?"/>-->
+        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */5 * * * ?"/>-->
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
-        <!--<task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 36 20 * * ?"/>-->
+        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 2 12 * * ?"/>
         <!--Для ТВ-7 ############ конец #############################################   -->
 
 

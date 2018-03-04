@@ -44,6 +44,10 @@ public class test_datatime_28_11_17 {
 
         }
 
+            LocalDateTime ldt= LocalDateTime.now().minusDays(3);
+
+            System.out.println("ldt"+ldt);
+
         }
     }
 

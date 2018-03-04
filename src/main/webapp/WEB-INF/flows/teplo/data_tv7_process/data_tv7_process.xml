@@ -42,6 +42,7 @@
         <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.archive" />
     </on-entry>
         <transition on="action_selectTv7" to="action_selectTv7"/>
+        <transition on="action_selectTv7_xls" to="action_selectTv7_xls"/>
         <transition on="back" to="data_tv7_process"/>
     </view-state>
 
@@ -87,6 +88,9 @@
 
     </action-state>
 
+
+
+
     <action-state id="action_selectTv7">
 
 
@@ -99,6 +103,24 @@
 
 
     </action-state>
+
+    <action-state id="action_selectTv7_xls">
+
+
+        <evaluate expression="facadeTv7.checkDateOfDateToSelected()" />
+
+        <transition on="yes" to="archive" >
+            <evaluate expression="facadeTv7.getExcel_archive()" />
+            <set name="flashScope.message1" value="'Файл формируется'"/>
+        </transition>
+
+        <transition on="no" to="archive" >
+            <set name="flashScope.message" value="'Не выбраны даты'"/>
+        </transition>
+
+
+    </action-state>
+
 
 
     <view-state id="total_getDate" view="tv7_total_getDate.xhtml" >

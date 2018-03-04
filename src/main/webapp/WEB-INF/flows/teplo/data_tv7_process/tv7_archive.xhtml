@@ -18,12 +18,14 @@
     <ui:define name="content">
 
 
-        <p:dialog header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+        <p:dialog id="www" header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
             <h:outputText value="${message}" styleClass="error" />
         </p:dialog>
 
 
         <h:form id="form">
+
+
             <p:growl id="msgs" showDetail="true" />
 
             <h:panelGrid columns="2" cellpadding="5">
@@ -53,7 +55,8 @@
                 </p:panelGrid>
             </p:dialog>
 
-            <p:commandButton value="#{msg.select}" event="onclick"  action="action_selectTv7"  actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" />
+            <p:commandButton value="На экран" event="onclick"  action="action_selectTv7"  actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" />
+            <p:commandButton value="В файл " event="onclick"  action="action_selectTv7_xls"  update=":www" actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" />
 
 
                 <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="35"
@@ -276,6 +279,7 @@
                     </f:facet>
                 </p:dataTable>
             </h:form>
+
 
             <!--<p:poll interval="15"  update=":form" />-->
 
