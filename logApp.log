@@ -286,3 +286,20 @@
 2018-03-05 17:48:38 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 2018-03-05 18:00:30 INFO  root:50 - Начала работать программа ревизор
 2018-03-05 18:00:30 INFO  root:51 - Статус end : false
+2018-03-05 18:15:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-05 18:15:30 INFO  root:51 - Статус end : false
+2018-03-05 18:30:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-05 18:30:30 INFO  root:51 - Статус end : false
+2018-03-05 18:45:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-05 18:45:30 INFO  root:51 - Статус end : false
+2018-03-05 18:48:13 INFO  XmlWebApplicationContext:984 - Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 17:42:08 MSK 2018]; parent: Root WebApplicationContext
+2018-03-05 18:48:13 INFO  DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-03-05 18:48:13 INFO  ThreadPoolTaskScheduler:203 - Shutting down ExecutorService 'serverScheduler'
+2018-03-05 18:48:13 INFO  ThreadPoolTaskExecutor:203 - Shutting down ExecutorService
+2018-03-05 18:48:13 INFO  SchedulerFactoryBean:765 - Shutting down Quartz Scheduler
+2018-03-05 18:48:13 INFO  GenericWebApplicationContext:984 - Closing Flow ApplicationContext [teplo]: startup date [Mon Mar 05 17:42:41 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-05 18:48:13 INFO  GenericWebApplicationContext:984 - Closing Flow ApplicationContext [teplo/data_tv7_process]: startup date [Mon Mar 05 17:48:38 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_test'
+2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_customer'
+2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_contact'
+2018-03-05 18:48:13 INFO  XmlWebApplicationContext:984 - Closing Root WebApplicationContext: startup date [Mon Mar 05 17:42:00 MSK 2018]; root of context hierarchy
