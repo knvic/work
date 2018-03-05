@@ -256,7 +256,7 @@ public class FacadeTv7 {
 
 
 
-        calculation_xls.archiveXsl(customer, operationtv7List, total );
+        calculation_xls.archiveXsl(customer, operationtv7List, total, "");
         // List<DataObjectTv7>
 
 
@@ -274,7 +274,7 @@ public class FacadeTv7 {
             LocalDateTime ldt= LocalDateTime.now().minusDays(5);
 
             ExcelAllData excelAllData=new ExcelAllData();
-            excelAllData.getAllExcelData();
+            excelAllData.getAllExcelData(customerService);
 
             return "123";
         };

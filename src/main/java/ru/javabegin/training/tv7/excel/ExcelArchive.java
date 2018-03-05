@@ -65,7 +65,7 @@ public class ExcelArchive {
 
 
     //public void archiveExcel_tv1 (Customer customer, List<Object> objectsList) throws IOException {
-    public void archiveExcel_tv1 (Customer customer, List<String>id_coil_archive, List<DataObjectTv7> atchive, List<String>id_coil_total,List<DataObjectTv7> total, String tv) throws IOException {
+    public void archiveExcel_tv1 (Customer customer, List<String>id_coil_archive, List<DataObjectTv7> atchive, List<String>id_coil_total,List<DataObjectTv7> total, String tv, String dir) throws IOException {
 
        /* List<String>id_coil_archive= (List<String>) objectsList.get(0);
         List<DataObjectTv7> atchive =(List<DataObjectTv7>)objectsList.get(1);
@@ -231,8 +231,11 @@ public class ExcelArchive {
 
         //File file = new File("C:/TV7/"+customer.getFirstName()+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
         String CustomerName=customer.getFirstName().replace("\"","");
-        File file = new File("C:/demo/TV7/"+CustomerName+"_"+tv+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
-        file.getParentFile().mkdirs();
+        //File file = new File("C:/demo/TV7/"+CustomerName+"_"+tv+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
+        File file = new File(dir+CustomerName+"_"+tv+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
+
+
+        //file.getParentFile().mkdirs();
 
         FileOutputStream outFile = new FileOutputStream(file);
         workbook.write(outFile);

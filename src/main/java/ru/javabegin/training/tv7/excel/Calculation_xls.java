@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class Calculation_xls {
 
 
-    public void archiveXsl(Customer customer, List<Operationtv7> operationtv7List, List<Operationtv7T> operationtv7TList) throws NoSuchFieldException, IllegalAccessException, ExecutionException, InterruptedException, IOException {
+    public void archiveXsl(Customer customer, List<Operationtv7> operationtv7List, List<Operationtv7T> operationtv7TList,String dir) throws NoSuchFieldException, IllegalAccessException, ExecutionException, InterruptedException, IOException {
 
 
 
@@ -298,14 +298,14 @@ public class Calculation_xls {
 
        ExcelArchive excelArchive=new ExcelArchive();
       // excelArchive.archiveExcel_tv1(customer,objectList);
-        excelArchive.archiveExcel_tv1(customer,archiveTv1,dataObjectTv7List,totalTv1,totalData,"ТВ1");
+        excelArchive.archiveExcel_tv1(customer,archiveTv1,dataObjectTv7List,totalTv1,totalData,"ТВ1",dir);
 try {
     if (!operationtv7List.get(0).getSiTv2().contains("0")) {
         List<String> archiveTv2 = new ArrayList<>(Arrays.asList(archive_tv2.replace(" ", "").split(",")));
 
         List<String> totalTv2 = new ArrayList<>(Arrays.asList(total_tv2.replace(" ", "").split(",")));
 
-        excelArchive.archiveExcel_tv1(customer, archiveTv2, dataObjectTv7List, totalTv2, totalData, "ТВ2");
+        excelArchive.archiveExcel_tv1(customer, archiveTv2, dataObjectTv7List, totalTv2, totalData, "ТВ2",dir);
 
 
     }

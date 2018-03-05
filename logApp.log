@@ -1,305 +1,85 @@
-2018-03-05 17:42:00 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
-2018-03-05 17:42:00 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Mon Mar 05 17:42:00 MSK 2018]; root of context hierarchy
-2018-03-05 17:42:01 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
-2018-03-05 17:42:01 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
-2018-03-05 17:42:01 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
-2018-03-05 17:42:01 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
-2018-03-05 17:42:02 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
-2018-03-05 17:42:02 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
-2018-03-05 17:42:02 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
-2018-03-05 17:42:02 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
-2018-03-05 17:42:03 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-05 17:42:03 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
-2018-03-05 17:42:04 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@57dd3cd3, org.springframework.security.web.session.ConcurrentSessionFilter@31995cae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f5ce1a5, org.springframework.security.web.header.HeaderWriterFilter@72bbc8fb, org.springframework.security.web.authentication.logout.LogoutFilter@4c3e49db, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@37b910de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ff09e45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3206750, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3dee967e, org.springframework.security.web.session.SessionManagementFilter@42ae4efd, org.springframework.security.web.access.ExceptionTranslationFilter@6987f25b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@691d02dc]
-2018-03-05 17:42:04 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
-2018-03-05 17:42:04 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 3828 ms
-2018-03-05 17:42:08 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
-2018-03-05 17:42:08 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 17:42:08 MSK 2018]; parent: Root WebApplicationContext
-2018-03-05 17:42:08 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
-2018-03-05 17:42:08 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
-2018-03-05 17:42:08 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
-2018-03-05 17:42:10 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Tomcat 9.0\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
-2018-03-05 17:42:13 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-05 17:42:13 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-03-05 17:42:13 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-05 17:42:14 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
-2018-03-05 17:42:14 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-05 20:36:18 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
+2018-03-05 20:36:19 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Mon Mar 05 20:36:19 MSK 2018]; root of context hierarchy
+2018-03-05 20:36:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
+2018-03-05 20:36:20 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
+2018-03-05 20:36:20 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
+2018-03-05 20:36:20 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
+2018-03-05 20:36:20 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
+2018-03-05 20:36:20 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
+2018-03-05 20:36:20 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
+2018-03-05 20:36:20 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
+2018-03-05 20:36:22 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-05 20:36:22 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2018-03-05 20:36:22 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@2af3e3bb, org.springframework.security.web.session.ConcurrentSessionFilter@1ebe57ec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32bc3263, org.springframework.security.web.header.HeaderWriterFilter@76de6307, org.springframework.security.web.authentication.logout.LogoutFilter@4385b85c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f6896f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c949653, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79d7149d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@177e04a3, org.springframework.security.web.session.SessionManagementFilter@7ccae795, org.springframework.security.web.access.ExceptionTranslationFilter@24b4d051, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65064ba6]
+2018-03-05 20:36:22 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
+2018-03-05 20:36:23 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 4426 ms
+2018-03-05 20:36:28 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2018-03-05 20:36:28 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 20:36:28 MSK 2018]; parent: Root WebApplicationContext
+2018-03-05 20:36:28 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
+2018-03-05 20:36:28 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
+2018-03-05 20:36:28 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
+2018-03-05 20:36:30 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Tomcat 9.0\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
+2018-03-05 20:36:32 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-05 20:36:33 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-05 20:36:33 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-05 20:36:34 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
+2018-03-05 20:36:34 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_contact
 	...]
-2018-03-05 17:42:15 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
-2018-03-05 17:42:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
-2018-03-05 17:42:15 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
-2018-03-05 17:42:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-03-05 17:42:17 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-05 17:42:22 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-05 17:42:23 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
-2018-03-05 17:42:23 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-05 17:42:24 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
-2018-03-05 17:42:24 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-05 20:36:35 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
+2018-03-05 20:36:35 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-03-05 20:36:35 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2018-03-05 20:36:35 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-05 20:36:37 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-05 20:36:42 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-05 20:36:43 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
+2018-03-05 20:36:43 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-05 20:36:44 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
+2018-03-05 20:36:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_customer
 	...]
-2018-03-05 17:42:25 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-05 17:42:25 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-05 17:42:25 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
-2018-03-05 17:42:25 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-05 17:42:26 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
-2018-03-05 17:42:26 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-05 20:36:44 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-05 20:36:45 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-05 20:36:45 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
+2018-03-05 20:36:45 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-05 20:36:45 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
+2018-03-05 20:36:45 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_test
 	...]
-2018-03-05 17:42:26 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
-2018-03-05 17:42:26 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-05 17:42:26 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
-2018-03-05 17:42:27 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-05 17:42:27 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
-2018-03-05 17:42:29 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-05 17:42:29 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-05 17:42:29 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-05 17:42:30 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
-2018-03-05 17:42:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
-2018-03-05 17:42:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 17:42:08 MSK 2018]; parent: Root WebApplicationContext
-2018-03-05 17:42:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 17:42:08 MSK 2018]; parent: Root WebApplicationContext
-2018-03-05 17:42:37 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
-2018-03-05 17:42:37 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
-2018-03-05 17:42:37 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
-2018-03-05 17:42:37 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
-2018-03-05 17:42:38 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
-2018-03-05 17:42:38 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
-2018-03-05 17:42:38 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 30093 ms
-2018-03-05 17:42:41 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Mon Mar 05 17:42:41 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-05 17:42:42 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@685aef44] to [org.springframework.web.context.request.RequestScope@37c7cbfe]
-2018-03-05 17:42:42 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-05 17:43:44 INFO  root:218 - Акварель -- Измерений => ИТОГОВЫЕ <= за 2018-02-28T17:43:40.027 НЕТ
-2018-03-05 17:43:55 INFO  root:485 - Телефон = ATDP+79064628305
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-01T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-01T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-02T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-02T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-03T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-03T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-04T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-04T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-05T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-05T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-06T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-06T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-07T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-07T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-08T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-08T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-09T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-09T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-10T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-10T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-11T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-11T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-12T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-12T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-13T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-13T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-14T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-14T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-15T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-15T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-16T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-16T00:00 присутствуют
-2018-03-05 17:44:33 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-17T00:00
-2018-03-05 17:44:33 INFO  root:880 - Акварель Измерения за 2018-02-17T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-18T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-18T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-19T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-19T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-20T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-20T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-21T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-21T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-22T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-22T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-23T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-23T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-24T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-24T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-25T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-25T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-26T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-26T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-27T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-27T00:00 присутствуют
-2018-03-05 17:44:34 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Акварель дата 2018-02-28T00:00
-2018-03-05 17:44:34 INFO  root:880 - Акварель Измерения за 2018-02-28T00:00 присутствуют
-2018-03-05 17:44:38 INFO  root:1261 - Operationtv7T created ru.javabegin.training.tv7.entity.Operationtv7T@eecf2451
-2018-03-05 17:44:38 INFO  CustomerServiceImpl:99 - Updating existing contact
-2018-03-05 17:44:38 INFO  CustomerServiceImpl:102 - Contact saved with id: 178
-2018-03-05 17:44:50 INFO  root:218 - ЗАО "Фудстар" -- Измерений => ИТОГОВЫЕ <= за 2018-02-28T17:43:40.027 НЕТ
-2018-03-05 17:45:01 INFO  root:485 - Телефон = ATDP+79064427267
-2018-03-05 17:45:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-05 17:45:30 INFO  root:51 - Статус end : false
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-01T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-01T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-02T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-02T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-03T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-03T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-04T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-04T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-05T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-05T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-06T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-06T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-07T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-07T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-08T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-08T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-09T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-09T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-10T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-10T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-11T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-11T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-12T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-12T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-13T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-13T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-14T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-14T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-15T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-15T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-16T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-16T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-17T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-17T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-18T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-18T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-19T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-19T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-20T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-20T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-21T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-21T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-22T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-22T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-23T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-23T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-24T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-24T00:00 присутствуют
-2018-03-05 17:45:39 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-25T00:00
-2018-03-05 17:45:39 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-25T00:00 присутствуют
-2018-03-05 17:45:40 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-26T00:00
-2018-03-05 17:45:40 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-26T00:00 присутствуют
-2018-03-05 17:45:40 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-27T00:00
-2018-03-05 17:45:40 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-27T00:00 присутствуют
-2018-03-05 17:45:40 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  ЗАО "Фудстар" дата 2018-02-28T00:00
-2018-03-05 17:45:40 INFO  root:880 - ЗАО "Фудстар" Измерения за 2018-02-28T00:00 присутствуют
-2018-03-05 17:45:44 INFO  root:1261 - Operationtv7T created ru.javabegin.training.tv7.entity.Operationtv7T@d6eb4aea
-2018-03-05 17:45:44 INFO  CustomerServiceImpl:99 - Updating existing contact
-2018-03-05 17:45:44 INFO  CustomerServiceImpl:102 - Contact saved with id: 179
-2018-03-05 17:45:56 INFO  root:215 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-02-28T17:43:40.027 НЕТ
-2018-03-05 17:46:07 INFO  root:485 - Телефон = ATDP+79054125074
-2018-03-05 17:46:46 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-01T00:00
-2018-03-05 17:46:46 INFO  root:880 - Магомедов Измерения за 2018-02-01T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-02T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-02T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-03T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-03T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-04T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-04T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-05T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-05T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-06T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-06T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-07T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-07T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-08T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-08T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-09T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-09T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-10T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-10T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-11T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-11T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-12T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-12T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-13T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-13T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-14T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-14T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-15T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-15T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-16T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-16T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-17T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-17T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-18T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-18T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-19T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-19T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-20T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-20T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-21T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-21T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-22T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-22T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-23T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-23T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-24T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-24T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-25T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-25T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-26T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-26T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-27T00:00
-2018-03-05 17:46:47 INFO  root:880 - Магомедов Измерения за 2018-02-27T00:00 присутствуют
-2018-03-05 17:46:47 INFO  root:876 - Проверяем по наличию СУТОЧНЫЕ для  Магомедов дата 2018-02-28T00:00
-2018-03-05 17:46:47 INFO  root:885 - Магомедов Измерения за 2018-02-28T00:00 НЕТ  НУЖНО ПРОВОДИТЬ ИЗМЕРЕНИЕ
-2018-03-05 17:46:47 INFO  root:887 - МагомедовСверяем c датами начала архивов
-2018-03-05 17:46:47 INFO  root:895 - Магомедов -- Измерений за 2018-02-28T00:00 НЕТ, но Данные в архиве счетчика присутствуют
-2018-03-05 17:46:51 INFO  CustomerServiceImpl:99 - Updating existing contact
-2018-03-05 17:46:51 INFO  CustomerServiceImpl:102 - Contact saved with id: 180
-2018-03-05 17:46:55 INFO  root:1261 - Operationtv7T created ru.javabegin.training.tv7.entity.Operationtv7T@61c3d0ea
-2018-03-05 17:46:55 INFO  CustomerServiceImpl:99 - Updating existing contact
-2018-03-05 17:46:55 INFO  CustomerServiceImpl:102 - Contact saved with id: 180
-2018-03-05 17:46:56 INFO  root:1334 - АРХИВ ЗА МЕСЯЦ дата 2018-01-31T23:00
-2018-03-05 17:46:59 INFO  CustomerServiceImpl:99 - Updating existing contact
-2018-03-05 17:46:59 INFO  CustomerServiceImpl:102 - Contact saved with id: 180
-2018-03-05 17:47:11 INFO  root:210 - Нарзан дача Измерения за 2018-02-28T17:43:40.027 присутствуют
-2018-03-05 17:47:13 INFO  root:210 - Нарзан сауна Измерения за 2018-02-28T17:43:40.027 присутствуют
-2018-03-05 17:47:15 INFO  root:218 - Нерсесян М.А. -- Измерений => ИТОГОВЫЕ <= за 2018-02-28T17:43:40.027 НЕТ
-2018-03-05 17:47:26 INFO  root:485 - Телефон = ATDP+79064628431
-2018-03-05 17:48:02 INFO  root:210 - ООО "Инвестиции "Запод" Измерения за 2018-02-28T17:43:40.027 присутствуют
-2018-03-05 17:48:04 INFO  root:210 - Целебный Нарзан Измерения за 2018-02-28T17:43:40.027 присутствуют
-2018-03-05 17:48:07 INFO  root:210 - Идзибагандов Измерения за 2018-02-28T17:43:40.027 присутствуют
-2018-03-05 17:48:07 INFO  root:1539 - 
- Поток отработал. Закрываем соединение и PORT
-2018-03-05 17:48:38 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/data_tv7_process]: startup date [Mon Mar 05 17:48:38 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-05 17:48:38 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@f5dffe1] to [org.springframework.web.context.request.RequestScope@6a31dcfd]
-2018-03-05 17:48:38 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-05 18:00:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-05 18:00:30 INFO  root:51 - Статус end : false
-2018-03-05 18:15:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-05 18:15:30 INFO  root:51 - Статус end : false
-2018-03-05 18:30:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-05 18:30:30 INFO  root:51 - Статус end : false
-2018-03-05 18:45:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-05 18:45:30 INFO  root:51 - Статус end : false
-2018-03-05 18:48:13 INFO  XmlWebApplicationContext:984 - Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 17:42:08 MSK 2018]; parent: Root WebApplicationContext
-2018-03-05 18:48:13 INFO  DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
-2018-03-05 18:48:13 INFO  ThreadPoolTaskScheduler:203 - Shutting down ExecutorService 'serverScheduler'
-2018-03-05 18:48:13 INFO  ThreadPoolTaskExecutor:203 - Shutting down ExecutorService
-2018-03-05 18:48:13 INFO  SchedulerFactoryBean:765 - Shutting down Quartz Scheduler
-2018-03-05 18:48:13 INFO  GenericWebApplicationContext:984 - Closing Flow ApplicationContext [teplo]: startup date [Mon Mar 05 17:42:41 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-05 18:48:13 INFO  GenericWebApplicationContext:984 - Closing Flow ApplicationContext [teplo/data_tv7_process]: startup date [Mon Mar 05 17:48:38 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_test'
-2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_customer'
-2018-03-05 18:48:13 INFO  LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'emf_contact'
-2018-03-05 18:48:13 INFO  XmlWebApplicationContext:984 - Closing Root WebApplicationContext: startup date [Mon Mar 05 17:42:00 MSK 2018]; root of context hierarchy
+2018-03-05 20:36:46 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
+2018-03-05 20:36:46 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-05 20:36:46 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2018-03-05 20:36:46 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-05 20:36:46 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
+2018-03-05 20:36:48 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-05 20:36:48 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-05 20:36:48 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-05 20:36:48 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-05 20:36:48 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
+2018-03-05 20:36:50 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 20:36:28 MSK 2018]; parent: Root WebApplicationContext
+2018-03-05 20:36:50 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Mar 05 20:36:28 MSK 2018]; parent: Root WebApplicationContext
+2018-03-05 20:36:54 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
+2018-03-05 20:36:54 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
+2018-03-05 20:36:54 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-03-05 20:36:54 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
+2018-03-05 20:36:55 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-03-05 20:36:55 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
+2018-03-05 20:36:55 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 27194 ms
+2018-03-05 20:36:58 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Mon Mar 05 20:36:58 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-05 20:36:58 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@21016fb6] to [org.springframework.web.context.request.RequestScope@f91652f]
+2018-03-05 20:36:58 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-05 20:37:09 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/data_tv7_process]: startup date [Mon Mar 05 20:37:09 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-05 20:37:09 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@724168af] to [org.springframework.web.context.request.RequestScope@5debe3c5]
+2018-03-05 20:37:09 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring

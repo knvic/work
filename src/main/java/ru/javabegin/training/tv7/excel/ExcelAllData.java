@@ -18,10 +18,9 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class ExcelAllData {
-    @Autowired
-    CustomerService customerService;
 
-    public void getAllExcelData() throws InterruptedException, ExecutionException, IOException, IllegalAccessException, NoSuchFieldException {
+
+    public void getAllExcelData(CustomerService customerService) throws InterruptedException, ExecutionException, IOException, IllegalAccessException, NoSuchFieldException {
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
 
@@ -42,11 +41,11 @@ public class ExcelAllData {
         System.out.println(" Timestamp day_of = " + ts_day_of_minus_1);
 
 
-        String dir= "C:/demo/ТВ7/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+"/";
-        File direct = new File("C://demo//ТВ7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
+        String dir= "C:/demo/TV7/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+"/";
+        File direct = new File("C://demo//TV7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
         boolean created = direct.mkdir();
         if(created){
-            System.out.println("Каталог"+"C://demo//ТВ7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+" успешно создан");
+            System.out.println("Каталог"+"C://demo//TV7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+" успешно создан");
             //    logger.info("Каталог успешно создан");
         }
 
@@ -89,7 +88,7 @@ public class ExcelAllData {
 
 
 
-            calculation_xls.archiveXsl(customer, operationtv7List, total );
+            calculation_xls.archiveXsl(customer, operationtv7List, total, dir );
             // List<DataObjectTv7>
 
         }
