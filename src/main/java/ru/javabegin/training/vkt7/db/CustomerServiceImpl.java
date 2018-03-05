@@ -1031,9 +1031,9 @@ DataCustomerList dcs;
         Timestamp date=null;
         Timestamp date_before=null;
         Timestamp date_after=null;
-        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
+        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"0");}
         if (type.equals("month")){
-            ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
+            ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"0");
             System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
             }
 
@@ -1085,16 +1085,13 @@ DataCustomerList dcs;
 
     @Transactional(readOnly=true)
     @Override
-    public List<Operationtv7T> findOperationtv7TByDate(String type, Long idCustomer, LocalDateTime ldt){
+    public List<Operationtv7T> findOperationtv7TByDate( Long idCustomer, LocalDateTime ldt){
         // log.info("Finding по номеру модема и времени операции: " );
         Timestamp date=null;
         Timestamp date_before=null;
         Timestamp date_after=null;
-        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"23");}
-        if (type.equals("month")){
-            ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"23");
-            System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
-        }
+
+        ldt=auxiliaryService.addTime(ldt,"0");
 
         try {
             date = auxiliaryService.localDateTime_TimeStamp(ldt);
@@ -1143,7 +1140,62 @@ DataCustomerList dcs;
 
     }
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Operationtv7T> findOperationtv7TByDateEquals(Long idCustomer, LocalDateTime ldt){
+        // log.info("Finding по номеру модема и времени операции: " );
+        Timestamp date=null;
+        Timestamp date_before=null;
+        Timestamp date_after=null;
+       ldt=auxiliaryService.addTime(ldt,"23");
 
+
+        try {
+            date = auxiliaryService.localDateTime_TimeStamp(ldt);
+            date_before = auxiliaryService.localDateTime_TimeStamp(ldt.minusDays(1));
+            date_after = auxiliaryService.localDateTime_TimeStamp(ldt.plusDays(1));
+
+        }
+        catch (Exception e){
+            System.out.println("Дата не задана и равна NULL");
+        }
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Operationtv7T> criteriaQuery = cb.createQuery(Operationtv7T.class);
+        Root<Operationtv7T> contactRoot = criteriaQuery.from(Operationtv7T.class);
+        // contactRoot.fetch(Operationv7_.measurementsSet, JoinType.LEFT);
+        //contactRoot.fetch(Operation_.customer, JoinType.RIGHT);
+        Join cont = contactRoot.join(Operationtv7T_.customer,JoinType.LEFT);
+
+        criteriaQuery.select(contactRoot).distinct(true);
+
+        Predicate criteria = cb.conjunction();
+        if (idCustomer != null) {
+            Predicate p =cb.equal(cont.get(Customer_.id), idCustomer);
+            criteria = cb.and(criteria, p);
+        }
+
+        /*if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7T_.chronoligical),date);
+            criteria = cb.and(criteria, p);
+        }*/
+
+
+        if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7T_.chronoligical),date_before);
+            criteria = cb.and(criteria, p);
+        }
+
+        if (date != null) {
+            Predicate p = cb.equal(contactRoot.get(Operationtv7T_.chronoligical),date_after);
+            criteria = cb.and(criteria, p);
+        }
+
+
+        criteriaQuery.where(criteria);
+
+        return em.createQuery(criteriaQuery).getResultList();
+
+    }
 
 
     @Transactional(readOnly=true)

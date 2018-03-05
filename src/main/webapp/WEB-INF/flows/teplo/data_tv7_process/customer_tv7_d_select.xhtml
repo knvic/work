@@ -26,6 +26,12 @@
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
 
+
+            <div class="ui-g">
+            <div class="ui-g-2"></div>
+            <div class="ui-g-5"><p:commandButton value="С начала месяца Все в Excel " event="onclick"  action="selectTv7_ALL_xls" icon="ui-icon-check" /></div>
+            </div>
+
             <h:form>
                 <p:dataTable var="u" value="#{cu}" rows="20"
                              paginator="true"

@@ -26,7 +26,9 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjusters;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
@@ -38,7 +40,7 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
  * Created by Николай on 12.08.2017.
  */
 @Component
-public class Modem_cron extends EventListener_tv7 {
+public class Modem_cron_old_05_03_18 extends EventListener_tv7 {
  //SerialPort serialPort; /*Создаем объект типа SerialPort*/
  public static AtomicInteger atomicInteger;
 
@@ -229,7 +231,7 @@ int count_temp=0;
 
                     serialPort.writeBytes("+++".getBytes());
                     Thread.sleep(1000);
-                    executor.submit(callable(5,"посылаем ATH dfgdfgdg"));
+                    executor.submit(callable(3,"посылаем ATH dfgdfgdg"));
                     System.out.println("\nпосылаем ATH sdfsdfs");
 
 
@@ -287,7 +289,7 @@ int count_temp=0;
                                 stop = false;
 
                             }
-
+                            step=300;
                             System.out.println("\n Ответот модема не поступил Ошибка по таймауту. Повторяем запрос");
 
                             if (serialPort.isOpened()) {
@@ -1489,7 +1491,7 @@ atomicInteger.addAndGet(1);
             }
 
             atomicInteger.addAndGet(1);
-            /*Timestamp timestamp_date_input;
+            Timestamp timestamp_date_input;
 
             atomicInteger.addAndGet(1);
 
@@ -1501,7 +1503,7 @@ atomicInteger.addAndGet(1);
             if (error != 0 & status != "OK") {
 
             }
-*/
+
 
         }
         executor.shutdownNow();

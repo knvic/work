@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -30,13 +31,37 @@ public class ExcelArchive {
     private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
         HSSFFont font = workbook.createFont();
         font.setItalic(true);
+
         //setBold(true);
         HSSFCellStyle style = workbook.createCellStyle();
         style.setFont(font);
-        style.setBorderLeft(CellStyle.BORDER_DOUBLE);
+        style.setBorderLeft(CellStyle.BORDER_MEDIUM);
+        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
         style.getBorderLeft();
+        style.getBorderRight();
+        style.getBorderTop();
         return style;
     }
+
+    private static HSSFCellStyle createcellstyleTblLeft(HSSFWorkbook workbook) {
+        HSSFFont font01Normal = workbook.createFont();
+        font01Normal.setFontHeightInPoints((short)8);
+        font01Normal.setFontName("Times New Roman");
+        font01Normal.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);
+
+        //setBold(true);
+        HSSFCellStyle  cellstyleTblLeft = workbook.createCellStyle();
+        cellstyleTblLeft.setFont(font01Normal);
+        cellstyleTblLeft.setAlignment(HSSFCellStyle.ALIGN_LEFT);
+        cellstyleTblLeft.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderRight(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderTop(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setWrapText(true);
+        cellstyleTblLeft.setVerticalAlignment(HSSFCellStyle.VERTICAL_TOP);
+        return cellstyleTblLeft;
+    }
+
 
 
     //public void archiveExcel_tv1 (Customer customer, List<Object> objectsList) throws IOException {
@@ -57,6 +82,7 @@ public class ExcelArchive {
         Row row;
         //
         HSSFCellStyle style = createStyleForTitle(workbook);
+        HSSFCellStyle style1 = createcellstyleTblLeft(workbook);
 
         row = sheet.createRow(rownum);
         cell = row.createCell(0, Cell.CELL_TYPE_STRING);
@@ -107,14 +133,14 @@ public class ExcelArchive {
         row = sheet.createRow(rownum);
         cell = row.createCell(0, Cell.CELL_TYPE_STRING);
         cell.setCellValue("Data");
-        cell.setCellStyle(style);
+        cell.setCellStyle(style1);
         int i = 1;
         for (String col : id_coil_archive) {
             // EmpNo
             cell = row.createCell(i, Cell.CELL_TYPE_STRING);
 
             cell.setCellValue(col);
-            cell.setCellStyle(style);
+            cell.setCellStyle(style1);
             i++;
         }
 
@@ -147,6 +173,54 @@ public class ExcelArchive {
 
         rownum++;
         rownum++;
+
+
+
+        row = sheet.createRow(rownum);
+        cell = row.createCell(0, Cell.CELL_TYPE_STRING);
+        cell.setCellValue("Data");
+        cell.setCellStyle(style1);
+        i = 1;
+        for (String col : id_coil_total) {
+            // EmpNo
+
+
+            cell = row.createCell(i, Cell.CELL_TYPE_STRING);
+
+            cell.setCellValue(col);
+            cell.setCellStyle(style1);
+            i++;
+        }
+
+
+
+        for (DataObjectTv7 emp1 : total) {
+            rownum++;
+            row = sheet.createRow(rownum);
+
+            // EmpNo (A)
+            cell = row.createCell(0,Cell.CELL_TYPE_STRING);
+
+
+
+            cell.setCellValue(emp1.getDataString());
+            i=1;
+            for(String c:id_coil_total){
+
+                cell = row.createCell(i,Cell.CELL_TYPE_NUMERIC);
+                try {
+
+                    cell.setCellValue(emp1.getOptionalValues().get(c).getValue());
+                }catch (Exception e){
+
+                    cell.setCellValue(0);
+                }
+                i++;
+            }
+        }
+
+
+
 
 
 

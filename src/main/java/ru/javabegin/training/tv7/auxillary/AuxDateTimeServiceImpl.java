@@ -16,7 +16,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public List<Date> from_the_beginning_of_month(Date date){
         LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
-        LocalDateTime ldt=addTime(dateLocalDateTime,"22");
+        LocalDateTime ldt=addTime(dateLocalDateTime,"00");
         //System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<Date>  dateList=new ArrayList<>();
@@ -32,7 +32,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public  List<LocalDateTime> from_the_beginning_of_month(LocalDateTime dateLocalDateTime){
        // LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
-        LocalDateTime ldt=addTime(dateLocalDateTime,"22");
+        LocalDateTime ldt=addTime(dateLocalDateTime,"00");
         System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<LocalDateTime>  dateList=new ArrayList<>();
@@ -66,7 +66,8 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public LocalDateTime addTime (LocalDateTime data, String hour){
         LocalDate  dateLocalDate =data.toLocalDate();
-        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
+        int h=Integer.parseInt(hour);
+        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(h, 0, 0));
         return ldt;
 
     }
