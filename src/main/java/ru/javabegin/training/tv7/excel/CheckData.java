@@ -17,5 +17,6 @@ public class CheckData {
 
         List<Operationtv7> listtv7 = customerService.findOperationtv7ByDate("day",customer.getId(),date);
         List<Operationtv7T> listtv7t = customerService.findOperationtv7TByDate(customer.getId(),date);
+
     }
 }

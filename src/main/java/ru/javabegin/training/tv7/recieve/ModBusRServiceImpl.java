@@ -189,15 +189,15 @@ return map;
 
 
             i1=i1+p.getSize()*2;
-            System.out.println();
+           // System.out.println();
 
         }
 
 
-        for(Parametr p:parametrList){
+        /*for(Parametr p:parametrList){
 
         //    System.out.print("\nTOTAL ->  "+p.getNameString()+" = " + p.getValue());
-        }
+        }*/
 
         return parametrList;
 

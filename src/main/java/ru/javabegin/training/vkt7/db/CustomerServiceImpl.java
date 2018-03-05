@@ -1031,7 +1031,7 @@ DataCustomerList dcs;
         Timestamp date=null;
         Timestamp date_before=null;
         Timestamp date_after=null;
-        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime(ldt,"0");}
+        if (type.equals("day")||type.equals("total")){ldt=auxiliaryService.addTime_h_0(ldt,"0");}
         if (type.equals("month")){
             ldt=auxiliaryService.addTime((ldt.minusMonths(1)).with(TemporalAdjusters.lastDayOfMonth()),"0");
             System.out.println("Дата для МЕСЯЧНЫЙ АРХИВ (из метода):: :: "+ ldt);
@@ -1039,12 +1039,24 @@ DataCustomerList dcs;
 
         try {
             date = auxiliaryService.localDateTime_TimeStamp(ldt);
-            date_before = auxiliaryService.localDateTime_TimeStamp(ldt.minusDays(1));
-            date_after = auxiliaryService.localDateTime_TimeStamp(ldt.plusDays(1));
+            //date_before = auxiliaryService.localDateTime_TimeStamp(ldt.minusDays(1));
+            date_before = auxiliaryService.localDateTime_TimeStamp(ldt);
+            date_after = auxiliaryService.localDateTime_TimeStamp(auxiliaryService.addTime_h_0(ldt,"23"));
         }
         catch (Exception e){
             System.out.println("Дата не задана и равна NULL");
         }
+
+        System.out.println();
+        System.out.println();
+        System.out.println("//////////////////////////////////////////////////////////////////////");
+        System.out.println("//////////////////////////////////////////////////////////////////////");
+        System.out.println(idCustomer + " дата  " + date);
+        System.out.println(idCustomer + "  date_before  " + date_before);
+        System.out.println(idCustomer + "  date_after  " + date_after);
+
+        System.out.println("//////////////////////////////////////////////////////////////////////");
+        System.out.println("//////////////////////////////////////////////////////////////////////");
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operationtv7> criteriaQuery = cb.createQuery(Operationtv7.class);
         Root<Operationtv7> contactRoot = criteriaQuery.from(Operationtv7.class);
@@ -1065,12 +1077,12 @@ DataCustomerList dcs;
             criteria = cb.and(criteria, p);
         }*/
         if (date != null) {
-            Predicate p = cb.greaterThan(contactRoot.get(Operationtv7_.chronoligical),date_before);
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operationtv7_.chronoligical),date_before);
             criteria = cb.and(criteria, p);
         }
 
         if (date != null) {
-            Predicate p = cb.lessThan(contactRoot.get(Operationtv7_.chronoligical),date_after);
+            Predicate p = cb.lessThanOrEqualTo(contactRoot.get(Operationtv7_.chronoligical),date_after);
             criteria = cb.and(criteria, p);
         }
 
@@ -1091,17 +1103,32 @@ DataCustomerList dcs;
         Timestamp date_before=null;
         Timestamp date_after=null;
 
-        ldt=auxiliaryService.addTime(ldt,"0");
+        ldt=auxiliaryService.addTime_h_0(ldt,"0");
 
         try {
             date = auxiliaryService.localDateTime_TimeStamp(ldt);
-            date_before = auxiliaryService.localDateTime_TimeStamp(ldt.minusDays(1));
-            date_after = auxiliaryService.localDateTime_TimeStamp(ldt.plusDays(1));
+            date_before = auxiliaryService.localDateTime_TimeStamp(ldt);
+            date_after = auxiliaryService.localDateTime_TimeStamp(auxiliaryService.addTime_h_0(ldt,"23"));
 
         }
         catch (Exception e){
             System.out.println("Дата не задана и равна NULL");
         }
+
+
+            System.out.println();
+            System.out.println();
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println(idCustomer + " дата  " + date);
+            System.out.println(idCustomer + "  date_before  " + date_before);
+            System.out.println(idCustomer + "  date_after  " + date_after);
+
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+
+
+
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operationtv7T> criteriaQuery = cb.createQuery(Operationtv7T.class);
         Root<Operationtv7T> contactRoot = criteriaQuery.from(Operationtv7T.class);
@@ -1124,12 +1151,12 @@ DataCustomerList dcs;
 
 
         if (date != null) {
-            Predicate p = cb.greaterThan(contactRoot.get(Operationtv7T_.chronoligical),date_before);
+            Predicate p = cb.greaterThanOrEqualTo(contactRoot.get(Operationtv7T_.chronoligical),date_before);
             criteria = cb.and(criteria, p);
         }
 
         if (date != null) {
-            Predicate p = cb.lessThan(contactRoot.get(Operationtv7T_.chronoligical),date_after);
+            Predicate p = cb.lessThanOrEqualTo(contactRoot.get(Operationtv7T_.chronoligical),date_after);
             criteria = cb.and(criteria, p);
         }
 
@@ -1147,7 +1174,11 @@ DataCustomerList dcs;
         Timestamp date=null;
         Timestamp date_before=null;
         Timestamp date_after=null;
-       ldt=auxiliaryService.addTime(ldt,"23");
+       ldt=auxiliaryService.addTime_h_0(ldt,"0");
+
+
+
+
 
 
         try {
@@ -1159,6 +1190,20 @@ DataCustomerList dcs;
         catch (Exception e){
             System.out.println("Дата не задана и равна NULL");
         }
+
+
+            System.out.println();
+            System.out.println();
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println(idCustomer + " дата  " + date);
+            System.out.println(idCustomer + "  date_before  " + date_before);
+            System.out.println(idCustomer + "  date_after  " + date_after);
+
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+            System.out.println("//////////////////////////////////////////////////////////////////////");
+
+
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Operationtv7T> criteriaQuery = cb.createQuery(Operationtv7T.class);
         Root<Operationtv7T> contactRoot = criteriaQuery.from(Operationtv7T.class);

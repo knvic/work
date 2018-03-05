@@ -168,6 +168,14 @@ public class AuxiliaryServiceImpl implements AuxiliaryService {
     }
 
     @Override
+    public LocalDateTime addTime_h_0 (LocalDateTime data, String hour){
+        LocalDate  dateLocalDate =data.toLocalDate();
+        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(Integer.valueOf(hour), 0, 0));
+        return ldt;
+
+    }
+
+    @Override
     public Date addTime(Date data, String hour){
       LocalDateTime dataldt=date_to_localDateTime(data);
         LocalDate  dateLocalDate =dataldt.toLocalDate();

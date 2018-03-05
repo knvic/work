@@ -36,7 +36,7 @@ public class Tv7Run {
             System.out.println("работает поток "+ Thread.currentThread().getName());
 
             String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
-            LocalDateTime ldt= LocalDateTime.now().minusDays(1);
+            LocalDateTime ldt= LocalDateTime.now().minusDays(5);
 
             modem_cron.tv7_cron(customerService, ldt);
             //daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);

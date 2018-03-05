@@ -54,6 +54,7 @@ public interface AuxiliaryService {
      * @return дата со временем
      */
     LocalDateTime addTime (LocalDateTime data, String hour);
+    LocalDateTime addTime_h_0 (LocalDateTime data, String hour);
 
     Date addTime(Date data, String hour);
 

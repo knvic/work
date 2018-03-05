@@ -176,6 +176,34 @@ int count_temp=0;
                 List<Operationtv7T> listtv7t = customerService.findOperationtv7TByDate(customer.getId(),date);
 
 
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("//////////////////////////////////////////////////////////////////////");
+                    System.out.println("//////////////////////////////////////////////////////////////////////");
+                    System.out.println(customer.getFirstName()+ " дата  "+ date  );
+                    System.out.println(customer.getFirstName()+ " дата  "+ date  );
+
+                    System.out.println(customer.getFirstName()+ " размер массива  listtv7 "+ listtv7.size() );
+                    System.out.println(customer.getFirstName()+ " размер массива  listtv7t "+ listtv7t.size() );
+
+                    try {
+                        System.out.println(listtv7.get(0).getChronoligical());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        System.out.println(listtv7t.get(0).getChronoligical());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+                    System.out.println("//////////////////////////////////////////////////////////////////////");
+                    System.out.println("//////////////////////////////////////////////////////////////////////");
+                    System.out.println();
+                    System.out.println();
+
 
                 if (listtv7.size()!=0&&listtv7t.size()!=0){
                     System.out.println(customer.getFirstName()+ " Измерения за "+ date +" присутствуют" );
