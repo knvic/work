@@ -114,7 +114,16 @@ public class FacadeTv7 {
         Timestamp ts_day_to = Timestamp.valueOf(LocalDateTime.ofInstant(day_to.toInstant(), ZoneId.systemDefault()));
         System.out.println(" Timestamp day_to = " + ts_day_to);
 
+       //Получаем список суточных
         List<Operationtv7T> operationtv7TList =customerService.findTv7T_betwen_data(customer.getId(),ts_day_of,ts_day_to);
+
+
+        /**
+         * Получаем дату для формирования итоговых до начала рассматриваемого периода суточных и до конца периода
+         * дата начала будет предыдущей перед датой суточных, а конец дат один и тот же
+         */
+
+
 
         //List<DataObjectTv7> objectTv7List =getListData.getTv7TList()
 
