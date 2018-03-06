@@ -19,6 +19,9 @@
 
           <transition on="selectTv7_ALL_xls" to="action_selectTv7_ALL_xls"/>
 
+          <transition on="testEx" to="action_selectTv7_ALL_xls"/>
+
+
 
 
       </view-state>
@@ -132,10 +135,11 @@
 
         <evaluate expression="facadeTv7.getExcel_ALL_archive()" />
 
-        <transition to="archive" >
-
-            <set name="flashScope.message1" value="'Файлы формируются в формате Excel в директории c:/demo/ТВ7'"/>
+        <transition on="yes" to="data_tv7_process" >
+        <set name="flashScope.message2" value="'Файлы формируются в директории c:/demo/ТВ7'"/>
         </transition>
+
+
 
 
 

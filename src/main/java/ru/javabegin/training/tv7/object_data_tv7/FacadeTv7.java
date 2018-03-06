@@ -57,7 +57,11 @@ public class FacadeTv7 {
 
     public List<Operationtv7> findTv7Day(){
         customer=searchCriteriaTv7.getCustomer();
-        System.out.println(searchCriteriaTv7.getCustomer().getFirstName());
+        try {
+            System.out.println("ОСТАНОВКА"+searchCriteriaTv7.getCustomer().getFirstName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Long idCustomer=customer.getId();
 
 
@@ -264,14 +268,14 @@ public class FacadeTv7 {
 
     }
 
-    public void getExcel_ALL_archive() throws NoSuchFieldException, IllegalAccessException, ExecutionException, InterruptedException, IOException {
+    public boolean getExcel_ALL_archive() throws NoSuchFieldException, IllegalAccessException, ExecutionException, InterruptedException, IOException {
 
 
         Callable task = () -> {
             System.out.println("работает поток "+ Thread.currentThread().getName());
 
             String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
-            LocalDateTime ldt= LocalDateTime.now().minusDays(5);
+
 
             ExcelAllData excelAllData=new ExcelAllData();
             excelAllData.getAllExcelData(customerService);
@@ -284,30 +288,17 @@ public class FacadeTv7 {
         Future<String> futureAllExcel = serviceTV7.submit(task);
 
 
-        //Future<String> future2 = service.submit(task);
+
 
         serviceTV7.shutdown();
 
         System.out.println("Основная программа работу закончила");
 
 
-        /*
-        Customer customer = searchCriteriaTv7.getCustomer();
-        Date day_of = searchCriteriaTv7.getDay_of();
-        System.out.println(" Date day_of = " + day_of);
-        Date day_to = searchCriteriaTv7.getDay_to();
-        System.out.println(" Date day_to = " + day_to);
-
-
-        AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
-
-        LocalDateTime ldt = LocalDateTime.now();
-
-        List<LocalDateTime> list=dateTimeService.from_the_beginning_of_month(ldt);
-        list.forEach(p-> System.out.println(p));*/
 
 
 
+       return true;
     }
 
 
