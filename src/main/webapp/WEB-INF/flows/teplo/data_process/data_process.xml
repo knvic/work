@@ -94,7 +94,7 @@
 
             <transition to="data_process" >
 
-                  <set name="flashScope.message2" value="'Данные формируются в отдельной директории C:/demo'"/>
+                  <set name="flashScope.message2" value="'Данные формируются в отдельной директории C:/demo/ВКТ7'"/>
             </transition>
 
       </action-state>

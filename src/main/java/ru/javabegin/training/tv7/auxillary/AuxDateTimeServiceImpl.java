@@ -2,7 +2,9 @@ package ru.javabegin.training.tv7.auxillary;
 
 import ru.javabegin.training.tv7.recieve.Tupel_date;
 
+import java.sql.Timestamp;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,7 +16,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public List<Date> from_the_beginning_of_month(Date date){
         LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
-        LocalDateTime ldt=addTime(dateLocalDateTime,"22");
+        LocalDateTime ldt=addTime(dateLocalDateTime,"00");
         //System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<Date>  dateList=new ArrayList<>();
@@ -30,7 +32,7 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public  List<LocalDateTime> from_the_beginning_of_month(LocalDateTime dateLocalDateTime){
        // LocalDateTime dateLocalDateTime = date_to_localDateTime(date);
-        LocalDateTime ldt=addTime(dateLocalDateTime,"22");
+        LocalDateTime ldt=addTime(dateLocalDateTime,"00");
         System.out.println("Первый день этого месяца : " + ldt.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDateTime day=ldt.with(TemporalAdjusters.firstDayOfMonth());
         List<LocalDateTime>  dateList=new ArrayList<>();
@@ -64,7 +66,8 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
     @Override
     public LocalDateTime addTime (LocalDateTime data, String hour){
         LocalDate  dateLocalDate =data.toLocalDate();
-        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(23, 0, 0));
+        int h=Integer.parseInt(hour);
+        LocalDateTime ldt =LocalDateTime.of(dateLocalDate, LocalTime.of(h, 0, 0));
         return ldt;
 
     }
@@ -105,5 +108,16 @@ public class AuxDateTimeServiceImpl implements AuxDateTimeService {
         }
 
         return result;
+    }
+
+
+    @Override
+    public String timeStamp_to_stringData(Timestamp tsData){
+
+        LocalDateTime ldt = tsData.toLocalDateTime();
+
+        String data=ldt.format(DateTimeFormatter.ofPattern("dd.MM.uu HH"));
+
+      return data;
     }
 }

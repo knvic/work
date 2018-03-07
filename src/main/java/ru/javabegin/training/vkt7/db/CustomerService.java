@@ -64,7 +64,8 @@ public interface CustomerService {
 
     List<Operationtv7> findOperationtv7ByDate(String type, Long idCustomer, LocalDateTime ldt);
 
-    List<Operationtv7T> findOperationtv7TByDate(String type, Long idCustomer, LocalDateTime ldt);
+    List<Operationtv7T> findOperationtv7TByDate( Long idCustomer, LocalDateTime ldt);
+    List<Operationtv7T> findOperationtv7TByDateEquals(Long idCustomer, LocalDateTime ldt);
 
     List<Customer> findTv7Customers();
 

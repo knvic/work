@@ -78,8 +78,8 @@ return map;
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-        System.out.println("\nStringBuilder = "+temp.toString());
-        System.out.println("\nStringBuilderSize = "+temp.toString().length());
+        //System.out.println("\nStringBuilder = "+temp.toString());
+       // System.out.println("\nStringBuilderSize = "+temp.toString().length());
 
         AscServiceImpl ascService=new AscServiceImpl();
         int i1=12;
@@ -87,12 +87,7 @@ return map;
         double m_=NaN;
         for(Parametr p:parametrList){
 
-            if (i1>448){
-                System.out.println(" i1>448  i1= "+i1);
-                System.out.println(" i1>448  temp.lingth= "+temp.length());
-                //str = temp.substring(i1-2).toString();
-                System.out.println(" i1>448 str = "+str);
-            }
+
             try {
                 str = temp.substring(i1, i1 + p.getSize() * 2).toString();
             }
@@ -103,17 +98,17 @@ return map;
 
             if (p.getType().equals("unsigned char")) {
                 p.setValue(Integer.toString(Integer.parseInt(str,16)));
-                System.out.println(" Параметр "+p.getNameString()+" = " + p.getValue());
+               // System.out.println(" Параметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("unsigned short")){
                 p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(0, RoundingMode.HALF_EVEN).toString());
-                System.out.println("Параметр "+p.getNameString()+" = " + p.getValue());
+              //  System.out.println("Параметр "+p.getNameString()+" = " + p.getValue());
             }
 
             if (p.getType().equals("unsigned long")){
                 p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(0, RoundingMode.HALF_EVEN).toString());
-                System.out.println("Параметр unsigned long : "+p.getNameString()+" = "+ Long.parseLong(l2b(str), 16));
+              //  System.out.println("Параметр unsigned long : "+p.getNameString()+" = "+ Long.parseLong(l2b(str), 16));
                 //System.out.println("Параметр "+p.getNameString()+" = " + p.getValue());
             }
 
@@ -140,9 +135,12 @@ return map;
                 }
                 else {
                     // String regularExpression1="^(m\\d|v\\d|dM)";
-                    String regularExpression2="^(t\\d_|dt|tx|tнв)";
 
                     String regularExpression1="^(m\\d|v\\d)";
+
+                    String regularExpression2="^(t\\d_|dt|tx|tнв)";
+
+
                     String regularExpression3="^(dM)";
 
 
@@ -150,28 +148,28 @@ return map;
                     if(p.getName().contains("q")) {
 
                         p.setValue(new BigDecimal(Double.longBitsToDouble(Long.parseLong(l2b(str), 16))/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                 //       System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
 
                     }
                     else if(p.getName().contains("P")){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                 //       System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Double.longBitsToDouble(Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                 //       System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
                     else if (Pattern.compile(regularExpression2).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                //        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
                     else if (Pattern.compile(regularExpression3).matcher(p.getName()).find()){
                         try {
                             m_ = Double.longBitsToDouble(Long.parseLong(l2b(str), 16));
                             p.setValue(new BigDecimal(Double.longBitsToDouble(Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
-                            System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                   //         System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                         }
                         catch (Exception e){
                             System.out.println("Не возможно интерпретировать. Параметр : "+p.getName()+ "Cтрока : "+str );
@@ -191,15 +189,15 @@ return map;
 
 
             i1=i1+p.getSize()*2;
-            System.out.println();
+           // System.out.println();
 
         }
 
 
-        for(Parametr p:parametrList){
+        /*for(Parametr p:parametrList){
 
-            System.out.print("\nTOTAL ->  "+p.getNameString()+" = " + p.getValue());
-        }
+        //    System.out.print("\nTOTAL ->  "+p.getNameString()+" = " + p.getValue());
+        }*/
 
         return parametrList;
 

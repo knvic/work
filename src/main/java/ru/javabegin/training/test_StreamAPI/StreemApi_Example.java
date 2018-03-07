@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreemApi_Test {
+public class StreemApi_Example {
 
     public static void main(String args[]){
         List<Operationtv7> list=new ArrayList<>();
@@ -59,6 +59,9 @@ public class StreemApi_Test {
                 .stream()
                 .sorted(Comparator.comparing(Operationtv7::getChronoligical))
                 .forEach(p->System.out.println(p.getId()+" : "+p.getChronoligical()+" : "+p.getV1Tv1()+" : "+p.getM1Tv1()));
+
+
+
 
 
 /*

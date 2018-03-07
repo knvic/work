@@ -2,6 +2,7 @@ package ru.javabegin.training.tv7.auxillary;
 
 import ru.javabegin.training.tv7.recieve.Tupel_date;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -27,4 +28,6 @@ public interface AuxDateTimeService {
     Date localDateTime_to_date(LocalDateTime ldt);
 
     boolean checkBeginArchive(Map<String,Tupel_date> infOfDate, LocalDateTime targetDate, String type);
+
+    String timeStamp_to_stringData(Timestamp tsData);
 }

@@ -16,6 +16,7 @@ public class DataObjectTv7 implements Serializable{
 
     private Timestamp data;
     private String staticval2;
+    private String dataString;
 
     private Map<String, TupelExcelTv7> optionalValues;
     private List<String> id_coils;
@@ -42,6 +43,15 @@ public class DataObjectTv7 implements Serializable{
 
     public void setStaticval2(String staticval2) {
         this.staticval2 = staticval2;
+    }
+
+
+    public String getDataString() {
+        return dataString;
+    }
+
+    public void setDataString(String dataString) {
+        this.dataString = dataString;
     }
 
     public Map<String, TupelExcelTv7> getOptionalValues() {

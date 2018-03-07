@@ -8,7 +8,7 @@ public class testReflectionTest {
     @Test
     public void test1() throws Exception {
     TestReflection testReflection= new TestReflection();
-    testReflection.test1("ru.javabegin.training.tv7.entity.Operationtv7T");
+    testReflection.test1("ru.javabegin.training.tv7.entity.Operationtv7");
 
     }
 

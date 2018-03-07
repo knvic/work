@@ -9,12 +9,13 @@
       xmlns:sec="http://www.springframework.org/security/tags">
 
 
-<ui:composition template="/WEB-INF/templates/customer_process_template.xhtml">
+<ui:composition template="/WEB-INF/templates/customer/customer_process_template.xhtml">
 
     <ui:define name="title">
         #{msg.customers}
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+
     <ui:define name="content">
 
 
@@ -61,6 +62,11 @@
 -->
 
         </h:form>
+
+
+
+
+
 
 
     </ui:define>

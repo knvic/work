@@ -56,11 +56,11 @@ public class GetExcelAllOk implements Serializable {
                     //customerService.customerOperationStatus();
 
             //File file = new File("C:/demo/"+customer.getFirstName()+"_"+dateTime.format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+".xls");
-String dir= "C:/demo/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+"/";
-            File direct = new File("C://demo//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
+String dir= "C:/demo/ВКТ7/"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+"/";
+            File direct = new File("C://demo//ВКТ7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm")));
             boolean created = direct.mkdir();
             if(created){
-                System.out.println("Каталог"+"C://demo//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+" успешно создан");
+                System.out.println("Каталог"+"C://demo//ВКТ7//"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("d_MM_uuuu_HH_mm"))+" успешно создан");
             logger.info("Каталог успешно создан");}
 
 

@@ -18,17 +18,63 @@
     <ui:define name="content">
 
 
-
+        <p:dialog id="www" header="Не выбран потребитель" widgetVar="dlg3" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message}" >
+            <h:outputText value="${message}" styleClass="error" />
+        </p:dialog>
 
 
         <h:form id="form">
+
+
+
+
+
             <p:growl id="msgs" showDetail="true" />
 
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="От даты:" />
+                <p:calendar id="button" value="#{selectionTv7.day_of}" showOn="button" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="button" value="До даты:" />
+                <p:calendar id="button2" value="#{selectionTv7.day_to}" showOn="button" />
+            </h:panelGrid>
 
-                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="10"
+
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Дата от:" />
+                    <h:outputText value="#{selectionTv7.day_of}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                    <h:outputText value="Дата до:" />
+                    <h:outputText value="#{selectionTv7.day_to}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+                </p:panelGrid>
+            </p:dialog>
+
+
+            <div class="ui-g">
+                <div class="ui-g-1"><p:commandButton value="На экран" event="onclick"  action="action_selectTv7"  actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" /></div>
+                <div class="ui-g-2"><p:commandButton value="В файл " event="onclick"  action="action_selectTv7_xls"  update=":www" actionListener="#{searchCriteriaTv7.set_all_data(selectionTv7.day_of, selectionTv7.day_to)}" icon="ui-icon-check" /></div>
+            <!--<div class="ui-g-5"><p:commandButton value="С начала месяца Все в Excel " event="onclick"  action="action_selectTv7_ALL_xls" icon="ui-icon-check" /></div>-->
+
+
+            </div>
+
+
+
+
+
+                <p:dataTable var="u" value="#{archive}" tableStyle="table-layout: auto; white-space: nowrap;"   rows="35"
                              paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             rowsPerPageTemplate="5,10,15"  scrollable="true" scrollWidth="1600">
+                             rowsPerPageTemplate="35,50,70"  scrollable="true" scrollWidth="1600">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>
@@ -245,6 +291,7 @@
                     </f:facet>
                 </p:dataTable>
             </h:form>
+
 
             <!--<p:poll interval="15"  update=":form" />-->
 

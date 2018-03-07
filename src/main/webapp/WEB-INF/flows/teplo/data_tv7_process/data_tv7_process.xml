@@ -17,6 +17,8 @@
             <transition on="day_month" to="archive_action"/>
           <transition on="total" to="total_action"/>
 
+          <transition on="selectTv7_ALL_xls" to="action_selectTv7_ALL_xls"/>
+
 
 
       </view-state>
@@ -41,6 +43,9 @@
     <on-entry>
         <evaluate expression="facadeTv7.findTv7Day()" result="viewScope.archive" />
     </on-entry>
+        <transition on="action_selectTv7" to="action_selectTv7"/>
+        <transition on="action_selectTv7_xls" to="action_selectTv7_xls"/>
+
 
         <transition on="back" to="data_tv7_process"/>
     </view-state>
@@ -88,15 +93,81 @@
     </action-state>
 
 
+
+
+    <action-state id="action_selectTv7">
+
+
+        <evaluate expression="facadeTv7.checkDateOfDateToSelected()" />
+
+        <transition on="yes" to="archive_getDate" />
+        <transition on="no" to="total" >
+            <set name="flashScope.message" value="'Select Date for Report'"/>
+        </transition>
+
+
+    </action-state>
+
+    <action-state id="action_selectTv7_xls">
+
+
+        <evaluate expression="facadeTv7.checkDateOfDateToSelected()" />
+
+        <transition on="yes" to="archive" >
+            <evaluate expression="facadeTv7.getExcel_archive()" />
+            <set name="flashScope.message1" value="'Файл формируется'"/>
+        </transition>
+
+        <transition on="no" to="archive" >
+            <set name="flashScope.message" value="'Не выбраны даты'"/>
+        </transition>
+
+
+    </action-state>
+
+
+
+
+    <action-state id="action_selectTv7_ALL_xls">
+
+        <evaluate expression="facadeTv7.getExcel_ALL_archive()" />
+
+        <transition to="archive" >
+
+            <set name="flashScope.message1" value="'Файлы формируются в формате Excel в директории c:/demo/ТВ7'"/>
+        </transition>
+
+
+
+    </action-state>
+
+
+
     <view-state id="total_getDate" view="tv7_total_getDate.xhtml" >
+
+
+    <on-entry>
+        <!--<evaluate expression="facade_data.getTotal_current_column()" result="flashScope.t_c_col"/>-->
+        <evaluate expression="facadeTv7.getSelectedByData()" result="viewScope.total" />
+    </on-entry>
+
+    <transition on="back" to="total"/>
+    <!--<transition on="next" to="measurements"/>-->
+
+</view-state>
+
+
+
+
+    <view-state id="archive_getDate" view="tv7_archive_getDate.xhtml" >
 
 
         <on-entry>
             <!--<evaluate expression="facade_data.getTotal_current_column()" result="flashScope.t_c_col"/>-->
-            <evaluate expression="facadeTv7.getSelectedByData()" result="viewScope.total" />
+            <evaluate expression="facadeTv7.getSelectedByData_Archive()" result="viewScope.archive" />
         </on-entry>
 
-        <transition on="back" to="total"/>
+        <transition on="back" to="archive"/>
         <!--<transition on="next" to="measurements"/>-->
 
     </view-state>
