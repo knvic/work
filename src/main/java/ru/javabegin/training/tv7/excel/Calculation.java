@@ -54,7 +54,7 @@ public class Calculation {
 
         List<String> archive= new ArrayList<>(Arrays.asList(archive_all.replace(" ","").split(",")));
         String total_all=" v1Tv1, v2Tv1, v3Tv1, m1Tv1,  m2Tv1,  m3Tv1, dMTv1, qtvTv1, q12Tv1, qgTv1, vnrTv1, vosTv1, v1Tv2, v2Tv2, v3Tv2, m1Tv2,  m2Tv2,  m3Tv2, dMTv2, qtvTv2, q12Tv2, qgTv2, vnrTv2, vosTv2";
-        List<String>  total= new ArrayList<>(Arrays.asList(archive_all.replace(" ","").split(",")));
+        List<String>  total= new ArrayList<>(Arrays.asList(total_all.replace(" ","").split(",")));
         String regularExpression_aver="^(t\\d|p|dp|dt|tn|tx)";
         String regularExpression_sum="^(v|m|vn|vo|q|dM)";
 
