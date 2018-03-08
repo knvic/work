@@ -20,14 +20,17 @@
                 <h:outputStylesheet library="css" name="dialog.css" />
             </f:facet>
 
-
-            <div class="header">
-
+           <div class="header">
                 <ui:include src="/WEB-INF/templates/header.xhtml"/>
             </div>
 
-
+            <div id="header2">
                 <ui:include src="/WEB-INF/templates/logo.xhtml"/>
+
+                <ui:include src="/WEB-INF/templates/customer/customer_edit_delete_menu.xhtml"/>
+            </div>
+
+
 
             <div id="wrap">
 
@@ -35,7 +38,7 @@
 
                 <div class="content">
 
-                    <ui:include src="/WEB-INF/templates/customer_edit_delete_menu.xhtml"/>
+
 
 
                     <div class="right-content">
@@ -46,6 +49,8 @@
 
 
                         <ui:insert name="content"/>
+
+
 
 
 

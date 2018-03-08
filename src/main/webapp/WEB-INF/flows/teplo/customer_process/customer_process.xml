@@ -9,6 +9,9 @@
 
       <view-state id="customer_process" view="customer_process.xhtml" >
             <var name="add_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>
+            <!--<var name="userWizard" class="ru.javabegin.training.vkt7.object.UserWizard"/>-->
+            <var  name="customerWizard" class="ru.javabegin.training.vkt7.object.CustomerWizard" />
+            <!--<var name="cust" class="ru.javabegin.training.vkt7.entities.Customer"/>-->
 
             <transition on="save_customer" to="save_customer"/>
             <transition on="edit_customer" to="customer_select"/>
