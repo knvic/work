@@ -31,10 +31,18 @@
                 <p:ajax event="rowUnselect" listener="#{selection.onRowUnselect}" update=":form:msgs" />
                 <p:column headerText="#{msg.customer}">
                 <h:outputText value="#{u.firstName}" />
-            </p:column>
+                </p:column>
+
                 <p:column headerText="#{msg.unitType}">
                     <h:outputText value="#{u.unitType}" />
                 </p:column>
+                <p:column headerText="Статус">
+                    <h:outputText value="#{u.status}" />
+                </p:column>
+                <p:column headerText="Причина не опроса">
+                    <h:outputText value="#{u.reason}" />
+                </p:column>
+
                 <p:column headerText="Адрес:">
                     <h:outputText value="#{u.address}" />
                 </p:column>

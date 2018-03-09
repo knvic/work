@@ -31,6 +31,8 @@ import static javax.persistence.GenerationType.IDENTITY;
                 query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),*/
         @NamedQuery(name="Customer.findAllWithDetail",
                 query="select distinct c from Customer c   left join fetch c.operationSet t where c.unitType like 'ВКТ7' "),
+        @NamedQuery(name="Customer.findAllWithDetail_not_block",
+                query="select distinct c from Customer c   left join fetch c.operationSet t where c.unitType like 'ВКТ7' and c.status like 'В р%'"),
         @NamedQuery(name="Customer.findAllWithDetail_tv7",
                 query="select distinct c from Customer c left join fetch c.operationtv7Set h left join fetch c.operationtv7TSet p where c.unitType like 'ТВ7' "),
         @NamedQuery(name="Customer.findAllWithDetail_tv7_t",
@@ -55,6 +57,8 @@ public class Customer implements Serializable {
     private String address;
     private String unitType;
     private String status;
+    private String reason;
+
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
@@ -187,9 +191,14 @@ public class Customer implements Serializable {
         this.status = status;
     }
 
+    @Column(name = "REASON")
+    public String getReason() {
+        return reason;
+    }
 
-
-
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)

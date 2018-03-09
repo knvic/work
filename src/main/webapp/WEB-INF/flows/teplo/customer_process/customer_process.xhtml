@@ -45,15 +45,27 @@
                             <p:inputText value="#{customerWizard.customer.telModem}" required="true" label="Lastname"/>
 
                             <h:outputText value="#{msg.unit_number}: " />
-                            <p:inputText value="#{customerWizard.customer.unitNumber}" />
+                            <p:inputText value="#{customerWizard.customer.unitNumber}" required="true" />
 
                             <p:outputLabel for="console" value="Тип счетчика:" />
-                            <p:selectOneMenu id="console" value="#{customerWizard.customer.unitType}" style="width:125px">
+                            <p:selectOneMenu id="console" value="#{customerWizard.customer.unitType}" required="true" style="width:125px">
                                 <f:selectItem itemLabel="Выбрать" itemValue="" />
-                                <f:selectItem itemLabel="TB7" itemValue="TV7" />
+                                <f:selectItem itemLabel="TB7" itemValue="ТВ7" />
                                 <f:selectItem itemLabel="ВКТ7" itemValue="ВКТ7" />
 
                             </p:selectOneMenu>
+
+                            <p:outputLabel for="console1" value="Статус опроса:" />
+                            <p:selectOneMenu id="console1" value="#{customerWizard.customer.status}"  required="true" style="width:125px">
+                                <f:selectItem itemLabel="В Работе" itemValue="В Работе" />
+                                <f:selectItem itemLabel="Не опрашивается" itemValue="Не опрашиваеися" />
+
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Причина блокировки: " />
+                            <p:inputText value="#{customerWizard.customer.reason}" required="true" />
+
+
 
                             <h:outputText value="Пропустить остальное: " />
                             <h:selectBooleanCheckbox value="#{customerWizard.skip}" />
@@ -80,12 +92,7 @@
                             </p:selectOneMenu>
 
 
-                            <p:outputLabel for="console1" value="Статус опроса:" />
-                            <p:selectOneMenu id="console1" value="#{customerWizard.customer.status}" style="width:125px">
-                                <f:selectItem itemLabel="В Работе" itemValue="" />
-                                <f:selectItem itemLabel="Не опрашивается" itemValue="Не опрашиваеися" />
 
-                            </p:selectOneMenu>
 
 
 
