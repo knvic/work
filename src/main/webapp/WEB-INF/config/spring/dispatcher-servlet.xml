@@ -241,6 +241,8 @@
     <bean id="tv7Cron" class="ru.javabegin.training.tv7.modem.Tv7Run"/>
     <bean id="tv7RevizorTest_temp" class="ru.javabegin.training.tv7.revizor.TestRevizorThread"/>
 
+    <bean id="find_not_block" class="ru.javabegin.training.vkt7.object_modem.Facade_modem"/>
+
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
     <task:scheduled-tasks scheduler="serverScheduler">
@@ -266,6 +268,8 @@
 
         <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 40 7 * * ?"/>
         <!--Для ТВ-7 ############ конец #############################################   -->
+
+        <task:scheduled ref="find_not_block" method="getCustomers_not_block" cron="40 11 12 * * ?"/>
 
 
 

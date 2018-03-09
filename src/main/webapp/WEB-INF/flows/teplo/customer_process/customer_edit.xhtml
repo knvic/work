@@ -39,26 +39,138 @@
                     <p:outputLabel for="add_unit" value="Номер устройства" />
                     <p:inputText  id="add_unit" styleClass="search-text" value="#{searchCriteria_cust.customer.unitNumber}"/>
                 </h:panelGrid>
-<!--
-            <li><h:inputText  id="add_name" styleClass="search-text" value="#{searchCriteria_cust.customer.firstName}"/></li>
-                <li><h:inputText  id="add_modem" styleClass="search-text" value="#{searchCriteria_cust.customer.telModem}"/></li>
-                <li><h:inputText  id="add_unit" styleClass="search-text" value="#{searchCriteria_cust.customer.unitNumber}"/></li>
 
-            &lt;!&ndash;<li><h:inputText  id="add_pass" styleClass="search-text" value="#{selObj.telModem}"/></li>&ndash;&gt;
-            </ul>
-            <ul>
-            &lt;!&ndash;<li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="update_customer" actionListener="#{searchCriteria_cust.setUpdate_customer(customer)}"/></li>&ndash;&gt;
-                <li><p:commandButton id="btnAdd" value="#{msg.add_customer}"  styleClass="button" action="update_customer" /></li>
-            </ul>
-            <ul>
-                <li><p:commandButton id="btnCancel" value="#{msg.back}"  styleClass="button" action="customer_process" ajax="false"/></li>
-            </ul>-->
+
+
+
+
+
+
 
             <h:panelGrid columns="2" cellpadding="5">
                 <p:commandButton id="btnAdd" value="#{msg.update_customer}"  styleClass="button" action="update_customer" />
             </h:panelGrid>
 
         </h:form>
+
+        <h:form styleClass="search_form" id="add_user1">
+
+            <p:growl id="growl" sticky="true" showDetail="true"/>
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-2"><h1>Новый потребитель </h1></div>
+
+
+
+            </div>
+            <p:wizard flowListener="#{customerWizard.onFlowProcess}">
+                <p:tab id="personal" title="#{msg.customer}">
+                    <p:panel header="#{msg.customer}">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="#{msg.organization}: *" />
+                            <p:inputText value="#{customerWizard.customer.firstName}" required="true" label="Firstname"/>
+
+                            <h:outputText value="#{msg.tel_modem}" />
+                            <p:inputText value="#{customerWizard.customer.telModem}" required="true" label="Lastname"/>
+
+                            <h:outputText value="#{msg.unit_number}: " />
+                            <p:inputText value="#{customerWizard.customer.unitNumber}" />
+
+                            <p:outputLabel for="console" value="Тип счетчика:" />
+                            <p:selectOneMenu id="console" value="#{customerWizard.customer.unitType}" style="width:125px">
+                                <f:selectItem itemLabel="Выбрать" itemValue="" />
+                                <f:selectItem itemLabel="TB7" itemValue="TV7" />
+                                <f:selectItem itemLabel="ВКТ7" itemValue="ВКТ7" />
+
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Пропустить остальное: " />
+                            <h:selectBooleanCheckbox value="#{customerWizard.skip}" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+
+
+
+
+
+
+                <p:tab id="address" title="Дополнительно">
+                    <p:panel header="Address Details">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+
+
+                            <p:outputLabel for="city" value="Название луча: " />
+                            <p:selectOneMenu id="city" value="#{customerWizard.customer.branch}" effect="fold" editable="true">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItems value="#{customerWizard.branches}" />
+                            </p:selectOneMenu>
+
+
+                            <p:outputLabel for="console1" value="Статус опроса:" />
+                            <p:selectOneMenu id="console1" value="#{customerWizard.customer.status}" style="width:125px">
+                                <f:selectItem itemLabel="В Работе" itemValue="" />
+                                <f:selectItem itemLabel="Не опрашивается" itemValue="Не опрашиваеися" />
+
+                            </p:selectOneMenu>
+
+
+
+
+
+
+                            <h:outputText value="Пропустить остальное: " />
+                            <h:selectBooleanCheckbox value="#{customerWizard.skip}" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+
+
+
+
+                <p:tab id="confirm" title="Подтверждение">
+                    <p:panel header="Confirmation">
+                        <h:panelGrid id="confirmation" columns="2" columnClasses="grid,grid,grid">
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Наименование: " />
+                                <h:outputText value="#{customerWizard.customer.firstName}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Номер модема: " />
+                                <h:outputText value="#{customerWizard.customer.telModem}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Сетевой номер: " />
+                                <h:outputText value="#{customerWizard.customer.unitNumber}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Статус опроса: " />
+                                <h:outputText value="#{customerWizard.customer.unitType}" styleClass="outputLabel"/>
+                            </h:panelGrid>
+
+
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Статус опроса: " />
+                                <h:outputText value="#{customerWizard.customer.status}" styleClass="outputLabel"/>
+
+
+                            </h:panelGrid>
+
+
+                        </h:panelGrid>
+
+
+                        <p:commandButton value="Submit" action="save_customer" actionListener="#{searchCriteria_cust.setCustomer(customerWizard.customer)}" update="growl" process="@this"/>
+
+
+                    </p:panel>
+                </p:tab>
+            </p:wizard>
+
+        </h:form>
+
+
 
 
     </ui:define>

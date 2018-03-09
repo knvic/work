@@ -78,6 +78,14 @@ DataCustomerList dcs;
         return customerList;
     }
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer> findAllWithDetail_not_block() {
+        List<Customer> customerList = em.createNamedQuery(
+                "Customer.findAllWithDetail_not_block", Customer.class).getResultList();
+        return customerList;
+    }
+
 
     @Transactional(readOnly=true)
     @Override

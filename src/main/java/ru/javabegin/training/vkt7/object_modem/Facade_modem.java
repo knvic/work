@@ -58,6 +58,14 @@ public class Facade_modem {
         return customers;
     }
 
+    public List<Customer> getCustomers_not_block(){
+
+        if (customers==null){
+            customers = customerService.findAllWithDetail_not_block();
+        }
+        return customers;
+    }
+
 
     public List<Operation> getOperations(){
 
