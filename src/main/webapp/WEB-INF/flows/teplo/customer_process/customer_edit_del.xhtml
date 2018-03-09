@@ -9,7 +9,7 @@
       xmlns:sec="http://www.springframework.org/security/tags">
 
 
-<ui:composition template="/WEB-INF/templates/customer_edit_delete_template.xhtml">
+<ui:composition template="/WEB-INF/templates/customer/customer_edit_delete_template.xhtml">
 
     <ui:define name="title">
         #{msg.customers}
@@ -70,37 +70,6 @@
 
             <!--<p:poll interval="15"  update=":form" />-->
 
-<!--
-
-            <p:dataTable id="radioDT" var="u" value="${cu}" selection="#{selection.cust}" rowKey="#{u.id}">
-                <f:facet name="header">
-                    RadioButton
-                </f:facet>
-                <p:column selectionMode="single" style="width:16px;text-align:center"/>
-                <p:column headerText="name">
-                    <h:outputText value="#{u.firstName}" />
-                </p:column>
-                <p:column headerText="fam">
-                    <h:outputText value="#{u.lastName}" />
-                </p:column>
-                <p:column headerText="data">
-                    <h:outputText value="#{u.telModem}" />
-                </p:column>
-
-
-                <f:facet name="footer">
-                    <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
-
-                    <ul>
-                    <li><p:commandButton value="#{msg.delete}" event="onclick"  action="delete"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
-                </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.edit}" event="onclick"  action="edit"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
-                    </ul>
-                </f:facet>
-
-            </p:dataTable>
--->
 
 
 

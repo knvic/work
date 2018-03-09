@@ -54,6 +54,7 @@ public class Customer implements Serializable {
     private String branch;
     private String address;
     private String unitType;
+    private String status;
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
@@ -176,6 +177,19 @@ public class Customer implements Serializable {
     public void setUnitType(String unitType) {
         this.unitType = unitType;
     }
+
+    @Column(name = "STATUS")
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
+
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)

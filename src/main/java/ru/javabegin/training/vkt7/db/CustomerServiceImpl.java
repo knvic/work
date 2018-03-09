@@ -646,6 +646,7 @@ DataCustomerList dcs;
     @Override
     public List<DataCustomer> customerOperationStatus(){
         List<Object> resultList=new ArrayList<>();
+
         Date date = new Date();
         date=auxiliaryService.addTime(date,"23");
 
