@@ -5,6 +5,7 @@ import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -26,7 +27,7 @@ import java.util.List;
 public class ConvertExcel {
 
 
-    private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
+   /* private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
         HSSFFont font = workbook.createFont();
         font.setItalic(true);
         //setBold(true);
@@ -35,6 +36,43 @@ public class ConvertExcel {
         style.setBorderLeft(CellStyle.BORDER_DOUBLE);
         style.getBorderLeft();
         return style;
+    }
+*/
+
+
+
+    private static HSSFCellStyle createStyleForTitle(HSSFWorkbook workbook) {
+        HSSFFont font = workbook.createFont();
+        font.setItalic(true);
+
+        //setBold(true);
+        HSSFCellStyle style = workbook.createCellStyle();
+        style.setFont(font);
+        style.setBorderLeft(CellStyle.BORDER_MEDIUM);
+        style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
+        style.getBorderLeft();
+        style.getBorderRight();
+        style.getBorderTop();
+        return style;
+    }
+
+    private static HSSFCellStyle createcellstyleTblLeft(HSSFWorkbook workbook) {
+        HSSFFont font01Normal = workbook.createFont();
+        font01Normal.setFontHeightInPoints((short)8);
+        font01Normal.setFontName("Times New Roman");
+        font01Normal.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);
+
+        //setBold(true);
+        HSSFCellStyle  cellstyleTblLeft = workbook.createCellStyle();
+        cellstyleTblLeft.setFont(font01Normal);
+        cellstyleTblLeft.setAlignment(HSSFCellStyle.ALIGN_LEFT);
+        cellstyleTblLeft.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderRight(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setBorderTop(HSSFCellStyle.BORDER_THIN);
+        cellstyleTblLeft.setWrapText(true);
+        cellstyleTblLeft.setVerticalAlignment(HSSFCellStyle.VERTICAL_TOP);
+        return cellstyleTblLeft;
     }
 
 

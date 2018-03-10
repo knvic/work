@@ -23,8 +23,8 @@
             <h:outputText value="${message}" styleClass="error" />
         </p:dialog>
 
-        <p:dialog header="Выполянется" widgetVar="dlg4" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message1}" >
-            <h:outputText value="${message1}" styleClass="error" />
+        <p:dialog header="Выполянется" widgetVar="dlg4" showEffect="explode" hideEffect="explode" height="100" visible="${not empty message2}" >
+            <h:outputText value="${message2}" styleClass="error" />
         </p:dialog>
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
@@ -33,6 +33,7 @@
             <div class="ui-g">
             <div class="ui-g-2"></div>
             <div class="ui-g-5"><p:commandButton value="С начала месяца Все в Excel " event="onclick"  action="selectTv7_ALL_xls" icon="ui-icon-check" /></div>
+
             </div>
 
             <h:form>

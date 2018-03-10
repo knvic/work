@@ -781,6 +781,7 @@ type_to_error="daily";
 
                       System.out.println("\n Версия сервера=0!! ");
                       System.out.println("\n error=1000.3F FE ServerVersion=0");
+                      logger.info(customer.getFirstName()+" Версия сервера=0!! Требуется добавление в список не опроса");
                       error=1000;
                       stop=false;
                       break;

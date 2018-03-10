@@ -414,7 +414,7 @@ List<Object> connect=new ArrayList<>();*/
         ZonedDateTime zdt = ldt.atZone(ZoneId.systemDefault());
         Date data = Date.from(zdt.toInstant());
         System.out.println("Перевели в  Date: " + data);
-        List<Customer> customerList=customerService.findAllWithDetail();
+        List<Customer> customerList=customerService.findAllWithDetail_not_block();
         Daily_Moth_cron daily_moth_cron =new Daily_Moth_cron();
         Cleaner cleaner=new Cleaner();
         int type =1;
