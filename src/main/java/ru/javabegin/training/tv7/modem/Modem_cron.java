@@ -1428,7 +1428,7 @@ atomicInteger.addAndGet(1);
 
                         errList.forEach(p->System.out.println(p));
                         logger.info(customer.getFirstName()+ "  "+ldtime+ " " + errList.get(0));
-
+                        status_oprosa=true;
                         continue;
 
                     }
@@ -1440,7 +1440,7 @@ atomicInteger.addAndGet(1);
 
                         errList.forEach(p->System.out.println(p));
                         logger.info(customer.getFirstName()+ "  "+ldtime+ "  ОШИБКА ЧТЕНИЯ " + errList.get(0)+ "  ОШИБКА ЗАПИСИ " + errList.get(1));
-
+                        status_oprosa=true;
                         continue;
 
                     }
