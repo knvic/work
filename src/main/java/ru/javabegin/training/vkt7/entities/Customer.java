@@ -35,6 +35,8 @@ import static javax.persistence.GenerationType.IDENTITY;
                 query="select distinct c from Customer c   left join fetch c.operationSet t where c.unitType like 'ВКТ7' and c.status like 'В р%'"),
         @NamedQuery(name="Customer.findAllWithDetail_tv7",
                 query="select distinct c from Customer c left join fetch c.operationtv7Set h left join fetch c.operationtv7TSet p where c.unitType like 'ТВ7' "),
+        @NamedQuery(name="Customer.findAllWithDetail_tv7_not_block",
+                query="select distinct c from Customer c left join fetch c.operationtv7Set h left join fetch c.operationtv7TSet p where c.unitType like 'ТВ7' and c.status like 'В р%'"),
         @NamedQuery(name="Customer.findAllWithDetail_tv7_t",
                 query="select distinct c from Customer c left join fetch c.operationtv7TSet h "),
         @NamedQuery(name="Customer.findTv7Cusromers",

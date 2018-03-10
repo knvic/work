@@ -95,6 +95,14 @@ DataCustomerList dcs;
         return customerList;
     }
 
+    @Transactional(readOnly=true)
+    @Override
+    public List<Customer> findAllWithDetailTv7_not_block() {
+        List<Customer> customerList = em.createNamedQuery(
+                "Customer.findAllWithDetail_tv7_not_block", Customer.class).getResultList();
+        return customerList;
+    }
+
 
     @Transactional
     @Override
@@ -104,7 +112,7 @@ DataCustomerList dcs;
             em.persist(customer);
         } else {
             em.merge(customer);
-            log.info("Updating existing contact");
+            //log.info("Updating existing contact");
         }
 
         log.info("Contact saved with id: " + customer.getId());

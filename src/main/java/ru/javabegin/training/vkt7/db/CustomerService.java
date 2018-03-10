@@ -21,6 +21,7 @@ public interface CustomerService {
     List<Customer> findAllWithDetail();
     List<Customer> findAllWithDetail_not_block();
     List<Customer> findAllWithDetailTv7();
+    List<Customer> findAllWithDetailTv7_not_block();
     Customer save(Customer customer);
     void update(Customer customer);
     void delete (Customer customer);
