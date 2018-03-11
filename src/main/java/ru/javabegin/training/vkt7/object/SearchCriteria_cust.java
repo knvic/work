@@ -28,6 +28,8 @@ public class SearchCriteria_cust implements Serializable{
     private Customer update_customer;
     private Operation operation;
 
+
+
     public Customer getUpdate_customer() {
         return update_customer;
     }
@@ -80,6 +82,20 @@ public class SearchCriteria_cust implements Serializable{
     //////////
     public Hobby getHobby() { return hobby; }
     public void setHobby(Hobby hobby) { this.hobby = hobby; }
+
+
+    public String data_Q() throws InterruptedException {
+        return getData_Q();
+    }
+    private String data_Q;
+    public String getData_Q() {
+
+        return data_Q;
+    }
+
+    public void setData_Q(String data_Q) {
+        this.data_Q = data_Q;
+    }
 
 
 

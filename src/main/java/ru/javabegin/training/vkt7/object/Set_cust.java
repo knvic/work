@@ -16,6 +16,7 @@ import java.io.Serializable;
 public class Set_cust implements Serializable{
     private Customer customer;
 
+
     public Customer getCustomer() {
         return customer;
     }
@@ -27,4 +28,6 @@ public class Set_cust implements Serializable{
         customer=null;
         return customer;
     }
+
+
 }

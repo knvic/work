@@ -25,6 +25,10 @@ public class Selection implements Serializable {
     private Operation oper;
     private Measurements meas;
 
+
+
+    private String data_Q;
+
     public Contact getUd() {
         return ud;
     }
@@ -56,6 +60,8 @@ public class Selection implements Serializable {
     public void setMeas(Measurements meas) {
         this.meas = meas;
     }
+
+
 
     public void onRowSelect(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Потребитель выбран", ((Customer) event.getObject()).getFirstName());

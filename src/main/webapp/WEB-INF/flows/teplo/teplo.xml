@@ -17,6 +17,7 @@
       <view-state id="teplo" view="teplo.xhtml">
             <on-render>
                   <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
+                  <evaluate expression="searchCriteria_cust.data_Q()" result="viewScope.dateQ"  />
             </on-render>
 
 
@@ -32,6 +33,13 @@
 
             <transition on="data_tv7_process" to="data_tv7">
             </transition>
+
+            <transition on="update_q">
+                  <evaluate expression="facade_data.update_Q_current_all_OK()" />
+
+            </transition>
+
+
 
       </view-state>
 

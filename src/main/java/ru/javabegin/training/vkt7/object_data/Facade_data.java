@@ -49,8 +49,8 @@ public class Facade_data implements Serializable{
     private DataCustomerList dcl;
 
 
-   /* @Autowired
-  */  private SearchCriteria_cust searchCriteria_cust;
+   @Autowired
+    private SearchCriteria_cust searchCriteria_cust;
     @Autowired
     private SearchCriteria_modem searchCriteria_oper;
 
@@ -58,6 +58,8 @@ public class Facade_data implements Serializable{
     private SearchCriteria_data searchCriteria_data;
     @Autowired
     private SelectionData selectionData;
+
+
 
     private Customer selcustomer;
 
@@ -378,6 +380,35 @@ getExcelAllOk.update(customerService, reportService, auxiliaryService);
     }
 
 
+    public String update_Q_current_all_OK() throws IOException, InterruptedException {
+
+
+        List<Customer> list=customerService.findAll();
+        for (Customer dk:list ) {
+            //удаляем предыдущие данные перед новым считыванием данных по Q
+            dk.setQ_begin_1("");
+            dk.setQ_now_1("");
+            dk.setQ_sum_1("");
+            dk.setQ_begin_2("");
+            dk.setQ_now_2("");
+            dk.setQ_sum_2("");
+            customerService.save(dk);
+        }
+
+
+
+
+        LocalDateTime ldt= LocalDateTime.now();
+       String date= auxiliaryService.date_to_vktString(ldt);
+
+       searchCriteria_cust.setData_Q(date);
+
+        Get_Q_AllOk get_q_allOk=new Get_Q_AllOk();
+        get_q_allOk.update(customerService, reportService, auxiliaryService);
+
+        return date;
+
+    }
 
 
 

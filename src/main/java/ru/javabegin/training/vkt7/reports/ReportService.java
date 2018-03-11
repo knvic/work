@@ -79,7 +79,7 @@ public interface ReportService {
      */
     List<Object> getCalculations_total(CustomerService customerService, List<Operation> operationList, DataObject sum);///
 
-
+    void getCalculations_total_update_Q(CustomerService customerService,List<Operation> operationList, DataObject sum);
 
 
     //// конец основное

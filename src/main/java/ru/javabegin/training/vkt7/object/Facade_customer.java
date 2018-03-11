@@ -11,7 +11,9 @@ import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.reports.GetExcelAllOk;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -170,6 +172,10 @@ public class Facade_customer {
         return operations;
 
     }
+
+
+
+
 
 
 

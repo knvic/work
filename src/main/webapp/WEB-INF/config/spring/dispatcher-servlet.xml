@@ -243,6 +243,9 @@
 
     <bean id="find_not_block" class="ru.javabegin.training.vkt7.object_modem.Facade_modem"/>
 
+    <bean id="update_Q_for_All_OK" class="ru.javabegin.training.vkt7.object_data.Facade_data"/>
+
+
 
     <task:scheduler id="serverScheduler" pool-size="5"/>
     <task:scheduled-tasks scheduler="serverScheduler">
@@ -266,12 +269,14 @@
         <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */5 * * * ?"/>-->
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
-        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 18 15 * * ?"/>
+        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 20 7 * * ?"/>
         <!--Для ТВ-7 ############ конец #############################################   -->
 
         <!--<task:scheduled ref="find_not_block" method="getCustomers_not_block" cron="40 11 12 * * ?"/>-->
 
-
+        <!--Вспомогательнве формирование Q для начального экрана  ############ начало #########################   -->
+        <task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="50 */10 * * * ?"/>
+        <!--Вспомогательнве формирование Q для начального экрана  ############ конец ##########################   -->
 
     </task:scheduled-tasks>
 

@@ -147,7 +147,11 @@ public class AuxiliaryServiceImplTest {
 
     @Test
     public void date_to_vktString() throws Exception {
+        LocalDateTime ldt =LocalDateTime.now();
 
+        String s=auxiliaryService.date_to_vktString(ldt);
+
+        System.out.println("data= "+s );
     }
 
     @Test

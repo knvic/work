@@ -2299,6 +2299,193 @@ return calculation;
     }
 
 
+    @Override
+    public void getCalculations_total_update_Q(CustomerService customerService,List<Operation> operationList, DataObject sum) {
+        String total_element = "V1 Тв1, V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, BНP Тв1, BOC Тв1, " +
+                "V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, BНP Тв2, BOC Тв2";
+
+        List<String> total_element_all = new ArrayList<>(Arrays.asList(total_element.replace(", ", ",").split(",")));
+
+        List<String> list_calc = new ArrayList<>(sum.getOptionalValues().keySet());
+        List<String> list_calc_total = new ArrayList<>();
+        Map<String, Tupel> map_total = new HashMap<String, Tupel>();
+        Map<String, Tupel_str> map_total_str = new HashMap<String, Tupel_str>();
+
+
+        list_calc = sort(list_calc);
+
+        DataObject total_begin = new DataObject();
+        DataObject_str total_begin_str = new DataObject_str();
+        Operation operation = operationList.get(0);
+        List<Measurements> measurementsList = new ArrayList<>(operation.getMeasurementsSet());
+////Сформировали список для вывода измерений ИТОГОВЫЕ ТЕКУЩИЕ.
+        for (String col : list_calc) {
+            for (String col_total : total_element_all) {
+                if (col.equals(col_total)) {
+                    list_calc_total.add(col);
+                }
+            }
+        }
+
+        //Отсортировали
+        list_calc_total = sort(list_calc_total);
+//// Достали измерение ИТОГОВЫЕ ТЕКУЩИЕ и по сформированному из общего списка колонок заполнили тектовую и цифровую версию DataObject
+////  Формируем данные для помещения Measurements в объекты DataObject и DataObject_str
+        for (String c : list_calc_total) {
+            for (Measurements measurements : measurementsList) {
+                if (c.equals(measurements.getText())) {
+
+                    if (c.equals("Qо Тв1")||c.equals("Qг Тв1")||c.equals("Qо Тв2")||c.equals("Qг Тв2")) {
+                        map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN)));
+                        System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN));
+                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN).toString()));
+                    }else if (c.equals("BНP Тв1")||c.equals("BOC Тв1")||c.equals("BНP Тв2")||c.equals("BOC Тв2")) {
+                        map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN)));
+                        System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN));
+                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN).toString()));
+                    }else{
+                        map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN)));
+                        System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
+                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN).toString()));
+                    }
+
+
+                }
+            }
+        }
+
+        total_begin.setOptionalValues(map_total);
+        total_begin.setData(operation.getChronological());
+        total_begin.setStaticval2(auxiliaryService.timeStamp_to_string(operation.getChronological()));
+
+        total_begin_str.setOptionalValues(map_total_str);
+        total_begin_str.setData(auxiliaryService.timeStamp_to_string(operation.getChronological()));
+
+/////
+/////
+        ////Переделываем sum под формат вывода ИТОГОВЫЕ ТЕКУЩИЕ
+        Map<String, Tupel> map_sum = new HashMap<String, Tupel>();
+        Map<String, Tupel_str> map_sum_str = new HashMap<String, Tupel_str>();
+        List<String> old_sum_col= new ArrayList<>(sum.getOptionalValues().keySet());
+        for (String c : list_calc_total) {
+            for(String old_c:old_sum_col) {
+
+                if (c.equals(old_c)) {
+                    map_sum.put(c,new Tupel(c,sum.getOptionalValues().get(c).getValue()));
+                    map_sum_str.put(c, new Tupel_str(c,sum.getOptionalValues().get(c).getValue().toString()));
+
+                }
+            }
+
+
+        }
+
+        DataObject sum_new=new DataObject();
+        sum_new.setOptionalValues(map_sum);
+        sum_new.setData(sum.getData());
+
+
+        DataObject_str sum_new_str=new DataObject_str();
+        sum_new_str.setOptionalValues(map_sum_str);
+        sum_new_str.setData(sum.getStaticval2());
+
+
+
+        ////Суммируем
+
+        Map<String, Tupel> map_total_sum = new HashMap<String, Tupel>();
+        Map<String, Tupel_str> map_total_sum_str = new HashMap<String, Tupel_str>();
+
+
+        for (String c : list_calc_total) {
+
+            BigDecimal summa = total_begin.getOptionalValues().get(c).getValue().add(sum.getOptionalValues().get(c).getValue());
+
+            map_total_sum.put(c, new Tupel(c, summa));
+            map_total_sum_str.put(c, new Tupel_str(c, summa.toString()));
+        }
+
+        DataObject total_end = new DataObject();
+        total_end.setOptionalValues(map_total_sum);
+        total_end.setData(auxiliaryService.date_TimeStamp(new Date()));
+        total_end.setStaticval2("Итого:");
+
+        DataObject_str total_end_str = new DataObject_str();
+        total_end_str.setOptionalValues(map_total_sum_str);
+        total_end_str.setData("Итого:");
+
+        //TODO временное. При работе с выводом  в основной Customer значений Q
+
+        System.out.println("Customer = "+ operationList.get(0).getCustomerName());
+        Long idCustomer = operationList.get(0).getIdCustomer();
+        System.out.println("Customer Id = "+idCustomer);
+        Customer customer = customerService.findById(idCustomer);
+
+        for (String s: total_begin_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_begin_1(total_begin_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_begin_2(total_begin_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+
+        for (String s: total_end_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_now_1(total_end_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_now_2(total_end_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+        for (String s: sum_new_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_sum_1(sum_new_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_sum_2(sum_new_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+
+        customerService.save(customer);
+
+
+
+
+/*
+
+        List<DataObject> total_current=new ArrayList<>();
+        total_current.add(0,total_begin);
+        total_current.add(1,total_end);
+        total_current.add(2,sum_new);
+
+        List<DataObject_str> total_current_str=new ArrayList<>();
+        total_current_str.add(0,total_begin_str);
+        total_current_str.add(1,total_end_str);
+        total_current_str.add(2,sum_new_str);
+
+        List<Object> t_current=new ArrayList<>();
+        ////
+        t_current.add(0,total_current); //лист из трех объектов в формате DataObject значение total_moth, сумма всех значений, итоговое значение
+        t_current.add(1,total_current_str);//лист из трех объектов в формате DataObject_str значение total_moth, сумма всех значений, итоговое значение
+        t_current.add(2,list_calc_total); /// Переlеланный список колонок под измерения итоговые текущие
+
+*/
+
+
+
+    }
+
+
+
+
+
 
 
     @Override

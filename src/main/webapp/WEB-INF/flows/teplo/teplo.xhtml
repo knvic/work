@@ -16,10 +16,26 @@
     </ui:define>
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
+        <!--<p:growl id="growl" life="2000" />
 
+        <p:commandButton value="Ajax Submit" id="ajax" update=":form:eventsDT" actionListener="#{searchCriteria_cust.data_Q}" styleClass="ui-priority-primary" />-->
 
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
+
+            <!--<p:commandButton value="Обновить" event="onclick" process="@form" update=":form:eventsDT" action="update_q" styleClass="noborder-button" />-->
+
+
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-3"><p:commandButton  value="Обновить" event="onclick" process="@form" update=":form:eventsDT" action="update_q"   styleClass="ui-priority-primary" /></div>
+
+                <div class="ui-g-5"><h:outputText id="data" value="Дата обновления"/></div>
+                <div class="ui-g-6"><h:outputText id="data1" value="#{dateQ}"/></div>
+
+
+            </div>
+
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
@@ -103,13 +119,15 @@
             <p:growl id="grow2" life="5000" />
 
 
-            <!--<p:poll interval="15"  update=":form" />-->
+            <!--<p:poll interval="15"  update="form" />-->
+
+            <p:poll interval="10"  update="eventsDT" />
 
 
 
         </h:form>
 
-
+        <!--<p:poll interval="15"  update=":form" />-->
     </ui:define>
    <!-- <ui:define name="ajax_p">
 
