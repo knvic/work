@@ -46,9 +46,31 @@
                     <h:outputText value="#{u.branch}" />
                 </p:column>
 
-                <p:column headerText="Адрес:">
-                    <h:outputText value="#{u.address}" />
+                <p:column headerText="Q ТВ1 начало месяца">
+                    <h:outputText value="#{u.q_begin_1}" />
                 </p:column>
+
+                <p:column headerText="Q ТВ1 сейчас">
+                    <h:outputText value="#{u.q_now_1}" />
+                </p:column>
+
+                <p:column headerText="Q ТВ1 за период">
+                    <h:outputText value="#{u.q_sum_1}" />
+                </p:column>
+
+                <p:column headerText="Q ТВ2 начало месяца">
+                    <h:outputText value="#{u.q_begin_2}" />
+                </p:column>
+
+                <p:column headerText="Q ТВ2 сейчас">
+                    <h:outputText value="#{u.q_now_2}" />
+                </p:column>
+
+                <p:column headerText="Q ТВ2 за период">
+                    <h:outputText value="#{u.q_sum_2}" />
+                </p:column>
+
+
                 <p:column headerText="#{msg.tel_modem}">
                     <h:outputText value="#{u.telModem}" />
                 </p:column>

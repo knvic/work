@@ -1,5 +1,6 @@
 package ru.javabegin.training.vkt7.reports;
 
+import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Operation;
 
 import javax.swing.table.DefaultTableModel;
@@ -76,7 +77,7 @@ public interface ReportService {
      * @param sum
      * @return
      */
-    List<Object> getCalculations_total(List<Operation> operationList,DataObject sum);///
+    List<Object> getCalculations_total(CustomerService customerService, List<Operation> operationList, DataObject sum);///
 
 
 

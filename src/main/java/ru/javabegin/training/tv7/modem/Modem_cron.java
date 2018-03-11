@@ -311,6 +311,7 @@ int count_temp=0;
 
                                 System.out.println("\n Ответ инициализация модема не поступил. Ошибка по таймауту.");
                                 System.out.println("\n error=1.");
+                                logger.info(customer.getFirstName()+ "ERROR Ответ инициализация модема не поступил. Ошибка по таймауту.");
                                 error = 1;
                                 stop = false;
 
@@ -395,7 +396,7 @@ int count_temp=0;
                         }
                     }
                     t = 1;
-                    System.out.println("\n Ответ от можема получен");
+                    System.out.println("\n Ответ от модема получен");
                     System.out.println("\n Проверка регистрации модема");
                     Thread.sleep(1000);
 
@@ -498,10 +499,14 @@ int count_temp=0;
                     executor.submit(callable(60,"установки связи первое"));
 
                     while (step == 777 & stop == true) {
+                        if (stop == false) {
+                            System.out.println("\n Получена команда STOP ");
+                            break;
+                        }
 
                         if (data2.contains("CONNECT 9600/RLP")) {
                             System.out.println("ответ пришел t= " + t);
-                            System.out.println("\n Связь Установлена!! Продолжаем работать " + data2);
+                            System.out.println(customer.getFirstName() +" Связь Установлена!! Продолжаем работать " + data2);
                             Thread.sleep(2000);
 
 
@@ -526,6 +531,7 @@ int count_temp=0;
                             System.out.println("\n Нет Связи!! Закрываем связь" + data2);
 
                             System.out.println("\n error=5.NO CARRIER");
+                            logger.info(customer.getFirstName()+" ERROR error=5.NO CARRIER");
                             error = 5;
                             stop = false;
                         } else if (data2.contains("NO DIALTONE") & call < 3) {
@@ -546,6 +552,7 @@ int count_temp=0;
                             step = 0;
                             System.out.println("\n Нет Связи!! Закрываем связь" + data2);
                             System.out.println("\n error=6.NO DIALTONE");
+                            logger.info(customer.getFirstName()+" ERROR error=6.NO DIALTONE");
                             error = 6;
                             stop = false;
                         } else if (data2.contains("BUSY") || data2.contains("NO ANSWER")) {
@@ -555,6 +562,7 @@ int count_temp=0;
                             step = 0;
                             System.out.println("\n Нет Связи!! Закрываем связь" + data2);
                             System.out.println("\n error=7.Ответ BUSY или NO ANSWER");
+                            logger.info(customer.getFirstName()+" ERROR error=7.Ответ BUSY или NO ANSWER");
                             error = 7;
                             stop = false;
                         }

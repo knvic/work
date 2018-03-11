@@ -60,7 +60,12 @@ public class Customer implements Serializable {
     private String unitType;
     private String status;
     private String reason;
-
+    private String q_begin_1;
+    private String q_now_1;
+    private String q_sum_1;
+    private String q_begin_2;
+    private String q_now_2;
+    private String q_sum_2;
 
 
     private Set<Operation> operationSet = new HashSet<Operation>();
@@ -201,6 +206,71 @@ public class Customer implements Serializable {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+    @Column(name = "Q_BEGIN_1")
+    public String getQ_begin_1() {
+        return q_begin_1;
+    }
+
+    public void setQ_begin_1(String q_begin_1) {
+        this.q_begin_1 = q_begin_1;
+    }
+    @Column(name = "Q_NOW_1")
+    public String getQ_now_1() {
+        return q_now_1;
+    }
+
+    public void setQ_now_1(String q_now_1) {
+        this.q_now_1 = q_now_1;
+    }
+    @Column(name = "Q_SUM_1")
+    public String getQ_sum_1() {
+        return q_sum_1;
+    }
+
+    public void setQ_sum_1(String q_sum_1) {
+        this.q_sum_1 = q_sum_1;
+    }
+
+    @Column(name = "Q_BEGIN_2")
+    public String getQ_begin_2() {
+        return q_begin_2;
+    }
+
+    public void setQ_begin_2(String q_begin_2) {
+        this.q_begin_2 = q_begin_2;
+    }
+
+    @Column(name = "Q_NOW_2")
+    public String getQ_now_2() {
+        return q_now_2;
+    }
+
+    public void setQ_now_2(String q_now_2) {
+        this.q_now_2 = q_now_2;
+    }
+    @Column(name = "Q_SUM_2")
+    public String getQ_sum_2() {
+        return q_sum_2;
+    }
+
+    public void setQ_sum_2(String q_sum_2) {
+        this.q_sum_2 = q_sum_2;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL,
             orphanRemoval=true)

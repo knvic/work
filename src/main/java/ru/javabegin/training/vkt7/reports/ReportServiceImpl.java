@@ -11,6 +11,8 @@ import net.sf.jasperreports.view.JasperViewer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
+import ru.javabegin.training.vkt7.db.CustomerService;
+import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 
@@ -2112,7 +2114,7 @@ return calculation;
 
 
     @Override
-    public List<Object> getCalculations_total(List<Operation> operationList, DataObject sum) {
+    public List<Object> getCalculations_total(CustomerService customerService,List<Operation> operationList, DataObject sum) {
         String total_element = "V1 Тв1, V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, BНP Тв1, BOC Тв1, " +
                 "V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, BНP Тв2, BOC Тв2";
 
@@ -2225,6 +2227,51 @@ return calculation;
         DataObject_str total_end_str = new DataObject_str();
         total_end_str.setOptionalValues(map_total_sum_str);
         total_end_str.setData("Итого:");
+
+        //TODO временное. При работе с выводом  в основной Customer значений Q
+
+        System.out.println("Customer = "+ operationList.get(0).getCustomerName());
+        Long idCustomer = operationList.get(0).getIdCustomer();
+        System.out.println("Customer Id = "+idCustomer);
+        Customer customer = customerService.findById(idCustomer);
+
+        for (String s: total_begin_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_begin_1(total_begin_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_begin_2(total_begin_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+
+        for (String s: total_end_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_now_1(total_end_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_now_2(total_end_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+        for (String s: sum_new_str.getOptionalValues().keySet()) {
+
+            if (s.contains("Qо Тв1")){
+                customer.setQ_sum_1(sum_new_str.getOptionalValues().get(s).getValue());
+            }
+            if (s.contains("Qо Тв2")){
+                customer.setQ_sum_2(sum_new_str.getOptionalValues().get(s).getValue());
+            }
+
+        }
+
+        customerService.save(customer);
+
+
+
+
 
         List<DataObject> total_current=new ArrayList<>();
         total_current.add(0,total_begin);

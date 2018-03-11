@@ -249,7 +249,7 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
        List<DataObject_str> total_current_str=new ArrayList<>();
        List<String> total_current_column=new ArrayList<>();
         if(operationList_total.size()!=0) {
-            List<Object> total_currint_from_calss = reportService.getCalculations_total(operationList_total, sum);
+            List<Object> total_currint_from_calss = reportService.getCalculations_total(customerService,operationList_total, sum);
             List<DataObject> total_current = (List<DataObject>) total_currint_from_calss.get(0);
             total_current_str = (List<DataObject_str>) total_currint_from_calss.get(1);
             total_current_column = (List<String>) total_currint_from_calss.get(2);
@@ -353,7 +353,7 @@ List<DataObject_str> dataObject_calc_strList =new ArrayList<>();
         List<Operation> operationList_total= customerService.findOperation_daily(customer.getId(),date_prevision_moth, "total_moth","OK");
         System.out.println("размер массива operationList_total "+operationList_total.size() );
 
-        List<Object> object_total=reportService.getCalculations_total(operationList_total,sum);
+        List<Object> object_total=reportService.getCalculations_total(customerService, operationList_total,sum);
         List<DataObject> total_list = (List<DataObject>)object_total.get(0);
         List<String> list_calc_total=(List <String>)object_total.get(2);
 
