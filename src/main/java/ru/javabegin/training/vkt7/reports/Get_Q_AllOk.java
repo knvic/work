@@ -47,8 +47,8 @@ public class Get_Q_AllOk implements Serializable {
 
         Callable task = () -> {
             //AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
-                System.out.println("работает поток "+ Thread.currentThread().getName());
-            logger.info("Формирование всех OK. Работает поток "+ Thread.currentThread().getName());
+                //System.out.println("работает поток обновления Q "+ Thread.currentThread().getName());
+            logger.info("работает поток обновления Q "+ Thread.currentThread().getName());
 
 
 
@@ -56,7 +56,7 @@ public class Get_Q_AllOk implements Serializable {
 
 
             List<DataCustomer> list=DataCustomerList.dataCustomerList;
-            System.out.println("размер list= "+list);
+            System.out.println("размер list= "+list.size());
             List<Customer> customerList=new ArrayList<>();
 
           /*  list.stream()
@@ -85,8 +85,7 @@ public class Get_Q_AllOk implements Serializable {
               System.out.println("date_ts "+date_ts);
               List<Operation> operationList_daily=customerService.findOperation_betwen_data(customer.getId(),auxiliaryService.date_TimeStamp(date_daily_List.get(0)),date_ts,"daily","OK");
 
-              ConvertExcel convertExcel=new ConvertExcel();
-              // convertExcel.excel();
+
               List<Object> object= reportService.getObject_ns(operationList_daily);
               List<DataObject> dataObjectList =(List<DataObject>) object.get(0);
               List<String> column=(List<String>) object.get(1);

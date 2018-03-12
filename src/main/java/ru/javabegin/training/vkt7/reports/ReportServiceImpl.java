@@ -2301,6 +2301,8 @@ return calculation;
 
     @Override
     public void getCalculations_total_update_Q(CustomerService customerService,List<Operation> operationList, DataObject sum) {
+        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getRootLogger();
+
         String total_element = "V1 Тв1, V2 Тв1, V3 Тв1, M1 Тв1, M2 Тв1, M3 Тв1, Mг Тв1, Qо Тв1, Qг Тв1, BНP Тв1, BOC Тв1, " +
                 "V1 Тв2, V2 Тв2, V3 Тв2, M1 Тв2, M2 Тв2, M3 Тв2, Mг Тв2, Qо Тв2, Qг Тв2, BНP Тв2, BOC Тв2";
 
@@ -2453,31 +2455,14 @@ return calculation;
 
         }
 
-        customerService.save(customer);
 
+        try {
+            customerService.save(customer);
+        } catch (Exception e) {
 
-
-
-/*
-
-        List<DataObject> total_current=new ArrayList<>();
-        total_current.add(0,total_begin);
-        total_current.add(1,total_end);
-        total_current.add(2,sum_new);
-
-        List<DataObject_str> total_current_str=new ArrayList<>();
-        total_current_str.add(0,total_begin_str);
-        total_current_str.add(1,total_end_str);
-        total_current_str.add(2,sum_new_str);
-
-        List<Object> t_current=new ArrayList<>();
-        ////
-        t_current.add(0,total_current); //лист из трех объектов в формате DataObject значение total_moth, сумма всех значений, итоговое значение
-        t_current.add(1,total_current_str);//лист из трех объектов в формате DataObject_str значение total_moth, сумма всех значений, итоговое значение
-        t_current.add(2,list_calc_total); /// Переlеланный список колонок под измерения итоговые текущие
-
-*/
-
+            logger.info(customer.getFirstName()+ "ошибка записи данных Q");
+            e.printStackTrace();
+        }
 
 
     }
