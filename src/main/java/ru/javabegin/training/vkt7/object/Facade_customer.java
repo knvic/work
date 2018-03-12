@@ -38,6 +38,9 @@ public class Facade_customer {
     @Autowired
     private SearchCriteria_oper searchCriteria_oper;
 
+    @Autowired
+    private Selection selection;
+
     private Customer selcustomer;
 
     private Customer customer;
@@ -172,6 +175,21 @@ public class Facade_customer {
         return operations;
 
     }
+
+
+
+   public boolean checkSelectedData(){
+       boolean check=false;
+       selection.setCheck(false);
+
+       if (searchCriteria_cust.getCustomer()!=null){
+           check=true;
+           selection.setCheck(true);
+       }
+
+
+       return check;
+   }
 
 
 

@@ -275,7 +275,7 @@
         <!--<task:scheduled ref="find_not_block" method="getCustomers_not_block" cron="40 11 12 * * ?"/>-->
 
         <!--Вспомогательнве формирование Q для начального экрана  ############ начало #########################   -->
-        <task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="40 */1 * * * ?"/>
+        <task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="35 */1 * * * ?"/>
         <!--Вспомогательнве формирование Q для начального экрана  ############ конец ##########################   -->
 
     </task:scheduled-tasks>

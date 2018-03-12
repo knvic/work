@@ -45,7 +45,27 @@ public class Get_Q_AllOk implements Serializable {
 
         org.apache.log4j.Logger logger = org.apache.log4j.Logger.getRootLogger();
 
-        Callable task = () -> {
+
+        Callable task1 = () -> {
+            List<Customer> list=customerService.findAll();
+            for (Customer dk:list ) {
+                //удаляем предыдущие данные перед новым считыванием данных по Q
+                dk.setQ_begin_1("");
+                dk.setQ_now_1("");
+                dk.setQ_sum_1("");
+                dk.setQ_begin_2("");
+                dk.setQ_now_2("");
+                dk.setQ_sum_2("");
+                try {
+                    customerService.save(dk);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return "123";
+        };
+
+        Callable task2 = () -> {
             //AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
                 //System.out.println("работает поток обновления Q "+ Thread.currentThread().getName());
             logger.info("работает поток обновления Q "+ Thread.currentThread().getName());
@@ -65,13 +85,13 @@ public class Get_Q_AllOk implements Serializable {
           for(DataCustomer dk:list){
 
 
-              customerService.save(dk.getCustomer());
+             // customerService.save(dk.getCustomer());
               if(dk.getStatus().equals("ГОТОВО")){
                   customerList.add(dk.getCustomer());
 
               }
           }
-
+            System.out.println("размер list ОК= "+customerList.size());
           for(Customer customer:customerList){
 
 
@@ -126,8 +146,11 @@ public class Get_Q_AllOk implements Serializable {
 
 
 
+
+
        ExecutorService serviceDataCustomerList = Executors.newSingleThreadExecutor();
-        Future<String> dcl= serviceDataCustomerList.submit(task);
+        Future<String> dcl1= serviceDataCustomerList.submit(task1);
+        Future<String> dcl2= serviceDataCustomerList.submit(task2);
 
 
         serviceDataCustomerList.shutdown();

@@ -17,18 +17,59 @@
     <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
     <ui:define name="content">
 
-        <h:form styleClass="search-text" id="add_user1">
+
+        <h:form styleClass="search_form" id="add_user">
+
+
+            <input type="submit" class="button-text"></input>
+
+                <h:panelGrid columns="1" cellpadding="5">
+
+
+
+                    <p:outputLabel for="add_name" value="Потребитель" />
+                    <p:inputText  id="add_name" styleClass="search-text" value="#{searchCriteria_cust.customer.firstName}"/>
+
+                    <p:outputLabel for="add_address" value="Адрес :" />
+                    <p:inputText id="add_address" styleClass="search-text" value="#{searchCriteria_cust.customer.address}" />
+
+                    <p:outputLabel for="add_modem" value="Номер модема" />
+                    <p:inputText  id="add_modem" styleClass="search-text" value="#{searchCriteria_cust.customer.telModem}"/>
+
+                    <p:outputLabel for="add_unit" value="Номер устройства" />
+                    <p:inputText  id="add_unit" styleClass="search-text" value="#{searchCriteria_cust.customer.unitNumber}"/>
+                </h:panelGrid>
+
+
+
+
+
+
+
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:commandButton id="btnAdd" value="#{msg.update_customer}"  styleClass="button" action="update_customer" />
+            </h:panelGrid>
+
+        </h:form>
+
+        <h:form styleClass="search_form" id="add_user1">
 
             <p:growl id="growl" sticky="true" showDetail="true"/>
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-2"><h1>Новый потребитель </h1></div>
 
 
-            <p:wizard flowListener="#{customerWizard.onFlowProcess}" >
+
+            </div>
+            <p:wizard flowListener="#{customerWizard.onFlowProcess}">
                 <p:tab id="personal" title="#{msg.customer}">
                     <p:panel header="#{msg.customer}">
                         <p:messages />
                         <h:panelGrid columns="2" columnClasses="label, value">
                             <h:outputText value="#{msg.organization}: *" />
-                            <p:inputText  value="#{customerWizard.customer.firstName}" required="true" label="Firstname"/>
+                            <p:inputText value="#{customerWizard.customer.firstName}" required="true" label="Firstname"/>
 
                             <h:outputText value="#{msg.tel_modem}" />
                             <p:inputText value="#{customerWizard.customer.telModem}" required="true" label="Lastname"/>

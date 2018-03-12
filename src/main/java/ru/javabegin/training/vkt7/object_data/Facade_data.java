@@ -382,7 +382,7 @@ getExcelAllOk.update(customerService, reportService, auxiliaryService);
 
     public String update_Q_current_all_OK() throws IOException, InterruptedException {
 
-
+/*
         List<Customer> list=customerService.findAll();
         for (Customer dk:list ) {
             //удаляем предыдущие данные перед новым считыванием данных по Q
@@ -393,7 +393,7 @@ getExcelAllOk.update(customerService, reportService, auxiliaryService);
             dk.setQ_now_2("");
             dk.setQ_sum_2("");
             customerService.save(dk);
-        }
+        }*/
 
 
 

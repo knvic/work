@@ -25,7 +25,15 @@ public class Selection implements Serializable {
     private Operation oper;
     private Measurements meas;
 
+    private boolean check;
 
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
+    }
 
     private String data_Q;
 

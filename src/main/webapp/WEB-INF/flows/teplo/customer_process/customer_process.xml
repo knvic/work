@@ -21,17 +21,34 @@
 
 
 
-      <view-state id="customer_select" view="customer_select.xhtml" >
+      <view-state id="customer_select" view="customer_select_EditDel.xhtml" >
 
             <on-render>
                   <evaluate expression="facade_customer.findAllCustomers()" result="viewScope.cu"  />
             </on-render>
             <transition on="back" to="back"/>
-            <transition on="next" to="edit_del"/>
+            <transition on="next" to="edit_del_action"/>
 
 
 
       </view-state>
+
+
+
+      <action-state id="edit_del_action">
+
+
+            <evaluate expression="facade_customer.checkSelectedData()" />
+
+            <transition on="yes" to="edit_del" />
+            <transition on="no" to="customer_select" >
+                  <set name="flashScope.message" value="'selectCustomer'"/>
+            </transition>
+
+
+      </action-state>
+
+
 
 
 
@@ -52,10 +69,21 @@
 
       <view-state id="edit" view="customer_edit.xhtml" model="selection.cust">
             <!--<var name="update_customer" class="ru.javabegin.training.vkt7.entities.Customer"/>-->
+            <var  name="customerWizard" class="ru.javabegin.training.vkt7.object.CustomerWizard_edit" />
             <transition on="update_customer" to="update_customer"/>
             <transition on="edit_customer" to="customer_select"/>
+            <transition on="save_customer" to="save_customer_postEdit"/>
+
+
 
       </view-state>
+
+
+
+      <action-state id="save_customer_postEdit">
+            <evaluate expression="facade_customer.saveCustomer()"/>
+            <transition to="customer_ready"/>
+      </action-state>
 
 
 
