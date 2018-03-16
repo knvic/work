@@ -1,16 +1,16 @@
-package ru.javabegin.training.vkt7.filevisitResult;
+package ru.javabegin.training.recoveryData.filevisitResult;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-import static ru.javabegin.training.vkt7.filevisitResult.MyFileVisitorTxt.file;
-import static ru.javabegin.training.vkt7.filevisitResult.TestVisitResult.*;
+import static ru.javabegin.training.recoveryData.filevisitResult.MyFileVisitorTxt.file;
+import static ru.javabegin.training.recoveryData.filevisitResult.TestVisitResult.customerStr;
+import static ru.javabegin.training.recoveryData.filevisitResult.TestVisitResult.dataStr;
 
 
 class MyFileVisitorTxt extends SimpleFileVisitor<Path> {
@@ -55,7 +55,6 @@ public static File file;
         return FileVisitResult.CONTINUE;
     }
 }
-
 
 
 public class TestVisitResult {
@@ -137,13 +136,13 @@ public class TestVisitResult {
                     System.out.println("Найдена строка"+line);
                     if (count_d==1){
                         dannie=line;
-                        count_d++;
+
                     }
                     if (count_d==2){
                         dannie2=line;
 
                     }
-
+                    count_d++;
                 }
                 if (line.contains("Дата")) {
                     System.out.println("Найдена строка"+line);
@@ -166,12 +165,12 @@ public class TestVisitResult {
 
                     if (count_s==1){
                         search=line;
-                        count_s++;
-                    }
-                    if (count_s==2){
-                        search=line;
 
                     }
+                    if (count_s==2){
+                        search2=line;
+                    }
+                    count_s++;
                 }
             }
         } catch (IOException e) {
@@ -195,31 +194,36 @@ public class TestVisitResult {
         moth_list.forEach(p->System.out.print(p+" "));
         System.out.print("\n");
 
-        //Строки из найденного в ТВ2
-        // dannie=dannie.replace("  "," ");
-        dannie2=dannie2.replaceAll("[\\s]{2,}", " ").trim();
-        List<String> d2_list = new ArrayList<>(Arrays.asList(dannie2.split(" ")));
-        d2_list.forEach(p->System.out.print(p+" "));
-        System.out.print("\n");
 
-        naim2=naim2.replace(" ","");
-        List<String> n2_list = new ArrayList<>(Arrays.asList(naim2.split("\\|")));
-        n2_list.forEach(p->System.out.print(p+" "));
-        System.out.print("\n");
-
-        String moth2=search2.replace(" ","");
-        List<String> moth2_list = new ArrayList<>(Arrays.asList(moth2.split("\\|")));
-        moth2_list.forEach(p->System.out.print(p+" "));
-        System.out.print("\n");
 
 
         List<Object> objectList=new ArrayList<>();
         objectList.add(0,d_list);
         objectList.add(1,n_list);
         objectList.add(2,moth_list);
-        objectList.add(3,d2_list);
-        objectList.add(4,n2_list);
-        objectList.add(5,moth2_list);
+
+        //Строки из найденного в ТВ2
+        // dannie=dannie.replace("  "," ");
+        if (dannie2.length()!=0) {
+            dannie2 = dannie2.replaceAll("[\\s]{2,}", " ").trim();
+            List<String> d2_list = new ArrayList<>(Arrays.asList(dannie2.split(" ")));
+            d2_list.forEach(p -> System.out.print(p + " "));
+            System.out.print("\n");
+
+            naim2 = naim2.replace(" ", "");
+            List<String> n2_list = new ArrayList<>(Arrays.asList(naim2.split("\\|")));
+            n2_list.forEach(p -> System.out.print(p + " "));
+            System.out.print("\n");
+
+            String moth2 = search2.replace(" ", "");
+            List<String> moth2_list = new ArrayList<>(Arrays.asList(moth2.split("\\|")));
+            moth2_list.forEach(p -> System.out.print(p + " "));
+            System.out.print("\n");
+
+            objectList.add(3, d2_list);
+            objectList.add(4, n2_list);
+            objectList.add(5, moth2_list);
+        }
 
 
 

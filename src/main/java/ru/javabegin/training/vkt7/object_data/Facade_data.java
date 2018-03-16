@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.recoveryData.RecoveryService;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.dao.OperationService;
 import ru.javabegin.training.vkt7.db.CustomerService;
@@ -15,6 +16,7 @@ import ru.javabegin.training.vkt7.object.SearchCriteria_cust;
 import ru.javabegin.training.vkt7.object.SearchCriteria_oper;
 import ru.javabegin.training.vkt7.object_modem.SearchCriteria_modem;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
+import ru.javabegin.training.vkt7.recovery.Item;
 import ru.javabegin.training.vkt7.reports.*;
 
 import java.io.IOException;
@@ -147,15 +149,16 @@ public class Facade_data implements Serializable{
 
 
    public List<Object>  getSelectedByData(){
-
+            //Получаем Customer
        Customer customer = searchCriteria_data.getCustomer();
+       //получаем даты для которых производим вычисления
        Date day_of =searchCriteria_data.getDay_of();
        System.out.println(" Date day_of = "+ day_of);
        Date day_to = searchCriteria_data.getDay_to();
        System.out.println(" Date day_to = "+ day_to);
 
 
-
+        ///преобразуем даты из Data в Timestamp для запросов к БД
        Timestamp ts_day_of = Timestamp.valueOf(LocalDateTime.ofInstant( day_of.toInstant(), ZoneId.systemDefault()));
        System.out.println(" Timestamp day_of = "+ ts_day_of);
 
@@ -163,6 +166,7 @@ public class Facade_data implements Serializable{
        System.out.println(" Timestamp day_to = "+ ts_day_to);
 
 
+       //Получаем из БД список измерений можду указанными датами
        List<Operation> operationList= customerService.findOperation_betwen_data(customer.getId(),ts_day_of,ts_day_to, "daily","OK");
 
        System.out.println(operationList.size());
@@ -203,6 +207,8 @@ public class Facade_data implements Serializable{
 
        List<String> list1=(List<String>)res.get(1);
        List<DataObject_str> dataObjectList_str=reportService.getObject_ns_to_Str(dataObjectList,list1);
+
+
        List<Object> calculation = reportService.getCalculations(dataObjectList,list1);
 
        DataObject sum=(DataObject)calculation.get(0);
@@ -651,40 +657,48 @@ return dataCustomerList;
 
     }
 
+    @Autowired
+    UpdateMoth updateMoth;
+    public void recover() throws IOException {
+
+        Item item = searchCriteria_cust.getItem();
+
+        String name=item.getName();
+
+        System.out.println("Name="+name);
 
 
-
-/*    public void searchContactByLetter() {
-        String letter = searchCriteria.getLetter();
-        contacts = contactService.findByCriteriaQuery4(letter);
+        updateMoth.update(name);
     }
 
-    public void searchContactByHobby() {
-        Hobby hobby = searchCriteria.getHobby();
-        contacts = contactService.findByCriteriaQuery10(hobby);
-    }*/
+@Autowired
+    RecoveryService recoveryService;
+    public void recover_new() throws IOException {
 
-/*
+        Item item = searchCriteria_cust.getItem();
 
-    public void searchContactByText() {
-        String text = searchCriteria.getText();
-        switch (searchCriteria.getSearchType()){
-            case TITLE:
-                contacts = contactService.findByCriteriaQuery11(text);
-                break;
-            case AUTHOR:
-                contacts = contactService.findByCriteriaQuery12(text);
-                break;
-        }
+        String name=item.getName();
+
+        System.out.println("Name="+name);
+
+recoveryService.Recovery_month(name);
+        //updateMoth.update(name);
     }
-*/
+
+
+
+@Autowired
+UpdateDataCustomerList updateDataCustomerList;
+    public void okExcel(){
+        updateDataCustomerList.update();
+
+    }
 
 
 
 
- /*   public byte[] getContent(long id){
 
-        return (byte[])contactService.getContent(id);
-    }*/
+
+
 
 }

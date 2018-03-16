@@ -1,12 +1,9 @@
-package ru.javabegin.training.vkt7.filevisitResult;
+package ru.javabegin.training.recoveryData.filevisitResult;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 import ru.javabegin.training.vkt7.db.CustomerService;
-import ru.javabegin.training.vkt7.db.CustomerServiceImpl;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
@@ -16,8 +13,9 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-@Component
-public class DataProcessing implements Serializable{
+
+
+public class DataProcessingTotal implements Serializable{
 
     @Autowired
     @Qualifier("jpaCustomerService")
@@ -30,6 +28,20 @@ CustomerService customerService;
         List<String> listHigh=(List<String>)objectList.get(0);
         List<String> listZaglavie=(List<String>)objectList.get(1);
         List<String> listData=(List<String>)objectList.get(2);
+
+        //Если размер масиива больше 3, то присутсивуют данные по ТВ2
+        List<String> listHigh2=null;
+        List<String> listZaglavie2=null;
+        List<String> listData2=null;
+        if(objectList.size()>3){
+             listHigh2=(List<String>)objectList.get(3);
+            listZaglavie2=(List<String>)objectList.get(4);
+            listData2=(List<String>)objectList.get(5);
+
+        }
+
+
+
         for(int i=0; i<listHigh.size(); i++){
             System.out.println(i+" : "+listHigh.get(i));
         }
@@ -57,12 +69,12 @@ CustomerService customerService;
 
         Operation operation = new Operation();
         operation.setTypeOperation("total_moth");
-        operation.setServerVersion(String.valueOf(1));
+        //operation.setServerVersion(String.valueOf(1));
         operation.setProgrammVersion(listHigh.get(14));
         operation.setShemaTv13Ff9(listHigh.get(7));
        // operation.setTp3Tv1(service_information.get(2));
        // operation.setT5Tv1(service_information.get(3));
-        //operation.setShemaTv23Ff9(service_information.get(4));
+
        // operation.setTp3Tv2(service_information.get(5));
        // operation.setT5Tv2(service_information.get(6));
         operation.setIdentificator(listHigh.get(2));
@@ -84,6 +96,10 @@ CustomerService customerService;
         operation.setStatus("OK");
         operation.setError(String.valueOf(0));
 
+
+
+
+
         GetPropertsList getPropertsList = new GetPropertsList();
         List<Properts> propertsList= getPropertsList.getList();
         List<Measurements> measurementsList=new ArrayList<>();
@@ -100,7 +116,26 @@ CustomerService customerService;
         }
 
         }
+        if(objectList.size()>3){
+            operation.setShemaTv23Ff9(listHigh2.get(7));
 
+
+            if(listHigh2.get(4).equals("2")){
+                for(int i=0; i<listZaglavie2.size(); i++){
+                    for (Properts prop:propertsList){
+                        if ((listZaglavie2.get(i)+" Тв2").equals(prop.getText())){
+                            measurementsList.add(new Measurements(prop.getId(), prop.getName(), prop.getText(), listData2.get(i),"C0","OPC_QUALITY_GOOD 0xC0","00"));
+                        }
+                    }
+
+                }
+
+            }
+
+
+
+
+        }
 
 
 
@@ -125,8 +160,12 @@ CustomerService customerService;
         customer.addOperation(operation);
         customerService.save(customer);
 
+        if (objectList.size()>3){
+            System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  ТВ1 и ТВ2 МЕСЯЧНЫЕ произведена. ");}
+            else {
+            System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  ТВ1  МЕСЯЧНЫЕ произведена. ");
+        }
 
-        System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  МЕСЯЧНЫЕ произведена. ");
 
 
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="recover_process">
+
+      <!--<var name="selectionData" class="ru.javabegin.training.vkt7.object_data.SelectionData"/>-->
+
+
+
+      <view-state id="recover_process" view="recover_process.xhtml" >
+            <var name="item" class="ru.javabegin.training.vkt7.recovery.Item" />
+            <var name="itemWizard" class="ru.javabegin.training.vkt7.recovery.ItemWizard" />
+
+            <transition on="process">
+                  <evaluate expression="facade_data.recover()" />
+
+            </transition>
+
+            <transition on="process_new">
+                  <evaluate expression="facade_data.recover_new()" />
+
+            </transition>
+
+
+            <transition on="okExcel">
+                  <evaluate expression="facade_data.okExcel()" />
+
+            </transition>
+            <transition on="updateQ">
+                  <evaluate expression="facade_data.update_Q_current_all_OK()" />
+
+            </transition>
+
+      </view-state>
+
+
+    <!--  <action-state id="action_select">
+            <evaluate expression="facade_reports.getCustomerReportsByData()" result="flowScope.report"/>
+
+            <transition  to="reports" />
+      </action-state>
+-->
+
+
+
+
+      <end-state id="recover_ready"  />
+
+
+      <global-transitions> <!-- Глобальный переход в случае отмены заказа -->
+
+            <transition on="cancel" to="recover_ready" />
+      </global-transitions>
+
+
+
+
+
+
+
+</flow>

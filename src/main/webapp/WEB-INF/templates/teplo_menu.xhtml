@@ -4,7 +4,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags">
     <h:head>
         <title></title>
     </h:head>
@@ -20,7 +21,8 @@
                         <div class="ui-g-2"><p:commandButton value="#{msg.teplo_work_data}"    action="data_process" styleClass="ui-priority-primary" /></div>
                         <div class="ui-g-2"><p:commandButton value="#{msg.teplo_work_data_tv7}"    action="data_tv7_process" styleClass="ui-priority-primary" /></div>
                         <div class="ui-g-2"><p:commandButton value="#{msg.customers}"    action="customer_process" styleClass="ui-priority-primary" /></div>
-
+                        <!--<div class="ui-g-2"><p:commandButton  value="Восстановить" event="onclick"  action="recover"  rendered="#{sec:areAllGranted('ROLE_ADMIN')}" styleClass="ui-priority-primary" /></div>-->
+                        <div class="ui-g-2"><p:commandButton  value="Восстановить" event="onclick"  action="recover"   styleClass="ui-priority-primary" /></div>
                     </div>
 
 

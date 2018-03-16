@@ -1,11 +1,6 @@
-package ru.javabegin.training.vkt7.object;
+package ru.javabegin.training.vkt7.recovery;
 
 import org.primefaces.event.FlowEvent;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import ru.javabegin.training.vkt7.db.CustomerService;
-import ru.javabegin.training.vkt7.db.CustomerServiceImpl;
 import ru.javabegin.training.vkt7.entities.Customer;
 
 import javax.annotation.PostConstruct;
@@ -15,11 +10,21 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomerWizard implements Serializable {
+public class ItemWizard implements Serializable {
 
 
 
-    private Customer customer = new Customer();
+
+
+    private Item item = new Item();
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
 
     private boolean skip;
 
@@ -34,17 +39,11 @@ public class CustomerWizard implements Serializable {
     private Map<String,String> branches = new HashMap<String, String>();
 
 
-    public Customer getCustomer() {
-        return customer;
-    }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
 
     public void save() {
 
-        FacesMessage msg = new FacesMessage("Выполнено ", "Добален :" + customer.getFirstName());
+        FacesMessage msg = new FacesMessage("Выполнено ", "Добален :" );
         FacesContext.getCurrentInstance().addMessage(null, msg);
 
 

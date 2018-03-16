@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class UpdateMoth implements Serializable {
@@ -23,7 +24,7 @@ public class UpdateMoth implements Serializable {
     @Autowired
     DataProcessing processing;
 
-public void update() throws IOException {
+public void update(String customerName) throws IOException {
     org.apache.log4j.Logger logger = org.apache.log4j.Logger.getRootLogger();
     List<DataCustomer> list= DataCustomerList.dataCustomerList;
     System.out.println("размер list= "+list.size());
@@ -43,7 +44,7 @@ public void update() throws IOException {
     System.out.println("Размер найденных= "+customerList.size());
 
     //String customerName="Долина нарзанов тп-1";
-    String customerName="Холдинг 10";
+    //String customerName="Холдинг 10";
 
     String date=auxiliaryService.forUpdateMoth();
 
@@ -53,7 +54,13 @@ public void update() throws IOException {
     List<String> listZaglavie=(List<String>)objectList.get(1);
     List<String> listData=(List<String>)objectList.get(2);
    // DataProcessing processing=new DataProcessing();
-    processing.processing(customerList.get(0), objectList);
+
+    List<Customer> cust=customerList.stream()
+            .filter((p)->p.getFirstName().contains(customerName)).collect(Collectors.toList());
+
+    System.out.println("Размер найденных= "+cust.size());
+
+    processing.processing(cust.get(0), objectList);
 
 
 

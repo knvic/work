@@ -7,6 +7,7 @@ import ru.javabegin.training.db.Hobby;
 import ru.javabegin.training.enums.SearchType;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
+import ru.javabegin.training.vkt7.recovery.Item;
 
 import java.io.Serializable;
 
@@ -28,7 +29,15 @@ public class SearchCriteria_cust implements Serializable{
     private Customer update_customer;
     private Operation operation;
 
+    private Item item;
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
 
     public Customer getUpdate_customer() {
         return update_customer;

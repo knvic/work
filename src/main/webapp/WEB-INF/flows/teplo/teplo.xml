@@ -34,10 +34,18 @@
             <transition on="data_tv7_process" to="data_tv7">
             </transition>
 
+            <transition on="recover" to="recover">
+            </transition>
+
+
             <transition on="update_q">
                   <evaluate expression="facade_data.update_Q_current_all_OK()" />
 
             </transition>
+           <!-- <transition on="recover">
+                  <evaluate expression="facade_data.recover()" />
+
+            </transition>-->
 
 
 
@@ -58,6 +66,10 @@
       </subflow-state>
       <subflow-state id="data_tv7" subflow="teplo/data_tv7_process">
             <transition on="data_tv7_ready" to="endState" />
+      </subflow-state>
+
+      <subflow-state id="recover" subflow="teplo/recover_process">
+            <transition on="recover_ready" to="endState" />
       </subflow-state>
 
 

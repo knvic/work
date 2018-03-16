@@ -1,12 +1,10 @@
-package ru.javabegin.training.vkt7.filevisitResult;
+package ru.javabegin.training.recoveryData.filevisitResult;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryServiceImpl;
 import ru.javabegin.training.vkt7.db.CustomerService;
-import ru.javabegin.training.vkt7.db.CustomerServiceImpl;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
@@ -16,7 +14,8 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-@Component
+
+
 public class DataProcessing implements Serializable{
 
     @Autowired
