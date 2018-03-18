@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
@@ -87,6 +88,20 @@ public class AuxRecoveryImplVkt implements AuxRecovery  {
 
 
         return timestamp_moth;
+    }
+
+    @Override
+    public boolean checkMonthDay(Timestamp date) {
+
+        LocalDateTime ldt =date.toLocalDateTime();
+        System.out.println("LocalDateTime = "+ldt);
+        LocalDateTime lastDayOfMonth= ldt.with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println("LocalDateTime = "+lastDayOfMonth);
+        boolean r=ldt.isEqual(lastDayOfMonth);
+        System.out.println(r);
+
+
+        return false;
     }
 
 

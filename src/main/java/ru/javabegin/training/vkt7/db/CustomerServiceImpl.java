@@ -112,7 +112,7 @@ DataCustomerList dcs;
             em.persist(customer);
         } else {
             em.merge(customer);
-            //log.info("Updating existing contact");
+            log.info("Updating existing contact");
         }
 
         log.info("Contact saved with id: " + customer.getId());
@@ -175,6 +175,19 @@ DataCustomerList dcs;
     }
 
     //////////////////API Criteria//////////////////////////////////////////
+
+
+
+    @Transactional(readOnly=true)
+    @Override
+    public Customer findByName(String name){
+        TypedQuery<Customer> query = em.createNamedQuery(
+                "Customer.findByName", Customer.class);
+        query.setParameter("firstName", name);
+
+        return query.getSingleResult();
+    }
+
 
 
 /*

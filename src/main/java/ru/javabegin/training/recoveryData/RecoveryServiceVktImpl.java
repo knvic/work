@@ -1,5 +1,6 @@
 package ru.javabegin.training.recoveryData;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -45,7 +46,7 @@ public class RecoveryServiceVktImpl implements RecoveryService {
 
     @Override
     public void recoveryDay(String name) throws IOException {
-
+        Logger logger = Logger.getRootLogger();
 
         ExecutorService serviceVKT1 = Executors.newFixedThreadPool(2);
         Customer customer=null;
@@ -54,9 +55,14 @@ public class RecoveryServiceVktImpl implements RecoveryService {
 
         List<String> lines= fileVisitorCommon.searchMothTxt(name, "28/02/18 24:00");
         if (lines.size()>0){
-            List<Customer> customers=customerService.findCustomerLikeFirstName(name);
-           customer=customers.get(0);
-           customerId=customers.get(0).getId();
+
+
+            /*List<Customer> customers=customerService.findCustomerLikeFirstName(name);
+              customer=customers.get(0);
+              customerId=customers.get(0).getId();*/
+
+             customer=customerService.findByName(name);
+            customerId=customer.getId();
         }
 
         lines.forEach(p->System.out.println(p));
@@ -74,6 +80,8 @@ public class RecoveryServiceVktImpl implements RecoveryService {
         int count_n =1;
         int count_s =1;
         int count_e =1;
+        int count_month =1;
+
 
         List<String> info1=null;
         List<String> info2=null;
@@ -112,6 +120,18 @@ boolean tv2=false;
                         naim = line;
                         naimenovaniya1=naimenovaniya(naim);
                     }
+
+                    if (count_n ==2){
+                        naim = line;
+                        naimenovaniya1=naimenovaniya(naim);
+                    }
+
+                    if (count_n == 3) {
+                        naim2 = line;
+                        naimenovaniya2=naimenovaniya(naim2);
+                    }
+
+
                     if (count_n == 4) {
                         naim2 = line;
                         naimenovaniya2=naimenovaniya(naim2);
@@ -126,6 +146,20 @@ boolean tv2=false;
                     edIzm = line;
                     edIzmer1=edIzmer(edIzm);
                 }
+
+
+                if (count_e == 2) {
+                    edIzm = line;
+                    edIzmer1=edIzmer(edIzm);
+                }
+
+                if (count_e == 3) {
+                    edIzm2 = line;
+
+                    edIzmer2=edIzmer(edIzm2);
+                }
+
+
                 if (count_e == 4) {
                     edIzm2 = line;
 
@@ -139,15 +173,13 @@ boolean tv2=false;
             List<String> list = new ArrayList<>(Arrays.asList(line.split("\\|")));
             for (String s:list) {
 
-                if (Pattern.compile(regularExpression).matcher(s).find()) {
+                if (Pattern.compile(regularExpression).matcher(s).find()&&!tv2) {
                     System.out.println("найдено day = " + s);
                     List<Operation> customerList=customerService.findOperation_daily(customerId,auxRecovery.stringDate_to_TimeStamp_forDay(s),"daily","OK");
 
                     if (customerList.size()==0){
-                        System.out.println("ВРЕМЯ ЖАТВЫ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                        if(tv2){
 
-                        }
+                            System.out.println("ВРЕМЯ ЖАТВЫ TV1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 
                         ProcessDay processDay=new ProcessDay();
@@ -156,33 +188,99 @@ boolean tv2=false;
                         Customer finalCustomer = customer;
                         List<String> finalNaimenovaniya = naimenovaniya1;
                         List<String> finalEdIzmer = edIzmer1;
-                        Callable task = () -> {
-                            System.out.println("работает поток "+ Thread.currentThread().getName());
 
+                        Callable taskTv1 = () -> {
+                            System.out.println("работает поток "+ Thread.currentThread().getName());
                             processDay.processDayTv1(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+                            return "123";
+                        };
+                            Future<String> future1 = serviceVKT1.submit(taskTv1);
+                            System.out.println(customer.getFirstName()+" Данные ТВ1 за " +s +" записываются");
+                            logger.info(customer.getFirstName()+" Данные ТВ1 за " +s +" записываются");
+                    }
+
+                }
+
+                /// СУТОЧНЫЕ Для ТВ2
+
+                if (Pattern.compile(regularExpression).matcher(s).find()&&tv2) {
+                    System.out.println("найдено day = " + s);
+
+
+                    System.out.println("ВРЕМЯ ЖАТВЫ TV2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+
+                        ProcessDay processDay=new ProcessDay();
+
+                        List<String> finalInfo = info2;
+                        Customer finalCustomer = customer;
+                        List<String> finalNaimenovaniya = naimenovaniya2;
+                        List<String> finalEdIzmer = edIzmer2;
+
+
+                        Callable taskTv2 = () -> {
+                            System.out.println("работает поток "+ Thread.currentThread().getName());
+                            processDay.processDayTv2(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
                             return "123";
                         };
 
 
-                        Future<String> future1 = serviceVKT1.submit(task);
-
-
-                        //Future<String> future2 = service.submit(task);
-
-
-
-                        System.out.println("Основная программа работу закончила");
+                            Future<String> future1 = serviceVKT1.submit(taskTv2);
+                            System.out.println(customer.getFirstName()+" Данные ТВ2 за " +s +" записываются");
+                            logger.info(customer.getFirstName()+" Данные ТВ2 за " +s +" записываются");
 
 
 
 
+
+
+
+                }
+
+
+
+
+
+
+
+
+                if (Pattern.compile(regularExpression1).matcher(s).find()) {
+                    System.out.println("найдено month = " + s);
+
+                    List<Operation> customerList=customerService.findOperation_daily(customerId,auxRecovery.stringDate_to_TimeStamp_forMonth(s),"total_moth","OK");
+
+                    if (customerList.size()==0&&auxRecovery.checkMonthDay(auxRecovery.stringDate_to_TimeStamp_forMonth(s))) {
+                        System.out.println("ВРЕМЯ ЖАТВЫ MONTH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+
+                        ProcessMonth processMonth=new ProcessMonth();
+
+                        List<String> finalInfo = info1;
+                        Customer finalCustomer = customer;
+                        List<String> finalNaimenovaniya = naimenovaniya1;
+                        List<String> finalEdIzmer = edIzmer1;
+
+
+                        Callable task1 = () -> {
+                            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+                            try {
+                                processMonth.processMonthTv1(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forMonth(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return "123";
+                        };
+
+                        Future<String> futureMonth = serviceVKT1.submit(task1);
+                        System.out.println(customer.getFirstName()+" Данные МЕСЯЦ за " +s +" записываются");
+                        logger.info(customer.getFirstName()+" Данные за МЕСЯЦ" +s +" записываются");
 
 
                     }
 
-                }
-                if (Pattern.compile(regularExpression1).matcher(s).find()) {
-                    System.out.println("найдено month = " + s);
+
+                    count_month++;
 
                 }
             }

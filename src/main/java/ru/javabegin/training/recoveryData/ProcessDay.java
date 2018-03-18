@@ -8,6 +8,7 @@ import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,14 +51,14 @@ public class ProcessDay {
         //operation.setBeginDayDate(date_3ff6.get(2));
         //operation.setDateVkt3Ffb();
         // operation.setDateServer(timestamp_date_input);
-        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+
 
 
 
         operation.setChronological(date);
         operation.setShemaTv13Ecd(info.get(7));
         //operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
-        operation.setBaseNumber(info.get(8));
+        operation.setBaseNumber(info.get(9));
         operation.setStatus("OK");
         operation.setError(String.valueOf(0));
 
@@ -87,17 +88,119 @@ public class ProcessDay {
 
         }
 
+        long id=customer.getId();
+        operation.setIdCustomer(id);
 
-        operation.setIdCustomer(customer.getId());
         operation.setCustomerName(customer.getFirstName());
 
+        customer=customerService.findById(id);
         customer.addOperation(operation);
-       // customerService.save(customer);
+        customerService.save(customer);
 
 
-        System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  МЕСЯЧНЫЕ произведена. ");
+        System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  СУТОЧНЫЕ произведена. ");
 
 
+
+
+
+    }
+    public void processDayTv2(Customer customer, CustomerService customerService, Timestamp date, List<String> info, List<String> naimenovaniya, List<String> edIzmer, List<String> list) {
+
+         /*  0 : Заводской
+        1 : номер
+        2 : 00050719
+        3 : ВВОД
+        4 : 1
+        5 : СХЕМА
+        6 : ПОДКЛЮЧЕНИЯ
+        7 : 4
+        8 : БД
+        9 : 1
+        10 : ФТ=0
+        11 : Т3=2
+        12 : КС=0x8E05
+        13 : ПО
+        14 : 2.7*/
+
+
+       List<Operation> operationList=customerService.findOperation_daily(customer.getId(),date,"daily","OK");
+
+        System.out.println("размер массива = "+operationList.size());
+
+        Operation operation = operationList.get(0);
+        operation.setTypeOperation("daily");
+
+        operation.setShemaTv23Ff9(info.get(7));
+
+        operation.setIdentificator(info.get(2));
+
+
+
+
+
+        operation.setChronological(date);
+
+        operation.setStatus("OK");
+        operation.setError(String.valueOf(0));
+
+        GetPropertsList getPropertsList = new GetPropertsList();
+        List<Properts> propertsList= getPropertsList.getList();
+        List<Measurements> measurementsList=new ArrayList<>();
+
+        boolean save = true;
+        if(info.get(4).equals("2")){
+            for(int i=0; i<naimenovaniya.size(); i++){
+                for (Properts prop:propertsList){
+                    if ((naimenovaniya.get(i)+" Тв2").equals(prop.getText())){
+                        if (prop.getText().contains("Qо Тв2")){
+
+                            try{
+                                BigDecimal test=new BigDecimal(list.get(i));
+                                measurementsList.add(new Measurements(prop.getId(), prop.getName(), prop.getText(), list.get(i),"C0","OPC_QUALITY_GOOD 0xC0","00"));
+                                System.out.println("Qo преобразыется  :"+ test.toString());
+                            }catch (Exception e){
+                                System.out.println("Qo Не преобразуется. Запись не производится!!  ");
+                            save=false;
+                            }
+
+                        }else {
+
+                            try {
+                                measurementsList.add(new Measurements(prop.getId(), prop.getName(), prop.getText(), list.get(i), "C0", "OPC_QUALITY_GOOD 0xC0", "00"));
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+
+        if (save) {
+            measurementsList.forEach(p -> operation.addMeasurements(p));
+
+            for (Measurements measurements : measurementsList) {
+                System.out.println(measurements.getText() + " = " + measurements.getMeasurText() + " байт качества -" + measurements.getQualityText() + "NS -" + measurements.getNs());
+
+            }
+
+            long id = customer.getId();
+            operation.setIdCustomer(id);
+
+            operation.setCustomerName(customer.getFirstName());
+
+            customer = customerService.findById(id);
+            customer.addOperation(operation);
+            customerService.save(customer);
+
+
+            System.out.println("Запись ВОССТАНОВЛЕННЫХ значений ТВ2 СУТОЧНЫЕ произведена. ");
+
+        }
 
 
 

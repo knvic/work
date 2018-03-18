@@ -29,6 +29,8 @@ public interface CustomerService {
     Customer findByIdTv7(Long id);
     Customer findByIdTv7T(Long id);
 
+    Customer findByName(String name);
+
     ///////////// API Criteria ///////////////
    // List<Customer> findByCriteriaQuery_total_moth(Long id); /// Временный для разработки
 

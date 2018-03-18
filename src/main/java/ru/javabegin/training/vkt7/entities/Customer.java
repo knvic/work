@@ -22,6 +22,8 @@ import static javax.persistence.GenerationType.IDENTITY;
         @NamedQuery(name="Customer.findAll", query="select c from Customer c"),
         @NamedQuery(name="Customer.findById",
                 query="select distinct c from Customer c left join fetch c.operationSet t where c.id = :id"),
+        @NamedQuery(name="Customer.findByName",
+                query="select distinct c from Customer c where c.firstName like :firstName"),
         @NamedQuery(name="Customer.findById_tv7",
                 query="select distinct c from Customer c left join fetch c.operationtv7Set h where c.id = :id"),
         @NamedQuery(name="Customer.findById_tv7_t",

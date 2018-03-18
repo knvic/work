@@ -12,7 +12,7 @@ public interface AuxRecovery {
     Timestamp forDay(String date);
     Timestamp stringDate_to_TimeStamp_forDay(String stringDate);
     Timestamp stringDate_to_TimeStamp_forMonth(String stringDate);
-
+    boolean checkMonthDay(Timestamp date);
 
 
 
