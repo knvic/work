@@ -673,6 +673,7 @@ return dataCustomerList;
 
 @Autowired
     RecoveryService recoveryService;
+
     public void recover_new() throws IOException {
 
         Item item = searchCriteria_cust.getItem();
@@ -684,6 +685,19 @@ return dataCustomerList;
 recoveryService.Recovery_month(name);
         //updateMoth.update(name);
     }
+
+    public void recover_day() throws IOException {
+        Item item = searchCriteria_cust.getItem();
+
+        String name=item.getName();
+
+        System.out.println("Name="+name);
+
+        recoveryService.recoveryDay(name);
+
+    }
+
+
 
 
 

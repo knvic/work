@@ -124,8 +124,11 @@
             <h:panelGrid columns="6" cellpadding="5">
                 <p:commandButton value="старый" id="btnAll" action="process" process="@all" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
                 <p:commandButton value="Новый" id="btnForm" action="process_new" process="@form" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
+                <p:commandButton value="Все суточные" id="btnForm2" action="process_day" process="@form" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
 
             </h:panelGrid>
+
+
         </h:form>
 
 

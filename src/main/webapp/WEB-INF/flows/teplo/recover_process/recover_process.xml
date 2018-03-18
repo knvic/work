@@ -23,6 +23,13 @@
             </transition>
 
 
+
+            <transition on="process_day">
+                  <evaluate expression="facade_data.recover_day()" />
+
+            </transition>
+
+
             <transition on="okExcel">
                   <evaluate expression="facade_data.okExcel()" />
 
@@ -31,6 +38,10 @@
                   <evaluate expression="facade_data.update_Q_current_all_OK()" />
 
             </transition>
+
+
+
+
 
       </view-state>
 

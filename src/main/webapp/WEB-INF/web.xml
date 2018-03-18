@@ -47,9 +47,13 @@
 </servlet-mapping>
 
 
+  <resource-env-ref>
+  <description>lukoil</description>
+  <resource-env-ref-name>jdbc/lukoil</resource-env-ref-name>
+  <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
+  <!--<res->Container</res->-->
 
-
-
+  </resource-env-ref>
 
 
   <filter>

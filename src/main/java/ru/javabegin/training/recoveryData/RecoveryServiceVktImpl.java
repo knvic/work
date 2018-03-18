@@ -1,7 +1,9 @@
 package ru.javabegin.training.recoveryData;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.recoveryData.auxrecovery.AuxRecovery;
 import ru.javabegin.training.recoveryData.filevisitResult.DataProcessingTotal;
 import ru.javabegin.training.recoveryData.filevisitResult.GetPropertsList;
 import ru.javabegin.training.recoveryData.filevisitResult.TestVisitResult;
@@ -15,9 +17,16 @@ import ru.javabegin.training.vkt7.propert.entities.Properts;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.regex.Pattern;
 
 @Component
 public class RecoveryServiceVktImpl implements RecoveryService {
@@ -25,8 +34,289 @@ public class RecoveryServiceVktImpl implements RecoveryService {
     @Autowired
     AuxiliaryService auxiliaryService;
 
+    @Qualifier("jpaCustomerService")
     @Autowired
     CustomerService customerService;
+
+    @Autowired
+    AuxRecovery auxRecovery;
+
+
+
+    @Override
+    public void recoveryDay(String name) throws IOException {
+
+
+        ExecutorService serviceVKT1 = Executors.newFixedThreadPool(2);
+        Customer customer=null;
+        Long customerId=null;
+        FileVisitorCommon fileVisitorCommon=new FileVisitorCommon();
+
+        List<String> lines= fileVisitorCommon.searchMothTxt(name, "28/02/18 24:00");
+        if (lines.size()>0){
+            List<Customer> customers=customerService.findCustomerLikeFirstName(name);
+           customer=customers.get(0);
+           customerId=customers.get(0).getId();
+        }
+
+        lines.forEach(p->System.out.println(p));
+
+        String dannie="";
+        String naim="";
+        String edIzm="";
+        String search="";
+        String dannie2="";
+        String naim2="";
+        String edIzm2="";
+        String search2="";
+
+        int count_d =1;
+        int count_n =1;
+        int count_s =1;
+        int count_e =1;
+
+        List<String> info1=null;
+        List<String> info2=null;
+        List<String> naimenovaniya1=null;
+        List<String> naimenovaniya2=null;
+        List<String> edIzmer1=null;
+        List<String> edIzmer2=null;
+
+
+        String regularExpression="\\d{2}/\\d{2}/\\d{2}\\z";
+        String regularExpression1="\\d{2}/\\d{2}/\\d{2}24:00";
+
+boolean tv2=false;
+        for (String line:lines) {
+
+
+                if (line.contains("Заводской номер")) {
+                    System.out.println("Найдена строка информации" + line);
+                    if (count_d == 1) {
+                        dannie = line;
+                         info1=info(dannie);
+
+                    }
+                    if (count_d == 2) {
+                        dannie2 = line;
+                        info2=info(dannie2);
+                        tv2=true;
+                    }
+                    count_d++;
+                }
+                if (line.contains("Дата")) {
+                    System.out.println("Найдена строка наименований" + line);
+
+
+                    if (count_n == 1) {
+                        naim = line;
+                        naimenovaniya1=naimenovaniya(naim);
+                    }
+                    if (count_n == 4) {
+                        naim2 = line;
+                        naimenovaniya2=naimenovaniya(naim2);
+                    }
+                    count_n++;
+                }
+            if (line.contains(" м3 ")) {
+                System.out.println("Найдена строка единиц измерений" + line);
+
+
+                if (count_e == 1) {
+                    edIzm = line;
+                    edIzmer1=edIzmer(edIzm);
+                }
+                if (count_e == 4) {
+                    edIzm2 = line;
+
+                    edIzmer2=edIzmer(edIzm2);
+                }
+                count_e++;
+            }
+
+
+            line=line.replace(" ","");
+            List<String> list = new ArrayList<>(Arrays.asList(line.split("\\|")));
+            for (String s:list) {
+
+                if (Pattern.compile(regularExpression).matcher(s).find()) {
+                    System.out.println("найдено day = " + s);
+                    List<Operation> customerList=customerService.findOperation_daily(customerId,auxRecovery.stringDate_to_TimeStamp_forDay(s),"daily","OK");
+
+                    if (customerList.size()==0){
+                        System.out.println("ВРЕМЯ ЖАТВЫ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        if(tv2){
+
+                        }
+
+
+                        ProcessDay processDay=new ProcessDay();
+
+                        List<String> finalInfo = info1;
+                        Customer finalCustomer = customer;
+                        List<String> finalNaimenovaniya = naimenovaniya1;
+                        List<String> finalEdIzmer = edIzmer1;
+                        Callable task = () -> {
+                            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+                            processDay.processDayTv1(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+                            return "123";
+                        };
+
+
+                        Future<String> future1 = serviceVKT1.submit(task);
+
+
+                        //Future<String> future2 = service.submit(task);
+
+
+
+                        System.out.println("Основная программа работу закончила");
+
+
+
+
+
+
+                    }
+
+                }
+                if (Pattern.compile(regularExpression1).matcher(s).find()) {
+                    System.out.println("найдено month = " + s);
+
+                }
+            }
+
+
+
+
+
+        }
+
+
+        serviceVKT1.shutdown();
+
+    }
+
+    @Override
+    public List<String> info(String line) {
+        line=line.replaceAll("[\\s]{2,}", " ").trim();
+        List<String> d_list = new ArrayList<>(Arrays.asList(line.split(" ")));
+        d_list.forEach(p->System.out.print(p+" "));
+
+        return d_list;
+    }
+
+    @Override
+    public List<String> naimenovaniya(String line) {
+
+        line=line.replace(" ","");
+        List<String> n_list = new ArrayList<>(Arrays.asList(line.split("\\|")));
+        n_list.forEach(p->System.out.print(p+" "));
+        System.out.print("\n");
+        return  n_list;
+    }
+
+    @Override
+    public List<String> edIzmer(String line) {
+
+        line=line.replace(" ","");
+        List<String> izm_list = new ArrayList<>(Arrays.asList(line.split("\\|")));
+        izm_list.forEach(p->System.out.print(p+" "));
+        System.out.print("\n");
+        return izm_list;
+    }
+
+    @Override
+    public void processDay(Customer customer, Timestamp date, List<String> info, List<String> naimenovaniya, List<String> edIzmer,List<String> list) {
+
+         /*  0 : Заводской
+        1 : номер
+        2 : 00050719
+        3 : ВВОД
+        4 : 1
+        5 : СХЕМА
+        6 : ПОДКЛЮЧЕНИЯ
+        7 : 4
+        8 : БД
+        9 : 1
+        10 : ФТ=0
+        11 : Т3=2
+        12 : КС=0x8E05
+        13 : ПО
+        14 : 2.7*/
+
+        Operation operation = new Operation();
+        operation.setTypeOperation("daily");
+        operation.setServerVersion(String.valueOf(1));
+        operation.setProgrammVersion(info.get(14));
+        operation.setShemaTv13Ff9(info.get(7));
+        // operation.setTp3Tv1(service_information.get(2));
+        // operation.setT5Tv1(service_information.get(3));
+        //operation.setShemaTv23Ff9(service_information.get(4));
+        // operation.setTp3Tv2(service_information.get(5));
+        // operation.setT5Tv2(service_information.get(6));
+        operation.setIdentificator(info.get(2));
+        //operation.setNetNumber(service_information.get(8));
+        // operation.setModel(service_information.get(10));
+        // operation.setBeginHourDate(date_3ff6.get(0));
+        // operation.setCurrentDate3Ff6(date_3ff6.get(1));
+        //operation.setBeginDayDate(date_3ff6.get(2));
+        //operation.setDateVkt3Ffb();
+        // operation.setDateServer(timestamp_date_input);
+        AuxiliaryServiceImpl auxiliaryService=new AuxiliaryServiceImpl();
+
+
+
+        operation.setChronological(date);
+        operation.setShemaTv13Ecd(info.get(7));
+        //operation.setShemaTv23F5B(String.valueOf(shema_Tb2));
+        operation.setBaseNumber(info.get(8));
+        operation.setStatus("OK");
+        operation.setError(String.valueOf(0));
+
+        GetPropertsList getPropertsList = new GetPropertsList();
+        List<Properts> propertsList= getPropertsList.getList();
+        List<Measurements> measurementsList=new ArrayList<>();
+
+
+        if(info.get(4).equals("1")){
+            for(int i=0; i<naimenovaniya.size(); i++){
+                for (Properts prop:propertsList){
+                    if ((naimenovaniya.get(i)+" Тв1").equals(prop.getText())){
+                        measurementsList.add(new Measurements(prop.getId(), prop.getName(), prop.getText(), list.get(i),"C0","OPC_QUALITY_GOOD 0xC0","00"));
+                    }
+                }
+
+            }
+
+        }
+
+
+
+        measurementsList.forEach(p -> operation.addMeasurements(p));
+
+        for (Measurements measurements :  measurementsList) {
+            System.out.println(measurements.getText() + " = " + measurements.getMeasurText() + " байт качества -" + measurements.getQualityText() + "NS -" + measurements.getNs());
+
+        }
+
+
+        operation.setIdCustomer(customer.getId());
+        operation.setCustomerName(customer.getFirstName());
+
+        customer.addOperation(operation);
+        customerService.save(customer);
+
+
+        System.out.println("Запись ВОССТАНОВЛЕННЫХ значений  МЕСЯЧНЫЕ произведена. ");
+
+
+
+
+
+    }
+
 
     @Override
     public void Recovery_month(String customerName)  {
@@ -189,4 +479,6 @@ public class RecoveryServiceVktImpl implements RecoveryService {
 
 
     }
+
+
 }
