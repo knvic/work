@@ -718,7 +718,7 @@ Logger logger = Logger.getRootLogger();
                        "НС_t1_2, НС_t2_2, НС_t3_2, НС_V1_2, НС_V2_2, НС_V3_2, НС_M1_2, НС_M2_2, НС_M3_2, НС_P1_2, НС_P2_2, НС_Mг_2, НС_Qо_2, НС_Qг_2, НС_dt_2, НС_BНP_2, НС_BOC_2, НС_G1_2, НС_G2_2, НС_G3_2";
 
             for (Measurements m:measurementsList){
-                logger.info("в работе => "+m.getText());
+                logger.info("в работе(getObject_ns) => "+m.getText());
 
                 if(m.getText().equals("t1 Тв1")){
 
@@ -1292,8 +1292,9 @@ Logger logger = Logger.getRootLogger();
                 }
                 if(m.getText().equals("Qг Тв2")){
 
-
-
+                if (operation.getIdCustomer()==123&&operation.getId()==69961) {
+                    System.out.println("OperationId =" + operation.getId());
+                }
 
                     id_col.add(m.getText());
                     if (m.getMeasurText()!=null) {
@@ -1305,7 +1306,9 @@ Logger logger = Logger.getRootLogger();
                     id_col.add("НС_Qг_2");
                     map.put("НС_Qг_2", new Tupel("НС_Qг_2", (ns_to_bd(m.getNs()))));
 
-
+                    if (operation.getIdCustomer()==123&&operation.getId()==69961) {
+                        System.out.println("Qг Тв2 пройден=" +ns_to_bd(m.getNs()));
+                    }
                 }
 
                 if(m.getText().equals("dt Тв2")){
@@ -1582,6 +1585,15 @@ Logger logger = Logger.getRootLogger();
 
         for (DataObject dataObject: dataObjectList) {
             for(String key:id_col){
+                System.out.println("работает с ------> "+key);
+
+                try {
+                    System.out.println("     value ------> "+dataObject.getOptionalValues().get(key).getValue());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    continue;
+                }
+
                 if(key.equals("t1 Тв1")){
                     sum_t1_1=sum_t1_1.add(dataObject.getOptionalValues().get(key).getValue());
                     count_t1_1++;

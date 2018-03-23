@@ -218,7 +218,7 @@ boolean tv2=false;
                         List<String> finalEdIzmer = edIzmer2;
 
 
-                        Callable taskTv2 = () -> {
+                       /* Callable taskTv2 = () -> {
                             System.out.println("работает поток "+ Thread.currentThread().getName());
                             processDay.processDayTv2(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
                             return "123";
@@ -228,9 +228,10 @@ boolean tv2=false;
                             Future<String> future1 = serviceVKT1.submit(taskTv2);
                             System.out.println(customer.getFirstName()+" Данные ТВ2 за " +s +" записываются");
                             logger.info(customer.getFirstName()+" Данные ТВ2 за " +s +" записываются");
+*/
 
-
-
+                    System.out.println("работает поток "+ Thread.currentThread().getName());
+                    processDay.processDayTv2(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
 
 
 
@@ -241,16 +242,14 @@ boolean tv2=false;
 
 
 
-
-
-
-                if (Pattern.compile(regularExpression1).matcher(s).find()) {
-                    System.out.println("найдено month = " + s);
+                if (Pattern.compile(regularExpression1).matcher(s).find()&&!tv2) {
+                    System.out.println("найдено month TV1= " + s);
 
                     List<Operation> customerList=customerService.findOperation_daily(customerId,auxRecovery.stringDate_to_TimeStamp_forMonth(s),"total_moth","OK");
-
+                    System.out.println("размер массива Месяц за дату "+s+" = "+customerList.size());
+                    System.out.println("Проверка даны на конец месяца "+auxRecovery.checkMonthDay(auxRecovery.stringDate_to_TimeStamp_forMonth(s)));
                     if (customerList.size()==0&&auxRecovery.checkMonthDay(auxRecovery.stringDate_to_TimeStamp_forMonth(s))) {
-                        System.out.println("ВРЕМЯ ЖАТВЫ MONTH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        System.out.println("ВРЕМЯ ЖАТВЫ MONTH TV1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 
                         ProcessMonth processMonth=new ProcessMonth();
@@ -283,6 +282,51 @@ boolean tv2=false;
                     count_month++;
 
                 }
+
+                if (Pattern.compile(regularExpression1).matcher(s).find()&&tv2) {
+                    System.out.println("найдено month TV2 = " + s);
+
+
+
+                    System.out.println("Проверка даны на конец месяца "+auxRecovery.checkMonthDay(auxRecovery.stringDate_to_TimeStamp_forMonth(s)));
+                    if (auxRecovery.checkMonthDay(auxRecovery.stringDate_to_TimeStamp_forMonth(s))) {
+                        System.out.println("ВРЕМЯ ЖАТВЫ MONTH TV2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+
+                        ProcessMonth processMonth=new ProcessMonth();
+
+                        List<String> finalInfo = info2;
+                        Customer finalCustomer = customer;
+                        List<String> finalNaimenovaniya = naimenovaniya2;
+                        List<String> finalEdIzmer = edIzmer2;
+
+
+                        Callable taskMonthTV2 = () -> {
+                            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+                            try {
+                                processMonth.processMonthTv2(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forMonth(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return "123";
+                        };
+
+                        Future<String> futureMonth = serviceVKT1.submit(taskMonthTV2);
+                        System.out.println(customer.getFirstName()+" Данные МЕСЯЦ за " +s +" записываются");
+                        logger.info(customer.getFirstName()+" Данные за МЕСЯЦ" +s +" записываются");
+
+
+                    }
+
+
+                    count_month++;
+
+                }
+
+
+
+
             }
 
 
@@ -538,9 +582,6 @@ boolean tv2=false;
 
 
         }
-
-
-
 
 
 

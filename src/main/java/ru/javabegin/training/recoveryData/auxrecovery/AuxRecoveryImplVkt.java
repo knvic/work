@@ -101,7 +101,7 @@ public class AuxRecoveryImplVkt implements AuxRecovery  {
         System.out.println(r);
 
 
-        return false;
+        return r;
     }
 
 
