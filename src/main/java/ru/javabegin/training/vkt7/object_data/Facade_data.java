@@ -26,6 +26,7 @@ import java.math.RoundingMode;
 import java.sql.Timestamp;
 import java.time.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by Николай on 14.06.2017.
@@ -424,6 +425,29 @@ getExcelAllOk.update(customerService, reportService, auxiliaryService);
 return dataCustomerList;
     }
 
+
+    public List<DataCustomer> getCustomerStatusNotOk(){
+
+
+        List<DataCustomer> dataCustomerList=dcl.getDataCustomerList();
+
+        List<DataCustomer> out=dataCustomerList.stream().filter((p)->!p.getStatus().contains("ГОТОВО")).collect(Collectors.toList());
+        return out;
+    }
+
+
+    public List<DataCustomer> getCustomerStatusOk(){
+
+
+        List<DataCustomer> dataCustomerList=dcl.getDataCustomerList();
+
+        List<DataCustomer> out=dataCustomerList.stream().filter((p)->p.getStatus().contains("ГОТОВО")).collect(Collectors.toList());
+        return out;
+    }
+
+
+
+
     public void test_getCustomerStatus(){
         //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
 
@@ -693,7 +717,9 @@ recoveryService.Recovery_month(name);
 
         System.out.println("Name="+name);
 
-        recoveryService.recoveryDay(name);
+        String otvet = recoveryService.recoveryDay(name);
+       System.out.println(otvet);
+
 
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface RecoveryService {
 
-    void recoveryDay(String name) throws IOException;
+   String recoveryDay(String name) throws IOException;
     List<String> info(String line);
     List<String> naimenovaniya(String line);
     List<String> edIzmer(String line);

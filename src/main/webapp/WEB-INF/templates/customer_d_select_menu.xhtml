@@ -11,36 +11,27 @@
 
     <h:body>
         <ui:composition>
-            <div class="left-menu">
+            <div class="header-menu">
                 <h:form styleClass="genres" id="genresForm">
-                    <h1>#{msg.teplo_menu}</h1>
-
-               <!--     <ul>
-                        <li><p:commandButton value="#{msg.add_customer}"    action="add_customer" styleClass="ui-priority-primary" /> </li>
-                    </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.edit_customer}"    action="edit_customer" styleClass="ui-priority-primary" /> </li>
-                    </ul>-->
-
-                    <ul>
-
-                        <li><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  styleClass="ui-priority-primary" /> </li>
 
 
-                    </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.back}" event="onclick"  action="back"  styleClass="ui-priority-primary" /> </li>
 
-                        <li><p:commandButton value="#{msg.next}" event="onclick"  action="next"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/> </li>
-                        <li></li>
-                        <li><p:commandButton value="excel" event="onclick"  action="excel"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/> </li>
-                        <li><p:commandButton value="excel для ОК" event="onclick"  action="excelOK"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/> </li>
-                        <!--<li><p:commandButton value="test" event="onclick"  action="test"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/> </li>-->
-<!---->
-                    </ul>
-<!---->
-<!---->
-<!---->
+
+
+                    <div class="ui-g">
+                        <div class="ui-g-2"><p:commandButton value="#{msg.cancel}" event="onclick"  action="cancel"  global="false" styleClass="ui-priority-primary" /></div>
+
+                    </div>
+
+                    <div class="ui-g">
+                        <div class="ui-g-1"></div>
+                        <div class="ui-g-1"><p:commandButton value="#{msg.back}" event="onclick"  action="back" global="false" styleClass="ui-priority-primary" /></div>
+                        <div class="ui-g-1"><p:commandButton value="#{msg.next}" event="onclick"  action="next" global="false" styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/></div>
+                        <div class="ui-g-2"></div>
+                        <div class="ui-g-2"><p:commandButton value="excel для всех ОК" event="onclick"  action="excelOK" global="false" styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/></div>
+                        <div class="ui-g-1"><p:commandButton value="excel" event="onclick"  action="excel" global="false" styleClass="ui-priority-primary" actionListener="#{searchCriteria_data.setCustomer(selectionData.dataCustomer.customer)}"/></div>
+                    </div>
+
                 </h:form>
             </div>
         </ui:composition>

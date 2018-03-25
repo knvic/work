@@ -1,0 +1,27 @@
+package ru.javabegin.training.vkt7.object_data;
+import org.springframework.stereotype.Component;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
+@Component
+public class ToolbarView {
+    public void save() {
+        addMessage("Success", "Data saved");
+    }
+
+    public void update() throws InterruptedException {
+        Thread.sleep(3000);
+        addMessage("Success", "Data updated");
+    }
+
+    public void delete() {
+        addMessage("Success", "Data deleted");
+    }
+
+    public void addMessage(String summary, String detail) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, detail);
+        FacesContext.getCurrentInstance().addMessage(null, message);
+    }
+}

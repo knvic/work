@@ -45,7 +45,7 @@ public class RecoveryServiceVktImpl implements RecoveryService {
 
 
     @Override
-    public void recoveryDay(String name) throws IOException {
+    public String recoveryDay(String name) throws IOException {
         Logger logger = Logger.getRootLogger();
 
         ExecutorService serviceVKT1 = Executors.newFixedThreadPool(2);
@@ -337,6 +337,7 @@ boolean tv2=false;
 
 
         serviceVKT1.shutdown();
+        return "Данные востановлены";
 
     }
 

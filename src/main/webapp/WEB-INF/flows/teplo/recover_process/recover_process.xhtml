@@ -22,111 +22,55 @@
 
 
 
+        <p:ajaxStatus    onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+        <p:dialog widgetVar="status" modal="true" closable="false" draggable="false">
+            <!--<p:graphicImage value="/WEB-INF/templates/gif/ajax-loader.gif" />-->
+            <!--<h:graphicImage library="primefaces" name="/ui-anim_basic_16x16.gif" />-->
+            <p:graphicImage style="width:300px;height:30px; align-items: center" value="/ajax-loader(2).gif" />
 
-        <h:form styleClass="search_form" id="add_user">
-
-            <p:growl id="growl" sticky="true" showDetail="true"/>
-            <div class="ui-g">
-                <div class="ui-g-1"></div>
-                <div class="ui-g-2"><h1>Новый потребитель </h1></div>
-
-
-
-            </div>
-            <p:wizard flowListener="#{itemWizard.onFlowProcess}">
-                <p:tab id="personal" title="#{msg.customer}">
-                    <p:panel header="#{msg.customer}">
-                        <p:messages />
-                        <h:panelGrid columns="2" columnClasses="label, value">
-                            <h:outputText value="#{msg.organization}: *" />
-                            <p:inputText value="#{itemWizard.item.name}" required="true" label="Firstname"/>
-
-
-
-
-
-                            <h:outputText value="Пропустить остальное: " />
-                            <h:selectBooleanCheckbox value="#{itemWizard.skip}" />
-                        </h:panelGrid>
-                    </p:panel>
-                </p:tab>
-
-
-
-
-
-
-
-                <p:tab id="address" title="Дополнительно">
-                    <p:panel header="Address Details">
-                        <p:messages />
-                        <h:panelGrid columns="2" columnClasses="label, value">
-
-                            <h:outputText value="#{msg.organization}: *" />
-                            <p:inputText value="#{itemWizard.item.dir}" required="true" label="Firstname"/>
-
-
-                            <h:outputText value="Пропустить остальное: " />
-                            <h:selectBooleanCheckbox value="#{itemWizard.skip}" />
-                        </h:panelGrid>
-                    </p:panel>
-                </p:tab>
-
-
-
-
-
-                <p:tab id="confirm" title="Подтверждение">
-                    <p:panel header="Confirmation">
-                        <h:panelGrid id="confirmation" columns="2" columnClasses="grid,grid,grid">
-                            <h:panelGrid columns="2" columnClasses="label, value">
-                                <h:outputText value="Наименование: " />
-                                <h:outputText value="#{itemWizard.item.name}" styleClass="outputLabel"/>
-
-                                <h:outputText value="Номер модема: " />
-                                <h:outputText value="#{citemWizard.item.dir}" styleClass="outputLabel"/>
-
-
-                            </h:panelGrid>
-
-
-
-
-
-
-
-                        </h:panelGrid>
-
-
-                        <p:commandButton value="Submit" action="save_customer" actionListener="#{searchCriteria_cust.setCustomer(customerWizard.customer)}" update="growl" process="@this"/>
-
-
-                    </p:panel>
-                </p:tab>
-            </p:wizard>
-
-        </h:form>
+        </p:dialog>
 
 
         <h:form>
-            <h:panelGrid id="grid" cellpadding="5" columns="2" style="margin-bottom:10px">
+
+            <div class="ui-g">
+
+                <p style="font-size: medium">Для восстановления данных из файла</p>
+            </div>
+            <div class="ui-g">
+                <p style="font-size: medium"> Сохраните файл в формате .txt в директории с:/demo/vkt </p>
+            </div>
+            <div class="ui-g">
+                <p style="font-size: medium"> В форме ниже введите название клиента. Его можно скопировать из сохраненного файла после двоеточия. Пример: "Абонент:Восточный луч"</p>
+            </div>
+            <div class="container">
+            <ul style="font-style:italic;font-size: larger; ">Пример: из строки "Абонент:Восточный луч" выбираем "Восточный луч" и копируем в форму ниже</ul>
+
+            </div>
+
+
+            <div class="container" style="padding: 20px">
+            <h:panelGrid id="grid" cellpadding="8" columns="2" style="margin-bottom:20px">
                 <f:facet name="header">
                     <p:messages id="msgs" />
                 </f:facet>
 
-                <p:outputLabel for="firstname" value="Firstname:" />
+                <p:outputLabel for="firstname" style="font-size: large; font: bold;" value="Потребитель:" />
                 <p:inputText id="firstname" value="#{item.name}" />
 
-                <p:outputLabel for="surname" value="Surname:" />
-                <p:inputText id="surname" value="#{item.dir}"  requiredMessage="Surname is required." />
+
             </h:panelGrid>
 
             <h:panelGrid columns="6" cellpadding="5">
+               <!--
                 <p:commandButton value="старый" id="btnAll" action="process" process="@all" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
                 <p:commandButton value="Новый" id="btnForm" action="process_new" process="@form" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
-                <p:commandButton value="Все суточные" id="btnForm2" action="process_day" process="@form" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
+               -->
+                <p:commandButton value="Восстановить" id="btnForm2" action="process_day" process="@form" update="grid" actionListener="#{searchCriteria_cust.setItem(item)}" />
 
             </h:panelGrid>
+
+            </div>
 
 
         </h:form>

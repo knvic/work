@@ -44,10 +44,97 @@
 
 
 
+
+
+
         <h:form id="form">
+
+
+            <div class="ui-g">
+                <div class="ui-g-4" style="font-size: large; color: #aa0000">Размер :#{cu.size()}</div>
+
+            </div>
+            <p:ajaxStatus    onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+            <p:dialog widgetVar="status" modal="true" closable="false" draggable="false">
+                <!--<p:graphicImage value="/WEB-INF/templates/gif/ajax-loader.gif" />-->
+                <!--<h:graphicImage library="primefaces" name="/ui-anim_basic_16x16.gif" />-->
+                <p:graphicImage style="width:300px;height:30px; align-items: center" value="/ajax-loader(2).gif" />
+
+            </p:dialog>
+
+
+
+            <p:ajaxStatus>
+                <f:facet name="error">
+                    <h:outputText value="Error" />
+                </f:facet>
+                <f:facet name="success">
+                    <h:outputText value="Success" />
+                </f:facet>
+                <f:facet name="default">
+                    <h:outputText value="Idle" />
+                </f:facet>
+                <f:facet name="start">
+                    <!--<h:outputText value="Sending" />-->
+                    <p:graphicImage value="/ajax-loader(2).gif" />
+                </f:facet>
+                <f:facet name="complete">
+                    <h:outputText value="Done" />
+                </f:facet>
+            </p:ajaxStatus>
+
             <p:growl id="msgs" showDetail="true" />
 
 
+
+            <p:growl id="messages" showDetail="true" />
+
+            <p:toolbar>
+                <f:facet name="left">
+                    <p:commandButton  event="onclick" value="Все" update="form"  action="showAll" icon="ui-icon-document" />
+
+                    <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+                    <p:commandButton event="onclick" value="ОК" update="form"  action="showOk" icon="ui-icon-document" />
+
+                    <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+                    <p:commandButton event="onclick" value="Не ОК" update="form"  action="showNotOk"  icon="ui-icon-document" />
+
+                    <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+
+
+
+                    <!--<h:outputText id="asd" value="Размер :" style="font-size: medium; color: #aa0000" > #{cu.size()}</h:outputText>-->
+                </f:facet>
+
+
+
+                <f:facet name="right">
+                    <p:menuButton value="Options">
+                        <p:menuitem value="Homepage" url="http://localhost:8080/app/teplo" icon="ui-icon-extlink" />
+                    </p:menuButton>
+                </f:facet>
+            </p:toolbar>
+
+
+<!--
+            <div class="ui-g">
+                <div class="ui-g-1">Размер :#{cu.size()}</div>
+
+                &lt;!&ndash;<div class="ui-g-2"><p:commandButton value="#{msg.tv7Archiv}" event="onclick"  action="day_month"  styleClass="ui-priority-primary" actionListener="#{searchCriteriaTv7.setCustomer(selectionTv7.cust)}"/></div>&ndash;&gt;
+                <div class="ui-g-2"><p:commandLink value="Все" update="form"  action="showAll" /></div>
+                <div class="ui-g-2"><p:commandLink value="ОК" update="form"  action="showOk" /></div>
+                <div class="ui-g-2"><p:commandLink value="Не ОК" update="form"  action="showNotOk" /></div>
+
+
+
+
+            </div>-->
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
