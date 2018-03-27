@@ -45,20 +45,8 @@ public class UpdateDataCustomerList implements Serializable {
         Callable task = () -> {
                 System.out.println("работает поток "+ Thread.currentThread().getName());
             System.out.println("Обновляем данные DataCustomerList!!!");
-                    customerService.customerOperationStatus();
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-          //  System.out.println("///////////////////////////////////////////////////////////////////////");
-           // System.out.println("///////////////////////////////////////////////////////////////////////");
-            //customerService.test_customerOperationStatus();
+                    customerService.customerOperationStatus_Threads();
 
-               /* File file = new File("C:\\Work\\Java\\work\\DataCustomerList.txt");
-                FileWriter writer = new FileWriter(file, true);
-                LocalDateTime ldt1=LocalDateTime.now();
-                String log=ldt1+ "DataCustomerList обновлен "+ Thread.currentThread().getName()+" \n";
-                writer.write( log);
-                writer.flush();
-                writer.close();*/
 
                 return "123";
 

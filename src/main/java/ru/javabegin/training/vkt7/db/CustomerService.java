@@ -61,6 +61,8 @@ public interface CustomerService {
 
     List<DataCustomer> customerOperationStatus(); //599
 
+    List<DataCustomer> customerOperationStatus_Threads();
+
     DataCustomer thisCustomerOperationStatus(Customer customer);
 
     void test_customerOperationStatus();//687
