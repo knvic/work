@@ -448,6 +448,15 @@ return dataCustomerList;
 
 
 
+    public List<DataCustomer> getCustomerStatusNotMonthOkDay(){
+
+
+        List<DataCustomer> dataCustomerList=dcl.getDataCustomerList();
+
+        List<DataCustomer> out=dataCustomerList.stream().filter((p)->!p.getStatus().contains("ГОТОВО")&&p.getDaily_all().contains("OK")).collect(Collectors.toList());
+        return out;
+    }
+
     public void test_getCustomerStatus(){
         //List<DataCustomer> dataCustomerList=customerService.test_customerOperationStatus();
 
@@ -710,7 +719,7 @@ recoveryService.Recovery_month(name);
         //updateMoth.update(name);
     }
 
-    public void recover_day() throws IOException {
+    public void recover_day() throws IOException, InterruptedException {
         Item item = searchCriteria_cust.getItem();
 
         String name=item.getName();
@@ -718,7 +727,9 @@ recoveryService.Recovery_month(name);
         System.out.println("Name="+name);
 
         String otvet = recoveryService.recoveryDay(name);
+
        System.out.println(otvet);
+        System.out.println("Добавляем в DataCustomerList" );
 
 
     }

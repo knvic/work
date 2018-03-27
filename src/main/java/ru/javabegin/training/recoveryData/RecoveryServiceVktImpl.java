@@ -15,6 +15,7 @@ import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Measurements;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.propert.entities.Properts;
+import ru.javabegin.training.vkt7.reports.DataCustomer;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -45,7 +46,7 @@ public class RecoveryServiceVktImpl implements RecoveryService {
 
 
     @Override
-    public String recoveryDay(String name) throws IOException {
+    public String recoveryDay(String name) throws IOException, InterruptedException {
         Logger logger = Logger.getRootLogger();
 
         ExecutorService serviceVKT1 = Executors.newFixedThreadPool(2);
@@ -61,7 +62,13 @@ public class RecoveryServiceVktImpl implements RecoveryService {
               customer=customers.get(0);
               customerId=customers.get(0).getId();*/
 
-             customer=customerService.findByName(name);
+
+            try {
+                customer=customerService.findByName(name);
+            } catch (Exception e) {
+                System.out.println("Name = "+ name+"///");
+                e.printStackTrace();
+            }
             customerId=customer.getId();
         }
 
@@ -301,7 +308,7 @@ boolean tv2=false;
                         List<String> finalEdIzmer = edIzmer2;
 
 
-                        Callable taskMonthTV2 = () -> {
+                       /* Callable taskMonthTV2 = () -> {
                             System.out.println("работает поток "+ Thread.currentThread().getName());
 
                             try {
@@ -314,8 +321,13 @@ boolean tv2=false;
 
                         Future<String> futureMonth = serviceVKT1.submit(taskMonthTV2);
                         System.out.println(customer.getFirstName()+" Данные МЕСЯЦ за " +s +" записываются");
-                        logger.info(customer.getFirstName()+" Данные за МЕСЯЦ" +s +" записываются");
+                        logger.info(customer.getFirstName()+" Данные за МЕСЯЦ" +s +" записываются");*/
 
+
+                        processMonth.processMonthTv2(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forMonth(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+
+                        System.out.println(customer.getFirstName()+" Данные МЕСЯЦ за " +s +" записываются");
+                        logger.info(customer.getFirstName()+" Данные за МЕСЯЦ" +s +" записываются");
 
                     }
 
@@ -336,7 +348,24 @@ boolean tv2=false;
         }
 
 
+
+
+
+        Customer finalCustomer1 = customer;
+        Callable updateDCL = () -> {
+            System.out.println("работает поток "+ Thread.currentThread().getName());
+            //processDay.processDayTv1(finalCustomer,customerService, auxRecovery.stringDate_to_TimeStamp_forDay(s) , finalInfo, finalNaimenovaniya, finalEdIzmer,list);
+         Thread.sleep(5000);
+          DataCustomer dataCustomer= customerService.thisCustomerOperationStatus(finalCustomer1);
+
+            return "123";
+        };
+        Future<String> future1 = serviceVKT1.submit(updateDCL);
+        System.out.println(customer.getFirstName()+" Данные в DataCustomerList обновлены");
+
+
         serviceVKT1.shutdown();
+
         return "Данные востановлены";
 
     }

@@ -11,6 +11,7 @@ import ru.javabegin.training.vkt7.propert.entities.Properts;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ProcessMonth {
 
@@ -184,14 +185,47 @@ public class ProcessMonth {
 
         }
 
-        long id=customer.getId();
+
+
+        final   long id = customer.getId();
+        //operation.setIdCustomer(id);
+        final long oId=operation.getId();
+        System.out.println("ID Operation ="+oId);
+
+        // operation.setCustomerName(customer.getFirstName());
+
+        customer = customerService.findById(id);
+
+        Operation newoper=new Operation();
+        newoper=operation;
+
+        Set<Operation> os=customer.getOperationSet();
+        Operation operDel=null;
+        for (Operation o:os) {
+            System.out.println("СРАВНИВАЕМ Id измерения из SET = "+o.getId()+" ID над которым работали - "+oId);
+
+            if (o.getId()==oId){
+                System.out.println(" ============================== >>>>>>>>>>>>>>>>>>>>oId ="+oId);
+                operDel=o;
+            }
+        }
+        os.remove(operDel);
 
 
 
+
+
+
+        customer.addOperation(newoper);
+        customerService.save(customer);
+
+
+
+        /*long id=customer.getId();
 
         customer=customerService.findById(id);
         customer.addOperation(operation);
-        customerService.save(customer);
+        customerService.save(customer);*/
 
 
         System.out.println("Запись ВОССТАНОВЛЕННЫХ значений ТВ2 МЕСЯЧНЫЕ произведена. ");

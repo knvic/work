@@ -69,6 +69,12 @@ public class ExcelAllData {
             // В окончательный список итоговых добавляем значение начала-1 и конца периода времени
             List<Operationtv7T> total=new ArrayList<>();
 
+
+            if (operationtv7List.size()==0&&operationtv7TList.size()==0 ){
+                continue;
+            }
+
+
             try {
                 total.add(operationtv7TList.get(0));
             }catch (Exception e){

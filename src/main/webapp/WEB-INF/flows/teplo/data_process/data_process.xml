@@ -45,6 +45,12 @@
 
             </transition>
 
+            <transition on="showNotMonthOkDay">
+                  <evaluate expression="facade_data.getCustomerStatusNotMonthOkDay()" result="flowScope.cu"  />
+
+            </transition>
+
+
            <!--
             <transition on="excel">
                   <evaluate expression="facade_data.getExcel()" />
