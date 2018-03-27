@@ -128,8 +128,11 @@ String dir= "C:/demo/ВКТ7/"+LocalDateTime.now().format(DateTimeFormatter.ofPa
 
               logger.info("Данные для преобразования excel для "+ customer.getFirstName()+" готовы" );
 
+              Long idCustomer = customer.getId();
+              Customer customer1 = customerService.findById(idCustomer);
 
-              convertExcel.excel_current_OK(customer,dir , dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
+
+              convertExcel.excel_current_OK(customer1,dir , dataObjectList ,sum,average,total_list,column,col_sum_average,list_calc_total);
               logger.info("excel для "+ customer.getFirstName()+" сформирован" );
           }
 

@@ -11,6 +11,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
+import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.reports.DataObject;
@@ -38,6 +39,7 @@ public class ConvertExcel {
         return style;
     }
 */
+
 
 
 
@@ -325,8 +327,16 @@ public class ConvertExcel {
         /*cell.setCellValue(String.valueOf(customer.getOperationSet().stream()
         .filter(p->p.getIdentificator()!=null)
         .findFirst(t->)));*/
-        Operation o= customer.getOperationSet().stream().max((p1, p2)->p1.getChronological().compareTo(p2.getChronological())).get();
 
+
+
+        Operation o= null;
+        try {
+            o = customer.getOperationSet().stream().max((p1, p2)->p1.getChronological().compareTo(p2.getChronological())).get();
+        } catch (Exception e) {
+            System.out.println("Error == "+e);
+            e.printStackTrace();
+        }
 
 
         cell.setCellValue(o.getIdentificator());
