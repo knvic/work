@@ -2360,7 +2360,9 @@ return calculation;
 ////  Формируем данные для помещения Measurements в объекты DataObject и DataObject_str
         for (String c : list_calc_total) {
             for (Measurements measurements : measurementsList) {
-                if (c.equals(measurements.getText())) {
+                //System.out.println("list_calc_total = "+c+" Сравниваем Измерение ===>>>"+ measurements.getText()+ " == "+measurements.getMeasurText());
+                if (c.contains(measurements.getText())) {
+                   // System.out.println("смотрим ===>> "+c);
 
                     if (c.equals("Qо Тв1")||c.equals("Qг Тв1")||c.equals("Qо Тв2")||c.equals("Qг Тв2")) {
                         map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(3, RoundingMode.HALF_EVEN)));
@@ -2369,7 +2371,12 @@ return calculation;
                     }else if (c.equals("BНP Тв1")||c.equals("BOC Тв1")||c.equals("BНP Тв2")||c.equals("BOC Тв2")) {
                         map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN)));
                         System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN));
-                        map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN).toString()));
+                        try {
+                            map_total_str.put(c, new Tupel_str(c, new BigDecimal(measurements.getMeasurText()).setScale(0, RoundingMode.HALF_EVEN).toString()));
+                        } catch (Exception e) {
+                            System.out.println("Error = "+e);
+                            e.printStackTrace();
+                        }
                     }else{
                         map_total.put(c, new Tupel(c, new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN)));
                         System.out.println("Найдено совпадение " + c + " :  getText()= " + measurements.getText() + " BigDecimal =" + new BigDecimal(measurements.getMeasurText()).setScale(2, RoundingMode.HALF_EVEN));
@@ -2426,7 +2433,25 @@ return calculation;
 
         for (String c : list_calc_total) {
 
-            BigDecimal summa = total_begin.getOptionalValues().get(c).getValue().add(sum.getOptionalValues().get(c).getValue());
+            BigDecimal operand1 = null;
+            try {
+                operand1 = total_begin.getOptionalValues().get(c).getValue();
+            } catch (Exception e) {
+                System.out.println("Error total_begin "+e);
+                e.printStackTrace();
+                operand1=new BigDecimal("0");
+            }
+            BigDecimal operand2 = null;
+            try {
+                operand2 = sum.getOptionalValues().get(c).getValue();
+            } catch (Exception e) {
+                System.out.println("Error sum "+e);
+                e.printStackTrace();
+            }
+
+            //BigDecimal summa = total_begin.getOptionalValues().get(c).getValue().add(sum.getOptionalValues().get(c).getValue());
+
+            BigDecimal summa=operand1.add(operand2);
 
             map_total_sum.put(c, new Tupel(c, summa));
             map_total_sum_str.put(c, new Tupel_str(c, summa.toString()));

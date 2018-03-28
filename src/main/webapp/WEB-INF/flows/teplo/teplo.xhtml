@@ -40,7 +40,8 @@
 
 
              <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
-            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true" scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
+            <!--<p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true" scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{cu}"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">
                 <f:facet name="header">
                     #{msg.customers}
                 </f:facet>

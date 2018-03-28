@@ -1,94 +1,104 @@
-2018-03-27 19:03:06 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
-2018-03-27 19:03:06 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Tue Mar 27 19:03:06 MSK 2018]; root of context hierarchy
-2018-03-27 19:03:06 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
-2018-03-27 19:03:06 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
-2018-03-27 19:03:06 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
-2018-03-27 19:03:06 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
-2018-03-27 19:03:06 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
-2018-03-27 19:03:06 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
-2018-03-27 19:03:06 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
-2018-03-27 19:03:06 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
-2018-03-27 19:03:07 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-27 19:03:07 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
-2018-03-27 19:03:08 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@7990777c, org.springframework.security.web.session.ConcurrentSessionFilter@52837db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3339ce5a, org.springframework.security.web.header.HeaderWriterFilter@71346a37, org.springframework.security.web.authentication.logout.LogoutFilter@be5c8fa, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4fb7b0b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3281fc00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60b65db5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4531fb41, org.springframework.security.web.session.SessionManagementFilter@3771f175, org.springframework.security.web.access.ExceptionTranslationFilter@aad7a67, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58a4d572]
-2018-03-27 19:03:08 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
-2018-03-27 19:03:08 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 2118 ms
-2018-03-27 19:03:11 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
-2018-03-27 19:03:11 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Mar 27 19:03:11 MSK 2018]; parent: Root WebApplicationContext
-2018-03-27 19:03:11 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
-2018-03-27 19:03:11 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
-2018-03-27 19:03:11 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
-2018-03-27 19:03:14 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\apache-tomcat-9.0.1\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
-2018-03-27 19:03:15 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-27 19:03:15 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-03-27 19:03:16 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
-2018-03-27 19:03:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-28 13:44:11 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
+2018-03-28 13:44:12 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Wed Mar 28 13:44:12 MSK 2018]; root of context hierarchy
+2018-03-28 13:44:12 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
+2018-03-28 13:44:12 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
+2018-03-28 13:44:12 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
+2018-03-28 13:44:12 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
+2018-03-28 13:44:12 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
+2018-03-28 13:44:12 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
+2018-03-28 13:44:12 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
+2018-03-28 13:44:12 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
+2018-03-28 13:44:13 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-28 13:44:13 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2018-03-28 13:44:14 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@20ab573c, org.springframework.security.web.session.ConcurrentSessionFilter@4a81ebdf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@224cb11f, org.springframework.security.web.header.HeaderWriterFilter@13874d1, org.springframework.security.web.authentication.logout.LogoutFilter@7b50d17d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3eca12db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79499854, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b15f550, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46330076, org.springframework.security.web.session.SessionManagementFilter@28019ea1, org.springframework.security.web.access.ExceptionTranslationFilter@1dbf28cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@914e15f]
+2018-03-28 13:44:14 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
+2018-03-28 13:44:14 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 2178 ms
+2018-03-28 13:44:16 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2018-03-28 13:44:16 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 28 13:44:16 MSK 2018]; parent: Root WebApplicationContext
+2018-03-28 13:44:16 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
+2018-03-28 13:44:16 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
+2018-03-28 13:44:16 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
+2018-03-28 13:44:17 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\apache-tomcat-9.0.1\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
+2018-03-28 13:44:18 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-28 13:44:18 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 13:44:19 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
+2018-03-28 13:44:19 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_contact
 	...]
-2018-03-27 19:03:17 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
-2018-03-27 19:03:17 INFO  Environment:213 - HHH000206: hibernate.properties not found
-2018-03-27 19:03:17 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
-2018-03-27 19:03:17 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-03-27 19:03:18 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-27 19:03:20 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-27 19:03:20 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
-2018-03-27 19:03:20 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-27 19:03:21 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
-2018-03-27 19:03:21 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-28 13:44:19 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
+2018-03-28 13:44:19 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-03-28 13:44:19 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2018-03-28 13:44:20 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-28 13:44:20 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-28 13:44:23 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-28 13:44:23 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
+2018-03-28 13:44:23 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-28 13:44:23 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
+2018-03-28 13:44:23 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_customer
 	...]
-2018-03-27 19:03:22 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'hibernate'
-2018-03-27 19:03:22 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-27 19:03:22 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
-2018-03-27 19:03:22 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-27 19:03:23 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
-2018-03-27 19:03:23 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-03-27 19:03:24 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
-2018-03-27 19:03:24 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2018-03-28 13:44:24 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'hibernate'
+2018-03-28 13:44:24 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-28 13:44:24 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2018-03-28 13:44:24 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-28 13:44:25 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
+2018-03-28 13:44:25 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-28 13:44:25 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
+2018-03-28 13:44:25 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_test
 	...]
-2018-03-27 19:03:24 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
-2018-03-27 19:03:24 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-03-27 19:03:24 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
-2018-03-27 19:03:24 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-03-27 19:03:24 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
-2018-03-27 19:03:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-27 19:03:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-27 19:03:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-03-27 19:03:27 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
-2018-03-27 19:03:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
-2018-03-27 19:03:28 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
-2018-03-27 19:03:28 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
-2018-03-27 19:03:29 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Mar 27 19:03:11 MSK 2018]; parent: Root WebApplicationContext
-2018-03-27 19:03:29 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Mar 27 19:03:11 MSK 2018]; parent: Root WebApplicationContext
-2018-03-27 19:03:32 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
-2018-03-27 19:03:32 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
-2018-03-27 19:03:32 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
-2018-03-27 19:03:32 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
-2018-03-27 19:03:33 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
-2018-03-27 19:03:33 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
-2018-03-27 19:03:33 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 22460 ms
-2018-03-27 19:03:36 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Tue Mar 27 19:03:36 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-27 19:03:36 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@7ca2f214] to [org.springframework.web.context.request.RequestScope@560f2bd0]
-2018-03-27 19:03:36 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-27 19:04:15 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/recover_process]: startup date [Tue Mar 27 19:04:15 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-27 19:04:15 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@2b28c579] to [org.springframework.web.context.request.RequestScope@23f68916]
-2018-03-27 19:04:15 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-27 19:04:35 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/data_process]: startup date [Tue Mar 27 19:04:35 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-27 19:04:35 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@710f159f] to [org.springframework.web.context.request.RequestScope@1ced6133]
-2018-03-27 19:04:35 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-27 19:08:45 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/customer_process]: startup date [Tue Mar 27 19:08:45 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-03-27 19:08:45 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@53193f0d] to [org.springframework.web.context.request.RequestScope@474e459e]
-2018-03-27 19:08:45 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-03-27 19:15:30 INFO  root:50 - Начала работать программа ревизор
-2018-03-27 19:15:30 INFO  root:51 - Статус end : false
+2018-03-28 13:44:25 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
+2018-03-28 13:44:25 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-28 13:44:25 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2018-03-28 13:44:25 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-28 13:44:25 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
+2018-03-28 13:44:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-28 13:44:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-28 13:44:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018-03-28 13:44:26 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
+2018-03-28 13:44:27 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 28 13:44:16 MSK 2018]; parent: Root WebApplicationContext
+2018-03-28 13:44:28 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 28 13:44:16 MSK 2018]; parent: Root WebApplicationContext
+2018-03-28 13:44:31 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
+2018-03-28 13:44:31 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
+2018-03-28 13:44:31 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-03-28 13:44:31 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
+2018-03-28 13:44:31 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-03-28 13:44:31 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
+2018-03-28 13:44:32 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 15610 ms
+2018-03-28 13:44:34 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Wed Mar 28 13:44:34 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-28 13:44:34 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@2c6d8c14] to [org.springframework.web.context.request.RequestScope@6df5401c]
+2018-03-28 13:44:34 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-28 13:45:22 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/customer_process]: startup date [Wed Mar 28 13:45:22 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2018-03-28 13:45:22 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@113f1023] to [org.springframework.web.context.request.RequestScope@64c4e581]
+2018-03-28 13:45:22 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-03-28 13:45:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 13:45:30 INFO  root:51 - Статус end : false
+2018-03-28 13:54:32 INFO  CustomerServiceImpl:119 - Updating existing contact
+2018-03-28 13:54:32 INFO  CustomerServiceImpl:122 - Contact saved with id: 185
+2018-03-28 14:00:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 14:00:30 INFO  root:51 - Статус end : false
+2018-03-28 14:15:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 14:15:30 INFO  root:51 - Статус end : false
+2018-03-28 14:30:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 14:30:30 INFO  root:51 - Статус end : false
+2018-03-28 14:45:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 14:45:30 INFO  root:51 - Статус end : false
+2018-03-28 15:00:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 15:00:30 INFO  root:51 - Статус end : false
+2018-03-28 15:15:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 15:15:30 INFO  root:51 - Статус end : false
+2018-03-28 15:30:30 INFO  root:50 - Начала работать программа ревизор
+2018-03-28 15:30:30 INFO  root:51 - Статус end : false
