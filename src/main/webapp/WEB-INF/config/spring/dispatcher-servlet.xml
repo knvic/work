@@ -263,10 +263,10 @@
 
 
         <!--Для ВКТ-7-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="40 0 0 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="40 2 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
-        <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 */4 * * * ?"/>-->
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 */4 * * * ?"/>
 
 
         <!--Вспомогательные Для ВКТ-7-->
@@ -280,7 +280,7 @@
         <task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */5 6-8 * * ?"/>
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
-        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 20 7 * * ?"/>
+        <task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 3 7 * * ?"/>
         <!--Для ТВ-7 ############ конец #############################################   -->
 
 
@@ -288,7 +288,7 @@
 
 
         <!--Вспомогательнве формирование Q для начального экрана  ############ начало #########################   -->
-        <!--<task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="35 */1 * * * ?"/>-->
+        <task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="35 */6 * * * ?"/>
         <!--Вспомогательнве формирование Q для начального экрана  ############ конец ##########################   -->
 
     </task:scheduled-tasks>

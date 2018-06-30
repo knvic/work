@@ -212,7 +212,7 @@ return map;
 
         StringBuilder temp=new StringBuilder();
         list.forEach(p-> temp.append(p));
-        //System.out.print("\nstr = "+temp.toString().replace(" ",""));
+        System.out.print("\nstr = "+temp.toString().replace(" ",""));
         //System.out.println("\nПосле вывода строки ");
         /*String in = "0148" +
                 "00DA 8-0027 12-01 14-0C 16-17 18-12 20-FB2242C0 28-F1C13F61" +
@@ -225,28 +225,45 @@ return map;
         int i1=12;
         String str="";
         for(Parametr p:parametrList){
-            //System.out.println();
+            System.out.println();
 
             str=temp.substring(i1,i1+p.getSize()*2).toString();
 
-      //      System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
+            System.out.println ("Пар :: "+p.getNameString()+" стр :: "+str );
+            if(p.getNameString().contains("dt")){
+                System.out.println ("Пар :: "+p.getNameString());
+            }
 
             if (p.getType().equals("unsigned char")) {
-                p.setValue(Integer.toString(Integer.parseInt(str,16)));
-     //           System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
+                try {
+                    p.setValue(Integer.toString(Integer.parseInt(str,16)));
+                    System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
 
             if (p.getType().equals("unsigned short")){
-                p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(2, RoundingMode.HALF_EVEN).toString());
-      //          System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                try {
+                    p.setValue(new BigDecimal(Integer.parseInt(l2b(str),16)).setScale(2, RoundingMode.HALF_EVEN).toString());
+                    System.out.print("\nПараметр "+p.getNameString()+" = " + p.getValue());
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
 
             if (p.getType().equals("float")) {
 
 
                 //float m_  =Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue());
-                float m_ = Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16));
-      //          System.out.println("парамметр : "+p.getName());
+                float m_ = 0;
+                try {
+                    m_ = Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16));
+                } catch (NumberFormatException e) {
+                    System.out.println("Yt djpvj;yj ghtj,hfpjdfnm");
+                    e.printStackTrace();
+                }
+                System.out.println("парамметр : "+p.getName());
        //         System.out.println("строка : "+str);
        //         System.out.println("float m_ : "+ m_);
 
@@ -265,22 +282,34 @@ return map;
 
                     if(p.getName().contains("q")) {
 
-                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
-     //                   System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        try {
+                            p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())/4.1868).setScale(3, RoundingMode.HALF_EVEN).toString());
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
 
                     }
                     else if(p.getName().contains("p")){
                         p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())*10.197162).setScale(1, RoundingMode.HALF_EVEN).toString());
-      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
                     else if (Pattern.compile(regularExpression1).matcher(p.getName()).find()){
                         p.setValue(new BigDecimal(Float.intBitsToFloat((int) Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
-       //                 System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
                     else if (Pattern.compile(regularExpression2).matcher(p.getName()).find()){
-                        p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
-      //                  System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
+                        try {
+                            //p.setValue(new BigDecimal(Float.intBitsToFloat(Integer.valueOf(l2b(str), 16).intValue())).setScale(3, RoundingMode.HALF_EVEN).toString());
+                            p.setValue(new BigDecimal(Double.longBitsToDouble(Long.parseLong(l2b(str), 16))).setScale(3, RoundingMode.HALF_EVEN).toString());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Не возможно интерпретировать. Параметр : "+p.getName()+ "Cтрока : "+str );
+                            e.printStackTrace();
+
+                            p.setValue(null);
+                        }
+                        System.out.print("\nПареметр "+p.getNameString()+" = " + p.getValue());
                     }
 
 

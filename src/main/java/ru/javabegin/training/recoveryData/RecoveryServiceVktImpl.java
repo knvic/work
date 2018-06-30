@@ -54,7 +54,9 @@ public class RecoveryServiceVktImpl implements RecoveryService {
         Long customerId=null;
         FileVisitorCommon fileVisitorCommon=new FileVisitorCommon();
 
-        List<String> lines= fileVisitorCommon.searchMothTxt(name, "28/02/18 24:00");
+
+        //List<String> lines= fileVisitorCommon.searchMothTxt(name, "30/04/18 24:00");
+        List<String> lines= fileVisitorCommon.searchMothTxt(name, auxiliaryService.forUpdateMoth());
         if (lines.size()>0){
 
 
