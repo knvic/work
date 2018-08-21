@@ -263,7 +263,7 @@
 
 
         <!--Для ВКТ-7-->
-        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="40 2 0 * * ?"/>
+        <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="40 1 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
         <task:scheduled ref="updateDataCustomer" method="update" cron="50 */4 * * * ?"/>
@@ -288,7 +288,7 @@
 
 
         <!--Вспомогательнве формирование Q для начального экрана  ############ начало #########################   -->
-        <task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="35 */6 * * * ?"/>
+        <!--<task:scheduled ref="update_Q_for_All_OK" method="update_Q_current_all_OK" cron="35 */6 * * * ?"/>-->
         <!--Вспомогательнве формирование Q для начального экрана  ############ конец ##########################   -->
 
     </task:scheduled-tasks>

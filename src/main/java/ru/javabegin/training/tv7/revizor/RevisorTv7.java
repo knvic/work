@@ -11,6 +11,7 @@ import ru.javabegin.training.tv7.modem.Tv7Run;
 import ru.javabegin.training.vkt7.modem_run.ModemService;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.*;
 
@@ -118,9 +119,27 @@ public class RevisorTv7 {
         };
 
 
-        ExecutorService service_revizor_tv7 = Executors.newSingleThreadExecutor();
+        System.out.println("==>>>  Time check Revozor TV7<<<======");
+        LocalDateTime now= LocalDateTime.now();
+        LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
+
+        if (now.isAfter(deadLine)) {
+
+            System.out.println("==>>> Revizor TV7. Demo has expired "+deadLine +" <<<======");
+
+        }
+        else {
+
+            ExecutorService service_revizor_tv7 = Executors.newSingleThreadExecutor();
+            Future<String> future_revizor = service_revizor_tv7.submit(task);
+            service_revizor_tv7.shutdown();
+        }
+
+
+
+        /*ExecutorService service_revizor_tv7 = Executors.newSingleThreadExecutor();
         Future<String> future_revizor = service_revizor_tv7.submit(task);
-        service_revizor_tv7.shutdown();
+        service_revizor_tv7.shutdown();*/
 
     }
 

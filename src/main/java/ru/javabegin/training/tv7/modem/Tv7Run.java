@@ -43,14 +43,35 @@ public class Tv7Run {
             return "123";
         };
 
+        System.out.println("==>>>  МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
+        LocalDateTime now= LocalDateTime.now();
+        LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
 
-        serviceTV7 = Executors.newSingleThreadExecutor();
+        if (!now.isAfter(deadLine)){
+
+            System.out.println("==>>> The DemoVersion so far in work!!!!!!!!!!! <<<======");
+
+
+
+            serviceTV7 = Executors.newSingleThreadExecutor();
+            futureTV7_1 = serviceTV7.submit(task);
+            serviceTV7.shutdown();
+
+        }
+        else{
+            System.out.println("==>>> The demo visrion expires "+deadLine +" !!!!!!!!!!! <<<======");
+        }
+
+
+
+
+      /*  serviceTV7 = Executors.newSingleThreadExecutor();
         futureTV7_1 = serviceTV7.submit(task);
 
 
         //Future<String> future2 = service.submit(task);
 
-        serviceTV7.shutdown();
+        serviceTV7.shutdown();*/
 
         System.out.println("Основная программа работу закончила");
 

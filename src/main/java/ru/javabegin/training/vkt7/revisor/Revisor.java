@@ -122,9 +122,27 @@ public class Revisor {
         };
 
 
-        ExecutorService service_revizor = Executors.newSingleThreadExecutor();
+        System.out.println("==>>>  Time check Revozor VKT-7 <<<======");
+        LocalDateTime now= LocalDateTime.now();
+        LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
+
+        if (now.isAfter(deadLine)) {
+
+            System.out.println("==>>> Revizor VKT-7. Demo has expired "+deadLine +" <<<======");
+            end=true;
+        }
+        else {
+
+            ExecutorService service_revizor = Executors.newSingleThreadExecutor();
+            Future<String> future_revizor = service_revizor.submit(task);
+            service_revizor.shutdown();
+        }
+
+
+
+       /* ExecutorService service_revizor = Executors.newSingleThreadExecutor();
         Future<String> future_revizor = service_revizor.submit(task);
-        service_revizor.shutdown();
+        service_revizor.shutdown();*/
 
     }
 }

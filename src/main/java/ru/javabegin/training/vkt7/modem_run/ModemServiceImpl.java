@@ -464,13 +464,35 @@ List<Object> connect=new ArrayList<>();*/
         };
 
 
-        service = Executors.newSingleThreadExecutor();
+
+        System.out.println("==>>>  МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
+        LocalDateTime now= LocalDateTime.now();
+        LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
+
+        if (!now.isAfter(deadLine)){
+
+            System.out.println("==>>> Check of the time !!!!!!!!!!! <<<======");
+
+
+            service = Executors.newSingleThreadExecutor();
+            future0 = service.submit(task5);
+            future1 = service.submit(task);
+            service.shutdown();
+        }
+        else{
+            System.out.println("==>>> The demo visrion expires "+deadLine +" !!!!!!!!!!! <<<======");
+        }
+
+
+
+
+      /*  service = Executors.newSingleThreadExecutor();
         future0 = service.submit(task5);
         future1 = service.submit(task);
 
         //Future<String> future2 = service.submit(task);
 
-        service.shutdown();
+        service.shutdown();*/
 
         System.out.println("Основная программа работу закончила");
 
