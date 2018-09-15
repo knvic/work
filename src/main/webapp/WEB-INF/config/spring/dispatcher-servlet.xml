@@ -232,10 +232,10 @@
 
 
     <bean id="executorService" class="java.util.concurrent.Executors" factory-method="newFixedThreadPool">
-        <constructor-arg value="5" />
+        <constructor-arg value="10" />
     </bean>
 
-    <task:executor id="threadPoolTaskExecutor" pool-size="5" />
+    <task:executor id="threadPoolTaskExecutor" pool-size="10" />
     <task:annotation-driven executor="executorService" />
 
 
@@ -257,7 +257,7 @@
 
 
 
-    <task:scheduler id="serverScheduler" pool-size="5"/>
+    <task:scheduler id="serverScheduler" pool-size="10"/>
     <task:scheduled-tasks scheduler="serverScheduler">
 
 
@@ -265,8 +265,8 @@
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="40 1 0 * * ?"/>
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
 
-        <!--<task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>-->
-        <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 */4 * * * ?"/>-->
+        <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 */4 * * * ?"/>
 
 
         <!--Вспомогательные Для ВКТ-7-->
@@ -277,12 +277,12 @@
         <!--Для ТВ-7 ############# начало ###############################################   -->
         <!--Запуск ревизора-->
 
-        <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */5 6-8 * * ?"/>-->
+        <task:scheduled ref="revizorTv7" method="RevisorTv7" cron="12  */12 7-9 * * ?"/>
         <!--<task:scheduled ref="revizorTv7" method="RevisorTv7" cron="10  */7 20-22 * * ?"/>-->
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
-        <!--<task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 3 7 * * ?"/>-->
-        <!--<task:scheduled ref="tv7Run" method="tv7RunCron" cron="40 4 22 * * ?"/>-->
+        <task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 5 7 * * ?"/>
+        <!--<task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 36 17 * * ?"/>-->
         <!--Для ТВ-7 ############ конец #############################################   -->
 
 
