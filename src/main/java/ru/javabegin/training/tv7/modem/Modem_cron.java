@@ -150,6 +150,8 @@ public class Modem_cron extends EventListener_tv7 {
 
         atomicInteger.addAndGet(1);
 
+       // List<Customer> customerList=customerService.findAllWithDetailTv7();
+
         List<Customer> customerList=customerService.findAllWithDetailTv7_not_block();
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();

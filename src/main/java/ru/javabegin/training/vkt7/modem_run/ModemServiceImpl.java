@@ -467,7 +467,7 @@ List<Object> connect=new ArrayList<>();*/
 
         System.out.println("==>>>  МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
         LocalDateTime now= LocalDateTime.now();
-        LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(2018, 9, 22, 0, 0, 0);
 
         if (!now.isAfter(deadLine)){
 
