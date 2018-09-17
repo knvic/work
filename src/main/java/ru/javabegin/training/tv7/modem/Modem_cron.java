@@ -74,6 +74,8 @@ public class Modem_cron extends EventListener_tv7 {
 
     //public String tv7() throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
     public static void tv7_cron(CustomerService customerService, LocalDateTime date) throws InterruptedException, TimeoutException, ExecutionException, SerialPortException, IOException {
+
+
         boolean status_oprosa=false;
         end_tv7=false;
 
@@ -152,7 +154,10 @@ public class Modem_cron extends EventListener_tv7 {
 
        // List<Customer> customerList=customerService.findAllWithDetailTv7();
 
-        List<Customer> customerList=customerService.findAllWithDetailTv7_not_block();
+
+
+
+       List<Customer> customerList=customerService.findAllWithDetailTv7_not_block();
 
         AuxDateTimeServiceImpl dateTimeService=new AuxDateTimeServiceImpl();
 

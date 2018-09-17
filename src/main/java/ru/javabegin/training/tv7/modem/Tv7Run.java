@@ -2,16 +2,15 @@ package ru.javabegin.training.tv7.modem;
 
 
 
+import jssc.SerialPortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.db.CustomerService;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 @Component
 public class Tv7Run {
@@ -30,7 +29,7 @@ public class Tv7Run {
 
 
 
-    public void tv7RunCron(){
+    public void tv7RunCron() throws InterruptedException, ExecutionException, TimeoutException, SerialPortException, IOException {
         Modem_cron modem_cron=new Modem_cron();
 
         java.util.concurrent.Callable task = () -> {
@@ -57,6 +56,10 @@ public class Tv7Run {
             serviceTV7 = Executors.newSingleThreadExecutor();
             futureTV7_1 = serviceTV7.submit(task);
             serviceTV7.shutdown();
+
+
+
+
 
         }
         else{
