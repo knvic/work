@@ -2,16 +2,34 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
-      start-state="data_tv7_process">
+      start-state="data_process1">
 
       <var name="selectionTv7" class="ru.javabegin.training.tv7.object_data_tv7.SelectionTv7"/>
       <!--//<var name="searchCriteriaTv7" class="ru.javabegin.training.tv7.object_data_tv7.SearchCriteriaTv7"/>-->
     <var name="markersView" class="ru.javabegin.training.vkt7.Maps.MarkersView"/>
 
-      <view-state id="data_tv7_process" view="customer_tv7_d_select.xhtml" >
-            <on-entry>
+
+
+
+
+
+    <action-state id="data_process1">
+
+        <evaluate expression="facadeTv7.getCustomerStatus()" result="flowScope.cu"  />
+        <transition to="data_tv7_process" />
+
+
+
+    </action-state>
+
+
+
+
+
+    <view-state id="data_tv7_process" view="customer_tv7_d_select.xhtml" >
+            <!--<on-entry>
                   <evaluate expression="facadeTv7.findTv7Customers()" result="viewScope.cu"  />
-            </on-entry>
+            </on-entry>-->
 
 
             <transition on="day_month" to="archive_action"/>
@@ -24,9 +42,26 @@
           <transition on="check" to="action_checkTV7"/>
 
 
+        <transition on="showNotOk">
+            <evaluate expression="facadeTv7.getCustomerStatusNotOk()" result="flowScope.cu" />
+
+        </transition>
+
+        <transition on="showOk">
+            <evaluate expression="facadeTv7.getCustomerStatusOk()" result="flowScope.cu" />
+
+        </transition>
+
+        <transition on="showAll">
+            <evaluate expression="facadeTv7.getCustomerStatus()" result="flowScope.cu"  />
+
+        </transition>
 
 
-      </view-state>
+
+
+
+    </view-state>
 
 
     <action-state id="archive_action">

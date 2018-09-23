@@ -12,6 +12,7 @@ import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.excel.*;
 import ru.javabegin.training.tv7.reports.DataCustomerListTV7;
+import ru.javabegin.training.tv7.reports.DataCustomerTV7;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 @Component
 @Scope("singleton")
@@ -320,6 +322,37 @@ public class FacadeTv7 {
 
 
     }
+
+    public List<DataCustomerTV7> getCustomerStatus() throws InterruptedException {
+        //checkUpdate.update(customerService, LocalDateTime.now().minusDays(1), dcsTV7 );
+
+        List<DataCustomerTV7> dataCustomerList=dcsTV7.getDataCustomerListTV7();
+        return dataCustomerList;
+    }
+
+
+
+
+    public List<DataCustomerTV7> getCustomerStatusNotOk(){
+
+
+        List<DataCustomerTV7> dataCustomerList=dcsTV7.getDataCustomerListTV7();
+
+        List<DataCustomerTV7> out=dataCustomerList.stream().filter((p)->!p.getStatus().contains("ГОТОВО")).collect(Collectors.toList());
+        return out;
+    }
+
+
+    public List<DataCustomerTV7> getCustomerStatusOk(){
+
+
+        List<DataCustomerTV7> dataCustomerList=dcsTV7.getDataCustomerListTV7();
+
+        List<DataCustomerTV7> out=dataCustomerList.stream().filter((p)->p.getStatus().contains("ГОТОВО")).collect(Collectors.toList());
+        return out;
+    }
+
+
 
 
 

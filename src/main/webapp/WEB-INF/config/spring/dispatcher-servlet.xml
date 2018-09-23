@@ -255,6 +255,7 @@
 
     <bean id="update_Q_for_All_OK" class="ru.javabegin.training.vkt7.object_data.Facade_data"/>
 
+    <bean id="updateDataTV7" class=" ru.javabegin.training.tv7.reports.UpdateDataCustomerListTV7"/>
 
 
     <task:scheduler id="serverScheduler" pool-size="10"/>
@@ -266,7 +267,7 @@
         <task:scheduled ref="modem_daily_moth_cron" method="get_daily_moth_cron" cron="11 2 5 * * ?"/>
 
         <task:scheduled ref="revizor" method="Revisor" cron="30 */15 * * * ?"/>
-        <!--<task:scheduled ref="updateDataCustomer" method="update" cron="50 */7 * * * ?"/>-->
+        <task:scheduled ref="updateDataCustomer" method="update" cron="50 */7 * * * ?"/>
 
 
         <!--Вспомогательные Для ВКТ-7-->
@@ -283,6 +284,13 @@
 
         <task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 5 7 * * ?"/>
         <task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 44 10 * * ?"/>
+
+
+        <!--Обновлем данные по ТВ7-->
+        <task:scheduled ref="updateDataTV7" method="update" cron="1 */6 * * * ?"/>
+
+        <!--<task:scheduled ref="updateDataTV7" method="update" cron="40 41 20 * * ?"/>-->
+
         <!--Для ТВ-7 ############ конец #############################################   -->
 
 

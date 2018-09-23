@@ -27,9 +27,6 @@
             <h:outputText value="${message2}" styleClass="error" />
         </p:dialog>
         <h:form id="form">
-
-
-
             <p:growl id="msgs" showDetail="true" />
 
 
@@ -39,44 +36,11 @@
 
             </div>
 
+            <h:form>
 
-            <p:toolbar>
-            <f:facet name="left">
-            <p:commandButton  event="onclick" value="Все" update="form"  action="showAll" icon="ui-icon-document" />
-
-            <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-            <p:commandButton event="onclick" value="ОК" update="form"  action="showOk" icon="ui-icon-document" />
-
-            <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-            <p:commandButton event="onclick" value="Не ОК" update="form"  action="showNotOk"  icon="ui-icon-document" />
-
-            <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-
-            <!--<p:commandButton event="onclick" value="Сутки ОК Месяц НЕТ" update="form"  action="showNotMonthOkDay"  icon="ui-icon-document" />-->
-
-            <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-
-            </f:facet>
-
-
-
-                <f:facet name="right">
-                    <p:menuButton value="Options">
-                        <p:menuitem value="Homepage" url="http://localhost:8080/app/teplo" icon="ui-icon-extlink" />
-                    </p:menuButton>
-                </f:facet>
-            </p:toolbar>
 
                 <!--<p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionTv7.cust}" rowKey="#{u.customer}">-->
-                <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700" selectionMode="single" selection="#{selectionTv7.cust}" rowKey="#{u.customer}">
+                <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"   scrollWidth="100%" scrollHeight="700">
                     <f:facet name="header">
                         #{msg.customers}
                     </f:facet>
@@ -102,7 +66,48 @@
                 </p:dataTable>
 
 
-         </h:form>
+
+
+           <!--     <p:dataTable var="u" value="#{cu}" rows="50"
+                             paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="50,75,100" selectionMode="single" selection="#{selectionTv7.cust}" rowKey="#{u.id}">
+                    <f:facet name="header">
+                        #{msg.customers}
+                    </f:facet>
+
+                    <p:ajax event="rowSelect" listener="#{selectionTv7.onRowSelect}" update=":form:msgs" />
+                    <p:ajax event="rowUnselect" listener="#{selectionTv7.onRowUnselect}" update=":form:msgs" />
+
+
+                    <p:column headerText="#{msg.customer}">
+                        <h:outputText value="#{u.firstName}" />
+                    </p:column>
+                    <p:column headerText="#{msg.unitType}">
+                        <h:outputText value="#{u.unitType}" />
+                    </p:column>
+                    <p:column headerText="Адрес:">
+                        <h:outputText value="#{u.address}" />
+                    </p:column>
+                    <p:column headerText="#{msg.tel_modem}">
+                        <h:outputText value="#{u.telModem}" />
+                    </p:column>
+
+                    <f:facet name="paginatorTopLeft">
+                        <p:commandButton type="button" icon="fa fa-sync" />
+                    </f:facet>
+
+                    <f:facet name="paginatorBottomRight">
+                        <p:commandButton type="button" icon="fa fa-cloud-upload" />
+                    </f:facet>
+                </p:dataTable>
+            </h:form>
+-->
+            <!--<p:poll interval="15"  update=":form" />-->
+
+
+
+        </h:form>
 
 
     </ui:define>
