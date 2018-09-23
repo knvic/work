@@ -5,10 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ru.javabegin.training.checkUpdateData.CheckUpdate;
+import ru.javabegin.training.checkUpdateData.CheckUpdateTV7Impl;
 import ru.javabegin.training.tv7.auxillary.AuxDateTimeServiceImpl;
 import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.excel.*;
+import ru.javabegin.training.tv7.reports.DataCustomerListTV7;
 import ru.javabegin.training.vkt7.db.CustomerService;
 import ru.javabegin.training.vkt7.entities.Customer;
 
@@ -206,6 +209,10 @@ public class FacadeTv7 {
 
 
 
+
+
+
+
     public void getExcel_archive() throws NoSuchFieldException, IllegalAccessException, ExecutionException, InterruptedException, IOException {
 
 
@@ -300,6 +307,22 @@ public class FacadeTv7 {
 
        return true;
     }
+
+    @Autowired
+    DataCustomerListTV7 dcsTV7;
+    @Autowired
+    CheckUpdate checkUpdate;
+    public void checkUpdate() throws InterruptedException {
+
+        //CheckUpdateTV7Impl checkUpdateTV7=new CheckUpdateTV7Impl();
+        checkUpdate.update(customerService, LocalDateTime.now().minusDays(1), dcsTV7 );
+
+
+
+    }
+
+
+
 
 
 

@@ -2,6 +2,7 @@ package ru.javabegin.training.vkt7.db;
 
 import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.entity.Operationtv7T;
+import ru.javabegin.training.tv7.reports.DataCustomerTV7;
 import ru.javabegin.training.vkt7.entities.Customer;
 import ru.javabegin.training.vkt7.entities.Operation;
 import ru.javabegin.training.vkt7.entities.Result;
@@ -62,6 +63,8 @@ public interface CustomerService {
     List<DataCustomer> customerOperationStatus(); //599
 
     List<DataCustomer> customerOperationStatus_Threads();
+
+
 
     DataCustomer thisCustomerOperationStatus(Customer customer);
 

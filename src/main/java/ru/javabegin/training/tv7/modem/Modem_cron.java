@@ -164,7 +164,7 @@ public class Modem_cron extends EventListener_tv7 {
         List<LocalDateTime> listDate=dateTimeService.from_the_beginning_of_month(date);
 
         customerList.forEach(p->System.out.println(p.getFirstName()));
-int count_temp=0;
+        int count_temp=0;
         for (Customer customer:customerList) {
             count_temp=count_temp+1;
             System.out.println("Проход по клиентам № "+count_temp);

@@ -8,10 +8,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.javabegin.training.db.*;
+import ru.javabegin.training.tv7.auxillary.AuxDateTimeServiceImpl;
 import ru.javabegin.training.tv7.entity.Operationtv7;
 import ru.javabegin.training.tv7.entity.Operationtv7T;
 import ru.javabegin.training.tv7.entity.Operationtv7T_;
 import ru.javabegin.training.tv7.entity.Operationtv7_;
+import ru.javabegin.training.tv7.reports.DataCustomerTV7;
 import ru.javabegin.training.vkt7.auxiliary_programs.AuxiliaryService;
 import ru.javabegin.training.vkt7.entities.*;
 import ru.javabegin.training.vkt7.reports.DataCustomer;
@@ -883,6 +885,9 @@ DataCustomerList dcs;
 
         return dataCustomerList;
     }
+
+
+
 
 
 

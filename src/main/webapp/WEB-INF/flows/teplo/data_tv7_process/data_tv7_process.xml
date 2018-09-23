@@ -21,6 +21,8 @@
 
           <transition on="testEx" to="action_selectTv7_ALL_xls"/>
 
+          <transition on="check" to="action_checkTV7"/>
+
 
 
 
@@ -144,6 +146,21 @@
 
 
     </action-state>
+
+
+
+
+
+    <action-state id="action_checkTV7">
+
+        <evaluate expression="facadeTv7.checkUpdate()" />
+
+        <transition to="data_tv7_process" >
+            <set name="flashScope.message2" value="'Файлы формируются в директории c:/demo/ТВ7'"/>
+        </transition>
+
+    </action-state>
+
 
 
 
