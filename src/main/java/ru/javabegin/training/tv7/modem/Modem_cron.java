@@ -168,7 +168,7 @@ public class Modem_cron extends EventListener_tv7 {
         for (Customer customer:customerList) {
             count_temp=count_temp+1;
             System.out.println("Проход по клиентам № "+count_temp);
-            Thread.sleep(2000);
+          //  Thread.sleep(2000);
             System.out.println("\nКлиент ---------- " + customer.getFirstName());
 
             tel=customer.getTelModem();
