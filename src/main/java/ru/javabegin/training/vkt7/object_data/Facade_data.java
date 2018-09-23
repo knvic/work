@@ -741,8 +741,8 @@ recoveryService.Recovery_month(name);
 @Autowired
 UpdateDataCustomerList updateDataCustomerList;
     public void okExcel(){
-        //updateDataCustomerList.update();
-        customerService.customerOperationStatus_Threads();
+       updateDataCustomerList.update();
+       // customerService.customerOperationStatus_Threads();
 
     }
 

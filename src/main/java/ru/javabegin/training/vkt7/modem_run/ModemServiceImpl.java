@@ -465,9 +465,9 @@ List<Object> connect=new ArrayList<>();*/
 
 
 
-        System.out.println("==>>>  МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
+        System.out.println("==>>>   ВКТ7 МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
         LocalDateTime now= LocalDateTime.now();
-        LocalDateTime deadLine = LocalDateTime.of(2018, 9, 22, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(2018, 10, 5, 0, 0, 0);
 
         if (!now.isAfter(deadLine)){
 
@@ -480,7 +480,7 @@ List<Object> connect=new ArrayList<>();*/
             service.shutdown();
         }
         else{
-            System.out.println("==>>> The demo visrion expires "+deadLine +" !!!!!!!!!!! <<<======");
+            System.out.println("==>>> ВКТ7  The demo visrion expires "+deadLine +" !!!!!!!!!!! <<<======");
         }
 
 

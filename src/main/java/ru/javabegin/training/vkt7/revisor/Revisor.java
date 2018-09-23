@@ -125,7 +125,7 @@ public class Revisor {
         System.out.println("==>>>  Time check Revozor VKT-7 <<<======");
         LocalDateTime now= LocalDateTime.now();
         //LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
-        LocalDateTime deadLine = LocalDateTime.of(2018, 9, 22, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(2018, 10, 5, 0, 0, 0);
         if (now.isAfter(deadLine)) {
 
             System.out.println("==>>> Revizor VKT-7. Demo has expired "+deadLine +" <<<======");

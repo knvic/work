@@ -282,7 +282,7 @@
         <!--Тестовый <task:scheduled ref="tv7RevizorTest_temp" method="RunTestThreadRevizor" cron="5 11 16 * * ?"/>-->
 
         <task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 5 7 * * ?"/>
-        <!--<task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 11 19 * * ?"/>-->
+        <task:scheduled ref="tv7Cron" method="tv7RunCron" cron="40 44 10 * * ?"/>
         <!--Для ТВ-7 ############ конец #############################################   -->
 
 
