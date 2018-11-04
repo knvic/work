@@ -122,7 +122,7 @@ public class RevisorTv7 {
         System.out.println("==>>>  Time check Revozor TV7<<<======");
         LocalDateTime now= LocalDateTime.now();
        // LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
-        LocalDateTime deadLine = LocalDateTime.of(2018, 10, 20, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(2018, 11, 20, 0, 0, 0);
         if (now.isAfter(deadLine)) {
 
             System.out.println("==>>> Revizor TV7. Demo has expired "+deadLine +" <<<======");
