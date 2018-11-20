@@ -46,7 +46,7 @@ public class Tv7Run {
         System.out.println("==>>> ТВ7 МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
         LocalDateTime now= LocalDateTime.now();
        // LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
-        LocalDateTime deadLine = LocalDateTime.of(2018, 11, 20, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(2019, 1, 12, 0, 0, 0);
         if (!now.isAfter(deadLine)){
 
             System.out.println("==>>> ТВ7 The DemoVersion so far in work!!!!!!!!!!! <<<======");
