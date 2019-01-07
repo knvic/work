@@ -4,6 +4,8 @@ import jssc.SerialPort;
 import jssc.SerialPortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.db.Contact;
 import ru.javabegin.training.db.ContactService;
@@ -34,7 +36,7 @@ import java.util.concurrent.*;
  */
 
     @Component
-
+    @PropertySource("classpath:allProperties.properties")
 public class ModemServiceImpl implements ModemService {
     public static volatile List<Object> connec;
   public static volatile SerialPort serialPort;
@@ -404,6 +406,13 @@ List<Object> connect=new ArrayList<>();*/
 
 ///////////////////// Запускается шедулером
 
+    @Value("${year}")
+    private  int year;
+    @Value("${month}")
+    private  int month;
+    @Value("${dayOfMonth}")
+    private  int dayOfMonth;
+
     @Override
     public void get_daily_moth_cron(){
         //LocalDateTime ldt_d1 = LocalDateTime.of(2017, 10, day, 0, 0, 0);
@@ -467,7 +476,8 @@ List<Object> connect=new ArrayList<>();*/
 
         System.out.println("==>>>   ВКТ7 МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
         LocalDateTime now= LocalDateTime.now();
-        LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+        //LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(year, month, dayOfMonth, 0, 0, 0);
 
         if (!now.isAfter(deadLine)){
 

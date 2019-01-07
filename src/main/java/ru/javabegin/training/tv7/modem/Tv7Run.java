@@ -5,6 +5,8 @@ package ru.javabegin.training.tv7.modem;
 import jssc.SerialPortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.db.CustomerService;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 import java.util.concurrent.*;
 
 @Component
+@PropertySource("classpath:allProperties.properties")
 public class Tv7Run {
 
     @Qualifier("jpaCustomerService")
@@ -23,12 +26,18 @@ public class Tv7Run {
 
 
 
+
     public static volatile Future<String> futureTV7_1;
     public static volatile  Future<String> futureTV7_2;
     public static volatile ExecutorService serviceTV7;
 
 
-
+    @Value("${year}")
+    private  int year;
+    @Value("${month}")
+    private  int month;
+    @Value("${dayOfMonth}")
+    private  int dayOfMonth;
     public void tv7RunCron() throws InterruptedException, ExecutionException, TimeoutException, SerialPortException, IOException {
         Modem_cron modem_cron=new Modem_cron();
 
@@ -46,7 +55,8 @@ public class Tv7Run {
         System.out.println("==>>> ТВ7 МЕСТО ГДЕ НАДО ПРОВЕРЯТЬ ДАТУ <<<======");
         LocalDateTime now= LocalDateTime.now();
        // LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
-        LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+       // LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(year, month, dayOfMonth, 0, 0, 0);
         if (!now.isAfter(deadLine)){
 
             System.out.println("==>>> ТВ7 The DemoVersion so far in work!!!!!!!!!!! <<<======");

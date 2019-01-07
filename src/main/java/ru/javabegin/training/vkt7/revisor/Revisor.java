@@ -6,6 +6,8 @@ import jssc.SerialPortException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import ru.javabegin.training.test_thread.TestThread_kill_modem;
 import ru.javabegin.training.vkt7.modem_run.ModemService;
 
@@ -29,6 +31,7 @@ import static ru.javabegin.training.vkt7.modem_run.ModemServiceImpl.stop;
 /**
  * Created by user on 18.11.2017.
  */
+@PropertySource("classpath:allProperties.properties")
 public class Revisor {
  public static volatile int tt=0;
 
@@ -36,7 +39,12 @@ public class Revisor {
     @Autowired
     ModemService modemService;
 
-
+    @Value("${year}")
+    private  int year;
+    @Value("${month}")
+    private  int month;
+    @Value("${dayOfMonth}")
+    private  int dayOfMonth;
     public void Revisor() throws InterruptedException, IOException, ExecutionException, SerialPortException {
         Logger logger = Logger.getRootLogger();
         Callable task = () -> {
@@ -125,7 +133,8 @@ public class Revisor {
         System.out.println("==>>>  Time check Revozor VKT-7 <<<======");
         LocalDateTime now= LocalDateTime.now();
         //LocalDateTime deadLine = LocalDateTime.of(2018, 8, 28, 0, 0, 0);
-        LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+        //LocalDateTime deadLine = LocalDateTime.of(2019, 3, 14, 0, 0, 0);
+        LocalDateTime deadLine = LocalDateTime.of(year, month, dayOfMonth, 0, 0, 0);
         if (now.isAfter(deadLine)) {
 
             System.out.println("==>>> Revizor VKT-7. Demo has expired "+deadLine +" <<<======");
