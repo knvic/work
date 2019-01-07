@@ -1,363 +1,91 @@
-2018-11-20 08:29:43 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
-2018-11-20 08:29:43 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Tue Nov 20 08:29:43 MSK 2018]; root of context hierarchy
-2018-11-20 08:29:43 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
-2018-11-20 08:29:44 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
-2018-11-20 08:29:44 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
-2018-11-20 08:29:44 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
-2018-11-20 08:29:44 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
-2018-11-20 08:29:44 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
-2018-11-20 08:29:44 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
-2018-11-20 08:29:44 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
-2018-11-20 08:29:45 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-11-20 08:29:45 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
-2018-11-20 08:29:45 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@21465af8, org.springframework.security.web.session.ConcurrentSessionFilter@6711368, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bacbda8, org.springframework.security.web.header.HeaderWriterFilter@674f49bf, org.springframework.security.web.authentication.logout.LogoutFilter@74cd5e34, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7aa9f996, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24b64a96, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3929fd0e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@278b28e1, org.springframework.security.web.session.SessionManagementFilter@12db00cf, org.springframework.security.web.access.ExceptionTranslationFilter@4af1af8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@729846ee]
-2018-11-20 08:29:45 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
-2018-11-20 08:29:45 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 2359 ms
-2018-11-20 08:29:48 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
-2018-11-20 08:29:48 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Nov 20 08:29:48 MSK 2018]; parent: Root WebApplicationContext
-2018-11-20 08:29:48 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
-2018-11-20 08:29:48 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
-2018-11-20 08:29:48 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
-2018-11-20 08:29:49 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\apache-tomcat-9.0.8\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
-2018-11-20 08:29:50 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-11-20 08:29:50 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-11-20 08:29:51 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
-2018-11-20 08:29:51 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2019-01-07 13:22:13 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
+2019-01-07 13:22:14 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Mon Jan 07 13:22:14 MSK 2019]; root of context hierarchy
+2019-01-07 13:22:14 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/applicationContext.xml]
+2019-01-07 13:22:14 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/application-security.xml]
+2019-01-07 13:22:14 INFO  SpringSecurityCoreVersion:75 - You are running with Spring Security Core 4.2.3.RELEASE
+2019-01-07 13:22:14 INFO  SecurityNamespaceHandler:78 - Spring Security 'config' module version is 4.2.3.RELEASE
+2019-01-07 13:22:14 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_USER')' for /app/main
+2019-01-07 13:22:14 INFO  FilterInvocationSecurityMetadataSourceParser:194 - Creating access control expression attribute 'hasRole('ROLE_ADMIN')' for /app/security
+2019-01-07 13:22:15 INFO  HttpSecurityBeanDefinitionParser:306 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, <concurrencyFilter>, order = 300, Root bean: class [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 400, Root bean: class [org.springframework.security.web.header.HeaderWriterFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 500, Root bean: class [org.springframework.security.web.authentication.logout.LogoutFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 800, <usernamePasswordFilter>, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.security.config.http.HttpConfigurationBuilder$SecurityContextHolderAwareRequestFilterBeanFactory#0; factoryMethodName=getBean; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2100, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2200, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 2300, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2400]
+2019-01-07 13:22:15 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/mysql-datasource.xml]
+2019-01-07 13:22:15 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07 13:22:15 INFO  JdbcUserDetailsManager:130 - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2019-01-07 13:22:16 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@1093d30a, org.springframework.security.web.session.ConcurrentSessionFilter@6f64eb79, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2dccb7d8, org.springframework.security.web.header.HeaderWriterFilter@3794a040, org.springframework.security.web.authentication.logout.LogoutFilter@39912e3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71663553, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@395c2ed0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b580f1b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b081cbd, org.springframework.security.web.session.SessionManagementFilter@5b046e22, org.springframework.security.web.access.ExceptionTranslationFilter@376e13c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68bd169e]
+2019-01-07 13:22:16 INFO  DefaultFilterChainValidator:154 - Checking whether login URL '/app/login' is accessible with your configuration
+2019-01-07 13:22:16 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 2843 ms
+2019-01-07 13:22:19 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2019-01-07 13:22:19 INFO  XmlWebApplicationContext:583 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jan 07 13:22:19 MSK 2019]; parent: Root WebApplicationContext
+2019-01-07 13:22:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]
+2019-01-07 13:22:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/webflow.xml]
+2019-01-07 13:22:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/config/spring/controllers.xml]
+2019-01-07 13:22:20 INFO  DefaultListableBeanFactory:828 - Overriding bean definition for bean 'updateMoth' with a different definition: replacing [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\apache-tomcat-9.0.8\webapps\ROOT\WEB-INF\classes\ru\javabegin\training\vkt7\reports\UpdateMoth.class]] with [Generic bean: class [ru.javabegin.training.vkt7.reports.UpdateMoth]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in ServletContext resource [/WEB-INF/config/spring/dispatcher-servlet.xml]]
+2019-01-07 13:22:21 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-01-07 13:22:21 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'executorService' of type [java.util.concurrent.ThreadPoolExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-07 13:22:22 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_contact'
+2019-01-07 13:22:22 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_contact
 	...]
-2018-11-20 08:29:52 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
-2018-11-20 08:29:52 INFO  Environment:213 - HHH000206: hibernate.properties not found
-2018-11-20 08:29:52 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
-2018-11-20 08:29:52 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-11-20 08:29:52 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-11-20 08:29:55 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 08:29:56 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
-2018-11-20 08:29:56 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-11-20 08:29:56 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
-2018-11-20 08:29:56 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2019-01-07 13:22:23 INFO  Version:37 - HHH000412: Hibernate Core {5.0.7.Final}
+2019-01-07 13:22:23 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-01-07 13:22:23 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2019-01-07 13:22:23 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-01-07 13:22:24 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-07 13:22:26 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-01-07 13:22:27 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_contact'
+2019-01-07 13:22:27 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07 13:22:27 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_customer'
+2019-01-07 13:22:27 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_customer
 	...]
-2018-11-20 08:29:57 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'hibernate'
-2018-11-20 08:29:57 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-11-20 08:29:57 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
-2018-11-20 08:29:57 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 08:29:57 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
-2018-11-20 08:29:57 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
-2018-11-20 08:29:57 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
-2018-11-20 08:29:57 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+2019-01-07 13:22:28 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'hibernate'
+2019-01-07 13:22:28 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-07 13:22:28 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2019-01-07 13:22:28 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-01-07 13:22:28 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_customer'
+2019-01-07 13:22:28 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2019-01-07 13:22:29 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'emf_test'
+2019-01-07 13:22:29 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
 	name: emf_test
 	...]
-2018-11-20 08:29:58 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
-2018-11-20 08:29:58 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2018-11-20 08:29:58 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
-2018-11-20 08:29:58 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2018-11-20 08:29:58 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
-2018-11-20 08:29:59 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-11-20 08:29:59 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-11-20 08:29:59 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2018-11-20 08:29:59 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
-2018-11-20 08:30:00 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
-2018-11-20 08:30:01 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Nov 20 08:29:48 MSK 2018]; parent: Root WebApplicationContext
-2018-11-20 08:30:01 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Nov 20 08:29:48 MSK 2018]; parent: Root WebApplicationContext
-2018-11-20 08:30:04 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
-2018-11-20 08:30:04 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
-2018-11-20 08:30:04 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
-2018-11-20 08:30:04 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
-2018-11-20 08:30:04 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
-2018-11-20 08:30:04 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
-2018-11-20 08:30:05 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 16612 ms
-2018-11-20 08:30:06 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Tue Nov 20 08:30:06 MSK 2018]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
-2018-11-20 08:30:06 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@933aa5] to [org.springframework.web.context.request.RequestScope@c53bbc4]
-2018-11-20 08:30:06 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2018-11-20 08:36:17 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:17 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:36:18 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:36:01.041 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:14 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:42:15 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:42:01.045 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:48:15 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:48:01.025 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 08:54:15 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T08:54:01.031 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:00:12 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:00:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:13 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:06:14 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:06:01.012 НЕТ
-2018-11-20 09:12:13 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:13 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:13 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:13 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:13 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:12:14 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:12:01.002 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Звездный -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Луч -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Танзи Кольцова 2 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - ЗАО "Фудстар" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Магомедов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Нарзан сауна -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - ООО "Инвестиции "Запод" -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Саноторий Электроника -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Идзибагандов -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзанов ТП-9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзанов ТП 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзанов ТП 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Горького -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзана СОК -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзанов ТП 1 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:15 INFO  root:105 - Долина нарзанов ТП 10 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Нарзан дача -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Колос -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - АКВАЛОО -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Димитрова Родина -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 5 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 9 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 12 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 15А -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 15В -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Холдинг, Курортный бул. 17 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Сан. Дмитрова корпус №4 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Сан. Дмитрова 2-ое отделение -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Эрана -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - Жемчужина Кавказа -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
-2018-11-20 09:18:16 INFO  root:105 - ИФНС -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2018-11-19T09:18:01.003 НЕТ
+2019-01-07 13:22:29 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata : Unknown database 'test_persist_26_09'
+2019-01-07 13:22:29 INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-07 13:22:29 INFO  LobCreatorBuilderImpl:63 - HHH000422: Disabling contextual LOB creation as connection was null
+2019-01-07 13:22:29 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-01-07 13:22:29 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'emf_test'
+2019-01-07 13:22:30 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2019-01-07 13:22:30 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/secondPage] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2019-01-07 13:22:30 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/accessDenied] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2019-01-07 13:22:30 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/1],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.main(javax.servlet.http.HttpSession)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/ss],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.getPrincipals()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.error(javax.servlet.http.HttpSession)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/failed],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.failed()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/db],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.ById()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/3],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.secondPage()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/2],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.log1(javax.servlet.http.HttpSession)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/accessDenied],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.accesssDenied(java.security.Principal)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/check-user],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView ru.javabegin.training.controllers.LoginController.checkUser(ru.javabegin.training.objects.User)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/user],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals1()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/s1],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.MyUserDetails()
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/calc],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.calc(javax.servlet.http.HttpSession)
+2019-01-07 13:22:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/p],methods=[GET]}" onto public java.lang.String ru.javabegin.training.controllers.LoginController.allPrincipals(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-07 13:22:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jan 07 13:22:19 MSK 2019]; parent: Root WebApplicationContext
+2019-01-07 13:22:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jan 07 13:22:19 MSK 2019]; parent: Root WebApplicationContext
+2019-01-07 13:22:35 INFO  SimpleUrlHandlerMapping:362 - Mapped URL path [/javax.faces.resource/**] onto handler 'resourceHandlerJSF'
+2019-01-07 13:22:35 INFO  ServletContextAttributeExporter:77 - Exported ServletContext attribute with name 'facade'
+2019-01-07 13:22:35 INFO  ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2019-01-07 13:22:35 INFO  ThreadPoolTaskScheduler:165 - Initializing ExecutorService  'serverScheduler'
+2019-01-07 13:22:36 INFO  DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2019-01-07 13:22:36 INFO  SchedulerFactoryBean:645 - Starting Quartz Scheduler now
+2019-01-07 13:22:36 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 17078 ms
+2019-01-07 13:22:39 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo]: startup date [Mon Jan 07 13:22:39 MSK 2019]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2019-01-07 13:22:39 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@2d0ca27e] to [org.springframework.web.context.request.RequestScope@5d133434]
+2019-01-07 13:22:39 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-01-07 13:26:15 INFO  root:105 - Долина нарзанов ТП 11 (Аквапарк) -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2019-01-06T13:24:01.006 НЕТ
+2019-01-07 13:26:15 INFO  root:105 - КГБЛ Октябырьские ванны -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2019-01-06T13:24:01.006 НЕТ
+2019-01-07 13:26:15 INFO  root:105 - Холдинг, Курортный бул. 8 -- Измерений => СУТОЧНЫЕ && ИТОГОВЫЕ <= за 2019-01-06T13:24:01.006 НЕТ
+2019-01-07 13:27:21 INFO  GenericWebApplicationContext:583 - Refreshing Flow ApplicationContext [teplo/data_process]: startup date [Mon Jan 07 13:27:21 MSK 2019]; parent: WebApplicationContext for namespace 'dispatcher-servlet'
+2019-01-07 13:27:21 INFO  DefaultListableBeanFactory:895 - Replacing scope 'request' from [org.springframework.web.context.request.RequestScope@9ff729b] to [org.springframework.web.context.request.RequestScope@2b5e3bb2]
+2019-01-07 13:27:21 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-01-07 13:30:30 INFO  root:50 - Начала работать программа ревизор
+2019-01-07 13:30:30 INFO  root:51 - Статус end : false
