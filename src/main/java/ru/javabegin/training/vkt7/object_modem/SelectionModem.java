@@ -23,11 +23,15 @@ import java.util.Date;
 public class SelectionModem implements Serializable {
 
     private Customer cust;
+
+
+    private Customer cust_modem;
     private String modem_operation;
     private Date day_of;
     private Date day_to;
     private Date hour;
     private String modem=null;
+    private String modem_type;
 
     public String getModem() {
         return modem;
@@ -90,4 +94,21 @@ public class SelectionModem implements Serializable {
          Customer select=((Customer) event.getObject());
         return select;
     }
+
+    public void set_all_modem(String modem_type, Customer customer) {
+
+        this.modem_type= modem_type;
+
+        this.cust_modem = customer;
+
+    }
+
+    public Customer getCust_modem() {
+        return cust_modem;
+    }
+
+    public String getModem_type() {
+        return modem_type;
+    }
+
 }

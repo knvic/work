@@ -29,124 +29,49 @@
                 </f:facet>
                 <p:ajax event="rowSelect" listener="#{selectionModem.onRowSelect}" update=":form:msgs" />
                 <p:ajax event="rowUnselect" listener="#{selectionModem.onRowUnselect}" update=":form:msgs" />
-                <p:column headerText="name">
+                <p:column headerText="Наименование">
                     <h:outputText value="#{u.firstName}" />
                 </p:column>
-                <p:column headerText="fam">
+                <p:column headerText="Телефон">
                     <h:outputText value="#{u.telModem}" />
                 </p:column>
-                <p:column headerText="data">
-                    <h:outputText value="#{u.unitNumber}" />
+
+
+                <p:column headerText="Вычислитель">
+                    <h:outputText value="#{u.unitType}" />
                 </p:column>
 
+                <p:column headerText="Статус">
+                    <h:outputText value="#{u.status}" />
+                </p:column>
             </p:dataTable>
 
 
 
-           <!-- <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                <p:outputPanel id="carDetail" style="text-align:center;">
-                    <p:panelGrid  columns="2" rendered="#{not empty selection.cust}" columnClasses="label,value">
 
-
-                        <h:outputText value="Name:" />
-                        <h:outputText value="#{selection.cust.firstName}" />
-                        <h:outputText value="Authorites:" />
-                        <h:outputText value="#{selection.cust.telModem}" />
-                        <h:outputText value="RemoteIP:" />
-                        <h:outputText value="#{selection.cust.unitNumber}" />
-
-
-                    </p:panelGrid>
-                </p:outputPanel>
-            </p:dialog>-->
-            <!--<p:commandButton value="#{msg.add_customer}" action="addCustomer" title="transition on=addCustomer" actionListener="#{searchCriteria_cust.setCustomer(letter)}" />-->
 
             <p:growl id="grow2" life="5000" />
 
 
             <!--<p:poll interval="15"  update=":form" />-->
-
-
-         <!--   <p:dataTable id="radioDT" var="u" value="${cu}" selection="#{selection.cust}" rowKey="#{u.id}">
-                <f:facet name="header">
-                    RadioButton
-                </f:facet>
-                <p:column selectionMode="single" style="width:16px;text-align:center"/>
-                <p:column headerText="name">
-                    <h:outputText value="#{u.firstName}" />
-                </p:column>
-                <p:column headerText="fam">
-                    <h:outputText value="#{u.lastName}" />
-                </p:column>
-                <p:column headerText="data">
-                    <h:outputText value="#{u.telModem}" />
-                </p:column>
-
-
-                <f:facet name="footer">
-                    <p:commandButton process="radioDT" update=":form:carDetail" icon="ui-icon-search" value="View" oncomplete="PF('carDialog').show()" />
-
-                    <ul>
-                    <li><p:commandButton value="#{msg.delete}" event="onclick"  action="delete"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
-                </ul>
-                    <ul>
-                        <li><p:commandButton value="#{msg.edit}" event="onclick"  action="edit"  styleClass="ui-priority-primary" actionListener="#{searchCriteria_cust.setCustomer(selection.cust)}"/> </li>
-                    </ul>
-                </f:facet>
-
-            </p:dataTable>
--->
-
             <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                <p:outputLabel for="city" value="City:" />
+                <p:outputLabel for="city" value="Type :" />
                 <p:selectOneRadio id="city" value="#{selectionModem.modem_operation}"  layout="grid" columns="3">
-                    <f:selectItem itemLabel="#{msg.hour_archive}" itemValue="hour" />
-                    <f:selectItem itemLabel="#{msg.daily_archive}" itemValue="daily" />
-                    <f:selectItem itemLabel="#{msg.mothly_archive}" itemValue="mothly" />
-                    <f:selectItem itemLabel="#{msg.total_archive}" itemValue="total" />
-                    <f:selectItem itemLabel="#{msg.current_values}" itemValue="current" />
-                    <f:selectItem itemLabel="#{msg.total_current}" itemValue="t_current" />
-                    <f:selectItem itemLabel="#{msg.properties}" itemValue="properties" />
+                    <f:selectItem itemLabel="TV7" itemValue="t" />
+                    <f:selectItem itemLabel="VKT7" itemValue="v" />
 
                 </p:selectOneRadio>
             </h:panelGrid>
 
 
-
             <p:growl id="msgs_1" showDetail="true" />
 
-            <h:panelGrid columns="2" cellpadding="5">
-
-                <p:outputLabel for="button" value="Button:" />
-                <p:calendar id="button" value="#{selectionModem.day_of}" showOn="button" />
-
-
-
-
-
-
-            </h:panelGrid>
 
             <!--<p:commandButton value="Submit" update="msgs_1" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />-->
-            <p:commandButton value="Submit" action="action" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
-            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-                <p:panelGrid id="display" columns="2" columnClasses="label,value">
-
-                    <h:outputText value="Button:" />
-                    <h:outputText value="#{calendarView.date3}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-
-
-                </p:panelGrid>
-            </p:dialog>
+            <p:commandButton value="Submit" action="action" actionListener="#{ selectionModem.set_all_modem(selectionModem.modem_operation, selectionModem.cust)}" icon="ui-icon-check" />
 
 
         </h:form>
-
-
-
-
 
 
     </ui:define>
@@ -161,10 +86,6 @@
 
     </ui:define>
 -->
-
-
-
-
 
 
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import ru.javabegin.training.vkt7.db.CustomerService;
+import ru.javabegin.training.vkt7.entities.Customer;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -92,6 +93,36 @@ public class Tv7Run {
 
 
     }
+
+
+    public void tv7RunCron_modem(Customer customer) throws InterruptedException, ExecutionException, TimeoutException, SerialPortException, IOException {
+        Modem_cron1 modem_cron=new Modem_cron1();
+
+        java.util.concurrent.Callable task = () -> {
+            System.out.println("работает поток "+ Thread.currentThread().getName());
+
+            String log=" Начал работать поток "+ Thread.currentThread().getName()+" \n";
+            LocalDateTime ldt= LocalDateTime.now().minusDays(1);
+
+
+            modem_cron.tv7_cron(customerService, ldt, customer);
+            //daily_moth_cron.daily_all_cycle(customerList, customerService, auxiliaryService, data, type);
+            return "123";
+        };
+
+
+        serviceTV7 = Executors.newSingleThreadExecutor();
+        futureTV7_1 = serviceTV7.submit(task);
+        serviceTV7.shutdown();
+
+
+
+        System.out.println("Основная программа работу закончила");
+
+
+
+    }
+
 
     public void run_tv7(){
         Tv7_DB_Test tv7DbTest=new Tv7_DB_Test();

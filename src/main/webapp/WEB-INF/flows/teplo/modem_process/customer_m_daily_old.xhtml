@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="/WEB-INF/templates/customer/customer_edit_delete_template.xhtml">
+
+    <ui:define name="title">
+        #{msg.book_list}
+    </ui:define>
+    <!--<ui:include src="/WEB-INF/templates/sec.xhtml"/>-->
+    <ui:define name="content">
+
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+
+
+             <!--<p:dataTable id="eventsDT" var="u" value="#{facade_customer.customers}" scrollable="true"  selectionMode="single" selection="#{selection.cust}" rowKey="#{u.id}">-->
+            <p:dataTable id="eventsDT" var="u" value="#{cu}" scrollable="true"  selectionMode="single" selection="#{selectionModem.cust}" rowKey="#{u.id}">
+                <f:facet name="header">
+                    Select Events
+                </f:facet>
+                <p:ajax event="rowSelect" listener="#{selectionModem.onRowSelect}" update=":form:msgs" />
+                <p:ajax event="rowUnselect" listener="#{selectionModem.onRowUnselect}" update=":form:msgs" />
+                <p:column headerText="name">
+                    <h:outputText value="#{u.firstName}" />
+                </p:column>
+                <p:column headerText="fam">
+                    <h:outputText value="#{u.telModem}" />
+                </p:column>
+                <p:column headerText="data">
+                    <h:outputText value="#{u.unitNumber}" />
+                </p:column>
+
+            </p:dataTable>
+
+            <p:growl id="grow2" life="5000" />
+
+
+
+            <p:growl id="msgs_1" showDetail="true" />
+
+            <h:panelGrid columns="2" cellpadding="5">
+
+                <p:outputLabel for="button" value="Button:" />
+                <p:calendar id="button" value="#{selectionModem.day_of}" showOn="button" />
+
+            </h:panelGrid>
+
+            <!--<p:commandButton value="Submit" update="msgs_1" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />-->
+            <p:commandButton value="Submit" action="begin" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+            <p:commandButton value="Daily" action="go_daily" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+            <p:commandButton value="Daily_hour_All" action="go_hour_all" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+            <p:commandButton value="Stop" action="stop"  />
+            <p:commandButton value="Daily_All_Customer" action="go_daily_all_customer" actionListener="#{searchCriteria_modem.set_all_modem(selectionModem.modem_operation,selectionModem.day_of, selectionModem.cust)}" icon="ui-icon-check" />
+
+
+
+            <c:if test="#{not empty modem}" >
+                <p:commandButton value="вапвапвап" action="stop"  />
+            </c:if>
+
+            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="Button:" />
+                    <h:outputText value="#{calendarView.date3}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+
+
+                </p:panelGrid>
+            </p:dialog>
+
+            <!--<p:poll interval="2"  update=":form" />-->
+        </h:form>
+
+
+
+
+
+
+    </ui:define>
+   <!-- <ui:define name="ajax_p">
+
+        <div class="box-sh">
+
+            <h1><p:outputLabel id="ajax_p" value="#{msg.book_count}:  #{basicView.text}" /></h1>
+
+
+        </div>
+
+    </ui:define>
+-->
+
+
+
+
+
+
+
+</ui:composition>
+
+</html>

@@ -7,6 +7,7 @@
       <var name="selectionModem" class="ru.javabegin.training.vkt7.object_modem.SelectionModem"/>
 
 
+
       <view-state id="modem_process" view="customer_m_select.xhtml" >
 
             <on-render>
@@ -35,10 +36,10 @@
 
 
       <action-state id="action">
-            <evaluate expression="searchCriteria_modem.modem_operation" />
-            <transition on="hour" to="modem_process" />
+            <evaluate expression="selectionModem.modem_type" />
+            <transition on="v" to="modem_process" />
             <!--<transition on="no" to="resultIsFalseState" />-->
-            <transition on="daily" to="daily" />
+            <transition on="t" to="daily" />
       </action-state>
 
 

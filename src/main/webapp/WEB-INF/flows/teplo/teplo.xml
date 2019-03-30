@@ -37,6 +37,9 @@
             <transition on="recover" to="recover">
             </transition>
 
+            <transition on="modem" to="modem">
+            </transition>
+
 
             <transition on="update_q">
                   <evaluate expression="facade_data.update_Q_current_all_OK()" />

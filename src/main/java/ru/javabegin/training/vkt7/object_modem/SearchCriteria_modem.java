@@ -85,6 +85,7 @@ public class SearchCriteria_modem implements Serializable{
     }
 
     public void setCustomer(Customer customer) {
+
         this.customer = customer;
     }
 
