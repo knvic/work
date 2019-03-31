@@ -39,8 +39,32 @@
             <evaluate expression="selectionModem.modem_type" />
             <transition on="v" to="modem_process" />
             <!--<transition on="no" to="resultIsFalseState" />-->
-            <transition on="t" to="daily" />
+            <transition on="t" to="modem_process" />
       </action-state>
+
+
+
+      <action-state id="actionModem">
+            <evaluate expression="selectionModem.modem_type" />
+            <transition  to="modem_process" />
+           <!-- <transition on="v" to="modem_process1" />
+            &lt;!&ndash;<transition on="no" to="resultIsFalseState" />&ndash;&gt;
+            <transition on="t" to="modem_process1" />-->
+      </action-state>
+
+
+      <view-state id="modem_process1" view="customer_m_select.xhtml" >
+
+            <on-render>
+                  <evaluate expression="facade_modem.startRequest()"  />
+            </on-render>
+            <transition on="back" to="back"/>
+            <transition on="next" to="case"/>
+
+
+
+      </view-state>
+
 
 
 

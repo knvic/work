@@ -38,6 +38,9 @@ public class Facade_modem {
     @Autowired
     private SearchCriteria_oper searchCriteria_oper;
 
+    @Autowired
+    private  SelectionModem selectionModem;
+
     private Customer selcustomer;
 
     private Customer customer;
@@ -49,6 +52,13 @@ public class Facade_modem {
     private List<Measurements> measurementsList;
 
 
+
+    public void startRequest(){
+
+        Customer c =selectionModem.getCust_modem();
+
+        System.out.println("customer = "+ c.getFirstName());
+    }
 
     public List<Customer> getCustomers(){
 
